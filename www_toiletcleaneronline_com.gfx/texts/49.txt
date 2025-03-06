@@ -1,0 +1,3 @@
+Controlled release that continues to work long
+--- RECORDSEPARATOR ---
+after the first hit.

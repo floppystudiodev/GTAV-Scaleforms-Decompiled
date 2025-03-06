@@ -1,0 +1,14 @@
+class com.rockstargames.gtav.web.buttons.WebButtonAnchor extends com.rockstargames.gtav.web.buttons.WebButton
+{
+   var browser;
+   function WebButtonAnchor()
+   {
+      super();
+      this.buttonType = com.rockstargames.gtav.constants.WebBrowserButtonLUT.ANCHOR_BUTTON;
+   }
+   function buttonEvent()
+   {
+      var _loc2_ = this._name;
+      this.browser.currentWebsite.goToAnchor(_loc2_);
+   }
+}

@@ -1,0 +1,10 @@
+1;$digital_compass
+39;CONTENT
+41;BOUNDING_BOX
+43;compassletter
+44;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
+45;__Packages.com.rockstargames.ui.core.BaseScreenLayout
+46;__Packages.com.rockstargames.ui.utils.DisplayConfig
+47;__Packages.com.rockstargames.ui.game.GameInterface
+48;__Packages.com.rockstargames.gtav.levelDesign.TURRET_CAM
+49;__Packages.com.rockstargames.gtav.levelDesign.ARENA_GUN_CAM

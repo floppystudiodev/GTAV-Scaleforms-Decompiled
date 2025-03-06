@@ -1,0 +1,17 @@
+1;sixfiguretemps_content
+2;sixfiguretemps_backgrounds
+10;radio_no
+16;radio_yes
+18;BOUNDING_BOX
+54;button_TEXT_empty
+78;button_results
+108;image_title_click
+145;CONTENT
+147;button_TEXT_center-aligned
+148;button_ANCHOR_empty
+149;__Packages.com.rockstargames.ui.core.BaseWebsite
+150;__Packages.com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM
+151;__Packages.com.rockstargames.gtav.web.buttons.WebButton
+152;__Packages.com.rockstargames.gtav.web.buttons.WebButtonAnchor
+153;__Packages.com.rockstargames.gtav.constants.WebBrowserButtonLUT
+154;__Packages.com.rockstargames.gtav.web.buttons.WebButtonWWW

@@ -1,0 +1,1 @@
+this.gotoAndStop(1);

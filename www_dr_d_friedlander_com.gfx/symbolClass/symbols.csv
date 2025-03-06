@@ -1,0 +1,17 @@
+1;$FontDr_Helv
+2;texture2
+3;texture1
+5;BOUNDING_BOX
+16;button_home
+18;button_media
+20;button_meet
+22;button_testimonials
+24;button_therapy
+40;button_taketest
+67;button_taketest_timer
+110;CONTENT
+111;__Packages.com.rockstargames.ui.core.BaseWebsite
+112;__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT
+113;__Packages.com.rockstargames.gtav.web.buttons.WebButton
+114;__Packages.com.rockstargames.gtav.web.buttons.WebButtonWWW
+115;__Packages.com.rockstargames.gtav.constants.WebBrowserButtonLUT

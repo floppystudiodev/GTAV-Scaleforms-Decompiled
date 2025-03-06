@@ -1,0 +1,16 @@
+1;suemurry_texture_1
+2;suemurry_gradient
+3;suemurry_background_right
+4;suemurry_background_left
+6;BOUNDING_BOX
+69;button_home
+74;button_clickhere
+78;button_contribute
+99;button_sendnow
+100;page2
+113;CONTENT
+114;__Packages.com.rockstargames.ui.core.BaseWebsite
+115;__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT
+116;__Packages.com.rockstargames.gtav.web.buttons.WebButton
+117;__Packages.com.rockstargames.gtav.web.buttons.WebButtonWWW
+118;__Packages.com.rockstargames.gtav.constants.WebBrowserButtonLUT

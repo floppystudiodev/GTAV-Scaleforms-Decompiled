@@ -1,0 +1,14 @@
+1;IMPORTS
+11;textListFullItem
+12;textListFull
+13;__Packages.com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SAVE
+14;__Packages.com.rockstargames.ui.components.IController
+15;__Packages.com.rockstargames.ui.components.GUIScroll
+16;__Packages.com.rockstargames.ui.utils.HudColourLite
+17;__Packages.mx.utils.Delegate
+18;__Packages.com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_TEXT_LIST_FULL
+19;__Packages.com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextFullModel
+20;__Packages.com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
+21;__Packages.com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextFullView
+22;__Packages.com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextListFullItem
+23;__Packages.com.rockstargames.gtav.constants.PauseMenuColoursLUT

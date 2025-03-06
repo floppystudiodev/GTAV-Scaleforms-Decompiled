@@ -1,0 +1,1 @@
+Object.registerClass("statsVerticalMenuListItem",com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStatsVerticalListItem);

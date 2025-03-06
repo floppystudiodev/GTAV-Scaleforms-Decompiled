@@ -1,0 +1,11 @@
+1;CompassTexture
+2;CONTENT
+4;BOUNDING_BOX
+8;GearUp_LightMC
+10;DIAL
+12;SMALL_DIAL
+14;MEDIUM_DIAL
+83;AIRCRAFT
+84;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
+85;__Packages.com.rockstargames.gtav.levelDesign.DashboardDials.AIRCRAFT_DIALS
+86;__Packages.com.rockstargames.gtav.levelDesign.DashboardDials.BaseAircraftDial

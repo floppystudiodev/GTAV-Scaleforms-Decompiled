@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="64.0px" width="291.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <path d="M289.15 1.85 Q288.25 1.0 286.5 1.0 L4.5 1.0 Q2.75 1.0 1.85 1.85 1.0 2.75 1.0 4.5 L1.0 59.5 Q1.0 61.25 1.85 62.15 2.75 63.0 4.5 63.0 L286.5 63.0 Q288.35 63.0 289.3 62.05 L289.35 62.05 289.35 62.0 Q290.0 61.1 290.0 59.5 L290.0 4.5 Q290.0 2.75 289.15 1.85 M289.85 1.15 Q291.0 2.25 291.0 4.5 L291.0 59.5 Q291.0 61.55 290.1 62.65 L290.1 62.7 Q288.9 64.0 286.5 64.0 L4.5 64.0 Q2.25 64.0 1.15 62.85 0.0 61.75 0.0 59.5 L0.0 4.5 Q0.0 2.25 1.15 1.15 2.25 0.0 4.5 0.0 L286.5 0.0 Q288.75 0.0 289.85 1.15" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M286.5 4.5 L289.15 1.85 Q290.0 2.75 290.0 4.5 L290.0 59.5 Q290.0 61.1 289.35 62.0 L286.5 59.4 286.5 4.5" fill="#d96767" fill-rule="evenodd" stroke="none"/>
+    <path d="M1.85 1.85 Q2.75 1.0 4.5 1.0 L286.5 1.0 Q288.25 1.0 289.15 1.85 L286.5 4.5 4.5 4.5 1.85 1.85" fill="#cd3434" fill-rule="evenodd" stroke="none"/>
+    <path d="M4.5 4.5 L286.5 4.5 286.5 59.4 286.5 59.5 4.5 59.5 4.5 4.5" fill="#bf0000" fill-rule="evenodd" stroke="none"/>
+    <path d="M289.35 62.0 L289.35 62.05 289.3 62.05 Q288.35 63.0 286.5 63.0 L4.5 63.0 Q2.75 63.0 1.85 62.15 L4.5 59.5 286.5 59.5 286.5 59.4 289.35 62.0" fill="#7e0000" fill-rule="evenodd" stroke="none"/>
+    <path d="M1.85 1.85 L4.5 4.5 4.5 59.5 1.85 62.15 Q1.0 61.25 1.0 59.5 L1.0 4.5 Q1.0 2.75 1.85 1.85" fill="#570000" fill-rule="evenodd" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="360.0px" width="229.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <path d="M24.0 0.0 L24.0 24.0 0.0 24.0 0.0 0.0 24.0 0.0" fill="#e40000" fill-rule="evenodd" stroke="none"/>
+    <path d="M229.0 0.0 L229.0 24.0 205.0 24.0 205.0 0.0 229.0 0.0" fill="#e40000" fill-rule="evenodd" stroke="none"/>
+    <path d="M24.0 336.0 L24.0 360.0 0.0 360.0 0.0 336.0 24.0 336.0" fill="#e40000" fill-rule="evenodd" stroke="none"/>
+    <path d="M229.0 336.0 L229.0 360.0 205.0 360.0 205.0 336.0 229.0 336.0" fill="#e40000" fill-rule="evenodd" stroke="none"/>
+    <path d="M227.0 2.0 L227.0 358.0 2.0 358.0 2.0 2.0 227.0 2.0" fill="#e40000" fill-rule="evenodd" stroke="none"/>
+  </g>
+</svg>

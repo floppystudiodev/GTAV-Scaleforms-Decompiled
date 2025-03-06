@@ -1,0 +1,1 @@
+Excludes upfront $2000 initialization fee and $50 per month account maintenance fee.

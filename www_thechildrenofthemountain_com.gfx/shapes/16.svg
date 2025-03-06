@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="547.6px" width="788.75px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, -245.0, -159.15)">
+    <path d="M665.5 559.65 L245.5 559.65 245.5 159.65 665.5 159.65 665.5 559.65" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
+    <path d="M665.5 559.65 L245.5 559.65 245.5 159.65 665.5 159.65 665.5 559.65 Z" fill="none" stroke="#acacac" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    <path d="M693.25 159.85 L1033.25 159.85 1033.25 569.85 693.25 569.85 693.25 159.85" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
+    <path d="M693.25 159.85 L1033.25 159.85 1033.25 569.85 693.25 569.85 693.25 159.85 Z" fill="none" stroke="#acacac" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    <path d="M245.5 465.25 L245.5 462.25 665.5 462.25 665.5 465.25 245.5 465.25 M665.5 569.25 L665.5 572.25 532.45 572.25 245.5 572.25 245.5 569.25 665.5 569.25" fill="#999999" fill-rule="evenodd" stroke="none"/>
+    <path d="M665.5 465.25 L665.5 569.25 245.5 569.25 245.5 465.25 665.5 465.25" fill="#26a9e0" fill-rule="evenodd" stroke="none"/>
+    <path d="M665.5 706.25 L465.5 706.25 465.5 586.25 665.5 586.25 665.5 706.25" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
+    <path d="M665.5 706.25 L465.5 706.25 465.5 586.25 665.5 586.25 665.5 706.25 Z" fill="none" stroke="#999999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    <path d="M665.5 630.45 L465.5 630.45 465.5 586.45 665.5 586.45 665.5 630.45" fill="#999999" fill-rule="evenodd" stroke="none"/>
+    <path d="M665.5 626.35 L465.5 626.35 465.5 586.35 665.5 586.35 665.5 626.35" fill="#f522ba" fill-rule="evenodd" stroke="none"/>
+  </g>
+</svg>

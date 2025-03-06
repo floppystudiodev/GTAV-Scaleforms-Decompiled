@@ -1,0 +1,13 @@
+1;myroomonline_image_logo
+2;myroomonline_image_adverts
+4;BOUNDING_BOX
+24;button_baby
+28;button_life
+32;button_prop
+34;CONTENT
+37;button_TEXT_center-aligned
+38;__Packages.com.rockstargames.ui.core.BaseWebsite
+39;__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT
+40;__Packages.com.rockstargames.gtav.web.buttons.WebButton
+41;__Packages.com.rockstargames.gtav.web.buttons.WebButtonWWW
+42;__Packages.com.rockstargames.gtav.constants.WebBrowserButtonLUT

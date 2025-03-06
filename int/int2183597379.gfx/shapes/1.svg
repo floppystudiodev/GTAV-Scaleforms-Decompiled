@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="441.2px" width="235.65px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 93.35, 283.7)">
+    <path d="M36.5 -283.7 L36.5 -183.7 90.3 -183.7 90.3 97.9 142.3 97.9 142.3 157.5 63.25 157.5 26.25 150.75 3.25 157.5 -11.5 157.5 -47.0 150.25 -70.75 157.5 -93.35 157.5 -93.35 -283.7 36.5 -283.7" fill="#424242" fill-rule="evenodd" stroke="none"/>
+    <path d="M104.5 117.25 L104.5 136.75 101.75 136.75 101.75 150.0 -84.4 150.0 -84.4 -175.5 -80.7 -175.5 -80.7 -177.0 -12.35 -177.0 -12.35 -175.5 80.2 -175.5 80.2 105.25 101.75 105.25 101.75 117.25 104.5 117.25" fill="#949494" fill-rule="evenodd" stroke="none"/>
+    <path d="M104.5 117.25 L104.5 112.0 132.75 112.0 132.75 141.75 104.5 141.75 104.5 136.75 104.5 117.25" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M-80.7 -181.7 L-80.7 -183.0 -84.4 -183.0 -84.4 -274.7 27.7 -274.7 27.7 -183.0 -12.35 -183.0 -12.35 -181.7 -80.7 -181.7" fill="#949494" fill-rule="evenodd" stroke="none"/>
+    <path d="M16.0 -163.2 L16.0 -175.5 80.2 -175.5 80.2 -118.5 74.3 -118.5 74.3 -125.2 73.8 -125.2 73.8 -135.7 68.0 -135.7 68.0 -159.2 64.0 -163.2 16.0 -163.2" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M15.0 -175.5 L15.0 -167.9 8.75 -167.9 8.75 -175.5 15.0 -175.5" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M6.1 -168.65 L-9.65 -168.65 -9.65 -175.5 6.1 -175.5 6.1 -168.65" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-84.4 -211.5 L-77.5 -211.5 -77.5 -198.5 -84.4 -198.5 -84.4 -211.5" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M26.0 -189.25 L18.0 -189.25 18.0 -195.5 26.0 -195.5 26.0 -189.25" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M27.7 -243.0 L20.5 -243.0 20.5 -258.25 27.7 -258.25 27.7 -243.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M26.75 -259.0 L18.75 -259.0 18.75 -266.5 26.75 -266.5 26.75 -259.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M27.7 -266.75 L19.75 -266.75 19.75 -274.7 27.7 -274.7 27.7 -266.75" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-41.25 -274.7 L-41.25 -268.5 -58.0 -268.5 -58.0 -274.7 -41.25 -274.7" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-67.0 -267.75 L-67.0 -274.7 -59.5 -274.7 -59.5 -267.75 -67.0 -267.75" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-68.5 -268.0 L-84.4 -268.0 -84.4 -274.7 -68.5 -274.7 -68.5 -268.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-84.4 -257.5 L-76.5 -257.5 -76.5 -251.75 -84.4 -251.75 -84.4 -257.5" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M25.0 -228.0 L27.7 -228.0 27.7 -216.5 25.0 -216.5 25.0 -228.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-37.75 -240.5 L21.5 -240.5 21.5 -217.75 -37.75 -217.75 -37.75 -240.5" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-4.25 -213.5 L-12.0 -213.5 -12.0 -219.25 -4.25 -219.25 -4.25 -213.5" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-5.5 -239.75 L-12.0 -239.75 -12.0 -245.0 -5.5 -245.0 -5.5 -239.75" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-16.15 -268.3 L-16.65 -273.4 -11.15 -273.95 -10.65 -268.8 -16.15 -268.3" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M3.5 -270.0 L-9.75 -270.0 -9.75 -274.7 3.5 -274.7 3.5 -270.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-26.75 -271.0 L-37.75 -271.0 -37.75 -274.7 -26.75 -274.7 -26.75 -271.0" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-16.75 -266.1 L-22.2 -265.4 -23.2 -273.15 -17.6 -273.95 -16.75 -266.1" fill="#6f6f6f" fill-rule="evenodd" stroke="none"/>
+    <path d="M-70.75 150.0 L-11.5 150.0 -11.5 157.5 -70.75 157.5 -70.75 150.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+    <path d="M3.25 150.0 L63.25 150.0 63.25 157.5 3.25 157.5 3.25 150.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+  </g>
+</svg>

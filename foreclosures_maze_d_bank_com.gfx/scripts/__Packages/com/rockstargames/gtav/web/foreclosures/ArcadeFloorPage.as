@@ -1,0 +1,118 @@
+class com.rockstargames.gtav.web.foreclosures.ArcadeFloorPage extends com.rockstargames.gtav.web.foreclosures.Page
+{
+   var website;
+   var prevPageName;
+   var nextPageName;
+   var summaryPageName;
+   var progressPanel;
+   var slideshow;
+   var view;
+   static var TXD = "FORECLOSURES_ARC";
+   static var NUM_FLOOR_OPTIONS = 9;
+   function ArcadeFloorPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
+   {
+      super(website,viewContainer,"arcadeFloorPage",pageName,isFirstPage,progressPanel,header);
+      this.init();
+   }
+   function init()
+   {
+      if(this.website.arcadeMural == -1)
+      {
+         this.website.arcadeMural = 0;
+      }
+      if(this.website.arcadeStyle == -1)
+      {
+         this.website.arcadeStyle = 0;
+      }
+      if(this.website.arcadeFloor == -1)
+      {
+         this.website.arcadeFloor = 0;
+      }
+      var _loc2_ = this.website.getSelectedArcade();
+      this.prevPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.ARCADE_MURAL_PAGE.name;
+      this.nextPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.ARCADE_NEONS_PAGE.name;
+      this.summaryPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.ARCADE_SUMMARY_PAGE.name;
+      this.progressPanel.show();
+      this.progressPanel.initArcadeProgress(3);
+      this.initSlideshow();
+      this.initOptionButtons();
+      this.updateSelectedItem(false);
+      this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
+   }
+   function initSlideshow()
+   {
+      this.slideshow = new com.rockstargames.gtav.web.foreclosures.Slideshow(this.website.imageManager,this.view.slideshow);
+   }
+   function initOptionButtons()
+   {
+      var _loc4_ = undefined;
+      var _loc5_ = undefined;
+      if(this.website.arcadeStyle != 2)
+      {
+         _loc4_ = 1;
+         _loc5_ = 2;
+      }
+      else
+      {
+         _loc4_ = 2;
+         _loc5_ = 1;
+      }
+      var _loc3_ = 0;
+      while(_loc3_ < com.rockstargames.gtav.web.foreclosures.ArcadeFloorPage.NUM_FLOOR_OPTIONS)
+      {
+         var _loc2_ = this.view.optionButtons["optionButton_" + _loc3_];
+         _loc2_.swatch.gotoAndStop(_loc4_);
+         _loc2_.selected._visible = false;
+         this.website.dataTextScope.push(_loc2_.btnTxt);
+         _loc4_ += _loc5_;
+         _loc5_ = 1;
+         _loc3_ = _loc3_ + 1;
+      }
+      this.view.optionButtons._y = this.view.description._y + this.view.description.textHeight + 20;
+   }
+   function handleClick(type, id)
+   {
+      switch(type)
+      {
+         case "optionButton":
+            var _loc2_ = parseInt(id);
+            var _loc3_ = _loc2_ != this.website.arcadeFloor;
+            this.website.arcadeFloor = _loc2_;
+            this.updateSelectedItem(_loc3_);
+            break;
+         case "purchaseButton":
+            this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+      }
+   }
+   function updateSelectedItem(selectionHasChanged)
+   {
+      var _loc2_ = 0;
+      while(_loc2_ < com.rockstargames.gtav.web.foreclosures.ArcadeFloorPage.NUM_FLOOR_OPTIONS)
+      {
+         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_.selected._visible = _loc2_ == this.website.arcadeFloor;
+         _loc2_ = _loc2_ + 1;
+      }
+      var _loc4_ = "floor_" + (this.website.arcadeFloor + 1);
+      if(this.website.arcadeFloor == 0)
+      {
+         _loc4_ += this.website.arcadeStyle == 2 ? "_2" : "_1";
+      }
+      this.slideshow.show([com.rockstargames.gtav.web.foreclosures.ArcadeFloorPage.TXD],[_loc4_]);
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,"FCARCADE_FLR_" + (this.website.arcadeFloor + 1),false);
+      this.progressPanel.updateArcadeCosts();
+   }
+   function handleLB()
+   {
+      this.website.browser.GO_TO_WEBPAGE(this.prevPageName);
+   }
+   function handleRB()
+   {
+      this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
+   }
+   function dispose()
+   {
+      this.slideshow.dispose();
+      super.dispose();
+   }
+}

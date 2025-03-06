@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="768.15px" width="620.3px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, -29.05, -151.95)">
+    <pattern ffdec:smoothed="false" height="55" id="PatternID_79_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 106.0, 151.95)" patternUnits="userSpaceOnUse" viewBox="0 0 189 55" width="189">
+      <image height="55" width="189" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAL0AAAA3CAYAAABZ/EuOAAAArElEQVR4Xu3SoQEAIADDsP3/NHhOoBEx1d3ZDpTsDfA705NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9OaYnx/TkmJ4c05NjenJMT47pyTE9ORfprOl7vNteZQAAAABJRU5ErkJggg=="/>
+    </pattern>
+    <path d="M295.0 206.95 L106.0 206.95 106.0 151.95 295.0 151.95 295.0 206.95" ffdec:fill-bitmapId="5" style="fill:url(#PatternID_79_1)"/>
+    <pattern ffdec:smoothed="false" height="181" id="PatternID_79_2" overflow="visible" patternTransform="matrix(0.85, 0.0, 0.0, 0.85, 123.05, 442.15)" patternUnits="userSpaceOnUse" viewBox="0 0 61 181" width="61">
+      <image height="181" width="61" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAC1CAYAAADsgfdcAAAA3klEQVR4Xu3PoQEAMBCEsNt/6a/vCkHE4Nhtp9kfBE0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK8jpB0JD8LrA+XsDAAAAAElFTkSuQmCC"/>
+    </pattern>
+    <path d="M174.9 442.15 L174.9 596.0 123.05 596.0 123.05 442.15 174.9 442.15" ffdec:fill-bitmapId="24" style="fill:url(#PatternID_79_2)"/>
+    <pattern ffdec:smoothed="false" height="181" id="PatternID_79_3" overflow="visible" patternTransform="matrix(0.85, 0.0, 0.0, 0.85, 29.05, 766.25)" patternUnits="userSpaceOnUse" viewBox="0 0 61 181" width="61">
+      <image height="181" width="61" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAC1CAYAAADsgfdcAAAA3klEQVR4Xu3PoQEAMBCEsNt/6a/vCkHE4Nhtp9kfBE0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK5pWNK1oWtG0omlF04qmFU0rmlY0rWha0bSiaUXTiqYVTSuaVjStaFrRtKJpRdOKphVNK8jpB0JD8LrA+XsDAAAAAElFTkSuQmCC"/>
+    </pattern>
+    <path d="M80.9 766.25 L80.9 920.1 29.05 920.1 29.05 766.25 80.9 766.25" ffdec:fill-bitmapId="23" style="fill:url(#PatternID_79_3)"/>
+    <pattern ffdec:smoothed="false" height="28" id="PatternID_79_4" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 66.55, 708.1)" patternUnits="userSpaceOnUse" viewBox="0 0 421 28" width="421">
+      <image height="28" width="421" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAaUAAAAcCAYAAADBYKCnAAAAhUlEQVR4Xu3VIQEAIADEwO9fGjwFmDhxZgW2sx0AKNgbAOAXUwIgw5QAyDAlADJMCYAMUwIgw5QAyDAlADJMCYAMUwIgw5QAyDAlADJMCYAMUwIgw5QAyDAlADJMCYAMUwIgw5QAyDAlADJMCYAMUwIgw5QAyDAlADJMCYAMUwIgw5QAyLhm98E+nQlcNwAAAABJRU5ErkJggg=="/>
+    </pattern>
+    <path d="M66.55 708.1 L487.55 708.1 487.55 736.1 66.55 736.1 66.55 708.1" ffdec:fill-bitmapId="8" style="fill:url(#PatternID_79_4)"/>
+    <pattern ffdec:smoothed="false" height="48" id="PatternID_79_5" overflow="visible" patternTransform="matrix(0.772, -0.0405, 0.0523, 0.9986, 102.6, 408.4)" patternUnits="userSpaceOnUse" viewBox="0 0 705 48" width="705">
+      <image height="48" width="705" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAsEAAAAwCAYAAADw4KfhAAABBklEQVR4Xu3WMQEAIADDsPk3DT8SaI48VdCd7QAAQMneAAAAvzPBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAgxwQDAJBjggEAyDHBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAgxwQDAJBjggEAyDHBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAgxwQDAJBjggEAyDHBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAgxwQDAJBjggEAyDHBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAgxwQDAJBjggEAyDHBAADkmGAAAHJMMAAAOSYYAIAcEwwAQI4JBgAg5wLiP2cKcKRxbgAAAABJRU5ErkJggg=="/>
+    </pattern>
+    <path d="M102.6 408.4 L646.85 379.85 649.35 427.8 105.1 456.35 102.6 408.4" ffdec:fill-bitmapId="16" style="fill:url(#PatternID_79_5)"/>
+  </g>
+</svg>

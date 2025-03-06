@@ -1,0 +1,13 @@
+1;minotaur_finance_texture_2
+2;minotaur_finance_texture_1
+4;BOUNDING_BOX
+16;CONTENT
+19;button_TEXT_center-aligned
+24;button_prop
+27;button_life
+30;button_baby
+31;__Packages.com.rockstargames.ui.core.BaseWebsite
+32;__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT
+33;__Packages.com.rockstargames.gtav.web.buttons.WebButton
+34;__Packages.com.rockstargames.gtav.web.buttons.WebButtonWWW
+35;__Packages.com.rockstargames.gtav.constants.WebBrowserButtonLUT

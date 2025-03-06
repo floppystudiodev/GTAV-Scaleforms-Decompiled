@@ -1,0 +1,13 @@
+15;MASTER_AWARDS_SINGLE_LINE
+20;MASTER_AWARDS_DOBULE_LINE
+21;CONTENT
+23;BOUNDING_BOX
+33;Awards_Ani_Freemode
+34;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
+35;__Packages.com.rockstargames.ui.core.BaseScreenLayout
+36;__Packages.com.rockstargames.ui.utils.DisplayConfig
+37;__Packages.com.rockstargames.ui.game.GameInterface
+38;__Packages.com.rockstargames.gtav.Multiplayer.MP_AWARD_BASE
+39;__Packages.com.rockstargames.ui.utils.Colour
+40;__Packages.com.rockstargames.ui.utils.HudColour
+41;__Packages.com.rockstargames.gtav.Multiplayer.MP_AWARD_FREEMODE

@@ -1,0 +1,10 @@
+1;HandstyleHeist_Tag
+6;playerScore
+8;BOUNDING_BOX
+12;crewTagDarts
+21;CONTENT
+22;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
+23;__Packages.com.rockstargames.gtav.minigames.darts.DARTS_SCOREBOARD_BIKER
+24;__Packages.com.rockstargames.ui.utils.Localisation
+25;__Packages.com.rockstargames.ui.game.GameInterface
+26;__Packages.com.rockstargames.ui.utils.FitToTextfield

@@ -1,0 +1,1 @@
+Object.registerClass("playerComparisonCard",com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_PLAYER_COMPARISON_CARD);

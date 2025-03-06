@@ -1,0 +1,11 @@
+1;Glint
+2;Glare
+15;Header
+16;CONTENT
+17;BOUNDING_BOX
+18;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
+19;__Packages.com.rockstargames.ui.core.BaseScreenLayout
+20;__Packages.com.rockstargames.ui.utils.DisplayConfig
+21;__Packages.com.rockstargames.ui.game.GameInterface
+22;__Packages.com.rockstargames.gtav.Multiplayer.MP_MENU_GLARE
+23;__Packages.com.rockstargames.ui.tweenStar.easing.Quad
