@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaleforms Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adding a monospaced font for the code -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>SCALEFORMS</h3>
+            </div>
+
+            <!-- Search bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search scaleforms..." class="search-input">
+            </div>
+
+            <!-- Separate HOME button -->
+            <div id="home-button" class="home-button">
+                HOME
+            </div>
+
+            <div class="sidebar-content" id="scaleform-list">
+                <!-- Scaleform items will be added here dynamically -->
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div id="scaleform-details">
+                <!-- Scaleform details will be added here dynamically -->
+                <div class="loading">Select a scaleform from the menu</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
