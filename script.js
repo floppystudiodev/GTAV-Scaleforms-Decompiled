@@ -13,7 +13,7 @@ async function loadScaleforms() {
             isHome: true,
             content: {
                 title: "DECOMPILED SCALEFORMS",
-                lastUpdated: "07-03-2025",
+                lastUpdated: "30-09-2025",
                 description: [
                     "This WIKI format is based from: https://vespura.com/fivem/scaleform/",
                     "THIS ONE ITS JUST UPDATED",
