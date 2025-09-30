@@ -1,5 +1,5 @@
 {
-    "aircraft_dials": {
+    "AIRCRAFT_DIALS": {
         "file": "AIRCRAFT_DIALS",
         "functions": [
             {
@@ -67,7 +67,7 @@
             }
         ]
     },
-    "app_job_list": {
+    "APP_JOB_LIST": {
         "file": "APP_JOB_LIST",
         "functions": [
             {
@@ -104,7 +104,7 @@
             }
         ]
     },
-    "app_mission_stats_view": {
+    "APP_MISSION_STATS_VIEW": {
         "file": "APP_MISSION_STATS_VIEW",
         "functions": [
             {
@@ -131,7 +131,7 @@
             }
         ]
     },
-    "app_numberpad": {
+    "APP_NUMBERPAD": {
         "file": "APP_NUMBERPAD",
         "functions": [
             {
@@ -179,7 +179,7 @@
             }
         ]
     },
-    "app_securoserv_hacking": {
+    "APP_SECUROSERV_HACKING": {
         "file": "APP_SECUROSERV_HACKING",
         "functions": [
             {
@@ -247,7 +247,7 @@
             }
         ]
     },
-    "app_todo_list": {
+    "APP_TODO_LIST": {
         "file": "APP_TODO_LIST",
         "functions": [
             {
@@ -277,7 +277,7 @@
             }
         ]
     },
-    "app_todo_view": {
+    "APP_TODO_VIEW": {
         "file": "APP_TODO_VIEW",
         "functions": [
             {
@@ -304,7 +304,7 @@
             }
         ]
     },
-    "app_trackify": {
+    "APP_TRACKIFY": {
         "file": "APP_TRACKIFY",
         "functions": [
             {
@@ -428,7 +428,7 @@
             }
         ]
     },
-    "arcade_business_hub": {
+    "ARCADE_BUSINESS_HUB": {
         "file": "ARCADE_BUSINESS_HUB",
         "functions": [
             {
@@ -616,7 +616,7 @@
             }
         ]
     },
-    "arcade_management": {
+    "ARCADE_MANAGEMENT": {
         "file": "ARCADE_MANAGEMENT",
         "functions": [
             {
@@ -839,7 +839,7 @@
             }
         ]
     },
-    "arena_career_wall": {
+    "ARENA_CAREER_WALL": {
         "file": "ARENA_CAREER_WALL",
         "functions": [
             {
@@ -964,7 +964,7 @@
             }
         ]
     },
-    "arena_gun_cam_apocalypse": {
+    "ARENA_GUN_CAM_APOCALYPSE": {
         "file": "ARENA_GUN_CAM",
         "functions": [
             {
@@ -999,7 +999,7 @@
             }
         ]
     },
-    "arena_gun_cam_consumer": {
+    "ARENA_GUN_CAM_CONSUMER": {
         "file": "ARENA_GUN_CAM",
         "functions": [
             {
@@ -1034,7 +1034,7 @@
             }
         ]
     },
-    "arena_gun_cam_scifi": {
+    "ARENA_GUN_CAM_SCIFI": {
         "file": "ARENA_GUN_CAM",
         "functions": [
             {
@@ -1069,7 +1069,7 @@
             }
         ]
     },
-    "arm1_connected_baby": {
+    "ARM1_CONNECTED_BABY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1090,7 +1090,7 @@
             }
         ]
     },
-    "arm3_connected_lara": {
+    "ARM3_CONNECTED_LARA": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1111,7 +1111,7 @@
             }
         ]
     },
-    "atm": {
+    "ATM": {
         "file": "ATM",
         "functions": [
             {
@@ -1274,7 +1274,7 @@
             }
         ]
     },
-    "auto_shop_board": {
+    "AUTO_SHOP_BOARD": {
         "file": "AUTO_SHOP_BOARD",
         "functions": [
             {
@@ -1442,7 +1442,7 @@
             }
         ]
     },
-    "auto_shop_crew_name": {
+    "AUTO_SHOP_CREW_NAME": {
         "file": "AUTO_SHOP_CREW_NAME",
         "functions": [
             {
@@ -1469,7 +1469,7 @@
             }
         ]
     },
-    "avenger_operations_terminal": {
+    "AVENGER_OPERATIONS_TERMINAL": {
         "file": "AVENGER_OPERATIONS_TERMINAL",
         "functions": [
             {
@@ -1631,7 +1631,7 @@
             }
         ]
     },
-    "axe_of_fury": {
+    "AXE_OF_FURY": {
         "file": "AXE_OF_FURY",
         "functions": [
             {
@@ -1715,7 +1715,7 @@
             }
         ]
     },
-    "badger_blank_home": {
+    "BADGER_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1736,7 +1736,7 @@
             }
         ]
     },
-    "badger_blank_inprogress": {
+    "BADGER_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1757,7 +1757,7 @@
             }
         ]
     },
-    "badger_blank_lamar": {
+    "BADGER_BLANK_LAMAR": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1778,7 +1778,7 @@
             }
         ]
     },
-    "badger_blank_lester": {
+    "BADGER_BLANK_LESTER": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1799,7 +1799,7 @@
             }
         ]
     },
-    "badger_blank_michael": {
+    "BADGER_BLANK_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1820,7 +1820,7 @@
             }
         ]
     },
-    "badger_dialing_michael": {
+    "BADGER_DIALING_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -1841,7 +1841,7 @@
             }
         ]
     },
-    "bank_job_login": {
+    "BANK_JOB_LOGIN": {
         "file": "BANK_JOB_LOGIN",
         "functions": [
             {
@@ -1856,7 +1856,7 @@
             }
         ]
     },
-    "biker_businesses": {
+    "BIKER_BUSINESSES": {
         "file": "BIKER_BUSINESSES",
         "functions": [
             {
@@ -2097,7 +2097,7 @@
             }
         ]
     },
-    "biker_mission_wall": {
+    "BIKER_MISSION_WALL": {
         "file": "BIKER_MISSION_WALL",
         "functions": [
             {
@@ -2196,7 +2196,7 @@
             }
         ]
     },
-    "binoculars": {
+    "BINOCULARS": {
         "file": "BINOCULARS",
         "functions": [
             {
@@ -2215,7 +2215,7 @@
             }
         ]
     },
-    "blimp_text": {
+    "BLIMP_TEXT": {
         "file": "BLIMP_TEXT",
         "functions": [
             {
@@ -2255,7 +2255,7 @@
             }
         ]
     },
-    "bomb_countdown": {
+    "BOMB_COUNTDOWN": {
         "file": "BOMB_COUNTDOWN",
         "functions": [
             {
@@ -2298,7 +2298,7 @@
             }
         ]
     },
-    "bounty_computer": {
+    "BOUNTY_COMPUTER": {
         "file": "BOUNTY_COMPUTER",
         "functions": [
             {
@@ -2467,7 +2467,7 @@
             }
         ]
     },
-    "breaking_news": {
+    "BREAKING_NEWS": {
         "file": "BREAKING_NEWS",
         "functions": [
             {
@@ -2541,7 +2541,7 @@
             }
         ]
     },
-    "busy_spinner": {
+    "BUSY_SPINNER": {
         "file": "INSTRUCTIONAL_BUTTONS",
         "functions": [
             {
@@ -2824,7 +2824,7 @@
             }
         ]
     },
-    "calibration": {
+    "CALIBRATION": {
         "file": "CALIBRATION",
         "functions": [
             {
@@ -2911,7 +2911,7 @@
             }
         ]
     },
-    "camera_gallery": {
+    "CAMERA_GALLERY": {
         "file": "CAMERA_GALLERY",
         "functions": [
             {
@@ -2985,7 +2985,7 @@
             }
         ]
     },
-    "camera_shutter": {
+    "CAMERA_SHUTTER": {
         "file": "CAMERA_SHUTTER",
         "functions": [
             {
@@ -3014,7 +3014,7 @@
             }
         ]
     },
-    "casino_heist_board_finale": {
+    "CASINO_HEIST_BOARD_FINALE": {
         "file": "CASINO_HEIST_BOARD_FINALE",
         "functions": [
             {
@@ -3266,7 +3266,7 @@
             }
         ]
     },
-    "casino_heist_board_prep": {
+    "CASINO_HEIST_BOARD_PREP": {
         "file": "CASINO_HEIST_BOARD_PREP",
         "functions": [
             {
@@ -3543,7 +3543,7 @@
             }
         ]
     },
-    "casino_heist_board_setup": {
+    "CASINO_HEIST_BOARD_SETUP": {
         "file": "CASINO_HEIST_BOARD_SETUP",
         "functions": [
             {
@@ -3770,7 +3770,7 @@
             }
         ]
     },
-    "cellphone_alert_popup": {
+    "CELLPHONE_ALERT_POPUP": {
         "file": "CELLPHONE_ALERT_POPUP",
         "functions": [
             {
@@ -3798,7 +3798,7 @@
             }
         ]
     },
-    "cellphone_badger": {
+    "CELLPHONE_BADGER": {
         "file": "CELLPHONE_BADGER",
         "functions": [
             {
@@ -4034,7 +4034,7 @@
             }
         ]
     },
-    "cellphone_cutscene": {
+    "CELLPHONE_CUTSCENE": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -4055,7 +4055,7 @@
             }
         ]
     },
-    "cellphone_facade": {
+    "CELLPHONE_FACADE": {
         "file": "CELLPHONE_FACADE",
         "functions": [
             {
@@ -4277,7 +4277,7 @@
             }
         ]
     },
-    "cellphone_ifruit": {
+    "CELLPHONE_IFRUIT": {
         "file": "CELLPHONE_IFRUIT",
         "functions": [
             {
@@ -4520,7 +4520,7 @@
             }
         ]
     },
-    "cellphone_prologue": {
+    "CELLPHONE_PROLOGUE": {
         "file": "CELLPHONE_PROLOGUE",
         "functions": [
             {
@@ -4694,7 +4694,7 @@
             }
         ]
     },
-    "clubhouse_name": {
+    "CLUBHOUSE_NAME": {
         "file": "CLUBHOUSE_NAME",
         "functions": [
             {
@@ -4717,7 +4717,7 @@
             }
         ]
     },
-    "colour_switcher_01": {
+    "COLOUR_SWITCHER_01": {
         "file": "COLOUR_SWITCHER",
         "functions": [
             {
@@ -4763,7 +4763,7 @@
             }
         ]
     },
-    "colour_switcher_02": {
+    "COLOUR_SWITCHER_02": {
         "file": "COLOUR_SWITCHER",
         "functions": [
             {
@@ -4809,7 +4809,7 @@
             }
         ]
     },
-    "controller_test": {
+    "CONTROLLER_TEST": {
         "file": "CONTROLLER_TEST",
         "functions": [
             {
@@ -4919,7 +4919,7 @@
             }
         ]
     },
-    "countdown": {
+    "COUNTDOWN": {
         "file": "COUNTDOWN",
         "functions": [
             {
@@ -4997,7 +4997,7 @@
             }
         ]
     },
-    "covert_ops": {
+    "COVERT_OPS": {
         "file": "COVERT_OPS",
         "functions": [
             {
@@ -5151,7 +5151,7 @@
             }
         ]
     },
-    "custom_warning_screen": {
+    "CUSTOM_WARNING_SCREEN": {
         "file": "CUSTOM_WARNING_SCREEN",
         "functions": [
             {
@@ -5184,7 +5184,7 @@
             }
         ]
     },
-    "daily_vehicle_checklist": {
+    "DAILY_VEHICLE_CHECKLIST": {
         "file": "DAILY_VEHICLE_CHECKLIST",
         "functions": [
             {
@@ -5225,7 +5225,7 @@
             }
         ]
     },
-    "dancer": {
+    "DANCER": {
         "file": "DANCER",
         "functions": [
             {
@@ -5344,7 +5344,7 @@
             }
         ]
     },
-    "darnell_inc_1": {
+    "DARNELL_INC_1": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -5365,7 +5365,7 @@
             }
         ]
     },
-    "darts_scoreboard": {
+    "DARTS_SCOREBOARD": {
         "file": "DARTS_SCOREBOARD",
         "functions": [
             {
@@ -5437,7 +5437,7 @@
             }
         ]
     },
-    "darts_scoreboard_biker": {
+    "DARTS_SCOREBOARD_BIKER": {
         "file": "DARTS_SCOREBOARD_BIKER",
         "functions": [
             {
@@ -5509,7 +5509,7 @@
             }
         ]
     },
-    "dashboard": {
+    "DASHBOARD": {
         "file": "DASHBOARD",
         "functions": [
             {
@@ -5607,7 +5607,7 @@
             }
         ]
     },
-    "desktop_pc": {
+    "DESKTOP_PC": {
         "file": "DESKTOP_PC",
         "functions": [
             {
@@ -5798,7 +5798,7 @@
             }
         ]
     },
-    "dials_lazer": {
+    "DIALS_LAZER": {
         "file": "AIRCRAFT_DIALS",
         "functions": [
             {
@@ -5866,7 +5866,7 @@
             }
         ]
     },
-    "dials_lazer_vintage": {
+    "DIALS_LAZER_VINTAGE": {
         "file": "AIRCRAFT_DIALS",
         "functions": [
             {
@@ -5934,7 +5934,7 @@
             }
         ]
     },
-    "digiscanner": {
+    "DIGISCANNER": {
         "file": "DIGISCANNER",
         "functions": [
             {
@@ -5977,7 +5977,7 @@
             }
         ]
     },
-    "digital_camera": {
+    "DIGITAL_CAMERA": {
         "file": "DIGITAL_CAMERA",
         "functions": [
             {
@@ -6069,7 +6069,7 @@
             }
         ]
     },
-    "digital_safe_display": {
+    "DIGITAL_SAFE_DISPLAY": {
         "file": "DIGITAL_SAFE_DISPLAY",
         "functions": [
             {
@@ -6139,7 +6139,7 @@
             }
         ]
     },
-    "disruption_logistics": {
+    "DISRUPTION_LOGISTICS": {
         "file": "DISRUPTION_LOGISTICS",
         "functions": [
             {
@@ -6381,7 +6381,7 @@
             }
         ]
     },
-    "dlc_arena_int2": {
+    "DLC_ARENA_INT2": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -6402,7 +6402,7 @@
             }
         ]
     },
-    "dlc_sol": {
+    "DLC_SOL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -6423,7 +6423,7 @@
             }
         ]
     },
-    "document_tablet43": {
+    "DOCUMENT_TABLET43": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -6444,7 +6444,7 @@
             }
         ]
     },
-    "dont_cross_the_line": {
+    "DONT_CROSS_THE_LINE": {
         "file": "DONT_CROSS_THE_LINE",
         "functions": [
             {
@@ -6615,7 +6615,7 @@
             }
         ]
     },
-    "drag_race": {
+    "DRAG_RACE": {
         "file": "DRAG_RACE",
         "functions": [
             {
@@ -6754,7 +6754,7 @@
             }
         ]
     },
-    "dre1_badger_lj": {
+    "DRE1_BADGER_LJ": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -6775,7 +6775,7 @@
             }
         ]
     },
-    "drilling": {
+    "DRILLING": {
         "file": "DRILLING",
         "functions": [
             {
@@ -6814,7 +6814,7 @@
             }
         ]
     },
-    "drone_cam": {
+    "DRONE_CAM": {
         "file": "DRONE_CAM",
         "functions": [
             {
@@ -7075,7 +7075,7 @@
             }
         ]
     },
-    "ecg_monitor": {
+    "ECG_MONITOR": {
         "file": "ECG_MONITOR",
         "functions": [
             {
@@ -7128,7 +7128,7 @@
             }
         ]
     },
-    "epsilon_tract": {
+    "EPSILON_TRACT": {
         "file": "LETTER_SCRAPS",
         "functions": [
             {
@@ -7161,7 +7161,7 @@
             }
         ]
     },
-    "exl2_blank_jimmy": {
+    "EXL2_BLANK_JIMMY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7182,7 +7182,7 @@
             }
         ]
     },
-    "exl2_connected_jimmy": {
+    "EXL2_CONNECTED_JIMMY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7203,7 +7203,7 @@
             }
         ]
     },
-    "facade_blank_home": {
+    "FACADE_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7224,7 +7224,7 @@
             }
         ]
     },
-    "facade_blank_inprogress": {
+    "FACADE_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7245,7 +7245,7 @@
             }
         ]
     },
-    "facade_blank_michael": {
+    "FACADE_BLANK_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7266,7 +7266,7 @@
             }
         ]
     },
-    "facade_computer_desktopwide": {
+    "FACADE_COMPUTER_DESKTOPWIDE": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7287,7 +7287,7 @@
             }
         ]
     },
-    "fam2_playmusic": {
+    "FAM2_PLAYMUSIC": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7308,7 +7308,7 @@
             }
         ]
     },
-    "fam3_01_ncallingmartin": {
+    "FAM3_01_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7329,7 +7329,7 @@
             }
         ]
     },
-    "fam3_02_ncallingmartin": {
+    "FAM3_02_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7350,7 +7350,7 @@
             }
         ]
     },
-    "fam3_03_ncallingmartin": {
+    "FAM3_03_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7371,7 +7371,7 @@
             }
         ]
     },
-    "fam3_04_ncallingmartin": {
+    "FAM3_04_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7392,7 +7392,7 @@
             }
         ]
     },
-    "fam3_05_ncallingmartin": {
+    "FAM3_05_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7413,7 +7413,7 @@
             }
         ]
     },
-    "fam3_all_ncallingmartin": {
+    "FAM3_ALL_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7434,7 +7434,7 @@
             }
         ]
     },
-    "fib3_daven": {
+    "FIB3_DAVEN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7455,7 +7455,7 @@
             }
         ]
     },
-    "fib3_steveh": {
+    "FIB3_STEVEH": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7476,7 +7476,7 @@
             }
         ]
     },
-    "fib4_eyefindmap": {
+    "FIB4_EYEFINDMAP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7497,7 +7497,7 @@
             }
         ]
     },
-    "fib5_lestertext": {
+    "FIB5_LESTERTEXT": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7518,7 +7518,7 @@
             }
         ]
     },
-    "finb_connected_amanda": {
+    "FINB_CONNECTED_AMANDA": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7539,7 +7539,7 @@
             }
         ]
     },
-    "finc1_eyefind": {
+    "FINC1_EYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7560,7 +7560,7 @@
             }
         ]
     },
-    "finc1_merrysite": {
+    "FINC1_MERRYSITE": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7581,7 +7581,7 @@
             }
         ]
     },
-    "finmcs2drephone": {
+    "FINMCS2DREPHONE": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7602,7 +7602,7 @@
             }
         ]
     },
-    "fix_agyint3_snap": {
+    "FIX_AGYINT3_SNAP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7623,7 +7623,7 @@
             }
         ]
     },
-    "fix_wrms_food": {
+    "FIX_WRMS_FOOD": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -7644,7 +7644,7 @@
             }
         ]
     },
-    "fixer_app": {
+    "FIXER_APP": {
         "file": "FIXER_APP",
         "functions": [
             {
@@ -7954,27 +7954,27 @@
             }
         ]
     },
-    "font_lib_chinese_pc": {
+    "FONT_LIB_CHINESE_PC": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "font_lib_chinesesimp_pc": {
+    "FONT_LIB_CHINESESIMP_PC": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "font_lib_efigs_pc": {
+    "FONT_LIB_EFIGS_PC": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "font_lib_japanese_pc": {
+    "FONT_LIB_JAPANESE_PC": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "font_lib_korean_pc": {
+    "FONT_LIB_KOREAN_PC": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "foreclosures_maze_d_bank_com": {
+    "FORECLOSURES_MAZE_D_BANK_COM": {
         "file": "FORECLOSURES_MAZE_D_BANK_COM",
         "functions": [
             {
@@ -8046,7 +8046,7 @@
             }
         ]
     },
-    "frontend_landing": {
+    "FRONTEND_LANDING": {
         "file": "FRONTEND_LANDING",
         "functions": [
             {
@@ -8178,7 +8178,7 @@
             }
         ]
     },
-    "game_stream": {
+    "GAME_STREAM": {
         "file": "GAME_STREAM",
         "functions": [
             {
@@ -8388,7 +8388,7 @@
             }
         ]
     },
-    "gamepad_calibration": {
+    "GAMEPAD_CALIBRATION": {
         "file": "GAMEPAD_CALIBRATION",
         "functions": [
             {
@@ -8445,7 +8445,7 @@
             }
         ]
     },
-    "generic_instructional_buttons": {
+    "GENERIC_INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
         "functions": [
             {
@@ -8728,7 +8728,7 @@
             }
         ]
     },
-    "golf": {
+    "GOLF": {
         "file": "GOLF",
         "functions": [
             {
@@ -8959,7 +8959,7 @@
             }
         ]
     },
-    "golf_courses": {
+    "GOLF_COURSES": {
         "file": "GOLF_COURSE",
         "functions": [
             {
@@ -8970,7 +8970,7 @@
             }
         ]
     },
-    "golf_floating_ui": {
+    "GOLF_FLOATING_UI": {
         "file": "GOLF_FLOATING_UI",
         "functions": [
             {
@@ -9042,7 +9042,7 @@
             }
         ]
     },
-    "grid_layout": {
+    "GRID_LAYOUT": {
         "file": "GRID_LAYOUT",
         "functions": [
             {
@@ -9077,7 +9077,7 @@
             }
         ]
     },
-    "gtav_online": {
+    "GTAV_ONLINE": {
         "file": "GTAV_ONLINE",
         "functions": [
             {
@@ -9262,7 +9262,7 @@
             }
         ]
     },
-    "hacker_truck_desktop": {
+    "HACKER_TRUCK_DESKTOP": {
         "file": "HACKER_TRUCK_DESKTOP",
         "functions": [
             {
@@ -9436,7 +9436,7 @@
             }
         ]
     },
-    "hacking_message": {
+    "HACKING_MESSAGE": {
         "file": "HACKING_MESSAGE",
         "functions": [
             {
@@ -9481,7 +9481,7 @@
             }
         ]
     },
-    "hacking_pc": {
+    "HACKING_PC": {
         "file": "HACKING_PC",
         "functions": [
             {
@@ -9808,7 +9808,7 @@
             }
         ]
     },
-    "hacking_terminal": {
+    "HACKING_TERMINAL": {
         "file": "HACKING_TERMINAL",
         "functions": [
             {
@@ -9866,7 +9866,7 @@
             }
         ]
     },
-    "hair_colour_card": {
+    "HAIR_COLOUR_CARD": {
         "file": "PAUSE_MENU_HAIR_COLOUR_LIST",
         "functions": [
             {
@@ -9947,7 +9947,7 @@
             }
         ]
     },
-    "hangar_cargo": {
+    "HANGAR_CARGO": {
         "file": "HANGAR_CARGO",
         "functions": [
             {
@@ -10138,7 +10138,7 @@
             }
         ]
     },
-    "heist2_celebration": {
+    "HEIST2_CELEBRATION": {
         "file": "HEIST2_CELEBRATION",
         "functions": [
             {
@@ -10357,7 +10357,7 @@
             }
         ]
     },
-    "heist2_celebration_bg": {
+    "HEIST2_CELEBRATION_BG": {
         "file": "HEIST2_CELEBRATION",
         "functions": [
             {
@@ -10576,7 +10576,7 @@
             }
         ]
     },
-    "heist2_celebration_fg": {
+    "HEIST2_CELEBRATION_FG": {
         "file": "HEIST2_CELEBRATION",
         "functions": [
             {
@@ -10795,7 +10795,7 @@
             }
         ]
     },
-    "heist_agency": {
+    "HEIST_AGENCY": {
         "file": "HEIST_AGENCY",
         "functions": [
             {
@@ -10882,7 +10882,7 @@
             }
         ]
     },
-    "heist_celebration": {
+    "HEIST_CELEBRATION": {
         "file": "HEIST_CELEBRATION",
         "functions": [
             {
@@ -11101,7 +11101,7 @@
             }
         ]
     },
-    "heist_celebration_bg": {
+    "HEIST_CELEBRATION_BG": {
         "file": "HEIST_CELEBRATION",
         "functions": [
             {
@@ -11320,7 +11320,7 @@
             }
         ]
     },
-    "heist_celebration_fg": {
+    "HEIST_CELEBRATION_FG": {
         "file": "HEIST_CELEBRATION",
         "functions": [
             {
@@ -11539,7 +11539,7 @@
             }
         ]
     },
-    "heist_docks": {
+    "HEIST_DOCKS": {
         "file": "HEIST_DOCKS",
         "functions": [
             {
@@ -11619,7 +11619,7 @@
             }
         ]
     },
-    "heist_endscreen": {
+    "HEIST_ENDSCREEN": {
         "file": "HEIST_ENDSCREEN",
         "functions": [
             {
@@ -11665,7 +11665,7 @@
             }
         ]
     },
-    "heist_finale": {
+    "HEIST_FINALE": {
         "file": "HEIST_FINALE",
         "functions": [
             {
@@ -11745,7 +11745,7 @@
             }
         ]
     },
-    "heist_jewellery": {
+    "HEIST_JEWELLERY": {
         "file": "HEIST_JEWELLERY",
         "functions": [
             {
@@ -11825,7 +11825,7 @@
             }
         ]
     },
-    "heist_mp": {
+    "HEIST_MP": {
         "file": "HEIST_MP",
         "functions": [
             {
@@ -12326,7 +12326,7 @@
             }
         ]
     },
-    "heist_paleto": {
+    "HEIST_PALETO": {
         "file": "HEIST_PALETO",
         "functions": [
             {
@@ -12406,7 +12406,7 @@
             }
         ]
     },
-    "heist_pre": {
+    "HEIST_PRE": {
         "file": "HEIST_PRE",
         "functions": [
             {
@@ -12421,7 +12421,7 @@
             }
         ]
     },
-    "heistmap_mp": {
+    "HEISTMAP_MP": {
         "file": "HEISTMAP_MP",
         "functions": [
             {
@@ -12704,7 +12704,7 @@
             }
         ]
     },
-    "heli_cam": {
+    "HELI_CAM": {
         "file": "HELI_CAM",
         "functions": [
             {
@@ -12771,7 +12771,7 @@
             }
         ]
     },
-    "horse_racing_console": {
+    "HORSE_RACING_CONSOLE": {
         "file": "HORSE_RACING_CONSOLE",
         "functions": [
             {
@@ -13003,7 +13003,7 @@
             }
         ]
     },
-    "horse_racing_wall": {
+    "HORSE_RACING_WALL": {
         "file": "HORSE_RACING_WALL",
         "functions": [
             {
@@ -13205,7 +13205,7 @@
             }
         ]
     },
-    "hs3f_dir_couple1": {
+    "HS3F_DIR_COUPLE1": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -13226,7 +13226,7 @@
             }
         ]
     },
-    "hs3f_dir_couple2": {
+    "HS3F_DIR_COUPLE2": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -13247,7 +13247,7 @@
             }
         ]
     },
-    "hs4_casint_elrubio": {
+    "HS4_CASINT_ELRUBIO": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -13268,7 +13268,7 @@
             }
         ]
     },
-    "hs4_casint_girl": {
+    "HS4_CASINT_GIRL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -13289,11 +13289,11 @@
             }
         ]
     },
-    "hud": {
+    "HUD": {
         "file": "HUD_AREA_VEHICLE_STREET_NAME",
         "functions": []
     },
-    "hud_area_name": {
+    "HUD_AREA_NAME": {
         "file": "HUD_AREA_NAME",
         "functions": [
             {
@@ -13336,7 +13336,7 @@
             }
         ]
     },
-    "hud_cash": {
+    "HUD_CASH": {
         "file": "HUD_CASH",
         "functions": [
             {
@@ -13405,7 +13405,7 @@
             }
         ]
     },
-    "hud_cash_change": {
+    "HUD_CASH_CHANGE": {
         "file": "HUD_CASH_CHANGE",
         "functions": [
             {
@@ -13448,7 +13448,7 @@
             }
         ]
     },
-    "hud_district_name": {
+    "HUD_DISTRICT_NAME": {
         "file": "HUD_DISTRICT_NAME",
         "functions": [
             {
@@ -13491,7 +13491,7 @@
             }
         ]
     },
-    "hud_drugs_purse_01": {
+    "HUD_DRUGS_PURSE_01": {
         "file": "HUD_DRUGS_PURSE",
         "functions": [
             {
@@ -13510,7 +13510,7 @@
             }
         ]
     },
-    "hud_drugs_purse_02": {
+    "HUD_DRUGS_PURSE_02": {
         "file": "HUD_DRUGS_PURSE",
         "functions": [
             {
@@ -13529,7 +13529,7 @@
             }
         ]
     },
-    "hud_drugs_purse_03": {
+    "HUD_DRUGS_PURSE_03": {
         "file": "HUD_DRUGS_PURSE",
         "functions": [
             {
@@ -13560,7 +13560,7 @@
             }
         ]
     },
-    "hud_drugs_purse_04": {
+    "HUD_DRUGS_PURSE_04": {
         "file": "HUD_DRUGS_PURSE",
         "functions": [
             {
@@ -13579,7 +13579,7 @@
             }
         ]
     },
-    "hud_mission_passed_message": {
+    "HUD_MISSION_PASSED_MESSAGE": {
         "file": "HUD_MISSION_PASSED_MESSAGE",
         "functions": [
             {
@@ -13616,7 +13616,7 @@
             }
         ]
     },
-    "hud_mp_cash": {
+    "HUD_MP_CASH": {
         "file": "HUD_MP_CASH",
         "functions": [
             {
@@ -13663,7 +13663,7 @@
             }
         ]
     },
-    "hud_mp_message": {
+    "HUD_MP_MESSAGE": {
         "file": "HUD_MP_MESSAGE",
         "functions": [
             {
@@ -13700,7 +13700,7 @@
             }
         ]
     },
-    "hud_multiplayer_chat": {
+    "HUD_MULTIPLAYER_CHAT": {
         "file": "HUD_MULTIPLAYER_CHAT",
         "functions": [
             {
@@ -13774,7 +13774,7 @@
             }
         ]
     },
-    "hud_player_switch_alert": {
+    "HUD_PLAYER_SWITCH_ALERT": {
         "file": "HUD_PLAYER_SWITCH_ALERT",
         "functions": [
             {
@@ -13843,7 +13843,7 @@
             }
         ]
     },
-    "hud_reticle": {
+    "HUD_RETICLE": {
         "file": "HUD_RETICLE",
         "functions": [
             {
@@ -14136,7 +14136,7 @@
             }
         ]
     },
-    "hud_saving": {
+    "HUD_SAVING": {
         "file": "HUD_SAVING",
         "functions": [
             {
@@ -14186,7 +14186,7 @@
             }
         ]
     },
-    "hud_street_name": {
+    "HUD_STREET_NAME": {
         "file": "HUD_STREET_NAME",
         "functions": [
             {
@@ -14229,7 +14229,7 @@
             }
         ]
     },
-    "hud_vehicle_name": {
+    "HUD_VEHICLE_NAME": {
         "file": "HUD_VEHICLE_NAME",
         "functions": [
             {
@@ -14272,7 +14272,7 @@
             }
         ]
     },
-    "hum_mcs1_desktopcopy": {
+    "HUM_MCS1_DESKTOPCOPY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14293,7 +14293,7 @@
             }
         ]
     },
-    "hum_mcs1_desktopcopyhold": {
+    "HUM_MCS1_DESKTOPCOPYHOLD": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14314,7 +14314,7 @@
             }
         ]
     },
-    "hum_pac_desktopbank": {
+    "HUM_PAC_DESKTOPBANK": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14335,7 +14335,7 @@
             }
         ]
     },
-    "iaa_hack": {
+    "IAA_HACK": {
         "file": "IAA_HACK",
         "functions": [
             {
@@ -14373,7 +14373,7 @@
             }
         ]
     },
-    "iaa_heist_board": {
+    "IAA_HEIST_BOARD": {
         "file": "IAA_HEIST_BOARD",
         "functions": [
             {
@@ -14685,7 +14685,7 @@
             }
         ]
     },
-    "ifruit_blank_email": {
+    "IFRUIT_BLANK_EMAIL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14706,7 +14706,7 @@
             }
         ]
     },
-    "ifruit_blank_franklin": {
+    "IFRUIT_BLANK_FRANKLIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14727,7 +14727,7 @@
             }
         ]
     },
-    "ifruit_blank_hao": {
+    "IFRUIT_BLANK_HAO": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14748,7 +14748,7 @@
             }
         ]
     },
-    "ifruit_blank_home": {
+    "IFRUIT_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14769,7 +14769,7 @@
             }
         ]
     },
-    "ifruit_blank_homehi": {
+    "IFRUIT_BLANK_HOMEHI": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14790,7 +14790,7 @@
             }
         ]
     },
-    "ifruit_blank_inprogress": {
+    "IFRUIT_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14811,7 +14811,7 @@
             }
         ]
     },
-    "ifruit_blank_jguns": {
+    "IFRUIT_BLANK_JGUNS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14832,7 +14832,7 @@
             }
         ]
     },
-    "ifruit_computer_desktopwide": {
+    "IFRUIT_COMPUTER_DESKTOPWIDE": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14853,7 +14853,7 @@
             }
         ]
     },
-    "ifruit_connected_franklin": {
+    "IFRUIT_CONNECTED_FRANKLIN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -14874,7 +14874,7 @@
             }
         ]
     },
-    "import_export_warehouse": {
+    "IMPORT_EXPORT_WAREHOUSE": {
         "file": "IMPORT_EXPORT_WAREHOUSE",
         "functions": [
             {
@@ -15051,7 +15051,7 @@
             }
         ]
     },
-    "instructional_buttons": {
+    "INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
         "functions": [
             {
@@ -15334,7 +15334,7 @@
             }
         ]
     },
-    "int": {
+    "INT": {
         "file": "INTERIORS",
         "functions": [
             {
@@ -15345,7 +15345,7 @@
             }
         ]
     },
-    "island_heist_board": {
+    "ISLAND_HEIST_BOARD": {
         "file": "ISLAND_HEIST_BOARD",
         "functions": [
             {
@@ -15644,7 +15644,7 @@
             }
         ]
     },
-    "jhpb_01_laptop": {
+    "JHPB_01_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15665,7 +15665,7 @@
             }
         ]
     },
-    "jhpb_02_laptop": {
+    "JHPB_02_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15686,7 +15686,7 @@
             }
         ]
     },
-    "jhpb_03_laptop": {
+    "JHPB_03_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15707,7 +15707,7 @@
             }
         ]
     },
-    "jos2_01_photogallery": {
+    "JOS2_01_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15728,7 +15728,7 @@
             }
         ]
     },
-    "jos2_02_photogallery": {
+    "JOS2_02_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15749,7 +15749,7 @@
             }
         ]
     },
-    "jos2_all_photogallery": {
+    "JOS2_ALL_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15770,7 +15770,7 @@
             }
         ]
     },
-    "landing_page": {
+    "LANDING_PAGE": {
         "file": "LANDING_PAGE",
         "functions": [
             {
@@ -15823,7 +15823,7 @@
             }
         ]
     },
-    "language_select_pc": {
+    "LANGUAGE_SELECT_PC": {
         "file": "LANGUAGE_SELECT",
         "functions": [
             {
@@ -15874,7 +15874,7 @@
             }
         ]
     },
-    "lester_hack_pc": {
+    "LESTER_HACK_PC": {
         "file": "LESTER_HACK_PC",
         "functions": [
             {
@@ -15897,7 +15897,7 @@
             }
         ]
     },
-    "letter_scraps": {
+    "LETTER_SCRAPS": {
         "file": "LETTER_SCRAPS",
         "functions": [
             {
@@ -15937,7 +15937,7 @@
             }
         ]
     },
-    "lifeinvader_tablet43": {
+    "LIFEINVADER_TABLET43": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -15958,7 +15958,7 @@
             }
         ]
     },
-    "loadingscreen_newgame": {
+    "LOADINGSCREEN_NEWGAME": {
         "file": "LOADINGSCREEN_NEWGAME",
         "functions": [
             {
@@ -16001,7 +16001,7 @@
             }
         ]
     },
-    "loadingscreen_startup": {
+    "LOADINGSCREEN_STARTUP": {
         "file": "LOADINGSCREEN_STARTUP",
         "functions": [
             {
@@ -16374,7 +16374,7 @@
             }
         ]
     },
-    "ls1_lester_eyefind": {
+    "LS1_LESTER_EYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16395,7 +16395,7 @@
             }
         ]
     },
-    "ls1_lester_preeyefind": {
+    "LS1_LESTER_PREEYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16416,7 +16416,7 @@
             }
         ]
     },
-    "ls1_lifeinvader_call": {
+    "LS1_LIFEINVADER_CALL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16437,7 +16437,7 @@
             }
         ]
     },
-    "ls1_lifeinvader_home": {
+    "LS1_LIFEINVADER_HOME": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16458,7 +16458,7 @@
             }
         ]
     },
-    "ls1_lifeinvader_updates": {
+    "LS1_LIFEINVADER_UPDATES": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16479,7 +16479,7 @@
             }
         ]
     },
-    "mar1_tablet_havier": {
+    "MAR1_TABLET_HAVIER": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16500,7 +16500,7 @@
             }
         ]
     },
-    "mar1_tablet_havierhori": {
+    "MAR1_TABLET_HAVIERHORI": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16521,7 +16521,7 @@
             }
         ]
     },
-    "mic3_lester": {
+    "MIC3_LESTER": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16542,7 +16542,7 @@
             }
         ]
     },
-    "mic4_breakingnews": {
+    "MIC4_BREAKINGNEWS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -16563,7 +16563,7 @@
             }
         ]
     },
-    "midsized_message": {
+    "MIDSIZED_MESSAGE": {
         "file": "MIDSIZED_MESSAGE",
         "functions": [
             {
@@ -16645,7 +16645,7 @@
             }
         ]
     },
-    "minimap": {
+    "MINIMAP": {
         "file": "MINIMAP",
         "functions": [
             {
@@ -17067,7 +17067,7 @@
             }
         ]
     },
-    "minimap_main_map": {
+    "MINIMAP_MAIN_MAP": {
         "file": "MINIMAP_MAIN_MAP",
         "functions": [
             {
@@ -17130,7 +17130,7 @@
             }
         ]
     },
-    "mission_complete": {
+    "MISSION_COMPLETE": {
         "file": "MISSION_COMPLETE",
         "functions": [
             {
@@ -17233,7 +17233,7 @@
             }
         ]
     },
-    "mission_quit": {
+    "MISSION_QUIT": {
         "file": "MISSION_QUIT",
         "functions": [
             {
@@ -17271,7 +17271,7 @@
             }
         ]
     },
-    "mission_target_complete": {
+    "MISSION_TARGET_COMPLETE": {
         "file": "MISSION_TARGET_COMPLETE",
         "functions": [
             {
@@ -17314,7 +17314,7 @@
             }
         ]
     },
-    "morgue_laptop": {
+    "MORGUE_LAPTOP": {
         "file": "MORGUE_LAPTOP",
         "functions": [
             {
@@ -17335,7 +17335,7 @@
             }
         ]
     },
-    "mouse_pointer": {
+    "MOUSE_POINTER": {
         "file": "MOUSE_POINTER",
         "functions": [
             {
@@ -17350,7 +17350,7 @@
             }
         ]
     },
-    "mp_award_freemode": {
+    "MP_AWARD_FREEMODE": {
         "file": "MP_AWARD_FREEMODE",
         "functions": [
             {
@@ -17401,7 +17401,7 @@
             }
         ]
     },
-    "mp_big_message_freemode": {
+    "MP_BIG_MESSAGE_FREEMODE": {
         "file": "MP_BIG_MESSAGE_FREEMODE",
         "functions": [
             {
@@ -17744,7 +17744,7 @@
             }
         ]
     },
-    "mp_bounty_board": {
+    "MP_BOUNTY_BOARD": {
         "file": "MP_BOUNTY_BOARD",
         "functions": [
             {
@@ -17782,7 +17782,7 @@
             }
         ]
     },
-    "mp_car_stats": {
+    "MP_CAR_STATS": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -17840,90 +17840,7 @@
             }
         ]
     },
-    "mp_car_stats_01": {
-        "file": "MP_CAR_STATS",
-        "functions": [
-            {
-                "name": "MP_CAR_STATS",
-                "args": []
-            },
-            {
-                "name": "INITIALISE",
-                "args": [
-                    "mc",
-                    "fileName"
-                ]
-            },
-            {
-                "name": "SET_VEHICLE_INFOR_AND_STATS",
-                "args": [
-                    "vehicleInfo",
-                    "vehicleDetails",
-                    "logoTXD",
-                    "logoTexture",
-                    "statStr1",
-                    "statStr2",
-                    "statStr3",
-                    "statStr4",
-                    "statVal1",
-                    "statVal2",
-                    "statVal3",
-                    "statVal4"
-                ]
-            },
-            {
-                "name": "SET_PLAYER_NAME",
-                "args": [
-                    "str"
-                ]
-            },
-            {
-                "name": "SET_CREW_NAME",
-                "args": [
-                    "str"
-                ]
-            },
-            {
-                "name": "setCrewTagPosition",
-                "args": []
-            },
-            {
-                "name": "setBars",
-                "args": [
-                    "barID",
-                    "percentage"
-                ]
-            },
-            {
-                "name": "TXD_HAS_LOADED",
-                "args": [
-                    "textureDict",
-                    "success"
-                ]
-            },
-            {
-                "name": "loadTexture",
-                "args": [
-                    "txd",
-                    "texture"
-                ]
-            },
-            {
-                "name": "debug",
-                "args": []
-            },
-            {
-                "name": "truncate",
-                "args": [
-                    "tf",
-                    "txt",
-                    "autoSize",
-                    "letterSpacing"
-                ]
-            }
-        ]
-    },
-    "mp_car_stats_02": {
+    "MP_CAR_STATS_01": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18006,7 +17923,7 @@
             }
         ]
     },
-    "mp_car_stats_03": {
+    "MP_CAR_STATS_02": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18089,7 +18006,7 @@
             }
         ]
     },
-    "mp_car_stats_04": {
+    "MP_CAR_STATS_03": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18172,7 +18089,7 @@
             }
         ]
     },
-    "mp_car_stats_05": {
+    "MP_CAR_STATS_04": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18255,7 +18172,7 @@
             }
         ]
     },
-    "mp_car_stats_06": {
+    "MP_CAR_STATS_05": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18338,7 +18255,7 @@
             }
         ]
     },
-    "mp_car_stats_07": {
+    "MP_CAR_STATS_06": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18421,7 +18338,7 @@
             }
         ]
     },
-    "mp_car_stats_08": {
+    "MP_CAR_STATS_07": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18504,7 +18421,7 @@
             }
         ]
     },
-    "mp_car_stats_09": {
+    "MP_CAR_STATS_08": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18587,7 +18504,7 @@
             }
         ]
     },
-    "mp_car_stats_10": {
+    "MP_CAR_STATS_09": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18670,7 +18587,7 @@
             }
         ]
     },
-    "mp_car_stats_11": {
+    "MP_CAR_STATS_10": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18753,7 +18670,7 @@
             }
         ]
     },
-    "mp_car_stats_12": {
+    "MP_CAR_STATS_11": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18836,7 +18753,7 @@
             }
         ]
     },
-    "mp_car_stats_13": {
+    "MP_CAR_STATS_12": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -18919,7 +18836,7 @@
             }
         ]
     },
-    "mp_car_stats_14": {
+    "MP_CAR_STATS_13": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19002,7 +18919,7 @@
             }
         ]
     },
-    "mp_car_stats_15": {
+    "MP_CAR_STATS_14": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19085,7 +19002,7 @@
             }
         ]
     },
-    "mp_car_stats_16": {
+    "MP_CAR_STATS_15": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19168,7 +19085,7 @@
             }
         ]
     },
-    "mp_car_stats_17": {
+    "MP_CAR_STATS_16": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19251,7 +19168,7 @@
             }
         ]
     },
-    "mp_car_stats_18": {
+    "MP_CAR_STATS_17": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19334,7 +19251,7 @@
             }
         ]
     },
-    "mp_car_stats_19": {
+    "MP_CAR_STATS_18": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19417,7 +19334,7 @@
             }
         ]
     },
-    "mp_car_stats_20": {
+    "MP_CAR_STATS_19": {
         "file": "MP_CAR_STATS",
         "functions": [
             {
@@ -19500,7 +19417,90 @@
             }
         ]
     },
-    "mp_celebration": {
+    "MP_CAR_STATS_20": {
+        "file": "MP_CAR_STATS",
+        "functions": [
+            {
+                "name": "MP_CAR_STATS",
+                "args": []
+            },
+            {
+                "name": "INITIALISE",
+                "args": [
+                    "mc",
+                    "fileName"
+                ]
+            },
+            {
+                "name": "SET_VEHICLE_INFOR_AND_STATS",
+                "args": [
+                    "vehicleInfo",
+                    "vehicleDetails",
+                    "logoTXD",
+                    "logoTexture",
+                    "statStr1",
+                    "statStr2",
+                    "statStr3",
+                    "statStr4",
+                    "statVal1",
+                    "statVal2",
+                    "statVal3",
+                    "statVal4"
+                ]
+            },
+            {
+                "name": "SET_PLAYER_NAME",
+                "args": [
+                    "str"
+                ]
+            },
+            {
+                "name": "SET_CREW_NAME",
+                "args": [
+                    "str"
+                ]
+            },
+            {
+                "name": "setCrewTagPosition",
+                "args": []
+            },
+            {
+                "name": "setBars",
+                "args": [
+                    "barID",
+                    "percentage"
+                ]
+            },
+            {
+                "name": "TXD_HAS_LOADED",
+                "args": [
+                    "textureDict",
+                    "success"
+                ]
+            },
+            {
+                "name": "loadTexture",
+                "args": [
+                    "txd",
+                    "texture"
+                ]
+            },
+            {
+                "name": "debug",
+                "args": []
+            },
+            {
+                "name": "truncate",
+                "args": [
+                    "tf",
+                    "txt",
+                    "autoSize",
+                    "letterSpacing"
+                ]
+            }
+        ]
+    },
+    "MP_CELEBRATION": {
         "file": "MP_CELEBRATION",
         "functions": [
             {
@@ -20212,7 +20212,7 @@
             }
         ]
     },
-    "mp_celebration_bg": {
+    "MP_CELEBRATION_BG": {
         "file": "MP_CELEBRATION",
         "functions": [
             {
@@ -20924,7 +20924,7 @@
             }
         ]
     },
-    "mp_celebration_fg": {
+    "MP_CELEBRATION_FG": {
         "file": "MP_CELEBRATION",
         "functions": [
             {
@@ -21636,7 +21636,7 @@
             }
         ]
     },
-    "mp_crew_tag": {
+    "MP_CREW_TAG": {
         "file": "MP_CREW_TAG",
         "functions": [
             {
@@ -21664,7 +21664,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint": {
+    "MP_FREEMODE_CHECKPOINT": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21685,7 +21685,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_1": {
+    "MP_FREEMODE_CHECKPOINT_1": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21706,7 +21706,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_10": {
+    "MP_FREEMODE_CHECKPOINT_10": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21727,7 +21727,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_2": {
+    "MP_FREEMODE_CHECKPOINT_2": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21748,7 +21748,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_3": {
+    "MP_FREEMODE_CHECKPOINT_3": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21769,7 +21769,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_4": {
+    "MP_FREEMODE_CHECKPOINT_4": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21790,7 +21790,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_5": {
+    "MP_FREEMODE_CHECKPOINT_5": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21811,7 +21811,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_6": {
+    "MP_FREEMODE_CHECKPOINT_6": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21832,7 +21832,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_7": {
+    "MP_FREEMODE_CHECKPOINT_7": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21853,7 +21853,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_8": {
+    "MP_FREEMODE_CHECKPOINT_8": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21874,7 +21874,7 @@
             }
         ]
     },
-    "mp_freemode_checkpoint_9": {
+    "MP_FREEMODE_CHECKPOINT_9": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
         "functions": [
             {
@@ -21895,11 +21895,11 @@
             }
         ]
     },
-    "mp_gamer_info": {
+    "MP_GAMER_INFO": {
         "file": "MP_GAMER_INFO",
         "functions": []
     },
-    "mp_matchmaking_card": {
+    "MP_MATCHMAKING_CARD": {
         "file": "MP_FREEMODE_PLAYER_LIST",
         "functions": [
             {
@@ -22041,7 +22041,7 @@
             }
         ]
     },
-    "mp_matchmaking_selector": {
+    "MP_MATCHMAKING_SELECTOR": {
         "file": "MP_MATCHMAKING_SELECTOR",
         "functions": [
             {
@@ -22175,7 +22175,7 @@
             }
         ]
     },
-    "mp_matchmaking_vehicle_info": {
+    "MP_MATCHMAKING_VEHICLE_INFO": {
         "file": "MP_MATCHMAKING_VEHICLE_INFO",
         "functions": [
             {
@@ -22226,7 +22226,7 @@
             }
         ]
     },
-    "mp_medal_freemode": {
+    "MP_MEDAL_FREEMODE": {
         "file": "MP_AWARD_BASE",
         "functions": [
             {
@@ -22301,7 +22301,7 @@
             }
         ]
     },
-    "mp_menu_glare": {
+    "MP_MENU_GLARE": {
         "file": "MP_MENU_GLARE",
         "functions": [
             {
@@ -22345,11 +22345,11 @@
             }
         ]
     },
-    "mp_mission_details_card": {
+    "MP_MISSION_DETAILS_CARD": {
         "file": "CREW_TAG_MOVIECLIP",
         "functions": []
     },
-    "mp_mission_name_freemode": {
+    "MP_MISSION_NAME_FREEMODE": {
         "file": "MP_MISSION_NAME_FREEMODE",
         "functions": [
             {
@@ -22403,7 +22403,7 @@
             }
         ]
     },
-    "mp_mission_name_freemode_1": {
+    "MP_MISSION_NAME_FREEMODE_1": {
         "file": "MP_MISSION_NAME_FREEMODE",
         "functions": [
             {
@@ -22457,7 +22457,7 @@
             }
         ]
     },
-    "mp_mission_name_freemode_2": {
+    "MP_MISSION_NAME_FREEMODE_2": {
         "file": "MP_MISSION_NAME_FREEMODE",
         "functions": [
             {
@@ -22511,7 +22511,7 @@
             }
         ]
     },
-    "mp_mm_card_freemode": {
+    "MP_MM_CARD_FREEMODE": {
         "file": "MP_MM_CARD_FREEMODE",
         "functions": [
             {
@@ -22608,7 +22608,7 @@
             }
         ]
     },
-    "mp_next_job_selection": {
+    "MP_NEXT_JOB_SELECTION": {
         "file": "MP_NEXT_JOB_SELECTION",
         "functions": [
             {
@@ -22758,7 +22758,7 @@
             }
         ]
     },
-    "mp_online_list_card": {
+    "MP_ONLINE_LIST_CARD": {
         "file": "PAUSE_MENU_FREE_MODE",
         "functions": [
             {
@@ -22810,7 +22810,7 @@
             }
         ]
     },
-    "mp_player_card": {
+    "MP_PLAYER_CARD": {
         "file": "MP_PLAYER_CARD",
         "functions": [
             {
@@ -22855,7 +22855,7 @@
             }
         ]
     },
-    "mp_results_panel": {
+    "MP_RESULTS_PANEL": {
         "file": "MP_RESULTS_PANEL",
         "functions": [
             {
@@ -22934,7 +22934,7 @@
             }
         ]
     },
-    "mp_spectator_card": {
+    "MP_SPECTATOR_CARD": {
         "file": "MP_SPECTATOR_CARD",
         "functions": [
             {
@@ -23082,7 +23082,7 @@
             }
         ]
     },
-    "mp_spectator_overlay": {
+    "MP_SPECTATOR_OVERLAY": {
         "file": "MP_SPECTATOR_OVERLAY",
         "functions": [
             {
@@ -23199,7 +23199,7 @@
             }
         ]
     },
-    "mp_unlock_freemode": {
+    "MP_UNLOCK_FREEMODE": {
         "file": "MP_AWARD_BASE",
         "functions": [
             {
@@ -23274,7 +23274,7 @@
             }
         ]
     },
-    "mp_vehicle_info": {
+    "MP_VEHICLE_INFO": {
         "file": "MP_MATCHMAKING_VEHICLE_INFO",
         "functions": [
             {
@@ -23325,7 +23325,7 @@
             }
         ]
     },
-    "mph_bruteforce_laptop": {
+    "MPH_BRUTEFORCE_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -23346,7 +23346,7 @@
             }
         ]
     },
-    "mugshot_board_01": {
+    "MUGSHOT_BOARD_01": {
         "file": "MUGSHOT_BOARD",
         "functions": [
             {
@@ -23373,7 +23373,7 @@
             }
         ]
     },
-    "mugshot_board_02": {
+    "MUGSHOT_BOARD_02": {
         "file": "MUGSHOT_BOARD",
         "functions": [
             {
@@ -23400,7 +23400,7 @@
             }
         ]
     },
-    "multiplayer_chat": {
+    "MULTIPLAYER_CHAT": {
         "file": "MULTIPLAYER_CHAT",
         "functions": [
             {
@@ -23525,7 +23525,7 @@
             }
         ]
     },
-    "music_studio_monitor": {
+    "MUSIC_STUDIO_MONITOR": {
         "file": "MUSIC_STUDIO_MONITOR",
         "functions": [
             {
@@ -23599,7 +23599,7 @@
             }
         ]
     },
-    "music_studio_monitor_cs": {
+    "MUSIC_STUDIO_MONITOR_CS": {
         "file": "MUSIC_STUDIO_MONITOR_CS",
         "functions": [
             {
@@ -23674,7 +23674,7 @@
             }
         ]
     },
-    "music_studio_monitor_cs2": {
+    "MUSIC_STUDIO_MONITOR_CS2": {
         "file": "MUSIC_STUDIO_MONITOR_CS",
         "functions": [
             {
@@ -23749,7 +23749,7 @@
             }
         ]
     },
-    "nas_upload": {
+    "NAS_UPLOAD": {
         "file": "NAS_UPLOAD",
         "functions": [
             {
@@ -23849,7 +23849,7 @@
             }
         ]
     },
-    "new_editor": {
+    "NEW_EDITOR": {
         "file": "NEW_EDITOR",
         "functions": [
             {
@@ -24185,7 +24185,7 @@
             }
         ]
     },
-    "nightclub": {
+    "NIGHTCLUB": {
         "file": "NIGHTCLUB",
         "functions": [
             {
@@ -24475,7 +24475,7 @@
             }
         ]
     },
-    "observatory_scope": {
+    "OBSERVATORY_SCOPE": {
         "file": "OBSERVATORY_SCOPE",
         "functions": [
             {
@@ -24508,7 +24508,7 @@
             }
         ]
     },
-    "ome1_powercell": {
+    "OME1_POWERCELL": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -24529,7 +24529,7 @@
             }
         ]
     },
-    "online_policies": {
+    "ONLINE_POLICIES": {
         "file": "ONLINE_POLICIES",
         "functions": [
             {
@@ -24820,7 +24820,7 @@
             }
         ]
     },
-    "open_wheel_health_indicator": {
+    "OPEN_WHEEL_HEALTH_INDICATOR": {
         "file": "OPEN_WHEEL_HEALTH_INDICATOR",
         "functions": [
             {
@@ -24857,7 +24857,7 @@
             }
         ]
     },
-    "opening_credits": {
+    "OPENING_CREDITS": {
         "file": "OPENING_CREDITS",
         "functions": [
             {
@@ -25080,7 +25080,7 @@
             }
         ]
     },
-    "orbital_cannon_cam": {
+    "ORBITAL_CANNON_CAM": {
         "file": "ORBITAL_CANNON_CAM",
         "functions": [
             {
@@ -25209,7 +25209,7 @@
             }
         ]
     },
-    "orbital_cannon_map": {
+    "ORBITAL_CANNON_MAP": {
         "file": "ORBITAL_CANNON_MAP",
         "functions": [
             {
@@ -25257,7 +25257,7 @@
             }
         ]
     },
-    "organisation_name": {
+    "ORGANISATION_NAME": {
         "file": "ORGANISATION_NAME",
         "functions": [
             {
@@ -25285,7 +25285,7 @@
             }
         ]
     },
-    "party_bus": {
+    "PARTY_BUS": {
         "file": "PARTY_BUS",
         "functions": [
             {
@@ -25362,7 +25362,7 @@
             }
         ]
     },
-    "pause_menu_calibration": {
+    "PAUSE_MENU_CALIBRATION": {
         "file": "PAUSE_MENU_CALIBRATION",
         "functions": [
             {
@@ -25396,7 +25396,7 @@
             }
         ]
     },
-    "pause_menu_header": {
+    "PAUSE_MENU_HEADER": {
         "file": "PAUSE_MENU_HEADER",
         "functions": [
             {
@@ -25628,7 +25628,7 @@
             }
         ]
     },
-    "pause_menu_instructional_buttons": {
+    "PAUSE_MENU_INSTRUCTIONAL_BUTTONS": {
         "file": "PAUSE_MENU_INSTRUCTIONAL_BUTTONS",
         "functions": [
             {
@@ -25649,7 +25649,7 @@
             }
         ]
     },
-    "pause_menu_pages_awards": {
+    "PAUSE_MENU_PAGES_AWARDS": {
         "file": "PAUSE_MENU_PAGES_AWARDS",
         "functions": [
             {
@@ -25672,7 +25672,7 @@
             }
         ]
     },
-    "pause_menu_pages_char_mom_dad": {
+    "PAUSE_MENU_PAGES_CHAR_MOM_DAD": {
         "file": "PAUSE_MENU_PAGES_CHAR_MOM_DAD",
         "functions": [
             {
@@ -25695,7 +25695,7 @@
             }
         ]
     },
-    "pause_menu_pages_char_select": {
+    "PAUSE_MENU_PAGES_CHAR_SELECT": {
         "file": "PAUSE_MENU_PAGES_CHAR_SELECT",
         "functions": [
             {
@@ -25720,7 +25720,7 @@
             }
         ]
     },
-    "pause_menu_pages_corona": {
+    "PAUSE_MENU_PAGES_CORONA": {
         "file": "PAUSE_MENU_PAGES_CORONA",
         "functions": [
             {
@@ -25743,7 +25743,7 @@
             }
         ]
     },
-    "pause_menu_pages_corona_lobby": {
+    "PAUSE_MENU_PAGES_CORONA_LOBBY": {
         "file": "PAUSE_MENU_PAGES_CORONA_LOBBY",
         "functions": [
             {
@@ -25762,7 +25762,7 @@
             }
         ]
     },
-    "pause_menu_pages_corona_players": {
+    "PAUSE_MENU_PAGES_CORONA_PLAYERS": {
         "file": "PAUSE_MENU_PAGES_CORONA_PLAYERS",
         "functions": [
             {
@@ -25785,7 +25785,7 @@
             }
         ]
     },
-    "pause_menu_pages_corona_race": {
+    "PAUSE_MENU_PAGES_CORONA_RACE": {
         "file": "PAUSE_MENU_PAGES_CORONA_RACE",
         "functions": [
             {
@@ -25804,7 +25804,7 @@
             }
         ]
     },
-    "pause_menu_pages_crews": {
+    "PAUSE_MENU_PAGES_CREWS": {
         "file": "PAUSE_MENU_PAGES_CREWS",
         "functions": [
             {
@@ -25827,7 +25827,7 @@
             }
         ]
     },
-    "pause_menu_pages_friends": {
+    "PAUSE_MENU_PAGES_FRIENDS": {
         "file": "PAUSE_MENU_PAGES_FRIENDS",
         "functions": [
             {
@@ -25850,7 +25850,7 @@
             }
         ]
     },
-    "pause_menu_pages_friends_mp": {
+    "PAUSE_MENU_PAGES_FRIENDS_MP": {
         "file": "PAUSE_MENU_PAGES_FRIENDS_MP",
         "functions": [
             {
@@ -25869,7 +25869,7 @@
             }
         ]
     },
-    "pause_menu_pages_gallery": {
+    "PAUSE_MENU_PAGES_GALLERY": {
         "file": "PAUSE_MENU_PAGES_GALLERY",
         "functions": [
             {
@@ -25898,7 +25898,7 @@
             }
         ]
     },
-    "pause_menu_pages_game": {
+    "PAUSE_MENU_PAGES_GAME": {
         "file": "PAUSE_MENU_PAGES_GAME",
         "functions": [
             {
@@ -25917,7 +25917,7 @@
             }
         ]
     },
-    "pause_menu_pages_info": {
+    "PAUSE_MENU_PAGES_INFO": {
         "file": "PAUSE_MENU_PAGES_INFO",
         "functions": [
             {
@@ -25936,7 +25936,7 @@
             }
         ]
     },
-    "pause_menu_pages_keymap": {
+    "PAUSE_MENU_PAGES_KEYMAP": {
         "file": "PAUSE_MENU_PAGES_KEYMAP",
         "functions": [
             {
@@ -25955,7 +25955,7 @@
             }
         ]
     },
-    "pause_menu_pages_map": {
+    "PAUSE_MENU_PAGES_MAP": {
         "file": "PAUSE_MENU_PAGES_MAP",
         "functions": [
             {
@@ -25990,7 +25990,7 @@
             }
         ]
     },
-    "pause_menu_pages_missioncreator": {
+    "PAUSE_MENU_PAGES_MISSIONCREATOR": {
         "file": "PAUSE_MENU_PAGES_MISSIONCREATOR",
         "functions": [
             {
@@ -26009,7 +26009,7 @@
             }
         ]
     },
-    "pause_menu_pages_save": {
+    "PAUSE_MENU_PAGES_SAVE": {
         "file": "PAUSE_MENU_PAGES_SAVE",
         "functions": [
             {
@@ -26028,7 +26028,7 @@
             }
         ]
     },
-    "pause_menu_pages_settings": {
+    "PAUSE_MENU_PAGES_SETTINGS": {
         "file": "PAUSE_MENU_PAGES_SETTINGS",
         "functions": [
             {
@@ -26047,7 +26047,7 @@
             }
         ]
     },
-    "pause_menu_pages_stats": {
+    "PAUSE_MENU_PAGES_STATS": {
         "file": "PAUSE_MENU_PAGES_STATS",
         "functions": [
             {
@@ -26066,7 +26066,7 @@
             }
         ]
     },
-    "pause_menu_pages_store": {
+    "PAUSE_MENU_PAGES_STORE": {
         "file": "PAUSE_MENU_PAGES_STORE",
         "functions": [
             {
@@ -26085,7 +26085,7 @@
             }
         ]
     },
-    "pause_menu_pages_weapons": {
+    "PAUSE_MENU_PAGES_WEAPONS": {
         "file": "PAUSE_MENU_PAGES_WEAPONS",
         "functions": [
             {
@@ -26104,7 +26104,7 @@
             }
         ]
     },
-    "pause_menu_shared_components": {
+    "PAUSE_MENU_SHARED_COMPONENTS": {
         "file": "PAUSE_MENU_SP_CONTENT",
         "functions": [
             {
@@ -26575,7 +26575,7 @@
             }
         ]
     },
-    "pause_menu_shared_components_02": {
+    "PAUSE_MENU_SHARED_COMPONENTS_02": {
         "file": "PAUSE_MENU_FREE_MODE",
         "functions": [
             {
@@ -26708,7 +26708,7 @@
             }
         ]
     },
-    "pause_menu_shared_components_03": {
+    "PAUSE_MENU_SHARED_COMPONENTS_03": {
         "file": "ROCKSTAR_VERIFIED",
         "functions": [
             {
@@ -26724,7 +26724,7 @@
             }
         ]
     },
-    "pause_menu_shared_components_mp_01": {
+    "PAUSE_MENU_SHARED_COMPONENTS_MP_01": {
         "file": "MP_PLAYER_CARD",
         "functions": [
             {
@@ -26792,7 +26792,7 @@
             }
         ]
     },
-    "pause_menu_sp_content": {
+    "PAUSE_MENU_SP_CONTENT": {
         "file": "PAUSE_MENU_SP_CONTENT",
         "functions": [
             {
@@ -27263,7 +27263,7 @@
             }
         ]
     },
-    "pause_menu_spchar_overlays": {
+    "PAUSE_MENU_SPCHAR_OVERLAYS": {
         "file": "PAUSE_MENU_SPCHAR_OVERLAYS",
         "functions": [
             {
@@ -27325,7 +27325,7 @@
             }
         ]
     },
-    "pause_menu_store_content": {
+    "PAUSE_MENU_STORE_CONTENT": {
         "file": "ECOMMERCE_STORE",
         "functions": [
             {
@@ -27582,7 +27582,7 @@
             }
         ]
     },
-    "phi_maxim": {
+    "PHI_MAXIM": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -27603,7 +27603,7 @@
             }
         ]
     },
-    "phone_blank_screen": {
+    "PHONE_BLANK_SCREEN": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -27624,7 +27624,7 @@
             }
         ]
     },
-    "player_name_01": {
+    "PLAYER_NAME_01": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27655,7 +27655,7 @@
             }
         ]
     },
-    "player_name_02": {
+    "PLAYER_NAME_02": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27686,7 +27686,7 @@
             }
         ]
     },
-    "player_name_03": {
+    "PLAYER_NAME_03": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27717,7 +27717,7 @@
             }
         ]
     },
-    "player_name_04": {
+    "PLAYER_NAME_04": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27748,7 +27748,7 @@
             }
         ]
     },
-    "player_name_05": {
+    "PLAYER_NAME_05": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27779,7 +27779,7 @@
             }
         ]
     },
-    "player_name_06": {
+    "PLAYER_NAME_06": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27804,38 +27804,7 @@
             }
         ]
     },
-    "player_name_07": {
-        "file": "PLAYER_NAME",
-        "functions": [
-            {
-                "name": "PLAYER_NAME",
-                "args": []
-            },
-            {
-                "name": "INITIALISE",
-                "args": [
-                    "mc"
-                ]
-            },
-            {
-                "name": "SET_PLAYER_NAME",
-                "args": [
-                    "str"
-                ]
-            },
-            {
-                "name": "SET_SPEAKER_STATE",
-                "args": [
-                    "state"
-                ]
-            },
-            {
-                "name": "debug",
-                "args": []
-            }
-        ]
-    },
-    "player_name_08": {
+    "PLAYER_NAME_07": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27866,7 +27835,7 @@
             }
         ]
     },
-    "player_name_09": {
+    "PLAYER_NAME_08": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27897,7 +27866,7 @@
             }
         ]
     },
-    "player_name_10": {
+    "PLAYER_NAME_09": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27928,7 +27897,7 @@
             }
         ]
     },
-    "player_name_11": {
+    "PLAYER_NAME_10": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27959,7 +27928,7 @@
             }
         ]
     },
-    "player_name_12": {
+    "PLAYER_NAME_11": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -27990,7 +27959,7 @@
             }
         ]
     },
-    "player_name_13": {
+    "PLAYER_NAME_12": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -28021,7 +27990,7 @@
             }
         ]
     },
-    "player_name_14": {
+    "PLAYER_NAME_13": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -28052,7 +28021,7 @@
             }
         ]
     },
-    "player_name_15": {
+    "PLAYER_NAME_14": {
         "file": "PLAYER_NAME",
         "functions": [
             {
@@ -28083,7 +28052,38 @@
             }
         ]
     },
-    "player_switch": {
+    "PLAYER_NAME_15": {
+        "file": "PLAYER_NAME",
+        "functions": [
+            {
+                "name": "PLAYER_NAME",
+                "args": []
+            },
+            {
+                "name": "INITIALISE",
+                "args": [
+                    "mc"
+                ]
+            },
+            {
+                "name": "SET_PLAYER_NAME",
+                "args": [
+                    "str"
+                ]
+            },
+            {
+                "name": "SET_SPEAKER_STATE",
+                "args": [
+                    "state"
+                ]
+            },
+            {
+                "name": "debug",
+                "args": []
+            }
+        ]
+    },
+    "PLAYER_SWITCH": {
         "file": "PLAYER_SWITCH",
         "functions": [
             {
@@ -28211,7 +28211,7 @@
             }
         ]
     },
-    "player_switch_prologue": {
+    "PLAYER_SWITCH_PROLOGUE": {
         "file": "PLAYER_SWITCH",
         "functions": [
             {
@@ -28338,7 +28338,7 @@
             }
         ]
     },
-    "player_switch_stats_panel": {
+    "PLAYER_SWITCH_STATS_PANEL": {
         "file": "PLAYER_SWITCH_STATS_PANEL",
         "functions": [
             {
@@ -28367,7 +28367,7 @@
             }
         ]
     },
-    "popup_warning": {
+    "POPUP_WARNING": {
         "file": "POPUP_WARNING",
         "functions": [
             {
@@ -28465,7 +28465,7 @@
             }
         ]
     },
-    "power_play": {
+    "POWER_PLAY": {
         "file": "POWER_PLAY",
         "functions": [
             {
@@ -28571,7 +28571,7 @@
             }
         ]
     },
-    "power_play_biker": {
+    "POWER_PLAY_BIKER": {
         "file": "POWER_PLAY_BIKER",
         "functions": [
             {
@@ -28649,7 +28649,7 @@
             }
         ]
     },
-    "power_play_day_night": {
+    "POWER_PLAY_DAY_NIGHT": {
         "file": "POWER_PLAY_DAY_NIGHT",
         "functions": [
             {
@@ -28715,7 +28715,7 @@
             }
         ]
     },
-    "power_play_generic": {
+    "POWER_PLAY_GENERIC": {
         "file": "POWER_PLAY_GENERIC",
         "functions": [
             {
@@ -28824,7 +28824,7 @@
             }
         ]
     },
-    "power_play_special_races": {
+    "POWER_PLAY_SPECIAL_RACES": {
         "file": "POWER_PLAY_SPECIAL_RACES",
         "functions": [
             {
@@ -28919,7 +28919,7 @@
             }
         ]
     },
-    "power_play_turf": {
+    "POWER_PLAY_TURF": {
         "file": "POWER_PLAY_TURF",
         "functions": [
             {
@@ -29017,7 +29017,7 @@
             }
         ]
     },
-    "power_play_vehicle": {
+    "POWER_PLAY_VEHICLE": {
         "file": "POWER_PLAY_VEHICLE",
         "functions": [
             {
@@ -29113,7 +29113,7 @@
             }
         ]
     },
-    "progress_hub": {
+    "PROGRESS_HUB": {
         "file": "PROGRESS_HUB",
         "functions": [
             {
@@ -29387,7 +29387,7 @@
             }
         ]
     },
-    "psychology_report": {
+    "PSYCHOLOGY_REPORT": {
         "file": "PSYCHOLOGY_REPORT",
         "functions": [
             {
@@ -29410,7 +29410,7 @@
             }
         ]
     },
-    "race_message": {
+    "RACE_MESSAGE": {
         "file": "RACE_MESSAGE",
         "functions": [
             {
@@ -29479,7 +29479,7 @@
             }
         ]
     },
-    "race_position": {
+    "RACE_POSITION": {
         "file": "RACE_POSITION",
         "functions": [
             {
@@ -29576,7 +29576,7 @@
             }
         ]
     },
-    "radar_control_panel": {
+    "RADAR_CONTROL_PANEL": {
         "file": "RADAR_CONTROL_PANEL",
         "functions": [
             {
@@ -29626,7 +29626,7 @@
             }
         ]
     },
-    "rampage": {
+    "RAMPAGE": {
         "file": "RAMPAGE",
         "functions": [
             {
@@ -29688,7 +29688,7 @@
             }
         ]
     },
-    "rcmaude_laptop": {
+    "RCMAUDE_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29709,7 +29709,7 @@
             }
         ]
     },
-    "remote_sniper_hud": {
+    "REMOTE_SNIPER_HUD": {
         "file": "REMOTE_SNIPER_HUD",
         "functions": [
             {
@@ -29767,7 +29767,7 @@
             }
         ]
     },
-    "remote_sniper_loading": {
+    "REMOTE_SNIPER_LOADING": {
         "file": "REMOTE_SNIPER_LOADING",
         "functions": [
             {
@@ -29786,7 +29786,7 @@
             }
         ]
     },
-    "rh2a_01_laptop": {
+    "RH2A_01_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29807,7 +29807,7 @@
             }
         ]
     },
-    "rh2a_02_laptop": {
+    "RH2A_02_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29828,7 +29828,7 @@
             }
         ]
     },
-    "rh2a_03_laptop": {
+    "RH2A_03_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29849,7 +29849,7 @@
             }
         ]
     },
-    "rh2a_04_laptop": {
+    "RH2A_04_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29870,7 +29870,7 @@
             }
         ]
     },
-    "rh2a_05_laptop": {
+    "RH2A_05_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29891,7 +29891,7 @@
             }
         ]
     },
-    "rh2a_06_laptop": {
+    "RH2A_06_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29912,7 +29912,7 @@
             }
         ]
     },
-    "rh2a_07_laptop": {
+    "RH2A_07_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -29933,7 +29933,7 @@
             }
         ]
     },
-    "robbery_computer": {
+    "ROBBERY_COMPUTER": {
         "file": "ROBBERY_COMPUTER",
         "functions": [
             {
@@ -30136,7 +30136,7 @@
             }
         ]
     },
-    "salvage_planning": {
+    "SALVAGE_PLANNING": {
         "file": "SALVAGE_PLANNING",
         "functions": [
             {
@@ -30314,7 +30314,7 @@
             }
         ]
     },
-    "salvage_vehicle_targets": {
+    "SALVAGE_VEHICLE_TARGETS": {
         "file": "SALVAGE_VEHICLE_TARGETS",
         "functions": [
             {
@@ -30450,7 +30450,7 @@
             }
         ]
     },
-    "saving_footer": {
+    "SAVING_FOOTER": {
         "file": "SAVING_FOOTER",
         "functions": [
             {
@@ -30483,7 +30483,7 @@
             }
         ]
     },
-    "sc_leaderboard": {
+    "SC_LEADERBOARD": {
         "file": "SC_LEADERBOARD",
         "functions": [
             {
@@ -30590,7 +30590,7 @@
             }
         ]
     },
-    "security_cam": {
+    "SECURITY_CAM": {
         "file": "SECURITY_CAM",
         "functions": [
             {
@@ -30650,7 +30650,7 @@
             }
         ]
     },
-    "security_camera": {
+    "SECURITY_CAMERA": {
         "file": "SECURITY_CAMERA",
         "functions": [
             {
@@ -30673,7 +30673,7 @@
             }
         ]
     },
-    "securoserv": {
+    "SECUROSERV": {
         "file": "SECUROSERV",
         "functions": [
             {
@@ -30954,7 +30954,7 @@
             }
         ]
     },
-    "shop_menu": {
+    "SHOP_MENU": {
         "file": "SHOP_MENU",
         "functions": [
             {
@@ -31028,7 +31028,7 @@
             }
         ]
     },
-    "shop_menu_dlc": {
+    "SHOP_MENU_DLC": {
         "file": "SHOP_MENU_DLC",
         "functions": [
             {
@@ -31110,7 +31110,7 @@
             }
         ]
     },
-    "slot_machine": {
+    "SLOT_MACHINE": {
         "file": "SLOT_MACHINE",
         "functions": [
             {
@@ -31212,7 +31212,7 @@
             }
         ]
     },
-    "social_club2": {
+    "SOCIAL_CLUB2": {
         "file": "SOCIAL_CLUB2",
         "functions": [
             {
@@ -32029,7 +32029,7 @@
             }
         ]
     },
-    "social_club_tv": {
+    "SOCIAL_CLUB_TV": {
         "file": "SOCIAL_CLUB_TV",
         "functions": [
             {
@@ -32117,7 +32117,7 @@
             }
         ]
     },
-    "spin_the_wheel": {
+    "SPIN_THE_WHEEL": {
         "file": "SPIN_THE_WHEEL",
         "functions": [
             {
@@ -32179,7 +32179,7 @@
             }
         ]
     },
-    "splash_text": {
+    "SPLASH_TEXT": {
         "file": "SPLASH_TEXT",
         "functions": [
             {
@@ -32250,7 +32250,7 @@
             }
         ]
     },
-    "starter_pack_browser": {
+    "STARTER_PACK_BROWSER": {
         "file": "STARTER_PACK_BROWSER",
         "functions": [
             {
@@ -32391,7 +32391,7 @@
             }
         ]
     },
-    "store_background": {
+    "STORE_BACKGROUND": {
         "file": "STORE_BACKGROUND",
         "functions": [
             {
@@ -32430,7 +32430,7 @@
             }
         ]
     },
-    "store_blackout": {
+    "STORE_BLACKOUT": {
         "file": "STORE_BLACKOUT",
         "functions": [
             {
@@ -32465,7 +32465,7 @@
             }
         ]
     },
-    "store_instructional_buttons": {
+    "STORE_INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
         "functions": [
             {
@@ -32748,7 +32748,7 @@
             }
         ]
     },
-    "strength_test_score": {
+    "STRENGTH_TEST_SCORE": {
         "file": "STRENGTH_TEST_SCORE",
         "functions": [
             {
@@ -32793,7 +32793,7 @@
             }
         ]
     },
-    "studio_3_ary": {
+    "STUDIO_3_ARY": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -32814,7 +32814,7 @@
             }
         ]
     },
-    "stunt_jumps": {
+    "STUNT_JUMPS": {
         "file": "STUNT_JUMPS",
         "functions": [
             {
@@ -32880,7 +32880,7 @@
             }
         ]
     },
-    "sub_cam": {
+    "SUB_CAM": {
         "file": "SUB_CAM",
         "functions": [
             {
@@ -32940,7 +32940,7 @@
             }
         ]
     },
-    "sub_pc": {
+    "SUB_PC": {
         "file": "SUB_PC",
         "functions": [
             {
@@ -33141,7 +33141,7 @@
             }
         ]
     },
-    "submarine_missiles": {
+    "SUBMARINE_MISSILES": {
         "file": "SUBMARINE_MISSILES",
         "functions": [
             {
@@ -33194,7 +33194,7 @@
             }
         ]
     },
-    "sum24_hv3_ambush": {
+    "SUM24_HV3_AMBUSH": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -33215,7 +33215,7 @@
             }
         ]
     },
-    "tattoo_buttons": {
+    "TATTOO_BUTTONS": {
         "file": "TATTOO_BUTTONS",
         "functions": [
             {
@@ -33263,7 +33263,7 @@
             }
         ]
     },
-    "tattoo_keys": {
+    "TATTOO_KEYS": {
         "file": "TATTOO_KEYS",
         "functions": [
             {
@@ -33311,7 +33311,7 @@
             }
         ]
     },
-    "taxi_display": {
+    "TAXI_DISPLAY": {
         "file": "TAXI_DISPLAY",
         "functions": [
             {
@@ -33377,7 +33377,7 @@
             }
         ]
     },
-    "teeth_pulling": {
+    "TEETH_PULLING": {
         "file": "TEETH_PULLING",
         "functions": [
             {
@@ -33426,7 +33426,7 @@
             }
         ]
     },
-    "tennis": {
+    "TENNIS": {
         "file": "TENNIS",
         "functions": [
             {
@@ -33594,7 +33594,7 @@
             }
         ]
     },
-    "text_input_box": {
+    "TEXT_INPUT_BOX": {
         "file": "TEXT_INPUT_BOX",
         "functions": [
             {
@@ -33666,7 +33666,7 @@
             }
         ]
     },
-    "textcanvas": {
+    "TEXTCANVAS": {
         "file": "TEXT_CANVAS",
         "functions": [
             {
@@ -33720,7 +33720,7 @@
             }
         ]
     },
-    "textfield": {
+    "TEXTFIELD": {
         "file": "TEXTFIELD",
         "functions": [
             {
@@ -33778,7 +33778,7 @@
             }
         ]
     },
-    "traffic_cam": {
+    "TRAFFIC_CAM": {
         "file": "TRAFFIC_CAM",
         "functions": [
             {
@@ -33839,7 +33839,7 @@
             }
         ]
     },
-    "trip3_phone2_1": {
+    "TRIP3_PHONE2_1": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -33860,7 +33860,7 @@
             }
         ]
     },
-    "trip3_phone4_1": {
+    "TRIP3_PHONE4_1": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -33881,7 +33881,7 @@
             }
         ]
     },
-    "trust_and_safety": {
+    "TRUST_AND_SAFETY": {
         "file": "TRUST_AND_SAFETY",
         "functions": [
             {
@@ -33979,7 +33979,7 @@
             }
         ]
     },
-    "tun_dj4_blank": {
+    "TUN_DJ4_BLANK": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -34000,7 +34000,7 @@
             }
         ]
     },
-    "tun_dj4_speaker": {
+    "TUN_DJ4_SPEAKER": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -34021,7 +34021,7 @@
             }
         ]
     },
-    "tun_fruitlaptop_dj4": {
+    "TUN_FRUITLAPTOP_DJ4": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -34042,7 +34042,7 @@
             }
         ]
     },
-    "tun_fruitlaptop_ssas": {
+    "TUN_FRUITLAPTOP_SSAS": {
         "file": "CELLPHONE_CUTSCENE",
         "functions": [
             {
@@ -34063,7 +34063,7 @@
             }
         ]
     },
-    "turret_cam": {
+    "TURRET_CAM": {
         "file": "TURRET_CAM",
         "functions": [
             {
@@ -34122,7 +34122,7 @@
             }
         ]
     },
-    "tv_frame": {
+    "TV_FRAME": {
         "file": "TV_FRAME",
         "functions": [
             {
@@ -34155,7 +34155,7 @@
             }
         ]
     },
-    "vault_drill": {
+    "VAULT_DRILL": {
         "file": "VAULT_DRILL",
         "functions": [
             {
@@ -34271,7 +34271,7 @@
             }
         ]
     },
-    "vault_laser": {
+    "VAULT_LASER": {
         "file": "VAULT_LASER",
         "functions": [
             {
@@ -34389,7 +34389,7 @@
             }
         ]
     },
-    "warehouse": {
+    "WAREHOUSE": {
         "file": "WAREHOUSE",
         "functions": [
             {
@@ -34549,7 +34549,7 @@
             }
         ]
     },
-    "watermark": {
+    "WATERMARK": {
         "file": "WATERMARK",
         "functions": [
             {
@@ -34631,7 +34631,7 @@
             }
         ]
     },
-    "web_browser": {
+    "WEB_BROWSER": {
         "file": "WEB_BROWSER",
         "functions": [
             {
@@ -35337,7 +35337,7 @@
             }
         ]
     },
-    "wind_meter": {
+    "WIND_METER": {
         "file": "WIND_METER",
         "functions": [
             {
@@ -35392,7 +35392,7 @@
             }
         ]
     },
-    "www_abstinentamerica_com": {
+    "WWW_ABSTINENTAMERICA_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -35411,7 +35411,7 @@
             }
         ]
     },
-    "www_accept_d_the_d_chaos_com": {
+    "WWW_ACCEPT_D_THE_D_CHAOS_COM": {
         "file": "WWW_ACCEPT_D_THE_D_CHAOS_COM",
         "functions": [
             {
@@ -35436,7 +35436,7 @@
             }
         ]
     },
-    "www_altruistsunite_com": {
+    "WWW_ALTRUISTSUNITE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -35455,7 +35455,7 @@
             }
         ]
     },
-    "www_ammunation_net": {
+    "WWW_AMMUNATION_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -35474,7 +35474,7 @@
             }
         ]
     },
-    "www_appropriateassociates_com": {
+    "WWW_APPROPRIATEASSOCIATES_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -35493,7 +35493,7 @@
             }
         ]
     },
-    "www_arenawar_tv": {
+    "WWW_ARENAWAR_TV": {
         "file": "WWW_ARENAWAR_TV",
         "functions": [
             {
@@ -35709,7 +35709,7 @@
             }
         ]
     },
-    "www_bawsaq_com": {
+    "WWW_BAWSAQ_COM": {
         "file": "WWW_BAWSAQ_COM",
         "functions": [
             {
@@ -35852,7 +35852,7 @@
             }
         ]
     },
-    "www_bedevinweston_com": {
+    "WWW_BEDEVINWESTON_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -35871,7 +35871,7 @@
             }
         ]
     },
-    "www_bennysoriginalmotorworks_com": {
+    "WWW_BENNYSORIGINALMOTORWORKS_COM": {
         "file": "WWW_BENNYSORIGINALMOTORWORKS_COM",
         "functions": [
             {
@@ -36093,7 +36093,7 @@
             }
         ]
     },
-    "www_beseecher_net": {
+    "WWW_BESEECHER_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -36112,7 +36112,7 @@
             }
         ]
     },
-    "www_bleeter_biz": {
+    "WWW_BLEETER_BIZ": {
         "file": "WWW_BLEETER_BIZ",
         "functions": [
             {
@@ -36169,7 +36169,7 @@
             }
         ]
     },
-    "www_bullsharktestosterone_com": {
+    "WWW_BULLSHARKTESTOSTERONE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -36188,7 +36188,7 @@
             }
         ]
     },
-    "www_cashfordeaddreams_com": {
+    "WWW_CASHFORDEADDREAMS_COM": {
         "file": "WWW_CASHFORDEADDREAMS_COM",
         "functions": [
             {
@@ -36213,7 +36213,7 @@
             }
         ]
     },
-    "www_chainsofintimacy_com": {
+    "WWW_CHAINSOFINTIMACY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -36232,7 +36232,7 @@
             }
         ]
     },
-    "www_classicvinewood_com": {
+    "WWW_CLASSICVINEWOOD_COM": {
         "file": "WWW_CLASSICVINEWOOD_COM",
         "functions": [
             {
@@ -36251,7 +36251,7 @@
             }
         ]
     },
-    "www_creditcardconsolidationkings_com": {
+    "WWW_CREDITCARDCONSOLIDATIONKINGS_COM": {
         "file": "WWW_CREDITCARDCONSOLIDATIONKINGS_COM",
         "functions": [
             {
@@ -36292,7 +36292,7 @@
             }
         ]
     },
-    "www_cultstoppers_com": {
+    "WWW_CULTSTOPPERS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -36311,7 +36311,7 @@
             }
         ]
     },
-    "www_docktease_com": {
+    "WWW_DOCKTEASE_COM": {
         "file": "WWW_DOCKTEASE_COM",
         "functions": [
             {
@@ -36814,7 +36814,7 @@
             }
         ]
     },
-    "www_dr_d_friedlander_com": {
+    "WWW_DR_D_FRIEDLANDER_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -36833,7 +36833,7 @@
             }
         ]
     },
-    "www_dynasty8executiverealty_com": {
+    "WWW_DYNASTY8EXECUTIVEREALTY_COM": {
         "file": "WWW_DYNASTY8EXECUTIVEREALTY_COM",
         "functions": [
             {
@@ -37026,7 +37026,7 @@
             }
         ]
     },
-    "www_dynasty8realestate_com": {
+    "WWW_DYNASTY8REALESTATE_COM": {
         "file": "WWW_DYNASTY8REALESTATE_COM",
         "functions": [
             {
@@ -37117,7 +37117,7 @@
             }
         ]
     },
-    "www_egochaserenergybar_com": {
+    "WWW_EGOCHASERENERGYBAR_COM": {
         "file": "WWW_EGOCHASERENERGYBAR_COM",
         "functions": [
             {
@@ -37148,7 +37148,7 @@
             }
         ]
     },
-    "www_electrotokesystem_com": {
+    "WWW_ELECTROTOKESYSTEM_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37167,7 +37167,7 @@
             }
         ]
     },
-    "www_elitastravel_com": {
+    "WWW_ELITASTRAVEL_COM": {
         "file": "WWW_ELITASTRAVEL_COM",
         "functions": [
             {
@@ -37249,7 +37249,7 @@
             }
         ]
     },
-    "www_epsilonprogram_com": {
+    "WWW_EPSILONPROGRAM_COM": {
         "file": "WWW_EPSILONPROGRAM_COM",
         "functions": [
             {
@@ -37314,7 +37314,7 @@
             }
         ]
     },
-    "www_eyefind_info": {
+    "WWW_EYEFIND_INFO": {
         "file": "WWW_EYEFIND_INFO",
         "functions": [
             {
@@ -37459,7 +37459,7 @@
             }
         ]
     },
-    "www_fabienlaroucheyoga_com": {
+    "WWW_FABIENLAROUCHEYOGA_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37478,7 +37478,7 @@
             }
         ]
     },
-    "www_fameorshame_net": {
+    "WWW_FAMEORSHAME_NET": {
         "file": "WWW_FAMEORSHAME_NET",
         "functions": [
             {
@@ -37499,7 +37499,7 @@
             }
         ]
     },
-    "www_fleeca_com": {
+    "WWW_FLEECA_COM": {
         "file": "WWW_FLEECA_COM",
         "functions": [
             {
@@ -37508,7 +37508,7 @@
             }
         ]
     },
-    "www_fruitcomputers_com": {
+    "WWW_FRUITCOMPUTERS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37527,7 +37527,7 @@
             }
         ]
     },
-    "www_grainoftruth_net": {
+    "WWW_GRAINOFTRUTH_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37546,7 +37546,7 @@
             }
         ]
     },
-    "www_hammersteinfaust_com": {
+    "WWW_HAMMERSTEINFAUST_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37565,7 +37565,7 @@
             }
         ]
     },
-    "www_himplantsenhancementsurgery_com": {
+    "WWW_HIMPLANTSENHANCEMENTSURGERY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37584,7 +37584,7 @@
             }
         ]
     },
-    "www_hushsmush_com": {
+    "WWW_HUSHSMUSH_COM": {
         "file": "WWW_HUSHSMUSH_COM",
         "functions": [
             {
@@ -37633,7 +37633,7 @@
             }
         ]
     },
-    "www_iwillsurviveitall_com": {
+    "WWW_IWILLSURVIVEITALL_COM": {
         "file": "WWW_IWILLSURVIVEITALL_COM",
         "functions": [
             {
@@ -37672,7 +37672,7 @@
             }
         ]
     },
-    "www_jackhowitzer_com": {
+    "WWW_JACKHOWITZER_COM": {
         "file": "WWW_JACKHOWITZER_COM",
         "functions": [
             {
@@ -37693,7 +37693,7 @@
             }
         ]
     },
-    "www_jockcranley_com": {
+    "WWW_JOCKCRANLEY_COM": {
         "file": "WWW_JOCKCRANLEY_COM",
         "functions": [
             {
@@ -37724,7 +37724,7 @@
             }
         ]
     },
-    "www_junkenergydrink_com": {
+    "WWW_JUNKENERGYDRINK_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -37743,7 +37743,7 @@
             }
         ]
     },
-    "www_kungfurainbowlazerforce_com": {
+    "WWW_KUNGFURAINBOWLAZERFORCE_COM": {
         "file": "WWW_KUNGFURAINBOWLAZERFORCE_COM",
         "functions": [
             {
@@ -37764,7 +37764,7 @@
             }
         ]
     },
-    "www_larssandelbo_com": {
+    "WWW_LARSSANDELBO_COM": {
         "file": "WWW_LARSSANDELBO_COM",
         "functions": [
             {
@@ -37777,7 +37777,7 @@
             }
         ]
     },
-    "www_lcn_d_exchange_com": {
+    "WWW_LCN_D_EXCHANGE_COM": {
         "file": "WWW_LCN_D_EXCHANGE_COM",
         "functions": [
             {
@@ -37927,7 +37927,7 @@
             }
         ]
     },
-    "www_legendarymotorsport_net": {
+    "WWW_LEGENDARYMOTORSPORT_NET": {
         "file": "WWW_LEGENDARYMOTORSPORT_NET",
         "functions": [
             {
@@ -38044,7 +38044,7 @@
             }
         ]
     },
-    "www_lennyavery_d_realty_com": {
+    "WWW_LENNYAVERY_D_REALTY_COM": {
         "file": "WWW_LENNYAVERY_D_REALTY_COM",
         "functions": [
             {
@@ -38091,7 +38091,7 @@
             }
         ]
     },
-    "www_lifeinvader_com": {
+    "WWW_LIFEINVADER_COM": {
         "file": "WWW_LIFEINVADER_COM",
         "functions": [
             {
@@ -38141,7 +38141,7 @@
             }
         ]
     },
-    "www_lossantoscustoms_com": {
+    "WWW_LOSSANTOSCUSTOMS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38160,7 +38160,7 @@
             }
         ]
     },
-    "www_lossantosfreegans_com": {
+    "WWW_LOSSANTOSFREEGANS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38179,7 +38179,7 @@
             }
         ]
     },
-    "www_manopauseadventures_com": {
+    "WWW_MANOPAUSEADVENTURES_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38198,7 +38198,7 @@
             }
         ]
     },
-    "www_maze_d_bank_com": {
+    "WWW_MAZE_D_BANK_COM": {
         "file": "WWW_MAZE_D_BANK_COM",
         "functions": [
             {
@@ -38207,7 +38207,7 @@
             }
         ]
     },
-    "www_merryweathersecurity_com": {
+    "WWW_MERRYWEATHERSECURITY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38226,7 +38226,7 @@
             }
         ]
     },
-    "www_ministerinminutes_com": {
+    "WWW_MINISTERINMINUTES_COM": {
         "file": "WWW_MINISTERINMINUTES_COM",
         "functions": [
             {
@@ -38251,7 +38251,7 @@
             }
         ]
     },
-    "www_minotaurfinance_com": {
+    "WWW_MINOTAURFINANCE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38270,7 +38270,7 @@
             }
         ]
     },
-    "www_monetaryscience_us": {
+    "WWW_MONETARYSCIENCE_US": {
         "file": "WWW_MONETARYSCIENCE_US",
         "functions": [
             {
@@ -38310,7 +38310,7 @@
             }
         ]
     },
-    "www_mydivinewithin_com": {
+    "WWW_MYDIVINEWITHIN_COM": {
         "file": "WWW_MYDIVINEWITHIN_COM",
         "functions": [
             {
@@ -38345,7 +38345,7 @@
             }
         ]
     },
-    "www_myroomonline_net": {
+    "WWW_MYROOMONLINE_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38364,7 +38364,7 @@
             }
         ]
     },
-    "www_pandmcycles_com": {
+    "WWW_PANDMCYCLES_COM": {
         "file": "WWW_PANDMCYCLES_COM",
         "functions": [
             {
@@ -38388,7 +38388,7 @@
             }
         ]
     },
-    "www_preservexskincream_com": {
+    "WWW_PRESERVEXSKINCREAM_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38407,7 +38407,7 @@
             }
         ]
     },
-    "www_princessrobotbubblegum_com": {
+    "WWW_PRINCESSROBOTBUBBLEGUM_COM": {
         "file": "WWW_PRINCESSROBOTBUBBLEGUM_COM",
         "functions": [
             {
@@ -38428,7 +38428,7 @@
             }
         ]
     },
-    "www_proposition208_com": {
+    "WWW_PROPOSITION208_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38447,7 +38447,7 @@
             }
         ]
     },
-    "www_proposition43_org": {
+    "WWW_PROPOSITION43_ORG": {
         "file": "WWW_PROPOSITION43_ORG",
         "functions": [
             {
@@ -38494,7 +38494,7 @@
             }
         ]
     },
-    "www_psychicshoutout_com": {
+    "WWW_PSYCHICSHOUTOUT_COM": {
         "file": "WWW_PSYCHICSHOUTOUT_COM",
         "functions": [
             {
@@ -38554,7 +38554,7 @@
             }
         ]
     },
-    "www_republicanspacerangers_com": {
+    "WWW_REPUBLICANSPACERANGERS_COM": {
         "file": "WWW_REPUBLICANSPACERANGERS_COM",
         "functions": [
             {
@@ -38575,7 +38575,7 @@
             }
         ]
     },
-    "www_righteousslaughter7_com": {
+    "WWW_RIGHTEOUSSLAUGHTER7_COM": {
         "file": "WWW_RIGHTEOUSSLAUGHTER7_COM",
         "functions": [
             {
@@ -38596,7 +38596,7 @@
             }
         ]
     },
-    "www_sanandreasdmv_com": {
+    "WWW_SANANDREASDMV_COM": {
         "file": "WWW_SANANDREASDMV_COM",
         "functions": [
             {
@@ -38665,7 +38665,7 @@
             }
         ]
     },
-    "www_sawaterandpower_com": {
+    "WWW_SAWATERANDPOWER_COM": {
         "file": "WWW_SAWATERANDPOWER_COM",
         "functions": [
             {
@@ -38686,7 +38686,7 @@
             }
         ]
     },
-    "www_sixfiguretemps_com": {
+    "WWW_SIXFIGURETEMPS_COM": {
         "file": "WWW_SIXFIGURETEMPS_COM",
         "functions": [
             {
@@ -38744,7 +38744,7 @@
             }
         ]
     },
-    "www_southernsanandreassuperautos_com": {
+    "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM": {
         "file": "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM",
         "functions": [
             {
@@ -38865,7 +38865,7 @@
             }
         ]
     },
-    "www_stoppayingyourmortgage_net": {
+    "WWW_STOPPAYINGYOURMORTGAGE_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38884,7 +38884,7 @@
             }
         ]
     },
-    "www_suemurry_com": {
+    "WWW_SUEMURRY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38903,7 +38903,7 @@
             }
         ]
     },
-    "www_swallowco_com": {
+    "WWW_SWALLOWCO_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -38922,7 +38922,7 @@
             }
         ]
     },
-    "www_taco_d_bomb_com": {
+    "WWW_TACO_D_BOMB_COM": {
         "file": "WWW_TACO_D_BOMB_COM",
         "functions": [
             {
@@ -38991,7 +38991,7 @@
             }
         ]
     },
-    "www_thebankofliberty_com": {
+    "WWW_THEBANKOFLIBERTY_COM": {
         "file": "WWW_THEBANKOFLIBERTY_COM",
         "functions": [
             {
@@ -39000,7 +39000,7 @@
             }
         ]
     },
-    "www_thechildrenofthemountain_com": {
+    "WWW_THECHILDRENOFTHEMOUNTAIN_COM": {
         "file": "WWW_THECHILDRENOFTHEMOUNTAIN_COM",
         "functions": [
             {
@@ -39165,7 +39165,7 @@
             }
         ]
     },
-    "www_thediamondcasinoandresort_com": {
+    "WWW_THEDIAMONDCASINOANDRESORT_COM": {
         "file": "WWW_THEDIAMONDCASINOANDRESORT_COM",
         "functions": [
             {
@@ -39436,7 +39436,7 @@
             }
         ]
     },
-    "www_theinternetisahellhole_com": {
+    "WWW_THEINTERNETISAHELLHOLE_COM": {
         "file": "WWW_THEINTERNETISAHELLHOLE_COM",
         "functions": [
             {
@@ -39455,7 +39455,7 @@
             }
         ]
     },
-    "www_thepowcleanse_com": {
+    "WWW_THEPOWCLEANSE_COM": {
         "file": "WWW_THEPOWCLEANSE_COM",
         "functions": [
             {
@@ -39480,7 +39480,7 @@
             }
         ]
     },
-    "www_therealitymill_com": {
+    "WWW_THEREALITYMILL_COM": {
         "file": "WWW_THEREALITYMILL_COM",
         "functions": [
             {
@@ -39509,7 +39509,7 @@
             }
         ]
     },
-    "www_toeshoesusa_com": {
+    "WWW_TOESHOESUSA_COM": {
         "file": "WWW_TOESHOESUSA_COM",
         "functions": [
             {
@@ -39538,7 +39538,7 @@
             }
         ]
     },
-    "www_toiletcleaneronline_com": {
+    "WWW_TOILETCLEANERONLINE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -39557,7 +39557,7 @@
             }
         ]
     },
-    "www_universaluniform_net": {
+    "WWW_UNIVERSALUNIFORM_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -39576,7 +39576,7 @@
             }
         ]
     },
-    "www_vanillaunicorn_xxx": {
+    "WWW_VANILLAUNICORN_XXX": {
         "file": "GENERIC_WEBSITE_SCRIPT",
         "functions": [
             {
@@ -39595,7 +39595,7 @@
             }
         ]
     },
-    "www_vinewoodloglinegenerator_com": {
+    "WWW_VINEWOODLOGLINEGENERATOR_COM": {
         "file": "WWW_VINEWOODLOGLINEGENERATOR_COM",
         "functions": [
             {
@@ -39684,7 +39684,7 @@
             }
         ]
     },
-    "www_visitthealamosea_com": {
+    "WWW_VISITTHEALAMOSEA_COM": {
         "file": "WWW_VISITTHEALAMOSEA_COM",
         "functions": [
             {
@@ -39703,7 +39703,7 @@
             }
         ]
     },
-    "www_warstock_d_cache_d_and_d_carry_com": {
+    "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM": {
         "file": "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM",
         "functions": [
             {
@@ -40273,7 +40273,7 @@
             }
         ]
     },
-    "www_whokilledleonorajohnson_com": {
+    "WWW_WHOKILLEDLEONORAJOHNSON_COM": {
         "file": "WWW_WHOKILLEDLEONORAJOHNSON_COM",
         "functions": [
             {
@@ -40298,7 +40298,7 @@
             }
         ]
     },
-    "www_yourdeadfamily_com": {
+    "WWW_YOURDEADFAMILY_COM": {
         "file": "WWW_YOURDEADFAMILY_COM",
         "functions": [
             {
@@ -40323,7 +40323,7 @@
             }
         ]
     },
-    "www_yournewbabysname_com": {
+    "WWW_YOURNEWBABYSNAME_COM": {
         "file": "WWW_YOURNEWBABYSNAME_COM",
         "functions": [
             {
@@ -40348,7 +40348,7 @@
             }
         ]
     },
-    "yacht_gamername": {
+    "YACHT_GAMERNAME": {
         "file": "MP_MISSION_NAME_FREEMODE",
         "functions": [
             {
@@ -40402,7 +40402,7 @@
             }
         ]
     },
-    "yacht_name": {
+    "YACHT_NAME": {
         "file": "YACHT_NAME",
         "functions": [
             {
@@ -40429,7 +40429,7 @@
             }
         ]
     },
-    "yacht_name_stern": {
+    "YACHT_NAME_STERN": {
         "file": "YACHT_NAME_STERN",
         "functions": [
             {
@@ -40456,7 +40456,7 @@
             }
         ]
     },
-    "yoga_buttons": {
+    "YOGA_BUTTONS": {
         "file": "YOGA_BUTTONS",
         "functions": [
             {
@@ -40606,7 +40606,7 @@
             }
         ]
     },
-    "yoga_keys": {
+    "YOGA_KEYS": {
         "file": "YOGA_BUTTONS",
         "functions": [
             {
