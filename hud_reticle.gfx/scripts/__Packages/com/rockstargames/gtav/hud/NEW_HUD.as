@@ -1,15 +1,18 @@
 class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseContainer
 {
-   var loadedHudComps;
+   var COMPONENT_ARRAY;
+   var IS_HUD_VISIBLE;
+   var MAX_HUD_COMPONENTS;
+   var NEEDS_BIGGER_HELP_AND_SUBTITLES;
+   var TIMELINE;
+   var charColourEnum;
+   var isWideScreen;
    var listArray;
    var listManager;
-   var charColourEnum;
-   var COMPONENT_ARRAY;
-   var MAX_HUD_COMPONENTS;
    var loadedCompPrefix;
-   var IS_HUD_VISIBLE;
+   var loadedHudComps;
    var mcPrefix;
-   var TIMELINE;
+   var safeTop;
    var weaponWheelActive = false;
    var weaponTypeHash = 0;
    var _isWeaponSelectable = true;
@@ -63,7 +66,7 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
    }
    function setAllHudIntendedVisibility(isVisible)
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc3_ = 0;
       while(_loc3_ < this.MAX_HUD_COMPONENTS)
       {
@@ -97,9 +100,10 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
    function SHOW_ALL()
    {
       this.setAllHudIntendedVisibility(true);
+      var _loc2_;
       for(var _loc3_ in this.loadedHudComps)
       {
-         var _loc2_ = this.loadedHudComps[_loc3_];
+         _loc2_ = this.loadedHudComps[_loc3_];
          if(_loc2_._status == com.rockstargames.ui.core.BaseContainer.HIDDEN)
          {
             _loc2_._mc._visible = true;
@@ -112,9 +116,10 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
    function HIDE_ALL()
    {
       this.setAllHudIntendedVisibility(false);
+      var _loc2_;
       for(var _loc3_ in this.loadedHudComps)
       {
-         var _loc2_ = this.loadedHudComps[_loc3_];
+         _loc2_ = this.loadedHudComps[_loc3_];
          if(_loc2_._status == com.rockstargames.ui.core.BaseContainer.ONSCREEN)
          {
             _loc2_._mc._visible = false;
@@ -133,9 +138,10 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
       var _loc2_ = this.COMPONENT_ARRAY[componentID];
       var _loc6_ = _loc2_._displayList;
       _loc2_._status = com.rockstargames.ui.core.BaseContainer.NOT_LOADED;
+      var _loc5_;
       if(_loc2_._hasGfx)
       {
-         var _loc5_ = this.mcPrefix + componentID;
+         _loc5_ = this.mcPrefix + componentID;
          this.TIMELINE[_loc5_].removeMovieClip();
          _loc2_._mc.removeMovieClip();
          _loc2_.sanitise();
@@ -174,7 +180,7 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
    }
    function reorderAllKnownLists()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       for(_loc2_ in this.listManager)
       {
          this.reorderList(this.listManager[_loc2_]);
@@ -187,16 +193,17 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
          return undefined;
       }
       var _loc8_ = this.listArray[listID];
-      var _loc2_ = undefined;
-      var _loc7_ = undefined;
-      var _loc5_ = undefined;
+      var _loc2_;
+      var _loc7_;
+      var _loc5_;
       var _loc9_ = _loc8_.length;
       var _loc3_ = null;
       var _loc10_ = 8;
       var _loc4_ = 0;
+      var _loc6_;
       while(_loc4_ < _loc9_)
       {
-         var _loc6_ = this.COMPONENT_ARRAY[_loc8_[_loc4_]];
+         _loc6_ = this.COMPONENT_ARRAY[_loc8_[_loc4_]];
          _loc2_ = com.rockstargames.ui.hud.HUD_COMPONENT(_loc6_._mc);
          _loc7_ = _loc6_._status;
          _loc5_ = this.safeTop;

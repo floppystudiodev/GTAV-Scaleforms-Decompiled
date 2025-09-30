@@ -37,6 +37,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPla
       {
          com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.innerMC.valTF,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
       }
+      var _loc4_;
       if(_loc5_ == com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPlayerCardItem.TYPE_NUMERIC_STAT)
       {
          this.innerMC.titleTF._y = (this.bgMC._height - this.innerMC.valTF.textHeight) * 0.5;
@@ -45,7 +46,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPla
       }
       else
       {
-         var _loc4_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc3_[2],53,2,5);
+         _loc4_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc3_[2],53,2,5);
          com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuColourBar(this.innerMC.progressBarMC.barMC).percent(_loc4_);
       }
    }
@@ -55,11 +56,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPla
    }
    function blinkText(_lbl)
    {
+      var _loc3_;
       if(this.isCompareWidth)
       {
          if(_lbl != undefined && _lbl != "")
          {
-            var _loc3_ = 15;
+            _loc3_ = 15;
             if(_lbl.length > _loc3_)
             {
                _lbl = _lbl.substr(0,_loc3_) + "...";

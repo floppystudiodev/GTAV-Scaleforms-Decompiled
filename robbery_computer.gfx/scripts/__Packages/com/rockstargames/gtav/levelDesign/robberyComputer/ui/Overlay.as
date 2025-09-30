@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.ui.Overlay
 {
-   var app;
-   var view;
-   var cursor;
    var acceptButton;
+   var app;
    var cancelButton;
+   var cursor;
+   var view;
    function Overlay(app, view, cursor)
    {
       this.app = app;

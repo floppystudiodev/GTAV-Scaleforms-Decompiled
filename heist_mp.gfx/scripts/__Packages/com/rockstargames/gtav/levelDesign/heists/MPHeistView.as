@@ -1,6 +1,17 @@
 class com.rockstargames.gtav.levelDesign.heists.MPHeistView extends com.rockstargames.ui.components.GUIView
 {
+   var __get__maxitems;
+   var __get__params;
+   var __set__index;
+   var _highlighted;
+   var dataList;
+   var highlightedItem;
+   var itemList;
+   var itemSelectStyle;
    var viewContainer;
+   var viewIndex;
+   var viewLinkageList;
+   var visibleItems;
    var xPos = new Array();
    var yPos = new Array();
    function MPHeistView()
@@ -79,7 +90,7 @@ class com.rockstargames.gtav.levelDesign.heists.MPHeistView extends com.rockstar
    }
    function focusHighlightStyle(targetIndex)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       var _loc5_ = this.itemList.length - 1;
       var _loc4_ = _loc5_ - 1;

@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuCoronaPlayerInfoItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var subtextTF;
-   var item1UITF;
+   var __get__data;
+   var _alpha;
+   var _x;
+   var _y;
    var attachMovie;
    var getNextHighestDepth;
+   var iconMC;
+   var item1UITF;
    var item2UITF;
    var item3UITF;
-   var _x;
-   var __get__data;
-   var _y;
    var nameTF;
-   var _alpha;
-   var iconMC;
+   var subtextTF;
    var padding = 5;
    function PauseMPMenuCoronaPlayerInfoItem()
    {

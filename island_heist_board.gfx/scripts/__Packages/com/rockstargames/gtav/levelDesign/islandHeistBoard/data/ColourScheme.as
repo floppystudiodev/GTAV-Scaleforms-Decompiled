@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.ColourScheme
 {
-   var isDebug;
+   var _dark;
    var _light;
    var _mid;
-   var _dark;
+   var isDebug;
    static var DEFAULT_LIGHT = new flash.geom.ColorTransform(1,1,1,1,0,0,0,0);
    static var DEFAULT_MID = new flash.geom.ColorTransform(1,0.23921568627450981,0,1,0,0,0,0);
    static var DEFAULT_DARK = new flash.geom.ColorTransform(0.03529411764705882,0.027450980392156862,0.027450980392156862,1,0,0,0,0);

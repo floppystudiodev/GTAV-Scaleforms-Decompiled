@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.StealScreen extends com.rockstargames.gtav.levelDesign.hangarCargo.Screen
 {
-   var view;
-   var stealButtons;
    var _buttons;
-   var cursor;
    var app;
+   var cursor;
    var overlay;
+   var stealButtons;
+   var view;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
    static var ELEMENT_FADE_IN_STEP = 0.1;
    static var NUM_COLS = 4;
@@ -61,10 +61,12 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.StealScreen extends com.roc
    {
       var _loc3_ = 0;
       var _loc5_ = this.stealButtons.length;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < _loc5_)
       {
-         var _loc4_ = this.app.stealCooldown[_loc3_];
-         var _loc2_ = this.stealButtons[_loc3_].view;
+         _loc4_ = this.app.stealCooldown[_loc3_];
+         _loc2_ = this.stealButtons[_loc3_].view;
          if(_loc4_ > 0)
          {
             _loc2_._alpha = 50;
@@ -85,8 +87,6 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.StealScreen extends com.roc
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.LB:
             if(!this.overlay.isShowing)
             {
@@ -98,6 +98,9 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.StealScreen extends com.roc
             {
                this.app.showScreen(this.app.SELL_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)
@@ -112,21 +115,26 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.StealScreen extends com.roc
             break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.SELL_TAB:
             this.app.showScreen(this.app.SELL_SCREEN);
+         default:
+            return;
       }
    }
    function onTargetChange(targetID)
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(this.overlay.isShowing)
       {
          this.overlay.updateSelectedButton(targetID);
       }
       else
       {
-         var _loc2_ = 0;
-         var _loc4_ = this._buttons.length;
+         _loc2_ = 0;
+         _loc4_ = this._buttons.length;
          while(_loc2_ < _loc4_)
          {
-            var _loc3_ = this._buttons[_loc2_];
+            _loc3_ = this._buttons[_loc2_];
             _loc3_.view.gotoAndStop(_loc3_.id != targetID ? "off" : "on");
             _loc2_ = _loc2_ + 1;
          }

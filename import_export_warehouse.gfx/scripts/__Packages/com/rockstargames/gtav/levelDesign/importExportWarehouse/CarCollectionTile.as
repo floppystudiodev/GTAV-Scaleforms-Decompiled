@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile
 {
-   var _view;
-   var _hasBeenInitialised;
-   var _collectionNameToken;
-   var _value;
-   var _completion;
-   var _requiredDrivers;
    var _collectionCarTiles;
+   var _collectionNameToken;
+   var _completion;
    var _exportButton;
+   var _hasBeenInitialised;
+   var _requiredDrivers;
    var _selected;
+   var _value;
+   var _view;
    static var X_OFFSET_FIRST_CAR = -3;
    static var X_OFFSET_BETWEEN_CARS = 6;
    function CarCollectionTile(view)
@@ -18,6 +18,13 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile
    }
    function init(vehicleCollection, imageManager)
    {
+      var _loc10_;
+      var _loc6_;
+      var _loc8_;
+      var _loc2_;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       if(!this._hasBeenInitialised && vehicleCollection)
       {
          this._collectionNameToken = vehicleCollection.collectionNameToken;
@@ -30,14 +37,14 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile
          this._view.collectionName.textAutoSize = "shrink";
          com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.setLocalisedText(this._view.collectionName,this._collectionNameToken);
          this._collectionCarTiles = [];
-         var _loc10_ = this._view.collectionTilesContentArea;
-         var _loc6_ = _loc10_.createEmptyMovieClip("collectionTilesContainer",_loc10_.getNextHighestDepth());
-         var _loc8_ = vehicleCollection.vehicles.length;
-         var _loc2_ = 0;
+         _loc10_ = this._view.collectionTilesContentArea;
+         _loc6_ = _loc10_.createEmptyMovieClip("collectionTilesContainer",_loc10_.getNextHighestDepth());
+         _loc8_ = vehicleCollection.vehicles.length;
+         _loc2_ = 0;
          while(_loc2_ < _loc8_)
          {
-            var _loc5_ = _loc6_.getNextHighestDepth();
-            var _loc3_ = _loc6_.attachMovie("singleCarTile","singleCarTile" + _loc5_,_loc5_);
+            _loc5_ = _loc6_.getNextHighestDepth();
+            _loc3_ = _loc6_.attachMovie("singleCarTile","singleCarTile" + _loc5_,_loc5_);
             if(_loc2_ == 0)
             {
                _loc3_._x = com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile.X_OFFSET_FIRST_CAR;
@@ -46,7 +53,7 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile
             {
                _loc3_._x = _loc2_ * (_loc3_._width + com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile.X_OFFSET_BETWEEN_CARS);
             }
-            var _loc4_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(_loc3_);
+            _loc4_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(_loc3_);
             _loc4_.initImageAndName(vehicleCollection.vehicles[_loc2_],imageManager);
             this._collectionCarTiles.push(_loc4_);
             _loc2_ = _loc2_ + 1;

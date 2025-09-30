@@ -1,20 +1,21 @@
 class com.rockstargames.gtav.web.WWW_LENNYAVERY_D_REALTY_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
+   var TXDstring;
+   var _name;
    var browser;
    var data;
-   var TXDstring;
-   var descriptionArray;
-   var pinNumber;
-   var pageName;
-   var propertyMC;
-   var mcScope;
-   var pinContainer;
-   var CONTENT;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var descriptionArray;
+   var mcScope;
+   var pageName;
+   var pinContainer;
+   var pinNumber;
+   var propertyMC;
    var isSP = false;
    var firstRun = true;
    function WWW_LENNYAVERY_D_REALTY_COM()
@@ -113,6 +114,11 @@ class com.rockstargames.gtav.web.WWW_LENNYAVERY_D_REALTY_COM extends com.rocksta
          this.pinContainer.removeMovieClip();
       }
       this.CLEANUP();
+      var _loc6_;
+      var _loc5_;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       switch(this.pageName)
       {
          case "PAGE1":
@@ -144,13 +150,13 @@ class com.rockstargames.gtav.web.WWW_LENNYAVERY_D_REALTY_COM extends com.rocksta
             this.pinContainer = this.mcScope.createEmptyMovieClip("pinContainer",this.mcScope.getNextHighestDepth());
             this.pinContainer._x = this.mcScope.mapCenter._x;
             this.pinContainer._y = this.mcScope.mapCenter._y;
-            var _loc6_ = 500 / this.mcScope.mapCenter._width;
-            var _loc5_ = 500 / this.mcScope.mapCenter._height;
-            var _loc3_ = 0;
+            _loc6_ = 500 / this.mcScope.mapCenter._width;
+            _loc5_ = 500 / this.mcScope.mapCenter._height;
+            _loc3_ = 0;
             while(_loc3_ < this.data.length)
             {
-               var _loc2_ = "pin" + _loc3_;
-               var _loc4_ = this.pinContainer.attachMovie("button_Pin",_loc2_,this.pinContainer.getNextHighestDepth());
+               _loc2_ = "pin" + _loc3_;
+               _loc4_ = this.pinContainer.attachMovie("button_Pin",_loc2_,this.pinContainer.getNextHighestDepth());
                this.pinContainer[_loc2_]._x = this.data[_loc3_][1] / _loc6_;
                this.pinContainer[_loc2_]._y = - this.data[_loc3_][2] / _loc5_;
                this.pinContainer[_loc2_].btnTxt._xscale = 0;
@@ -212,6 +218,8 @@ class com.rockstargames.gtav.web.WWW_LENNYAVERY_D_REALTY_COM extends com.rocksta
             this.mcScope.body.text = "";
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
             this.CONTENT.BOUNDING_BOX._height = 627;
+         default:
+            return;
       }
    }
    function CLEANUP()

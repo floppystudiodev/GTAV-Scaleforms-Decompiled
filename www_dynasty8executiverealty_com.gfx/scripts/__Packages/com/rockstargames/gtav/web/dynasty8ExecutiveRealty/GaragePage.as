@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var slideshow;
-   var website;
-   var view;
-   var buttonsY;
    var activeTab;
-   var progressPanel;
-   var prevPageName;
+   var buttonsY;
    var nextPageName;
+   var prevPageName;
+   var progressPanel;
+   var slideshow;
+   var view;
+   var website;
    function GaragePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"garagePage",pageName,isFirstPage,progressPanel,header);
@@ -35,7 +35,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
       _loc3_._width = _loc4_.textWidth + 2;
       _loc4_._x = _loc3_._x = _loc5_._x - _loc5_._width - _loc3_._width + 1;
       _loc6_._x = _loc3_._x - _loc6_._width + 1;
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.view.description.text != "")
       {
          this.view.unequipButton._y = this.view.description._y + this.view.description.textHeight + 10;
@@ -55,9 +55,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
    function initButtonSet(container, name, count, offset)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < count)
       {
-         var _loc3_ = container[name + _loc2_];
+         _loc3_ = container[name + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + 1 + offset);
          _loc3_.selected._visible = false;
          this.website.dataTextScope.push(_loc3_.btnTxt);
@@ -75,7 +76,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
    }
    function selectTab(tab, isEquipped)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = tab == this.view.styleTab;
       this.view.styleTab.selected._visible = _loc2_;
       this.view.styleButtons._visible = _loc2_ && isEquipped;
@@ -122,9 +123,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
       this.view.unequipButton._visible = isEquipped && !isAlreadyPurchased;
       this.view.unequipButton.disabled = !isEquipped || isAlreadyPurchased;
       this.view.bodyText._visible = !isEquipped;
+      var _loc2_;
       if(isEquipped || isAlreadyPurchased)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < 4)
          {
             this.view.styleButtons["styleButton_" + _loc2_].disabled = false;
@@ -181,9 +183,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
    {
       this.progressPanel.updateGarageCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view.styleButtons["styleButton_" + _loc2_];
+         _loc3_ = this.view.styleButtons["styleButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == selectedIndex;
          _loc2_ = _loc2_ + 1;
       }
@@ -192,9 +195,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
    {
       this.progressPanel.updateGarageCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 9)
       {
-         var _loc3_ = this.view.lightingButtons["lightingButton_" + _loc2_];
+         _loc3_ = this.view.lightingButtons["lightingButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == selectedIndex;
          _loc2_ = _loc2_ + 1;
       }
@@ -203,9 +207,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage extends com.
    {
       this.progressPanel.updateGarageCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 9)
       {
-         var _loc3_ = this.view.numberButtons["numberButton_" + _loc2_];
+         _loc3_ = this.view.numberButtons["numberButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == selectedIndex;
          _loc2_ = _loc2_ + 1;
       }

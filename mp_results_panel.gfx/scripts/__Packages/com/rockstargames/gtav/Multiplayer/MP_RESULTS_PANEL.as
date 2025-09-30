@@ -1,19 +1,21 @@
 class com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL extends com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS
 {
-   var slots;
-   var displayStateBM;
-   var titleTF;
    var CONTENT;
-   var titleFontSize;
-   var panelMC;
+   var _slotContainer;
+   var barMC;
+   var bgBottomMC;
    var bgFillMC;
    var bgTopMC;
-   var bgBottomMC;
-   var barMC;
-   var subtitleTF;
    var displayConfig;
-   var _slotContainer;
+   var displayStateBM;
+   var panelMC;
+   var screenWidthPixels;
    var slotJustifiedFormat;
+   var slots;
+   var subtitleTF;
+   var titleFontSize;
+   var titleTF;
+   var titleTFAlt;
    static var SLOT_SELECTED = 0;
    static var SLOT_JUSTIFIED = 1;
    static var DISPLAY_TITLE = 0;
@@ -36,6 +38,9 @@ class com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL extends com.rockstarga
       this.titleTF = this.CONTENT.titleTF;
       this.titleTF.autoSize = "center";
       this.titleTF.antiAliasType = "normal";
+      this.titleTFAlt = this.CONTENT.titleTFAlt;
+      this.titleTFAlt.autoSize = "center";
+      this.titleTFAlt.antiAliasType = "normal";
       this.titleFontSize = 67;
       this.panelMC = this.CONTENT.panelMC;
       this.panelMC._visible = false;
@@ -59,9 +64,27 @@ class com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL extends com.rockstarga
    function SET_TITLE(title)
    {
       this.titleTF.htmlText = title == undefined ? "" : title;
+      this.titleTFAlt.text = "";
       if(this.displayConfig.isAsian)
       {
          this.resizeAsianText(this.titleTF);
+      }
+      if(title != undefined && title != "")
+      {
+         this.displayStateBM.setBit(com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL.DISPLAY_TITLE);
+      }
+      else
+      {
+         this.displayStateBM.clearBit(com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL.DISPLAY_TITLE);
+      }
+   }
+   function SET_TITLE_ALT(title)
+   {
+      this.titleTFAlt.htmlText = title == undefined ? "" : title.toUpperCase();
+      this.titleTF.text = "";
+      if(this.displayConfig.isAsian)
+      {
+         this.resizeAsianText(this.titleTFAlt);
       }
       if(title != undefined && title != "")
       {
@@ -121,12 +144,13 @@ class com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL extends com.rockstarga
    {
       var _loc4_ = new com.rockstargames.ui.utils.BitMonger(state);
       var _loc2_ = this.slots[id];
+      var _loc3_;
       if(com.rockstargames.ui.utils.BitMonger.IS_BIT_SET(state,com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL.SLOT_JUSTIFIED))
       {
          _loc2_.labelTF.setTextFormat(this.slotJustifiedFormat);
          _loc2_.labelTF._y = 6;
          _loc2_.bgMC._height = Math.ceil(_loc2_.labelTF._y + _loc2_.labelTF._height + 6);
-         var _loc3_ = _loc2_.mouseButtonMC;
+         _loc3_ = _loc2_.mouseButtonMC;
          if(_loc3_ != undefined)
          {
             _loc3_._height = _loc2_.bgMC._height;
@@ -184,9 +208,9 @@ class com.rockstargames.gtav.Multiplayer.MP_RESULTS_PANEL extends com.rockstarga
       {
          return undefined;
       }
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc2_ = undefined;
+      var _loc5_;
+      var _loc4_;
+      var _loc2_;
       var _loc3_ = 0;
       _loc2_ = 0;
       while(_loc2_ < this.slots.length)

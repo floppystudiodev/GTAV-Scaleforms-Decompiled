@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.arena.ProgressPanel
 {
+   var buttonTargets;
+   var currSaleTotal;
+   var currTotal;
+   var initialised;
    var view;
    var website;
-   var initialised;
-   var currTotal;
-   var currSaleTotal;
-   var buttonTargets;
    static var ON_ACTIVE_COLOUR = 39244;
    static var ON_INACTIVE_COLOUR = 31293;
    static var OFF_ACTIVE_COLOUR = 16777215;
@@ -24,9 +24,10 @@ class com.rockstargames.gtav.web.arena.ProgressPanel
       this.buttonTargets = [com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.WORKSHOP_STYLE_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.WORKSHOP_GRAPHICS_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.WORKSHOP_COLOUR_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.EXPANSION_FLOOR_B1_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.EXPANSION_FLOOR_B2_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.MECHANIC_PAGE.name,com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.PERSONAL_QUARTERS_PAGE.name];
       var _loc4_ = ["MBA_STYLE","MBA_GRAPHICS","MBA_COLOUR","MBA_FLOOR_B1","MBA_FLOOR_B2","MBA_MECHANIC","MBA_QUARTERS"];
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.buttonTargets.length)
       {
-         var _loc2_ = this.view["progressButton_" + _loc3_];
+         _loc2_ = this.view["progressButton_" + _loc3_];
          _loc2_.OFF_ACTIVE_COLOUR = 16777215;
          _loc2_.OFF_INACTIVE_COLOUR = 13421772;
          _loc2_.onColour = 268435455;
@@ -69,9 +70,10 @@ class com.rockstargames.gtav.web.arena.ProgressPanel
          this.initialised = true;
       }
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttonTargets.length)
       {
-         var _loc3_ = this.view["progressButton_" + _loc2_];
+         _loc3_ = this.view["progressButton_" + _loc2_];
          this.website.dataTextScope.push(_loc3_.btnTxt);
          _loc2_ = _loc2_ + 1;
       }
@@ -107,9 +109,10 @@ class com.rockstargames.gtav.web.arena.ProgressPanel
    function setProgress(step)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttonTargets.length)
       {
-         var _loc3_ = this.view["progressButton_" + _loc2_];
+         _loc3_ = this.view["progressButton_" + _loc2_];
          _loc3_.stepDot.marker._visible = _loc2_ < step;
          _loc3_.highlight._visible = _loc2_ == step - 1;
          _loc2_ = _loc2_ + 1;
@@ -143,12 +146,12 @@ class com.rockstargames.gtav.web.arena.ProgressPanel
    }
    function updateCosts()
    {
-      var _loc3_ = undefined;
-      var _loc2_ = undefined;
-      var _loc8_ = undefined;
-      var _loc7_ = undefined;
-      var _loc6_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc2_;
+      var _loc8_;
+      var _loc7_;
+      var _loc6_;
+      var _loc4_;
       var _loc5_ = false;
       this.currTotal = this.website.getPropertyBaseCost(false);
       this.currSaleTotal = this.website.getPropertyBaseCost(true);
@@ -230,9 +233,10 @@ class com.rockstargames.gtav.web.arena.ProgressPanel
          _loc7_ = 0;
          _loc4_ = -1;
       }
+      var _loc9_;
       if(_loc5_)
       {
-         var _loc9_ = _loc6_ != -1 || _loc4_ != -1;
+         _loc9_ = _loc6_ != -1 || _loc4_ != -1;
          _loc3_ = _loc8_ + _loc7_;
          _loc2_ = !_loc9_ ? -1 : 0;
          if(_loc9_)

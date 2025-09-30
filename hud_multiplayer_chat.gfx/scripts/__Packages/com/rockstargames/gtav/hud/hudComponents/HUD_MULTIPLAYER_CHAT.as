@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_MULTIPLAYER_CHAT extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TextEntryTF;
    var CONTENT;
    var MessageBoxTF;
    var ScopeTF;
-   var _enumID;
+   var TextEntryTF;
    var _HUD;
+   var _enumID;
    var forceShow = false;
    var hasFocus = false;
    function HUD_MULTIPLAYER_CHAT()

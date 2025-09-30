@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.ng.Replay.CLIP_EDIT_TIMELINE extends MovieClip
 {
-   var myBtnType;
    var MOUSE_EVT;
+   var myBtnType;
    var SF_BASE_CLASS_MOUSE = 10;
    function CLIP_EDIT_TIMELINE()
    {

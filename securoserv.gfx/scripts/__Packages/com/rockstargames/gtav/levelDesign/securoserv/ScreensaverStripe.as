@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.securoserv.ScreensaverStripe
 {
-   var view;
    var amplitude;
    var numSteps;
    var step;
+   var view;
    static var MAX_HEIGHT = 256;
    static var MAX_ALPHA = 7;
    function ScreensaverStripe(view)

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.SHOP_MENU_DLC extends com.rockstargames.ui.components.GUIController
 {
-   var model;
    var CONTENT;
+   var model;
    var scrollBar;
    var timerDelay = 0;
    var yOffset = 42;
@@ -165,9 +165,10 @@ class com.rockstargames.gtav.levelDesign.SHOP_MENU_DLC extends com.rockstargames
       var _loc6_ = this.model.getCurrentSelection(0);
       var _loc5_ = false;
       var _loc4_ = false;
+      var _loc7_;
       if(_loc2_ > _loc3_)
       {
-         var _loc7_ = _loc2_ - _loc3_ - this.model.getCurrentView(0).topEdge;
+         _loc7_ = _loc2_ - _loc3_ - this.model.getCurrentView(0).topEdge;
          if(_loc6_ > 0)
          {
             _loc5_ = true;

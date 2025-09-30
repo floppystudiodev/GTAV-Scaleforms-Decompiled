@@ -1,13 +1,13 @@
 class com.rockstargames.ui.tweenStar.TweenStarLite
 {
-   var target;
-   var vars;
    var duration;
-   var startTime;
    var ease;
    var props;
-   var updateMC;
+   var startTime;
+   var target;
    var tweenStarUpdateRef;
+   var updateMC;
+   var vars;
    static var version = 1.01;
    static var tweenMCDepth = 99999;
    static var frameRate = 30;

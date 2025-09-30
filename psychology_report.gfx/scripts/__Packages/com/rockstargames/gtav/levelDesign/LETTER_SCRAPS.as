@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.LETTER_SCRAPS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var displayText;
    var CONTENT;
+   var displayText;
    function LETTER_SCRAPS()
    {
       super();

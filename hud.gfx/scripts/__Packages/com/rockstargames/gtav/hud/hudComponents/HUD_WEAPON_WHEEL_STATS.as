@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_WHEEL_STATS extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    var _HUD;
    var STAT_TWEEN_DURATION = 0.175;
    function HUD_WEAPON_WHEEL_STATS()
@@ -36,9 +36,10 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_WHEEL_STATS extends co
    }
    function DoBar(bar, base, attachment)
    {
+      var _loc5_;
       if(attachment >= 0)
       {
-         var _loc5_ = base / 100 * bar.bg._width;
+         _loc5_ = base / 100 * bar.bg._width;
          com.rockstargames.ui.utils.Colour.ApplyHudColour(bar.percentage,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
          com.rockstargames.ui.utils.Colour.ApplyHudColour(bar.attPercentage,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLUE);
          com.rockstargames.ui.utils.Colour.ApplyHudColour(bar.bg,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREY);

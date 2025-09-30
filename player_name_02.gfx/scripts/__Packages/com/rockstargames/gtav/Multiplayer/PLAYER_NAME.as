@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.Multiplayer.PLAYER_NAME extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var TIMELINE;
    var CONTENT;
+   var TIMELINE;
    var _speakerContainer;
    function PLAYER_NAME()
    {

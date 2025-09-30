@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.AUTO_SHOP_CREW_NAME extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var TIMELINE;
    var CONTENT;
+   var TIMELINE;
    var crewNameMC;
    static var COLOURS = [14533465,14737632,4802373,3255904,16160031,14428457,11807876,4018591,8146088];
    function AUTO_SHOP_CREW_NAME()

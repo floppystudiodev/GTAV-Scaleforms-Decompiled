@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFriendsStatsView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
    var itemList;
+   var itemY;
    var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
    function PauseMenuFriendsStatsView()
    {
       super();

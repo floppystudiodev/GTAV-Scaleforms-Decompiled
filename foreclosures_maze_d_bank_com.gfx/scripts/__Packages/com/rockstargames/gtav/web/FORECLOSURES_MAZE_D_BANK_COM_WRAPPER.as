@@ -1,101 +1,119 @@
 class com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER extends com.rockstargames.ui.core.BaseWebsite
 {
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mapFilters;
-   var imageManager;
-   var videoDisabled;
-   var currPage;
-   var _selectedClubhouseID;
-   var wall;
-   var hanging;
-   var furniture;
-   var mural;
-   var font;
-   var fontColour;
-   var emblem;
-   var hideSignage;
-   var gunLocker;
-   var bikeShop;
-   var clubhouses;
-   var dataProviderUI;
-   var clubhouseToMarkAsPurchased;
-   var _selectedBunkerID;
-   var bunkerStyle;
-   var quarters;
-   var firingRange;
-   var bunkerGunLocker;
-   var transportation;
-   var bunkers;
-   var bunkerToMarkAsPurchased;
-   var _selectedHangarID;
-   var hangarStyle;
-   var hangarLighting;
-   var hangarDecal;
-   var hangarFurniture;
-   var hangarQuarters;
-   var hangarWorkshop;
-   var hangars;
-   var hangarToMarkAsPurchased;
-   var _selectedBaseID;
-   var baseStyle;
-   var baseGraphics;
-   var baseWeapon;
-   var baseSecurity;
-   var baseLounge;
-   var baseQuarters;
-   var baseWindow;
-   var bases;
-   var baseToMarkAsPurchased;
-   var _selectedNightclubID;
-   var nightclubStyle;
-   var nightclubLighting;
-   var nightclubDancers;
-   var nightclubStorage;
-   var nightclubGarage;
-   var nightclubName;
-   var nightclubDryIce;
-   var nightclubs;
-   var nightclubToMarkAsPurchased;
    var _selectedArcadeID;
-   var arcadeFloor;
-   var arcadeStyle;
-   var arcadeMural;
-   var arcadeQuarters;
-   var arcadeGarage;
-   var arcadeNeon;
-   var arcadeHighScores;
-   var arcades;
-   var arcadeToMarkAsPurchased;
    var _selectedAutoShopID;
-   var autoShopStyle;
-   var autoShopTint;
+   var _selectedBailOfficeID;
+   var _selectedBaseID;
+   var _selectedBunkerID;
+   var _selectedCarWashID;
+   var _selectedClubhouseID;
+   var _selectedGarmentFactoryID;
+   var _selectedHangarID;
+   var _selectedHelitoursID;
+   var _selectedMcKenzieHangarID;
+   var _selectedNightclubID;
+   var _selectedSalvageYardID;
+   var _selectedWeedShopID;
+   var arcadeFloor;
+   var arcadeGarage;
+   var arcadeHighScores;
+   var arcadeMural;
+   var arcadeNeon;
+   var arcadeQuarters;
+   var arcadeStyle;
+   var arcadeToMarkAsPurchased;
+   var arcades;
+   var autoShopCarLift;
    var autoShopEmblem;
+   var autoShopMembership;
    var autoShopName;
+   var autoShopQuarters;
    var autoShopStaff1;
    var autoShopStaff2;
-   var autoShopCarLift;
-   var autoShopQuarters;
-   var autoShopMembership;
-   var autoShops;
+   var autoShopStyle;
+   var autoShopTint;
    var autoShopToMarkAsPurchased;
-   var _selectedSalvageYardID;
-   var salvageYardTint;
-   var salvageYardRepairBay;
-   var salvageYardTowTruck;
-   var salvageYardWallSafe;
-   var salvageYardStaff;
-   var salvageYards;
-   var salvageYardToMarkAsPurchased;
-   var _selectedBailOfficeID;
+   var autoShops;
+   var bailOfficeGunLocker;
+   var bailOfficeQuarters;
    var bailOfficeStaff1;
    var bailOfficeStaff2;
-   var bailOfficeQuarters;
-   var bailOfficeGunLocker;
-   var bailOfficeTransporter;
    var bailOfficeStyle;
-   var bailOffices;
    var bailOfficeToMarkAsPurchased;
+   var bailOfficeTransporter;
+   var bailOffices;
+   var baseGraphics;
+   var baseLounge;
+   var baseQuarters;
+   var baseSecurity;
+   var baseStyle;
+   var baseToMarkAsPurchased;
+   var baseWeapon;
+   var baseWindow;
+   var bases;
+   var bikeShop;
+   var bunkerGunLocker;
+   var bunkerStyle;
+   var bunkerToMarkAsPurchased;
+   var bunkers;
+   var carWash;
+   var carWashTint;
+   var carWashToMarkAsPurchased;
+   var clubhouseToMarkAsPurchased;
+   var clubhouses;
+   var currPage;
+   var dataProviderUI;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var emblem;
+   var firingRange;
+   var font;
+   var fontColour;
+   var furniture;
+   var garmentFactory;
+   var garmentFactoryToMarkAsPurchased;
+   var gunLocker;
+   var hangarDecal;
+   var hangarFurniture;
+   var hangarLighting;
+   var hangarQuarters;
+   var hangarStyle;
+   var hangarToMarkAsPurchased;
+   var hangarWorkshop;
+   var hangars;
+   var hanging;
+   var helitours;
+   var helitoursTint;
+   var helitoursToMarkAsPurchased;
+   var hideSignage;
+   var imageManager;
+   var mapFilters;
+   var mcKenzieHangar;
+   var mcKenzieHangarToMarkAsPurchased;
+   var mural;
+   var nightclubDancers;
+   var nightclubDryIce;
+   var nightclubGarage;
+   var nightclubLighting;
+   var nightclubName;
+   var nightclubStorage;
+   var nightclubStyle;
+   var nightclubToMarkAsPurchased;
+   var nightclubs;
+   var quarters;
+   var salvageYardRepairBay;
+   var salvageYardStaff;
+   var salvageYardTint;
+   var salvageYardToMarkAsPurchased;
+   var salvageYardTowTruck;
+   var salvageYardWallSafe;
+   var salvageYards;
+   var transportation;
+   var videoDisabled;
+   var wall;
+   var weedShop;
+   var weedShopTint;
+   var weedShopToMarkAsPurchased;
    var numBaseStyles = 9;
    var numBaseLounges = 3;
    static var OWNED_CLUBHOUSE_DATA_INDEX = 0;
@@ -108,6 +126,11 @@ class com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER extends co
    static var OWNED_SALVAGE_YARD_DATA_INDEX = 106;
    static var OWNED_BAIL_OFFICE_DATA_INDEX = 112;
    static var MAP_DATA_INDEX = 118;
+   static var OWNED_GARMENT_FACTORY_DATA_INDEX = 119;
+   static var OWNED_MCKENZIE_HANGAR_DATA_INDEX = 120;
+   static var OWNED_CAR_WASH_DATA_INDEX = 123;
+   static var OWNED_HELITOURS_DATA_INDEX = 125;
+   static var OWNED_WEED_SHOP_DATA_INDEX = 127;
    function FORECLOSURES_MAZE_D_BANK_COM_WRAPPER()
    {
       super();
@@ -1673,5 +1696,243 @@ class com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER extends co
       }
       this.bailOfficeToMarkAsPurchased.playerHasPurchased();
       this.bailOfficeToMarkAsPurchased = null;
+   }
+   function setSelectedGarmentFactory(id)
+   {
+      this._selectedGarmentFactoryID = id;
+   }
+   function get selectedGarmentFactoryID()
+   {
+      return this._selectedGarmentFactoryID;
+   }
+   function getSelectedGarmentFactory()
+   {
+      if(this._selectedGarmentFactoryID == -1)
+      {
+         return null;
+      }
+      return this.getGarmentFactoryByID(this._selectedGarmentFactoryID);
+   }
+   function getGarmentFactoryByID(id)
+   {
+      if(this.garmentFactory.id == id)
+      {
+         return this.garmentFactory;
+      }
+      return null;
+   }
+   function get purchasedGarmentFactoryID()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_GARMENT_FACTORY_DATA_INDEX][0];
+   }
+   function dispatchPlayerGarmentFactorySelections()
+   {
+      com.rockstargames.ui.game.GameGlobals.setGlobalFlag(com.rockstargames.ui.game.GameGlobals.CLUBHOUSE,0);
+   }
+   function updateNewlyPurchasedGarmentFactory()
+   {
+      this.garmentFactory.playerHasSold();
+      this.garmentFactoryToMarkAsPurchased.playerHasPurchased();
+      this.garmentFactoryToMarkAsPurchased = null;
+   }
+   function setSelectedMcKenzieHangar(id)
+   {
+      this._selectedMcKenzieHangarID = id;
+   }
+   function get selectedMcKenzieHangarID()
+   {
+      return this._selectedMcKenzieHangarID;
+   }
+   function getSelectedMcKenzieHangar()
+   {
+      if(this._selectedMcKenzieHangarID == -1)
+      {
+         return null;
+      }
+      return this.getMcKenzieHangarByID(this._selectedMcKenzieHangarID);
+   }
+   function getMcKenzieHangarByID(id)
+   {
+      if(this.mcKenzieHangar.id == id)
+      {
+         return this.mcKenzieHangar;
+      }
+      return null;
+   }
+   function get purchasedMcKenzieHangarID()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_MCKENZIE_HANGAR_DATA_INDEX][0];
+   }
+   function dispatchPlayerMcKenzieHAngarSelections()
+   {
+      com.rockstargames.ui.game.GameGlobals.setGlobalFlag(com.rockstargames.ui.game.GameGlobals.CLUBHOUSE,0);
+   }
+   function updateNewlyPurchasedMcKenzieHangar()
+   {
+      this.mcKenzieHangar.playerHasSold();
+      this.mcKenzieHangarToMarkAsPurchased.playerHasPurchased();
+      this.mcKenzieHangarToMarkAsPurchased = null;
+   }
+   function setSelectedCarWash(id)
+   {
+      this._selectedCarWashID = id;
+      if(id == this.purchasedCarWashID && id != -1)
+      {
+         this.carWashTint = this.purchasedCarWashTint;
+      }
+      else
+      {
+         this.carWashTint = -1;
+      }
+   }
+   function get selectedCarWashID()
+   {
+      return this._selectedCarWashID;
+   }
+   function getSelectedCarWash()
+   {
+      if(this._selectedCarWashID == -1)
+      {
+         return null;
+      }
+      return this.getCarWashByID(this._selectedCarWashID);
+   }
+   function getCarWashByID(id)
+   {
+      if(this.carWash.id == id)
+      {
+         return this.carWash;
+      }
+      return null;
+   }
+   function get purchasedCarWashID()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_CAR_WASH_DATA_INDEX][0];
+   }
+   function get purchasedCarWashTint()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_CAR_WASH_DATA_INDEX][1];
+   }
+   function dispatchPlayerCarWashSelections()
+   {
+      if(this.carWashTint == -1)
+      {
+         this.carWashTint = 0;
+      }
+      com.rockstargames.ui.game.GameGlobals.setGlobalFlag(com.rockstargames.ui.game.GameGlobals.CLUBHOUSE,this.carWashTint);
+   }
+   function updateNewlyPurchasedCarWash()
+   {
+      this.carWash.playerHasSold();
+      this.carWashToMarkAsPurchased.playerHasPurchased();
+      this.carWashToMarkAsPurchased = null;
+   }
+   function setSelectedHelitours(id)
+   {
+      this._selectedHelitoursID = id;
+      if(id == this.purchasedHelitoursID && id != -1)
+      {
+         this.helitoursTint = this.purchasedHelitoursTint;
+      }
+      else
+      {
+         this.helitoursTint = -1;
+      }
+   }
+   function get selectedHelitoursID()
+   {
+      return this._selectedHelitoursID;
+   }
+   function getSelectedHelitours()
+   {
+      if(this._selectedHelitoursID == -1)
+      {
+         return null;
+      }
+      return this.getHelitoursByID(this._selectedHelitoursID);
+   }
+   function getHelitoursByID(id)
+   {
+      if(this.helitours.id == id)
+      {
+         return this.helitours;
+      }
+      return null;
+   }
+   function get purchasedHelitoursID()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_HELITOURS_DATA_INDEX][0];
+   }
+   function get purchasedHelitoursTint()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_HELITOURS_DATA_INDEX][1];
+   }
+   function dispatchPlayerHelitoursSelections()
+   {
+      if(this.helitoursTint == -1)
+      {
+         this.helitoursTint = 0;
+      }
+      com.rockstargames.ui.game.GameGlobals.setGlobalFlag(com.rockstargames.ui.game.GameGlobals.CLUBHOUSE,this.helitoursTint);
+   }
+   function updateNewlyPurchasedHelitours()
+   {
+      this.helitours.playerHasSold();
+      this.helitoursToMarkAsPurchased.playerHasPurchased();
+      this.helitoursToMarkAsPurchased = null;
+   }
+   function setSelectedWeedShop(id)
+   {
+      this._selectedWeedShopID = id;
+      if(id == this.purchasedWeedShopID && id != -1)
+      {
+         this.weedShopTint = this.purchasedWeedShopTint;
+      }
+      else
+      {
+         this.weedShopTint = -1;
+      }
+   }
+   function get selectedWeedShopID()
+   {
+      return this._selectedWeedShopID;
+   }
+   function getSelectedWeedShop()
+   {
+      if(this._selectedWeedShopID == -1)
+      {
+         return null;
+      }
+      return this.getWeedShopByID(this._selectedWeedShopID);
+   }
+   function getWeedShopByID(id)
+   {
+      if(this.weedShop.id == id)
+      {
+         return this.weedShop;
+      }
+      return null;
+   }
+   function get purchasedWeedShopID()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_WEED_SHOP_DATA_INDEX][0];
+   }
+   function get purchasedWeedShopTint()
+   {
+      return this.dataProviderUI[com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM_WRAPPER.OWNED_WEED_SHOP_DATA_INDEX][1];
+   }
+   function dispatchPlayerWeedShopSelections()
+   {
+      if(this.weedShopTint == -1)
+      {
+         this.weedShopTint = 0;
+      }
+      com.rockstargames.ui.game.GameGlobals.setGlobalFlag(com.rockstargames.ui.game.GameGlobals.CLUBHOUSE,this.weedShopTint);
+   }
+   function updateNewlyPurchasedWeedShop()
+   {
+      this.weedShop.playerHasSold();
+      this.weedShopToMarkAsPurchased.playerHasPurchased();
+      this.weedShopToMarkAsPurchased = null;
    }
 }

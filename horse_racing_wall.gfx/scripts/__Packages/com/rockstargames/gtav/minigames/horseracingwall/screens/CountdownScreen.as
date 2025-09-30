@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.minigames.horseracingwall.screens.CountdownScreen extends com.rockstargames.gtav.minigames.horseracingwall.Screen
 {
-   var view;
-   var countdown;
    var app;
+   var countdown;
+   var view;
    function CountdownScreen(app, viewContainer, navigation)
    {
       super(app,viewContainer,"countdownScreen",navigation);
@@ -31,10 +31,13 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.CountdownScreen e
    function updateHorses()
    {
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
       while(_loc4_ < this.app.horses.length)
       {
-         var _loc3_ = this.app.horses[_loc4_];
-         var _loc2_ = this.view["horseCard" + _loc4_];
+         _loc3_ = this.app.horses[_loc4_];
+         _loc2_ = this.view["horseCard" + _loc4_];
          _loc3_.init(_loc2_.horse,true);
          _loc2_.num.text = _loc3_.number;
          if(this.app.displayConfig.isAsian)
@@ -44,7 +47,7 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.CountdownScreen e
          com.rockstargames.gtav.minigames.horseracingwall.HORSE_RACING_WALL.setSpacedText(_loc2_.nameWrapper.label,_loc3_.name,3,true,true);
          if(this.app.displayConfig.isAsian)
          {
-            var _loc5_ = 386;
+            _loc5_ = 386;
             _loc2_.nameWrapper.label.autoSize = "left";
             _loc2_.nameWrapper._xscale = _loc2_.nameWrapper._yscale = Math.min(100,_loc2_.nameWrapper._xscale * _loc5_ / _loc2_.nameWrapper._width);
             _loc2_.nameWrapper._x = 0.5 * (_loc5_ - _loc2_.nameWrapper._width);

@@ -1,28 +1,28 @@
 class com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_RACE extends com.rockstargames.gtav.levelDesign.DashboardDials.BaseVehicleDashboard
 {
-   var RPM_MIN_ROT;
-   var RPM_MAX_ROT;
-   var SPEED_MIN_ROT;
-   var SPEED_MAX_ROT;
-   var FUEL_MIN_ROT;
-   var FUEL_MAX_ROT;
-   var TEMP_MIN_ROT;
-   var TEMP_MAX_ROT;
-   var RPM_IS_CLOCKWISE;
-   var SPEED_IS_CLOCKWISE;
-   var FUEL_IS_CLOCKWISE;
-   var TEMP_IS_CLOCKWISE;
-   var OIL_TEMP_MIN_ROT;
-   var OIL_TEMP_MAX_ROT;
-   var OIL_TEMP_IS_CLOCKWISE;
-   var BOOST_MIN_ROT;
-   var BOOST_MAX_ROT;
    var BOOST_IS_CLOCKWISE;
-   var VACUUM_MIN_ROT;
-   var VACUUM_MAX_ROT;
-   var VACUUM_IS_CLOCKWISE;
+   var BOOST_MAX_ROT;
+   var BOOST_MIN_ROT;
+   var FUEL_IS_CLOCKWISE;
+   var FUEL_MAX_ROT;
+   var FUEL_MIN_ROT;
    var IS_DIAL;
+   var OIL_TEMP_IS_CLOCKWISE;
+   var OIL_TEMP_MAX_ROT;
+   var OIL_TEMP_MIN_ROT;
+   var RPM_IS_CLOCKWISE;
+   var RPM_MAX_ROT;
+   var RPM_MIN_ROT;
+   var SPEED_IS_CLOCKWISE;
+   var SPEED_MAX_ROT;
+   var SPEED_MIN_ROT;
+   var TEMP_IS_CLOCKWISE;
+   var TEMP_MAX_ROT;
+   var TEMP_MIN_ROT;
    var TOP_SPEED;
+   var VACUUM_IS_CLOCKWISE;
+   var VACUUM_MAX_ROT;
+   var VACUUM_MIN_ROT;
    var _mcName = "RACE";
    function DIAL_RACE(mc)
    {

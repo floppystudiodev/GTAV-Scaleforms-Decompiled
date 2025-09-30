@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
 {
-   var tennisColor;
-   var whiteColor;
-   var blackColor;
    var bgColor;
-   var logoMC;
-   var titleCellsMC;
-   var titleTF;
-   var highlightedCells;
    var bgMC;
+   var blackColor;
+   var highlightedCells;
+   var logoMC;
    var p0;
    var p1;
+   var tennisColor;
+   var titleCellsMC;
+   var titleTF;
+   var whiteColor;
    var curCellCount = 0;
    var maxCellCount = 0;
    function Scoreboard()
@@ -29,7 +29,7 @@ class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
       com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_YELLOW,_loc6_);
       com.rockstargames.ui.utils.Colour.Colourise(this.logoMC,this.tennisColor.r,this.tennisColor.g,this.tennisColor.b,this.tennisColor.a);
       com.rockstargames.ui.utils.Colour.Colourise(this.titleCellsMC.ruleMC,this.whiteColor.r,this.whiteColor.g,this.whiteColor.b,this.whiteColor.a);
-      var _loc5_ = undefined;
+      var _loc5_;
       var _loc4_ = 0;
       while(_loc4_ < 2)
       {
@@ -48,9 +48,10 @@ class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
       {
          this.maxCellCount = this.curCellCount;
       }
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
+      var _loc3_;
+      var _loc5_;
       var _loc4_ = 0;
+      var _loc6_;
       while(_loc4_ < this.maxCellCount)
       {
          _loc3_ = this.titleCellsMC["c" + _loc4_];
@@ -68,7 +69,7 @@ class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
             {
                if(isNaN(Number(_loc5_)))
                {
-                  var _loc6_ = new TextFormat();
+                  _loc6_ = new TextFormat();
                   _loc6_.size = 12;
                   _loc3_.labelMC.labelTF.setNewTextFormat(_loc6_);
                   _loc3_.labelMC.labelTF._y = 5;
@@ -130,8 +131,9 @@ class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
       }
       var _loc6_ = _loc8_.cellsMC;
       _loc6_.ruleMC._visible = false;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc4_ = 0;
+      var _loc5_;
       while(_loc4_ < this.maxCellCount)
       {
          _loc3_ = _loc6_["c" + _loc4_];
@@ -156,7 +158,7 @@ class com.rockstargames.gtav.minigames.tennis.Scoreboard extends MovieClip
                   com.rockstargames.ui.utils.Colour.Colourise(_loc3_.bgMC,this.tennisColor.r,this.tennisColor.g,this.tennisColor.b,50);
                }
             }
-            var _loc5_ = arguments[_loc4_ + 5];
+            _loc5_ = arguments[_loc4_ + 5];
             _loc3_.labelMC.labelTF.text = _loc5_ == undefined ? "" : _loc5_;
          }
          else if(_loc3_ != undefined)

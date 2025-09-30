@@ -2,8 +2,8 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="64.0px" width="288.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
     <path d="M288.0 64.0 L0.0 64.0 0.0 0.0 288.0 0.0 288.0 64.0" fill="#c2262e" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="false" height="64" id="PatternID_658_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 16.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 256 64" width="256">
-      <image height="64" width="256" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABACAYAAAD1Xam+AAAA20lEQVR4Xu3UMQEAMBCEsPNv+rvXAhmyIIDddkDT/gB0GACEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEGQCEPWdyh3LFEtK6AAAAAElFTkSuQmCC"/>
+    <pattern height="64" id="PatternID_658_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 16.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 256 64" width="256">
+      <image height="64" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="256" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABACAYAAAD1Xam+AAAArElEQVR42u3UIQEAAAjAsPcvDSVwTKzAxZsa4KdEAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAwABEAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMA7ixncodyxAEK2AAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M272.0 64.0 L16.0 64.0 16.0 0.0 272.0 0.0 272.0 64.0" ffdec:fill-bitmapId="19" style="fill:url(#PatternID_658_1)"/>
   </g>

@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.rockstargames.gtav.pc.applications.hacking.BaseHacking
 {
-   var gridMC;
-   var frameMC;
-   var replayMC;
-   var winMC;
-   var rouletteBarMC;
    var AH;
-   var userBarMC;
-   var topBoundMC;
-   var bottomBoundMC;
-   var onEnterFrame;
    var alertMC;
+   var bottomBoundMC;
+   var frameMC;
+   var gridMC;
+   var onEnterFrame;
+   var replayMC;
+   var rouletteBarMC;
    var signalMC;
    var signalStrengthText;
    var timeTF;
+   var topBoundMC;
+   var userBarMC;
+   var winMC;
    var rouletteColumns = 8;
    var rouletteRows = 7;
    var rouletteWords = new Array();
@@ -38,9 +38,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
       this.rouletteColItems = [];
       var _loc4_ = this.rouletteWords[0].split("");
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = new com.rockstargames.gtav.pc.applications.hacking.BFColumn();
+         _loc3_ = new com.rockstargames.gtav.pc.applications.hacking.BFColumn();
          _loc3_.init(this.gridMC,_loc2_,this.rouletteRows,_loc4_[_loc2_]);
          this.rouletteColItems.push(_loc3_);
          _loc2_ = _loc2_ + 1;
@@ -56,10 +57,12 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
       this.rouletteWords = [wordStr];
       var _loc5_ = this.rouletteWords[0];
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc4_ = this.rouletteColItems[_loc2_];
-         var _loc3_ = _loc5_.charAt(_loc2_);
+         _loc4_ = this.rouletteColItems[_loc2_];
+         _loc3_ = _loc5_.charAt(_loc2_);
          _loc4_.setLetter(_loc3_);
          _loc2_ = _loc2_ + 1;
       }
@@ -71,9 +74,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
       var _loc12_ = this.rouletteItems.length;
       this.rouletteColObj = [];
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.rouletteColumns)
       {
-         var _loc2_ = 50 + Math.ceil(Math.random() * 50);
+         _loc2_ = 50 + Math.ceil(Math.random() * 50);
          this.rouletteColObj.push({speed:_loc2_,maxspeed:_loc2_,index:0,success:false});
          _loc3_ = _loc3_ + 1;
       }
@@ -96,9 +100,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
    function updateApp02()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc3_ = this.rouletteColItems[_loc2_];
+         _loc3_ = this.rouletteColItems[_loc2_];
          _loc3_.update();
          _loc2_ = _loc2_ + 1;
       }
@@ -116,10 +121,12 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
          _loc6_ = 0;
       }
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < this.rouletteRows)
       {
-         var _loc3_ = this.rouletteItems[i][_loc2_];
-         var _loc4_ = this.rouletteColItems[i][_loc2_];
+         _loc3_ = this.rouletteItems[i][_loc2_];
+         _loc4_ = this.rouletteColItems[i][_loc2_];
          _loc3_.numTF.text = _loc4_;
          if(_loc6_ == _loc2_)
          {
@@ -155,14 +162,17 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
    {
       var _loc6_ = this.rouletteColItems[this.rouletteIndex];
       var _loc5_ = _loc6_.testHit();
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(_loc5_)
       {
          this.jumpHighlight();
-         var _loc4_ = 0;
-         var _loc2_ = 0;
+         _loc4_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.rouletteColItems.length)
          {
-            var _loc3_ = this.rouletteColItems[_loc2_];
+            _loc3_ = this.rouletteColItems[_loc2_];
             if(_loc3_.success)
             {
                _loc4_ = _loc4_ + 1;
@@ -190,9 +200,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
    {
       this.isSpinning = true;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc3_ = this.rouletteColItems[_loc2_];
+         _loc3_ = this.rouletteColItems[_loc2_];
          _loc3_.reset();
          _loc2_ = _loc2_ + 1;
       }
@@ -208,15 +219,17 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
       var _loc6_ = false;
       var _loc5_ = this.rouletteColumns - 1;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < this.rouletteColumns - 1)
       {
-         var _loc2_ = this.rouletteIndex + _loc3_ + 1;
+         _loc2_ = this.rouletteIndex + _loc3_ + 1;
          if(_loc2_ > this.rouletteColumns - 1)
          {
             _loc2_ -= this.rouletteColumns;
          }
          _loc5_ = _loc5_ - 1;
-         var _loc4_ = this.rouletteColItems[_loc2_];
+         _loc4_ = this.rouletteColItems[_loc2_];
          if(!_loc4_.success)
          {
             this.rouletteIndex = _loc2_;
@@ -234,9 +247,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
    {
       this._rouletteIndex = r;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc3_ = this.rouletteColItems[_loc2_];
+         _loc3_ = this.rouletteColItems[_loc2_];
          _loc3_.highlighted = Boolean(_loc2_ == this._rouletteIndex);
          _loc2_ = _loc2_ + 1;
       }
@@ -261,9 +275,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
          delete this.onEnterFrame;
       }
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc3_ = this.rouletteColItems[_loc2_];
+         _loc3_ = this.rouletteColItems[_loc2_];
          _loc3_.reset();
          _loc2_ = _loc2_ + 1;
       }
@@ -285,10 +300,12 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
    function setColumnSpeed(gameColumnSpeedList)
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.rouletteColItems.length)
       {
-         var _loc4_ = this.rouletteColItems[_loc2_];
-         var _loc3_ = gameColumnSpeedList[_loc2_];
+         _loc4_ = this.rouletteColItems[_loc2_];
+         _loc3_ = gameColumnSpeedList[_loc2_];
          _loc4_.setColumnSpeed(_loc3_);
          _loc2_ = _loc2_ + 1;
       }
@@ -300,9 +317,10 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
          this.lives = t;
       }
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 7)
       {
-         var _loc3_ = this.signalMC["bar" + _loc2_ + "MC"];
+         _loc3_ = this.signalMC["bar" + _loc2_ + "MC"];
          _loc3_._visible = _loc2_ <= this.lives;
          _loc2_ < l + 1 ? _loc3_.gotoAndStop(1) : _loc3_.gotoAndStop(2);
          _loc2_ = _loc2_ + 1;
@@ -355,13 +373,12 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
                {
                   this.startApp02();
                   _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_ROULETTE_RETRY[0];
+                  break;
                }
-               else
-               {
-                  _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_ROULETTE_NORETRY[0];
-               }
+               _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_ROULETTE_NORETRY[0];
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_GAME)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_GAME)
             {
                if(this.isSpinning)
                {
@@ -391,8 +408,9 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_GAME)
             {
                this.moveHighlightColumn(-1);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_REPLAY)
             {
                this.highlightReplay(1);
             }
@@ -401,8 +419,9 @@ class com.rockstargames.gtav.pc.applications.hacking.BruteForceApp extends com.r
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_GAME)
             {
                this.moveHighlightColumn(1);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP02_REPLAY)
             {
                this.highlightReplay(2);
             }

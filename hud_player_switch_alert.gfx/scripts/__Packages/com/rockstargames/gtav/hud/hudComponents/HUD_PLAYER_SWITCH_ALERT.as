@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_PLAYER_SWITCH_ALERT extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var CHAR_LIST;
-   var slicesOfPie;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CHAR_LIST;
+   var CONTENT;
    var TIMELINE;
+   var slicesOfPie;
    var I_LOVE_BLINKING_THIS_MANY_TIMES = 2;
    var BLINKS = 0;
    var count = 0;

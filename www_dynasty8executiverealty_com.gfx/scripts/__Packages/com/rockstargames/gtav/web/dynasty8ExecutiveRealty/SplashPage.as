@@ -21,7 +21,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SplashPage extends com.
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "enterButton")
       {
          this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.PAGES.MAP_PAGE.name);

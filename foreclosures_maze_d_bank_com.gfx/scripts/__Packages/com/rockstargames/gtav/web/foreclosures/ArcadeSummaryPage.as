@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.foreclosures.ArcadeSummaryPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
+   var buttonsHiddenByAlert;
    var prevPageName;
    var progressPanel;
-   var view;
-   var buttonsHiddenByAlert;
    var tradeInAlert;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_ARC";
    function ArcadeSummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -158,6 +158,8 @@ class com.rockstargames.gtav.web.foreclosures.ArcadeSummaryPage extends com.rock
             this.hideTradeInAlert();
             this.website.dispatchPlayerArcadeSelections();
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name);
+         default:
+            return;
       }
    }
    function handleLB()

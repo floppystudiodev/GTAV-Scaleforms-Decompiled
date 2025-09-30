@@ -1,20 +1,22 @@
 class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var linkageID;
+   var CONTENT;
    var HColour;
-   var headerTextFormat;
+   var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
    var gamertagTextFormat;
+   var gfxFileName;
+   var headerTextFormat;
    var itemListStyle;
    var jobItem;
-   var dataProviderUI;
-   var CONTENT;
-   var gfxFileName;
-   var currentStyle;
-   var row;
-   var container;
-   var TextWhiteHex;
+   var linkageID;
+   var numberOfVisibleRows;
    var offWhiteRGB;
-   var TextBlackHex;
+   var row;
    var defaultRowHeight = 80;
    var DEFAULT_ALPHA = 99;
    function BOSS_JOB_LIST()
@@ -50,33 +52,46 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
       {
          case "CELLPHONE_FACADE":
             com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,0,0,0,100);
-            break;
+            return;
          case "CELLPHONE_IFRUIT":
             if(this.jobItem.isMP)
             {
                com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,0,0,0,100);
+               return;
             }
-            else
-            {
-               com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,228,223,169,100);
-               com.rockstargames.ui.utils.Colour.Colourise(_level0.TIMELINE.infoBar.headerBackground,136,118,104,100);
-            }
+            com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,228,223,169,100);
+            com.rockstargames.ui.utils.Colour.Colourise(_level0.TIMELINE.infoBar.headerBackground,136,118,104,100);
+            return;
             break;
          default:
             com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,this.currentStyle[4][0],this.currentStyle[4][1],this.currentStyle[4][2],100);
+            return;
       }
    }
    function populateContent()
    {
       this.dataProviderUI = _level0.TIMELINE.bossJobListProvider;
       this.row = 1;
+      var _loc8_;
+      var _loc2_;
+      var _loc7_;
+      var _loc12_;
+      var _loc14_;
+      var _loc10_;
+      var _loc13_;
+      var _loc4_;
+      var _loc9_;
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
+      var _loc11_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc8_ = 0;
+         _loc8_ = 0;
          while(_loc8_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc7_ = _loc8_ + this.arrayStartPoint;
+            _loc2_ = "listItem" + this.row;
+            _loc7_ = _loc8_ + this.arrayStartPoint;
             this.setupJob(_loc7_);
             this.itemListStyle[_loc7_][0] = this.container[_loc2_];
             this.itemListStyle[_loc7_][1] = this.jobItem.messageStyle;
@@ -89,24 +104,24 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
             }
             if(this.jobItem.jobLabel != undefined)
             {
-               var _loc12_ = this.jobItem.jobLabel.split("<FONT COLOR=\'#F0F0F0\'>").join("");
-               var _loc14_ = this.parseForGamerName(this.container[_loc2_].jobLabel,_loc12_);
+               _loc12_ = this.jobItem.jobLabel.split("<FONT COLOR=\'#F0F0F0\'>").join("");
+               _loc14_ = this.parseForGamerName(this.container[_loc2_].jobLabel,_loc12_);
                if(!_loc14_)
                {
                   this.container[_loc2_].jobLabel._y = 10;
                }
-               var _loc10_ = new com.rockstargames.ui.utils.Text();
+               _loc10_ = new com.rockstargames.ui.utils.Text();
                if(this.container[_loc2_].blipLayerMC)
                {
                   this.container[_loc2_].blipLayerMC.removeMovieClip();
                }
                this.container[_loc2_].createEmptyMovieClip("blipLayerMC",1000);
-               var _loc13_ = this.container[_loc2_].jobDescription.textColor;
+               _loc13_ = this.container[_loc2_].jobDescription.textColor;
                _loc10_.setTextWithIcons(this.jobItem.jobDescription,this.container[_loc2_].blipLayerMC,this.container[_loc2_].jobDescription,0,15.5,1,false);
-               var _loc4_ = 15.5;
-               var _loc9_ = 4;
-               var _loc5_ = 1;
-               var _loc3_ = this.container[_loc2_].jobDescription.getTextFormat();
+               _loc4_ = 15.5;
+               _loc9_ = 4;
+               _loc5_ = 1;
+               _loc3_ = this.container[_loc2_].jobDescription.getTextFormat();
                while(this.container[_loc2_].jobDescription.textHeight + _loc9_ > this.container[_loc2_].jobDescription._height && _loc4_ > _loc5_)
                {
                   _loc4_ -= _loc5_;
@@ -114,7 +129,7 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
                   this.container[_loc2_].jobDescription.setTextFormat(_loc3_);
                   _loc3_ = this.container[_loc2_].jobDescription.getTextFormat();
                }
-               var _loc6_ = this.container[_loc2_].jobDescription.getTextFormat().size;
+               _loc6_ = this.container[_loc2_].jobDescription.getTextFormat().size;
                if(_loc6_ == undefined)
                {
                   _loc6_ = _loc4_;
@@ -126,7 +141,7 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
                {
                   if(this.jobItem.blipFrameLabel > 0)
                   {
-                     var _loc11_ = "BLIP_" + this.jobItem.blipFrameLabel.toString();
+                     _loc11_ = "BLIP_" + this.jobItem.blipFrameLabel.toString();
                      this.container[_loc2_].BLIPS.gotoAndStop(_loc11_);
                   }
                }
@@ -138,13 +153,13 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
    }
    function setState(item, isActive)
    {
+      var _loc3_;
       if(this.numberOfVisibleRows > 0)
       {
          if(this.gfxFileName == "CELLPHONE_IFRUIT")
          {
             if(this.jobItem.isMP)
             {
-               var _loc3_ = undefined;
                _loc3_ = item._style_id;
                if(_loc3_ == undefined)
                {
@@ -219,12 +234,16 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST extends com.rockstarga
       var _loc5_ = str.indexOf("<C>");
       var _loc7_ = str.indexOf("</C>");
       var _loc8_ = _loc5_ != -1 && _loc7_ != -1;
+      var _loc10_;
+      var _loc4_;
+      var _loc2_;
+      var _loc9_;
       if(_loc8_)
       {
-         var _loc10_ = 16;
-         var _loc4_ = str.substring(0,_loc5_);
-         var _loc2_ = str.substring(_loc5_ + 3,_loc7_);
-         var _loc9_ = str.substring(_loc7_ + 4);
+         _loc10_ = 16;
+         _loc4_ = str.substring(0,_loc5_);
+         _loc2_ = str.substring(_loc5_ + 3,_loc7_);
+         _loc9_ = str.substring(_loc7_ + 4);
          if(_loc2_.length > _loc10_)
          {
             _loc2_ = _loc2_.substring(0,_loc10_) + "...";

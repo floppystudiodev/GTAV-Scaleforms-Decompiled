@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Button
 {
-   var id;
-   var view;
+   var bottom;
    var colourScheme;
    var depth;
    var enabled;
    var firstRun;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
+   var view;
    function Button(id, view, colourScheme)
    {
       this.id = id;

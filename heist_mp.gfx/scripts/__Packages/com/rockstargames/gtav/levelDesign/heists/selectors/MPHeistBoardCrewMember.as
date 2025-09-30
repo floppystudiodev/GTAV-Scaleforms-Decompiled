@@ -1,26 +1,27 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var teamNumberTF;
-   var picMC;
-   var playerNumber;
-   var nameTF;
-   var headsetMC;
-   var highlightMC5;
-   var rankMC;
-   var imgLdr;
-   var roleTF;
-   var highlightMC0;
-   var roleIconMC;
-   var statusTF;
-   var highlightMC4;
-   var statusIconMC;
+   var _visible;
+   var bgMC;
+   var codenameTF;
    var cutCashTF;
    var cutPercentTF;
+   var headsetMC;
+   var highlightMC0;
    var highlightMC1;
-   var codenameTF;
+   var highlightMC4;
+   var highlightMC5;
    var highlightMC6;
+   var imgLdr;
+   var nameTF;
+   var picMC;
+   var playerNumber;
+   var rankMC;
+   var roleIconMC;
+   var roleTF;
+   var statusIconMC;
+   var statusTF;
    var subMC;
-   var bgMC;
+   var teamNumberTF;
    var prevTxd = "nothing";
    function MPHeistBoardCrewMember()
    {
@@ -38,6 +39,16 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
          this.picMC.gotoAndStop(this._data[0] + 1);
          this.playerNumber = this._data[0];
       }
+      var _loc7_;
+      var _loc2_;
+      var _loc8_;
+      var _loc10_;
+      var _loc5_;
+      var _loc11_;
+      var _loc9_;
+      var _loc3_;
+      var _loc6_;
+      var _loc4_;
       if(this._data[2] != undefined && this._data[2] != "")
       {
          com.rockstargames.ui.utils.FitToTextfield.scaleText(this.nameTF,this._data[2],120,"left",true);
@@ -47,7 +58,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
          com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.nameTF,com.rockstargames.gtav.levelDesign.heists.HeistColours.BLUE);
          if(this.nameTF.textWidth > 120)
          {
-            var _loc7_ = 100 * (120 / this.nameTF.textWidth);
+            _loc7_ = 100 * (120 / this.nameTF.textWidth);
             this.nameTF._xscale = _loc7_ - 15;
          }
          this.headsetMC._x = this.nameTF._x + this.nameTF.textWidth + 6;
@@ -72,12 +83,12 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
          {
             this.rankMC._visible = false;
          }
-         var _loc2_ = this._data[4];
+         _loc2_ = this._data[4];
          if(typeof _loc2_ != "string")
          {
-            _loc2_ = undefined;
+            _loc2_;
          }
-         var _loc8_ = _loc2_;
+         _loc8_ = _loc2_;
          if(_loc2_ != undefined && _loc2_ != "")
          {
             if(this.prevTxd != _loc2_)
@@ -92,18 +103,18 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
                   this.imgLdr.removeMovieClip();
                }
                this.imgLdr = com.rockstargames.ui.media.ImageLoaderMC(this.picMC.attachMovie("GenericImageLoader","imgLdr",this.picMC.getNextHighestDepth()));
-               var _loc10_ = true;
-               var _loc5_ = 0;
+               _loc10_ = true;
+               _loc5_ = 0;
                if(_loc2_.substr(0,5) == "CHAR_")
                {
                   _loc5_ = 1;
                }
                this.imgLdr._alpha = 0;
-               var _loc11_ = "HEIST_MP";
+               _loc11_ = "HEIST_MP";
                this.imgLdr.init(_loc11_,_loc2_,_loc8_,52,52,0,0);
-               var _loc9_ = 4;
-               var _loc3_ = String(this.imgLdr).split(".");
-               var _loc6_ = _loc3_.slice(_loc3_.length - _loc9_).join(".");
+               _loc9_ = 4;
+               _loc3_ = String(this.imgLdr).split(".");
+               _loc6_ = _loc3_.slice(_loc3_.length - _loc9_).join(".");
                if(_loc5_ == 0)
                {
                   this.imgLdr.addTxdRef(_loc6_,this.showPedHead,this);
@@ -126,7 +137,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
             }
             this.prevTxd = "nothing";
          }
-         var _loc4_ = "";
+         _loc4_ = "";
          if(this._data[14] != undefined && this._data[14] != 0)
          {
             _loc4_ = " (" + this._data[14] + ")";
@@ -248,15 +259,16 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
       {
          case 47:
             this.headsetMC.gotoAndStop("ACTIVE_HEADSET");
-            break;
+            return;
          case 48:
             this.headsetMC.gotoAndStop("INACTIVE_HEADSET");
-            break;
+            return;
          case 49:
             this.headsetMC.gotoAndStop("MUTED_HEADSET");
-            break;
+            return;
          default:
             this.headsetMC.gotoAndStop("EMPTY");
+            return;
       }
    }
    function formatAmount(value)
@@ -297,7 +309,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember
          return undefined;
       }
       this.subMC = this["highlightMC" + _subItemIndex];
-      var _loc4_ = undefined;
+      var _loc4_;
       switch(_subItemIndex)
       {
          case 0:

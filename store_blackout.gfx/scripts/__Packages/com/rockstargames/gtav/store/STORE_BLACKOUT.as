@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.store.STORE_BLACKOUT extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    function STORE_BLACKOUT()
    {
       super();

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PersonnelPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
+   var prevPageName;
    var progressPanel;
-   var view;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_DEFAULT";
    static var IMAGES = ["PERSONNEL_FEMALE","PERSONNEL_MALE"];
    function PersonnelPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -62,6 +62,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PersonnelPage extends c
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

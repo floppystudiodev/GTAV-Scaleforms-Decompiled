@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.VehicleCollection
 {
-   var _id;
    var _collectionNameToken;
-   var _value;
-   var _selected;
-   var _disabled;
    var _completionPercentage;
+   var _disabled;
+   var _id;
+   var _selected;
+   var _value;
    var _vehicles;
    function VehicleCollection(id, collectionNameToken, value, vehicles, selected, disabled, completionOfCollectionInPercent)
    {

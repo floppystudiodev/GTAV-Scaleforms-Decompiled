@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.GAMEPAD_CALIBRATION extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
+   var CONTENT;
    var CalibrationComplete;
    var TIMELINE;
-   var CONTENT;
    var ButtonDetails = new Array();
    function GAMEPAD_CALIBRATION()
    {
@@ -54,10 +54,12 @@ class com.rockstargames.gtav.pauseMenu.GAMEPAD_CALIBRATION extends com.rockstarg
    }
    function SHOW_BUTTON(button, showButton, hidePrevious)
    {
+      var _loc2_;
+      var _loc3_;
       if(hidePrevious)
       {
-         var _loc2_ = 0;
-         var _loc3_ = 20;
+         _loc2_ = 0;
+         _loc3_ = 20;
          _loc2_ = 0;
          while(_loc2_ < _loc3_)
          {
@@ -100,10 +102,15 @@ class com.rockstargames.gtav.pauseMenu.GAMEPAD_CALIBRATION extends com.rockstarg
       {
          hasFill = false;
       }
+      var _loc3_;
+      var _loc6_;
+      var _loc7_;
+      var _loc9_;
+      var _loc10_;
+      var _loc2_;
+      var _loc5_;
       if(prompt < 2)
       {
-         var _loc3_ = undefined;
-         var _loc6_ = undefined;
          if(prompt == 0)
          {
             _loc3_ = this.CONTENT.promptTXT;
@@ -116,15 +123,15 @@ class com.rockstargames.gtav.pauseMenu.GAMEPAD_CALIBRATION extends com.rockstarg
          }
          _loc3_.wordWrap = false;
          _loc3_.text = startString;
-         var _loc7_ = _loc3_.textWidth;
+         _loc7_ = _loc3_.textWidth;
          _loc3_.text = startString + "          " + endString;
-         var _loc9_ = _loc3_.textWidth;
-         var _loc10_ = (_loc3_._width - _loc9_) / 2;
+         _loc9_ = _loc3_.textWidth;
+         _loc10_ = (_loc3_._width - _loc9_) / 2;
          _loc7_ += _loc10_;
          if(clearOld)
          {
-            var _loc2_ = 0;
-            var _loc5_ = 20;
+            _loc2_ = 0;
+            _loc5_ = 20;
             _loc2_ = 0;
             while(_loc2_ < _loc5_)
             {
@@ -150,7 +157,7 @@ class com.rockstargames.gtav.pauseMenu.GAMEPAD_CALIBRATION extends com.rockstarg
    }
    function SET_BUTTON_PRESS_STATE(isPressed, prompt)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(prompt == 0)
       {
          _loc2_ = this.CONTENT.fill1;

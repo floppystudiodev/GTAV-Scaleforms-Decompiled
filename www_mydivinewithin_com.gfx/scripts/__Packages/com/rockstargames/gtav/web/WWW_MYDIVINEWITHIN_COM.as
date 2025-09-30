@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var tickState;
    var CONTENT;
-   var resultsButtonIndex;
-   var mcScope;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
-   var defaultButtonOnColour;
    var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
+   var resultsButtonIndex;
+   var tickState;
    var questionCount = 10;
    function WWW_MYDIVINEWITHIN_COM()
    {
@@ -32,16 +32,20 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
    }
    function goToAnchor(AnchorLink)
    {
-      var _loc0_ = null;
+      var _loc0_;
+      var _loc5_;
+      var _loc6_;
+      var _loc2_;
+      var _loc3_;
       if((_loc0_ = this.browser.pageName) === "FORM")
       {
          if((_loc0_ = AnchorLink) !== "RESULTS")
          {
             var mcScope = this.CONTENT[this.browser.pageName];
-            var _loc5_ = mcScope[AnchorLink];
-            var _loc6_ = AnchorLink.substring(1,AnchorLink.length).split("_");
-            var _loc2_ = _loc6_[0];
-            var _loc3_ = _loc6_[1];
+            _loc5_ = mcScope[AnchorLink];
+            _loc6_ = AnchorLink.substring(1,AnchorLink.length).split("_");
+            _loc2_ = _loc6_[0];
+            _loc3_ = _loc6_[1];
             if(this.tickState[_loc2_] == undefined)
             {
                this.tickState[_loc2_] = [];
@@ -85,37 +89,32 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
          return false;
       }
       var _loc3_ = 0;
-      while(true)
+      var _loc4_;
+      var _loc2_;
+      while(_loc3_ < this.questionCount)
       {
-         if(_loc3_ < this.questionCount)
+         if(this.tickState[_loc3_] == undefined)
          {
-            if(this.tickState[_loc3_] == undefined)
-            {
-               return false;
-            }
-            var _loc4_ = false;
-            var _loc2_ = 0;
-            while(_loc2_ < this.tickState[_loc3_].length)
-            {
-               _loc4_ = this.tickState[_loc3_][_loc2_];
-               if(_loc4_)
-               {
-                  break;
-               }
-               _loc2_ = _loc2_ + 1;
-            }
-            if(!_loc4_)
+            return false;
+         }
+         _loc4_ = false;
+         _loc2_ = 0;
+         while(_loc2_ < this.tickState[_loc3_].length)
+         {
+            _loc4_ = this.tickState[_loc3_][_loc2_];
+            if(_loc4_)
             {
                break;
             }
-            _loc3_ = _loc3_ + 1;
+            _loc2_ = _loc2_ + 1;
          }
-         else
+         if(!_loc4_)
          {
-            return true;
+            return false;
          }
+         _loc3_ = _loc3_ + 1;
       }
-      return false;
+      return true;
    }
    function POPULATE_TEXT(pageName)
    {
@@ -132,6 +131,7 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
             this.dataTextScope[0] = this.mcScope.RESULTS.btnTxt;
       }
       var _loc4_ = 1;
+      var _loc2_;
       for(var _loc5_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc5_] == "movieclip")
@@ -139,7 +139,7 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
             if(this.mcScope[_loc5_].btnTxt != undefined)
             {
                this.mcScope[_loc5_].offColour = this.mcScope[_loc5_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc5_];
+               _loc2_ = this.mcScope[_loc5_];
                _loc2_.gotoAndStop("OFF");
                _loc2_.tickMC._alpha = 0;
                if(_loc2_._name == "RESULTS")
@@ -153,6 +153,8 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
       }
       this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
       this.scan_and_set_localised_text(this.mcScope);
+      var _loc3_;
+      var _loc6_;
       switch(pageName)
       {
          case "PAGE1":
@@ -160,7 +162,7 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
             break;
          case "FORM":
             this.browser.DISABLE_BUTTON(this.resultsButtonIndex,true);
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < 10)
             {
                com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"MDW_FORM_TICK",this.mcScope["tick" + _loc3_],true);
@@ -176,7 +178,7 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
          case "RESULTS":
             this.mcScope.MDW_RES_UNFULFILLED.autoSize = true;
             this.mcScope.MDW_RES_FREE.autoSize = true;
-            var _loc6_ = this.mcScope.MDW_RES_UNFULFILLED._y + this.mcScope.MDW_RES_UNFULFILLED._height;
+            _loc6_ = this.mcScope.MDW_RES_UNFULFILLED._y + this.mcScope.MDW_RES_UNFULFILLED._height;
             this.mcScope.MDW_RES_FREE._y = _loc6_ + (610 - _loc6_ - this.mcScope.MDW_RES_FREE._height) / 2;
             this.mcScope.WWW_THECHILDRENOFTHEMOUNTAIN_COM.btnTxt.autoSize = true;
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"MDW_RES_CLICK",this.mcScope.WWW_THECHILDRENOFTHEMOUNTAIN_COM.btnTxt,true);
@@ -190,12 +192,14 @@ class com.rockstargames.gtav.web.WWW_MYDIVINEWITHIN_COM extends com.rockstargame
    }
    function scan_and_set_localised_text(scope)
    {
+      var _loc2_;
+      var _loc1_;
       for(var _loc4_ in scope)
       {
-         var _loc2_ = scope[_loc4_]._name;
+         _loc2_ = scope[_loc4_]._name;
          if(_loc2_.indexOf("MDW_") == 0)
          {
-            var _loc1_ = scope[_loc4_];
+            _loc1_ = scope[_loc4_];
             _loc1_.html = true;
             _loc1_.multiline = true;
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,_loc2_,_loc1_,true);

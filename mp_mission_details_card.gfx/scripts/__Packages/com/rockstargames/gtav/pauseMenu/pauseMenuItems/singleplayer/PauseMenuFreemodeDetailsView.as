@@ -1,6 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
+   var dataList;
+   var direction;
+   var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
    var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;
@@ -21,11 +30,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
    function scrollHighlightStyle(targetIndex)
    {
       var _loc6_ = this.direction(targetIndex);
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(_loc6_ != 0)
       {
-         var _loc3_ = targetIndex;
-         var _loc2_ = 0;
-         var _loc4_ = 0;
+         _loc3_ = targetIndex;
+         _loc2_ = 0;
+         _loc4_ = 0;
          if(_loc6_ > 0)
          {
             if(_loc3_ >= this.topEdge + this.visibleItems)

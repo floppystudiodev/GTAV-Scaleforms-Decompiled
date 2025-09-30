@@ -1,20 +1,21 @@
 class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var currScreenID;
-   var deactivated;
-   var lastClickedButtonID;
-   var displayConfig;
-   var imageManager;
-   var heistData;
+   var TIMELINE;
+   var _name;
    var colourScheme;
-   var screenContainer;
-   var overlayView;
-   var overlay;
-   var cursor;
    var currScreen;
+   var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var heistData;
+   var imageManager;
+   var lastClickedButtonID;
+   var overlay;
+   var overlayView;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -180,11 +181,14 @@ class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstar
    }
    function ADD_WORLD_MAP_ICON(setupItemID, finaleItemID, iconID, mapID, x, y)
    {
+      var _loc5_;
+      var _loc3_;
+      var _loc2_;
       if(mapID == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map.MAIN_MAP)
       {
-         var _loc5_ = 3570;
-         var _loc3_ = -4185;
-         var _loc2_ = 0.535;
+         _loc5_ = 3570;
+         _loc3_ = -4185;
+         _loc2_ = 0.535;
       }
       else
       {
@@ -238,9 +242,10 @@ class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstar
    {
       var _loc9_ = false;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.heistData.crew.length)
       {
-         var _loc2_ = this.heistData.crew[_loc3_];
+         _loc2_ = this.heistData.crew[_loc3_];
          if(_loc2_.id == id)
          {
             _loc9_ = true;
@@ -278,9 +283,10 @@ class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstar
    function CLEAR_CREW_MEMBER(id)
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.heistData.crew.length)
       {
-         var _loc2_ = this.heistData.crew[_loc3_];
+         _loc2_ = this.heistData.crew[_loc3_];
          if(_loc2_.id == id)
          {
             _loc2_.id = -1;
@@ -393,17 +399,20 @@ class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstar
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -425,13 +434,14 @@ class com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD extends com.rockstar
    }
    static function resizeAsianText(tf, scalar)
    {
+      var _loc1_;
       if(com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD.IS_ASIAN)
       {
          if(scalar == undefined)
          {
             scalar = 1.3;
          }
-         var _loc1_ = tf.getTextFormat();
+         _loc1_ = tf.getTextFormat();
          _loc1_.size *= scalar;
          tf.setTextFormat(_loc1_);
       }

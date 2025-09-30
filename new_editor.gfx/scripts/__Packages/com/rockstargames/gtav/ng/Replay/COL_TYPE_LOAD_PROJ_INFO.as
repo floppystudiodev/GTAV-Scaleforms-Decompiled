@@ -1,15 +1,19 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LOAD_PROJ_INFO extends com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG
 {
-   var myHeight;
-   var bgMC;
-   var hudColourBlack;
-   var bgMCLower;
-   var labelMC;
-   var _helptextItem;
    var APP_DATA;
+   var BLACK_ALPHA;
+   var _helptextItem;
    var _hudColourGreen;
    var _hudColourOrange;
    var _hudColourRed;
+   var attachMovie;
+   var bgMC;
+   var bgMCLower;
+   var clearIfUndefinied;
+   var getNextHighestDepth;
+   var hudColourBlack;
+   var labelMC;
+   var myHeight;
    var MAX_CHARS_OPTIONS = 14;
    function COL_TYPE_LOAD_PROJ_INFO()
    {
@@ -35,6 +39,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LOAD_PROJ_INFO extends com.rocks
       this.clearIfUndefinied(this.labelMC.row_3_col_2_TF,_d[8]);
       this.clearIfUndefinied(this.labelMC.row_4_col_1_TF,_d[9]);
       this.clearIfUndefinied(this.labelMC.row_4_col_2_TF,_d[10]);
+      var _loc4_;
       if(_d[12] != undefined && _d[13] != undefined)
       {
          this.clearIfUndefinied(this.labelMC.row_5_col_1_TF,_d[11]);
@@ -47,7 +52,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LOAD_PROJ_INFO extends com.rocks
          this.showUploadProgress(false);
          if(_d[11] != undefined)
          {
-            var _loc4_ = this.bgMCLower._y + this.bgMCLower._height + 4;
+            _loc4_ = this.bgMCLower._y + this.bgMCLower._height + 4;
             this._helptextItem._y = _loc4_;
             this._helptextItem.data = _d[11];
             this._helptextItem._visible = true;
@@ -62,7 +67,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LOAD_PROJ_INFO extends com.rocks
    }
    function setUploadStatusState(stateId)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(stateId)
       {
          case 0:

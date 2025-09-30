@@ -2,10 +2,10 @@ class com.rockstargames.gtav.web.WWW_PRINCESSROBOTBUBBLEGUM_COM extends com.rock
 {
    var CONTENT;
    var OnColour;
-   var mcScope;
-   var dataTextScope;
    var browser;
+   var dataTextScope;
    var defaultButtonOnColour;
+   var mcScope;
    var videoDisabled = false;
    function WWW_PRINCESSROBOTBUBBLEGUM_COM()
    {
@@ -32,6 +32,7 @@ class com.rockstargames.gtav.web.WWW_PRINCESSROBOTBUBBLEGUM_COM extends com.rock
       this.dataTextScope = new Array();
       this.mcScope = this.CONTENT[pageName];
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -39,13 +40,13 @@ class com.rockstargames.gtav.web.WWW_PRINCESSROBOTBUBBLEGUM_COM extends com.rock
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }
          }
       }
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = pageName) === "PAGE1")
       {
          if(this.videoDisabled == false)

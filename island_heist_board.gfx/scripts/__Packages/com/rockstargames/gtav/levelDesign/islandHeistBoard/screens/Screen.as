@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.Screen
 {
-   var app;
-   var cursor;
-   var overlay;
-   var heistData;
-   var colourScheme;
-   var view;
    var _buttons;
+   var app;
+   var colourScheme;
+   var cursor;
+   var heistData;
+   var overlay;
+   var view;
    static var STAGE_WIDTH = 2048;
    static var STAGE_HEIGHT = 1152;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.Screen.STAGE_WIDTH;
@@ -48,17 +48,20 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.Screen
    }
    function onTargetChange(targetID)
    {
+      var _loc3_;
+      var _loc4_;
+      var _loc2_;
       if(this.overlay.isShowing)
       {
          this.overlay.updateSelectedButton(targetID);
       }
       else
       {
-         var _loc3_ = 0;
-         var _loc4_ = this._buttons.length;
+         _loc3_ = 0;
+         _loc4_ = this._buttons.length;
          while(_loc3_ < _loc4_)
          {
-            var _loc2_ = this._buttons[_loc3_];
+            _loc2_ = this._buttons[_loc3_];
             if(_loc2_.enabled)
             {
                _loc2_.setState(_loc2_.id == targetID);

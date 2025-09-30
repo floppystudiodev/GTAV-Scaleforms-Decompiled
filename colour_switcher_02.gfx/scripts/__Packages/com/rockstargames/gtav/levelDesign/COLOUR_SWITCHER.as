@@ -1,8 +1,17 @@
 class com.rockstargames.gtav.levelDesign.COLOUR_SWITCHER extends com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LIST
 {
-   var paletteMC;
-   var titleMC;
+   var SET_DATA_SLOT;
+   var SET_DATA_SLOT_EMPTY;
+   var SET_HIGHLIGHT;
+   var SHOW_OPACITY;
    var barMC;
+   var colourData;
+   var colourMCs;
+   var dbgID;
+   var paletteMC;
+   var repositionPallattes;
+   var titleMC;
+   var visibleItems;
    var pcActiveOn = false;
    function COLOUR_SWITCHER()
    {
@@ -25,11 +34,14 @@ class com.rockstargames.gtav.levelDesign.COLOUR_SWITCHER extends com.rockstargam
       this.SET_DATA_SLOT_EMPTY();
       var _loc6_ = 16;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < _loc6_)
       {
-         var _loc4_ = Math.floor(Math.random() * 255);
-         var _loc5_ = Math.floor(Math.random() * 255);
-         var _loc3_ = Math.floor(Math.random() * 255);
+         _loc4_ = Math.floor(Math.random() * 255);
+         _loc5_ = Math.floor(Math.random() * 255);
+         _loc3_ = Math.floor(Math.random() * 255);
          this.SET_DATA_SLOT(_loc2_,_loc4_,_loc5_,_loc3_);
          _loc2_ = _loc2_ + 1;
       }
@@ -41,11 +53,14 @@ class com.rockstargames.gtav.levelDesign.COLOUR_SWITCHER extends com.rockstargam
    {
       var _loc7_ = this.colourData.length <= this.visibleItems ? this.colourData.length : this.visibleItems;
       var _loc2_ = 0;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc7_)
       {
-         var _loc5_ = this.colourData[_loc2_];
-         var _loc3_ = this.paletteMC.containerMC.attachMovie("swatch","swatch" + _loc2_ + "MC",_loc2_);
-         var _loc4_ = _loc3_.attachMovie("hairColourSwatch","innerMC",_loc3_.getNextHighestDepth(),{_y:5});
+         _loc5_ = this.colourData[_loc2_];
+         _loc3_ = this.paletteMC.containerMC.attachMovie("swatch","swatch" + _loc2_ + "MC",_loc2_);
+         _loc4_ = _loc3_.attachMovie("hairColourSwatch","innerMC",_loc3_.getNextHighestDepth(),{_y:5});
          com.rockstargames.ui.mouse.MouseBtn(_loc4_).setupGenericMouseInterface(_loc2_,_loc2_);
          _loc3_._x = _loc3_._width * _loc2_;
          this.itemSetData(_loc2_,_loc3_,_loc5_);

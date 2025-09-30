@@ -1,24 +1,24 @@
 class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingView
 {
-   var gutterHeight;
-   var offsetX;
-   var offsetY;
-   var scrollerX;
+   var CONTENT;
+   var advertTXD;
+   var advertTop;
+   var contactTXD;
+   var container;
+   var content;
    var contentOriginX;
    var contentOriginY;
    var dataProviderUI;
-   var scrollBarTimeout;
-   var linkageID;
-   var CONTENT;
    var gfxFileName;
-   var scrollBar;
-   var container;
-   var content;
+   var gutterHeight;
+   var linkageID;
    var messageBody;
-   var advertTop;
-   var advertTXD;
+   var offsetX;
+   var offsetY;
+   var scrollBar;
+   var scrollBarTimeout;
+   var scrollerX;
    var txd_loader;
-   var contactTXD;
    var TXDStr = "";
    var prevTXDStr = "";
    var TXDStrToRemove = "";
@@ -57,10 +57,10 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
       var _loc5_ = "<font color=\'#2f5c73\'>";
       var _loc12_ = "<br/><img src=\'divider_line\' height=\'8\' width=\'330\'/>";
       var _loc10_ = "";
-      var _loc11_ = undefined;
-      var _loc8_ = undefined;
-      var _loc9_ = undefined;
-      var _loc4_ = undefined;
+      var _loc11_;
+      var _loc8_;
+      var _loc9_;
+      var _loc4_;
       this.content.fromAddress._y = this.fromY;
       this.content.subjectTitle._y = this.subjectY;
       this.content.messageBody._y = this.bodyY;
@@ -77,6 +77,10 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
          this.content.messageBody._y = this.content.subjectTitle._y + this.content.subjectTitle._height + 6;
          this.bodyY = this.content.messageBody._y;
       }
+      var _loc2_;
+      var _loc14_;
+      var _loc7_;
+      var _loc6_;
       if(this.dataProviderUI.length > 0)
       {
          if(this.dataProviderUI[0][7] == true)
@@ -84,7 +88,7 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
             this.messageBody = this.dataProviderUI[0][3];
             _loc4_ = this.dataProviderUI[0][4];
             _loc3_ = this.messageBody + "<br/>";
-            var _loc2_ = 1;
+            _loc2_ = 1;
             while(_loc2_ < this.dataProviderUI.length)
             {
                _loc3_ += this.dataProviderUI[_loc2_][0] + "<br/>";
@@ -105,11 +109,11 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
                if(_loc2_ > 0)
                {
                   _loc3_ += _loc10_ + "<br/><br/>" + _loc5_ + _loc11_ + "<br/>" + _loc8_ + "<br/>" + _loc9_ + "<br/>";
-                  var _loc14_ = this.messageBody.indexOf("<FONT COLOR=");
+                  _loc14_ = this.messageBody.indexOf("<FONT COLOR=");
                   if(_loc14_ != -1)
                   {
-                     var _loc7_ = this.messageBody.substr(_loc14_ + 1).indexOf(">");
-                     var _loc6_ = this.messageBody.substr(_loc14_,_loc7_ + 2);
+                     _loc7_ = this.messageBody.substr(_loc14_ + 1).indexOf(">");
+                     _loc6_ = this.messageBody.substr(_loc14_,_loc7_ + 2);
                      this.messageBody = this.messageBody.split(_loc6_).join(_loc5_);
                   }
                   _loc4_ = _loc5_ + _loc4_;
@@ -126,9 +130,10 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
       this.messageBody = this.messageBody.split("#F0F0F0").join("#000000");
       this.messageBody = this.messageBody.split("#E1E1E1").join("#000000");
       _loc14_ = this.messageBody.indexOf("<img src=\'img://");
+      var _loc15_;
       if(_loc14_ != -1)
       {
-         var _loc15_ = this.messageBody.substr(_loc14_ + 16).indexOf("/");
+         _loc15_ = this.messageBody.substr(_loc14_ + 16).indexOf("/");
          this.TXDStr = this.messageBody.substr(_loc14_ + 16,_loc15_);
          if(this.TXDStr != "" && this.prevTXDStr != this.TXDStr)
          {
@@ -175,6 +180,9 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
    }
    function ADD_TXD_REF_RESPONSE(textureDict, uniqueID, success)
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(success == true || success == undefined)
       {
          if(this.TXDStr == textureDict)
@@ -185,9 +193,9 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
             {
                this.content.background._height = this.content.messageBody._y + this.content.messageBody._height;
             }
-            var _loc2_ = this.content._height;
-            var _loc4_ = _loc2_ - this.gutterHeight;
-            var _loc3_ = _loc4_ / _loc2_;
+            _loc2_ = this.content._height;
+            _loc4_ = _loc2_ - this.gutterHeight;
+            _loc3_ = _loc4_ / _loc2_;
             this.scrollBar.scrollBarContainer.scrubber._height = Math.round((1 - _loc3_) * this.gutterHeight);
          }
       }

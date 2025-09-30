@@ -1,8 +1,8 @@
 class com.rockstargames.ui.core.BaseScriptUI extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    var _isWideScreen;
    function BaseScriptUI()
    {

@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataRecoveryScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
-   var dataObject;
    var app;
    var buttons;
    var cursor;
+   var dataObject;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    function DataRecoveryScreen(app, viewContainer, cursor, dataObject)
    {
@@ -115,7 +115,7 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataRecoveryScreen ext
    }
    function onTargetChange(activeTarget)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 1;
       while(_loc2_ <= 3)
       {

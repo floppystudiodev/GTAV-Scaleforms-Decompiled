@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var statsList;
    var containerMC;
-   var model;
+   var dbgID;
    var emblemImageMC;
+   var model;
+   var statsList;
    var typeImageMC;
    var currItemIndex = 0;
    function PAUSE_MENU_CREWS_CARD()
@@ -49,9 +49,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_CARD ext
       this.model = new com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewsCardModel();
       this.model.createView(0,{id:0,x:0,y:0,rowSpacing:2,columnSpacing:0,container:this.containerMC,visibleItems:5,linkage:["crewsCardItem"],viewMaskHeight:430,selectstyle:com.rockstargames.ui.components.GUIView.SCROLL_SELECTSTYLE,collapse:collapse});
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < 2)
       {
-         var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPlayerCardItem(this.CONTENT.attachMovie(_loc5_,_loc5_ + _loc3_ + "MC",this.CONTENT.getNextHighestDepth()));
+         _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPlayerCardItem(this.CONTENT.attachMovie(_loc5_,_loc5_ + _loc3_ + "MC",this.CONTENT.getNextHighestDepth()));
          _loc4_.bgMC._height = 52;
          this.statsList.push(_loc4_);
          _loc3_ = _loc3_ + 1;
@@ -78,6 +79,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_CARD ext
    }
    function SET_DATA_SLOT(_viewIndex, _slotIndex)
    {
+      var _loc3_;
       if(_slotIndex == -1)
       {
          this.model.addDataToView(0,this.currItemIndex,arguments);
@@ -85,7 +87,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_CARD ext
       }
       else
       {
-         var _loc3_ = this.statsList[_viewIndex];
+         _loc3_ = this.statsList[_viewIndex];
          if(arguments[7] != -1)
          {
             _loc3_._visible = true;
@@ -123,16 +125,22 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_CARD ext
       }
       com.rockstargames.ui.utils.UIText.setSizedText(this.CONTENT.infoMC.foundedTF,!arguments[5] ? "" : arguments[5],true);
       com.rockstargames.ui.utils.UIText.setSizedText(this.CONTENT.infoMC.statusTF,!arguments[6] ? "" : arguments[6],true);
+      var _loc9_;
+      var _loc11_;
+      var _loc6_;
+      var _loc8_;
+      var _loc7_;
+      var _loc10_;
       if(arguments[7] != undefined)
       {
          com.rockstargames.ui.utils.UIText.setSizedText(this.CONTENT.infoMC.membersTF,!arguments[7] ? "" : arguments[7],false,true);
-         var _loc9_ = 6;
+         _loc9_ = 6;
          this.CONTENT.infoMC.membersTF._x = 288 - this.CONTENT.infoMC.membersTF._width - _loc9_;
-         var _loc11_ = this.CONTENT.infoMC.membersTF._x;
-         var _loc6_ = this.CONTENT.infoMC.membersTF._width;
-         var _loc8_ = this.CONTENT.infoMC.membersTF.textWidth;
-         var _loc7_ = this.CONTENT.infoMC.membersIconMC._width;
-         var _loc10_ = 5;
+         _loc11_ = this.CONTENT.infoMC.membersTF._x;
+         _loc6_ = this.CONTENT.infoMC.membersTF._width;
+         _loc8_ = this.CONTENT.infoMC.membersTF.textWidth;
+         _loc7_ = this.CONTENT.infoMC.membersIconMC._width;
+         _loc10_ = 5;
          this.CONTENT.infoMC.membersIconMC._x = _loc11_ + _loc6_ - _loc8_ - _loc7_ - _loc10_;
       }
       this.CONTENT.infoMC.crewTypeMC.gotoAndStop(!arguments[8] ? 1 : arguments[8]);

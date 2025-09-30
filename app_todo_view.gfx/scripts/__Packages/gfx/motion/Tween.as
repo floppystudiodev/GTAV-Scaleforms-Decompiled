@@ -1,12 +1,12 @@
 class gfx.motion.Tween extends MovieClip
 {
-   var tween__props;
-   var tween__ease;
-   var tween__startProps;
-   var tween__startTime;
-   var tween__duration;
    var onEnterFrame;
    var onTweenComplete;
+   var tween__duration;
+   var tween__ease;
+   var tween__props;
+   var tween__startProps;
+   var tween__startTime;
    static var _instance = new gfx.motion.Tween();
    function Tween()
    {

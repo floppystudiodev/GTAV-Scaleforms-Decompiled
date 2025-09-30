@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.ArenaReadyPage extends com.rockstargames.gtav.web.arena.Page
 {
-   var progressPanel;
-   var website;
-   var view;
-   var scrollPositions;
    var listsAvailable;
+   var progressPanel;
+   var scrollPositions;
+   var view;
+   var website;
    static var NUM_COLS = 3;
    static var COL_OFFSET = 217;
    static var COL_WIDTH = 285;
@@ -41,15 +41,18 @@ class com.rockstargames.gtav.web.arena.pages.ArenaReadyPage extends com.rockstar
             break;
          case "sectionButton":
             this.website.browser.SCROLL_WEBPAGE_PIXELS(this.scrollPositions[parseInt(id)]);
+         default:
+            return;
       }
    }
    function initAvailableLists()
    {
       this.listsAvailable = [false,false,false];
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.website.vehicles.length)
       {
-         var _loc2_ = this.website.vehicles[_loc3_];
+         _loc2_ = this.website.vehicles[_loc3_];
          if(_loc2_.buyItNowPrice >= 0 || _loc2_.tradePrice >= 0)
          {
             this.listsAvailable[_loc2_.theme - 1] = true;
@@ -63,9 +66,10 @@ class com.rockstargames.gtav.web.arena.pages.ArenaReadyPage extends com.rockstar
       var _loc6_ = [this.view.navHeader.sectionButton_0._x,this.view.navHeader.sectionButton_1._x,this.view.navHeader.sectionButton_2._x];
       var _loc5_ = 0;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc4_.length)
       {
-         var _loc2_ = this.view.navHeader["sectionButton_" + _loc3_];
+         _loc2_ = this.view.navHeader["sectionButton_" + _loc3_];
          if(this.listsAvailable[_loc3_])
          {
             _loc2_.wrapper.label.textAutoSize = "shrink";
@@ -95,17 +99,22 @@ class com.rockstargames.gtav.web.arena.pages.ArenaReadyPage extends com.rockstar
       }
       _loc3_ = 0;
       var _loc6_ = [0,0,0];
+      var _loc2_;
+      var _loc7_;
+      var _loc5_;
+      var _loc9_;
+      var _loc8_;
       while(_loc3_ < this.website.vehicles.length)
       {
-         var _loc2_ = this.website.vehicles[_loc3_];
-         var _loc7_ = _loc2_.theme;
+         _loc2_ = this.website.vehicles[_loc3_];
+         _loc7_ = _loc2_.theme;
          if(_loc7_ != -1)
          {
             if(_loc2_.buyItNowPrice >= 0 || _loc2_.tradePrice >= 0)
             {
-               var _loc5_ = _loc7_ - 1;
-               var _loc9_ = _loc6_[_loc5_] % com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.NUM_COLS * com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.COL_WIDTH;
-               var _loc8_ = Math.floor(_loc6_[_loc5_] / com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.NUM_COLS) * com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.ROW_HEIGHT + com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.HEADER_HEIGHT;
+               _loc5_ = _loc7_ - 1;
+               _loc9_ = _loc6_[_loc5_] % com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.NUM_COLS * com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.COL_WIDTH;
+               _loc8_ = Math.floor(_loc6_[_loc5_] / com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.NUM_COLS) * com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.ROW_HEIGHT + com.rockstargames.gtav.web.arena.pages.ArenaReadyPage.HEADER_HEIGHT;
                this.initVehicleButton(_loc4_[_loc5_],_loc9_,_loc8_,_loc2_.id,_loc2_.nameLabel,_loc2_.thumbnailTexture,_loc2_.textureDictionary,_loc2_.buyItNowPrice,_loc2_.buyItNowSalePrice,_loc2_.buyItNowPriceAvailable,_loc2_.tradePrice,_loc2_.tradeSalePrice,_loc2_.tradePriceAvailable,_loc2_.numSeats,_loc2_.award);
                _loc6_[_loc5_] = _loc6_[_loc5_] + 1;
             }

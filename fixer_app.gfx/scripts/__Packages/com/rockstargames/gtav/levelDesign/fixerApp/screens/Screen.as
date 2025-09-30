@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
    var app;
+   var buttons;
    var cursor;
-   var dataObject;
-   var view;
    var cursorListenerID;
+   var dataObject;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
-   var updateDataObject;
    var tabsDataObject;
-   var buttons;
+   var updateDataObject;
+   var view;
    function Screen(app, viewContainer, cursor, viewLinkage, dataObject)
    {
       this.app = app;

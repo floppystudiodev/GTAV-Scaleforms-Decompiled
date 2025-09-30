@@ -1,6 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.ReplayView extends com.rockstargames.ui.components.GUIView
 {
+   var dataList;
+   var itemList;
+   var itemY;
+   var rowSpacing;
    var viewContainer;
+   var viewLinkageList;
    function ReplayView(_mc)
    {
       super(_mc);

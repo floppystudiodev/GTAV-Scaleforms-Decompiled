@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends MovieClip
 {
-   var TIMELINE;
    var CONTENT;
-   var currentInterface;
-   var previousInterface;
-   var layerOne;
-   var layerTwo;
-   var layerThree;
-   var layerFour;
-   var keyboardlayer;
-   var cellphoneButtons;
-   var viewMethod;
-   var componentArray;
-   var homeMenuKeys;
-   var contactsList;
+   var TIMELINE;
    var callScreen;
+   var cellphoneButtons;
+   var componentArray;
+   var contactsList;
+   var currentInterface;
+   var homeMenuKeys;
+   var keyboardlayer;
+   var layerFour;
+   var layerOne;
+   var layerThree;
+   var layerTwo;
+   var previousInterface;
+   var viewMethod;
    var phoneWidth = 256;
    var phoneHeight = 344;
    var offSCreenLeftX = -256;
@@ -66,7 +66,7 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
    }
    function SET_HEADER(newHeader)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       this.currentInterface.header.headerText.text = newHeader;
       _loc2_ = 114 - this.currentInterface.header.headerText.textWidth / 2;
       this.currentInterface.header.headerLineLeft._width = _loc2_;
@@ -77,7 +77,7 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
    }
    function SET_SOFT_KEYS_COLOUR(buttonID, ired, igreen, iblue, ialpha)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(buttonID)
       {
          case 1:
@@ -93,7 +93,7 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
    }
    function SET_SOFT_KEYS(buttonID, isVisible, iconEnum, textLabel)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       if(textLabel == undefined)
       {
          textLabel = "";
@@ -147,6 +147,8 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
             break;
          case 4:
             this.callScreen = new com.rockstargames.gtav.cellphone.prologue.CallScreen_Prologue();
+         default:
+            return;
       }
    }
    function SET_DATA_SLOT_EMPTY(viewID)
@@ -169,7 +171,7 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
    function GET_DATA(viewID)
    {
       var _loc3_ = "";
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this[this.componentArray[viewID]].dataProviderUI;
       for(var _loc4_ in _loc2_)
       {
@@ -252,6 +254,8 @@ class com.rockstargames.gtav.cellphone.prologue.CELLPHONE_PROLOGUE extends Movie
             break;
          case 4:
             this.currentInterface.navigate("LEFT");
+         default:
+            return;
       }
    }
    function createPrologueTransition(previousClip, currentClip)

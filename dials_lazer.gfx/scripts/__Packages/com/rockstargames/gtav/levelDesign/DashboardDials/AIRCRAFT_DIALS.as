@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.DashboardDials.AIRCRAFT_DIALS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var currentDials;
    var CONTENT;
+   var currentDials;
    function AIRCRAFT_DIALS()
    {
       super();

@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile extends com.rockstargames.gtav.levelDesign.importExportWarehouse.Button
 {
-   var _view;
-   var _hasBeenInitialised;
-   var _greenOutline;
    var _blueOverlay;
-   var _vehicleNameToken;
+   var _button;
+   var _currentLabel;
+   var _greenOutline;
+   var _hasBeenInitialised;
+   var _imageManager;
+   var _owned;
+   var _rangeCategory;
+   var _selected;
    var _type;
    var _value;
-   var _rangeCategory;
-   var _button;
+   var _vehicleNameToken;
+   var _view;
    var _warehousePosition;
    var id;
-   var _owned;
-   var _imageManager;
-   var _currentLabel;
-   var _selected;
    static var IMAGE_ONLY = "imageOnly";
    static var IMAGE_AND_NAME = "imageAndName";
    static var FULL_TILE = "fullTile";
@@ -35,6 +35,7 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile ext
    }
    function initFull(vehicle, imageManager)
    {
+      var _loc3_;
       if(!this._hasBeenInitialised && vehicle)
       {
          this.setViewTo(com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile.FULL_TILE);
@@ -50,7 +51,7 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile ext
          if(this._view.labelValue)
          {
             this._view.labelValue.textAutoSize = "shrink";
-            var _loc3_ = "$" + com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.formatNumber(this._value);
+            _loc3_ = "$" + com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.formatNumber(this._value);
             this._view.labelValue.text = _loc3_;
          }
          if(this._view.labelRange)
@@ -69,10 +70,11 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile ext
    }
    function initImageOnly(vehicle, imageManager, isInCollectionTab)
    {
+      var _loc2_;
       if(!this._hasBeenInitialised && vehicle)
       {
          this.setViewTo(com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile.IMAGE_ONLY);
-         var _loc2_ = -1;
+         _loc2_ = -1;
          if(isInCollectionTab)
          {
             _loc2_ = vehicle.associatedCollection + com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile.COLLECTION_BUTTON_ID_OFFSET;

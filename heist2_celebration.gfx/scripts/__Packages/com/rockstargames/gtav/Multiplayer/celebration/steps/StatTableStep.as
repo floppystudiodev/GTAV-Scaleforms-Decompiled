@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep extends com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
-   var id;
-   var stats;
-   var initialised;
-   var view;
-   var sequence;
    var currentRowStep;
-   var started;
-   var height;
    var finished;
+   var height;
+   var id;
+   var initialised;
+   var sequence;
+   var started;
+   var stats;
+   var view;
    static var ROW_STEP_PAUSE_DURATION = com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.SPEED_MULTIPLIER * 0.5;
    function StatTableStep(sequence, id)
    {
@@ -34,15 +34,17 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep extends
       var _loc8_ = 3;
       var _loc6_ = 0;
       var _loc4_ = this.stats.length - 1;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ >= 0)
       {
-         var _loc3_ = this.view.attachMovie("StatTableStepRow","row" + _loc4_,_loc4_);
+         _loc3_ = this.view.attachMovie("StatTableStepRow","row" + _loc4_,_loc4_);
          _loc3_._y = _loc8_-- * 0.9 * _loc3_._height;
          _loc3_._visible = _loc4_ == this.stats.length - 1;
          _loc3_.nameText.autoSize = "right";
          _loc3_.nameText.text = this.stats[_loc4_].name;
          this.stats[_loc4_].view = _loc3_;
-         var _loc5_ = _loc3_.valueText.getTextFormat();
+         _loc5_ = _loc3_.valueText.getTextFormat();
          _loc5_.color = !this.sequence.USE_COLOUR ? 16777215 : this.stats[_loc4_].colour;
          if(com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_ASIAN)
          {
@@ -66,9 +68,10 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep extends
       {
          _loc6_ += 20;
       }
+      var _loc7_;
       if(_loc6_ > _loc3_.valueText._width)
       {
-         var _loc7_ = _loc6_ - _loc3_.valueText._width;
+         _loc7_ = _loc6_ - _loc3_.valueText._width;
          _loc4_ = 0;
          while(_loc4_ < this.stats.length)
          {
@@ -113,6 +116,9 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep extends
    }
    function showNextRow()
    {
+      var _loc2_;
+      var _loc8_;
+      var _loc3_;
       if(this.currentRowStep == 0)
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this.view,com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.POST_STEP_PAUSE - com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep.ROW_STEP_PAUSE_DURATION,{onComplete:this.sequence.currentStepComplete,onCompleteScope:this.sequence});
@@ -120,10 +126,10 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.StatTableStep extends
       else
       {
          this.currentRowStep = this.currentRowStep - 1;
-         var _loc2_ = this.stats[this.currentRowStep].view;
-         var _loc8_ = _loc2_._y;
+         _loc2_ = this.stats[this.currentRowStep].view;
+         _loc8_ = _loc2_._y;
          this.stats[this.currentRowStep].view._visible = true;
-         var _loc3_ = _loc2_._y;
+         _loc3_ = _loc2_._y;
          _loc2_._y = - this.view._parent._y - this.view._y - _loc2_._height;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_,com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.DEFAULT_PUSHDOWN_DURATION,{_y:_loc3_,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_IN});
          this.sequence.pushDownSteps(0.5 * _loc2_._height,com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.DEFAULT_PUSHDOWN_DURATION);

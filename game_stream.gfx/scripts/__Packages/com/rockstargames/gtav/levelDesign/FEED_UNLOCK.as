@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.levelDesign.FEED_UNLOCK extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var flashDuration;
+   var important;
    function FEED_UNLOCK()
    {
       super();
@@ -14,9 +16,10 @@ class com.rockstargames.gtav.levelDesign.FEED_UNLOCK extends com.rockstargames.g
    function SET_FEED_COMPONENT(chTitle, chSubtitle, iIconType, bIsImportant, eTitleColour)
    {
       this.important = bIsImportant;
+      var _loc2_;
       if(eTitleColour)
       {
-         var _loc2_ = this.CONTENT.titleTF.getTextFormat();
+         _loc2_ = this.CONTENT.titleTF.getTextFormat();
          _loc2_.font = com.rockstargames.gtav.utils.GTAVUIConfig.CONDENSED_FONT;
          _loc2_.size = 19;
          this.CONTENT.titleTF.setNewTextFormat(_loc2_);

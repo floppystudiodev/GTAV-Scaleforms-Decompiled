@@ -1,10 +1,16 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_MISSIONCREATOR extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
+   var addColumn;
    var column1;
    var column2;
    var column3;
    var column4;
    var column5;
+   var columnList;
+   var setupColMouseNav;
+   var setupColScroll;
+   var setupColumns;
+   var showColumns;
    function PAUSE_MENU_PAGES_MISSIONCREATOR()
    {
       super();

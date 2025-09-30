@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.salvagePlanning.navigation.Button extends com.rockstargames.gtav.levelDesign.salvagePlanning.navigation.Target
 {
-   var view;
    var highlight;
+   var view;
    function Button(id, view, highlight)
    {
       super();

@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage extends com.rockstargames.gtav.web.casino.Page
 {
+   var currPollerTarget;
+   var nextPageName;
+   var optionsUnlocked;
+   var prevPageName;
+   var progressPanel;
    var rolloverPoller;
+   var slideshow;
    var view;
    var website;
-   var prevPageName;
-   var nextPageName;
-   var slideshow;
-   var progressPanel;
-   var currPollerTarget;
-   var optionsUnlocked;
    static var TXD = "CASINO_SUITES";
    static var SLIDESHOW_IMAGES = ["garage","bedroom","lounge","media_room","bar","spa","dealer","office"];
    function SuiteOptionsPage(website, viewContainer, pageName, isFirstPage)
@@ -195,6 +195,8 @@ class com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage extends com.rocks
             this.website.barOption = parseInt(id);
             this.updateView();
             this.updateSlideshow(4);
+         default:
+            return;
       }
    }
    function updateSlideshow(index)
@@ -237,6 +239,7 @@ class com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage extends com.rocks
          case 7:
             _loc2_ = this.website.officeOption;
       }
+      var _loc4_;
       if(_loc2_ <= 0)
       {
          this.slideshow.show(com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage.TXD,["master_suite"],0);
@@ -245,7 +248,7 @@ class com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage extends com.rocks
       {
          if(index == 4)
          {
-            var _loc4_ = this.website.barOption != 2 ? 1 : 2;
+            _loc4_ = this.website.barOption != 2 ? 1 : 2;
             this.slideshow.show(com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage.TXD,[com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage.SLIDESHOW_IMAGES[index] + "_" + _loc4_],0);
          }
          else
@@ -317,6 +320,8 @@ class com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage extends com.rocks
             {
                this.website.officeOption = this.website.officeOption != 1 ? 1 : 0;
             }
+         default:
+            return;
       }
    }
    function hideArcadePanel()

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
-   var sequence;
-   var height;
    var _type;
-   var initialised;
-   var started;
    var finished;
+   var height;
    var id;
+   var initialised;
+   var sequence;
+   var started;
    var view;
    static var PRICEDOWN_ASCENDER = 0.16;
    static var PRICEDOWN_BODY = 0.61;

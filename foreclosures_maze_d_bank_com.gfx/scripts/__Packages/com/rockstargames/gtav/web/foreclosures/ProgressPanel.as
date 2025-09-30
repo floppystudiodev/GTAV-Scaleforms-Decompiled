@@ -1,23 +1,26 @@
 class com.rockstargames.gtav.web.foreclosures.ProgressPanel
 {
-   var view;
-   var website;
-   var slideshow;
-   var clubhouse;
-   var bunker;
-   var hangar;
-   var base;
-   var nightclub;
    var arcade;
    var autoShop;
-   var salvageYard;
    var bailOffice;
-   var displayConfig;
-   var left;
-   var right;
-   var top;
+   var base;
    var bottom;
+   var bunker;
+   var carWash;
+   var clubhouse;
    var currImageId;
+   var displayConfig;
+   var hangar;
+   var helitours;
+   var left;
+   var nightclub;
+   var right;
+   var salvageYard;
+   var slideshow;
+   var top;
+   var view;
+   var website;
+   var weedShop;
    function ProgressPanel(view, website)
    {
       this.view = view;
@@ -37,6 +40,9 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.displayConfig = null;
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
    }
@@ -71,14 +77,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,clubhouse.name,this.view.clubhouseName._width - 5);
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.clubhouseAddress,clubhouse.address,true);
       var _loc8_ = !clubhouse.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!clubhouse.isOwned)
       {
-         var _loc5_ = clubhouse.getBaseBestCost();
+         _loc5_ = clubhouse.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -90,9 +100,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       }
       this.view.starterPack._visible = clubhouse.isInStarterPack;
       var _loc7_ = 0;
+      var _loc2_;
       if(clubhouse.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FORECLOSURES_MURAL");
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FC_MURAL_" + (this.website.getSelectedClubhouseType() * 9 + this.website.purchasedMural)) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FORECLOSURES_STYLE");
@@ -178,9 +189,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showPurchaseButton();
       this.view.starterPack._visible = this.clubhouse.isInStarterPack;
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.clubhouse.isOwned)
       {
-         var _loc2_ = this.clubhouse.getBaseBestCost();
+         _loc2_ = this.clubhouse.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -266,13 +278,17 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,bunker.name,this.view.clubhouseName._width - 5);
       var _loc9_ = !bunker.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc9_,false);
+      var _loc6_;
       if(!bunker.isOwned)
       {
-         var _loc6_ = bunker.getBaseBestCost();
+         _loc6_ = bunker.getBaseBestCost();
          if(_loc6_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -284,11 +300,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       }
       this.view.starterPack._visible = bunker.isInStarterPack;
       var _loc8_ = 0;
+      var _loc3_;
+      var _loc5_;
       if(bunker.isOwned)
       {
-         var _loc3_ = "";
+         _loc3_ = "";
          _loc3_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FORECLOSURES_BUNKER_STYLE");
-         var _loc5_ = "FORECLOSURES_BUNKER_STYLE_" + (this.website.purchasedBunkerStyle + 1);
+         _loc5_ = "FORECLOSURES_BUNKER_STYLE_" + (this.website.purchasedBunkerStyle + 1);
          _loc3_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc5_) + "</font><br>";
          _loc3_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FORECLOSURES_QUARTERS");
          _loc3_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,!this.website.purchasedQuarters ? "FORECLOSURES_NO" : "FORECLOSURES_YES") + "</font><br>";
@@ -387,9 +405,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showBunkerImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.bunker.isOwned)
       {
-         var _loc2_ = this.bunker.getBaseBestCost();
+         _loc2_ = this.bunker.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -455,13 +474,17 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,hangar.name,this.view.clubhouseName._width - 5);
       var _loc9_ = !hangar.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc9_,false);
+      var _loc6_;
       if(!hangar.isOwned)
       {
-         var _loc6_ = hangar.getBaseBestCost();
+         _loc6_ = hangar.getBaseBestCost();
          if(_loc6_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -473,14 +496,17 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       }
       this.view.starterPack._visible = hangar.isInStarterPack;
       var _loc8_ = 0;
+      var _loc2_;
+      var _loc10_;
+      var _loc5_;
       if(hangar.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCHNGR_STY");
-         var _loc10_ = "FCHNGR_STY_" + (this.website.purchasedHangarStyle + 1);
+         _loc10_ = "FCHNGR_STY_" + (this.website.purchasedHangarStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc10_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCHNGR_LGT");
-         var _loc5_ = this.website.purchasedHangarLighting + 1;
+         _loc5_ = this.website.purchasedHangarLighting + 1;
          if(_loc5_ > 2)
          {
             _loc5_ = _loc5_ + 1;
@@ -569,9 +595,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showHangarImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.hangar.isOwned)
       {
-         var _loc2_ = this.hangar.getBaseBestCost();
+         _loc2_ = this.hangar.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -615,14 +642,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,base.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = base.isInStarterPack;
       var _loc8_ = !base.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!base.isOwned)
       {
-         var _loc5_ = base.getBaseBestCost();
+         _loc5_ = base.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -633,11 +664,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc9_;
       if(base.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCBASE_STY");
-         var _loc9_ = "FCBASE_STY" + (this.website.purchasedBaseStyle + 1);
+         _loc9_ = "FCBASE_STY" + (this.website.purchasedBaseStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCBASE_GRA");
          _loc9_ = "FCBASE_GRA" + (this.website.purchasedBaseGraphics + 1);
@@ -731,9 +764,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showBaseImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.base.isOwned)
       {
-         var _loc2_ = this.base.getBaseBestCost();
+         _loc2_ = this.base.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -778,14 +812,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,nightclub.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = nightclub.isInStarterPack;
       var _loc9_ = !nightclub.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc9_,false);
+      var _loc6_;
       if(!nightclub.isOwned)
       {
-         var _loc6_ = nightclub.getBaseBestCost();
+         _loc6_ = nightclub.getBaseBestCost();
          if(_loc6_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -796,11 +834,14 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc8_ = 0;
+      var _loc2_;
+      var _loc10_;
+      var _loc5_;
       if(nightclub.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCCLUB_STY");
-         var _loc10_ = "FCCLUB_STY_" + (this.website.purchasedNightclubStyle + 1);
+         _loc10_ = "FCCLUB_STY_" + (this.website.purchasedNightclubStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc10_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCCLUB_LGHT");
          _loc10_ = "FCCLUB_LGHT_" + (this.website.purchasedNightclubLighting + 1);
@@ -812,7 +853,7 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          _loc10_ = "FCCLUB_STOR_" + this.website.purchasedNightclubStorage;
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc10_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCCLUB_GARG");
-         var _loc5_ = this.website.purchasedNightclubGarage;
+         _loc5_ = this.website.purchasedNightclubGarage;
          if(_loc5_ == 3 && this.website.purchasedNightclubG4 == 1)
          {
             _loc5_ = 4;
@@ -902,9 +943,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showNightclubImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.nightclub.isOwned)
       {
-         var _loc2_ = this.nightclub.getBaseBestCost();
+         _loc2_ = this.nightclub.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -959,14 +1001,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,arcade.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = arcade.isInStarterPack;
       var _loc8_ = !arcade.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!arcade.isOwned)
       {
-         var _loc5_ = arcade.getBaseBestCost();
+         _loc5_ = arcade.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -977,11 +1023,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc9_;
       if(arcade.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCARCADE_STYLE");
-         var _loc9_ = "FCARCADE_STYLE_" + (this.website.purchasedArcadeStyle + 1);
+         _loc9_ = "FCARCADE_STYLE_" + (this.website.purchasedArcadeStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCARCADE_MURAL");
          _loc9_ = "FCARCADE_MURAL_" + (this.website.purchasedArcadeMural + 1);
@@ -1070,9 +1118,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showArcadeImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.arcade.isOwned)
       {
-         var _loc2_ = this.arcade.getBaseBestCost();
+         _loc2_ = this.arcade.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -1147,14 +1196,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = autoShop;
       this.salvageYard = null;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,autoShop.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = autoShop.isInStarterPack;
       var _loc8_ = !autoShop.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!autoShop.isOwned)
       {
-         var _loc5_ = autoShop.getBaseBestCost();
+         _loc5_ = autoShop.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -1165,11 +1218,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc9_;
       if(autoShop.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCAUTOSHOP_STYLE");
-         var _loc9_ = "FCAUTOSHOP_STYLE_" + (this.website.purchasedAutoShopStyle + 1);
+         _loc9_ = "FCAUTOSHOP_STYLE_" + (this.website.purchasedAutoShopStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCAUTOSHOP_TINT");
          _loc9_ = "FCAUTOSHOP_TINT_" + (this.website.purchasedAutoShopTint + 1);
@@ -1261,9 +1316,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showAutoShopImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.autoShop.isOwned)
       {
-         var _loc2_ = this.autoShop.getBaseBestCost();
+         _loc2_ = this.autoShop.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -1342,14 +1398,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = salvageYard;
       this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,salvageYard.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = salvageYard.isInStarterPack;
       var _loc8_ = !salvageYard.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!salvageYard.isOwned)
       {
-         var _loc5_ = salvageYard.getBaseBestCost();
+         _loc5_ = salvageYard.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -1360,11 +1420,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc9_;
       if(salvageYard.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCSALVAGE_TINT");
-         var _loc9_ = "FCSALVAGE_TINT_" + (this.website.purchasedSalvageYardTint + 1);
+         _loc9_ = "FCSALVAGE_TINT_" + (this.website.purchasedSalvageYardTint + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCSALVAGE_REPAIR");
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,this.website.purchasedSalvageYardRepairBay != 1 ? "FORECLOSURES_NO" : "FORECLOSURES_YES") + "</font><br>";
@@ -1457,9 +1519,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showSalvageYardImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.salvageYard.isOwned)
       {
-         var _loc2_ = this.salvageYard.getBaseBestCost();
+         _loc2_ = this.salvageYard.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -1536,14 +1599,18 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.autoShop = null;
       this.salvageYard = null;
       this.bailOffice = bailOffice;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = null;
       this.showNextButton();
       this.truncate(this.view.clubhouseName,bailOffice.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = bailOffice.isInStarterPack;
       var _loc8_ = !bailOffice.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!bailOffice.isOwned)
       {
-         var _loc5_ = bailOffice.getBaseBestCost();
+         _loc5_ = bailOffice.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -1554,11 +1621,13 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc9_;
       if(bailOffice.isOwned)
       {
-         var _loc2_ = "";
+         _loc2_ = "";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCBAIL_STYLE");
-         var _loc9_ = "FCBAIL_STYLE_" + (this.website.purchasedBailOfficeStyle + 1);
+         _loc9_ = "FCBAIL_STYLE_" + (this.website.purchasedBailOfficeStyle + 1);
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
          _loc2_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCBAIL_STAFF_1");
          _loc2_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,this.website.purchasedBailOfficeStaff1 != 1 ? "FORECLOSURES_NO" : "FORECLOSURES_YES") + "</font><br>";
@@ -1642,9 +1711,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.showBailOfficeImage();
       this.showPurchaseButton();
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
       if(!this.bailOffice.isOwned)
       {
-         var _loc2_ = this.bailOffice.getBaseBestCost();
+         _loc2_ = this.bailOffice.getBaseBestCost();
          if(_loc2_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
@@ -1735,13 +1805,14 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       this.bailOffice = null;
       this.truncate(this.view.clubhouseName,property.name,this.view.clubhouseName._width - 5);
       this.view.starterPack._visible = property.isInStarterPack;
+      var _loc4_;
       if(property.isOwned)
       {
          this.hideNextButton();
       }
       else
       {
-         var _loc4_ = property.getBaseBestCost();
+         _loc4_ = property.getBaseBestCost();
          if(_loc4_ == 0)
          {
             com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
@@ -1815,6 +1886,420 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view,0.25,{_alpha:100});
       }
    }
+   function showCarWashOverview(carWash, showImmediately)
+   {
+      this.view.gotoAndStop("carWashOverview");
+      this.clubhouse = null;
+      this.bunker = null;
+      this.hangar = null;
+      this.base = null;
+      this.nightclub = null;
+      this.arcade = null;
+      this.autoShop = null;
+      this.salvageYard = null;
+      this.bailOffice = null;
+      this.carWash = carWash;
+      this.helitours = null;
+      this.weedShop = null;
+      this.showNextButton();
+      this.truncate(this.view.clubhouseName,carWash.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = carWash.isInStarterPack;
+      var _loc8_ = !carWash.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
+      if(!carWash.isOwned)
+      {
+         _loc5_ = carWash.getBaseBestCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,this.view.nextButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+      }
+      var _loc7_ = 0;
+      var _loc4_;
+      var _loc9_;
+      if(carWash.isOwned)
+      {
+         _loc4_ = "";
+         _loc4_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCCARWASH_TINT");
+         _loc9_ = "FCCARWASH_TINT_" + (this.website.purchasedCarWashTint + 1);
+         _loc4_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = _loc4_;
+         _loc7_ = 5;
+      }
+      else
+      {
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = carWash.description;
+      }
+      var _loc6_ = this.view.description.getTextFormat();
+      _loc6_.leading = _loc7_;
+      this.view.description.setTextFormat(_loc6_);
+      var _loc3_ = this.view.description._y + this.view.description.textHeight + 10;
+      if(carWash.getBaseCost() != carWash.getBaseBestCost() && !carWash.isOwned)
+      {
+         this.view.originalCost.autoSize = "left";
+         _loc5_ = carWash.getBaseCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"$" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+         this.view.strikethrough._visible = true;
+         this.view.originalCost._y = _loc3_;
+         this.view.strikethrough._width = this.view.originalCost._width;
+         this.view.strikethrough._y = _loc3_ + 12;
+         _loc3_ += 25;
+         this.view.nextButton._y = _loc3_;
+      }
+      else
+      {
+         this.view.originalCost.text = "";
+         this.view.strikethrough._visible = false;
+         _loc3_ += 15;
+      }
+      this.view.nextButton._y = _loc3_;
+      this.view.nextButton.disabled = false;
+      this.view.bg._height = this.view.nextButton._y + this.view.nextButton._height + 20;
+      this.bottom = this.top + this.view.bg._height;
+      this.showCarWashImage();
+      this.view.marker.gotoAndStop(!carWash.isOwned ? "unownedInactive" : "ownedInactive");
+      if(showImmediately)
+      {
+         this.view._alpha = 100;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
+      }
+      else if(!this.view._visible)
+      {
+         this.view._alpha = 0;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view,0.25,{_alpha:100});
+      }
+   }
+   function showCarWashImage()
+   {
+      if(this.currImageId != this.carWash.txd)
+      {
+         this.currImageId = this.carWash.txd;
+         this.slideshow.show([this.carWash.txd],[this.carWash.txd + "_EXT"]);
+      }
+   }
+   function initCarWashProgress(numCompleteSteps)
+   {
+      this.view.gotoAndStop("carWashProgress");
+      this.carWash = this.website.getSelectedCarWash();
+      this.showCarWashImage();
+      this.showPurchaseButton();
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
+      if(!this.carWash.isOwned)
+      {
+         _loc2_ = this.carWash.getBaseBestCost();
+         if(_loc2_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,this.view.purchaseButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+         }
+      }
+      this.view.purchaseButton.onColour = 16777215;
+      this.view.purchaseButton.offColour = 16777215;
+      this.website.dataTextScope.push(this.view.purchaseButton.btnTxt);
+      this.truncate(this.view.clubhouseName,this.carWash.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = this.carWash.isInStarterPack;
+      this.website.dataTextScope.push(this.view.CAR_D_WASH_D_TINT.btnTxt);
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.CAR_D_WASH_D_TINT.btnTxt,"FCCARWASH_TINT");
+      this.setProgressDots(numCompleteSteps);
+      this.updateCarWashCosts();
+      this.view.bg._yscale = 100;
+   }
+   function showHelitoursOverview(helitours, showImmediately)
+   {
+      this.view.gotoAndStop("helitoursOverview");
+      this.clubhouse = null;
+      this.bunker = null;
+      this.hangar = null;
+      this.base = null;
+      this.nightclub = null;
+      this.arcade = null;
+      this.autoShop = null;
+      this.salvageYard = null;
+      this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = helitours;
+      this.weedShop = null;
+      this.showNextButton();
+      this.truncate(this.view.clubhouseName,helitours.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = helitours.isInStarterPack;
+      var _loc8_ = !helitours.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
+      if(!helitours.isOwned)
+      {
+         _loc5_ = helitours.getBaseBestCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,this.view.nextButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+      }
+      var _loc7_ = 0;
+      var _loc4_;
+      var _loc9_;
+      if(helitours.isOwned)
+      {
+         _loc4_ = "";
+         _loc4_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCHELITOURS_TINT");
+         _loc9_ = "FCCARWASH_TINT_" + (this.website.purchasedHelitoursTint + 1);
+         _loc4_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = _loc4_;
+         _loc7_ = 5;
+      }
+      else
+      {
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = helitours.description;
+      }
+      var _loc6_ = this.view.description.getTextFormat();
+      _loc6_.leading = _loc7_;
+      this.view.description.setTextFormat(_loc6_);
+      var _loc3_ = this.view.description._y + this.view.description.textHeight + 10;
+      if(helitours.getBaseCost() != helitours.getBaseBestCost() && !helitours.isOwned)
+      {
+         this.view.originalCost.autoSize = "left";
+         _loc5_ = helitours.getBaseCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"$" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+         this.view.strikethrough._visible = true;
+         this.view.originalCost._y = _loc3_;
+         this.view.strikethrough._width = this.view.originalCost._width;
+         this.view.strikethrough._y = _loc3_ + 12;
+         _loc3_ += 25;
+         this.view.nextButton._y = _loc3_;
+      }
+      else
+      {
+         this.view.originalCost.text = "";
+         this.view.strikethrough._visible = false;
+         _loc3_ += 15;
+      }
+      this.view.nextButton._y = _loc3_;
+      this.view.nextButton.disabled = false;
+      this.view.bg._height = this.view.nextButton._y + this.view.nextButton._height + 20;
+      this.bottom = this.top + this.view.bg._height;
+      this.showHelitoursImage();
+      this.view.marker.gotoAndStop(!helitours.isOwned ? "unownedInactive" : "ownedInactive");
+      if(showImmediately)
+      {
+         this.view._alpha = 100;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
+      }
+      else if(!this.view._visible)
+      {
+         this.view._alpha = 0;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view,0.25,{_alpha:100});
+      }
+   }
+   function showHelitoursImage()
+   {
+      if(this.currImageId != this.helitours.txd)
+      {
+         this.currImageId = this.helitours.txd;
+         this.slideshow.show([this.helitours.txd],[this.helitours.txd + "_EXT"]);
+      }
+   }
+   function initHelitoursProgress(numCompleteSteps)
+   {
+      this.view.gotoAndStop("helitoursProgress");
+      this.helitours = this.website.getSelectedHelitours();
+      this.showHelitoursImage();
+      this.showPurchaseButton();
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
+      if(!this.helitours.isOwned)
+      {
+         _loc2_ = this.helitours.getBaseBestCost();
+         if(_loc2_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,this.view.purchaseButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+         }
+      }
+      this.view.purchaseButton.onColour = 16777215;
+      this.view.purchaseButton.offColour = 16777215;
+      this.website.dataTextScope.push(this.view.purchaseButton.btnTxt);
+      this.truncate(this.view.clubhouseName,this.helitours.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = this.helitours.isInStarterPack;
+      this.website.dataTextScope.push(this.view.HELITOURS_D_TINT.btnTxt);
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.HELITOURS_D_TINT.btnTxt,"FCHELITOURS_TINT");
+      this.setProgressDots(numCompleteSteps);
+      this.updateHelitoursCosts();
+      this.view.bg._yscale = 100;
+   }
+   function showWeedShopOverview(weedShop, showImmediately)
+   {
+      this.view.gotoAndStop("carWashOverview");
+      this.clubhouse = null;
+      this.bunker = null;
+      this.hangar = null;
+      this.base = null;
+      this.nightclub = null;
+      this.arcade = null;
+      this.autoShop = null;
+      this.salvageYard = null;
+      this.bailOffice = null;
+      this.carWash = null;
+      this.helitours = null;
+      this.weedShop = weedShop;
+      this.showNextButton();
+      this.truncate(this.view.clubhouseName,weedShop.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = weedShop.isInStarterPack;
+      var _loc8_ = !weedShop.isOwned ? "FORECLOSURES_BUY_FROM" : "FORECLOSURES_RENOVATE";
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
+      if(!weedShop.isOwned)
+      {
+         _loc5_ = weedShop.getBaseBestCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.nextButton.btnTxt,this.view.nextButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+      }
+      var _loc7_ = 0;
+      var _loc4_;
+      var _loc9_;
+      if(weedShop.isOwned)
+      {
+         _loc4_ = "";
+         _loc4_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,"FCWEEDSHOP_TINT");
+         _loc9_ = "FCWEEDSHOP_TINT_" + (this.website.purchasedWeedShopTint + 1);
+         _loc4_ += ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.description,_loc9_) + "</font><br>";
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = _loc4_;
+         _loc7_ = 5;
+      }
+      else
+      {
+         this.view.description.autoSize = "left";
+         this.view.description.htmlText = weedShop.description;
+      }
+      var _loc6_ = this.view.description.getTextFormat();
+      _loc6_.leading = _loc7_;
+      this.view.description.setTextFormat(_loc6_);
+      var _loc3_ = this.view.description._y + this.view.description.textHeight + 10;
+      if(weedShop.getBaseCost() != weedShop.getBaseBestCost() && !weedShop.isOwned)
+      {
+         this.view.originalCost.autoSize = "left";
+         _loc5_ = weedShop.getBaseCost();
+         if(_loc5_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.originalCost,"$" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc5_),true);
+         }
+         this.view.strikethrough._visible = true;
+         this.view.originalCost._y = _loc3_;
+         this.view.strikethrough._width = this.view.originalCost._width;
+         this.view.strikethrough._y = _loc3_ + 12;
+         _loc3_ += 25;
+         this.view.nextButton._y = _loc3_;
+      }
+      else
+      {
+         this.view.originalCost.text = "";
+         this.view.strikethrough._visible = false;
+         _loc3_ += 15;
+      }
+      this.view.nextButton._y = _loc3_;
+      this.view.nextButton.disabled = false;
+      this.view.bg._height = this.view.nextButton._y + this.view.nextButton._height + 20;
+      this.bottom = this.top + this.view.bg._height;
+      this.showWeedShopImage();
+      this.view.marker.gotoAndStop(!weedShop.isOwned ? "unownedInactive" : "ownedInactive");
+      if(showImmediately)
+      {
+         this.view._alpha = 100;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
+      }
+      else if(!this.view._visible)
+      {
+         this.view._alpha = 0;
+         this.view._visible = true;
+         com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view,0.25,{_alpha:100});
+      }
+   }
+   function showWeedShopImage()
+   {
+      if(this.currImageId != this.weedShop.txd)
+      {
+         this.currImageId = this.weedShop.txd;
+         this.slideshow.show([this.weedShop.txd],[this.weedShop.txd + "_EXT"]);
+      }
+   }
+   function initWeedShopProgress(numCompleteSteps)
+   {
+      this.view.gotoAndStop("weedShopProgress");
+      this.weedShop = this.website.getSelectedWeedShop();
+      this.showWeedShopImage();
+      this.showPurchaseButton();
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FORECLOSURES_BUY",false);
+      var _loc2_;
+      if(!this.weedShop.isOwned)
+      {
+         _loc2_ = this.weedShop.getBaseBestCost();
+         if(_loc2_ == 0)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,"FCFREE",false);
+         }
+         else
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,this.view.purchaseButton.btnTxt.text + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+         }
+      }
+      this.view.purchaseButton.onColour = 16777215;
+      this.view.purchaseButton.offColour = 16777215;
+      this.website.dataTextScope.push(this.view.purchaseButton.btnTxt);
+      this.truncate(this.view.clubhouseName,this.weedShop.name,this.view.clubhouseName._width - 5);
+      this.view.starterPack._visible = this.weedShop.isInStarterPack;
+      this.website.dataTextScope.push(this.view.WEED_D_SHOP_D_TINT.btnTxt);
+      com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.WEED_D_SHOP_D_TINT.btnTxt,"FCCARWASH_TINT");
+      this.setProgressDots(numCompleteSteps);
+      this.updateWeedShopCosts();
+      this.view.bg._yscale = 100;
+   }
    function hide()
    {
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
@@ -1863,9 +2348,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(tf,text,true);
       var _loc4_ = tf.getTextFormat();
       tf.letterSpacing = 1;
+      var _loc1_;
       if(tf.textWidth > availableWidth)
       {
-         var _loc1_ = text.length;
+         _loc1_ = text.length;
          while(_loc1_ > 0)
          {
             tf.text = text.substring(0,_loc1_) + "...";
@@ -1930,9 +2416,9 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          this.view["originalCost" + step].text = "";
          this.view["strikethrough" + step]._visible = false;
       }
+      var _loc3_;
       if(this.displayConfig.isAsian)
       {
-         var _loc3_ = undefined;
          _loc3_ = this.view["saleCost" + step].getNewTextFormat();
          _loc3_.size = 14;
          this.view["saleCost" + step].setNewTextFormat(_loc3_);
@@ -1946,10 +2432,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc5_ = !this.clubhouse.isOwned ? this.clubhouse.getBaseBestCost() : 0;
-      var _loc2_ = undefined;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
+      var _loc6_;
       _loc2_ = this.clubhouse.getMuralBestCost(this.website.mural,this.website.purchasedMural);
       _loc4_ = this.clubhouse.getMuralCost(this.website.mural,this.website.purchasedMural);
       _loc3_ = this.clubhouse.getMuralRawSaleCost(this.website.mural,this.website.purchasedMural);
@@ -2022,11 +2508,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.bunker.isOwned ? this.bunker.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc9_ = undefined;
-      var _loc6_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc9_;
+      var _loc6_;
       if(this.website.bunkerStyle != -1)
       {
          _loc3_ = this.bunker.getStyleBestCost(this.website.bunkerStyle,this.website.purchasedBunkerStyle);
@@ -2099,11 +2585,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.hangar.isOwned ? this.hangar.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc9_ = undefined;
-      var _loc8_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc9_;
+      var _loc8_;
       if(this.website.hangarStyle != -1)
       {
          _loc3_ = this.hangar.getStyleBestCost(this.website.hangarStyle,this.website.purchasedHangarStyle);
@@ -2186,11 +2672,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.base.isOwned ? this.base.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
-      var _loc9_ = undefined;
-      var _loc6_ = undefined;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
+      var _loc9_;
+      var _loc6_;
       if(this.website.baseStyle != -1)
       {
          _loc3_ = this.base.getStyleBestCost(this.website.baseStyle,this.website.purchasedBaseStyle);
@@ -2277,11 +2763,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc4_ = !this.nightclub.isOwned ? this.nightclub.getBaseBestCost() : 0;
-      var _loc6_ = undefined;
-      var _loc8_ = undefined;
-      var _loc7_ = undefined;
-      var _loc16_ = undefined;
-      var _loc19_ = undefined;
+      var _loc6_;
+      var _loc8_;
+      var _loc7_;
+      var _loc16_;
+      var _loc19_;
       if(this.website.nightclubStyle != -1)
       {
          _loc6_ = this.nightclub.getStyleBestCost(this.website.nightclubStyle,this.website.purchasedNightclubStyle);
@@ -2315,14 +2801,24 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc4_ += this.updateCostStep(2,0,0,0,"+");
       }
+      var _loc15_;
+      var _loc12_;
+      var _loc10_;
+      var _loc9_;
+      var _loc5_;
+      var _loc2_;
+      var _loc14_;
+      var _loc13_;
+      var _loc11_;
+      var _loc3_;
       if(this.website.nightclubStorage != -1 || this.website.nightclubGarage != -1)
       {
-         var _loc15_ = 0;
-         var _loc12_ = 0;
-         var _loc10_ = 0;
-         var _loc9_ = 0;
-         var _loc5_ = false;
-         var _loc2_ = this.website.purchasedNightclubStorage + 1;
+         _loc15_ = 0;
+         _loc12_ = 0;
+         _loc10_ = 0;
+         _loc9_ = 0;
+         _loc5_ = false;
+         _loc2_ = this.website.purchasedNightclubStorage + 1;
          while(_loc2_ <= this.website.nightclubStorage)
          {
             _loc9_ = this.nightclub.getStorageRawSaleCost(_loc2_,this.website.purchasedNightclubStorage);
@@ -2335,10 +2831,10 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
             }
             _loc2_ = _loc2_ + 1;
          }
-         var _loc14_ = 0;
-         var _loc13_ = 0;
-         var _loc11_ = 0;
-         var _loc3_ = 0;
+         _loc14_ = 0;
+         _loc13_ = 0;
+         _loc11_ = 0;
+         _loc3_ = 0;
          _loc2_ = this.website.purchasedNightclubGarage + 1;
          while(_loc2_ <= this.website.nightclubGarage)
          {
@@ -2420,11 +2916,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.arcade.isOwned ? this.arcade.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc7_ = undefined;
-      var _loc15_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc7_;
+      var _loc15_;
       if(this.website.arcadeStyle != -1)
       {
          _loc3_ = this.arcade.getStyleBestCost(this.website.arcadeStyle,this.website.purchasedArcadeStyle);
@@ -2469,14 +2965,20 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc2_ += this.updateCostStep(3,0,0,0,"+");
       }
+      var _loc12_;
+      var _loc6_;
+      var _loc11_;
+      var _loc14_;
+      var _loc8_;
+      var _loc10_;
       if(this.website.arcadeQuarters != -1 || this.website.arcadeHighScores != -1 && this.website.purchasedArcadeHighScores != 1)
       {
-         var _loc12_ = this.arcade.getQuartersBestCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
-         var _loc6_ = this.arcade.getQuartersCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
-         var _loc11_ = this.arcade.getQuartersRawSaleCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
-         var _loc14_ = this.arcade.getHighScoresBestCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
-         var _loc8_ = this.arcade.getHighScoresCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
-         var _loc10_ = this.arcade.getHighScoresRawSaleCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
+         _loc12_ = this.arcade.getQuartersBestCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
+         _loc6_ = this.arcade.getQuartersCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
+         _loc11_ = this.arcade.getQuartersRawSaleCost(this.website.arcadeQuarters,this.website.purchasedArcadeQuarters);
+         _loc14_ = this.arcade.getHighScoresBestCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
+         _loc8_ = this.arcade.getHighScoresCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
+         _loc10_ = this.arcade.getHighScoresRawSaleCost(this.website.arcadeHighScores,this.website.purchasedArcadeHighScores);
          _loc3_ = _loc12_ + _loc14_;
          _loc5_ = _loc6_ + _loc8_;
          _loc4_ = this.getSaleCost(_loc11_,_loc10_,-1,-1);
@@ -2514,11 +3016,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.autoShop.isOwned ? this.autoShop.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc6_ = undefined;
-      var _loc35_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
+      var _loc35_;
       if(this.website.autoShopStyle != -1)
       {
          _loc3_ = this.autoShop.getStyleBestCost(this.website.autoShopStyle,this.website.purchasedAutoShopStyle);
@@ -2541,16 +3043,24 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc2_ += this.updateCostStep(1,0,0,0,"+");
       }
+      var _loc23_;
+      var _loc18_;
+      var _loc10_;
+      var _loc29_;
+      var _loc14_;
+      var _loc16_;
+      var _loc31_;
+      var _loc27_;
       if(this.website.autoShopEmblem != -1)
       {
-         var _loc23_ = this.autoShop.getEmblemBestCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
-         var _loc18_ = this.autoShop.getEmblemCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
-         var _loc10_ = this.autoShop.getEmblemRawSaleCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
-         var _loc29_ = this.autoShop.getNameBestCost(this.website.autoShopName,this.website.purchasedAutoShopName);
-         var _loc14_ = this.autoShop.getNameCost(this.website.autoShopName,this.website.purchasedAutoShopName);
-         var _loc16_ = this.autoShop.getNameRawSaleCost(this.website.autoShopName,this.website.purchasedAutoShopName);
-         var _loc31_ = this.website.autoShopName == 1 && this.website.purchasedAutoShopName != 1;
-         var _loc27_ = this.website.autoShopEmblem != this.website.purchasedAutoShopEmblem;
+         _loc23_ = this.autoShop.getEmblemBestCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
+         _loc18_ = this.autoShop.getEmblemCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
+         _loc10_ = this.autoShop.getEmblemRawSaleCost(this.website.autoShopEmblem,this.website.purchasedAutoShopEmblem);
+         _loc29_ = this.autoShop.getNameBestCost(this.website.autoShopName,this.website.purchasedAutoShopName);
+         _loc14_ = this.autoShop.getNameCost(this.website.autoShopName,this.website.purchasedAutoShopName);
+         _loc16_ = this.autoShop.getNameRawSaleCost(this.website.autoShopName,this.website.purchasedAutoShopName);
+         _loc31_ = this.website.autoShopName == 1 && this.website.purchasedAutoShopName != 1;
+         _loc27_ = this.website.autoShopEmblem != this.website.purchasedAutoShopEmblem;
          if(_loc31_ && _loc27_)
          {
             _loc3_ = _loc23_ + _loc29_;
@@ -2577,16 +3087,24 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc2_ += this.updateCostStep(2,0,0,0,"+");
       }
+      var _loc28_;
+      var _loc11_;
+      var _loc17_;
+      var _loc24_;
+      var _loc13_;
+      var _loc15_;
+      var _loc32_;
+      var _loc33_;
       if(this.website.autoShopStaff1 != -1 || this.website.autoShopStaff2 != -1)
       {
-         var _loc28_ = this.autoShop.getStaff1BestCost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
-         var _loc11_ = this.autoShop.getStaff1Cost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
-         var _loc17_ = this.autoShop.getStaff1RawSaleCost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
-         var _loc24_ = this.autoShop.getStaff2BestCost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
-         var _loc13_ = this.autoShop.getStaff2Cost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
-         var _loc15_ = this.autoShop.getStaff2RawSaleCost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
-         var _loc32_ = (this.website.purchasedAutoShopStaff1 != 1 || !this.autoShop.isOwned) && this.website.autoShopStaff1 == 1;
-         var _loc33_ = (this.website.purchasedAutoShopStaff2 != 1 || !this.autoShop.isOwned) && this.website.autoShopStaff2 == 1;
+         _loc28_ = this.autoShop.getStaff1BestCost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
+         _loc11_ = this.autoShop.getStaff1Cost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
+         _loc17_ = this.autoShop.getStaff1RawSaleCost(this.website.autoShopStaff1,this.website.purchasedAutoShopStaff1);
+         _loc24_ = this.autoShop.getStaff2BestCost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
+         _loc13_ = this.autoShop.getStaff2Cost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
+         _loc15_ = this.autoShop.getStaff2RawSaleCost(this.website.autoShopStaff2,this.website.purchasedAutoShopStaff2);
+         _loc32_ = (this.website.purchasedAutoShopStaff1 != 1 || !this.autoShop.isOwned) && this.website.autoShopStaff1 == 1;
+         _loc33_ = (this.website.purchasedAutoShopStaff2 != 1 || !this.autoShop.isOwned) && this.website.autoShopStaff2 == 1;
          if(_loc32_ && _loc33_)
          {
             _loc3_ = _loc28_ + _loc24_;
@@ -2613,23 +3131,33 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc2_ += this.updateCostStep(3,0,0,0,"+");
       }
+      var _loc7_;
+      var _loc8_;
+      var _loc25_;
+      var _loc19_;
+      var _loc12_;
+      var _loc30_;
+      var _loc9_;
+      var _loc20_;
+      var _loc21_;
+      var _loc22_;
       if(this.website.autoShopCarLift != -1 || this.website.autoShopQuarters != -1)
       {
-         var _loc7_ = this.website.purchasedAutoShopCarLift;
-         var _loc8_ = this.website.purchasedAutoShopQuarters;
+         _loc7_ = this.website.purchasedAutoShopCarLift;
+         _loc8_ = this.website.purchasedAutoShopQuarters;
          if(this.website.purchasedAutoShopID != this.website.selectedAutoShopID)
          {
             _loc7_ = 0;
             _loc8_ = 0;
          }
-         var _loc25_ = this.autoShop.getCarLiftBestCost(this.website.autoShopCarLift,_loc7_);
-         var _loc19_ = this.autoShop.getCarLiftCost(this.website.autoShopCarLift,_loc7_);
-         var _loc12_ = this.autoShop.getCarLiftRawSaleCost(this.website.autoShopCarLift,_loc7_);
-         var _loc30_ = this.autoShop.getQuartersBestCost(this.website.autoShopQuarters,_loc8_);
-         var _loc9_ = this.autoShop.getQuartersCost(this.website.autoShopQuarters,_loc8_);
-         var _loc20_ = this.autoShop.getQuartersRawSaleCost(this.website.autoShopQuarters,_loc8_);
-         var _loc21_ = this.website.autoShopCarLift != _loc7_;
-         var _loc22_ = this.website.autoShopQuarters != _loc8_;
+         _loc25_ = this.autoShop.getCarLiftBestCost(this.website.autoShopCarLift,_loc7_);
+         _loc19_ = this.autoShop.getCarLiftCost(this.website.autoShopCarLift,_loc7_);
+         _loc12_ = this.autoShop.getCarLiftRawSaleCost(this.website.autoShopCarLift,_loc7_);
+         _loc30_ = this.autoShop.getQuartersBestCost(this.website.autoShopQuarters,_loc8_);
+         _loc9_ = this.autoShop.getQuartersCost(this.website.autoShopQuarters,_loc8_);
+         _loc20_ = this.autoShop.getQuartersRawSaleCost(this.website.autoShopQuarters,_loc8_);
+         _loc21_ = this.website.autoShopCarLift != _loc7_;
+         _loc22_ = this.website.autoShopQuarters != _loc8_;
          if(_loc21_ && _loc22_)
          {
             _loc3_ = _loc25_ + _loc30_;
@@ -2682,11 +3210,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.salvageYard.isOwned ? this.salvageYard.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc8_ = undefined;
-      var _loc9_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc8_;
+      var _loc9_;
       if(this.website.salvageYardTint != -1)
       {
          _loc3_ = this.salvageYard.getTintBestCost(this.website.salvageYardTint,this.website.purchasedSalvageYardTint);
@@ -2757,11 +3285,11 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
    {
       this.updateCostStep(0,-1,-1,-1,"");
       var _loc2_ = !this.bailOffice.isOwned ? this.bailOffice.getBaseBestCost() : 0;
-      var _loc3_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc10_ = undefined;
-      var _loc17_ = undefined;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc10_;
+      var _loc17_;
       if(this.website.bailOfficeStyle != -1)
       {
          _loc3_ = this.bailOffice.getStyleBestCost(this.website.bailOfficeStyle,this.website.purchasedBailOfficeStyle);
@@ -2773,16 +3301,24 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
       {
          _loc2_ += this.updateCostStep(0,0,0,0,"+");
       }
+      var _loc13_;
+      var _loc6_;
+      var _loc9_;
+      var _loc11_;
+      var _loc7_;
+      var _loc8_;
+      var _loc14_;
+      var _loc15_;
       if(this.website.bailOfficeStaff1 != -1 || this.website.bailOfficeStaff2 != -1)
       {
-         var _loc13_ = this.bailOffice.getStaff1BestCost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
-         var _loc6_ = this.bailOffice.getStaff1Cost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
-         var _loc9_ = this.bailOffice.getStaff1RawSaleCost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
-         var _loc11_ = this.bailOffice.getStaff2BestCost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
-         var _loc7_ = this.bailOffice.getStaff2Cost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
-         var _loc8_ = this.bailOffice.getStaff2RawSaleCost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
-         var _loc14_ = (this.website.purchasedBailOfficeStaff1 != 1 || !this.bailOffice.isOwned) && this.website.bailOfficeStaff1 == 1;
-         var _loc15_ = (this.website.purchasedBailOfficeStaff2 != 1 || !this.bailOffice.isOwned) && this.website.bailOfficeStaff2 == 1;
+         _loc13_ = this.bailOffice.getStaff1BestCost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
+         _loc6_ = this.bailOffice.getStaff1Cost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
+         _loc9_ = this.bailOffice.getStaff1RawSaleCost(this.website.bailOfficeStaff1,this.website.purchasedBailOfficeStaff1);
+         _loc11_ = this.bailOffice.getStaff2BestCost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
+         _loc7_ = this.bailOffice.getStaff2Cost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
+         _loc8_ = this.bailOffice.getStaff2RawSaleCost(this.website.bailOfficeStaff2,this.website.purchasedBailOfficeStaff2);
+         _loc14_ = (this.website.purchasedBailOfficeStaff1 != 1 || !this.bailOffice.isOwned) && this.website.bailOfficeStaff1 == 1;
+         _loc15_ = (this.website.purchasedBailOfficeStaff2 != 1 || !this.bailOffice.isOwned) && this.website.bailOfficeStaff2 == 1;
          if(_loc14_ && _loc15_)
          {
             _loc3_ = _loc13_ + _loc11_;
@@ -2853,9 +3389,102 @@ class com.rockstargames.gtav.web.foreclosures.ProgressPanel
          com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc12_,true);
       }
    }
+   function updateCarWashCosts()
+   {
+      this.updateCostStep(0,-1,-1,-1,"");
+      var _loc2_ = !this.carWash.isOwned ? this.carWash.getBaseBestCost() : 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
+      var _loc8_;
+      var _loc9_;
+      if(this.website.carWashTint != -1)
+      {
+         _loc4_ = this.carWash.getTintBestCost(this.website.carWashTint,this.website.purchasedCarWashTint);
+         _loc6_ = this.carWash.getTintCost(this.website.carWashTint,this.website.purchasedCarWashTint);
+         _loc5_ = this.carWash.getTintRawSaleCost(this.website.carWashTint,this.website.purchasedCarWashTint);
+         _loc2_ += this.updateCostStep(0,_loc4_,_loc6_,_loc5_,"+");
+      }
+      else
+      {
+         _loc2_ += this.updateCostStep(0,0,0,0,"+");
+      }
+      var _loc7_ = !this.base.isOwned ? "FORECLOSURES_BUY" : "FORECLOSURES_RENOVATE";
+      var _loc3_ = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.purchaseButton.btnTxt,_loc7_);
+      if(_loc2_ > 0)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_ + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+      }
+      else
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_,true);
+      }
+   }
+   function updateHelitoursCosts()
+   {
+      this.updateCostStep(0,-1,-1,-1,"");
+      var _loc2_ = !this.helitours.isOwned ? this.helitours.getBaseBestCost() : 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
+      var _loc8_;
+      var _loc9_;
+      if(this.website.helitoursTint != -1)
+      {
+         _loc4_ = this.helitours.getTintBestCost(this.website.helitoursTint,this.website.purchasedHelitoursTint);
+         _loc6_ = this.helitours.getTintCost(this.website.helitoursTint,this.website.purchasedHelitoursTint);
+         _loc5_ = this.helitours.getTintRawSaleCost(this.website.helitoursTint,this.website.purchasedHelitoursTint);
+         _loc2_ += this.updateCostStep(0,_loc4_,_loc6_,_loc5_,"+");
+      }
+      else
+      {
+         _loc2_ += this.updateCostStep(0,0,0,0,"+");
+      }
+      var _loc7_ = !this.base.isOwned ? "FORECLOSURES_BUY" : "FORECLOSURES_RENOVATE";
+      var _loc3_ = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.purchaseButton.btnTxt,_loc7_);
+      if(_loc2_ > 0)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_ + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+      }
+      else
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_,true);
+      }
+   }
+   function updateWeedShopCosts()
+   {
+      this.updateCostStep(0,-1,-1,-1,"");
+      var _loc2_ = !this.weedShop.isOwned ? this.weedShop.getBaseBestCost() : 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
+      var _loc8_;
+      var _loc9_;
+      if(this.website.weedShopTint != -1)
+      {
+         _loc4_ = this.weedShop.getTintBestCost(this.website.weedShopTint,this.website.purchasedWeedShopTint);
+         _loc6_ = this.weedShop.getTintCost(this.website.weedShopTint,this.website.purchasedWeedShopTint);
+         _loc5_ = this.weedShop.getTintRawSaleCost(this.website.weedShopTint,this.website.purchasedWeedShopTint);
+         _loc2_ += this.updateCostStep(0,_loc4_,_loc6_,_loc5_,"+");
+      }
+      else
+      {
+         _loc2_ += this.updateCostStep(0,0,0,0,"+");
+      }
+      var _loc7_ = !this.base.isOwned ? "FORECLOSURES_BUY" : "FORECLOSURES_RENOVATE";
+      var _loc3_ = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(this.view.purchaseButton.btnTxt,_loc7_);
+      if(_loc2_ > 0)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_ + ": $" + com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.formatNumber(_loc2_),true);
+      }
+      else
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.purchaseButton.btnTxt,_loc3_,true);
+      }
+   }
    function getSaleCost(price1, price2, price3, price4)
    {
-      var _loc1_ = undefined;
+      var _loc1_;
       if(price1 < 0 && price2 < 0 && price3 < 0 && price4 < 0)
       {
          _loc1_ = -1;

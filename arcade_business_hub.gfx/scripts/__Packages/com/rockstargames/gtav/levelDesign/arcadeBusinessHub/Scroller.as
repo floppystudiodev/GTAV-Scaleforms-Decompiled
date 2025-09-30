@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.arcadeBusinessHub.Scroller
 {
    var content;
-   var mask;
+   var contentMax;
+   var contentMin;
    var handle;
-   var track;
+   var handleMax;
+   var handleMin;
+   var mask;
+   var momentumArgs;
    var momentumListener;
    var restoreIndex;
-   var contentMax;
-   var handleMin;
-   var momentumArgs;
-   var contentMin;
-   var handleMax;
+   var track;
    static var SCROLL_SPEED = 20;
    static var MOUSEWHEEL_SPEED_MULTIPLIER = 2;
    static var MOUSEWHEEL_MOMENTUM_DAMPING = 0.85;

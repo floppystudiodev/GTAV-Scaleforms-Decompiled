@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Loading
 {
-   var view;
    var callback;
+   var view;
    function Loading()
    {
    }

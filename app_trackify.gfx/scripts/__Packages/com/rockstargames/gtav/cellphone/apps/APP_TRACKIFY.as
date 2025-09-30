@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
 {
-   var targetArray;
+   var LoadingScreenType;
    var TIMELINE;
+   var depthArrow;
+   var depthTF;
+   var intervalIdSweep;
    var loadingAnim;
    var loadingText;
    var mainScreen;
-   var target;
    var player;
    var rings;
    var sweepMC;
-   var depthArrow;
-   var depthTF;
-   var LoadingScreenType;
-   var intervalIdSweep;
+   var target;
+   var targetArray;
    var sweepStep = 4;
    var loadingCounter = 1;
    var sweepTime = 1;
@@ -52,7 +52,7 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
    }
    function setTargetByID(targetID, direction, distance, range, relativeDepth, heightIndicator)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.targetArray[targetID] == undefined)
       {
          _loc2_ = new com.rockstargames.gtav.cellphone.apps.TrackifyTarget();
@@ -93,11 +93,13 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
          case 3:
             _loc2_._mc.HEIGHT_INDICATOR_UP._visible = false;
             _loc2_._mc.HEIGHT_INDICATOR_DOWN._visible = true;
+         default:
+            return;
       }
    }
    function checkRangeForAllTargets()
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc4_ = 0;
       var _loc2_ = 0;
       while(_loc2_ < this.targetArray.length)
@@ -171,6 +173,7 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
       }
       this.LoadingScreenType = Number(dataProviderUI[0][3]);
       this.targetArrowVisible = dataProviderUI[0][4];
+      var _loc2_;
       if(this.firstRun == true)
       {
          switch(this.LoadingScreenType)
@@ -199,11 +202,13 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
                break;
             case this.LOADING_SCREEN_TYPE_HACKING_ACTIVE:
                this.showHackingAppState("CELL_HACKUNL",true);
+            default:
+               return;
          }
       }
       else
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < dataProviderUI.length)
          {
             this.setTargetByID(_loc2_,dataProviderUI[_loc2_][0],dataProviderUI[_loc2_][1],dataProviderUI[_loc2_][2],dataProviderUI[_loc2_][5],dataProviderUI[_loc2_][6]);
@@ -243,8 +248,8 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
       var _loc16_ = (newTarget._direction - 90) * 3.141592653589793 / 180;
       var _loc3_ = Math.cos(_loc16_) * _loc14_;
       var _loc2_ = Math.sin(_loc16_) * _loc14_;
-      var _loc15_ = undefined;
-      var _loc13_ = undefined;
+      var _loc15_;
+      var _loc13_;
       if(_loc3_ > 0)
       {
          _loc15_ = _loc3_ / _loc10_;
@@ -314,12 +319,13 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
    }
    function testAllTargets()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc4_ = 0;
+      var _loc3_;
       while(_loc4_ < this.targetArray.length)
       {
          _loc2_ = this.targetArray[_loc4_];
-         var _loc3_ = this.sweepMC._rotation;
+         _loc3_ = this.sweepMC._rotation;
          if(_loc3_ < 0)
          {
             _loc3_ += 360;
@@ -389,7 +395,7 @@ class com.rockstargames.gtav.cellphone.apps.APP_TRACKIFY extends MovieClip
       this.checkAndRemoveTween(this.rings);
       this.checkAndRemoveTween(this.target);
       this.checkAndRemoveTween(this.sweepMC.sweep);
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.targetArray.length)
       {

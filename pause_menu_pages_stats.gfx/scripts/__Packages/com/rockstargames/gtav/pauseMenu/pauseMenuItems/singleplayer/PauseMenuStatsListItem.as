@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStatsListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextRight;
-   var labelMC;
-   var bar;
-   var barMC;
-   var bMC;
-   var index;
-   var bgMC;
-   var type;
    var __get__data;
    var _highlighted;
+   var bMC;
+   var bar;
+   var barMC;
+   var bgMC;
+   var index;
    var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var type;
    var bgA = 100;
    function PauseMenuStatsListItem()
    {
@@ -36,6 +36,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStat
          this.bgA = 0;
       }
       com.rockstargames.ui.utils.Colour.Colourise(this.bgMC,_loc3_.r,_loc3_.g,_loc3_.b,this.bgA);
+      var _loc4_;
+      var _loc5_;
       switch(this.type)
       {
          case 0:
@@ -46,7 +48,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStat
             this.barMC._visible = false;
             break;
          case 1:
-            var _loc4_ = this.data[2];
+            _loc4_ = this.data[2];
             if(_loc4_ == undefined)
             {
                _loc4_ = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE;
@@ -54,7 +56,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStat
             this.bar.init(_loc4_,158);
             if(this.data[1] != undefined && this.data[1] != "")
             {
-               var _loc5_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(this.data[1],30,2,5);
+               _loc5_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(this.data[1],30,2,5);
                this.bar.percent(_loc5_,false);
             }
             this.barMC._visible = true;

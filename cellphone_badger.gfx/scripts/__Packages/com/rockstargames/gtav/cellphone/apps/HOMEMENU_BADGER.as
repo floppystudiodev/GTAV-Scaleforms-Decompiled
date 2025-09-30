@@ -2,11 +2,11 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_BADGER extends MovieClip
 {
    var CONTENT;
    var container;
-   var dataProviderUI;
    var currentID;
    var currentKey;
-   var previousKey;
    var currentStyle;
+   var dataProviderUI;
+   var previousKey;
    var numberOfRows = 3;
    var numberOfColumns = 3;
    var currentSelection = -1;
@@ -34,17 +34,19 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_BADGER extends MovieClip
          this.currentID = 4;
       }
       _level0.TIMELINE.infoBar.infobarBackground.gotoAndStop("NOTIFICATIONS");
-      var _loc5_ = undefined;
-      var _loc10_ = undefined;
+      var _loc5_;
+      var _loc10_;
       var _loc6_ = 0;
-      var _loc7_ = undefined;
+      var _loc7_;
       var _loc4_ = 1;
       var _loc9_ = 1;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc8_;
       while(_loc3_ < 9)
       {
-         var _loc2_ = _loc4_ + "_" + _loc9_;
-         var _loc8_ = "c" + _loc4_ + "_" + _loc9_;
+         _loc2_ = _loc4_ + "_" + _loc9_;
+         _loc8_ = "c" + _loc4_ + "_" + _loc9_;
          if(this.container[_loc8_])
          {
             this.container[_loc8_]._name = _loc2_;
@@ -166,9 +168,10 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_BADGER extends MovieClip
    }
    function setIcon(target, menuIconFrameEnum, iconAlpha)
    {
+      var _loc2_;
       if(target != undefined)
       {
-         var _loc2_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
+         _loc2_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
          target.homeMenuIcons.gotoAndStop(_loc2_[1]);
          target.homeMenuIcons._alpha = iconAlpha;
       }

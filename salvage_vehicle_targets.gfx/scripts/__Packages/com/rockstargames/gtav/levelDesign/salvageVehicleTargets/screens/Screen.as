@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.screens.Screen
 {
+   var activeButtonIndex;
    var app;
+   var buttons;
    var cursor;
-   var view;
    var cursorListenerID;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
-   var buttons;
-   var activeButtonIndex;
+   var view;
    function Screen(app, viewContainer, cursor)
    {
       this.app = app;
@@ -63,9 +63,10 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.screens.Screen
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          if(_loc3_ == target)
          {

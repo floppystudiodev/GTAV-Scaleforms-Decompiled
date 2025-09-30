@@ -14,9 +14,10 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_CALIBRATION extends com.rockst
    {
       var _loc4_ = [this.CONTENT.lArrowMC,this.CONTENT.rArrowMC];
       var _loc2_ = _loc4_[arrowID];
+      var _loc3_;
       if(_loc2_ != undefined)
       {
-         var _loc3_ = Math.max(0,Math.min(a,100));
+         _loc3_ = Math.max(0,Math.min(a,100));
          _loc2_._alpha = _loc3_;
       }
    }
@@ -30,10 +31,10 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_CALIBRATION extends com.rockst
    function onMouseEvent(evtType, targetMC, args)
    {
       var _loc1_ = args[0];
+      var _loc0_;
       switch(evtType)
       {
          case com.rockstargames.ui.mouse.MOUSE_EVENTS.MOUSE_RELEASE:
-            var _loc0_ = null;
             _loc1_._yscale = _loc0_ = 75;
             _loc1_._xscale = _loc0_;
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc1_,0.05,{_xscale:100,_yscale:100});
@@ -45,6 +46,8 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_CALIBRATION extends com.rockst
          case com.rockstargames.ui.mouse.MOUSE_EVENTS.MOUSE_ROLL_OVER:
             _loc1_._yscale = _loc0_ = 110;
             _loc1_._xscale = _loc0_;
+         default:
+            return;
       }
    }
 }

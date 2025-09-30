@@ -100,6 +100,8 @@ class com.rockstargames.gtav.web.casino.pages.SplashPage extends com.rockstargam
          case "suitesButton":
          case "suitesInfoButton":
             this.website.browser.GO_TO_WEBPAGE(!this.website.suiteIsOwned ? com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES.SUITES_PAGE.name : com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES.RENOVATE_PAGE.name);
+         default:
+            return;
       }
    }
    function dispose()

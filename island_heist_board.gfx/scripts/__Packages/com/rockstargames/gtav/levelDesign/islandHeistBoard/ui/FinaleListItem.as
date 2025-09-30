@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.FinaleListItem extends com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Button
 {
    var checkBoxComplete;
-   var view;
    var colourScheme;
+   var setLabel;
+   var view;
    static var LABEL_X_POSITIONS = [22,44];
    function FinaleListItem(id, view, colourScheme)
    {

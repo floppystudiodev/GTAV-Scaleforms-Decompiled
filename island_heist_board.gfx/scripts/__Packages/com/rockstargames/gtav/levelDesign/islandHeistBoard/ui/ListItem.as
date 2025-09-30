@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem extends com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Button
 {
-   var isLocked;
-   var isOn;
    var checkBox1Selected;
    var checkBox2Selected;
-   var view;
-   var enabled;
    var colourScheme;
+   var enabled;
+   var isLocked;
+   var isOn;
+   var view;
    static var LABEL_X_POSITIONS = [22,44,66];
    static var LOCKED_ALPHA = 50;
    function ListItem(id, view, colourScheme)
@@ -19,6 +19,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem extends co
    }
    function populate(label, labelIsStringLiteral, numerator, denominator, numCheckBoxesComplete, numTotalCheckBoxes, isLocked, isHidden, isMandatory, showDollar)
    {
+      var _loc2_;
       if(isHidden)
       {
          this.view.checkBox1._visible = false;
@@ -48,7 +49,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem extends co
          else
          {
             this.view.fraction.tf.verticalAlign = "center";
-            var _loc2_ = "";
+            _loc2_ = "";
             if(denominator > 0)
             {
                _loc2_ += numerator + " / " + denominator;

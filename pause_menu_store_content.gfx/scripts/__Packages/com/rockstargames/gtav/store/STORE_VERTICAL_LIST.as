@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.store.STORE_VERTICAL_LIST extends com.rockstargames.gtav.store.EcommerceStoreBaseClass
 {
-   var data;
    var COLUMN;
-   var menuBgCol;
    var blackCol;
-   var whiteCol;
+   var data;
+   var menuBgCol;
    var scrollIndicator;
    var scrollIndicatorbgMC;
+   var whiteCol;
    var scrollPos = 0;
    var currentIndex = 0;
    var maxitems = 0;
@@ -36,12 +36,14 @@ class com.rockstargames.gtav.store.STORE_VERTICAL_LIST extends com.rockstargames
    }
    function REDRAW()
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc5_;
       while(_loc3_ < this.maxVisItems)
       {
          _loc4_ = _loc3_ + this.arrayStartPoint;
-         var _loc2_ = "listItem" + _loc3_;
+         _loc2_ = "listItem" + _loc3_;
          if(this.data[_loc4_][0] != undefined)
          {
             if(this.COLUMN[_loc2_] == undefined)
@@ -50,7 +52,7 @@ class com.rockstargames.gtav.store.STORE_VERTICAL_LIST extends com.rockstargames
             }
             this.COLUMN[_loc2_].labelMC.labelTF.text = this.data[_loc4_][0];
             this.COLUMN[_loc2_].newItemIndicator._visible = Boolean(this.data[_loc4_][1]);
-            var _loc5_ = false;
+            _loc5_ = false;
             if(_loc3_ == this.currentIndex)
             {
                _loc5_ = true;

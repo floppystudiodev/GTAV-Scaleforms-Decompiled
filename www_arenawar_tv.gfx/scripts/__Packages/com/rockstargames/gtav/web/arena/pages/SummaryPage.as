@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.web.arena.pages.SummaryPage extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
    var prevPageName;
    var progressPanel;
    var view;
+   var website;
    function SummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"summaryPage",pageName,isFirstPage,progressPanel);

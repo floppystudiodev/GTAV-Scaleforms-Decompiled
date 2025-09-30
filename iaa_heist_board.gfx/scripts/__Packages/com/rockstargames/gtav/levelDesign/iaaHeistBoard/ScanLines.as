@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLines
 {
-   var view;
    var lines;
+   var view;
    static var NUM_LINES = 4;
    static var SCREEN_HEIGHT = 178;
    function ScanLines(view)
@@ -22,9 +22,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLines
    function update()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLines.NUM_LINES)
       {
-         var _loc3_ = this.lines[_loc2_];
+         _loc3_ = this.lines[_loc2_];
          _loc3_.update();
          _loc2_ = _loc2_ + 1;
       }

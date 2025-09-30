@@ -1,7 +1,7 @@
 class com.rockstargames.ui.utils.Perlin1D
 {
-   var perm;
    var _numOctaves;
+   var perm;
    static var SIZE = 256;
    static var MASK = 255;
    function Perlin1D()
@@ -58,10 +58,12 @@ class com.rockstargames.ui.utils.Perlin1D
    function shuffleArray()
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.ui.utils.Perlin1D.MASK)
       {
-         var _loc4_ = Math.random() * (com.rockstargames.ui.utils.Perlin1D.MASK - _loc2_) + _loc2_ + 1;
-         var _loc3_ = this.perm.splice(_loc4_,1)[0];
+         _loc4_ = Math.random() * (com.rockstargames.ui.utils.Perlin1D.MASK - _loc2_) + _loc2_ + 1;
+         _loc3_ = this.perm.splice(_loc4_,1)[0];
          this.perm.splice(_loc2_,0,_loc3_);
          _loc2_ = _loc2_ + 1;
       }

@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var hasUnlockedItems;
-   var scrollTimeDelta;
-   var view;
-   var app;
-   var tooltips;
-   var safeZoneBottom;
    var _buttons;
-   var unlockButtons;
-   var unlockButtonIDs;
-   var tabButtons;
-   var cursor;
-   var currUnlockFilter;
    var activeScrollKey;
+   var app;
+   var currUnlockFilter;
+   var cursor;
+   var hasUnlockedItems;
+   var safeZoneBottom;
+   var scrollTimeDelta;
+   var tabButtons;
+   var tooltips;
+   var unlockButtonIDs;
+   var unlockButtons;
+   var view;
    static var FADE_IN_TIME = 0.2;
    static var FADE_OUT_TIME = 0.5;
    static var FADE_IN_ARGS = {_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_OUT};
@@ -73,12 +73,14 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
    function update()
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.app.researchUnlockStates.length)
       {
          if(this.app.researchUnlockStates[_loc2_] != undefined)
          {
-            var _loc4_ = false;
-            var _loc3_ = 0;
+            _loc4_ = false;
+            _loc3_ = 0;
             while(_loc3_ < this.unlockButtonIDs.length)
             {
                if(this.unlockButtonIDs[_loc3_] == _loc2_)
@@ -179,12 +181,15 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
       {
          _loc4_ *= 2;
       }
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
       if(!isLeftStick)
       {
-         var _loc5_ = getTimer();
-         var _loc3_ = _loc5_ - this.scrollTimeDelta;
+         _loc5_ = getTimer();
+         _loc3_ = _loc5_ - this.scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc6_ = com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen.SCROLL_SPEED * _loc3_ / 32;
+         _loc6_ = com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen.SCROLL_SPEED * _loc3_ / 32;
          this.scrollTimeDelta = _loc5_;
          this.scrollList((- _loc6_) * _loc4_);
          if(isMouseWheel)
@@ -211,15 +216,18 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
    }
    function handleButtonInput(inputID)
    {
+      var _loc2_;
       if(inputID == com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.ACCEPT)
       {
-         var _loc2_ = this.app.GET_CURRENT_SELECTION();
+         _loc2_ = this.app.GET_CURRENT_SELECTION();
          switch(_loc2_)
          {
             case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.TAB_ALL:
             case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.TAB_UNLOCKED:
             case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.TAB_LOCKED:
                this.filterUnlocks(_loc2_);
+            default:
+               return;
          }
       }
       else if(inputID == com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.LB)
@@ -263,6 +271,8 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
             {
                delete this.view.onEnterFrame;
             }
+         default:
+            return;
       }
    }
    function scrollListFromKeyboard(direction)
@@ -311,11 +321,14 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
    {
       this._buttons = [].concat(this.tabButtons);
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
       while(_loc3_ < this.unlockButtons.length)
       {
-         var _loc2_ = this.unlockButtons[_loc3_];
-         var _loc4_ = _loc2_.view._y + _loc2_.view._parent._y + _loc2_.view._parent._parent._y;
-         var _loc5_ = _loc4_ + _loc2_.view._height;
+         _loc2_ = this.unlockButtons[_loc3_];
+         _loc4_ = _loc2_.view._y + _loc2_.view._parent._y + _loc2_.view._parent._parent._y;
+         _loc5_ = _loc4_ + _loc2_.view._height;
          _loc2_.top = Math.max(this.view.listMask._y,_loc4_);
          _loc2_.bottom = Math.min(this.view.listMask._y + this.view.listMask._height,_loc5_);
          if(_loc2_.top > _loc2_.bottom)
@@ -355,10 +368,12 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UnlocksScreen exten
       }
       var _loc5_ = 0;
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < this.unlockButtons.length)
       {
-         var _loc2_ = this.unlockButtons[_loc4_];
-         var _loc3_ = this.app.researchUnlockStates[this.unlockButtonIDs[_loc4_]];
+         _loc2_ = this.unlockButtons[_loc4_];
+         _loc3_ = this.app.researchUnlockStates[this.unlockButtonIDs[_loc4_]];
          if(buttonId == com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.TAB_ALL)
          {
             _loc2_.state = _loc3_;

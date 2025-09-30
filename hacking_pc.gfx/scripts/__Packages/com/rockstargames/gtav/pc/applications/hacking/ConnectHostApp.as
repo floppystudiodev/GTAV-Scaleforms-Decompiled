@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.rockstargames.gtav.pc.applications.hacking.BaseHacking
 {
-   var gridMC;
-   var frameMC;
-   var replayMC;
-   var winMC;
-   var ipMC;
    var AH;
-   var onEnterFrame;
    var bgMC;
+   var frameMC;
+   var gridMC;
+   var ipMC;
+   var onEnterFrame;
+   var replayMC;
    var signalMC;
    var signalStrengthText;
    var timeTF;
+   var winMC;
    var gridItems = new Array();
    var gridColumns = 10;
    var gridRows = 8;
@@ -33,9 +33,10 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
       var _loc7_ = 70;
       var _loc4_ = this.gridColumns * this.gridRows;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.gridMC.attachMovie("gridnum","gridnumMC" + _loc3_,_loc3_);
+         _loc2_ = this.gridMC.attachMovie("gridnum","gridnumMC" + _loc3_,_loc3_);
          _loc2_._x = _loc3_ % this.gridColumns * (_loc2_._width + _loc5_);
          _loc2_._y = Math.floor(_loc3_ / this.gridColumns) * (_loc2_._height + _loc6_);
          _loc2_.numTF.text = _loc3_;
@@ -66,6 +67,7 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
       this.highlightIndex = 33;
       this.IPTarget = [];
       _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < 4)
       {
          _loc2_ = this.getRndNumber();
@@ -78,7 +80,7 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
             _loc6_ += String(_loc2_);
          }
          this.IPTarget.push(_loc2_);
-         var _loc4_ = this.IPIndex + _loc3_;
+         _loc4_ = this.IPIndex + _loc3_;
          if(_loc4_ > _loc5_ - 1)
          {
             _loc4_ -= _loc5_;
@@ -115,9 +117,10 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
       }
       var _loc4_ = this.gridItems.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 4)
       {
-         var _loc2_ = this.highlightIndex + _loc3_;
+         _loc2_ = this.highlightIndex + _loc3_;
          if(_loc2_ > _loc4_ - 1)
          {
             _loc2_ -= _loc4_;
@@ -160,9 +163,10 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
    {
       var _loc4_ = this.gridItems.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 4)
       {
-         var _loc2_ = this.highlightIndex + _loc3_;
+         _loc2_ = this.highlightIndex + _loc3_;
          if(_loc2_ > _loc4_ - 1)
          {
             _loc2_ -= _loc4_;
@@ -230,9 +234,10 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
    function refreshGrid()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.gridItems.length)
       {
-         var _loc3_ = this.gridItems[_loc2_];
+         _loc3_ = this.gridItems[_loc2_];
          _loc3_.numTF.text = this.IPList[_loc2_];
          _loc3_.numTF.textAutoSize = "shrink";
          _loc3_.numTF.verticalAlign = "center";
@@ -246,9 +251,10 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
          this.lives = t;
       }
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 7)
       {
-         var _loc3_ = this.signalMC["bar" + _loc2_ + "MC"];
+         _loc3_ = this.signalMC["bar" + _loc2_ + "MC"];
          _loc3_._visible = _loc2_ <= this.lives;
          _loc2_ < l + 1 ? _loc3_.gotoAndStop(1) : _loc3_.gotoAndStop(2);
          _loc2_ = _loc2_ + 1;
@@ -301,13 +307,12 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
                {
                   this.startApp01();
                   _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_IP_RETRY[0];
+                  break;
                }
-               else
-               {
-                  _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_IP_NORETRY[0];
-               }
+               _loc2_ = com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING_IP_NORETRY[0];
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
             {
                _loc2_ = this.testIP();
             }
@@ -322,8 +327,9 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
             {
                this.moveHighlight(0,-1);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
             {
                this.highlightReplay(1);
             }
@@ -332,8 +338,9 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
             {
                this.moveHighlight(0,1);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
             {
                this.highlightReplay(2);
             }
@@ -342,8 +349,9 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
             {
                this.moveHighlight(-1,0);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
             {
                this.highlightReplay(1);
             }
@@ -352,8 +360,9 @@ class com.rockstargames.gtav.pc.applications.hacking.ConnectHostApp extends com.
             if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_GAME)
             {
                this.moveHighlight(1,0);
+               break;
             }
-            else if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
+            if(this.AH.state == com.rockstargames.gtav.pc.applications.App_Hacking.APP01_REPLAY)
             {
                this.highlightReplay(2);
             }

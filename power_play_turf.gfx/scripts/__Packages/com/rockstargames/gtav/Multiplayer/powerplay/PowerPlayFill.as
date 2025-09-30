@@ -1,17 +1,20 @@
 class com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayFill extends com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx
 {
-   var myHudColourT1;
-   var currentState;
    var CONTAINER;
    var background;
-   var teamOne;
-   var teamTwo;
-   var teamThree;
-   var teamFour;
+   var currentState;
+   var lineToPtOnWheel;
    var maskMC;
+   var myHudColourT1;
    var pickup;
-   var teamOneActive;
+   var roundVal;
+   var setPickupActiveState;
    var teamColour;
+   var teamFour;
+   var teamOne;
+   var teamOneActive;
+   var teamThree;
+   var teamTwo;
    var hasIconTimer = false;
    function PowerPlayFill()
    {
@@ -108,9 +111,8 @@ class com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayFill extends com.roc
          case com.rockstargames.gtav.Multiplayer.powerplay.IconStates.INACTIVE_STATE:
             this.pickup._alpha = 50;
             this.teamOne._visible = false;
-            break;
          default:
-            break;
+            return;
          case com.rockstargames.gtav.Multiplayer.powerplay.IconStates.SURPRESSED_STATE:
             this.pickup._alpha = 25;
             this.teamOne._visible = false;

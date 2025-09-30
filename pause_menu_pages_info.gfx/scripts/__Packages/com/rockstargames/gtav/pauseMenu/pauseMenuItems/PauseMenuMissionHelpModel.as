@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuMissionHelpModel extends com.rockstargames.ui.components.GUIModel
 {
-   var viewList;
    var viewIndex;
+   var viewList;
    function PauseMenuMissionHelpModel()
    {
       super();

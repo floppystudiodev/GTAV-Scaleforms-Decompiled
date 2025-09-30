@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map
 {
-   var markers;
+   var highlightBounds;
+   var highlightView;
    var m;
    var mapView;
-   var highlightView;
-   var highlightBounds;
+   var markers;
    var markersView;
-   var scaleGoal;
-   var xGoal;
-   var yGoal;
-   var x;
-   var y;
    var scale;
+   var scaleGoal;
+   var x;
+   var xGoal;
+   var y;
+   var yGoal;
    static var MAP_COORD_SCALE = 0.3415;
    static var MAP_ORIGIN_X = 1415.5;
    static var MAP_ORIGIN_Y = 2774;
@@ -85,10 +85,18 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map
    }
    function updateDisplay()
    {
+      var _loc9_;
+      var _loc8_;
+      var _loc2_;
+      var _loc3_;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
       if(this.mapView)
       {
-         var _loc9_ = com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MOVEMENT_DAMPING * (this.xGoal - this.x);
-         var _loc8_ = com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MOVEMENT_DAMPING * (this.yGoal - this.y);
+         _loc9_ = com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MOVEMENT_DAMPING * (this.xGoal - this.x);
+         _loc8_ = com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MOVEMENT_DAMPING * (this.yGoal - this.y);
          this.x += _loc9_;
          this.y += _loc8_;
          this.scale += com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.SCALE_DAMPING * (this.scaleGoal - this.scale);
@@ -97,8 +105,8 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map
          this.m.scale(this.scale,this.scale);
          this.m.translate(com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_X,com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_Y);
          this.mapView.transform.matrix = this.m;
-         var _loc2_ = 0;
-         var _loc3_ = this.markers.length;
+         _loc2_ = 0;
+         _loc3_ = this.markers.length;
          while(_loc2_ < _loc3_)
          {
             this.markers[_loc2_].updatePosition(this.mapView._x,this.mapView._y,this.scale);
@@ -106,10 +114,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map
          }
          if(this.highlightView)
          {
-            var _loc7_ = this.highlightBounds.width * (- this.mapView._x) / this.mapView._width;
-            var _loc5_ = this.highlightBounds.height * (- this.mapView._y) / this.mapView._height;
-            var _loc4_ = 2 * com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_X * this.highlightBounds.width / this.mapView._width;
-            var _loc6_ = 2 * com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_Y * this.highlightBounds.height / this.mapView._height;
+            _loc7_ = this.highlightBounds.width * (- this.mapView._x) / this.mapView._width;
+            _loc5_ = this.highlightBounds.height * (- this.mapView._y) / this.mapView._height;
+            _loc4_ = 2 * com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_X * this.highlightBounds.width / this.mapView._width;
+            _loc6_ = 2 * com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map.MAP_OFFSET_Y * this.highlightBounds.height / this.mapView._height;
             if(_loc7_ < 0)
             {
                _loc4_ += _loc7_;
@@ -156,9 +164,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Map
    {
       var _loc2_ = 0;
       var _loc4_ = this.markers.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.markers[_loc2_];
+         _loc3_ = this.markers[_loc2_];
          if(_loc3_.getID() == id)
          {
             _loc3_.dispose();

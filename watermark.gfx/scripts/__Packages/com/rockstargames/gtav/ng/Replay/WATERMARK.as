@@ -1,25 +1,25 @@
 class com.rockstargames.gtav.ng.Replay.WATERMARK
 {
+   var TIMELINE;
+   var _animatedLogo;
+   var _fadeOutCounter;
+   var _isAnimationPlaying;
    var _isWideScreen;
+   var _movieNameMask;
+   var _movieNameMaskEndX;
+   var _movieNameMaskPixelsPerFrame;
+   var _safeBottom;
    var _safeLeft;
    var _safeRight;
    var _safeTop;
-   var _safeBottom;
-   var TIMELINE;
-   var _watermark;
-   var _isAnimationPlaying;
-   var _startFadeOutDelay;
-   var _fadeOutCounter;
+   var _shouldUpdate;
    var _startFadeOut;
-   var _userMask;
-   var _movieNameMask;
-   var _animatedLogo;
+   var _startFadeOutDelay;
    var _totalLogoFrames;
+   var _userMask;
    var _userMaskEndX;
    var _userMaskPixelsPerFrame;
-   var _movieNameMaskEndX;
-   var _movieNameMaskPixelsPerFrame;
-   var _shouldUpdate;
+   var _watermark;
    var ref;
    static var LOGO_TYPE_ROCKSTAR = 0;
    static var LOGO_TYPE_SOCIAL_CLUB = 1;
@@ -33,8 +33,8 @@ class com.rockstargames.gtav.ng.Replay.WATERMARK
    function SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, isWideScreen, _isHiDef, _isAsian)
    {
       this._isWideScreen = isWideScreen;
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       if(this._isWideScreen)
       {
          _loc2_ = 1280;
@@ -77,6 +77,7 @@ class com.rockstargames.gtav.ng.Replay.WATERMARK
       this._animatedLogo._visible = false;
       this._animatedLogo.stop();
       this._totalLogoFrames = this._animatedLogo._totalframes;
+      var _loc2_;
       if(screenWidthPixels == undefined && screenHeightPixels == undefined)
       {
          this._watermark._x = this._safeLeft;
@@ -84,7 +85,7 @@ class com.rockstargames.gtav.ng.Replay.WATERMARK
       }
       else
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          _loc2_ = 720 * screenWidthPixels / screenHeightPixels;
          _loc2_ = Math.round((1280 - _loc2_) * 0.5);
          this._watermark._x = 15 + _loc2_;

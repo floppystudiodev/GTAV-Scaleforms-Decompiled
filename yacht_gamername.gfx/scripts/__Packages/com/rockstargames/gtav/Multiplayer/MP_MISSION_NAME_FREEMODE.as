@@ -35,7 +35,7 @@ class com.rockstargames.gtav.Multiplayer.MP_MISSION_NAME_FREEMODE extends com.ro
       }
       this.CONTENT.background_single_line._visible = false;
       this.CONTENT.background_double_line._visible = false;
-      var _loc2_ = undefined;
+      var _loc2_;
       if(missionName != undefined && missionName != "")
       {
          _loc3_ = true;
@@ -147,9 +147,9 @@ class com.rockstargames.gtav.Multiplayer.MP_MISSION_NAME_FREEMODE extends com.ro
    }
    function centreInformation(hasName, mc)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
       if(this.CONTENT.infoPanel.icon_players._visible)
       {
          _loc2_ = this.CONTENT.infoPanel.icon_players._x;

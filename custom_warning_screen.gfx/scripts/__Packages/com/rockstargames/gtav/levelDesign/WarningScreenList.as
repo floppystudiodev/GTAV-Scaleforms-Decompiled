@@ -11,9 +11,10 @@ class com.rockstargames.gtav.levelDesign.WarningScreenList extends MovieClip
    }
    function setItem(text)
    {
+      var _loc2_;
       if(text != "")
       {
-         var _loc2_ = this.attachMovie("WarningScreenListItem","Option" + this.ItemCounter + "MC",this.getNextHighestDepth());
+         _loc2_ = this.attachMovie("WarningScreenListItem","Option" + this.ItemCounter + "MC",this.getNextHighestDepth());
          this.Elements[this.ItemCounter] = _loc2_;
          _loc2_.setText(text);
          _loc2_._y = this.ItemCounter * (_loc2_._height + 2);

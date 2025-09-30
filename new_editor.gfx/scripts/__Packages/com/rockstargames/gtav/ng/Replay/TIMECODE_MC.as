@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.ng.Replay.TIMECODE_MC extends MovieClip
 {
-   var hudColourBlack;
-   var TIMECODE_BG;
    var TIMECODE;
+   var TIMECODE_BG;
    var animatedTimecodeLine;
+   var hudColourBlack;
    var trimmingArrows;
    var BLACK_ALPHA = 70;
    function TIMECODE_MC()

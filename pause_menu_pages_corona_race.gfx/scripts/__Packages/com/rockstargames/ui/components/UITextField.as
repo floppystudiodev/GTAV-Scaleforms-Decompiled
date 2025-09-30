@@ -1,9 +1,9 @@
 class com.rockstargames.ui.components.UITextField extends MovieClip
 {
    var m_bShowBG;
-   var m_tf;
-   var m_fPadding;
    var m_bgMC;
+   var m_fPadding;
+   var m_tf;
    static var PT_TO_PADDING = 0.18;
    function UITextField(ptSize)
    {

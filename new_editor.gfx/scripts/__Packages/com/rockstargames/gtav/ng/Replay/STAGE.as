@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.STAGE extends MovieClip
 {
-   var oldX;
+   var CLIP;
+   var MOUSE_EVT;
    var MOVIE_TEXT_CENTER;
    var blipLayer;
    var myBtnType;
-   var MOUSE_EVT;
-   var CLIP;
+   var oldX;
    var _isMouseEnabled = true;
    var SF_BASE_CLASS_MOUSE = 10;
    function STAGE()

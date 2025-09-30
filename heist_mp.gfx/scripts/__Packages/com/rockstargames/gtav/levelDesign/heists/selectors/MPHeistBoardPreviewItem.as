@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreviewItem extends MovieClip
 {
-   var txd;
-   var txn;
-   var picMC;
-   var imgLdr;
-   var txdDummy2;
-   var txdLoader;
-   var txdListener;
-   var thisScope;
    var defaultImageMC;
+   var imgLdr;
+   var picMC;
+   var thisScope;
+   var txd;
+   var txdDummy2;
+   var txdListener;
+   var txdLoader;
+   var txn;
    var returnpath = "HEIST_MP";
    var prevTxd = "nothing";
    var prevTxn = "nothing";
@@ -25,6 +25,9 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreviewIte
    {
       this.txd = _txd;
       this.txn = _texture;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.txd != undefined && this.txd != "" && this.txd != null)
       {
          if(this.picMC.ldr == undefined)
@@ -40,9 +43,9 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreviewIte
             }
             this.isLoaded = false;
             this.imgLdr.init(this.returnpath,this.txd,this.txn,this.iW,this.iH,this.iX,this.iY);
-            var _loc3_ = 5;
-            var _loc2_ = String(this.imgLdr).split(".");
-            var _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
+            _loc3_ = 5;
+            _loc2_ = String(this.imgLdr).split(".");
+            _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
             this.imgLdr.requestTxdRef(_loc4_,true,this.showImage,this);
          }
          else if(this.isLoaded == true)

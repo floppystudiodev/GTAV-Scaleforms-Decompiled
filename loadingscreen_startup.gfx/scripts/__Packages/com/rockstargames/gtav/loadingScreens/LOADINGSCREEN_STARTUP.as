@@ -1,31 +1,31 @@
 class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS
 {
-   var gfxName;
-   var TIMELINE;
-   var loadingScreenHolder;
    var CONTENT;
-   var loadingScreenOrder;
-   var loadingNewsScreenMCs;
+   var DispConf;
+   var GTAV_LOGO;
    var LEGALROCKSTAR;
    var LEGALSCREEN;
-   var legalOverlay;
-   var DispConf;
+   var LOADING_BUTTONS;
    var PROGRESS_BAR;
    var PROGRESS_TEXT;
-   var intervalId;
-   var overlay;
-   var LOADING_BUTTONS;
-   var GTAV_LOGO;
-   var currentScreenIndex;
-   var animationDoneName;
+   var TIMELINE;
    var activeLoadingScreen;
-   var previousScreenIndex;
-   var ml;
-   var mlListener;
+   var activeLoadingScreenObject;
+   var animationDoneName;
+   var bgOverlay;
+   var currentScreenIndex;
    var deleteLoadingScreen;
    var deleteLoadingScreenObject;
-   var activeLoadingScreenObject;
-   var bgOverlay;
+   var gfxName;
+   var intervalId;
+   var legalOverlay;
+   var loadingNewsScreenMCs;
+   var loadingScreenHolder;
+   var loadingScreenOrder;
+   var ml;
+   var mlListener;
+   var overlay;
+   var previousScreenIndex;
    static var CTX_BLANK = 0;
    static var CTX_LEGAL = 1;
    static var CTX_INSTALL = 2;
@@ -105,9 +105,11 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    function SET_SCREEN_ORDER(isSingleplayer)
    {
       var _loc2_ = [];
+      var _loc4_;
+      var _loc3_;
       if(isSingleplayer)
       {
-         var _loc4_ = this.randRange(0,5);
+         _loc4_ = this.randRange(0,5);
          switch(_loc4_)
          {
             case 0:
@@ -132,7 +134,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       }
       else
       {
-         var _loc3_ = this.randRange(0,2);
+         _loc3_ = this.randRange(0,2);
          switch(_loc3_)
          {
             case 0:
@@ -167,13 +169,14 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          {
             case 0:
                this.loadingNewsScreenMCs = [9,7,6,8,10,11,12,16,14,15,17];
-               break;
+               return;
             case 1:
                this.loadingNewsScreenMCs = [14,12,16,15,9,11,10,7,8,17,6];
-               break;
+               return;
             case 2:
             default:
                this.loadingNewsScreenMCs = [17,8,6,9,7,10,11,12,14,15,16];
+               return;
          }
       }
       else
@@ -182,12 +185,13 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          {
             case 0:
                this.loadingNewsScreenMCs = [20,19,18,3];
-               break;
+               return;
             case 1:
                this.loadingNewsScreenMCs = [18,19,20,4];
-               break;
+               return;
             default:
                this.loadingNewsScreenMCs = [19,20,18,5];
+               return;
          }
       }
    }
@@ -248,8 +252,6 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          this.doOverlayFade = false;
          switch(eContext)
          {
-            case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_BLANK:
-               break;
             case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_LEGAL:
                this.LEGAL();
                break;
@@ -270,6 +272,9 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
                this.doOverlayFade = true;
                this.fadeLegals();
                this.switchToStaticGameLoadingScreens();
+            case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_BLANK:
+            default:
+               return;
          }
       }
    }
@@ -308,14 +313,16 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       var _loc9_ = 0;
       var _loc7_ = 24;
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < _loc8_.length)
       {
-         var _loc3_ = new TextFormat();
+         _loc3_ = new TextFormat();
          _loc3_.font = com.rockstargames.gtav.utils.GTAVUIConfig.DEFAULT_FONT;
          _loc3_.size = tf.getTextFormat().size;
          _loc3_.color = 13421772;
          _loc3_.align = "justify";
-         var _loc2_ = _loc6_.createTextField("tf" + _loc4_,_loc6_.getNextHighestDepth(),0,_loc9_,tf._width,_loc7_);
+         _loc2_ = _loc6_.createTextField("tf" + _loc4_,_loc6_.getNextHighestDepth(),0,_loc9_,tf._width,_loc7_);
          _loc2_.multiline = true;
          _loc2_.wordWrap = true;
          _loc2_.embedFonts = true;
@@ -352,7 +359,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       this.LEGALROCKSTAR.LEGAL_TEXT.html = false;
       this.LEGALROCKSTAR.LEGAL_TEXT.multiline = true;
       this.LEGALROCKSTAR.LEGAL_TEXT.autoSize = true;
-      var _loc5_ = undefined;
+      var _loc5_;
       if(this.TIMELINE.isAmerican)
       {
          _loc5_ = "LEGAL_ROCKSTAR_US";
@@ -523,6 +530,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       var _loc7_ = 6;
       var _loc18_ = 15;
       var _loc13_ = this.screenWidth - this.safeRight;
+      var _loc14_;
       if(this.PROGRESS_TEXT._visible && String(this.PROGRESS_TEXT.BUTTON.buttonTF.text).length < 1)
       {
          this.PROGRESS_TEXT._visible = false;
@@ -531,7 +539,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       {
          this.PROGRESS_TEXT.BUTTON.buttonTF._x = _loc7_;
          this.PROGRESS_TEXT.BUTTON.icon._x = this.PROGRESS_TEXT.BUTTON.buttonTF._width + _loc11_;
-         var _loc14_ = _loc7_ + this.PROGRESS_TEXT.progressTitle._width + _loc18_ + this.PROGRESS_TEXT.BUTTON.buttonTF._width + _loc10_ + _loc7_;
+         _loc14_ = _loc7_ + this.PROGRESS_TEXT.progressTitle._width + _loc18_ + this.PROGRESS_TEXT.BUTTON.buttonTF._width + _loc10_ + _loc7_;
          this.PROGRESS_TEXT.background._width = _loc14_;
          this.PROGRESS_TEXT.progressTitle._x = _loc7_;
          this.PROGRESS_TEXT.BUTTON._x = _loc14_ - (this.PROGRESS_TEXT.BUTTON.buttonTF._width + _loc10_ + _loc7_ + _loc7_);
@@ -543,9 +551,10 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       var _loc5_ = [];
       var _loc8_ = false;
       var _loc4_ = 0;
+      var _loc2_;
       while(_loc4_ < _loc9_.length)
       {
-         var _loc2_ = _loc9_[_loc4_];
+         _loc2_ = _loc9_[_loc4_];
          if(_loc2_.buttonTF.text && _loc2_.buttonTF.text != "")
          {
             if(_loc2_.icon.spinner._visible && !_loc8_)
@@ -598,13 +607,11 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function SET_BUTTONS(slot, icon, buttonText)
    {
+      var _loc2_;
       switch(this.eCurrentContext)
       {
-         case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_INSTALL:
-            break;
          case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_GAMELOAD:
          case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_GAMELOAD_NEWS:
-            var _loc2_ = undefined;
             if(slot == 0)
             {
                _loc2_ = this.LOADING_BUTTONS.SP_BUTTON;
@@ -637,6 +644,8 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
                this.setButtonText(_loc2_.buttonTF,buttonText);
                _loc2_._visible = true;
             }
+            break;
+         case com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_INSTALL:
       }
       this.updateButtonLayout();
    }
@@ -683,6 +692,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function SET_PROGRESS_TEXT(progressText)
    {
+      var _loc2_;
       if(progressText != undefined)
       {
          this.PROGRESS_TEXT.BUTTON.icon.button30._visible = false;
@@ -693,7 +703,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          this.PROGRESS_TEXT.BUTTON.icon.spinner._visible = true;
          this.PROGRESS_TEXT.BUTTON.buttonTF.autoSize = "right";
          this.PROGRESS_TEXT.BUTTON.buttonTF.htmlText = progressText;
-         var _loc2_ = new TextFormat();
+         _loc2_ = new TextFormat();
          _loc2_.font = com.rockstargames.gtav.utils.GTAVUIConfig.DEFAULT_FONT;
          this.PROGRESS_TEXT.BUTTON.buttonTF.setTextFormat(_loc2_);
       }
@@ -713,6 +723,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function SET_PROGRESS_TITLE(progressTitle)
    {
+      var _loc2_;
       if(progressTitle != undefined)
       {
          this.PROGRESS_TEXT.BUTTON.icon.button30._visible = false;
@@ -723,7 +734,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          this.PROGRESS_TEXT.BUTTON.icon.spinner._visible = true;
          this.PROGRESS_TEXT.progressTitle.htmlText = progressTitle;
          this.PROGRESS_TEXT.progressTitle.autoSize = "right";
-         var _loc2_ = new TextFormat();
+         _loc2_ = new TextFormat();
          _loc2_.font = com.rockstargames.gtav.utils.GTAVUIConfig.DEFAULT_FONT;
          this.PROGRESS_TEXT.progressTitle.setTextFormat(_loc2_);
       }
@@ -770,10 +781,11 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       {
          this.removeLegals();
       }
+      var _loc2_;
       if(!this.loadScreensArePlaying)
       {
          this.updateScreenIndex();
-         var _loc2_ = this.getLoadingScreenObject(this.currentScreenIndex);
+         _loc2_ = this.getLoadingScreenObject(this.currentScreenIndex);
          this.loadTextures(_loc2_.txd);
          this.nextScreenReady = true;
          this.animationDoneName = this.getLoadingScreenMovieClipName(0);
@@ -784,6 +796,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function SHOW_NEXT_ANIMATED_LOADINGSCREEN()
    {
+      var _loc2_;
       if(this.texturesAreReadyAndAnimationIsDone())
       {
          this.switchLoadSequence();
@@ -794,7 +807,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
          this.animationDone = false;
          this.animationDoneName = "";
          this.startTransition();
-         var _loc2_ = this.getLoadingScreenObject(this.currentScreenIndex);
+         _loc2_ = this.getLoadingScreenObject(this.currentScreenIndex);
          this.loadTextures(_loc2_.txd);
       }
       else
@@ -887,6 +900,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function TXD_HAS_LOADED(textureDict, success, uniqueID)
    {
+      var _loc3_;
       if(success)
       {
          if(this.eCurrentContext == com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_GAMELOAD || this.eCurrentContext == com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_INSTALL)
@@ -901,7 +915,7 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
                this.fadeOutBlackOverlay();
                if(this.eCurrentContext == com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP.CTX_PC_LANDING)
                {
-                  var _loc3_ = this.landingBGColours[this.loadingNewsScreenCharIndex];
+                  _loc3_ = this.landingBGColours[this.loadingNewsScreenCharIndex];
                   com.rockstargames.ui.game.GameInterface.call("SET_LANDING_SCREEN_CHARACTER_COLOUR",com.rockstargames.ui.game.GameInterface.HUD_TYPE,_loc3_);
                }
             }
@@ -922,13 +936,16 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       var _loc11_ = currScreenIndex == undefined ? this.getLoadingScreenObject() : this.getLoadingScreenObject(currScreenIndex);
       var _loc5_ = _loc11_.layers;
       this.loadingScreenEmptyMcs.push({mc:_loc3_,ob:_loc11_});
+      var _loc4_;
+      var _loc2_;
+      var _loc6_;
       if(_loc11_.isInFla)
       {
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < _loc5_.length)
          {
-            var _loc2_ = _loc5_[_loc4_];
-            var _loc6_ = _loc3_.attachMovie(_loc2_.texture,_loc2_.texture,_loc3_.getNextHighestDepth(),{_visible:false});
+            _loc2_ = _loc5_[_loc4_];
+            _loc6_ = _loc3_.attachMovie(_loc2_.texture,_loc2_.texture,_loc3_.getNextHighestDepth(),{_visible:false});
             _loc4_ = _loc4_ + 1;
          }
          this.nextScreenReady = true;
@@ -979,10 +996,12 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    {
       var _loc5_ = loadscreenObject.layers;
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < _loc5_.length)
       {
-         var _loc2_ = _loc5_[_loc4_];
-         var _loc3_ = loadscreenMc[_loc2_.texture];
+         _loc2_ = _loc5_[_loc4_];
+         _loc3_ = loadscreenMc[_loc2_.texture];
          for(var _loc6_ in _loc2_.setup)
          {
             _loc3_[_loc6_] = _loc2_.setup[_loc6_];
@@ -1006,14 +1025,17 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       this.exitLoadscreen(this.deleteLoadingScreen,this.deleteLoadingScreenObject);
       var _loc6_ = this.activeLoadingScreenObject.layers;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < _loc6_.length)
       {
-         var _loc3_ = _loc6_[_loc2_];
-         var _loc5_ = this.activeLoadingScreen[_loc3_.texture];
+         _loc3_ = _loc6_[_loc2_];
+         _loc5_ = this.activeLoadingScreen[_loc3_.texture];
          _loc5_._visible = true;
          if(!this.isWideScreen)
          {
-            var _loc4_ = _loc3_.tweenTo;
+            _loc4_ = _loc3_.tweenTo;
             if(_loc2_ > 0 && _loc4_._x + _loc5_._width > 1280)
             {
                _loc4_._x -= 160;
@@ -1029,9 +1051,10 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    {
       var _loc5_ = this.activeLoadingScreenObject.layers;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc5_.length)
       {
-         var _loc3_ = _loc5_[_loc2_];
+         _loc3_ = _loc5_[_loc2_];
          layer = this.activeLoadingScreen[_loc3_.texture];
          com.rockstargames.ui.tweenStar.TweenStarLite.to(layer,this.timerDuration * 3,_loc3_.tweenTo);
          _loc2_ = _loc2_ + 1;
@@ -1041,14 +1064,17 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    {
       var _loc6_ = loadscreenObject.layers;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < _loc6_.length)
       {
-         var _loc3_ = _loc6_[_loc2_];
-         var _loc5_ = loadscreenObject[_loc3_.texture];
+         _loc3_ = _loc6_[_loc2_];
+         _loc5_ = loadscreenObject[_loc3_.texture];
          _loc5_._visible = true;
          if(!this.isWideScreen)
          {
-            var _loc4_ = _loc3_.tweenTo;
+            _loc4_ = _loc3_.tweenTo;
             if(_loc2_ > 0 && _loc4_._x + _loc5_._width > 1280)
             {
                _loc4_._x -= 160;
@@ -1074,11 +1100,14 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
       }
       this.cleanUpTransition();
       this.overlay = this.createOverlay(this.loadingScreenHolder);
+      var _loc6_;
+      var _loc2_;
+      var _loc7_;
       if(this.activeLoadingScreen && this.activeLoadingScreenObject)
       {
-         var _loc6_ = this.activeLoadingScreenObject.layers;
-         var _loc2_ = _loc6_[0];
-         var _loc7_ = this.activeLoadingScreen[_loc2_.texture];
+         _loc6_ = this.activeLoadingScreenObject.layers;
+         _loc2_ = _loc6_[0];
+         _loc7_ = this.activeLoadingScreen[_loc2_.texture];
       }
       var _loc5_ = !this.doOverlayFade ? 0 : 99;
       com.rockstargames.ui.tweenStar.TweenStarLite.to(this.overlay,duration,{_alpha:_loc5_,ease:com.rockstargames.ui.tweenStar.Ease.QUARTIC_OUT,onComplete:this.finishTransition,onCompleteScope:this});
@@ -1122,14 +1151,18 @@ class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_STARTUP extends com.ro
    }
    function removeLoadscreen(loadingScreenMc, loadingScreenObject)
    {
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(loadingScreenMc)
       {
-         var _loc5_ = this.activeLoadingScreenObject.layers;
-         var _loc2_ = 0;
+         _loc5_ = this.activeLoadingScreenObject.layers;
+         _loc2_ = 0;
          while(_loc2_ < _loc5_.length)
          {
-            var _loc4_ = _loc5_[_loc2_];
-            var _loc3_ = loadingScreenMc[_loc4_.texture];
+            _loc4_ = _loc5_[_loc2_];
+            _loc3_ = loadingScreenMc[_loc4_.texture];
             com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
             _loc3_.removeMovieClip();
             _loc2_ = _loc2_ + 1;

@@ -1,23 +1,24 @@
 class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var currScreenID;
-   var prevScreenID;
-   var inputReceived;
-   var deactivated;
-   var launchTimestamp;
+   var TIMELINE;
+   var _name;
    var businesses;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var overlay;
-   var cursor;
-   var gamerName;
-   var mugshot;
    var currScreen;
+   var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var gamerName;
+   var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var mugshot;
+   var overlay;
+   var prevScreenID;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -87,10 +88,12 @@ class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rocksta
       _loc3_.normStatLevel2 = normStatLevel2;
       _loc3_.canResupply = canResupply;
       _loc3_.isLocked = isLocked;
+      var _loc2_;
+      var _loc4_;
       if(this.currScreenID == this.MAIN_SCREEN)
       {
-         var _loc2_ = 0;
-         var _loc4_ = this.businesses.length;
+         _loc2_ = 0;
+         _loc4_ = this.businesses.length;
          while(_loc2_ < _loc4_)
          {
             if(this.businesses[_loc2_] == _loc3_)
@@ -104,7 +107,7 @@ class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rocksta
    }
    function getBusiness(id)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       var _loc4_ = this.businesses.length;
       while(_loc2_ < _loc4_)
@@ -180,13 +183,14 @@ class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rocksta
          return undefined;
       }
       this.inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.arcadeBusinessHub.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.arcadeBusinessHub.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.arcadeBusinessHub.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.arcadeBusinessHub.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB.playSound("Mouse_Move_Cursor");
@@ -199,8 +203,9 @@ class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rocksta
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.currScreen.customCancelResponse())
+            if(!this.currScreen.customCancelResponse())
             {
             }
       }
@@ -322,17 +327,20 @@ class com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB extends com.rocksta
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

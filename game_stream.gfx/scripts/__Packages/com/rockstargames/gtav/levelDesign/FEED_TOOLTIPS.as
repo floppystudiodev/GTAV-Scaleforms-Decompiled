@@ -1,7 +1,10 @@
 class com.rockstargames.gtav.levelDesign.FEED_TOOLTIPS extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var bIsAsianLanguage;
+   var bIsWideScreen;
    var blipLayer;
+   var important;
    var DEFAULT_PT_SIZE = 13;
    function FEED_TOOLTIPS()
    {

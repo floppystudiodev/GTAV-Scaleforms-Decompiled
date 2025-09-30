@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.MiddleLeftSpyCam
 {
-   var view;
-   var scanLines;
-   var imageMovieClip;
-   var frameCounter;
    var currTextureIndex;
-   var isShowing;
    var dictionary;
-   var textures;
+   var frameCounter;
+   var imageMovieClip;
+   var isShowing;
    var numTextures;
+   var scanLines;
+   var textures;
+   var view;
    static var NUM_DISPLAY_FRAMES = 210;
    static var NUM_HIDDEN_FRAMES = 30;
    function MiddleLeftSpyCam(view)

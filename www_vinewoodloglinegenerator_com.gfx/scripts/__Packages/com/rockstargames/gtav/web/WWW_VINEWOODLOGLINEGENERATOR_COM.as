@@ -1,28 +1,28 @@
 class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
    var browser;
-   var selectedGenCharacterFlawsId;
-   var selectedGenCharacterStrengthsId;
-   var selectedGenCrisesId;
-   var selectedGenHeroId;
-   var selectedGenSidekickId;
-   var selectedGenSpecialPowersId;
-   var selectedGenAntagonistId;
-   var selectedGenGoalId;
-   var optionCount;
+   var dataTextScope;
+   var genAntagonist;
    var genCharacterFlaws;
    var genCharacterStrengths;
    var genCrises;
+   var genGoal;
    var genHero;
    var genSidekick;
    var genSpecialPowers;
-   var genAntagonist;
-   var genGoal;
    var mcScope;
-   var CONTENT;
-   var dataTextScope;
+   var optionCount;
+   var selectedGenAntagonistId;
+   var selectedGenCharacterFlawsId;
+   var selectedGenCharacterStrengthsId;
+   var selectedGenCrisesId;
+   var selectedGenGoalId;
+   var selectedGenHeroId;
+   var selectedGenSidekickId;
+   var selectedGenSpecialPowersId;
    function WWW_VINEWOODLOGLINEGENERATOR_COM()
    {
       super();
@@ -63,26 +63,29 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
       var _loc25_ = MovieClip(this.mcScope.machine_character_flaw);
       var _loc24_ = _loc25_.wheel;
       var _loc8_ = 0;
+      var _loc16_;
       while(_loc8_ < this.optionCount)
       {
-         var _loc16_ = _loc24_["gen_flaw_" + _loc8_].text;
+         _loc16_ = _loc24_["gen_flaw_" + _loc8_].text;
          this.genCharacterFlaws.push(_loc16_);
          _loc8_ = _loc8_ + 1;
       }
       var _loc23_ = MovieClip(this.mcScope.machine_character_strength);
       var _loc7_ = 0;
+      var _loc12_;
       while(_loc7_ < this.optionCount)
       {
-         var _loc12_ = _loc23_["gen_strength_" + _loc7_].text;
+         _loc12_ = _loc23_["gen_strength_" + _loc7_].text;
          this.genCharacterStrengths.push(_loc12_);
          _loc7_ = _loc7_ + 1;
       }
       var _loc27_ = MovieClip(this.mcScope.machine_crisis);
       var _loc18_ = _loc27_.text_crisis;
       var _loc5_ = 0;
+      var _loc13_;
       while(_loc5_ < this.optionCount)
       {
-         var _loc13_ = _loc18_["gen_crisis_" + _loc5_].text;
+         _loc13_ = _loc18_["gen_crisis_" + _loc5_].text;
          this.genCrises.push(_loc13_);
          _loc18_["gen_crisis_" + _loc5_]._visible = false;
          _loc5_ = _loc5_ + 1;
@@ -91,26 +94,29 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
       var _loc26_ = MovieClip(this.mcScope.machine_hero);
       var _loc21_ = _loc26_.hero_list;
       _loc8_ = 0;
+      var _loc10_;
       while(_loc8_ < this.optionCount)
       {
-         var _loc10_ = _loc21_["gen_hero_" + _loc8_].text;
+         _loc10_ = _loc21_["gen_hero_" + _loc8_].text;
          this.genHero.push(_loc10_);
          _loc8_ = _loc8_ + 1;
       }
       var _loc29_ = MovieClip(this.mcScope.machine_sidekick);
       var _loc22_ = _loc29_.text_sidekick;
       var _loc6_ = 0;
+      var _loc14_;
       while(_loc6_ < this.optionCount)
       {
-         var _loc14_ = _loc22_["gen_sidekick_" + _loc6_].text;
+         _loc14_ = _loc22_["gen_sidekick_" + _loc6_].text;
          this.genSidekick.push(_loc14_);
          _loc6_ = _loc6_ + 1;
       }
       var _loc19_ = MovieClip(this.mcScope.machine_special_power);
       var _loc4_ = 0;
+      var _loc9_;
       while(_loc4_ < this.optionCount)
       {
-         var _loc9_ = _loc19_["gen_special_" + _loc4_].text;
+         _loc9_ = _loc19_["gen_special_" + _loc4_].text;
          this.genSpecialPowers.push(_loc9_);
          MovieClip(_loc19_["gen_special_hex_" + _loc4_]).gotoAndStop(2);
          _loc4_ = _loc4_ + 1;
@@ -119,9 +125,10 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
       var _loc28_ = MovieClip(this.mcScope.machine_antagonist);
       var _loc20_ = _loc28_.text_antagonist;
       var _loc3_ = 0;
+      var _loc11_;
       while(_loc3_ < this.optionCount)
       {
-         var _loc11_ = _loc20_["gen_antagonist_" + _loc3_].text;
+         _loc11_ = _loc20_["gen_antagonist_" + _loc3_].text;
          this.genAntagonist.push(_loc11_);
          _loc20_["gen_antagonist_" + _loc3_]._visible = false;
          _loc3_ = _loc3_ + 1;
@@ -130,9 +137,10 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
       _loc28_ = MovieClip(this.mcScope.machine_goal);
       var _loc17_ = _loc28_.text_goal;
       var _loc2_ = 0;
+      var _loc15_;
       while(_loc2_ < this.optionCount)
       {
-         var _loc15_ = _loc17_["gen_goal_" + _loc2_].text;
+         _loc15_ = _loc17_["gen_goal_" + _loc2_].text;
          this.genGoal.push(_loc15_);
          _loc17_["gen_goal_" + _loc2_]._visible = false;
          _loc2_ = _loc2_ + 1;
@@ -311,6 +319,8 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
             break;
          case "goal":
             this.generatorGoalSelect(_loc2_[2]);
+         default:
+            return;
       }
    }
    function POPULATE_TEXT(pageName)
@@ -333,6 +343,7 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -340,7 +351,7 @@ class com.rockstargames.gtav.web.WWW_VINEWOODLOGLINEGENERATOR_COM extends com.ro
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }

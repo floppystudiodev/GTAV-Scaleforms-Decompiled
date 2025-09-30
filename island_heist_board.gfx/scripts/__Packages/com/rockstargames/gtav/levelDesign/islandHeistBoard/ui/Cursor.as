@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
 {
-   var view;
-   var debugView;
-   var xMin;
-   var xMax;
-   var yMin;
-   var yMax;
    var _x;
    var _y;
-   var leftReturnRect;
-   var changeListener;
-   var rects;
    var activeRect;
+   var changeListener;
+   var debugView;
+   var leftReturnRect;
    var rectPool;
+   var rects;
+   var view;
+   var xMax;
+   var xMin;
+   var yMax;
+   var yMin;
    static var DOWN = 187;
    static var UP = 188;
    static var LEFT = 189;
@@ -72,9 +72,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
       this.resetRects();
       var _loc3_ = 0;
       var _loc4_ = rects.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = rects[_loc3_];
+         _loc2_ = rects[_loc3_];
          this.addRect(_loc2_.left,_loc2_.right,_loc2_.top,_loc2_.bottom,_loc2_.depth,_loc2_.id,_loc2_.enabled);
          _loc3_ = _loc3_ + 1;
       }
@@ -89,17 +90,15 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
    function setRectEnabled(id, isEnabled)
    {
       var _loc2_ = this.rects;
-      do
+      while(_loc2_.id != id)
       {
-         if(_loc2_.id == id)
-         {
-            _loc2_.enabled = isEnabled;
-            break;
-         }
          _loc2_ = _loc2_.next;
+         if(!_loc2_)
+         {
+            return;
+         }
       }
-      while(_loc2_);
-      
+      _loc2_.enabled = isEnabled;
    }
    function dispose()
    {
@@ -137,15 +136,15 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
    function setTarget(direction)
    {
       var _loc12_ = direction == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor.LEFT || direction == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor.RIGHT;
-      var _loc5_ = undefined;
-      var _loc9_ = undefined;
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
-      var _loc4_ = undefined;
+      var _loc5_;
+      var _loc9_;
+      var _loc3_;
+      var _loc6_;
+      var _loc4_;
       var _loc7_ = 1.7976931348623157e+308;
-      var _loc10_ = undefined;
+      var _loc10_;
       var _loc2_ = this.rects;
-      var _loc8_ = undefined;
+      var _loc8_;
       if(direction == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor.LEFT && this.leftReturnRect != null)
       {
          this.moveTo(this.leftReturnRect.cx,this.leftReturnRect.cy,true);
@@ -239,9 +238,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
    }
    function resetRects()
    {
+      var _loc2_;
       if(this.rectPool)
       {
-         var _loc2_ = this.rectPool;
+         _loc2_ = this.rectPool;
          while(_loc2_)
          {
             if(!_loc2_.next)
@@ -269,11 +269,14 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Cursor
       this.debugView.clear();
       this.debugView.lineStyle(0,65280,80);
       var _loc2_ = this.rects;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_)
       {
-         var _loc5_ = this.debugView.getNextHighestDepth();
-         var _loc4_ = this.debugView.createTextField("t" + _loc5_,_loc5_,_loc2_.left,_loc2_.top,_loc2_.right - _loc2_.left,_loc2_.bottom - _loc2_.top);
-         var _loc3_ = new TextFormat();
+         _loc5_ = this.debugView.getNextHighestDepth();
+         _loc4_ = this.debugView.createTextField("t" + _loc5_,_loc5_,_loc2_.left,_loc2_.top,_loc2_.right - _loc2_.left,_loc2_.bottom - _loc2_.top);
+         _loc3_ = new TextFormat();
          _loc3_.font = "$Font2";
          _loc3_.size = 12;
          _loc3_.color = 65280;

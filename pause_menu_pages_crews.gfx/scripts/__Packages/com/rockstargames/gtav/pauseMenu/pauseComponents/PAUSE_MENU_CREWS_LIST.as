@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
-   var CONTENT;
-   var scrollableContent;
-   var model;
-   var titleHeight;
-   var columnIsFocused;
-   var SEND_COLUMN_PARAMS;
-   var scrollBase;
    var CLEAR_HIGHLIGHT;
+   var CONTENT;
+   var SEND_COLUMN_PARAMS;
    var canMouseNav;
+   var columnIsFocused;
+   var dbgID;
+   var model;
+   var scrollBase;
+   var scrollableContent;
+   var titleHeight;
    var isHoverWidthLong = false;
    function PAUSE_MENU_CREWS_LIST()
    {
@@ -38,9 +38,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREWS_LIST ext
    {
       var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewListView(this.model.getCurrentView());
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.itemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewListItem(_loc4_.itemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewListItem(_loc4_.itemList[_loc2_]);
          _loc3_.setBgWidthLong(this.isHoverWidthLong);
          _loc2_ = _loc2_ + 1;
       }

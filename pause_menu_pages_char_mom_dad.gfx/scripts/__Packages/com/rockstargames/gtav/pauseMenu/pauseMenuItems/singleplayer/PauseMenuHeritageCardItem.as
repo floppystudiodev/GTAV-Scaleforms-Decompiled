@@ -1,36 +1,36 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeritageCardItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__columnID;
+   var __get__data;
+   var __get__highlighted;
+   var _data;
+   var _highlighted;
+   var attachMovie;
+   var avatarCont1;
+   var avatarCont2;
+   var avatarImg1;
+   var avatarImg2;
+   var bMC;
+   var barlineMC;
+   var barlinebgMC;
+   var bgMC;
+   var getNextHighestDepth;
+   var highlightMC;
+   var index;
+   var initialIndex;
+   var isAdjustable;
+   var itemTextLeft;
    var itemTextRight;
    var labelMC;
-   var isAdjustable;
-   var rankBarMC;
-   var attachMovie;
-   var getNextHighestDepth;
-   var barlinebgMC;
-   var barlineMC;
-   var highlightMC;
    var parentsBGMC;
    var parentsFGMC;
-   var bgMC;
-   var itemTextLeft;
-   var _data;
-   var type;
-   var __get__data;
-   var initialIndex;
-   var bMC;
-   var _highlighted;
-   var avatarImg2;
-   var avatarCont2;
    var parentsMGMC;
-   var avatarImg1;
-   var avatarCont1;
-   var storeFunc;
-   var storeScope;
+   var rankBarMC;
    var selectedIndex;
    var selectedValue;
-   var index;
-   var __get__columnID;
-   var __get__highlighted;
+   var storeFunc;
+   var storeScope;
+   var type;
    static var TYPE_MAIN_CHAR_SELECTOR = 0;
    static var TYPE_DOMINANCE_SLIDER = 1;
    static var TYPE_TEXT_ROTATOR = 2;
@@ -61,6 +61,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
       var _loc5_ = 25;
       var _loc3_ = 25;
       this.parentsBGMC._visible = this.parentsFGMC._visible = false;
+      var _loc0_;
+      var _loc4_;
       switch(this.type)
       {
          case com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeritageCardItem.TYPE_MAIN_CHAR_SELECTOR:
@@ -78,7 +80,6 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
             _loc3_ = this.picHeight + 2;
             this.setAvatarImg(0,this.data[2],this.data[3]);
             this.setAvatarImg(1,this.data[4],this.data[5]);
-            var _loc0_ = null;
             this.barlinebgMC._visible = _loc0_ = false;
             this.barlineMC._visible = _loc0_;
             this.rankBarMC._visible = _loc0_;
@@ -134,7 +135,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
             this.rankBarMC._visible = _loc0_;
             this.labelMC.lMC._visible = _loc0_ = false;
             this.labelMC.rMC._visible = _loc0_;
-            var _loc4_ = this.data[6];
+            _loc4_ = this.data[6];
             if(_loc4_ == undefined)
             {
                _loc4_ = 0;
@@ -185,6 +186,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
          return undefined;
       }
       var _loc5_ = "PAUSE_MENU_SP_CONTENT";
+      var _loc11_;
+      var _loc10_;
+      var _loc9_;
       if(_loc2_.textureDict == txd)
       {
          if(_loc2_.isLoaded)
@@ -203,9 +207,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
             _loc2_.removeTxdRef();
          }
          _loc2_.init(_loc5_,txd,txn,_loc7_,_loc6_);
-         var _loc11_ = 6;
-         var _loc10_ = imgindex != 0 ? this.imageLoaded2 : this.imageLoaded1;
-         var _loc9_ = _loc2_.splitPath(String(_loc2_),_loc11_);
+         _loc11_ = 6;
+         _loc10_ = imgindex != 0 ? this.imageLoaded2 : this.imageLoaded1;
+         _loc9_ = _loc2_.splitPath(String(_loc2_),_loc11_);
          _loc2_.requestTxdRef(_loc9_,true,_loc10_,this);
       }
    }

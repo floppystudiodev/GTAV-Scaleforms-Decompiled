@@ -59,9 +59,10 @@ class com.rockstargames.gtav.utils.GTAVUIUtils
    static function trimTextToFitNumLines(str, tf, numLines)
    {
       var _loc2_ = str;
+      var _loc3_;
       if(tf.autoSize != "none")
       {
-         var _loc3_ = "...";
+         _loc3_ = "...";
          tf.text = _loc2_;
          if(tf.bottomScroll - tf.scroll + 1 > numLines)
          {

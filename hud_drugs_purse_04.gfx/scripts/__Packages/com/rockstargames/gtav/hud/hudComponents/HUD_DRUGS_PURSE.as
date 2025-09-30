@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_DRUGS_PURSE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
    var CONTENT;
-   var _enumID;
    var _HUD;
+   var _enumID;
    function HUD_DRUGS_PURSE()
    {
       super();

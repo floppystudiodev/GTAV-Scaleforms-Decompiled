@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.bountyComputer.screens.MainScreen extends com.rockstargames.gtav.levelDesign.bountyComputer.screens.Screen
 {
+   var app;
    var buttons;
-   var view;
    var cursor;
    var cursorInitialised;
-   var app;
+   var view;
    function MainScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"mainScreen");
@@ -29,10 +29,12 @@ class com.rockstargames.gtav.levelDesign.bountyComputer.screens.MainScreen exten
    function updateBountyTargets()
    {
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < this.app.bountyTargets.length)
       {
-         var _loc3_ = this.app.bountyTargets[_loc4_];
-         var _loc2_ = this.view["targetButton" + _loc4_];
+         _loc3_ = this.app.bountyTargets[_loc4_];
+         _loc2_ = this.view["targetButton" + _loc4_];
          _loc2_.name.verticalAlign = "center";
          _loc2_.bondIDLabel.verticalAlign = "center";
          _loc2_.bondID.verticalAlign = "center";
@@ -120,8 +122,9 @@ class com.rockstargames.gtav.levelDesign.bountyComputer.screens.MainScreen exten
       {
          case com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER.ACCEPT:
             this.handleAcceptButton(this.cursor.getTargetUnderCursor());
-            break;
          case com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(target)
@@ -130,9 +133,10 @@ class com.rockstargames.gtav.levelDesign.bountyComputer.screens.MainScreen exten
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          _loc2_ = _loc2_ + 1;
       }

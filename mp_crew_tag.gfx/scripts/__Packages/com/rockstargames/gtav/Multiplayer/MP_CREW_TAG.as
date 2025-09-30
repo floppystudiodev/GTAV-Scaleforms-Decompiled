@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.Multiplayer.MP_CREW_TAG extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var CREW_TAG;
    var CONTENT;
+   var CREW_TAG;
    function MP_CREW_TAG()
    {
       super();

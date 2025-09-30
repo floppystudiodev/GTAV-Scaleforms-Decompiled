@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
    var pageName;
-   var website;
    var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var view;
+   var website;
    static var OFFICE_TXD = "DYN8_EXEC_DEFAULT";
    static var OFFICE_IMAGES = [["DECOR_EXEC_RICH_1","DECOR_EXEC_RICH_2","DECOR_EXEC_RICH_n"],["DECOR_EXEC_COOL_1","DECOR_EXEC_COOL_2","DECOR_EXEC_COOL_n"],["DECOR_EXEC_CONTRAST_1","DECOR_EXEC_CONTRAST_2","DECOR_EXEC_CONTRAST_n"],["DECOR_OLDSPICE_WARM_1","DECOR_OLDSPICE_WARM_2","DECOR_OLDSPICE_WARM_n"],["DECOR_OLDSPICE_CLASSICAL_1","DECOR_OLDSPICE_CLASSICAL_2","DECOR_OLDSPICE_CLASSICAL_n"],["DECOR_OLDSPICE_VINTAGE_1","DECOR_OLDSPICE_VINTAGE_2","DECOR_OLDSPICE_VINTAGE_n"],["DECOR_POWER_ICE_1","DECOR_POWER_ICE_2","DECOR_POWER_ICE_n"],["DECOR_POWER_CONSERVATIVE_1","DECOR_POWER_CONSERVATIVE_2","DECOR_POWER_CONSERVATIVE_n"],["DECOR_POWER_POLISHED_1","DECOR_POWER_POLISHED_2","DECOR_POWER_POLISHED_n"]];
    static var selectedOfficeID = -1;
@@ -99,10 +99,12 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
    function initOfficeSlideshow()
    {
       this.view.garageSlideshow._visible = false;
+      var _loc2_;
+      var _loc3_;
       if(this.pageName == com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.PAGES.PURCHASE_PAGE.name)
       {
-         var _loc2_ = [].concat(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage.OFFICE_IMAGES[this.website.style]);
-         var _loc3_ = this.website.getSelectedOffice();
+         _loc2_ = [].concat(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage.OFFICE_IMAGES[this.website.style]);
+         _loc3_ = this.website.getSelectedOffice();
          _loc2_[2] = _loc2_[2].substring(0,_loc2_[2].lastIndexOf("_") + 1) + _loc3_.id;
          this.website.purchaseSlideshow = _loc2_;
          this.website.officeToMarkAsPurchased = _loc3_;
@@ -193,9 +195,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
    function initGarageSlideshow()
    {
       this.view.slideshow._visible = false;
+      var _loc2_;
       if(this.pageName == com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.PAGES.PURCHASE_PAGE.name)
       {
-         var _loc2_ = [];
+         _loc2_ = [];
          _loc2_.push("INTERIOR_" + this.website.garage1Style);
          _loc2_.push("LIGHTING_" + this.website.garage1Lighting);
          _loc2_.push("SIGNAGE_1_" + this.website.garage1Number);
@@ -278,9 +281,11 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
    function initAgencySlideshow()
    {
       this.view.garageSlideshow._visible = false;
+      var _loc2_;
+      var _loc3_;
       if(this.pageName == com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.PAGES.PURCHASE_PAGE.name)
       {
-         var _loc2_ = [];
+         _loc2_ = [];
          _loc2_ = _loc2_.concat(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyArtPage.IMAGES[this.website.agencyArt]);
          _loc2_.push(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage.IMAGES[this.website.agencyWallpaper]);
          _loc2_.push(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyHighlightPage.IMAGES[this.website.agencyHighlight]);
@@ -296,7 +301,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
          {
             _loc2_.push(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyVehiclePage.IMAGES[0]);
          }
-         var _loc3_ = this.website.getSelectedAgency();
+         _loc3_ = this.website.getSelectedAgency();
          this.website.purchaseSlideshow = _loc2_;
          this.website.agencyToMarkAsPurchased = _loc3_;
       }
@@ -333,16 +338,18 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
          this.view.garageButton._visible = false;
          this.view.garageButton.disabled = true;
       }
+      var _loc2_;
+      var _loc4_;
       if(this.view.mapButton._visible && this.view.waypointButton._visible)
       {
-         var _loc2_ = Math.max(this.view.mapButton._width,this.view.waypointButton._width);
+         _loc2_ = Math.max(this.view.mapButton._width,this.view.waypointButton._width);
          this.view.mapButton.bg._width = _loc2_;
          this.view.mapButton.btnTxt.autoSize = "none";
          this.view.mapButton.btnTxt._width = _loc2_ - 2 * _loc3_;
          this.view.waypointButton.bg._width = _loc2_;
          this.view.waypointButton.btnTxt._width = _loc2_ - 2 * _loc3_;
          this.view.waypointButton.btnTxt.autoSize = "none";
-         var _loc4_ = (this.view.slideshow._width - 2 * _loc2_) / 3;
+         _loc4_ = (this.view.slideshow._width - 2 * _loc2_) / 3;
          this.view.waypointButton._x = this.view.slideshow._x + _loc4_;
          this.view.mapButton._x = this.view.slideshow._x + this.view.slideshow._width - _loc4_ - _loc2_;
       }
@@ -386,6 +393,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage extends co
             this.website.garageSelected = true;
             this.website.setSelectedOffice(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage.selectedOfficeID);
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.PAGES.GARAGE_1_PAGE.name);
+         default:
+            return;
       }
    }
    function dispose()

@@ -1,57 +1,58 @@
 class com.rockstargames.gtav.levelDesign.NIGHTCLUB extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
+   var TIMELINE;
+   var _name;
+   var assignments;
+   var averageCustomers;
+   var buyers;
+   var clubNameID;
+   var clubStyle;
+   var currScreen;
    var currScreenID;
-   var prevScreenID;
-   var inputReceived;
-   var deactivated;
-   var launchTimestamp;
-   var navHistory;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var persistentContent;
-   var overlay;
+   var currentCustomers;
    var cursor;
+   var dailyIncome;
+   var dayGraphMax;
+   var dayGraphValues;
+   var deactivated;
+   var displayConfig;
+   var djs;
    var gamerName;
-   var popularity;
-   var propertyDictionary;
-   var propertyTexture;
-   var propertyLocation;
-   var organizationType;
-   var organizationName;
-   var mugshotTexture;
-   var stock;
+   var imageManager;
+   var inputReceived;
    var jobsCompleted;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var managementCooldown;
+   var mugshotTexture;
+   var navHistory;
    var nightclubEarnings;
+   var organizationName;
+   var organizationType;
+   var overlay;
+   var persistentContent;
+   var popularity;
+   var prevScreenID;
+   var propertyDictionary;
+   var propertyLocation;
+   var propertyTexture;
+   var safeCapacity;
+   var safeCurrent;
    var salesCompleted;
-   var warehouseEarnings;
+   var screenContainer;
+   var sellCooldown;
+   var stock;
+   var technicians;
    var totalEarnings;
    var totalStockValue;
-   var currentCustomers;
-   var averageCustomers;
-   var dailyIncome;
-   var safeCurrent;
-   var safeCapacity;
-   var vipAppearances;
-   var dayGraphValues;
-   var dayGraphMax;
-   var managementCooldown;
-   var djs;
    var unitsAccrued;
-   var unitsSold;
    var unitsAvailable;
-   var technicians;
-   var assignments;
+   var unitsSold;
    var upgrades;
-   var clubStyle;
-   var buyers;
-   var sellCooldown;
-   var clubNameID;
-   var currScreen;
+   var vipAppearances;
+   var warehouseEarnings;
    static var NUM_DJS = 4;
    static var NUM_STOCK_TYPES = 7;
    static var NUM_UPGRADES = 3;
@@ -417,13 +418,15 @@ class com.rockstargames.gtav.levelDesign.NIGHTCLUB extends com.rockstargames.ui.
          return undefined;
       }
       this.inputReceived = true;
+      var _loc4_;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.nightclub.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.nightclub.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.nightclub.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.nightclub.Cursor.LEFT:
-            var _loc4_ = this.cursor.setTarget(inputID);
+            _loc4_ = this.cursor.setTarget(inputID);
             if(_loc4_)
             {
                com.rockstargames.gtav.levelDesign.NIGHTCLUB.playSound("Mouse_Move_Cursor");
@@ -436,17 +439,19 @@ class com.rockstargames.gtav.levelDesign.NIGHTCLUB extends com.rockstargames.ui.
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.currScreen.customCancelResponse())
+            if(this.currScreen.customCancelResponse())
             {
-               if(this.navHistory.length > 0)
+               break;
+            }
+            if(this.navHistory.length > 0)
+            {
+               _loc2_ = Number(this.navHistory.pop());
+               if(_loc2_ != -1)
                {
-                  var _loc2_ = Number(this.navHistory.pop());
-                  if(_loc2_ != -1)
-                  {
-                     this.showScreen(_loc2_);
-                     this.navHistory.pop();
-                  }
+                  this.showScreen(_loc2_);
+                  this.navHistory.pop();
                }
             }
       }
@@ -544,17 +549,20 @@ class com.rockstargames.gtav.levelDesign.NIGHTCLUB extends com.rockstargames.ui.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

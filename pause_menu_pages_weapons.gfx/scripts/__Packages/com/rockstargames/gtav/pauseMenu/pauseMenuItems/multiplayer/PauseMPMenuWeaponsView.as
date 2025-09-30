@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsView extends com.rockstargames.ui.components.GUIView
 {
-   var container;
-   var viewLinkageList;
-   var viewContainer;
-   var rowSpacing;
+   var __get__index;
+   var __set__index;
    var columnSpacing;
+   var container;
+   var highlightedItem;
+   var index;
    var itemList;
    var itemY;
-   var __get__index;
-   var index;
-   var __set__index;
-   var highlightedItem;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
    var STAT_BAR_W = 280;
    var STAT_BAR_H = 18;
    var ATTACHMENT_BAR_W = 126;
@@ -105,6 +105,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
    }
    function setDescription(data)
    {
+      var _loc6_;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       if(data[0] == undefined)
       {
          this.showDescription(false);
@@ -113,14 +117,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
       else
       {
          this.showDescription(true);
-         var _loc6_ = _level0.TIMELINE.isAsianLang;
+         _loc6_ = _level0.TIMELINE.isAsianLang;
          com.rockstargames.ui.utils.UIText.setSizedText(this.container.weaponTF,data[0],_loc6_);
          com.rockstargames.ui.utils.UIText.setDescText(this.container.descTF,data[1]);
-         var _loc3_ = this.container.progStatsMC;
-         var _loc5_ = this.container.textStatsMC;
+         _loc3_ = this.container.progStatsMC;
+         _loc5_ = this.container.textStatsMC;
          com.rockstargames.ui.utils.UIText.setSizedText(_loc5_.killsValTF,data[2] != -1 ? data[2] : "");
          com.rockstargames.ui.utils.UIText.setSizedText(_loc5_.deathsValTF,data[3] != -1 ? data[3] : "");
-         var _loc4_ = data[4];
+         _loc4_ = data[4];
          if(_loc4_ == -1)
          {
             _loc4_ = "";

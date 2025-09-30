@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.Button
 {
-   var id;
-   var view;
+   var bottom;
    var depth;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
+   var view;
    static var HIDDEN = 0;
    static var DISABLED = 1;
    static var ACTIVE = 2;

@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var HColour;
-   var headerTextFormat;
-   var gamertagTextFormat;
-   var jobItem;
-   var dataProviderUI;
-   var linkageID;
    var CONTENT;
-   var gfxFileName;
-   var currentStyle;
-   var row;
-   var container;
-   var TextWhiteHex;
-   var offWhiteRGB;
+   var HColour;
    var TextBlackHex;
+   var TextWhiteHex;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
+   var gamertagTextFormat;
+   var gfxFileName;
+   var headerTextFormat;
+   var jobItem;
+   var linkageID;
+   var offWhiteRGB;
+   var row;
    var defaultRowHeight = 80;
    var DEFAULT_ALPHA = 99;
    var messageStyle = 0;
@@ -51,33 +51,45 @@ class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.g
       {
          case "CELLPHONE_FACADE":
             com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,0,0,0,100);
-            break;
+            return;
          case "CELLPHONE_IFRUIT":
             if(this.jobItem.isMP)
             {
                com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,255,255,255,100);
+               return;
             }
-            else
-            {
-               com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,228,223,169,100);
-               com.rockstargames.ui.utils.Colour.Colourise(_level0.TIMELINE.infoBar.headerBackground,136,118,104,100);
-            }
+            com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,228,223,169,100);
+            com.rockstargames.ui.utils.Colour.Colourise(_level0.TIMELINE.infoBar.headerBackground,136,118,104,100);
+            return;
             break;
          default:
             com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.bg,this.currentStyle[4][0],this.currentStyle[4][1],this.currentStyle[4][2],100);
+            return;
       }
    }
    function populateContent()
    {
       this.dataProviderUI = _level0.TIMELINE.jobListDataProviderUI;
       this.row = 1;
+      var _loc6_;
+      var _loc2_;
+      var _loc11_;
+      var _loc10_;
+      var _loc13_;
+      var _loc8_;
+      var _loc12_;
+      var _loc4_;
+      var _loc7_;
+      var _loc5_;
+      var _loc3_;
+      var _loc9_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc6_ = 0;
+         _loc6_ = 0;
          while(_loc6_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc11_ = _loc6_ + this.arrayStartPoint;
+            _loc2_ = "listItem" + this.row;
+            _loc11_ = _loc6_ + this.arrayStartPoint;
             this.setupJob(_loc11_);
             if(this.jobItem.isMP)
             {
@@ -146,24 +158,24 @@ class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.g
             }
             if(this.jobItem.jobLabel != undefined)
             {
-               var _loc10_ = this.jobItem.jobLabel.split("<FONT COLOR=\'#F0F0F0\'>").join("");
-               var _loc13_ = this.parseForGamerName(this.container[_loc2_].jobLabel,_loc10_);
+               _loc10_ = this.jobItem.jobLabel.split("<FONT COLOR=\'#F0F0F0\'>").join("");
+               _loc13_ = this.parseForGamerName(this.container[_loc2_].jobLabel,_loc10_);
                if(!_loc13_)
                {
                   this.container[_loc2_].jobLabel._y = 10;
                }
-               var _loc8_ = new com.rockstargames.ui.utils.Text();
+               _loc8_ = new com.rockstargames.ui.utils.Text();
                if(this.container[_loc2_].blipLayerMC)
                {
                   this.container[_loc2_].blipLayerMC.removeMovieClip();
                }
                this.container[_loc2_].createEmptyMovieClip("blipLayerMC",1000);
-               var _loc12_ = this.container[_loc2_].jobDescription.textColor;
+               _loc12_ = this.container[_loc2_].jobDescription.textColor;
                _loc8_.setTextWithIcons(this.jobItem.jobDescription,this.container[_loc2_].blipLayerMC,this.container[_loc2_].jobDescription,0,15.5,1,false);
-               var _loc4_ = 15.5;
-               var _loc7_ = 4;
-               var _loc5_ = 1;
-               var _loc3_ = this.container[_loc2_].jobDescription.getTextFormat();
+               _loc4_ = 15.5;
+               _loc7_ = 4;
+               _loc5_ = 1;
+               _loc3_ = this.container[_loc2_].jobDescription.getTextFormat();
                while(this.container[_loc2_].jobDescription.textHeight + _loc7_ > this.container[_loc2_].jobDescription._height && _loc4_ > _loc5_)
                {
                   _loc4_ -= _loc5_;
@@ -178,7 +190,7 @@ class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.g
                {
                   if(this.jobItem.blipFrameLabel > 0)
                   {
-                     var _loc9_ = "BLIP_" + this.jobItem.blipFrameLabel.toString();
+                     _loc9_ = "BLIP_" + this.jobItem.blipFrameLabel.toString();
                      this.container[_loc2_].BLIPS.gotoAndStop(_loc9_);
                   }
                }
@@ -191,13 +203,13 @@ class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.g
    function setState(item, isActive)
    {
       var _loc4_ = 2;
+      var _loc3_;
       if(this.numberOfVisibleRows > 0)
       {
          if(this.gfxFileName == "CELLPHONE_IFRUIT")
          {
             if(this.jobItem.isMP)
             {
-               var _loc3_ = undefined;
                switch(item._currentframe)
                {
                   case com.rockstargames.gtav.cellphone.MessageType.MESSAGE_TYPE_HEIST + _loc4_:
@@ -328,12 +340,16 @@ class com.rockstargames.gtav.cellphone.apps.JOB_LIST extends com.rockstargames.g
       var _loc5_ = str.indexOf("<C>");
       var _loc7_ = str.indexOf("</C>");
       var _loc8_ = _loc5_ != -1 && _loc7_ != -1;
+      var _loc10_;
+      var _loc4_;
+      var _loc2_;
+      var _loc9_;
       if(_loc8_)
       {
-         var _loc10_ = 16;
-         var _loc4_ = str.substring(0,_loc5_);
-         var _loc2_ = str.substring(_loc5_ + 3,_loc7_);
-         var _loc9_ = str.substring(_loc7_ + 4);
+         _loc10_ = 16;
+         _loc4_ = str.substring(0,_loc5_);
+         _loc2_ = str.substring(_loc5_ + 3,_loc7_);
+         _loc9_ = str.substring(_loc7_ + 4);
          if(_loc2_.length > _loc10_)
          {
             _loc2_ = _loc2_.substring(0,_loc10_) + "...";

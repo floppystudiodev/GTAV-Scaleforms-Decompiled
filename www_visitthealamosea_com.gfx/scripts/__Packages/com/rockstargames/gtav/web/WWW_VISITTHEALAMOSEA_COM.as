@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.WWW_VISITTHEALAMOSEA_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mcScope;
    var CONTENT;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
    static var PAGE1 = "PAGE1";
    static var FAQ = "FAQ";
    static var ALAMO_SEA = "ALAMO_SEA";

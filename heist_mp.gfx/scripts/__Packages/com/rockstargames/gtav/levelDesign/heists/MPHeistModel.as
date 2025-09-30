@@ -19,9 +19,10 @@ class com.rockstargames.gtav.levelDesign.heists.MPHeistModel extends com.rocksta
    function setLabel()
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.viewList.length)
       {
-         var _loc4_ = this.viewList[_loc3_];
+         _loc4_ = this.viewList[_loc3_];
          _loc4_.params.labels = arguments;
          _loc3_ = _loc3_ + 1;
       }

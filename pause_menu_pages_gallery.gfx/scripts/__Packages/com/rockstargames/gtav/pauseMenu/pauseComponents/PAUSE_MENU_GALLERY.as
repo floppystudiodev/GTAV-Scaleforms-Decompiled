@@ -1,12 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_GALLERY extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
-   var maxImgMC;
    var maxILMC;
-   var preloadTxds;
-   var CLEAR_HIGHLIGHT;
+   var maxImgMC;
+   var model;
    function PAUSE_MENU_GALLERY()
    {
       super();
@@ -77,6 +74,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_GALLERY extend
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADLEFT:
             com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryView(this.model.getCurrentView()).moveHorz(-1);
+         default:
+            return;
       }
    }
    function getTxdData()
@@ -191,10 +190,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_GALLERY extend
    function SET_FOCUS(isFocused)
    {
       super.SET_FOCUS(isFocused);
+      var _loc3_;
+      var _loc4_;
       if(isFocused)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryView(this.model.getCurrentView());
-         var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryItem(_loc3_.itemList[_loc3_.index]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryView(this.model.getCurrentView());
+         _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryItem(_loc3_.itemList[_loc3_.index]);
          _loc4_.highlighted = true;
          _loc3_.setDescription();
       }

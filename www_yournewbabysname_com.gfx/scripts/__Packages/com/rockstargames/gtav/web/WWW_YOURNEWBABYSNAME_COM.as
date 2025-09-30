@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.WWW_YOURNEWBABYSNAME_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mcScope;
    var CONTENT;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
    static var HOME_PAGE = "PAGE1";
    static var NAMEGEN_PAGE = "NAME_D_GENERATOR";
    static var names = ["Furball","Aerosol","Sle\'ghandri","Pastrami","Headrest","Trinket","Aquaduck","Benephisto","Squeendot","Tophusk","Circuitship","Santa Yeehah","Flobbydart","Conundrum","Cosmoswimmer","Dataplan","Denim Noo Noo","Mitzimoo","Beardsplitter","Yum Yum Killer","Clamdigger","Bandwidth","Folgerphone","Pk\'ikki\'lax","Sandblaster","Thundermoon","Hifructo","Mojito","Appstore","Dappaccino","Envelope","Chicken Tikka","Pro Phil Act\'It","Digi Kulamba","42ThePower","Spamfilter","Fatzwimble","Sashimi","Wheatgrass","Analogue","Zero Gravity","Yuyu Lampon","Apocalypse","Lozzyklingers","Farceur","Pudwhacker","Pork Belly","Labradoodle","Marinade","Rumdonkey","Screwdriver","Bongtuberipper","Diplomat","Admiral Bongo","Flannel","Tycoon","U-Bend","Pip Pip Jongles","Wolzal","Flu","720p","Mars Moon","Bandar","Pumpkin ale","Hezzelfit","Sexicon","Trampnesia","Neonty","Hydrolony","Halfscopy","Isofrazzle","Purps","Cytovag","Donkey the Third","Strickdine","Haggislocity","Shambastic","Titty Rhino","Duvee","Audreyobook","Conflussus","Shannando","Coppersweet","Dautletty","Clothesline","Midtown","Kalesheezer","Effengee","Poofberretz","Longburd","Fixieplix","Crowexza","Vapizza","Canto Santi","Heroineey","Whazangtiz","Urfcake","Bichplz","Hippo","Corn-hole","Ciao-Chow","Hammer","Fire Wall","Aorta","Homeopath","Mittens","Chum","Tapeworm"];

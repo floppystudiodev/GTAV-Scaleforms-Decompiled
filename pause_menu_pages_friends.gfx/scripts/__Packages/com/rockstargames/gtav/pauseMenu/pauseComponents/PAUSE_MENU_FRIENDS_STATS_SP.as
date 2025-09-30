@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FRIENDS_STATS_SP extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var model;
    function PAUSE_MENU_FRIENDS_STATS_SP()
    {

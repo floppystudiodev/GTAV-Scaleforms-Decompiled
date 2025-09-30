@@ -1,12 +1,13 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_DIRECTOR_MODE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var FADE_DURATION;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
    var defaultX;
    var defaultY;
-   var _enumID;
-   var _HUD;
    var _animationDuration = 1;
    function HUD_DIRECTOR_MODE()
    {

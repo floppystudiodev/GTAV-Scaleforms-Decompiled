@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStatsModel extends com.rockstargames.ui.components.GUIModel
 {
-   var viewList;
-   var viewIndex;
    var getCurrentView;
    var setItem;
+   var viewIndex;
+   var viewList;
    function PauseMenuStatsModel()
    {
       super();

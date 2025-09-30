@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ModShopPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var slideshow;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    function ModShopPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"modShopPage",pageName,isFirstPage,progressPanel,header);
@@ -102,9 +102,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ModShopPage extends com
    function initModShopButtons()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 20)
       {
-         var _loc2_ = this.view.modShopButtons["modShopButton_" + _loc3_];
+         _loc2_ = this.view.modShopButtons["modShopButton_" + _loc3_];
          _loc2_.onColour = 16777215;
          _loc2_.offColour = 16777215;
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
@@ -151,6 +152,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ModShopPage extends com
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
@@ -164,9 +167,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ModShopPage extends com
       this.view.bodyText._visible = !_loc4_;
       this.progressPanel.updateGarageCosts();
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 20)
       {
-         var _loc2_ = this.view.modShopButtons["modShopButton_" + _loc3_];
+         _loc2_ = this.view.modShopButtons["modShopButton_" + _loc3_];
          if(this.website.modShopEquipped)
          {
             _loc2_.disabled = false;

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScrollingListItem
 {
-   var view;
    var highlight;
+   var view;
    static var FADE_IN_SPEED = 0.3;
    static var FADE_IN_OFFSET = 0.1;
    function ScrollingListItem(view, index, id, description)

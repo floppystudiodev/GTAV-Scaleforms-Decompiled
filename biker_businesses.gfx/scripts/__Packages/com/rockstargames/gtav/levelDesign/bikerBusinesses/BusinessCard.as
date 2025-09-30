@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessCard extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Button
 {
-   var boundsMaxTop;
-   var view;
-   var id;
-   var depth;
-   var type;
    var _price;
-   var slideshow;
-   var top;
+   var bottom;
+   var boundsMaxTop;
+   var depth;
+   var id;
    var left;
    var right;
-   var bottom;
+   var slideshow;
+   var top;
+   var type;
+   var view;
    function BusinessCard(view, boundsMaxTop)
    {
       super(-1,view);

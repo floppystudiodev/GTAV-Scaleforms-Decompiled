@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Button
 {
-   var id;
-   var view;
+   var _enabled;
+   var _storedEnabledState;
+   var bottom;
    var depth;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
-   var _enabled;
-   var _storedEnabledState;
+   var view;
    static var GREY = new flash.geom.ColorTransform(0,0,0,1,0,0,0,0);
    static var RED = new flash.geom.ColorTransform(0,0,0,1,204,0,0,0);
    function Button(id, view, label, isStringLiteral)

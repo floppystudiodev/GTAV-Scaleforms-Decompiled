@@ -1,18 +1,27 @@
 class com.rockstargames.gtav.levelDesign.BREAKING_NEWS extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var topStrings;
-   var bottomStrings;
-   var storedStrings;
-   var lowerThirdMC;
    var CONTENT;
-   var topMC;
+   var FILE_WIDTH;
+   var FOUR_THREE_PADDING;
    var bottomMC;
-   var titleTextTF;
-   var rimMC;
-   var logoMC;
-   var mainBarMC;
+   var bottomStrings;
+   var isHiDef;
+   var isWideScreen;
    var liveMC;
+   var logoMC;
+   var lowerThirdMC;
+   var mainBarMC;
+   var rimMC;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
+   var screenWidthPixels;
    var staticMC;
+   var storedStrings;
+   var titleTextTF;
+   var topMC;
+   var topStrings;
    static var SCREEN_STATIC_NONE = -1;
    static var SCREEN_STATIC_NOISE = 0;
    static var SCREEN_STATIC_BLUE = 1;
@@ -77,9 +86,10 @@ class com.rockstargames.gtav.levelDesign.BREAKING_NEWS extends com.rockstargames
       {
          this.titleTextTF.text = titleT;
       }
+      var _loc2_;
       if(subT != undefined)
       {
-         var _loc2_ = this.bottomStrings.length;
+         _loc2_ = this.bottomStrings.length;
          this.SET_SCROLL_TEXT(com.rockstargames.gtav.levelDesign.BREAKING_NEWS.TICKER_BOTTOM,_loc2_,subT);
          this.DISPLAY_SCROLL_TEXT(com.rockstargames.gtav.levelDesign.BREAKING_NEWS.TICKER_BOTTOM,_loc2_);
       }
@@ -91,9 +101,10 @@ class com.rockstargames.gtav.levelDesign.BREAKING_NEWS extends com.rockstargames
    function DISPLAY_SCROLL_TEXT(slot, id, scrollSpeed)
    {
       var _loc2_ = this.storedStrings[slot][id];
+      var _loc3_;
       if(_loc2_ != undefined && _loc2_ != "")
       {
-         var _loc3_ = this.getTicker(slot);
+         _loc3_ = this.getTicker(slot);
          _loc3_.DISPLAY_SCROLL_TEXT(_loc2_,scrollSpeed);
       }
       else
@@ -119,13 +130,14 @@ class com.rockstargames.gtav.levelDesign.BREAKING_NEWS extends com.rockstargames
             this.staticMC.removeMovieClip();
             this.staticMC = undefined;
             this.lowerThirdMC._visible = true;
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.BREAKING_NEWS.SCREEN_STATIC_BLUE:
             this.staticMC = this.CONTENT.attachMovie("noise_animation_blue","staticMC",1000,{_width:this.screenWidthPixels});
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.BREAKING_NEWS.SCREEN_STATIC_NOISE:
          default:
             this.staticMC = this.CONTENT.attachMovie("noise_animation","staticMC",1000,{_width:this.screenWidthPixels});
+            return;
       }
    }
 }

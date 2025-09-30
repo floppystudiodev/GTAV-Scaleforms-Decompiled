@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT_2 extends com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT
 {
-   var hudCompEnum;
    var helpTextType;
+   var hudCompEnum;
    function HUD_FLOATING_HELP_TEXT_2()
    {
       super();

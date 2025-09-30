@@ -1,11 +1,12 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.HomeScreen extends com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
+   var app;
+   var checkNavigationButtons;
+   var overlay;
    var persistentContent;
    var stockMeters;
-   var view;
    var totalStockMeter;
-   var app;
-   var overlay;
+   var view;
    function HomeScreen(app, viewContainer, cursor, persistentContent, overlay)
    {
       super(app,viewContainer,cursor,persistentContent,overlay,"homeScreen");
@@ -43,11 +44,13 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.HomeScreen extends co
       var _loc5_ = 0;
       var _loc6_ = 0;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_STOCK_TYPES)
       {
-         var _loc3_ = this.app.stock[_loc2_].currLevel;
+         _loc3_ = this.app.stock[_loc2_].currLevel;
          _loc5_ += _loc3_;
-         var _loc4_ = this.app.stock[_loc2_].maxLevel;
+         _loc4_ = this.app.stock[_loc2_].maxLevel;
          _loc6_ += _loc4_;
          this.stockMeters[_loc2_].setValue(_loc3_,0,_loc4_);
          _loc2_ = _loc2_ + 1;
@@ -66,8 +69,6 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.HomeScreen extends co
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.LB:
             if(!this.overlay.isShowing)
             {
@@ -79,6 +80,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.HomeScreen extends co
             {
                this.app.showScreen(this.app.NIGHTCLUB_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)

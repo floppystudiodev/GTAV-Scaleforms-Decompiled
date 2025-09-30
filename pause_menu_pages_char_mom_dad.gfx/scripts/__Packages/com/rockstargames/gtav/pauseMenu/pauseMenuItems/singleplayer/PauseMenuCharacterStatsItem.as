@@ -1,22 +1,22 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCharacterStatsItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__columnID;
+   var __get__data;
+   var __get__highlighted;
+   var _highlighted;
+   var attachMovie;
+   var barMC;
+   var bgMC;
+   var darkbarMC;
+   var darkmaskMC;
+   var getNextHighestDepth;
+   var index;
+   var isSelectable;
+   var itemTextLeft;
    var itemTextRight;
    var labelMC;
-   var attachMovie;
-   var getNextHighestDepth;
-   var barMC;
-   var darkbarMC;
    var maskMC;
    var type;
-   var darkmaskMC;
-   var bgMC;
-   var itemTextLeft;
-   var __get__data;
-   var _highlighted;
-   var isSelectable;
-   var index;
-   var __get__columnID;
-   var __get__highlighted;
    function PauseMenuCharacterStatsItem()
    {
       super();
@@ -31,10 +31,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuChar
    function set data(_d)
    {
       super.data = _d;
+      var _loc0_;
       switch(this.type)
       {
          case 0:
-            var _loc0_ = null;
             this.darkmaskMC._visible = _loc0_ = true;
             this.maskMC._visible = _loc0_;
             this.barMC.mc.baralphaMC._visible = false;
@@ -71,17 +71,19 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuChar
       {
          _loc3_ = Math.max(0,Math.min(this.data[4],100));
       }
+      var _loc6_;
       if(this.barMC != undefined)
       {
          this.barMC.init(_loc5_,278);
-         var _loc6_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc4_,54,2,5);
+         _loc6_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc4_,54,2,5);
          this.barMC.percent(_loc6_,false);
       }
+      var _loc7_;
       if(this.darkbarMC != undefined)
       {
          this.darkbarMC.init(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE,278);
          this.darkbarMC._alpha = 70;
-         var _loc7_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc3_,54,2,5);
+         _loc7_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc3_,54,2,5);
          this.darkbarMC.percent(_loc7_,false);
       }
       this.highlighted = this._highlighted;

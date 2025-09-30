@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var weaponMC;
+   var __get__columnID;
+   var __get__highlighted;
+   var _highlighted;
+   var attDisplayBitFields;
+   var attachmentGroups;
    var attachments;
    var bgMC;
+   var highlightMC;
+   var index;
    var isCyclingAttachments;
-   var attDisplayBitFields;
-   var wDisplayBM;
    var isSelectable;
    var lockedMC;
    var type;
-   var highlightMC;
-   var _highlighted;
-   var __get__highlighted;
-   var index;
-   var __get__columnID;
-   var attachmentGroups;
+   var wDisplayBM;
+   var weaponMC;
    static var SUPPRESSOR_ATTACHMENT_DISPLAY = 0;
    static var FLASHLIGHT_ATTACHMENT_DISPLAY = 3;
    static var SCOPE_02_ATTACHMENT_DISPLAY = 6;
@@ -102,12 +102,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
    function dispose()
    {
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < this.attachmentGroups.length)
       {
-         var _loc3_ = this.attachmentGroups[_loc4_];
+         _loc3_ = this.attachmentGroups[_loc4_];
          if(_loc3_.length > 1)
          {
-            var _loc2_ = 1;
+            _loc2_ = 1;
             while(_loc2_ < _loc3_.length)
             {
                com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_[_loc2_]);
@@ -120,8 +122,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
    function colourWeapon()
    {
       var _loc12_ = this.wDisplayBM._bitfield == com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BITMASK_DISPLAY_UNAVAILABLE;
-      var _loc13_ = undefined;
+      var _loc13_;
       var _loc11_ = new com.rockstargames.ui.utils.HudColour();
+      var _loc14_;
       if(_loc12_)
       {
          this.lockedMC._visible = true;
@@ -134,7 +137,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
       }
       else
       {
-         var _loc14_ = this.wDisplayBM.isBitSet(com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_WEAPON_DISPLAY_LOCKED);
+         _loc14_ = this.wDisplayBM.isBitSet(com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_WEAPON_DISPLAY_LOCKED);
          if(_loc14_)
          {
             this.lockedMC._visible = true;
@@ -150,14 +153,20 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
       this.weaponMC.weaponMC.transform.colorTransform = _loc13_;
       var _loc8_ = 0;
       var _loc3_ = 0;
+      var _loc10_;
+      var _loc7_;
+      var _loc5_;
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
+      var _loc9_;
       while(_loc3_ < com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.NUM_ATTACHMENTS)
       {
-         var _loc10_ = this.attachments[_loc3_];
-         var _loc7_ = this.weaponMC.attachmentMC[_loc10_];
+         _loc10_ = this.attachments[_loc3_];
+         _loc7_ = this.weaponMC.attachmentMC[_loc10_];
          if(_loc7_)
          {
-            var _loc5_ = undefined;
-            var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+            _loc2_ = new com.rockstargames.ui.utils.HudColour();
             if(_loc12_)
             {
                com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_MID_GREY_MP,_loc2_);
@@ -169,15 +178,15 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
                {
                   _loc8_ = _loc8_ + 1;
                }
-               var _loc6_ = this.attDisplayBitFields[_loc8_];
-               var _loc4_ = _loc3_ * com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.NUM_DISPLAY_STATES;
+               _loc6_ = this.attDisplayBitFields[_loc8_];
+               _loc4_ = _loc3_ * com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.NUM_DISPLAY_STATES;
                if(_loc6_.isBitSet(_loc4_ + com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_DISPLAY_PURCHASED) || _loc6_.isBitSet(_loc4_ + com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_DISPLAY_EQUIPPED))
                {
                   _loc5_ = new flash.geom.ColorTransform();
                }
                else
                {
-                  var _loc9_ = _loc6_.isBitSet(_loc4_ + com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_DISPLAY_LOCKED);
+                  _loc9_ = _loc6_.isBitSet(_loc4_ + com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.BIT_DISPLAY_LOCKED);
                   com.rockstargames.ui.utils.Colour.setHudColour(!_loc9_ ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE : com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PM_WEAPONS_LOCKED,_loc2_);
                   _loc5_ = new flash.geom.ColorTransform(0,0,0,1,_loc2_.r,_loc2_.g,_loc2_.b,0);
                }
@@ -193,23 +202,31 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
       var _loc2_ = [];
       var _loc10_ = 0;
       var _loc13_ = 0;
+      var _loc11_;
+      var _loc8_;
+      var _loc9_;
+      var _loc6_;
+      var _loc7_;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
       while(_loc13_ < com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.NUM_ATTACHMENTS - 1)
       {
-         var _loc11_ = this.weaponMC.attachmentMC[this.attachments[_loc13_]];
+         _loc11_ = this.weaponMC.attachmentMC[this.attachments[_loc13_]];
          if(_loc11_ != undefined)
          {
-            var _loc8_ = _loc11_.getBounds(this.weaponMC.attachmentMC);
-            var _loc9_ = _loc13_ + 1;
+            _loc8_ = _loc11_.getBounds(this.weaponMC.attachmentMC);
+            _loc9_ = _loc13_ + 1;
             while(_loc9_ < com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWeaponsItem.NUM_ATTACHMENTS)
             {
-               var _loc6_ = this.weaponMC.attachmentMC[this.attachments[_loc9_]];
+               _loc6_ = this.weaponMC.attachmentMC[this.attachments[_loc9_]];
                if(_loc6_ != undefined)
                {
-                  var _loc7_ = _loc6_.getBounds(this.weaponMC.attachmentMC);
+                  _loc7_ = _loc6_.getBounds(this.weaponMC.attachmentMC);
                   if(_loc8_.xMin < _loc7_.xMax && _loc8_.xMax > _loc7_.xMin && _loc8_.yMin < _loc7_.yMax && _loc8_.yMax > _loc7_.yMin)
                   {
-                     var _loc4_ = _loc2_[_loc13_];
-                     var _loc3_ = _loc2_[_loc9_];
+                     _loc4_ = _loc2_[_loc13_];
+                     _loc3_ = _loc2_[_loc9_];
                      if(_loc4_ == undefined && _loc3_ == undefined)
                      {
                         _loc2_[_loc13_] = _loc10_;
@@ -229,7 +246,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
                      }
                      else if(_loc4_ != _loc3_)
                      {
-                        var _loc5_ = 0;
+                        _loc5_ = 0;
                         while(_loc5_ < _loc2_.length)
                         {
                            if(_loc2_[_loc5_] == _loc3_)
@@ -249,9 +266,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
          _loc13_ = _loc13_ + 1;
       }
       _loc13_ = 0;
+      var _loc12_;
       while(_loc13_ < this.attachmentGroups.length)
       {
-         var _loc12_ = this.attachmentGroups[_loc13_];
+         _loc12_ = this.attachmentGroups[_loc13_];
          if(_loc12_.length > 1)
          {
             _loc9_ = 1;
@@ -268,9 +286,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuWea
    {
       this.isCyclingAttachments = true;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.attachmentGroups.length)
       {
-         var _loc2_ = this.attachmentGroups[_loc3_];
+         _loc2_ = this.attachmentGroups[_loc3_];
          if(_loc2_.length > 1)
          {
             this.fadeAttachment(_loc2_,_loc2_.length);

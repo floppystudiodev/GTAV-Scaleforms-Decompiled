@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.ParallaxLayer
 {
+   var acceleration;
+   var numSegments;
    var parallaxRatio;
    var segmentWidth;
    var segments;
-   var numSegments;
-   var viewWidth;
-   var acceleration;
    var speed;
+   var viewWidth;
    static var START_ACCELERATION = 0.3;
    function ParallaxLayer(view, parallaxRatio, segmentWidth)
    {
@@ -14,9 +14,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.ParallaxLayer
       this.segmentWidth = segmentWidth;
       this.segments = [];
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc6_ in view)
       {
-         var _loc2_ = view[_loc6_];
+         _loc2_ = view[_loc6_];
          _loc2_._x = _loc3_;
          _loc3_ += segmentWidth;
          this.segments.push(_loc2_);
@@ -34,9 +35,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.ParallaxLayer
       this.acceleration += 0.02 * (1 - this.acceleration);
       var _loc4_ = this.acceleration * this.speed * elapsed % this.viewWidth;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.numSegments)
       {
-         var _loc3_ = this.segments[_loc2_];
+         _loc3_ = this.segments[_loc2_];
          _loc3_._x = _loc4_ + _loc2_ * this.segmentWidth;
          if(_loc3_._x < - this.segmentWidth)
          {

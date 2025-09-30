@@ -1,18 +1,27 @@
 class com.rockstargames.gtav.cellphone.apps.EMAIL_RESPONSE extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var isLandscape;
-   var scrollerY;
-   var dataProviderUI;
-   var linkageID;
    var CONTENT;
-   var gfxFileName;
-   var scrollBar;
-   var container;
-   var row;
-   var currentStyle;
-   var TextWhiteHex;
-   var offWhiteRGB;
    var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentSelection;
+   var currentStyle;
+   var dataProviderUI;
+   var defaultRowHeight;
+   var getRowAsPercentage;
+   var gfxFileName;
+   var gutterHeight;
+   var isLandscape;
+   var linkageID;
+   var numberOfVisibleRows;
+   var offWhiteRGB;
+   var offsetX;
+   var offsetY;
+   var row;
+   var scrollBar;
+   var scrollerX;
+   var scrollerY;
    function EMAIL_RESPONSE()
    {
       super();
@@ -44,12 +53,16 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_RESPONSE extends com.rockstarg
       this.row = 1;
       var _loc5_ = 0;
       var _loc6_ = 0;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc7_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
+            _loc2_ = "listItem" + this.row;
             if(_loc3_ + this.arrayStartPoint >= this.dataProviderUI.length)
             {
                _loc5_ = _loc6_;
@@ -61,7 +74,7 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_RESPONSE extends com.rockstarg
             }
             this.container[_loc2_].attachmentIcon._visible = false;
             this.container[_loc2_].icon._visible = false;
-            var _loc4_ = this.dataProviderUI[_loc5_][0];
+            _loc4_ = this.dataProviderUI[_loc5_][0];
             if(_loc4_ != undefined)
             {
                this.container[_loc2_].responseText.multiline = true;
@@ -81,7 +94,7 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_RESPONSE extends com.rockstarg
             this.row = this.row + 1;
             _loc3_ = _loc3_ + 1;
          }
-         var _loc7_ = this.getRowAsPercentage(this.arrayStartPoint + 1);
+         _loc7_ = this.getRowAsPercentage(this.arrayStartPoint + 1);
          this.currentSelection = this.arrayStartPoint;
          this.scrollBar.scrollToPercentage(_loc7_);
       }

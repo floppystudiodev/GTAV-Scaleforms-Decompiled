@@ -3,6 +3,6 @@
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
     <path d="M16.0 16.0 L0.0 16.0 0.0 0.0 16.0 0.0 16.0 16.0" fill="#191e64" fill-rule="evenodd" stroke="none"/>
     <path d="M2.0 2.0 L14.0 2.0 14.0 14.0 2.0 14.0 2.0 2.0" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
-    <path d="M2.0 2.0 L14.0 2.0 14.0 14.0 2.0 14.0 2.0 2.0 Z" fill="none" stroke="#26a9e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
+    <path d="M2.0 2.0 L14.0 2.0 14.0 14.0 2.0 14.0 2.0 2.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.75" fill="none" stroke="#26a9e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
   </g>
 </svg>

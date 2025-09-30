@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
 {
    var TIMELINE;
+   var _availableSpaceForButtons;
+   var _buttonsBackground;
+   var _buttonsContainer;
    var _landingPageButtons;
    var _totalWidthOfAllButtons;
-   var _buttonsContainer;
-   var _buttonsBackground;
-   var _availableSpaceForButtons;
    static var BUTTONS_BG_HEIGHT = 50;
    static var BUTTONS_TO_LOGO_MIN_SPACING = 20;
    static var BUTTONS_BG_PADDING = 32;
@@ -23,8 +23,8 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
    }
    function debug()
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       if(this._isWideScreen)
       {
          _loc2_ = 1280;
@@ -48,8 +48,8 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
    {
       this._isWideScreen = isWideScreen;
       _isHiDef;
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       if(this._isWideScreen)
       {
          _loc2_ = 1280;
@@ -77,9 +77,10 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
    {
       var _loc4_ = this._landingPageButtons.length;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = com.rockstargames.gtav.loadingScreens.LandingPageButton(this._landingPageButtons[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.loadingScreens.LandingPageButton(this._landingPageButtons[_loc2_]);
          _loc3_.setHighlight(_loc3_.buttonId == buttonId);
          _loc2_ = _loc2_ + 1;
       }
@@ -98,9 +99,10 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
       com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREY,_loc4_);
       var _loc5_ = dataArray.length - 1;
       var _loc3_ = _loc5_;
+      var _loc2_;
       while(_loc3_ >= 0)
       {
-         var _loc2_ = com.rockstargames.gtav.loadingScreens.LandingPageButton(this._buttonsContainer.attachMovie("LandingPageButtonMC","LandingPageButtonMC" + _loc3_,this._buttonsContainer.getNextHighestDepth()));
+         _loc2_ = com.rockstargames.gtav.loadingScreens.LandingPageButton(this._buttonsContainer.attachMovie("LandingPageButtonMC","LandingPageButtonMC" + _loc3_,this._buttonsContainer.getNextHighestDepth()));
          _loc2_.init(_loc3_,dataArray[_loc3_],_loc4_);
          _loc2_.setHighlight(false);
          _loc2_._x = - _loc2_._width - this._totalWidthOfAllButtons;
@@ -113,6 +115,7 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
    }
    function alignElements()
    {
+      var _loc2_;
       if(this._buttonsContainer)
       {
          this._buttonsContainer._x = this._safeRight;
@@ -121,7 +124,7 @@ class com.rockstargames.gtav.loadingScreens.LANDING_PAGE
          this._availableSpaceForButtons = this._safeRight - this._safeLeft - com.rockstargames.gtav.loadingScreens.LANDING_PAGE.BUTTONS_TO_LOGO_MIN_SPACING - com.rockstargames.gtav.loadingScreens.LANDING_PAGE.LOGO_WIDTH;
          if(this._availableSpaceForButtons < this._totalWidthOfAllButtons)
          {
-            var _loc2_ = this._totalWidthOfAllButtons - this._availableSpaceForButtons;
+            _loc2_ = this._totalWidthOfAllButtons - this._availableSpaceForButtons;
             this._buttonsContainer._width -= _loc2_;
             this._buttonsContainer._yscale = this._buttonsContainer._xscale;
          }

@@ -1,8 +1,8 @@
 class com.rockstargames.ui.utils.textfieldAutoScroll extends MovieClip
 {
-   var targetTF;
-   var prevMaxscr;
    var maxscr;
+   var prevMaxscr;
+   var targetTF;
    var direction = -1;
    var delay = 0;
    var delayTimeout = 150;
@@ -23,10 +23,11 @@ class com.rockstargames.ui.utils.textfieldAutoScroll extends MovieClip
          this.delay = 0;
          this.prevMaxscr = this.maxscr;
       }
+      var _loc2_;
       if(this.maxscr > 4)
       {
          this.targetTF.hscroll += this.direction;
-         var _loc2_ = this.targetTF.hscroll;
+         _loc2_ = this.targetTF.hscroll;
          if(_loc2_ == this.maxscr || _loc2_ == 0)
          {
             this.delay = this.delay + 1;

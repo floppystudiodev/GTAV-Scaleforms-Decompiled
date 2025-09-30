@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.MISSION_TARGET_COMPLETE extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var innerMC;
    var CONTENT;
+   var innerMC;
    var totalHeight = 41;
    var itemsPadding = 10;
    var data = new Array();
@@ -25,6 +25,10 @@ class com.rockstargames.gtav.levelDesign.MISSION_TARGET_COMPLETE extends com.roc
       var _loc4_ = "";
       var _loc10_ = _loc3_[_loc3_.length - 1];
       this.innerMC._alpha = 100;
+      var _loc5_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
       switch(_loc9_)
       {
          case 0:
@@ -40,14 +44,14 @@ class com.rockstargames.gtav.levelDesign.MISSION_TARGET_COMPLETE extends com.roc
             _loc4_ = _loc3_[_loc3_.length - 2] + "%";
             break;
          case 4:
-            var _loc5_ = _loc3_[_loc3_.length - 3];
-            var _loc7_ = String(_loc5_);
+            _loc5_ = _loc3_[_loc3_.length - 3];
+            _loc7_ = String(_loc5_);
             if(_loc5_ < 10)
             {
                _loc7_ = "0" + _loc5_;
             }
-            var _loc6_ = _loc3_[_loc3_.length - 2];
-            var _loc8_ = String(_loc6_);
+            _loc6_ = _loc3_[_loc3_.length - 2];
+            _loc8_ = String(_loc6_);
             if(_loc6_ < 10)
             {
                _loc8_ = "0" + _loc6_;

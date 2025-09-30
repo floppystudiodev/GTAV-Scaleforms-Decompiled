@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuKeymapCategoryItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var warningMC;
    var initialIndex;
+   var warningMC;
    function PauseMenuKeymapCategoryItem()
    {
       super();

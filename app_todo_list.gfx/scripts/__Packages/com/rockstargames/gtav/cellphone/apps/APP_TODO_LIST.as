@@ -1,18 +1,19 @@
 class com.rockstargames.gtav.cellphone.apps.APP_TODO_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var scrollBar;
-   var TIMELINE;
    var CONTENT;
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var gfxFileName;
-   var currentStyle;
-   var linkageID;
-   var row;
-   var container;
-   var offWhiteRGB;
-   var TextWhiteHex;
+   var TIMELINE;
    var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var linkageID;
+   var offWhiteRGB;
+   var row;
+   var scrollBar;
+   var scrollBarTimeout;
    var defaultRowHeight = 48;
    var numberOfVisibleRows = 5;
    function APP_TODO_LIST()
@@ -50,13 +51,16 @@ class com.rockstargames.gtav.cellphone.apps.APP_TODO_LIST extends com.rockstarga
    {
       this.dataProviderUI = _level0.TIMELINE.toDoListDataProviderUI;
       this.row = 1;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc3_ = _loc4_ + this.arrayStartPoint;
+            _loc2_ = "listItem" + this.row;
+            _loc3_ = _loc4_ + this.arrayStartPoint;
             this.container[_loc2_].todoLabel.text = com.rockstargames.ui.utils.FitToTextfield.capText(this.container[_loc2_].todoLabel,this.dataProviderUI[_loc3_][1]);
             this.container[_loc2_].todoDescription.text = com.rockstargames.ui.utils.FitToTextfield.capText(this.container[_loc2_].todoDescription,this.dataProviderUI[_loc3_][2]);
             if(this.dataProviderUI[_loc3_][0])

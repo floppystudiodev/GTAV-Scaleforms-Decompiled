@@ -1,27 +1,27 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var m_bQuickSelectMode;
-   var stationDisplayMC;
-   var stationNameTF;
-   var artistMC;
-   var trackMC;
-   var shareTF;
-   var sharedTF;
-   var stationNameTFOutline;
-   var artistMCOutline;
-   var trackMCOutline;
-   var shareTFOutline;
-   var sharedTFOutline;
-   var blipLayer;
-   var blipLayerOutline;
-   var stationList;
-   var stationRingMC;
-   var playingOutlineMC;
+   var CONTENT;
+   var TIMELINE;
    var _HUD;
    var _enumID;
+   var artistMC;
+   var artistMCOutline;
+   var blipLayer;
+   var blipLayerOutline;
+   var m_bQuickSelectMode;
+   var playingOutlineMC;
+   var shareTF;
+   var shareTFOutline;
+   var sharedTF;
+   var sharedTFOutline;
+   var stationDisplayMC;
+   var stationList;
+   var stationNameTF;
+   var stationNameTFOutline;
+   var stationRingMC;
+   var trackMC;
+   var trackMCOutline;
    var baseOffset = 0;
    var bounds = 720;
    var DEFAUL_Z_VALUE = 2;
@@ -66,6 +66,16 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
    {
       var _loc15_ = 250;
       var _loc4_ = this.stationList.length;
+      var _loc17_;
+      var _loc9_;
+      var _loc16_;
+      var _loc8_;
+      var _loc7_;
+      var _loc18_;
+      var _loc3_;
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
       if(_loc4_ > 0)
       {
          this.clearStations();
@@ -77,21 +87,21 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
          {
             com.rockstargames.ui.utils.Colour.ApplyHudColour(this.playingOutlineMC,this._HUD.charColourEnum);
          }
-         var _loc17_ = 0.45 * this.playingOutlineMC._width;
-         var _loc9_ = 3.141592653589793 / _loc4_;
-         var _loc16_ = Math.sin(_loc9_);
-         var _loc8_ = 100;
-         var _loc7_ = _loc17_ / _loc16_;
+         _loc17_ = 0.45 * this.playingOutlineMC._width;
+         _loc9_ = 3.141592653589793 / _loc4_;
+         _loc16_ = Math.sin(_loc9_);
+         _loc8_ = 100;
+         _loc7_ = _loc17_ / _loc16_;
          if(_loc7_ + _loc17_ > _loc15_)
          {
-            var _loc18_ = _loc15_ * _loc16_ / (_loc16_ + 1);
+            _loc18_ = _loc15_ * _loc16_ / (_loc16_ + 1);
             _loc8_ *= _loc18_ / _loc17_;
             _loc7_ = _loc15_ - _loc18_;
             this.playingOutlineMC._xscale = this.playingOutlineMC._yscale = _loc8_;
          }
          _loc9_ *= 2;
-         var _loc3_ = 0;
-         var _loc2_ = 0;
+         _loc3_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < _loc4_)
          {
             if(this.stationList[_loc2_] == "MO_RADOFF")
@@ -109,8 +119,8 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
          _loc2_ = 0;
          while(_loc2_ < _loc4_)
          {
-            var _loc6_ = _loc7_ * Math.cos(_loc3_);
-            var _loc5_ = _loc7_ * Math.sin(_loc3_);
+            _loc6_ = _loc7_ * Math.cos(_loc3_);
+            _loc5_ = _loc7_ * Math.sin(_loc3_);
             this.stationRingMC.attachMovie(this.stationList[_loc2_],this.stationList[_loc2_],_loc2_ + 2,{_x:_loc6_,_y:_loc5_,_z:this.DEFAUL_Z_VALUE,_xscale:_loc8_,_yscale:_loc8_});
             _loc2_ = _loc2_ + 1;
             _loc3_ += _loc9_;
@@ -141,9 +151,11 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
       this.m_bQuickSelectMode = true;
       var _loc3_ = params[0];
       var _loc4_ = this.stationRingMC[this.stationList[_loc3_]];
+      var _loc2_;
+      var _loc5_;
       if(_loc3_ != undefined && _loc3_ >= 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.stationList.length)
          {
             this.stationRingMC[this.stationList[_loc2_]]._visible = false;
@@ -155,7 +167,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
          this.playingOutlineMC._y = _loc4_._y;
          _loc4_._visible = true;
          _loc4_._alpha = 100;
-         var _loc5_ = _loc3_ * (360 / this.stationList.length) - this.baseOffset;
+         _loc5_ = _loc3_ * (360 / this.stationList.length) - this.baseOffset;
          this.stationRingMC._rotation = - _loc5_;
          _loc4_._rotation = _loc5_;
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.stationNameTF,this.stationList[_loc3_]);
@@ -171,11 +183,12 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
    function SELECT_RADIO_STATION(params)
    {
       var _loc3_ = params[0];
+      var _loc2_;
       if(this.m_bQuickSelectMode)
       {
          this.stationRingMC._rotation = 0;
          this.stationRingMC._y = this.bounds * 0.5;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.stationList.length)
          {
             this.stationRingMC[this.stationList[_loc2_]]._rotation = 0;
@@ -185,11 +198,12 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
          this.m_bQuickSelectMode = false;
          this.stationDisplayMC._y = this.BOUNDING_BOX._height * 0.5;
       }
+      var _loc4_;
       if(_loc3_ != undefined)
       {
          if(_loc3_ >= 0)
          {
-            var _loc4_ = this.stationRingMC[this.stationList[_loc3_]];
+            _loc4_ = this.stationRingMC[this.stationList[_loc3_]];
             this.playingOutlineMC._x = _loc4_._x;
             this.playingOutlineMC._y = _loc4_._y;
             this.playingOutlineMC._visible = true;
@@ -247,6 +261,10 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
    }
    function SHOW()
    {
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(!this.CONTENT._visible)
       {
          if(this.blipLayer)
@@ -259,22 +277,22 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RADIO_STATIONS_WHEEL extends 
             this.blipLayerOutline.removeMovieClip();
          }
          this.blipLayerOutline = this.stationDisplayMC.createEmptyMovieClip("blipLayerOutline",1000);
-         var _loc6_ = new com.rockstargames.ui.utils.Text();
+         _loc6_ = new com.rockstargames.ui.utils.Text();
          _loc6_.setTextWithIcons("RADIO_SHARE",this.blipLayer,this.shareTF,6,16,2,true,true);
          _loc6_.setTextWithIcons("RADIO_SHARE",this.blipLayerOutline,this.shareTFOutline,6,16,2,true,true);
          this.blipLayerOutline._visible = this.blipLayer._visible = this.shareTF._visible;
-         var _loc3_ = 2.5;
+         _loc3_ = 2.5;
          com.rockstargames.ui.utils.Colour.Colourise(this.blipLayerOutline,0,0,0,100);
          for(var _loc5_ in this.blipLayerOutline)
          {
-            var _loc2_ = this.blipLayerOutline[_loc5_];
+            _loc2_ = this.blipLayerOutline[_loc5_];
             _loc2_._width += _loc3_;
             _loc2_._height += _loc3_;
             _loc2_._x -= 0.5;
          }
          if(this._HUD.NEEDS_BIGGER_HELP_AND_SUBTITLES)
          {
-            var _loc4_ = 40;
+            _loc4_ = 40;
             this.stationNameTF._height = _loc4_;
             this.stationNameTFOutline._height = _loc4_;
             this.artistMC.txtString._height = _loc4_;

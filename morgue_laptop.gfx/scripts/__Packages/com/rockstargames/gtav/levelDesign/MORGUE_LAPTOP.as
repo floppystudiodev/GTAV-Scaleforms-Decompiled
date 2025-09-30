@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.MORGUE_LAPTOP extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var displayConfig;
    var state;
    static var WIDTH = 1280;

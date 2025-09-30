@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.minigames.spinthewheel.SPIN_THE_WHEEL extends com.rockstargames.ui.core.BaseScreenLayout
 {
+   var CONTENT;
    var displayConfig;
    var wheel;
-   var CONTENT;
    static var WHEEL_TYPES = [com.rockstargames.gtav.minigames.spinthewheel.HUDWheel,com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel];
    static var WHEEL_X = [640,360];
    static var WHEEL_Y = [360,360];

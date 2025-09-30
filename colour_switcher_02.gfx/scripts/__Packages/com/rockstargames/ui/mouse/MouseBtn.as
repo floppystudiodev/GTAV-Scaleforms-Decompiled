@@ -3,13 +3,13 @@ class com.rockstargames.ui.mouse.MouseBtn extends MovieClip implements com.rocks
    var MOUSE_EVT;
    var callback;
    var callbackArgs;
-   var onRollOver;
-   var onRollOut;
-   var onDragOver;
    var onDragOut;
+   var onDragOver;
    var onPress;
    var onRelease;
    var onReleaseOutside;
+   var onRollOut;
+   var onRollOver;
    var optionalMouseArgs = new Array();
    var _isMouseEnabled = true;
    function MouseBtn()
@@ -71,9 +71,10 @@ class com.rockstargames.ui.mouse.MouseBtn extends MovieClip implements com.rocks
    {
       var _loc4_ = [id,this._name];
       var _loc3_ = this.optionalMouseArgs.length;
+      var _loc2_;
       if(_loc3_ > 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < _loc3_)
          {
             _loc4_.push(this.optionalMouseArgs[_loc2_]);

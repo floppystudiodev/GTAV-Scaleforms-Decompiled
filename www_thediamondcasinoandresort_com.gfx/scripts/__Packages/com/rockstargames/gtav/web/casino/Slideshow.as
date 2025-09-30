@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.casino.Slideshow
 {
-   var imageManager;
-   var view;
-   var txd;
    var imageIDs;
+   var imageManager;
    var index;
+   var txd;
+   var view;
    static var CROSSFADE_TIME = 0.5;
    static var PAUSE_TIME = 2;
    function Slideshow(imageManager, view)

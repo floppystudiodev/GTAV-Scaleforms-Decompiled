@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencySummaryPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
    var prevPageName;
-   var summaryPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
    var view;
+   var website;
    static var TXD = "DYN8_EXEC_AGENCY";
    static var IMAGES = [];
    function AgencySummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)

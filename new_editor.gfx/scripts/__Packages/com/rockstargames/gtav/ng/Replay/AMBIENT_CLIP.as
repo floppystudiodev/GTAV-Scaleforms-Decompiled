@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.ng.Replay.AMBIENT_CLIP extends MovieClip
 {
-   var myBtnType;
+   var BACKGROUND;
    var MOUSE_EVT;
    var TEXT_FADE_OUT;
    var TEXT_LABEL;
-   var BACKGROUND;
+   var myBtnType;
    var _isMouseEnabled = true;
    var SF_BASE_CLASS_MOUSE = 10;
    function AMBIENT_CLIP()

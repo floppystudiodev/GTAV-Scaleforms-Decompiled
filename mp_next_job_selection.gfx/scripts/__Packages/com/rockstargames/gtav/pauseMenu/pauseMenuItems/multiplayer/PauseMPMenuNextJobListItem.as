@@ -1,8 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuNextJobListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem
 {
-   var labelMC;
+   var IS_NEXT_JOB_LIST;
+   var __get__data;
+   var attachMovie;
    var avatarImgMC;
+   var getNextHighestDepth;
    var itemTextLeft;
+   var labelMC;
    var tabMC;
    function PauseMPMenuNextJobListItem()
    {

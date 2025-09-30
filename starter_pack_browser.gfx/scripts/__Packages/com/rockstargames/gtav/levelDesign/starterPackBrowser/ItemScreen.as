@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.starterPackBrowser.ItemScreen extends com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen
 {
-   var scrollTimeDelta;
-   var view;
    var app;
+   var buyButton;
+   var cursor;
    var handleMin;
    var handleRange;
-   var safeZoneRight;
-   var buyButton;
    var imageButton;
-   var cursor;
+   var safeZoneRight;
+   var scrollTimeDelta;
+   var view;
    function ItemScreen(app, viewContainer, cursor, items, activeItem)
    {
       super(app,cursor,viewContainer,"itemScreen");
@@ -71,15 +71,21 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.ItemScreen extends c
       {
          _loc5_ *= 2;
       }
+      var _loc6_;
+      var _loc3_;
+      var _loc7_;
+      var _loc2_;
+      var _loc4_;
+      var _loc8_;
       if(!isLeftStick)
       {
-         var _loc6_ = getTimer();
-         var _loc3_ = _loc6_ - this.scrollTimeDelta;
+         _loc6_ = getTimer();
+         _loc3_ = _loc6_ - this.scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc7_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STICK_SCROLL_SPEED * _loc3_ / 32;
+         _loc7_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STICK_SCROLL_SPEED * _loc3_ / 32;
          this.scrollTimeDelta = _loc6_;
-         var _loc2_ = this.view.itemList._y - _loc7_ * _loc5_;
-         var _loc4_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STAGE_HEIGHT - this.view.itemList._height;
+         _loc2_ = this.view.itemList._y - _loc7_ * _loc5_;
+         _loc4_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STAGE_HEIGHT - this.view.itemList._height;
          if(_loc2_ > 0)
          {
             _loc2_ = 0;
@@ -89,7 +95,7 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.ItemScreen extends c
             _loc2_ = _loc4_;
          }
          this.view.itemList._y = _loc2_;
-         var _loc8_ = _loc2_ / _loc4_;
+         _loc8_ = _loc2_ / _loc4_;
          this.view.scrollbar.handle._y = _loc8_ * this.handleRange + this.handleMin;
          if(this.buyButton != undefined)
          {

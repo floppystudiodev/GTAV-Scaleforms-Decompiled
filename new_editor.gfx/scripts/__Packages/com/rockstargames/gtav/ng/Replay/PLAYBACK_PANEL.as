@@ -1,22 +1,22 @@
 class com.rockstargames.gtav.ng.Replay.PLAYBACK_PANEL extends MovieClip
 {
-   var config;
-   var TIMECODE_NEW;
+   var BUTTONS;
+   var PLAYBACK_BACKGROUND;
+   var PLAYBACK_BAR;
+   var PLAYBACK_BAR_BG;
+   var PLAYBACK_BAR_LIGHT;
+   var PLAYBACK_BAR_SPEEDEDIT;
+   var TIMECODE;
    var TIMECODE_BG;
+   var TIMECODE_NEW;
    var _isWideScreen;
-   var _screenWidthPixels;
-   var _screenHeightPixels;
+   var _safeBottom;
    var _safeLeft;
    var _safeRight;
    var _safeTop;
-   var _safeBottom;
-   var TIMECODE;
-   var PLAYBACK_BACKGROUND;
-   var PLAYBACK_BAR;
-   var PLAYBACK_BAR_LIGHT;
-   var PLAYBACK_BAR_BG;
-   var PLAYBACK_BAR_SPEEDEDIT;
-   var BUTTONS;
+   var _screenHeightPixels;
+   var _screenWidthPixels;
+   var config;
    var MINIMAL_PLAYBACK_BUTTONS_WIDTH = 155;
    var FULL_PLAYBACK_BUTTONS_WIDTH = 250;
    var MARKER_BUTTONS_OFFSET = 100;
@@ -119,7 +119,7 @@ class com.rockstargames.gtav.ng.Replay.PLAYBACK_PANEL extends MovieClip
    }
    function repositionButton(button)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = !button._visible ? - this.MARKER_BUTTONS_OFFSET : 0;
       button._x = button.initialPosX + _loc2_;
    }

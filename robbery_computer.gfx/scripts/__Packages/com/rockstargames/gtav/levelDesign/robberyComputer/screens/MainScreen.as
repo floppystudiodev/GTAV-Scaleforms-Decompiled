@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MainScreen extends com.rockstargames.gtav.levelDesign.robberyComputer.screens.Screen
 {
-   var view;
-   var showingRobberyInfo;
+   var app;
    var buttons;
    var cursor;
    var cursorInitialised;
-   var app;
+   var showingRobberyInfo;
+   var view;
    function MainScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"mainScreen");
@@ -32,10 +32,12 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MainScreen exte
    function updateRobberies()
    {
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < this.app.robberies.length)
       {
-         var _loc3_ = this.app.robberies[_loc4_];
-         var _loc2_ = this.view["robberyButton" + _loc4_];
+         _loc3_ = this.app.robberies[_loc4_];
+         _loc2_ = this.view["robberyButton" + _loc4_];
          if(_loc3_ == null)
          {
             _loc2_._visible = false;
@@ -100,9 +102,10 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MainScreen exte
    {
       var _loc4_ = this.cursor.getTargetUnderCursor();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          if(_loc3_.id == _loc4_.id)
          {
             this.showingRobberyInfo[_loc2_] = !this.showingRobberyInfo[_loc2_];
@@ -122,10 +125,11 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MainScreen exte
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.ACCEPT:
             this.handleAcceptButton(this.cursor.getTargetUnderCursor());
             break;
-         case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.Y:
             this.toggleRobberyInfo();
+         case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(target)
@@ -134,9 +138,10 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MainScreen exte
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          _loc2_ = _loc2_ + 1;
       }

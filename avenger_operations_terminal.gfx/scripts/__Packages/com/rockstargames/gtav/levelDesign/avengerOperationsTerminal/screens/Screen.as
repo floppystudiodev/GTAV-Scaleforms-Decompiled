@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Screen
 {
    var app;
+   var buttons;
    var cursor;
-   var dataObject;
-   var view;
    var cursorListenerID;
+   var dataObject;
+   var operationDataObject;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
-   var operationDataObject;
-   var buttons;
+   var view;
    static var TXD = "AVENGER_OPERATIONS_IMG";
    function Screen(app, viewContainer, cursor, viewLinkage, dataObject)
    {

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_STATS_VERTICAL_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var model;
    function PAUSE_MENU_STATS_VERTICAL_LIST()
    {

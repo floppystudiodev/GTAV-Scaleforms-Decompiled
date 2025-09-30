@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.cellphone.prologue.CallScreen_Prologue extends com.rockstargames.ui.core.PhoneUIComponent
 {
-   var header;
-   var container;
-   var content;
-   var linkageKey;
-   var offsetY;
-   var offsetX;
-   var dataProviderUI;
    var TextBlackHex;
    var _callState;
+   var container;
+   var content;
+   var dataProviderUI;
+   var header;
+   var linkageKey;
+   var offsetX;
+   var offsetY;
    var isEngaged = false;
    var offStateAlpha = 60;
    function CallScreen_Prologue()

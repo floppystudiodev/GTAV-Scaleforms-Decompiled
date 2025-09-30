@@ -1,9 +1,15 @@
 class com.rockstargames.gtav.levelDesign.TRAFFIC_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
-   var DispConf;
    var CONTENT;
+   var DispConf;
+   var TIMELINE;
+   var getDisplayConfig;
+   var positionToScreenLayout;
    var ref;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
    function TRAFFIC_CAM()
    {
       super();

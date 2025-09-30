@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var TXDarray;
-   var char_contact_pics;
-   var mcScope;
-   var footerContainer;
-   var currentPage;
-   var dataTextScope;
-   var bleetContainer;
-   var generatedTrendsStr;
    var CONTENT;
-   var dataProviderUI;
+   var PAGE_NAMES;
+   var TXDarray;
+   var bleetContainer;
+   var browser;
+   var char_contact_pics;
    var contentBG;
+   var currentPage;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var footerContainer;
+   var generatedTrendsStr;
+   var mcScope;
    var bleetSpacing = 8;
    var bleetIndex = 0;
    function WWW_BLEETER_BIZ()
@@ -207,15 +207,18 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
       }
       this.footerContainer = this.mcScope.footerMC.createEmptyMovieClip("footerContainer",this.mcScope.footerMC.getNextHighestDepth());
       var _loc3_ = 0;
+      var _loc7_;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < _loc10_)
       {
-         var _loc7_ = _loc3_;
-         var _loc2_ = "page" + buttonsArray[_loc3_].toString();
+         _loc7_ = _loc3_;
+         _loc2_ = "page" + buttonsArray[_loc3_].toString();
          if(this.footerContainer[_loc2_] != undefined)
          {
             this.footerContainer[_loc2_].removeMovieClip();
          }
-         var _loc4_ = "anchorButtonMC";
+         _loc4_ = "anchorButtonMC";
          if(this.currentPage == buttonsArray[_loc3_])
          {
             _loc4_ = "anchorButtonFakeMC";
@@ -255,23 +258,43 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
       var _loc23_ = 0;
       var _loc26_ = this.CONTENT.localisationTF;
       var _loc7_ = 2;
+      var _loc2_;
+      var _loc11_;
+      var _loc10_;
+      var _loc8_;
+      var _loc12_;
+      var _loc14_;
+      var _loc19_;
+      var _loc9_;
+      var _loc3_;
+      var _loc6_;
+      var _loc5_;
+      var _loc20_;
+      var _loc13_;
+      var _loc16_;
+      var _loc15_;
+      var _loc22_;
+      var _loc4_;
+      var _loc17_;
+      var _loc21_;
+      var _loc18_;
       while(_loc7_ < this.dataProviderUI.length)
       {
          if(this.dataProviderUI[_loc7_] != undefined)
          {
             if(this.dataProviderUI[_loc7_][0] != undefined)
             {
-               var _loc2_ = this.dataProviderUI[_loc7_][0];
-               var _loc11_ = "";
-               var _loc10_ = "";
-               var _loc8_ = "";
-               var _loc12_ = "";
-               var _loc14_ = _loc2_.indexOf("*");
+               _loc2_ = this.dataProviderUI[_loc7_][0];
+               _loc11_ = "";
+               _loc10_ = "";
+               _loc8_ = "";
+               _loc12_ = "";
+               _loc14_ = _loc2_.indexOf("*");
                if(_loc14_ != -1)
                {
-                  var _loc19_ = _loc2_.substr(_loc14_ + 1).indexOf(" ");
+                  _loc19_ = _loc2_.substr(_loc14_ + 1).indexOf(" ");
                   _loc11_ = "@" + _loc2_.slice(_loc14_ + 1,_loc19_ + 1);
-                  var _loc9_ = _loc2_.substr(_loc19_ + 2,_loc2_.length);
+                  _loc9_ = _loc2_.substr(_loc19_ + 2,_loc2_.length);
                   _loc2_ = _loc9_;
                }
                _loc14_ = _loc2_.indexOf("@");
@@ -290,20 +313,20 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
                _loc14_ = _loc2_.indexOf("#");
                if(_loc14_ != -1)
                {
-                  var _loc3_ = _loc14_;
+                  _loc3_ = _loc14_;
                   while(_loc3_ < _loc2_.length)
                   {
                      if(_loc2_.substr(_loc3_,1) == "#")
                      {
                         if(_loc2_.substr(_loc3_ + 1,1) != "." && _loc2_.substr(_loc3_ + 1,1) != " ")
                         {
-                           var _loc6_ = _loc2_.substr(_loc3_ + 1).indexOf(" ");
+                           _loc6_ = _loc2_.substr(_loc3_ + 1).indexOf(" ");
                            if(_loc6_ == -1)
                            {
                               _loc6_ = _loc2_.length - 1;
                            }
-                           var _loc5_ = _loc2_.substr(_loc3_,_loc6_ + 1);
-                           var _loc20_ = _loc9_.split(_loc5_);
+                           _loc5_ = _loc2_.substr(_loc3_,_loc6_ + 1);
+                           _loc20_ = _loc9_.split(_loc5_);
                            _loc9_ = _loc20_[0] + "<font color=\'#344d35\'>" + _loc5_ + "</font>" + _loc20_[1];
                            _loc8_ += _loc5_ + " ";
                         }
@@ -313,24 +336,24 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
                }
                _loc2_ = _loc9_;
                this.generatedTrendsStr += _loc8_;
-               var _loc13_ = "bleet" + (_loc7_ - 2);
+               _loc13_ = "bleet" + (_loc7_ - 2);
                _loc14_ = _loc2_.indexOf("www.");
                if(_loc14_ != -1)
                {
-                  var _loc16_ = _loc2_.substr(_loc14_ + 1).indexOf(" ");
+                  _loc16_ = _loc2_.substr(_loc14_ + 1).indexOf(" ");
                   if(_loc16_ == -1)
                   {
                      _loc16_ = _loc2_.length;
                   }
-                  var _loc15_ = _loc2_.substr(_loc14_,_loc16_ + 1);
+                  _loc15_ = _loc2_.substr(_loc14_,_loc16_ + 1);
                   _loc12_ = this.browser.PARSE_TEXT_TO_FILENAME(_loc15_);
                   _loc13_ = _loc12_;
                   _loc20_ = _loc2_.split(_loc15_);
                   _loc2_ = _loc20_[0] + "<font color=\'#2f5c73\'>" + _loc15_ + "</font>" + _loc20_[1];
                }
-               var _loc22_ = "BleetMC";
-               var _loc4_ = this.bleetContainer.attachMovie(_loc22_,_loc13_,this.bleetContainer.getNextHighestDepth(),{_x:0,_y:_loc23_});
-               var _loc17_ = this.findCharPic(_loc11_);
+               _loc22_ = "BleetMC";
+               _loc4_ = this.bleetContainer.attachMovie(_loc22_,_loc13_,this.bleetContainer.getNextHighestDepth(),{_x:0,_y:_loc23_});
+               _loc17_ = this.findCharPic(_loc11_);
                if(_loc17_ != "")
                {
                   _loc4_.bleetAvatarMC._visible = false;
@@ -338,11 +361,11 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
                }
                if(_loc12_ != "")
                {
-                  var _loc21_ = this.dataTextScope.length;
+                  _loc21_ = this.dataTextScope.length;
                   this.dataTextScope[_loc21_] = _loc4_.btnTxt;
                   _loc4_.btnTxt.text = _loc12_;
                }
-               var _loc18_ = _loc10_;
+               _loc18_ = _loc10_;
                if(_loc8_ != "")
                {
                   _loc18_ = _loc10_ + "<font color=\'#2DAE58\'> " + _loc8_;
@@ -398,6 +421,9 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
       this.CLEANUP();
       com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"BLE_TITLEBARTEXT",this.CONTENT.localisationTF,false);
       this.browser.SET_TITLEBAR_TEXT(this.CONTENT.localisationTF.text,14474460);
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       switch(pageName)
       {
          case "PAGE1":
@@ -423,8 +449,8 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"BLE_NEXT",this.mcScope.footerMC.next.btnTxt,false);
             this.mcScope.footerMC.next.btnTxt.autoSize = "left";
             this.currentPage = this.dataProviderUI[1][0];
-            var _loc3_ = new Array();
-            var _loc2_ = 1;
+            _loc3_ = new Array();
+            _loc2_ = 1;
             while(_loc2_ < 11)
             {
                if(!(this.dataProviderUI[1][_loc2_] != "" && this.dataProviderUI[1][_loc2_] != undefined))
@@ -437,7 +463,7 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
             this.makeAnchorButtons(_loc3_);
             this.makeBleetList();
             this.makeTrendingBleets();
-            var _loc4_ = this.mcScope.footerMC._y + 80;
+            _loc4_ = this.mcScope.footerMC._y + 80;
             this.mcScope.backgroundMC._height = _loc4_;
             if(_loc4_ < 627)
             {
@@ -464,9 +490,10 @@ class com.rockstargames.gtav.web.WWW_BLEETER_BIZ extends com.rockstargames.ui.co
    }
    function CLEANUP()
    {
+      var _loc2_;
       if(this.TXDarray.length > 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.TXDarray.length)
          {
             if(this.TXDarray[_loc2_][0] != undefined)

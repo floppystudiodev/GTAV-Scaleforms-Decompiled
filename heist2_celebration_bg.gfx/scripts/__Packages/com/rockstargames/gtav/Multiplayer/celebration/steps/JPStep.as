@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.JPStep extends com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
-   var points;
    var alignLeft;
-   var initialised;
-   var sequence;
-   var height;
-   var view;
-   var started;
    var counterStep;
+   var height;
+   var initialised;
+   var points;
+   var sequence;
+   var started;
+   var view;
    function JPStep(sequence, points, alignLeft)
    {
       super(sequence,390,"JPStep");
@@ -28,17 +28,20 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.JPStep extends com.ro
       var _loc3_ = this.view.attachMovie("JPStep","content",0);
       _loc3_.value._alpha = this.sequence.DEFAULT_TEXT_ALPHA;
       this.displayMonospacedValue(this.points >= 0 ? "+0" : "-0");
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       if(this.alignLeft)
       {
          this.view.content._x -= !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 460 : 580;
       }
       else
       {
-         var _loc5_ = this.points.toString().length + 1;
-         var _loc6_ = !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 2 : 4;
+         _loc5_ = this.points.toString().length + 1;
+         _loc6_ = !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 2 : 4;
          if(_loc5_ > _loc6_)
          {
-            var _loc4_ = 75 * (_loc5_ - _loc6_);
+            _loc4_ = 75 * (_loc5_ - _loc6_);
             if(!com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN)
             {
                _loc4_ += 20;

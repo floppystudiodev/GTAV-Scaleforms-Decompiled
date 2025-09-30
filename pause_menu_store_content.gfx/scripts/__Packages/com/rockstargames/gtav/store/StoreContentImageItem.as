@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.store.StoreContentImageItem extends MovieClip
 {
-   var picMC;
-   var txd;
    var imageHeight;
+   var picMC;
    var target;
+   var txd;
    var txd_loader;
    var gfxFileName = "PAUSE_MENU_STORE_CONTENT";
    function StoreContentImageItem()
@@ -30,12 +30,13 @@ class com.rockstargames.gtav.store.StoreContentImageItem extends MovieClip
    function LOADCLIP(textureDict)
    {
       this.target = this.picMC[textureDict];
+      var _loc3_;
       if(this.target == undefined)
       {
          this.target = this.picMC.createEmptyMovieClip(textureDict,this.picMC.getNextHighestDepth());
          this.txd_loader = new MovieClipLoader();
          this.txd_loader.addListener(this);
-         var _loc3_ = "img://" + textureDict + "/" + textureDict;
+         _loc3_ = "img://" + textureDict + "/" + textureDict;
          this.txd_loader.loadClip(_loc3_,this.target);
       }
    }

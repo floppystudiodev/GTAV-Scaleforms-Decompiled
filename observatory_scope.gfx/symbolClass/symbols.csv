@@ -1,7 +1,7 @@
-3;CONTENT
-5;BOUNDING_BOX
-6;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-7;__Packages.com.rockstargames.ui.core.BaseScreenLayout
-8;__Packages.com.rockstargames.ui.utils.DisplayConfig
-9;__Packages.com.rockstargames.ui.game.GameInterface
-10;__Packages.com.rockstargames.gtav.levelDesign.OBSERVATORY_SCOPE
+3;"CONTENT"
+5;"BOUNDING_BOX"
+6;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+7;"__Packages.com.rockstargames.ui.core.BaseScreenLayout"
+8;"__Packages.com.rockstargames.ui.utils.DisplayConfig"
+9;"__Packages.com.rockstargames.ui.game.GameInterface"
+10;"__Packages.com.rockstargames.gtav.levelDesign.OBSERVATORY_SCOPE"

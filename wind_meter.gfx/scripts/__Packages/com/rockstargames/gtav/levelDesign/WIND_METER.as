@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.WIND_METER extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var mc;
+   var CONTENT;
    var _arrowRotation;
    var _strength;
-   var CONTENT;
+   var mc;
    var _windColors = [13485106,7772776,1336471,6961750,13440791];
    var compassPointList = new Array();
    var angle = 0;
@@ -45,6 +45,8 @@ class com.rockstargames.gtav.levelDesign.WIND_METER extends com.rockstargames.gt
             break;
          case 1:
             com.rockstargames.ui.utils.Colour.Colourise(this.mc.mc_arrowBG,r,g,b);
+         default:
+            return;
       }
    }
    function get arrowRotation()
@@ -74,9 +76,10 @@ class com.rockstargames.gtav.levelDesign.WIND_METER extends com.rockstargames.gt
       this.compassPointList = [];
       var _loc4_ = ["N","W","S","E"];
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = this.mc.compassWordsMC.attachMovie("compassletter","compassletter" + _loc4_[_loc2_],this.mc.compassWordsMC.getNextHighestDepth());
+         _loc3_ = this.mc.compassWordsMC.attachMovie("compassletter","compassletter" + _loc4_[_loc2_],this.mc.compassWordsMC.getNextHighestDepth());
          _loc3_.letterTF.text = _loc4_[_loc2_];
          _loc3_._alpha = 0;
          this.compassPointList.push(_loc3_);
@@ -91,9 +94,10 @@ class com.rockstargames.gtav.levelDesign.WIND_METER extends com.rockstargames.gt
       var _loc6_ = Math.max(0,Math.min(a,360));
       var _loc5_ = - _loc6_ / 360 * this.angleSteps;
       var _loc7_ = _loc5_ % 28;
+      var _loc2_;
       for(var _loc4_ in this.compassPointList)
       {
-         var _loc2_ = (a + 90 * _loc4_) % 360;
+         _loc2_ = (a + 90 * _loc4_) % 360;
          this.setCompassPoint(this.compassPointList[_loc4_],_loc2_,_loc4_);
       }
    }

@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargames.ui.components.GUIController
 {
-   var linkageArray;
-   var itemTypeList;
-   var currentBoard;
    var CONTENT;
+   var currentBoard;
+   var heistDesc;
+   var heistInfo;
+   var heistName;
+   var heistTeam;
+   var itemTypeList;
+   var linkageArray;
    var model;
    var numPlayers;
-   var heistDesc;
-   var heistName;
-   var heistInfo;
-   var heistTeam;
    var crewLabels = new Array();
    var pieChartLabels = new Array();
    var _highlighted = false;
@@ -126,6 +126,7 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    }
    function HIGHLIGHT_ITEM(_itemIndex, _subItemIndex, leftArrow, rightArrow)
    {
+      var _loc6_;
       if(_itemIndex == 8)
       {
          this.HIGHLIGHT_BUTTON_HACK();
@@ -135,9 +136,9 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
          if(_itemIndex == -1 || _itemIndex == undefined)
          {
             _itemIndex = 99;
-            _subItemIndex = undefined;
-            leftArrow = undefined;
-            rightArrow = undefined;
+            _subItemIndex;
+            leftArrow;
+            rightArrow;
          }
          if(_subItemIndex == -1)
          {
@@ -151,7 +152,7 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
          {
             rightArrow = 0;
          }
-         var _loc6_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView());
+         _loc6_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView());
          this.model.setItem(_loc6_,_itemIndex,_subItemIndex,leftArrow,rightArrow);
       }
    }
@@ -240,10 +241,12 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    }
    function SET_PLAYERLIST_ICON(_slotIndex, _headsetIcon)
    {
+      var _loc2_;
+      var _loc3_;
       if(this.currentBoard == this.CONTENT.boardMC)
       {
-         var _loc2_ = this.model.getCurrentView(0);
-         var _loc3_ = _slotIndex - _loc2_.index + _loc2_.highlightedItem;
+         _loc2_ = this.model.getCurrentView(0);
+         _loc3_ = _slotIndex - _loc2_.index + _loc2_.highlightedItem;
          com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardCrewMember(_loc2_.itemList[_loc3_]).setHeadsetIcon(_headsetIcon);
       }
    }
@@ -335,9 +338,10 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
       var _loc3_ = this.getNumOfPlanningSlots();
       var _loc2_ = 0;
       var _loc4_ = 0;
+      var _loc6_;
       if(_loc3_ > 0 && _loc3_ < 3)
       {
-         var _loc6_ = this.model.getCurrentView(viewIndex).itemList[14];
+         _loc6_ = this.model.getCurrentView(viewIndex).itemList[14];
          _loc2_ = _loc6_._y;
          _loc4_ = 50;
       }
@@ -383,9 +387,10 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
       var _loc7_ = this.model.getCurrentView(0).itemList[9].heistTitleTF.textWidth;
       var _loc5_ = 0.5 * (750 - _loc7_) - 10;
       var _loc4_ = _loc2_.textWidth;
+      var _loc3_;
       if(_loc4_ > _loc5_)
       {
-         var _loc3_ = _loc5_ / _loc4_;
+         _loc3_ = _loc5_ / _loc4_;
          _loc2_._xscale = _loc2_._yscale = 100 * _loc3_;
          _loc2_._x = 750 - _loc2_._width;
          _loc2_._y = 0.5 * (1 - _loc3_) * _loc2_._height;
@@ -497,11 +502,13 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    }
    function UPDATE_PLANNING_SLOT(_itemSlot, _txd, _title, _txn1, _imageName1, _txn2, _imageName2, _txn3, _imageName3, _completed, _available, _highlight, _fadeInCross)
    {
+      var _loc3_;
+      var _loc2_;
       if(this.currentBoard == this.CONTENT.planningMC)
       {
          this.UPDATE_DATA_SLOT(1,14 + _itemSlot,7,_itemSlot,_txd,_title,_txn1,_imageName1,_txn2,_imageName2,_txn3,_imageName3,_completed,_available,_highlight,_fadeInCross);
-         var _loc3_ = this.getNumOfPlanningSlots();
-         var _loc2_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
+         _loc3_ = this.getNumOfPlanningSlots();
+         _loc2_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
          this.model.repositionPlanningSlots(_loc2_,_loc3_);
       }
       this.repositionHeistNameTitle(1);
@@ -540,6 +547,7 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
       _completed = -1;
       var _loc5_ = false;
       var _loc6_ = false;
+      var _loc4_;
       if(arguments.length < 2)
       {
          this.SET_DATA_SLOT(2,20 + _itemSlot,8,_itemSlot,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined);
@@ -547,21 +555,25 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
       else
       {
          this.SET_DATA_SLOT(2,20 + _itemSlot,8,_itemSlot,_txd,_title,_txn1,"","","","","",_completed,_available,_loc5_,_loc6_,_cost);
-         var _loc4_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(2));
+         _loc4_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(2));
          this.model.updateStrandSlotLeft(_loc4_,_itemSlot,[_description]);
       }
    }
    function UPDATE_STRAND_SLOT(_itemSlot, _txd, _title, _description, _txn1, _completed, _available, _cost)
    {
+      var _loc4_;
+      var _loc5_;
+      var _loc2_;
+      var _loc6_;
       if(this.currentBoard == this.CONTENT.strandMC)
       {
          _completed = -1;
-         var _loc4_ = false;
-         var _loc5_ = false;
+         _loc4_ = false;
+         _loc5_ = false;
          this.UPDATE_DATA_SLOT(2,20 + _itemSlot,8,_itemSlot,_txd,_title,_txn1,"","","","","",_completed,_available,_loc4_,_loc5_,_cost);
-         var _loc2_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(2));
+         _loc2_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(2));
          this.model.updateStrandSlotLeft(_loc2_,_itemSlot,[_description]);
-         var _loc6_ = this.getNumOfStrandSlots();
+         _loc6_ = this.getNumOfStrandSlots();
          this.model.repositionStrandSlots(_loc2_,_loc6_);
       }
       this.repositionHeistNameTitle(2);
@@ -598,20 +610,24 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    }
    function UPDATE_PLANNING_SLOT_LEFT(_itemSlot)
    {
+      var _loc3_;
       if(this.currentBoard == this.CONTENT.planningMC)
       {
-         var _loc3_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
+         _loc3_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
          this.model.updatePlanningSlotLeft(_loc3_,_itemSlot,arguments.slice(1));
       }
    }
    function UPDATE_PLANNING_SLOT_RIGHT(_itemSlot)
    {
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       if(this.currentBoard == this.CONTENT.planningMC)
       {
-         var _loc5_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
-         var _loc4_ = arguments.slice(1);
+         _loc5_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
+         _loc4_ = arguments.slice(1);
          this.model.updatePlanningSlotRight(_loc5_,_itemSlot,_loc4_);
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < _loc4_.length)
          {
             if(_loc4_[_loc3_] && _loc4_[_loc3_] != ".")
@@ -625,9 +641,10 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    }
    function UPDATE_PLANNING_SLOT_RIGHT_MEDAL(_itemSlot)
    {
+      var _loc3_;
       if(this.currentBoard == this.CONTENT.planningMC)
       {
-         var _loc3_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
+         _loc3_ = com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1));
          this.model.updatePlanningSlotRightMedal(_loc3_,_itemSlot,arguments.slice(1));
       }
    }
@@ -635,9 +652,10 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_MP extends com.rockstargam
    {
       var _loc4_ = 20;
       var _loc2_ = 14;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard(com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1)).itemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard(com.rockstargames.gtav.levelDesign.heists.MPHeistView(this.model.getCurrentView(1)).itemList[_loc2_]);
          if(_loc3_ != undefined)
          {
             _loc3_.showImages(bool);

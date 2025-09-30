@@ -1,8 +1,8 @@
-10;messageStroke
-22;CONTENT
-24;BOUNDING_BOX
-25;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-26;__Packages.com.rockstargames.ui.core.BaseScreenLayout
-27;__Packages.com.rockstargames.ui.utils.DisplayConfig
-28;__Packages.com.rockstargames.ui.game.GameInterface
-29;__Packages.com.rockstargames.gtav.levelDesign.SLOT_MACHINE
+10;"messageStroke"
+22;"CONTENT"
+24;"BOUNDING_BOX"
+25;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+26;"__Packages.com.rockstargames.ui.core.BaseScreenLayout"
+27;"__Packages.com.rockstargames.ui.utils.DisplayConfig"
+28;"__Packages.com.rockstargames.ui.game.GameInterface"
+29;"__Packages.com.rockstargames.gtav.levelDesign.SLOT_MACHINE"

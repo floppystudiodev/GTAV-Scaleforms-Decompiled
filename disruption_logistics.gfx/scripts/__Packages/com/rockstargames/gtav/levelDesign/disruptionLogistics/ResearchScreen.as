@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResearchScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var animateResearchBar;
-   var tooltipButton;
-   var view;
-   var app;
-   var researchButton;
-   var unlocksButton;
    var _buttons;
+   var animateResearchBar;
+   var app;
    var cursor;
+   var researchButton;
+   var tooltipButton;
+   var unlocksButton;
+   var view;
    static var TXD = "UA_GENERIC";
    static var IMAGE = "UA_RESEARCH";
    static var METER_BAR_ANIMATION_DURATION = 2.2;
@@ -82,6 +82,7 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResearchScreen exte
       {
          this.app.imageManager.addImage(com.rockstargames.gtav.levelDesign.disruptionLogistics.ResearchScreen.TXD,this.app.researchTexture,this.view.image);
       }
+      var _loc3_;
       if(this.app.fastTrackState == com.rockstargames.gtav.levelDesign.disruptionLogistics.Button.ACTIVE)
       {
          if(this.app.fastTrackSaleCost >= 0)
@@ -89,7 +90,7 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResearchScreen exte
             this.view.researchButton.label.text = "$" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.fastTrackCost);
             this.view.researchButton.line._width = this.view.researchButton.label.textWidth + 4;
             this.view.researchButton.label.text = com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.setLocalisedText(this.view.researchButton.label,"UA_RSCH_FAST") + ": $" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.fastTrackCost);
-            var _loc3_ = this.view.researchButton.label.textWidth;
+            _loc3_ = this.view.researchButton.label.textWidth;
             this.view.researchButton.line._x = 0.5 * (this.view.researchButton._width + _loc3_) - this.view.researchButton.line._width + 2;
             this.view.researchButton.label.text += " $" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.fastTrackSaleCost);
             this.view.researchButton.line._x -= 0.5 * (this.view.researchButton.label.textWidth - _loc3_);
@@ -109,7 +110,7 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResearchScreen exte
    }
    function updateStats()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(this.app.status)
       {
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.STATUS_UNOWNED:

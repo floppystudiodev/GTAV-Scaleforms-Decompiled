@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase extends com.rockstargames.ui.components.GUIController
 {
+   var CONTENT;
    var model;
    var scrollBase;
-   var CONTENT;
    var titleHeight = 27;
    var preloadTxds = false;
    var dbgID = "";
@@ -118,7 +118,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
    }
    function getTxdData()
    {
-      var _loc1_ = undefined;
+      var _loc1_;
       return _loc1_;
    }
    function SET_INPUT_EVENT(direction)

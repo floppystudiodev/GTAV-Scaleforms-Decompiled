@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.web.WWW_THEPOWCLEANSE_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var mcScope;
    var CONTENT;
-   var prevYPos;
+   var OnColour;
+   var PAGE_NAMES;
+   var browser;
    var curAniFrame;
    var dataTextScope;
-   var OnColour;
    var defaultButtonOnColour;
+   var mcScope;
+   var prevYPos;
    function WWW_THEPOWCLEANSE_COM()
    {
       super();
@@ -51,10 +51,13 @@ class com.rockstargames.gtav.web.WWW_THEPOWCLEANSE_COM extends com.rockstargames
             if(this.browser.pageName != "DAY5_D_9")
             {
                this.browser.GO_TO_WEBPAGE("WWW_THEPOWCLEANSE_COM_S_DAY5_D_9");
+               return;
             }
+            return;
             break;
          default:
             this.browser.GO_TO_WEBPAGE("WWW_THEPOWCLEANSE_COM_S_" + AnchorLink);
+            return;
       }
    }
    function POPULATE_TEXT(pageName)
@@ -62,6 +65,7 @@ class com.rockstargames.gtav.web.WWW_THEPOWCLEANSE_COM extends com.rockstargames
       this.mcScope = this.CONTENT[pageName];
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -69,7 +73,7 @@ class com.rockstargames.gtav.web.WWW_THEPOWCLEANSE_COM extends com.rockstargames
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }
@@ -77,7 +81,7 @@ class com.rockstargames.gtav.web.WWW_THEPOWCLEANSE_COM extends com.rockstargames
       }
       this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
       this.mcScope.aniMC.gotoAndPlay(this.curAniFrame);
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.browser.pageName) !== "PAGE1")
       {
          this.CONTENT._y = this.prevYPos;

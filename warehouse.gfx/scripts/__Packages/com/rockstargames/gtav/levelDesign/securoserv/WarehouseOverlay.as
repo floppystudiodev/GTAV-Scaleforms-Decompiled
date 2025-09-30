@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.securoserv.WarehouseOverlay
 {
-   var view;
    var _controls;
+   var view;
    function WarehouseOverlay(view)
    {
       this.view = view;
@@ -13,10 +13,11 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseOverlay
       this.view.title.text = titleLabel;
       this.view.message.text = messageLabel;
       this._controls.length = 0;
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(acceptButtonLabel && acceptButtonLabel.length > 0)
       {
-         var _loc2_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen.OVERLAY_ACCEPT,this.view.acceptButton,acceptButtonLabel,undefined,undefined,true);
+         _loc2_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen.OVERLAY_ACCEPT,this.view.acceptButton,acceptButtonLabel,undefined,undefined,true);
          this._controls.push(_loc2_);
          this.view.acceptButton._visible = true;
       }
@@ -25,9 +26,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseOverlay
          this.view.acceptButton._visible = false;
          _loc3_ = this.view.cancelButton;
       }
+      var _loc4_;
       if(cancelButtonLabel && cancelButtonLabel.length > 0)
       {
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen.OVERLAY_CANCEL,this.view.cancelButton,cancelButtonLabel,undefined,undefined,true);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen.OVERLAY_CANCEL,this.view.cancelButton,cancelButtonLabel,undefined,undefined,true);
          this._controls.push(_loc4_);
          this.view.cancelButton._visible = true;
       }

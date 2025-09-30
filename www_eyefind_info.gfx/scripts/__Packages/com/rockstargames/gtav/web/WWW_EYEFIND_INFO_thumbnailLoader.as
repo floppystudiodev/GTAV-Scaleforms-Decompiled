@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.web.WWW_EYEFIND_INFO_thumbnailLoader extends com.rockstargames.gtav.web.buttons.WebButton
 {
-   var txd;
+   var _alpha;
    var browser;
    var thumbnailTF;
+   var txd;
    function WWW_EYEFIND_INFO_thumbnailLoader()
    {
       super();

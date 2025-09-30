@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChart
 {
-   var view;
-   var numSegments;
-   var labelRadius;
-   var fillBitmapData;
-   var values;
-   var segments;
-   var labels;
    var dividers;
+   var fillBitmapData;
+   var labelRadius;
+   var labels;
+   var numSegments;
+   var segments;
+   var values;
+   var view;
    static var COLOURS = [871845,2135096,14096427,0];
    static var TWO_PI = 6.283185307179586;
    static var RAD_2_DEG = 57.29577951308232;
@@ -65,7 +65,7 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChart
    function draw()
    {
       var _loc5_ = 0;
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = 0;
       while(_loc2_ < this.numSegments)
       {
@@ -74,9 +74,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChart
       }
       var _loc4_ = 0;
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.numSegments)
       {
-         var _loc3_ = com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChart.TWO_PI * this.values[_loc2_] / _loc5_;
+         _loc3_ = com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChart.TWO_PI * this.values[_loc2_] / _loc5_;
          this.segments[_loc2_].draw(_loc4_,_loc4_ + _loc3_,this.fillBitmapData);
          this.labels[_loc2_]._visible = _loc3_ > 0.4;
          this.labels[_loc2_]._x = this.labelRadius * Math.cos(_loc4_ + 0.5 * _loc3_);

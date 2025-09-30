@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var DEFAULT_COLOUR;
-   var STYLES;
    var CONTENT;
-   var reticleMC;
+   var DEFAULT_COLOUR;
+   var FLASH_COLOUR;
+   var STYLES;
+   var _HUD;
+   var _enumID;
+   var hideTextTimeout;
    var hitmarker;
    var homingScopeMC;
    var reticleFrame;
-   var hideTextTimeout;
-   var FLASH_COLOUR;
-   var _enumID;
-   var _HUD;
+   var reticleMC;
    var weaponID = 0;
    var screenWidth = 1280;
    var screenHeight = 720;
@@ -88,7 +88,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
       this.hasReticleData = params[2];
       this.hasCompass = params[3];
       var _loc3_ = params[4];
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc4_ = 1;
       switch(this.weaponID)
       {
@@ -203,16 +203,18 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
    }
    function initSpreadComponents()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc5_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ = this.reticleMC.reticle["positionalComponentMC" + _loc5_])
       {
          if(_loc2_.dx0 != undefined)
          {
             break;
          }
-         var _loc4_ = _loc2_._x;
-         var _loc3_ = _loc2_._y;
+         _loc4_ = _loc2_._x;
+         _loc3_ = _loc2_._y;
          _loc2_.dx0 = _loc2_._x;
          _loc2_.dy0 = _loc2_._y;
          _loc2_.d0 = Math.sqrt(_loc4_ * _loc4_ + _loc3_ * _loc3_);
@@ -228,12 +230,15 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
       var _loc8_ = params[0];
       var _loc7_ = _loc8_ * this.ACCURACY_SCALAR_TO_PX;
       var _loc6_ = 0;
-      var _loc2_ = undefined;
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ = this.reticleMC.reticle["positionalComponentMC" + _loc6_])
       {
-         var _loc3_ = _loc2_.d0;
-         var _loc5_ = _loc3_ + _loc7_;
-         var _loc4_ = _loc5_ / _loc3_;
+         _loc3_ = _loc2_.d0;
+         _loc5_ = _loc3_ + _loc7_;
+         _loc4_ = _loc5_ / _loc3_;
          _loc2_._x = _loc2_.dx0 * _loc4_;
          _loc2_._y = _loc2_.dy0 * _loc4_;
          _loc6_ = _loc6_ + 1;
@@ -261,13 +266,15 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
    }
    function SET_SCOPE_LOCK(params)
    {
+      var _loc0_;
+      var _loc2_;
+      var _loc3_;
       if(this.hasReticleData)
       {
-         var _loc0_ = null;
          if((_loc0_ = this.weaponID) === this.WEAPON_PROGRAMMABLE_AR)
          {
-            var _loc2_ = params[0];
-            var _loc3_ = params[1];
+            _loc2_ = params[0];
+            _loc3_ = params[1];
             this.reticleMC.reticle.lockedMC.gotoAndStop(int(_loc2_) + 1);
             if(_loc2_)
             {
@@ -282,13 +289,15 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
    }
    function SET_SCOPE_DIST(params)
    {
+      var _loc0_;
+      var _loc3_;
+      var _loc2_;
       if(this.hasReticleData)
       {
-         var _loc0_ = null;
          if((_loc0_ = this.weaponID) === this.WEAPON_PROGRAMMABLE_AR)
          {
-            var _loc3_ = params[0];
-            var _loc2_ = params[1];
+            _loc3_ = params[0];
+            _loc2_ = params[1];
             this.reticleMC.reticle.distMC.distTF.text = _loc3_;
             this.reticleMC.reticle.distMC.feetTF.text = _loc2_;
          }
@@ -320,6 +329,8 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
             {
                this.reticleMC.zoomMC.markerMC._visible = true;
             }
+         default:
+            return;
       }
    }
    function START_DIM_RETICLE_EXTERNAL(newAlpha)
@@ -328,16 +339,17 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
    }
    function START_DIM_RETICLE(params)
    {
+      var _loc2_;
       switch(this.weaponID)
       {
+         default:
+            this.STOP_FLASHING_RETICLE();
+            _loc2_ = params[0];
+            this.reticleMC.reticle._alpha = _loc2_;
          case this.SNIPER_MAX:
          case this.SNIPER_LARGE:
          case this.WEAPON_PROGRAMMABLE_AR:
-            break;
-         default:
-            this.STOP_FLASHING_RETICLE();
-            var _loc2_ = params[0];
-            this.reticleMC.reticle._alpha = _loc2_;
+            return;
       }
    }
    function RESET_RETICLE_EXTERNAL()
@@ -484,6 +496,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
       var _loc3_ = params[0];
       this.reticleMC.reticle._xscale = this.dotScaler;
       this.reticleMC.reticle._yscale = this.dotScaler;
+      var _loc2_;
       switch(_loc3_)
       {
          case -1:
@@ -492,24 +505,24 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
             this.STOP_FLASHING_RETICLE();
             this.reticleMC.reticle.gotoAndStop(1);
             com.rockstargames.ui.utils.Colour.Colourise(this.reticleMC.reticle,255,255,255,100);
-            break;
+            return;
          case 0:
             this.DEFAULT_COLOUR = [255,255,255,100];
             this.STOP_FLASHING_RETICLE();
             this.reticleMC.reticle.gotoAndStop(1);
             com.rockstargames.ui.utils.Colour.Colourise(this.reticleMC.reticle,208,255,176,100);
-            break;
+            return;
          case 1:
             this.DEFAULT_COLOUR = [255,255,255,100];
             if(this.weaponID != this.HOMING_LAUNCHER && this.weaponID != this.WEAPON_HEAVY_RPG)
             {
                this.START_FLASHING_RETICLE([255,142,60,100]);
             }
-            var _loc2_ = this.dotScaler + 15;
+            _loc2_ = this.dotScaler + 15;
             com.rockstargames.ui.tweenStar.TweenStarLite.to(this.reticleMC.reticle,0.5,{_xscale:_loc2_,_yscale:_loc2_});
             this.reticleMC.reticle.gotoAndStop(1);
             com.rockstargames.ui.utils.Colour.Colourise(this.reticleMC.reticle,255,142,60,100);
-            break;
+            return;
          case 2:
             this.DEFAULT_COLOUR = [255,255,255,100];
             this.STOP_FLASHING_RETICLE();
@@ -517,12 +530,13 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
             com.rockstargames.ui.tweenStar.TweenStarLite.to(this.reticleMC.reticle,0.5,{_xscale:_loc2_,_yscale:_loc2_});
             this.reticleMC.reticle.gotoAndStop(2);
             com.rockstargames.ui.utils.Colour.Colourise(this.reticleMC.reticle,255,28,33,100);
-            break;
+            return;
          case 3:
             this.DEFAULT_COLOUR = [255,255,255,100];
             this.STOP_FLASHING_RETICLE();
             this.reticleMC.reticle.gotoAndStop(1);
             com.rockstargames.ui.utils.Colour.Colourise(this.reticleMC.reticle,255,255,255,100);
+            return;
       }
    }
    function SET_CAM_HEADING_EXTERNAL(a)
@@ -531,13 +545,18 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
    }
    function SET_CAM_HEADING(params)
    {
+      var _loc3_;
+      var _loc6_;
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
       if(this.hasCompass)
       {
-         var _loc3_ = params[0];
-         var _loc6_ = Math.max(0,Math.min(_loc3_,360));
-         var _loc2_ = this.reticleMC.Compass._width * 2;
-         var _loc4_ = - _loc6_ / 360 * _loc2_;
-         var _loc5_ = _loc4_ % 28;
+         _loc3_ = params[0];
+         _loc6_ = Math.max(0,Math.min(_loc3_,360));
+         _loc2_ = this.reticleMC.Compass._width * 2;
+         _loc4_ = - _loc6_ / 360 * _loc2_;
+         _loc5_ = _loc4_ % 28;
          this.reticleMC.Compass._x = 14 + _loc5_;
       }
    }
@@ -570,6 +589,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
       }
       var _loc5_ = this.CONTENT.reticleMC.LAZER_HUD.pitch_and_rollMC.PITCH;
       var _loc4_ = this.CONTENT.reticleMC.LAZER_HUD.pitch_and_rollMC;
+      var _loc2_;
       if(this.reticleChanged)
       {
          this.CONTENT.reticleMC.LAZER_HUD.gotoAndPlay(2);
@@ -580,7 +600,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_RETICLE extends com.rockstarg
       else
       {
          _loc5_._y += 0.4 * (_loc6_ - _loc5_._y);
-         var _loc2_ = _loc3_ - _loc4_._rotation;
+         _loc2_ = _loc3_ - _loc4_._rotation;
          if(_loc2_ < -180)
          {
             _loc2_ += 360;

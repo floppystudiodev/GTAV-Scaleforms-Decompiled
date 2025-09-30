@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.nightclub.structs.Buyer
 {
+   var cargoAmount0;
+   var cargoAmount1;
+   var cargoAmount2;
+   var cargoType0;
+   var cargoType1;
+   var cargoType2;
    var name;
    var price;
-   var cargoType0;
-   var cargoAmount0;
-   var cargoType1;
-   var cargoAmount1;
-   var cargoType2;
-   var cargoAmount2;
    function Buyer()
    {
       this.name = "";

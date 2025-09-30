@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup
 {
-   var view;
    var activeTabIndex;
    var tabs;
+   var view;
    static var INTEL = 0;
    static var PREP = 1;
    static var FINALE = 2;

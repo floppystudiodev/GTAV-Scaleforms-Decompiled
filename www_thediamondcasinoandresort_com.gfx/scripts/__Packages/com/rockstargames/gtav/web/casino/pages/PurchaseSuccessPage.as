@@ -36,7 +36,7 @@ class com.rockstargames.gtav.web.casino.pages.PurchaseSuccessPage extends com.ro
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "homeButton")
       {
          this.website.browser.GO_TO_WEBPAGE(this.website.browser.GET_CURRENT_WEBSITE());

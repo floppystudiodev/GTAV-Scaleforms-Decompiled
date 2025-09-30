@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
+   var pageName;
    var prevPageName;
    var progressPanel;
-   var pageName;
-   var view;
    var slideshow;
+   var view;
+   var website;
    static var basicPropertyTXD;
    static var ARCADE_TXD = "FORECLOSURES_ARC";
    static var NIGHTCLUB_TXD = "FORECLOSURES_CLUB";
@@ -16,10 +16,25 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
    static var AUTO_SHOP_TXD = "FORECLOSURES_AUTO";
    static var SALVAGE_YARD_TXD = "FORECLOSURES_SALVAGE";
    static var BAIL_OFFICE_TXD = "FORECLOSURES_BAIL";
+   static var CAR_WASH_TXD = "FORECLOSURES_CARWASH";
+   static var HELITOURS_TXD = "FORECLOSURES_HELITOURS";
+   static var WEED_SHOP_TXD = "FORECLOSURES_WEEDSHOP";
    function PurchasePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"purchasePage",pageName,isFirstPage,progressPanel,header);
-      if(website.isInGarmentFactoryFlow)
+      if(website.isInCarWashFlow)
+      {
+         this.initCarWash();
+      }
+      else if(website.isInHelitoursFlow)
+      {
+         this.initHelitours();
+      }
+      else if(website.isInWeedShopFlow)
+      {
+         this.initWeedShop();
+      }
+      else if(website.isInGarmentFactoryFlow)
       {
          this.initBasicProperty(website.getSelectedGarmentFactory());
       }
@@ -283,9 +298,10 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
    }
    function initHangarSlideshow()
    {
+      var _loc4_;
       if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
       {
-         var _loc4_ = com.rockstargames.gtav.web.foreclosures.Hangar.getAbsoluteLightingIndex(this.website.hangarStyle,this.website.hangarLighting) + 1;
+         _loc4_ = com.rockstargames.gtav.web.foreclosures.Hangar.getAbsoluteLightingIndex(this.website.hangarStyle,this.website.hangarLighting) + 1;
          this.website.purchaseSlideshow = [];
          this.website.purchaseSlideshow.push("style" + _loc4_);
          this.website.purchaseSlideshow.push("light" + _loc4_);
@@ -370,11 +386,12 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
    }
    function initBaseSlideshow()
    {
+      var _loc4_;
       if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
       {
          this.website.purchaseSlideshow = [];
          this.website.purchaseSlideshow.push("style" + (this.website.baseStyle + 1));
-         var _loc4_ = this.website.baseGraphics * this.website.numBaseStyles + this.website.baseStyle + 1;
+         _loc4_ = this.website.baseGraphics * this.website.numBaseStyles + this.website.baseStyle + 1;
          this.website.purchaseSlideshow.push("graphic" + _loc4_);
          if(this.website.baseWeapon > 0)
          {
@@ -555,11 +572,12 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
    }
    function initArcadeSlideshow()
    {
+      var _loc4_;
       if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
       {
          this.website.purchaseSlideshow = [];
          this.website.purchaseSlideshow.push("style_" + (this.website.arcadeStyle + 1));
-         var _loc4_ = "mural_" + (this.website.arcadeMural + 1);
+         _loc4_ = "mural_" + (this.website.arcadeMural + 1);
          if(this.website.arcadeMural == 0)
          {
             _loc4_ += this.website.arcadeStyle == 2 ? "_2" : "_1";
@@ -920,6 +938,138 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
       this.website.setSelectedGarmentFactory(-1);
       this.website.setSelectedMcKenzieHangar(-1);
    }
+   function initCarWash()
+   {
+      if(this.website.carWashTint == -1)
+      {
+         this.website.carWashTint = 0;
+      }
+      this.progressPanel.setProgressDots(2);
+      this.progressPanel.hidePurchaseButton();
+      this.initCarWashSlideshow();
+      this.initButtons();
+      this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,"FORECLOSURES_PURCHASE_HEADING",false);
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,"FORECLOSURES_PURCHASE_DESCRIPTION",false);
+      }
+      else
+      {
+         if(this.website.dataProviderUI[1][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,this.website.dataProviderUI[1][0],true);
+         }
+         if(this.website.dataProviderUI[2][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,this.website.dataProviderUI[2][0],true);
+         }
+      }
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.SUCCESS_PAGE.name)
+      {
+         this.website.updateNewlyPurchasedCarWash();
+      }
+      this.website.setSelectedCarWash(-1);
+   }
+   function initCarWashSlideshow()
+   {
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         this.website.purchaseSlideshow = [];
+         this.website.purchaseSlideshow.push("tint_" + (this.website.carWashTint + 1));
+         this.website.carWashToMarkAsPurchased = this.website.getSelectedCarWash();
+      }
+      this.slideshow = new com.rockstargames.gtav.web.foreclosures.Slideshow(this.website.imageManager,this.view.slideshow);
+      this.slideshow.show([com.rockstargames.gtav.web.foreclosures.PurchasePage.CAR_WASH_TXD],this.website.purchaseSlideshow);
+   }
+   function initHelitours()
+   {
+      if(this.website.helitoursTint == -1)
+      {
+         this.website.helitoursTint = 0;
+      }
+      this.progressPanel.setProgressDots(2);
+      this.progressPanel.hidePurchaseButton();
+      this.initHelitoursSlideshow();
+      this.initButtons();
+      this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,"FORECLOSURES_PURCHASE_HEADING",false);
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,"FORECLOSURES_PURCHASE_DESCRIPTION",false);
+      }
+      else
+      {
+         if(this.website.dataProviderUI[1][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,this.website.dataProviderUI[1][0],true);
+         }
+         if(this.website.dataProviderUI[2][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,this.website.dataProviderUI[2][0],true);
+         }
+      }
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.SUCCESS_PAGE.name)
+      {
+         this.website.updateNewlyPurchasedHelitours();
+      }
+      this.website.setSelectedHelitours(-1);
+   }
+   function initHelitoursSlideshow()
+   {
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         this.website.purchaseSlideshow = [];
+         this.website.purchaseSlideshow.push("tint_" + (this.website.helitoursTint + 1));
+         this.website.helitoursToMarkAsPurchased = this.website.getSelectedHelitours();
+      }
+      this.slideshow = new com.rockstargames.gtav.web.foreclosures.Slideshow(this.website.imageManager,this.view.slideshow);
+      this.slideshow.show([com.rockstargames.gtav.web.foreclosures.PurchasePage.HELITOURS_TXD],this.website.purchaseSlideshow);
+   }
+   function initWeedShop()
+   {
+      if(this.website.weedShopTint == -1)
+      {
+         this.website.weedShopTint = 0;
+      }
+      this.progressPanel.setProgressDots(2);
+      this.progressPanel.hidePurchaseButton();
+      this.initWeedShopSlideshow();
+      this.initButtons();
+      this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,"FORECLOSURES_PURCHASE_HEADING",false);
+         com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,"FORECLOSURES_PURCHASE_DESCRIPTION",false);
+      }
+      else
+      {
+         if(this.website.dataProviderUI[1][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.heading,this.website.dataProviderUI[1][0],true);
+         }
+         if(this.website.dataProviderUI[2][0] != undefined)
+         {
+            com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setSpacedTextField(this.view.description,this.website.dataProviderUI[2][0],true);
+         }
+      }
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.SUCCESS_PAGE.name)
+      {
+         this.website.updateNewlyPurchasedWeedShop();
+      }
+      this.website.setSelectedWeedShop(-1);
+   }
+   function initWeedShopSlideshow()
+   {
+      if(this.pageName == com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name)
+      {
+         this.website.purchaseSlideshow = [];
+         this.website.purchaseSlideshow.push("tint_" + (this.website.weedShopTint + 1));
+         this.website.weedShopToMarkAsPurchased = this.website.getSelectedWeedShop();
+      }
+      this.slideshow = new com.rockstargames.gtav.web.foreclosures.Slideshow(this.website.imageManager,this.view.slideshow);
+      this.slideshow.show([com.rockstargames.gtav.web.foreclosures.PurchasePage.WEED_SHOP_TXD],this.website.purchaseSlideshow);
+   }
    function initButtons()
    {
       var _loc3_ = 5;
@@ -945,16 +1095,18 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
          this.view.waypointButton._visible = false;
          this.view.waypointButton.disabled = true;
       }
+      var _loc2_;
+      var _loc4_;
       if(this.view.mapButton._visible && this.view.waypointButton._visible)
       {
-         var _loc2_ = Math.max(this.view.mapButton._width,this.view.waypointButton._width);
+         _loc2_ = Math.max(this.view.mapButton._width,this.view.waypointButton._width);
          this.view.mapButton.bg._width = _loc2_;
          this.view.mapButton.btnTxt.autoSize = "none";
          this.view.mapButton.btnTxt._width = _loc2_ - 2 * _loc3_;
          this.view.waypointButton.bg._width = _loc2_;
          this.view.waypointButton.btnTxt._width = _loc2_ - 2 * _loc3_;
          this.view.waypointButton.btnTxt.autoSize = "none";
-         var _loc4_ = (this.view.slideshow._width - 2 * _loc2_) / 3;
+         _loc4_ = (this.view.slideshow._width - 2 * _loc2_) / 3;
          this.view.waypointButton._x = this.view.slideshow._x + _loc4_;
          this.view.mapButton._x = this.view.slideshow._x + this.view.slideshow._width - _loc4_ - _loc2_;
       }
@@ -987,6 +1139,8 @@ class com.rockstargames.gtav.web.foreclosures.PurchasePage extends com.rockstarg
             break;
          case "waypointButton":
             this.view.mapButton.disabled = true;
+         default:
+            return;
       }
    }
    function dispose()

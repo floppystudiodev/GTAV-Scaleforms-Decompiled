@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.DetailsScreen extends com.rockstargames.gtav.levelDesign.arcadeManagement.screens.Screen
 {
-   var app;
-   var view;
    var _buttons;
+   var app;
    var persistentContent;
    var purchaseButton;
+   var view;
    static var TXD = "ARCADE_MGMT";
    static var NAV_BUTTON_LEFT = 671;
    function DetailsScreen(app, viewContainer, cursor, persistentContent, overlay)
@@ -74,13 +74,14 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.DetailsScreen 
    }
    function initButton()
    {
+      var _loc2_;
       if(this.app.selectedCabinet.owned)
       {
          this.view.purchaseButton._visible = false;
       }
       else
       {
-         var _loc2_ = this.app.selectedCabinet.salePrice >= 0 && this.app.selectedCabinet.salePrice < this.app.selectedCabinet.price;
+         _loc2_ = this.app.selectedCabinet.salePrice >= 0 && this.app.selectedCabinet.salePrice < this.app.selectedCabinet.price;
          this.updateCentreAlignedCost(this.view.purchaseButton.label,_loc2_,this.app.selectedCabinet.price,this.app.selectedCabinet.salePrice);
          this.purchaseButton = new com.rockstargames.gtav.levelDesign.arcadeManagement.Button(com.rockstargames.gtav.levelDesign.arcadeManagement.ButtonIDs.PURCHASE_BUTTON,this.view.purchaseButton);
          this._buttons.push(this.purchaseButton);
@@ -89,10 +90,14 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.DetailsScreen 
    function updateCentreAlignedCost(panel, isOnSale, originalCost, saleCost)
    {
       panel.cost.textAutoSize = "none";
+      var _loc3_;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
       if(isOnSale)
       {
-         var _loc3_ = "$" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(originalCost);
-         var _loc4_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(saleCost);
+         _loc3_ = "$" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(originalCost);
+         _loc4_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(saleCost);
          com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc3_ + "  " + _loc4_,3,true,true);
          if(this.app.displayConfig.isAsian)
          {
@@ -107,13 +112,13 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.DetailsScreen 
          else
          {
             com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc3_,3,true,true);
-            var _loc6_ = panel.cost.textWidth;
+            _loc6_ = panel.cost.textWidth;
             com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc3_ + _loc4_,3,true,true);
             if(this.app.displayConfig.isAsian)
             {
                com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.resizeAsianText(panel.cost);
             }
-            var _loc5_ = panel.cost.textWidth;
+            _loc5_ = panel.cost.textWidth;
             panel.strikethrough._x = 0.5 * (panel.cost._width - _loc5_) + panel.cost._x;
             panel.strikethrough._width = _loc6_ + 4;
          }

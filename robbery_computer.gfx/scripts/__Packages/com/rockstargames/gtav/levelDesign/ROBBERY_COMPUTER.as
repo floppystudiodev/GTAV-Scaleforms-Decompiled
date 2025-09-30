@@ -1,22 +1,23 @@
 class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
+   var TIMELINE;
+   var _name;
+   var activeRobberyIndex;
+   var currScreen;
    var currScreenID;
-   var inputReceived;
-   var deactivated;
-   var launchTimestamp;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
    var cursor;
+   var deactivated;
+   var displayConfig;
+   var gamerName;
+   var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
    var overlay;
    var robberies;
-   var activeRobberyIndex;
-   var gamerName;
-   var currScreen;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -84,9 +85,10 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
    }
    function ADD_ROBBERY(index, name, payment, textureName, textureDictionary, isFocusRobbery, completionState, available, description)
    {
+      var _loc2_;
       if(index >= 0 && index < com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.MAX_ROBBERIES)
       {
-         var _loc2_ = this.robberies[index] || new com.rockstargames.gtav.levelDesign.robberyComputer.data.Robbery();
+         _loc2_ = this.robberies[index] || new com.rockstargames.gtav.levelDesign.robberyComputer.data.Robbery();
          _loc2_.index = index;
          _loc2_.isFocusRobbery = isFocusRobbery;
          _loc2_.name = name;
@@ -191,9 +193,10 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
    }
    function GET_CURRENT_SELECTION()
    {
+      var _loc2_;
       if(this.inputReceived)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          return !_loc2_ ? -1 : _loc2_.id;
       }
       return this.lastClickedButtonID;
@@ -214,6 +217,7 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
          return undefined;
       }
       this.inputReceived = true;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.robberyComputer.navigation.Cursor.UP:
@@ -223,15 +227,16 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
             this.cursor.snapInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.ACCEPT:
-            var _loc2_ = this.cursor.getTargetUnderCursor();
+            _loc2_ = this.cursor.getTargetUnderCursor();
             this.lastClickedButtonID = !_loc2_ ? -1 : _loc2_.id;
             break;
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.CANCEL:
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.currScreen.customCancelResponse())
+            if(!this.currScreen.customCancelResponse())
             {
             }
       }
@@ -313,15 +318,18 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc5_;
       if(!isNaN(letterSpacing))
       {
-         var _loc5_ = tf.getTextFormat();
+         _loc5_ = tf.getTextFormat();
          _loc5_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc5_);
       }
+      var _loc2_;
+      var _loc6_;
       if(tf.multiline && tf.maxscroll > 1)
       {
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -340,7 +348,7 @@ class com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER extends com.rockstarga
       }
       else if(!tf.multiline && tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
          _loc2_ = txt.length;
          while(_loc2_ > 0)

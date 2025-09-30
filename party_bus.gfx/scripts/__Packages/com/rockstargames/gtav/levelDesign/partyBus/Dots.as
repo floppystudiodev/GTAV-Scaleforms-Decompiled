@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.partyBus.Dots extends com.rockstargames.gtav.levelDesign.partyBus.Animation
 {
-   var rotationStep;
-   var dots;
-   var view;
    var beatStep;
+   var dots;
+   var rotationStep;
+   var view;
    static var NUM_DOTS = 4;
    static var ROTATION_SPEED = 0.01;
    static var BEAT_Y_SCALE = 1000;
@@ -28,10 +28,12 @@ class com.rockstargames.gtav.levelDesign.partyBus.Dots extends com.rockstargames
    {
       this.rotationStep += com.rockstargames.gtav.levelDesign.partyBus.Dots.ROTATION_SPEED;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.partyBus.Dots.NUM_DOTS)
       {
-         var _loc3_ = this.dots[_loc2_];
-         var _loc4_ = this.rotationStep * ((_loc2_ % 2 << 1) - 1);
+         _loc3_ = this.dots[_loc2_];
+         _loc4_ = this.rotationStep * ((_loc2_ % 2 << 1) - 1);
          if(_loc2_ % 2)
          {
             _loc4_ += 1.5707963267948966;

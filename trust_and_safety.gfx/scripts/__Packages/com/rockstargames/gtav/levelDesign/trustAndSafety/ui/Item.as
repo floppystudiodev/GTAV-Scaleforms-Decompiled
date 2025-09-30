@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.trustAndSafety.ui.Item
 {
-   var heading;
    var body;
+   var heading;
    var view;
    function Item(heading, body)
    {

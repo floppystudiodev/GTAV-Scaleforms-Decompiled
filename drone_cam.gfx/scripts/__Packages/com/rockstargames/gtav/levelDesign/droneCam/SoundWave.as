@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.droneCam.SoundWave
 {
-   var view;
+   var numAvailableAmplitudes;
    var perlin;
    var perlinSeed;
-   var numAvailableAmplitudes;
    var updateArgs;
+   var view;
    var waves;
    static var NUM_WAVES = 19;
    static var NUM_WAVES_LESS_ONE = com.rockstargames.gtav.levelDesign.droneCam.SoundWave.NUM_WAVES - 1;
@@ -59,9 +59,10 @@ class com.rockstargames.gtav.levelDesign.droneCam.SoundWave
    function update()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.droneCam.SoundWave.NUM_WAVES_LESS_ONE)
       {
-         var _loc3_ = this.waves[_loc2_ + 1]._currentframe;
+         _loc3_ = this.waves[_loc2_ + 1]._currentframe;
          if(_loc3_ > this.numAvailableAmplitudes + 1)
          {
             _loc3_ = _loc3_ - 1;

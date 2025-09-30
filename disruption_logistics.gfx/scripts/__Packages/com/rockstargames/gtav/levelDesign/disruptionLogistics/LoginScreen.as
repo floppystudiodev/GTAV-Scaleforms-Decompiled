@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.LoginScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var view;
-   var loginButton;
-   var app;
    var _buttons;
+   var app;
+   var loginButton;
+   var view;
    static var LOGIN_BUTTON = 999;
    function LoginScreen(app, viewContainer, cursor)
    {
@@ -30,11 +30,13 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.LoginScreen extends
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.ACCEPT:
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.LEFT_MOUSE:
             this.handleAcceptInput(inputID);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.app.GET_CURRENT_SELECTION()) === com.rockstargames.gtav.levelDesign.disruptionLogistics.LoginScreen.LOGIN_BUTTON)
       {
          com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.playSound("Click_Generic");

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.arenaCareerWall.screens.Screen
 {
    var app;
-   var view;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var view;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.arenaCareerWall.screens.Screen.STAGE_WIDTH;

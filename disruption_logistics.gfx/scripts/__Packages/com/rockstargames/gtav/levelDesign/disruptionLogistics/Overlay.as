@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.Overlay
 {
-   var view;
    var acceptButton;
    var cancelButton;
+   var view;
    static var MIN_BUTTON_WIDTH = 60;
    static var BUTTON_PADDING = 40;
    static var BUTTON_SPACING = 20;

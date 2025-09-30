@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
-   var controls;
-   var userListPanelOffset;
    var app;
-   var view;
+   var capacityMeter;
+   var controls;
    var cursor;
    var interiorsOverlay;
-   var overlay;
-   var capacityMeter;
-   var stealButton;
-   var organisationMembersShowing;
    var mapButton;
-   var safeZoneTop;
-   var safeZoneLeft;
+   var organisationMembersShowing;
+   var overlay;
    var safeZoneBottom;
+   var safeZoneLeft;
+   var safeZoneTop;
+   var stealButton;
+   var userListPanelOffset;
+   var view;
    static var STEAL_VEHICLE = 4001;
    static var MAP = 4002;
    static var OVERLAY_ACCEPT = 4003;
@@ -47,9 +47,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
       this.userListPanelOffset = 0;
       var _loc2_ = 0;
       var _loc4_ = this.app.vehicleWarehouses.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.app.vehicleWarehouses[_loc2_];
+         _loc3_ = this.app.vehicleWarehouses[_loc2_];
          if(_loc3_.isOwned)
          {
             this.app.selectedWarehouseID = _loc3_.id;
@@ -106,18 +107,21 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
       _loc2_.collectionsSuccessStat.text = this.app.stealVehiclesSuccess + "%";
       _loc2_.salesCompletedStat.text = this.app.vehiclesExported.toString();
       _loc2_.salesSuccessStat.text = this.app.exportVehiclesSuccess + "%";
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
       if(this.app.selectedWarehouseID != -1)
       {
-         var _loc3_ = this.app.getVehicleWarehouseByID(this.app.selectedWarehouseID);
+         _loc3_ = this.app.getVehicleWarehouseByID(this.app.selectedWarehouseID);
          _loc2_.warehouseName.text = _loc3_.name;
          _loc2_.warehouseLocation.text = _loc3_.location;
          this.capacityMeter = new com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter(_loc2_.meter,_loc2_.meter._width);
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(_loc2_.meter,1,{onCompleteScope:this,onComplete:this.startCapacityMeter});
          this.app.imageManager.addImage(_loc3_.txd,_loc3_.txd + "_2",_loc2_.image);
-         var _loc5_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen.SHOW_INTERIORS_OVERLAY,_loc2_.renovateButton);
+         _loc5_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen.SHOW_INTERIORS_OVERLAY,_loc2_.renovateButton);
          com.rockstargames.gtav.levelDesign.SECUROSERV.setSpacedTextField(_loc2_.renovateButton.label,"SECUROSERV_RENOVATE");
          this.controls.push(_loc5_);
-         var _loc6_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen.MAP_2,_loc2_.mapButton);
+         _loc6_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen.MAP_2,_loc2_.mapButton);
          com.rockstargames.gtav.levelDesign.SECUROSERV.setSpacedTextField(_loc2_.mapButton.label,"SECUROSERV_WAREHOUSE_MAP");
          this.controls.push(_loc6_);
       }
@@ -170,18 +174,22 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
          offset = 0;
       }
       var _loc2_ = 0;
+      var _loc7_;
+      var _loc6_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < 10)
       {
-         var _loc7_ = (_loc2_ + offset) % _loc8_;
+         _loc7_ = (_loc2_ + offset) % _loc8_;
          if(_loc2_ < _loc8_)
          {
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc5_["activeOrganisation" + _loc2_].gamerTag,this.app.activeUsers[_loc7_].name,"left");
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc5_["activeOrganisation" + _loc2_].organisation,this.app.activeUsers[_loc7_].organisation,"left");
-            var _loc6_ = false;
-            var _loc3_ = 0;
+            _loc6_ = false;
+            _loc3_ = 0;
             while(_loc3_ < this.controls.length)
             {
-               var _loc4_ = this.controls[_loc3_];
+               _loc4_ = this.controls[_loc3_];
                if(_loc4_.id == com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen["ACTIVE_ORGANISATION_" + (_loc2_ + 1)])
                {
                   _loc6_ = true;
@@ -237,14 +245,16 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
    {
       this.view.map._x = this.app.mapStartX;
       this.view.map._y = this.app.mapStartY;
+      var _loc2_;
+      var _loc3_;
       if(this.app.mapStartMatrix)
       {
          this.view.map.transform.matrix = this.app.mapStartMatrix;
       }
       else
       {
-         var _loc2_ = this.view.map.transform.matrix;
-         var _loc3_ = this.app.mapStartScale / _loc2_.a;
+         _loc2_ = this.view.map.transform.matrix;
+         _loc3_ = this.app.mapStartScale / _loc2_.a;
          _loc2_.translate(- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
          _loc2_.scale(_loc3_,_loc3_);
          _loc2_.translate(com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
@@ -253,9 +263,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
    }
    function onTargetChange(targetID)
    {
+      var _loc2_;
       if(!this.overlay.isShowing && !this.interiorsOverlay.isShowing)
       {
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ <= 10)
          {
             if(targetID == com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen["ACTIVE_ORGANISATION_" + _loc2_])
@@ -276,12 +287,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
       _loc2_.bg._height = _loc2_.member0._y + _loc2_.member0._height + 18;
       var _loc6_ = 0;
       var _loc4_ = 0;
+      var _loc5_;
+      var _loc3_;
       while(_loc4_ < 8)
       {
-         var _loc5_ = _loc7_.goons[_loc4_];
+         _loc5_ = _loc7_.goons[_loc4_];
          if(_loc5_ != undefined && _loc5_ != "")
          {
-            var _loc3_ = _loc2_["member" + (_loc6_ = _loc6_ + 1)];
+            _loc3_ = _loc2_["member" + (_loc6_ = _loc6_ + 1)];
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc3_,_loc5_,"left");
             _loc2_.bg._height = _loc3_._y + _loc3_._height + 18;
          }
@@ -358,6 +371,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
                break;
             case com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen.STEAL_VEHICLE:
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
+            default:
+               return;
          }
       }
       else if(inputID == com.rockstargames.gtav.levelDesign.SECUROSERV.CANCEL || inputID == com.rockstargames.gtav.levelDesign.SECUROSERV.RIGHT_MOUSE)
@@ -373,16 +388,23 @@ class com.rockstargames.gtav.levelDesign.securoserv.ImportExportStatsScreen exte
          remainingSeconds = 0;
       }
       var _loc2_ = this.view.stealPanel.stealButton;
+      var _loc3_;
+      var _loc4_;
+      var _loc6_;
+      var _loc10_;
+      var _loc8_;
+      var _loc7_;
+      var _loc9_;
       if(remainingSeconds > 0)
       {
          _loc2_._alpha = 50;
-         var _loc3_ = Math.ceil(remainingSeconds);
-         var _loc4_ = _loc3_ % 60;
-         var _loc6_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
-         var _loc10_ = Math.floor((_loc3_ - _loc4_ - _loc6_ * 60) / 3600);
-         var _loc8_ = ("0" + _loc10_).substr(-2);
-         var _loc7_ = ("0" + _loc6_).substr(-2);
-         var _loc9_ = ("0" + _loc4_).substr(-2);
+         _loc3_ = Math.ceil(remainingSeconds);
+         _loc4_ = _loc3_ % 60;
+         _loc6_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
+         _loc10_ = Math.floor((_loc3_ - _loc4_ - _loc6_ * 60) / 3600);
+         _loc8_ = ("0" + _loc10_).substr(-2);
+         _loc7_ = ("0" + _loc6_).substr(-2);
+         _loc9_ = ("0" + _loc4_).substr(-2);
          _loc2_.label.text = _loc8_ + ":" + _loc7_ + ":" + _loc9_;
       }
       else

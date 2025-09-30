@@ -1,23 +1,23 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
+   var BOUNDING_BOX;
+   var CONTENT;
    var IS_AIMING;
    var TIMELINE;
-   var CONTENT;
-   var BOUNDING_BOX;
-   var hudColourRed;
    var WEAPON_ICONS;
-   var ammoText;
-   var clipCountText;
-   var ammoStrokeTF;
-   var clipCountStrokeTF;
+   var _HUD;
+   var _enumID;
    var ammoIcon;
+   var ammoStrokeTF;
+   var ammoText;
+   var clipCountStrokeTF;
+   var clipCountText;
+   var currAmmoType;
    var defaultX;
    var defaultY;
-   var weaponId;
+   var hudColourRed;
    var marginForBlur;
-   var currAmmoType;
-   var _enumID;
-   var _HUD;
+   var weaponId;
    var isAnimating = false;
    var isFadingIn = false;
    var isWeaponWheelActive = false;
@@ -146,6 +146,8 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
             {
                this.setAmmoStateForGrenade(false);
             }
+         default:
+            return;
       }
    }
    function setAmmoStateForGrenade(isStandard)
@@ -174,6 +176,9 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
          this.WEAPON_ICONS.ProgressBarMC._visible = true;
          this.SET_WEAPON_TIMER([0]);
       }
+      var _loc0_;
+      var _loc4_;
+      var _loc3_;
       switch(this.weaponId)
       {
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_STUNGUN:
@@ -240,7 +245,6 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
          case com.rockstargames.gtav.constants.WeaponsLUT.VEHICLE_WEAPON_VAMOS2_MG:
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_CANDY_CANE:
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_STUNROD:
-            var _loc0_ = null;
             this.ammoStrokeTF.text = _loc0_ = "";
             this.ammoText.text = _loc0_;
             this.clipCountStrokeTF.text = _loc0_ = "";
@@ -252,8 +256,8 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_HAZARDCAN:
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_FERTILIZERCAN:
             this.WEAPON_ICONS.ProgressBarMC._visible = false;
-            var _loc4_ = params[1] / params[2] * 100;
-            var _loc3_ = Math.floor(Math.max(0,Math.min(_loc4_,100)));
+            _loc4_ = params[1] / params[2] * 100;
+            _loc3_ = Math.floor(Math.max(0,Math.min(_loc4_,100)));
             this.WEAPON_ICONS.ProgressBarMC.animMC.gotoAndStop(_loc3_);
             this.setTextFields(String(_loc3_),"","");
             this.ammoIcon._visible = false;
@@ -319,6 +323,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
       this.ammoStrokeTF.autoSize = "left";
       this.ammoStrokeTF.multiline = false;
       this.ammoStrokeTF.wordWrap = false;
+      var _loc2_;
       if(this.isWeaponWheelActive)
       {
          this.clipCountText._x = - this.clipCountText._width - this.marginForBlur * 0.5;
@@ -326,7 +331,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_WEAPON_ICON extends com.rocks
       }
       else
       {
-         var _loc2_ = this.BOUNDING_BOX._width;
+         _loc2_ = this.BOUNDING_BOX._width;
          this.clipCountText._x = _loc2_ - this.clipCountText.textWidth - this.marginForBlur;
          this.ammoText._x = this.clipCountText._x - this.ammoText._width;
          if(this.clipCountText.text == "")

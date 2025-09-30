@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwardsItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var highlightMC;
-   var labelMC;
+   var __get__data;
+   var _alpha;
+   var _highlighted;
    var awardsbarMC;
    var bar;
    var bgMC;
-   var __get__data;
    var colour;
-   var lockMC;
-   var initialIndex;
+   var highlightMC;
    var imageMC;
-   var _alpha;
    var imgLoader;
-   var _highlighted;
+   var initialIndex;
+   var labelMC;
+   var lockMC;
    var textureDict = "";
    var textureFilename = "";
    function PauseMPMenuAwardsItem()

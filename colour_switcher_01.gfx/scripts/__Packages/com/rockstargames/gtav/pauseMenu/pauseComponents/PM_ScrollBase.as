@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PM_ScrollBase extends MovieClip
 {
-   var scrollPosTXT;
-   var scrollPosMC;
-   var upDownMC;
-   var allArrowsMC;
-   var bgMC;
+   var _arrowPosition;
+   var _caption;
+   var _columnSpan;
+   var _component;
    var _currentPosition;
    var _maxPosition;
    var _maxVisible;
-   var _caption;
-   var _component;
    var _model;
-   var _columnSpan;
    var _scrollType;
-   var _arrowPosition;
+   var allArrowsMC;
    var arrowsMC;
+   var bgMC;
    var captionBlipLayer;
+   var scrollPosMC;
+   var scrollPosTXT;
+   var upDownMC;
    static var SCROLL_TYPE_ALL = 0;
    static var SCROLL_TYPE_UP_DOWN = 1;
    static var SCROLL_TYPE_LEFT_RIGHT = 2;
@@ -143,15 +143,15 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PM_ScrollBase extends Mov
    }
    function setColumnSpan(columns)
    {
-      if(columns > 0)
+      if(columns <= 0)
       {
-         this._visible = this.displayEnabled();
-         this._columnSpan = columns;
-         this.bgMC._width = 290 * this._columnSpan - 2;
-         this.updateDisplay();
+         this._visible = false;
+         return undefined;
       }
-      this._visible = false;
-      return undefined;
+      this._visible = this.displayEnabled();
+      this._columnSpan = columns;
+      this.bgMC._width = 290 * this._columnSpan - 2;
+      this.updateDisplay();
    }
    function setArrows(type, position)
    {
@@ -215,11 +215,13 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PM_ScrollBase extends Mov
       {
          this.captionBlipLayer.removeMovieClip();
       }
+      var _loc3_;
+      var _loc2_;
       if(this._captionOn)
       {
          this.scrollPosMC._visible = true;
          this.captionBlipLayer = this.scrollPosMC.createEmptyMovieClip("captionBlipLayer",1000);
-         var _loc3_ = new com.rockstargames.ui.utils.Text();
+         _loc3_ = new com.rockstargames.ui.utils.Text();
          _loc3_.setTextWithIcons(this._caption,this.captionBlipLayer,this.scrollPosTXT,0,13.5,0,false);
       }
       else if(this._arrowPosition == com.rockstargames.gtav.pauseMenu.pauseComponents.PM_ScrollBase.POSITION_ARROW_RIGHT && this._maxPosition > 0)
@@ -227,7 +229,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PM_ScrollBase extends Mov
          this.scrollPosMC._visible = true;
          if(this._currentPosition >= 0)
          {
-            var _loc2_ = this._currentPosition;
+            _loc2_ = this._currentPosition;
             _loc2_ = _loc2_++ <= this._maxPosition ? _loc2_ : this._maxPosition;
             this.scrollPosTXT.text = _loc2_ + "/" + this._maxPosition;
          }

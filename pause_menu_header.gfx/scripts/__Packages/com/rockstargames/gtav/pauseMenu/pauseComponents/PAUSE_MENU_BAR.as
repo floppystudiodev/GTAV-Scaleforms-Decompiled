@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
    var CONTENT;
-   var menuContainer;
    var leftArrowMouseCatcherMC;
+   var menuContainer;
    var rightArrowMouseCatcherMC;
    var visibleItems = 6;
    var menuIndex = 0;
@@ -35,9 +35,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
    function BUILD_MENU(params)
    {
       var _loc6_ = params;
+      var _loc2_;
       if(this.menuItemList.length > 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.menuItemList.length)
          {
             this.menuItemList[_loc2_].removeMovieClip();
@@ -48,11 +49,13 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
       var _loc5_ = _loc6_.length;
       this.getMenuWidth(_loc5_);
       _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc5_)
       {
-         var _loc3_ = this.menuContainer.attachMovie("menuItem","menuItem" + _loc2_ + "MC",_loc5_ - _loc2_);
+         _loc3_ = this.menuContainer.attachMovie("menuItem","menuItem" + _loc2_ + "MC",_loc5_ - _loc2_);
          _loc3_._x = _loc2_ * (this.menuItemWidth + this.menuItemSpacing);
-         var _loc4_ = "";
+         _loc4_ = "";
          com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(_loc3_).menuenum = _loc6_[_loc2_];
          com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(_loc3_).label = String(_loc4_);
          com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(_loc3_).width = this.menuItemWidth;
@@ -119,9 +122,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
    function REMOVE_MENU()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.menuItemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
          _loc3_.removeMouse();
          _loc3_.removeMovieClip();
          _loc2_ = _loc2_ + 1;
@@ -138,9 +142,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
    {
       this.allHighlightsOn = hOn;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.menuItemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
          if(this.allHighlightsOn)
          {
             _loc3_.highlight = true;
@@ -175,9 +180,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
       var _loc2_ = new com.rockstargames.ui.utils.HudColour();
       com.rockstargames.ui.utils.Colour.setHudColour(colourEnum,_loc2_);
       var _loc4_ = [colourEnum,_loc2_.r,_loc2_.g,_loc2_.b,100];
+      var _loc3_;
       if(_loc4_ != undefined)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[menuindex]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[menuindex]);
          if(_loc3_ != undefined)
          {
             _loc3_.mycolour = _loc4_;
@@ -209,9 +215,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
    function ROLLOVER_MENU(bool)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.menuItemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
          if(bool)
          {
             _loc3_.rollover = true;
@@ -225,12 +232,14 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
    }
    function HIGHLIGHT_MENU(index)
    {
+      var _loc2_;
+      var _loc4_;
       if(!this.allHighlightsOn)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.menuItemList.length)
          {
-            var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
+            _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
             _loc4_.highlight = _loc2_ == index;
             _loc2_ = _loc2_ + 1;
          }
@@ -265,10 +274,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_BAR extends co
       var _loc9_ = this.menuIndex - this.startIndex == this.visibleItems - 1;
       this.SET_HEADER_ARROWS_VISIBLE(_loc8_,_loc9_);
       _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
       while(_loc2_ < this.menuItemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
-         var _loc5_ = _loc2_ < this.startIndex || _loc2_ >= this.startIndex + this.visibleItems;
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem(this.menuItemList[_loc2_]);
+         _loc5_ = _loc2_ < this.startIndex || _loc2_ >= this.startIndex + this.visibleItems;
          if(_loc5_)
          {
             if(_loc3_.hasMouse)

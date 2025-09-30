@@ -1,13 +1,14 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.UpgradesScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
+   var _buttons;
+   var app;
+   var cursor;
+   var delegate;
+   var tooltips;
    var upgrade1Button;
-   var view;
    var upgrade2Button;
    var upgrade3Button;
-   var tooltips;
-   var _buttons;
-   var cursor;
-   var app;
+   var view;
    static var FADE_IN_TIME = 0.2;
    static var FADE_OUT_TIME = 0.5;
    static var FADE_IN_ARGS = {_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_OUT};
@@ -52,16 +53,23 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UpgradesScreen exte
    function updateUpgrades()
    {
       var _loc2_ = 1;
+      var _loc7_;
+      var _loc9_;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
+      var _loc8_;
+      var _loc4_;
       while(_loc2_ <= 3)
       {
          this["upgrade" + _loc2_ + "Button"].state = this.app["upgrade" + _loc2_ + "ButtonState"];
-         var _loc7_ = this.app["upgrade" + _loc2_ + "Cost"];
-         var _loc9_ = this.app["upgrade" + _loc2_ + "SaleCost"];
-         var _loc3_ = this.view["upgrade" + _loc2_ + "Button"];
-         var _loc5_ = _loc3_.price;
-         var _loc6_ = _loc3_.originalPrice;
-         var _loc8_ = _loc3_.salePrice;
-         var _loc4_ = _loc3_.line;
+         _loc7_ = this.app["upgrade" + _loc2_ + "Cost"];
+         _loc9_ = this.app["upgrade" + _loc2_ + "SaleCost"];
+         _loc3_ = this.view["upgrade" + _loc2_ + "Button"];
+         _loc5_ = _loc3_.price;
+         _loc6_ = _loc3_.originalPrice;
+         _loc8_ = _loc3_.salePrice;
+         _loc4_ = _loc3_.line;
          if(_loc7_ >= 0)
          {
             if(_loc9_ >= 0)

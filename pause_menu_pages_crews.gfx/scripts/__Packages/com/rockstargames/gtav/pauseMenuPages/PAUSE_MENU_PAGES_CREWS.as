@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CREWS extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var colCrewListLeft;
    var addColumn;
-   var colCrewListMid;
    var colCrewCard;
-   var colCrewRanks;
    var colCrewCompare1;
    var colCrewCompare2;
+   var colCrewListLeft;
+   var colCrewListMid;
+   var colCrewRanks;
    var colFriendsList;
    var colPlayerModel;
-   var setupColumns;
-   var setupColScroll;
-   var setupColMouseNav;
    var columnList;
+   var setupColMouseNav;
+   var setupColScroll;
+   var setupColumns;
    var showColumns;
    var inCrewMembers = false;
    function PAUSE_MENU_PAGES_CREWS()

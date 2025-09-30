@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.casino.pages.RenovatePage extends com.rockstargames.gtav.web.casino.Page
 {
-   var prevPageName;
    var nextPageName;
+   var prevPageName;
    var view;
    var website;
    function RenovatePage(website, viewContainer, pageName, isFirstPage)
@@ -60,6 +60,8 @@ class com.rockstargames.gtav.web.casino.pages.RenovatePage extends com.rockstarg
             break;
          case "customiseButton":
             this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
+         default:
+            return;
       }
    }
 }

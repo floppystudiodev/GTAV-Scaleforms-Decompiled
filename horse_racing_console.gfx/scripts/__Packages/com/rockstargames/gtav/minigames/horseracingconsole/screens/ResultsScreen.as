@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.ResultsScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var currActiveElementID;
    var app;
-   var view;
    var buttons;
+   var currActiveElementID;
    var cursor;
+   var view;
    var winningHorses;
    function ResultsScreen(app, viewContainer, cursor)
    {
@@ -45,10 +45,12 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.ResultsScreen 
       this.winningHorses = [];
       var _loc5_ = ["HORSEGAME_FIRST","HORSEGAME_SECOND","HORSEGAME_THIRD"];
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < 3)
       {
-         var _loc3_ = this.app.horses[this.app.winOrder[_loc4_]];
-         var _loc2_ = this.view.cards["horseCard" + (_loc4_ + 1)];
+         _loc3_ = this.app.horses[this.app.winOrder[_loc4_]];
+         _loc2_ = this.view.cards["horseCard" + (_loc4_ + 1)];
          _loc3_.init(_loc2_.horse,true);
          com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE.colourise(_loc2_.diamond,_loc3_.primaryColour);
          com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE.colourise(_loc2_.ring,_loc3_.primaryColour);
@@ -68,16 +70,17 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.ResultsScreen 
       }
       this.currActiveElementID = activeElementID;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.view.gotoAndStop(_loc3_.id != activeElementID ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }
    }
    function handleAccept()
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.cursor.getTargetIDUnderCursor()) === com.rockstargames.gtav.minigames.horseracingconsole.NavigationIDs.PLAY_AGAIN_BUTTON)
       {
          this.app.playSound("nav_generic");

@@ -1,15 +1,15 @@
 class com.rockstargames.ui.utils.DisplayConfig
 {
-   var screenWidth;
-   var screenHeight;
-   var safeTop;
+   var isAsian;
+   var isCircleAccept;
+   var isHiDef;
+   var isWideScreen;
    var safeBottom;
    var safeLeft;
    var safeRight;
-   var isWideScreen;
-   var isCircleAccept;
-   var isHiDef;
-   var isAsian;
+   var safeTop;
+   var screenHeight;
+   var screenWidth;
    function DisplayConfig()
    {
       this.screenWidth = 1280;

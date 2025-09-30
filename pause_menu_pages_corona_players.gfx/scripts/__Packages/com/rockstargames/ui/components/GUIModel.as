@@ -71,12 +71,14 @@ class com.rockstargames.ui.components.GUIModel
    }
    function focusView(_viewIndex, clearOtherViews)
    {
+      var _loc2_;
+      var _loc3_;
       if(clearOtherViews)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.viewList.length)
          {
-            var _loc3_ = this.viewList[_loc2_];
+            _loc3_ = this.viewList[_loc2_];
             _loc3_.highlighted = _loc2_ == _viewIndex;
             _loc2_ = _loc2_ + 1;
          }

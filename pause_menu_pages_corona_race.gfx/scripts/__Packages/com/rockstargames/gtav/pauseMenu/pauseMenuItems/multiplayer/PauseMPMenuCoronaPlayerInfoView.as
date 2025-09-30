@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuCoronaPlayerInfoView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
    var itemList;
+   var viewContainer;
+   var viewLinkageList;
    function PauseMPMenuCoronaPlayerInfoView()
    {
       super();

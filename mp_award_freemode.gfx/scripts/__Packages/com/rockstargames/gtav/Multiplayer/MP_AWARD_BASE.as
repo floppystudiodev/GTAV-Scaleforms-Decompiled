@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.Multiplayer.MP_AWARD_BASE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var HUD_COLOURS;
-   var loaderObject;
-   var FILE_NAME;
-   var awardMainMC;
    var CONTENT;
-   var awardTitleTF;
-   var awardDescriptionTF;
+   var FILE_NAME;
+   var HUD_COLOURS;
+   var _texture;
    var awardDescription2TF;
+   var awardDescriptionTF;
    var awardIconMC;
+   var awardMainMC;
+   var awardTitleTF;
+   var loaderObject;
    var thisObj;
    var whichGang;
-   var _texture;
    var MESSAGE_POSITION_TOP_Y = 90;
    function MP_AWARD_BASE()
    {

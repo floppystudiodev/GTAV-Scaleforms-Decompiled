@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var desktopIconsList;
-   var buttonsList;
-   var popupData;
    var CONTENT;
-   var mouse;
-   var ref;
-   var popupApp;
    var antivirusApp;
    var buttonUnderCursor;
+   var buttonsList;
+   var desktopIconsList;
+   var mouse;
+   var popupApp;
+   var popupData;
+   var ref;
    var rows = 6;
    var columns = 6;
    var rowspace = 168;
@@ -65,6 +65,7 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function getKeys()
    {
+      var _loc2_;
       if(Key.isDown(38))
       {
          this.SET_INPUT_EVENT(com.rockstargames.ui.game.GamePadConstants.DPADUP);
@@ -91,7 +92,7 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
       }
       else if(Key.isDown(97))
       {
-         var _loc2_ = Math.floor(Math.random() * 8);
+         _loc2_ = Math.floor(Math.random() * 8);
          this.CLOSE_POPUP(_loc2_);
       }
       else if(Key.isDown(98))
@@ -103,10 +104,17 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    {
       var _loc9_ = 1.7777777777777777;
       var _loc8_ = 1.3333333333333333;
-      var _loc6_ = 1280;
+      var _loc4_ = 1280;
       var _loc7_ = 720;
       var _loc2_ = 0;
       var _loc3_ = 0;
+      if(!_isWideScreen)
+      {
+         _loc2_ = (_loc4_ - Math.round(_loc4_ / _loc9_ * _loc8_)) / 2;
+         _loc3_ = 0;
+         _screenWidthPixels = _loc4_ - _loc2_ * 2;
+         _screenHeightPixels = _loc7_ - _loc3_ * 2;
+      }
       this.ratioGutter = _loc2_;
       this.safeLeft = _loc2_ + _safeLeftPercent * _screenWidthPixels;
       this.safeRight = _loc2_ + _safeRightPercent * _screenWidthPixels;
@@ -126,13 +134,18 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function ADD_PROGRAM(i, enum, lbl)
    {
+      var _loc6_;
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
+      var _loc3_;
       if(enum != undefined)
       {
-         var _loc6_ = this.sideMargin + this.colspace * ((i - 1) % this.columns);
-         var _loc5_ = this.bottomMargin + this.rowspace * Math.floor((i - 1) / this.rows);
-         var _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
-         var _loc7_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc6_,_y:_loc5_});
-         var _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
+         _loc6_ = this.sideMargin + this.colspace * ((i - 1) % this.columns);
+         _loc5_ = this.bottomMargin + this.rowspace * Math.floor((i - 1) / this.rows);
+         _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
+         _loc7_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc6_,_y:_loc5_});
+         _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
          _loc3_.init(_loc7_,enum,{depth:i},i,lbl);
          this.desktopIconsList.push(_loc3_);
       }
@@ -192,9 +205,10 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function SET_SCAN_BAR(percent)
    {
+      var _loc2_;
       if(this.antivirusApp != undefined)
       {
-         var _loc2_ = Math.ceil(percent);
+         _loc2_ = Math.ceil(percent);
          this.antivirusApp.setScanBar(_loc2_);
          if(_loc2_ == 100)
          {
@@ -212,11 +226,12 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    function addButtons(m, addOnce)
    {
       var _loc3_ = false;
+      var _loc2_;
       if(addOnce)
       {
          for(var _loc5_ in this.buttonsList)
          {
-            var _loc2_ = this.buttonsList[_loc5_];
+            _loc2_ = this.buttonsList[_loc5_];
             if(_loc2_.id == m.id)
             {
                _loc3_ = true;
@@ -234,9 +249,10 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function removeButtons(m)
    {
+      var _loc2_;
       for(var _loc4_ in this.buttonsList)
       {
-         var _loc2_ = this.buttonsList[_loc4_];
+         _loc2_ = this.buttonsList[_loc4_];
          if(m.id == _loc2_.id)
          {
             this.buttonsList.splice(_loc4_,1);
@@ -258,11 +274,13 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function SET_CURSOR(vx, vy)
    {
+      var _loc3_;
+      var _loc2_;
       if(!this.isCentering)
       {
-         var _loc3_ = this.screenWidthPixels * vx;
-         var _loc2_ = 720 * vy;
-         this.mx = Math.max(0,Math.min(_loc3_,this.screenWidthPixels));
+         _loc3_ = this.ratioGutter + this.screenWidthPixels * vx;
+         _loc2_ = 720 * vy;
+         this.mx = Math.max(this.ratioGutter,Math.min(_loc3_,this.ratioGutter + this.screenWidthPixels));
          this.my = Math.max(0,Math.min(_loc2_,720));
          this.mouse.moveCursor(this.mx,this.my);
          this.checkUnderCursor();
@@ -304,11 +322,12 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    function testList(list)
    {
       var _loc5_ = false;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc3_ = -1;
+      var _loc2_;
       for(var _loc7_ in list)
       {
-         var _loc2_ = list[_loc7_];
+         _loc2_ = list[_loc7_];
          if(_loc2_.active)
          {
             if(this.mouse.mc.hitMC.hitTest(_loc2_.mc))
@@ -375,8 +394,6 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
       this.lastPopupID = -1;
       switch(this.buttonUnderCursor.type)
       {
-         case com.rockstargames.gtav.constants.PCAppLUT.PC_ANTIVIRUS[0]:
-            break;
          case com.rockstargames.gtav.constants.PCAppLUT.PC_ANTIVIRUS_START[0]:
             this.antivirusApp.scanAntiVirus(5);
             break;
@@ -392,6 +409,8 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
             this.popupApp.closePopup(this.lastPopupID);
             com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.mouse.mc);
             this.snapToButtonComplete();
+            break;
+         case com.rockstargames.gtav.constants.PCAppLUT.PC_ANTIVIRUS[0]:
       }
       return _loc2_;
    }
@@ -401,8 +420,8 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    }
    function openApp(i)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       switch(i)
       {
          case com.rockstargames.gtav.constants.PCAppLUT.PC_ANTIVIRUS[0]:
@@ -432,11 +451,13 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
                this.popupApp.data = this.popupData;
                this.popupApp.ready();
             }
+         default:
+            return;
       }
    }
    function closeApp(id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = id) !== com.rockstargames.gtav.constants.PCAppLUT.PC_VIRUS[0])
       {
       }

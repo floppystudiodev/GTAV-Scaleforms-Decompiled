@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.nightclub.TotalColumn
 {
-   var numCubes;
+   var animationDamping;
    var animationDelay;
    var cubes;
+   var currAnimationDelay;
+   var currValue;
    var currentFrames;
    var goalFrames;
-   var animationDamping;
-   var currValue;
-   var currAnimationDelay;
+   var numCubes;
    static var ACTIVE_FRAME;
    static var Y_STEP = 16;
    static var MAX_Y_OFFSET = 35;
@@ -47,10 +47,12 @@ class com.rockstargames.gtav.levelDesign.nightclub.TotalColumn
       var _loc5_ = com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.RESTING_FRAME;
       var _loc6_ = 3.141592653589793 / com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.RESTING_FRAME;
       var _loc1_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc1_ < com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.RESTING_FRAME)
       {
-         var _loc3_ = (- com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.MAX_Y_OFFSET) * Math.sin(_loc1_ * _loc6_);
-         var _loc2_ = Math.abs(_loc3_ + com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.Y_STEP);
+         _loc3_ = (- com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.MAX_Y_OFFSET) * Math.sin(_loc1_ * _loc6_);
+         _loc2_ = Math.abs(_loc3_ + com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.Y_STEP);
          if(_loc2_ < _loc4_)
          {
             _loc4_ = _loc2_;
@@ -80,12 +82,14 @@ class com.rockstargames.gtav.levelDesign.nightclub.TotalColumn
          return false;
       }
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.numCubes)
       {
-         var _loc4_ = this.currentFrames[_loc2_];
+         _loc4_ = this.currentFrames[_loc2_];
          if(_loc4_ != this.goalFrames[_loc2_])
          {
-            var _loc3_ = (_loc4_ + 1) % com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.RESTING_FRAME;
+            _loc3_ = (_loc4_ + 1) % com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.RESTING_FRAME;
             this.cubes[_loc2_]._y = this.animationDamping[_loc2_] * com.rockstargames.gtav.levelDesign.nightclub.TotalColumn.ANIMATION_STEPS[_loc3_];
             this.currentFrames[_loc2_] = _loc3_;
             _loc5_ = false;

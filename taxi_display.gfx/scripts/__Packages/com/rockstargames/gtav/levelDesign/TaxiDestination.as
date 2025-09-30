@@ -1,17 +1,19 @@
 class com.rockstargames.gtav.levelDesign.TaxiDestination extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var allBlips;
-   var blipList;
-   var blipName;
-   var missionName;
-   var addr1TF;
    var addr1MC;
-   var addr2TF;
+   var addr1TF;
    var addr2MC;
-   var r;
-   var g;
+   var addr2TF;
+   var allBlips;
+   var attachMovie;
    var b;
+   var blipList;
    var blipMC;
+   var blipName;
+   var g;
+   var getNextHighestDepth;
+   var missionName;
+   var r;
    function TaxiDestination()
    {
       super();

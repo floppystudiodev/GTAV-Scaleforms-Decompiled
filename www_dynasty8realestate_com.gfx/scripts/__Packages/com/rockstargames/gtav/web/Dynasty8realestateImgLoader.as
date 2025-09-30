@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.Dynasty8realestateImgLoader extends MovieClip
 {
-   var onUnload;
    var dlcText;
+   var onUnload;
    var txd = undefined;
    var txn = undefined;
    var loadedStatus = "";
@@ -30,6 +30,7 @@ class com.rockstargames.gtav.web.Dynasty8realestateImgLoader extends MovieClip
    }
    function showImage()
    {
+      var _loc2_;
       if(this.photoMC.propertyTF != undefined)
       {
          this.loadedStatus = "displayed";
@@ -38,7 +39,7 @@ class com.rockstargames.gtav.web.Dynasty8realestateImgLoader extends MovieClip
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.photoMC,0.2,{_alpha:100,onComplete:com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf,onCompleteScope:this,onCompleteArgs:[this.photoMC]});
          if(this.dlcText != undefined && this.dlcText != "")
          {
-            var _loc2_ = this.photoMC.attachMovie("propertyDLC","propertyDLC",this.photoMC.getNextHighestDepth(),{_x:0,_y:0});
+            _loc2_ = this.photoMC.attachMovie("propertyDLC","propertyDLC",this.photoMC.getNextHighestDepth(),{_x:0,_y:0});
             _loc2_.dlcTF.htmlText = this.dlcText;
             _loc2_.UPDATED_BANNER._alpha = 70;
          }

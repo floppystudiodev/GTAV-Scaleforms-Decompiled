@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Tab
 {
-   var view;
-   var locked;
    var colourScheme;
    var isActive;
+   var locked;
+   var view;
    function Tab(view, label, locked, colourScheme)
    {
       this.view = view;

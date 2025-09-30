@@ -1,11 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuReplayListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVerticalListItem
 {
-   var iconMC;
-   var type;
    var __get__data;
-   var itemTextLeft;
+   var __set__textIndex;
    var _data;
+   var iconMC;
    var initialIndex;
+   var itemTextLeft;
+   var multiListItems;
+   var type;
    function PauseMenuReplayListItem()
    {
       super();
@@ -14,6 +16,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuRepl
    function set data(_d)
    {
       super.data = _d;
+      var _loc3_;
       switch(this.type)
       {
          case 1:
@@ -23,7 +26,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuRepl
             this.iconMC._visible = false;
             break;
          case 3:
-            var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+            _loc3_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(this.data[1],_loc3_);
             if(this.iconMC != undefined)
             {

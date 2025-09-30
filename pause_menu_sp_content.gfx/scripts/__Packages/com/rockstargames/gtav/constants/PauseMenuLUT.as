@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.constants.PauseMenuLUT
 {
-   var clearRootColumns;
-   var menuChanged;
-   var menuAdvance;
    var callImmediately;
+   var clearRootColumns;
+   var menuAdvance;
+   var menuChanged;
    static var MAP = 1000;
    static var INFO = 1001;
    static var FRIENDS = 1002;
@@ -159,6 +159,13 @@ class com.rockstargames.gtav.constants.PauseMenuLUT
    static var HEADER_LANDING_KEYMAPPING = 1152;
    static var PROCESS_SAVEGAME = 1153;
    static var PROCESS_SAVEGAME_LIST = 1154;
+   static var IMPORT_SAVEGAME = 1155;
+   static var EXIT_TO_MAIN_MENU = 1156;
+   static var CREDITS = 1157;
+   static var LEGAL = 1158;
+   static var CREDITS_LEGAL = 1159;
+   static var PROGRESS_HUB = 1160;
+   static var SETTINGS_AGE_ASSURANCE = 1161;
    function PauseMenuLUT(_clearRootColumns, _menuChanged, _menuAdvance, _callImmediately)
    {
       this.clearRootColumns = _clearRootColumns;

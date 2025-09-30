@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.DIGISCANNER extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var barsMC;
    var CONTENT;
-   var lightsMC;
+   var barsMC;
    var barsRGB;
+   var lightsMC;
    var lightsRGB;
    var wrongWayRGB;
    var wrongWay = false;
@@ -30,6 +30,7 @@ class com.rockstargames.gtav.levelDesign.DIGISCANNER extends com.rockstargames.u
    function SET_DISTANCE(distance)
    {
       var _loc3_ = Math.abs(Math.round(distance / 10));
+      var _loc2_;
       if(distance >= 0)
       {
          this.wrongWay = false;
@@ -37,7 +38,7 @@ class com.rockstargames.gtav.levelDesign.DIGISCANNER extends com.rockstargames.u
          {
             distance = 100;
          }
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ < 11)
          {
             if(_loc2_ <= _loc3_)

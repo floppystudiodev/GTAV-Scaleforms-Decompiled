@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVerticalModel extends com.rockstargames.ui.components.GUIModel
 {
-   var viewList;
-   var viewIndex;
    var getCurrentView;
+   var viewIndex;
+   var viewList;
    function PauseMenuVerticalModel()
    {
       super();

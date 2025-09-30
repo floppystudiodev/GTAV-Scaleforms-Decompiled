@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.CashStep extends com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
-   var startValue;
-   var finalValue;
    var alignLeft;
-   var initialised;
-   var view;
-   var sequence;
-   var started;
    var counterStep;
+   var finalValue;
+   var initialised;
+   var sequence;
+   var startValue;
+   var started;
+   var view;
    function CashStep(sequence, startValue, finalValue, alignLeft)
    {
       super(sequence,280,"CashStep");
@@ -26,17 +26,20 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.CashStep extends com.
       _loc3_.value._alpha = this.sequence.DEFAULT_TEXT_ALPHA;
       this.displayMonospacedValue((this.startValue >= 0 ? "+$" : "-$") + this.startValue);
       _loc3_.icon._visible = this.sequence.DEFAULT_GRAPHICS_VISIBILITY;
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       if(this.alignLeft)
       {
          this.view.content._x -= !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 212 : 332;
       }
       else
       {
-         var _loc5_ = Math.max(this.startValue.toString().length,this.finalValue.toString().length) + 2;
-         var _loc6_ = !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 5 : 7;
+         _loc5_ = Math.max(this.startValue.toString().length,this.finalValue.toString().length) + 2;
+         _loc6_ = !com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.IS_WIDESCREEN ? 5 : 7;
          if(_loc5_ > _loc6_)
          {
-            var _loc4_ = 75 * (_loc5_ - _loc6_);
+            _loc4_ = 75 * (_loc5_ - _loc6_);
             _loc3_.value._x -= _loc4_;
             _loc3_.icon._x -= _loc4_;
          }

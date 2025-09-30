@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen extends com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
-   var persistentContent;
-   var assignmentButtons;
-   var view;
    var _buttons;
-   var technicianButtons;
    var app;
-   var overlay;
+   var assignmentButtons;
    var cursor;
+   var overlay;
+   var persistentContent;
+   var technicianButtons;
+   var view;
    static var selectedTechnicianIndex = 0;
    function WarehouseScreen(app, viewContainer, cursor, persistentContent, overlay)
    {
@@ -22,11 +22,13 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
       this.persistentContent.resetPopularityMeter();
       this.assignmentButtons = [];
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_STOCK_TYPES)
       {
-         var _loc3_ = this.view["assignmentButton" + _loc4_];
+         _loc3_ = this.view["assignmentButton" + _loc4_];
          _loc3_.label.verticalAlign = "center";
-         var _loc5_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["ASSIGNMENT_" + _loc4_],_loc3_,"CLUB_STOCK" + _loc4_,false);
+         _loc5_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["ASSIGNMENT_" + _loc4_],_loc3_,"CLUB_STOCK" + _loc4_,false);
          this.assignmentButtons.push(_loc5_);
          this._buttons.push(_loc5_);
          _loc4_ = _loc4_ + 1;
@@ -68,8 +70,6 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.LB:
             if(!this.overlay.isShowing)
             {
@@ -81,6 +81,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
             {
                this.app.showScreen(this.app.SELL_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)
@@ -106,10 +109,12 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
    {
       var _loc9_ = this.app.technicians[com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen.selectedTechnicianIndex];
       var _loc4_ = 0;
+      var _loc6_;
+      var _loc3_;
       while(_loc4_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_STOCK_TYPES)
       {
-         var _loc6_ = this.app.assignments[_loc4_];
-         var _loc3_ = this.assignmentButtons[_loc4_].view;
+         _loc6_ = this.app.assignments[_loc4_];
+         _loc3_ = this.assignmentButtons[_loc4_].view;
          _loc3_._alpha = !(_loc6_.available && _loc9_.isAvailable) ? 50 : 100;
          _loc3_.tick._visible = false;
          _loc3_.active._visible = false;
@@ -120,12 +125,15 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
       }
       var _loc7_ = false;
       _loc4_ = 0;
+      var _loc2_;
+      var _loc8_;
+      var _loc5_;
       while(_loc4_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_TECHNICIANS)
       {
-         var _loc2_ = this.app.technicians[_loc4_];
+         _loc2_ = this.app.technicians[_loc4_];
          _loc3_ = this.technicianButtons[_loc4_].view;
-         var _loc8_ = _loc2_.assignmentIndex;
-         var _loc5_ = this.app.assignments[_loc8_].isAtCapacity;
+         _loc8_ = _loc2_.assignmentIndex;
+         _loc5_ = this.app.assignments[_loc8_].isAtCapacity;
          _loc3_.active._visible = _loc4_ == com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen.selectedTechnicianIndex && !_loc5_;
          _loc3_.activeAtCapacity._visible = _loc4_ == com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen.selectedTechnicianIndex && _loc5_;
          _loc3_.tick._visible = _loc2_.isAvailable && _loc2_.isAssigned && _loc4_ != com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen.selectedTechnicianIndex && !_loc5_;

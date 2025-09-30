@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.nightclub.structs.Upgrade
 {
+   var availability;
    var cost;
    var saleCost;
-   var availability;
    static var LOCKED = 0;
    static var AVAILABLE = 1;
    static var PURCHASED = 2;

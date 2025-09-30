@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryView extends com.rockstargames.ui.components.GUIView
 {
-   var container;
-   var document;
-   var textContainerMC;
-   var viewLinkageList;
-   var viewContainer;
-   var rowSpacing;
-   var columnSpacing;
-   var itemList;
-   var itemY;
-   var index;
    var __get__index;
    var __set__index;
+   var columnSpacing;
+   var container;
    var dataList;
+   var document;
    var highlightedItem;
+   var index;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var textContainerMC;
+   var viewContainer;
+   var viewLinkageList;
    var maxGalleryItems = 1;
    var batchW = 0;
    var batchH = 106;
@@ -94,7 +94,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGall
    }
    function focusHighlightStyle(targetIndex)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)

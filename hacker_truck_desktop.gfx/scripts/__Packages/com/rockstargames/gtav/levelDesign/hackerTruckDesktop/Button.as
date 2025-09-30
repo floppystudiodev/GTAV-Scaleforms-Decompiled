@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Button
 {
-   var id;
-   var view;
+   var bottom;
    var depth;
    var enabled;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
+   var view;
    function Button(id, view, label, isStringLiteral)
    {
       this.id = id;

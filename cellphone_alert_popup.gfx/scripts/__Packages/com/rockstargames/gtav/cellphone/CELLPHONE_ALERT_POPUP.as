@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.cellphone.CELLPHONE_ALERT_POPUP extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var alert;
    var CONTENT;
+   var alert;
    function CELLPHONE_ALERT_POPUP()
    {
       super();

@@ -1,46 +1,48 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextRight;
-   var labelMC;
-   var isAdjustable;
-   var defaultLabelColourEnum;
-   var itemTextLeft;
-   var blipLayer;
-   var blipLayerBG;
-   var _data;
-   var type;
-   var createEmptyMovieClip;
-   var fbMC;
-   var menuID;
-   var menuPrefOffset;
-   var maskMC;
-   var barMC;
-   var isSelectable;
-   var __get__data;
-   var initialIndex;
-   var bar;
-   var attachMovie;
-   var getNextHighestDepth;
-   var bgMC;
-   var highlightMC;
-   var _highlighted;
-   var storeFunc;
-   var storeScope;
-   var selectedIndex;
-   var selectedValue;
-   var index;
-   var setPref;
-   var __get__uniqueID;
-   var bMC;
    var __get__columnID;
+   var __get__data;
+   var __get__highlighted;
+   var __get__uniqueID;
+   var _data;
+   var _highlighted;
    var _xmouse;
    var _ymouse;
-   var __get__highlighted;
+   var attachMovie;
+   var bMC;
+   var bar;
+   var barMC;
+   var bgMC;
+   var blipLayer;
+   var blipLayerBG;
+   var createEmptyMovieClip;
+   var defaultLabelColourEnum;
+   var fbMC;
+   var getNextHighestDepth;
+   var highlightMC;
+   var index;
+   var initialIndex;
+   var isAdjustable;
+   var isSelectable;
+   var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var maskMC;
+   var menuID;
+   var menuPrefOffset;
+   var selectedIndex;
+   var selectedValue;
+   var setPref;
+   var storeFunc;
+   var storeScope;
+   var type;
    var multiListIndex = 0;
    var multiListItems = new Array();
    var barIndex = 0;
    var barValsList = new Array();
    var _lastInList = false;
+   var _isChanged = false;
+   var _isNoItalicTitleText = false;
    static var noneType = 0;
    static var textType = 1;
    static var sliderType = 2;
@@ -48,6 +50,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    static var voiceBarType = 4;
    static var strBlipType = 5;
    static var ruledType = 6;
+   static var emptyType = 7;
+   static var noItalicTextType = 8;
    static var textType_tabbed = 10;
    static var sliderType_tabbed = 20;
    function PauseMenuSettingsTextItem()
@@ -61,7 +65,16 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    }
    function set data(_d)
    {
+      this._isChanged = _d[5] == 2;
+      if(this._isChanged)
+      {
+         _d[5] = 1;
+      }
       super.data = _d;
+      if(this._isChanged)
+      {
+         _d[5] = 2;
+      }
       this.itemTextLeft._x = 5;
       if(this.blipLayer)
       {
@@ -127,13 +140,19 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
          this.itemTextLeft._x += 5;
          i++;
       }
+      this._isNoItalicTitleText = this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.noItalicTextType;
+      if(this._isNoItalicTitleText)
+      {
+         this.type = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.textType;
+      }
+      var _loc0_;
       switch(this.type)
       {
          case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.ruledType:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType:
             var xp = 289 - this.itemTextLeft.textWidth * 0.5;
             this.itemTextLeft._x = Math.ceil(xp);
             this.barMC._visible = false;
-            var _loc0_ = null;
             this.labelMC.lMC._visible = _loc0_ = false;
             this.labelMC.rMC._visible = _loc0_;
             com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextRight,"");
@@ -216,6 +235,11 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       }
       this.bgMC._visible = false;
       this.highlighted = this._highlighted;
+      this.displayAsChanged();
+   }
+   function get isEmptySpace()
+   {
+      return this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType;
    }
    function set isLastItem(l)
    {
@@ -284,6 +308,27 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       }
       this.highlighted = this._highlighted;
    }
+   function set isChanged(changed)
+   {
+      this._isChanged = changed;
+      this.displayAsChanged();
+   }
+   function get isChanged()
+   {
+      return this._isChanged;
+   }
+   function displayAsChanged()
+   {
+      var _loc3_ = this._isChanged && !this._isNoItalicTitleText;
+      var _loc2_ = this.itemTextLeft.getTextFormat();
+      _loc2_.bold = _loc3_;
+      _loc2_.italic = _loc3_;
+      this.itemTextLeft.setTextFormat(_loc2_);
+      _loc2_ = this.itemTextRight.getTextFormat();
+      _loc2_.bold = this._isChanged;
+      _loc2_.italic = this._isChanged;
+      this.itemTextRight.setTextFormat(_loc2_);
+   }
    function setPrefMouse(val)
    {
       if(this.uniqueID >= 0 && this.uniqueID < this.menuPrefOffset)
@@ -300,7 +345,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       var _loc5_ = false;
       if(this.isSelectable <= 0 || this.isSelectable == 2)
       {
-         if(this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.ruledType)
+         if(this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.ruledType && this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType)
          {
             _loc5_ = true;
             _loc4_ = !_h ? 30 : 60;
@@ -356,20 +401,28 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    }
    function mPress()
    {
+      var _loc2_;
+      var _loc9_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
+      var _loc3_;
+      var _loc7_;
+      var _loc8_;
       if(this.isSelectable)
       {
-         var _loc2_ = this._xmouse;
-         var _loc9_ = this._ymouse;
-         var _loc5_ = false;
-         var _loc4_ = false;
-         var _loc6_ = 289;
-         var _loc3_ = 40;
+         _loc2_ = this._xmouse;
+         _loc9_ = this._ymouse;
+         _loc5_ = false;
+         _loc4_ = false;
+         _loc6_ = 289;
+         _loc3_ = 40;
          if(this.type == 2 || this.type == 4)
          {
             _loc3_ = 71;
          }
-         var _loc7_ = this.bgMC._width - _loc3_;
-         var _loc8_ = this.bgMC._width - _loc3_;
+         _loc7_ = this.bgMC._width - _loc3_;
+         _loc8_ = this.bgMC._width - _loc3_;
          if(_loc2_ > _loc8_)
          {
             _loc4_ = true;

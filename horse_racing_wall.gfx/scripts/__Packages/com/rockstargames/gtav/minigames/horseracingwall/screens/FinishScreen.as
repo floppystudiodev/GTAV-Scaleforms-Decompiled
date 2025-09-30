@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.minigames.horseracingwall.screens.FinishScreen extends com.rockstargames.gtav.minigames.horseracingwall.Screen
 {
-   var initTimestamp;
    var app;
+   var initTimestamp;
    static var DURATION = 2500;
    function FinishScreen(app, viewContainer, navigation)
    {

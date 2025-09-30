@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.Vehicle
 {
-   var _id;
-   var _texture;
-   var _vehicleName;
-   var _category;
-   var _value;
-   var _collectionValue;
-   var _selected;
-   var _owned;
-   var _associatedCollection;
-   var _rangeCategory;
    var _actualValue;
+   var _associatedCollection;
+   var _category;
+   var _collectionValue;
+   var _id;
+   var _owned;
+   var _rangeCategory;
+   var _selected;
+   var _texture;
+   var _value;
+   var _vehicleName;
    var _warehousePosition;
    static var TYPE_SUPER = 0;
    static var TYPE_MUSCLE = 1;

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_NEWSWIRE extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
+   var CONTENT;
    var dbgID;
    var mouseWheelObj;
-   var CONTENT;
    function PAUSE_MENU_NEWSWIRE()
    {
       super();
@@ -36,6 +36,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_NEWSWIRE exten
             break;
          case 9:
             this.mouseWheelObj.sendMouseEvent(com.rockstargames.ui.mouse.MOUSE_EVENTS.MOUSE_WHEEL_DOWN);
+         default:
+            return;
       }
    }
 }

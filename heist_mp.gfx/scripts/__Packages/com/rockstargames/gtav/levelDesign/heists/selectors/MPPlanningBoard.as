@@ -1,23 +1,28 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extends com.rockstargames.ui.components.GUIMenuItem
 {
+   var _visible;
+   var _y;
+   var attachMovie;
+   var available;
    var choiceStr;
+   var createEmptyMovieClip;
+   var dataLeftMC;
+   var dataRightMC;
+   var fadeInCross;
+   var getNextHighestDepth;
+   var highlight;
    var imageRotation;
+   var item0;
+   var itemDivider;
+   var planningImage;
+   var planningItemTitle;
+   var planningSlotRightData;
+   var prevPlanningData_left;
    var showPlanningImage;
+   var singleImage;
    var thisSlot;
    var txd;
-   var available;
-   var fadeInCross;
-   var planningItemTitle;
-   var itemDivider;
-   var singleImage;
-   var planningImage;
    var unavailableMC;
-   var dataLeftMC;
-   var prevPlanningData_left;
-   var item0;
-   var dataRightMC;
-   var planningSlotRightData;
-   var highlight;
    static var UNAVAILABLE_ALPHA = 25;
    static var UNAVAILABLE_FADE_DURATION = 0.8;
    var imageLinkage = "planningImage";
@@ -66,6 +71,13 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          this.fadeInCross = false;
       }
+      var _loc11_;
+      var _loc10_;
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
+      var _loc2_;
+      var _loc4_;
       if(this._data[2] != undefined)
       {
          if(this.planningItemTitle == undefined)
@@ -85,7 +97,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
          }
          this.planningItemTitle.titleTF.textColor = this.blueRGB;
          this.planningItemTitle.numberTF.textColor = this.blueRGB;
-         var _loc11_ = this.planningItemTitle.titleTF._x + this.planningItemTitle.titleTF.textWidth;
+         _loc11_ = this.planningItemTitle.titleTF._x + this.planningItemTitle.titleTF.textWidth;
          this.planningItemTitle.underlineMC._x = _loc11_ / 2 + 4;
          this.planningItemTitle.underlineMC._width = _loc11_;
          this.completed = this._data[9];
@@ -93,7 +105,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
          {
             this.completed = 99;
          }
-         var _loc10_ = 46;
+         _loc10_ = 46;
          this.numItems = 3;
          this.singleImage = false;
          if(this._data[5] == undefined || this._data[5] == "" || this._data[5] == null)
@@ -106,12 +118,12 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
                this.numItems = 1;
             }
          }
-         var _loc5_ = 3;
-         var _loc3_ = 0;
+         _loc5_ = 3;
+         _loc3_ = 0;
          while(_loc3_ < this.numItems)
          {
-            var _loc6_ = "item" + _loc3_;
-            var _loc2_ = this[_loc6_];
+            _loc6_ = "item" + _loc3_;
+            _loc2_ = this[_loc6_];
             if(this._data[_loc5_] == undefined || this._data[_loc5_] == "" || this._data[_loc5_] == null)
             {
                if(_loc2_ != undefined)
@@ -128,7 +140,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
             }
             _loc2_.highlight._visible = false;
             _loc2_.highlight._rotation = this.thisSlot * 90 - _loc3_ * 45;
-            var _loc4_ = (this.thisSlot + 1) * (_loc3_ + 1);
+            _loc4_ = (this.thisSlot + 1) * (_loc3_ + 1);
             if(_loc4_ > 8)
             {
                _loc4_ -= 8;
@@ -224,25 +236,32 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          numVisible = _numPlanningSlots;
       }
+      var _loc9_;
+      var _loc7_;
+      var _loc8_;
+      var _loc4_;
+      var _loc2_;
+      var _loc5_;
+      var _loc3_;
       if(this.thisSlot != undefined)
       {
          this.numPlanningSlots = _numPlanningSlots;
-         var _loc9_ = 40;
-         var _loc7_ = 150;
+         _loc9_ = 40;
+         _loc7_ = 150;
          _loc7_ = 660 / this.numPlanningSlots;
          this.planningYMax = _loc7_;
          this._y = Math.round(_loc9_ + (this.thisSlot - _hiddenSlotOffset) * _loc7_);
-         var _loc8_ = 100;
+         _loc8_ = 100;
          if(this.numPlanningSlots > 3)
          {
             _loc8_ = 100 - 6 * (this.numPlanningSlots - 3);
          }
          this.planningItemTitle._xscale = _loc8_;
          this.planningItemTitle._yscale = _loc8_;
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < this.numItems)
          {
-            var _loc2_ = this["item" + _loc4_];
+            _loc2_ = this["item" + _loc4_];
             if(_loc2_ != undefined)
             {
                if(_loc2_ == this.planningImage)
@@ -253,8 +272,8 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
                {
                   _loc2_._y = this.planningItemTitle._height;
                }
-               var _loc5_ = [100,100,100,100,92,80,80];
-               var _loc3_ = _loc5_[numVisible];
+               _loc5_ = [100,100,100,100,92,80,80];
+               _loc3_ = _loc5_[numVisible];
                if(numVisible >= 6)
                {
                   _loc3_ = 100;
@@ -292,12 +311,14 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
    function updatePlanningSlotLeft(stringArray)
    {
       var _loc15_ = [100,100,100];
+      var _loc3_;
+      var _loc10_;
       if(this.dataLeftMC != undefined)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < 3)
          {
-            var _loc10_ = this.dataLeftMC["dataLeft" + _loc3_];
+            _loc10_ = this.dataLeftMC["dataLeft" + _loc3_];
             if(_loc10_)
             {
                _loc15_[_loc3_] = _loc10_._alpha;
@@ -324,8 +345,8 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          _loc7_ = 0;
       }
-      var _loc2_ = undefined;
-      var _loc5_ = undefined;
+      var _loc2_;
+      var _loc5_;
       var dataLeftMC = this.createEmptyMovieClip("dataLeftMC",this.getNextHighestDepth());
       dataLeftMC._x = 4;
       dataLeftMC._y = this.planningItemTitle._height;
@@ -333,17 +354,20 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       var _loc4_ = -4;
       var _loc9_ = stringArray.length;
       _loc3_ = 0;
+      var _loc13_;
+      var _loc8_;
+      var _loc11_;
       while(_loc3_ < _loc9_)
       {
-         var _loc13_ = "dataLeft" + _loc3_;
-         var _loc8_ = dataLeftMC.attachMovie(this.dataLeftLinkage,_loc13_,dataLeftMC.getNextHighestDepth(),{_x:4,_y:_loc4_});
+         _loc13_ = "dataLeft" + _loc3_;
+         _loc8_ = dataLeftMC.attachMovie(this.dataLeftLinkage,_loc13_,dataLeftMC.getNextHighestDepth(),{_x:4,_y:_loc4_});
          _loc8_._alpha = _loc15_[_loc3_];
          _loc2_ = _loc8_.textTF;
          _loc2_._width = this.getAvailableWidth(this.item0);
          _loc2_.autoSize = "left";
          _loc2_.htmlText = stringArray[_loc3_];
          com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(_loc2_,com.rockstargames.gtav.levelDesign.heists.HeistColours.BLUE);
-         var _loc11_ = !this.available ? com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard.UNAVAILABLE_ALPHA : 100;
+         _loc11_ = !this.available ? com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard.UNAVAILABLE_ALPHA : 100;
          if(_loc8_._alpha != _loc11_)
          {
             com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc8_);
@@ -355,10 +379,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       var _loc14_ = _loc4_;
       var _loc20_ = Math.floor(this.item0._height);
       var _loc12_ = 1;
+      var _loc6_;
       while(_loc14_ > _loc20_)
       {
          _loc4_ = -4;
-         var _loc6_ = undefined;
          _loc3_ = 0;
          while(_loc3_ < _loc9_)
          {
@@ -399,10 +423,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
    }
    function updatePlanningSlotRight(stringArray)
    {
-      var _loc23_ = String(stringArray.shift());
-      var _loc22_ = _loc23_ == "reposition";
+      var _loc21_ = String(stringArray.shift());
+      var _loc20_ = _loc21_ == "reposition";
       this.dataRightMC.removeMovieClip();
-      if(_loc22_)
+      if(_loc20_)
       {
          stringArray = this.planningSlotRightData;
       }
@@ -410,80 +434,78 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          this.planningSlotRightData = stringArray.concat();
       }
-      var _loc10_ = new Array([166,221,190],[214,181,99],[150,153,161],[180,130,97]);
-      var _loc15_ = stringArray.slice(0,_loc10_.length);
-      var _loc12_ = this.numPlanningSlots <= 3 ? 6 : 0;
-      var _loc20_ = this.item0._x + this.item0._width / 2;
-      var _loc6_ = this.createEmptyMovieClip("dataRightMC",this.getNextHighestDepth());
-      _loc6_._x = _loc20_;
-      _loc6_._y = this.planningItemTitle._height;
-      _loc6_._visible = false;
-      var _loc9_ = 2;
-      var _loc5_ = 0;
-      while(_loc5_ < stringArray.length)
+      var _loc12_ = new Array([166,221,190],[214,181,99],[150,153,161],[180,130,97]);
+      var _loc9_ = this.numPlanningSlots <= 3 ? 6 : 0;
+      var _loc18_ = this.item0._x + this.item0._width / 2;
+      var _loc5_ = this.createEmptyMovieClip("dataRightMC",this.getNextHighestDepth());
+      _loc5_._x = _loc18_;
+      _loc5_._y = this.planningItemTitle._height;
+      _loc5_._visible = false;
+      var _loc7_ = 2;
+      var _loc4_ = 0;
+      var _loc13_;
+      var _loc8_;
+      var _loc2_;
+      var _loc10_;
+      while(_loc4_ < stringArray.length)
       {
-         var _loc11_ = stringArray[_loc5_];
-         if(_loc11_)
+         _loc13_ = stringArray[_loc4_];
+         if(_loc13_)
          {
-            var _loc8_ = _loc6_.attachMovie("planningData_right_player","dataRight" + _loc5_,_loc6_.getNextHighestDepth(),{_x:22,_y:_loc9_});
-            var _loc2_ = _loc8_.textTF;
-            _loc2_._width = 750 - _loc20_;
+            _loc8_ = _loc5_.attachMovie("planningData_right_player","dataRight" + _loc4_,_loc5_.getNextHighestDepth(),{_x:22,_y:_loc7_});
+            _loc2_ = _loc8_.textTF;
+            _loc2_._width = 750 - _loc18_;
             _loc2_.autoSize = "left";
             _loc2_.html = true;
-            _loc2_.htmlText = _loc11_;
+            _loc2_.htmlText = _loc13_;
             if(_loc2_._width > 146)
             {
                _loc8_._width = 146;
             }
             com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(_loc2_,com.rockstargames.gtav.levelDesign.heists.HeistColours.BLUE);
-            _loc9_ += _loc2_.textHeight + 2;
-            var _loc3_ = 0;
-            while(_loc3_ < _loc15_.length)
+            _loc7_ += _loc2_.textHeight + 2;
+            if(_loc4_ < _loc12_.length)
             {
-               if(_loc11_ == _loc15_[_loc3_])
-               {
-                  var _loc13_ = _loc6_.attachMovie("medalMC","medal" + _loc5_,_loc6_.getNextHighestDepth(),{_x:8,_y:_loc8_._y + _loc8_._height / 2});
-                  com.rockstargames.ui.utils.Colour.Colourise(_loc13_,_loc10_[_loc3_][0],_loc10_[_loc3_][1],_loc10_[_loc3_][2],100);
-                  break;
-               }
-               _loc3_ = _loc3_ + 1;
+               _loc10_ = _loc5_.attachMovie("medalMC","medal" + _loc4_,_loc5_.getNextHighestDepth(),{_x:8,_y:_loc8_._y + _loc8_._height / 2});
+               com.rockstargames.ui.utils.Colour.Colourise(_loc10_,_loc12_[_loc4_][0],_loc12_[_loc4_][1],_loc12_[_loc4_][2],100);
             }
          }
-         _loc5_ = _loc5_ + 1;
+         _loc4_ = _loc4_ + 1;
       }
-      var _loc19_ = _loc9_;
-      var _loc21_ = Math.floor(this.item0._height);
-      var _loc18_ = 1;
-      while(_loc19_ > _loc21_)
+      var _loc15_ = _loc7_;
+      var _loc19_ = Math.floor(this.item0._height);
+      var _loc14_ = 1;
+      var _loc3_;
+      var _loc6_;
+      while(_loc15_ > _loc19_)
       {
-         _loc9_ = -4;
-         var _loc4_ = undefined;
-         _loc5_ = 0;
-         while(_loc5_ < stringArray.length)
+         _loc7_ = -4;
+         _loc4_ = 0;
+         while(_loc4_ < stringArray.length)
          {
-            _loc4_ = _loc6_["dataRight" + _loc5_];
-            _loc4_._y = _loc9_;
-            _loc2_ = _loc4_.textTF;
-            var _loc7_ = _loc2_.getNewTextFormat();
-            _loc7_.size -= _loc18_;
-            _loc2_.setTextFormat(_loc7_);
-            _loc13_ = _loc6_["medal" + _loc5_];
-            _loc13_._y = _loc4_._y + _loc4_._height / 2;
-            _loc9_ += _loc2_.textHeight + _loc12_;
-            _loc5_ = _loc5_ + 1;
+            _loc3_ = _loc5_["dataRight" + _loc4_];
+            _loc3_._y = _loc7_;
+            _loc2_ = _loc3_.textTF;
+            _loc6_ = _loc2_.getNewTextFormat();
+            _loc6_.size -= _loc14_;
+            _loc2_.setTextFormat(_loc6_);
+            _loc10_ = _loc5_["medal" + _loc4_];
+            _loc10_._y = _loc3_._y + _loc3_._height / 2;
+            _loc7_ += _loc2_.textHeight + _loc9_;
+            _loc4_ = _loc4_ + 1;
          }
-         _loc19_ = _loc4_._y + _loc4_._height + _loc12_;
-         if(_loc12_ > 0)
+         _loc15_ = _loc3_._y + _loc3_._height + _loc9_;
+         if(_loc9_ > 0)
          {
-            _loc12_ = _loc12_ - 1;
+            _loc9_ = _loc9_ - 1;
          }
-         if(_loc7_.size < 5)
+         if(_loc6_.size < 5)
          {
             break;
          }
-         _loc18_ = _loc18_ + 1;
+         _loc14_ = _loc14_ + 1;
       }
-      _loc6_._visible = true;
+      _loc5_._visible = true;
       this.setHighlightHeight();
    }
    function showImages(bool)
@@ -511,10 +533,12 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
    function subHighlight(_subItemIndex, leftArrowVis, rightArrowVis)
    {
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.numItems)
       {
-         var _loc4_ = "item" + _loc3_;
-         var _loc2_ = this[_loc4_];
+         _loc4_ = "item" + _loc3_;
+         _loc2_ = this[_loc4_];
          if(_loc3_ != _subItemIndex || _subItemIndex == undefined)
          {
             if(this.singleImage == true)
@@ -564,9 +588,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          _h = false;
       }
+      var _loc2_;
       if(this.unavailableMC != undefined)
       {
-         var _loc2_ = this.item0;
+         _loc2_ = this.item0;
          this.unavailableMC._y = _loc2_._y + _loc2_._height / 2;
          this.unavailableMC._height = _loc2_._height * 0.9;
          this.unavailableMC.swapDepths(this.getNextHighestDepth() + 100);

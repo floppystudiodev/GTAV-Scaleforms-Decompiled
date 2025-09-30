@@ -7,7 +7,7 @@
       <animateTransform additive="sum" attributeName="patternTransform" dur="2s" from="90.0" repeatCount="indefinite" to="90.0" type="rotate"/>
       <animateTransform additive="sum" attributeName="patternTransform" dur="2s" from="3.1719 2.3846" repeatCount="indefinite" to="3.1719 2.3846" type="scale"/>
       <animateTransform additive="sum" attributeName="patternTransform" dur="2s" from="0.0" repeatCount="indefinite" to="0.0" type="skewX"/>
-      <image height="256" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAEACAYAAADSoXR2AAAAn0lEQVR4Xu3OoQEAAAjDsP3/9PAcACaipipp0s+yx3UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA30/w7L/HeO+AAAAAElFTkSuQmCC"/>
+      <image height="256" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAEACAYAAADSoXR2AAAAm0lEQVR42u3OIQEAAAwEoetfeovxBoGnq1tKQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAYB14fT/Dsku0LWQAAAAASUVORK5CYII="/>
     </pattern>
     <path d="M0.0 4.0 L0.0 16.0 Q0.0 20.0 4.0 20.0 L568.05 20.0 Q572.0 20.0 572.0 16.0 L572.0 4.0 Q572.0 0.0 568.05 0.0 L4.0 0.0 Q0.0 0.0 0.0 4.0" ffdec:fill-bitmapId="22" style="fill:url(#PatternID_61_1)">
       <animate attributeName="d" dur="2s" repeatCount="indefinite" values="M0.0 4.0 L0.0 16.0 Q0.0 20.0 4.0 20.0 L568.05 20.0 Q572.0 20.0 572.0 16.0 L572.0 4.0 Q572.0 0.0 568.05 0.0 L4.0 0.0 Q0.0 0.0 0.0 4.0;M0.0 4.0 L0.0 16.0 Q0.0 20.0 4.0 20.0 L568.05 20.0 Q572.0 20.0 572.0 16.0 L572.0 4.0 Q572.0 0.0 568.05 0.0 L4.0 0.0 Q0.0 0.0 0.0 4.0"/>

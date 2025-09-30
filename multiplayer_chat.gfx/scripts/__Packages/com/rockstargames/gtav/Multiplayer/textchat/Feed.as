@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.Multiplayer.textchat.Feed
 {
-   var numLines;
-   var mc;
    var historyOffset;
-   var nextLine;
    var lines;
-   var nameFormat;
-   var scopeFormat;
+   var mc;
    var messageFormat;
+   var nameFormat;
+   var nextLine;
+   var numLines;
+   var scopeFormat;
    static var UID = 0;
    static var LINE_SPACING = 0;
    static var DROP_SHADOW = new flash.filters.DropShadowFilter(1,45,0,1,1,1,0.6,3);
@@ -74,13 +74,15 @@ class com.rockstargames.gtav.Multiplayer.textchat.Feed
       this.mc._y = y;
       this.lines = new Array(this.numLines);
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.numLines)
       {
-         var _loc4_ = this.mc.createEmptyMovieClip("line" + _loc3_,_loc3_);
+         _loc4_ = this.mc.createEmptyMovieClip("line" + _loc3_,_loc3_);
          _loc4_._alpha = 0;
          _loc4_.goalY = 0;
          this.lines[_loc3_] = _loc4_;
-         var _loc2_ = _loc4_.createTextField("label",0,0,0,width,com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING);
+         _loc2_ = _loc4_.createTextField("label",0,0,0,width,com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING);
          _loc2_.multiline = true;
          _loc2_.wordWrap = true;
          _loc2_.embedFonts = true;
@@ -106,10 +108,12 @@ class com.rockstargames.gtav.Multiplayer.textchat.Feed
       var _loc5_ = {ease:com.rockstargames.gtav.Multiplayer.textchat.Feed.EASE_CURVE,_y:- _loc7_._height,_alpha:100};
       var _loc4_ = - _loc7_._height;
       var _loc2_ = 0;
+      var _loc6_;
+      var _loc3_;
       while(_loc2_ < this.numLines)
       {
-         var _loc6_ = (this.nextLine + this.numLines - _loc2_) % this.numLines;
-         var _loc3_ = this.lines[_loc6_];
+         _loc6_ = (this.nextLine + this.numLines - _loc2_) % this.numLines;
+         _loc3_ = this.lines[_loc6_];
          if(_loc2_ > 0)
          {
             _loc4_ -= com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING + _loc3_._height;
@@ -138,10 +142,12 @@ class com.rockstargames.gtav.Multiplayer.textchat.Feed
       var _loc5_ = {ease:com.rockstargames.gtav.Multiplayer.textchat.Feed.EASE_CURVE,_y:com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING,_alpha:0};
       var _loc4_ = com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING;
       var _loc3_ = 0;
+      var _loc6_;
+      var _loc2_;
       while(_loc3_ < this.numLines)
       {
-         var _loc6_ = (this.nextLine - 1 + this.numLines - _loc3_) % this.numLines;
-         var _loc2_ = this.lines[_loc6_];
+         _loc6_ = (this.nextLine - 1 + this.numLines - _loc3_) % this.numLines;
+         _loc2_ = this.lines[_loc6_];
          if(_loc3_ > 0)
          {
             _loc4_ -= com.rockstargames.gtav.Multiplayer.textchat.Feed.LINE_SPACING + _loc2_._height;

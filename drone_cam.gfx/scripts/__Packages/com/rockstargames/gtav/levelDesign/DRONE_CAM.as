@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.DRONE_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var soundWave;
    var CONTENT;
-   var zoomMeter;
-   var headingMeter;
-   var shockMeter;
-   var detonateMeter;
-   var tranquilizeMeter;
    var boostMeter;
-   var missileMeter;
-   var empMeter;
-   var machineGunMeter;
    var cannonMeter;
+   var detonateMeter;
+   var empMeter;
+   var headingMeter;
    var infoList;
+   var machineGunMeter;
+   var missileMeter;
    var reticle;
+   var shockMeter;
+   var soundWave;
+   var tranquilizeMeter;
    var warning;
+   var zoomMeter;
    static var displayConfig;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;

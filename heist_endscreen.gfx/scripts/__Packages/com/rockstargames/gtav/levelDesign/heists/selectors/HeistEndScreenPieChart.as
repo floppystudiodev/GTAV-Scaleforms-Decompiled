@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.HeistEndScreenPieChart extends com.rockstargames.ui.components.GUIMenuItem
 {
    var cashTF;
-   var playerCutTF;
    var percent1;
    var percent2;
    var percent3;
@@ -10,6 +9,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.HeistEndScreenPieChart
    var pie2;
    var pie3;
    var pie4;
+   var playerCutTF;
    var redRGB = 12734544;
    var blueRGB = 2582162;
    function HeistEndScreenPieChart()

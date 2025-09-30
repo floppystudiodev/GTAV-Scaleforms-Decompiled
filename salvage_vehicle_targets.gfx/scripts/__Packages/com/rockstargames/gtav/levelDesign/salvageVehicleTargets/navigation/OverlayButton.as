@@ -1,5 +1,7 @@
 class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.OverlayButton extends com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Target
 {
+   var __set__enabled;
+   var init;
    var view;
    function OverlayButton(id, view)
    {

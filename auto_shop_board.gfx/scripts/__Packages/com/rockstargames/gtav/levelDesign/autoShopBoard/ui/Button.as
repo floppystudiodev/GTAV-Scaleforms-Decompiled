@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.autoShopBoard.ui.Button extends com.rockstargames.gtav.levelDesign.autoShopBoard.ui.Target
 {
+   var init;
    var view;
    function Button(id, view)
    {

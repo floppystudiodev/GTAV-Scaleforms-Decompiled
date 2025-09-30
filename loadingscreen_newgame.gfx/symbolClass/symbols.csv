@@ -1,7 +1,7 @@
-1;loadingScreen_GTAV_logo
-6;PROGRESS_INFO
-8;GTAV_LOGO
-10;CONTENT
-12;BOUNDING_BOX
-13;__Packages.com.rockstargames.ui.core.BaseScriptUI
-14;__Packages.com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_NEWGAME
+1;"loadingScreen_GTAV_logo"
+6;"PROGRESS_INFO"
+8;"GTAV_LOGO"
+10;"CONTENT"
+12;"BOUNDING_BOX"
+13;"__Packages.com.rockstargames.ui.core.BaseScriptUI"
+14;"__Packages.com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_NEWGAME"

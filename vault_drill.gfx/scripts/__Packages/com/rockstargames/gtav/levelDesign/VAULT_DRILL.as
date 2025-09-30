@@ -1,24 +1,24 @@
 class com.rockstargames.gtav.levelDesign.VAULT_DRILL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var displayConfig;
-   var device;
    var CONTENT;
-   var noise;
-   var noiseStep;
-   var drillYMin;
-   var discHighlightPosition;
-   var updateArgs;
-   var discs;
-   var frontDiscs;
-   var overheats;
-   var discsComplete;
-   var numDiscs;
-   var drillYMax;
-   var drillSpeedStep;
-   var isWithdrawing;
-   var displayYOffset;
    var activeDisc;
    var currTemperature;
+   var device;
+   var discHighlightPosition;
+   var discs;
+   var discsComplete;
+   var displayConfig;
+   var displayYOffset;
+   var drillSpeedStep;
+   var drillYMax;
+   var drillYMin;
+   var frontDiscs;
+   var isWithdrawing;
+   var noise;
+   var noiseStep;
+   var numDiscs;
+   var overheats;
+   var updateArgs;
    static var TEMPERATURE_MIN = 68;
    static var TEMPERATURE_MAX = 960;
    static var MAX_NUM_DISCS = 6;
@@ -208,9 +208,10 @@ class com.rockstargames.gtav.levelDesign.VAULT_DRILL extends com.rockstargames.u
    }
    function updateDrillRotation()
    {
+      var _loc2_;
       if(this.drillSpeedStep > 0)
       {
-         var _loc2_ = (this.device.display.drill.mask._currentframe + this.drillSpeedStep) % (this.device.display.drill.mask._totalframes - 1);
+         _loc2_ = (this.device.display.drill.mask._currentframe + this.drillSpeedStep) % (this.device.display.drill.mask._totalframes - 1);
          this.device.display.drill.mask.gotoAndStop(_loc2_);
          this.device.display.drill.outline.gotoAndStop(_loc2_);
       }
@@ -218,12 +219,14 @@ class com.rockstargames.gtav.levelDesign.VAULT_DRILL extends com.rockstargames.u
    function updateOverheat()
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.overheats.length)
       {
          if(_loc2_ == this.activeDisc)
          {
-            var _loc4_ = this.overheats[_loc2_]._currentFrame;
-            var _loc3_ = Math.round(this.currTemperature * (this.overheats[_loc2_]._totalframes - 1) + 1);
+            _loc4_ = this.overheats[_loc2_]._currentFrame;
+            _loc3_ = Math.round(this.currTemperature * (this.overheats[_loc2_]._totalframes - 1) + 1);
             if(_loc3_ < _loc4_)
             {
                this.overheats[_loc2_].prevFrame();
@@ -244,9 +247,10 @@ class com.rockstargames.gtav.levelDesign.VAULT_DRILL extends com.rockstargames.u
          }
          _loc2_ = _loc2_ + 1;
       }
+      var _loc5_;
       if(this.activeDisc != -1)
       {
-         var _loc5_ = this.currTemperature * (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MAX_TEMPERATURE_YSCALE - com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MIN_TEMPERATURE_YSCALE) + com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MIN_TEMPERATURE_YSCALE;
+         _loc5_ = this.currTemperature * (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MAX_TEMPERATURE_YSCALE - com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MIN_TEMPERATURE_YSCALE) + com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_MIN_TEMPERATURE_YSCALE;
          this.device.display.drill.temperature._yscale += com.rockstargames.gtav.levelDesign.VAULT_DRILL.DRILL_TEMPERATURE_INCREASE_EASING * (_loc5_ - this.device.display.drill.temperature._yscale);
       }
       else
@@ -259,9 +263,10 @@ class com.rockstargames.gtav.levelDesign.VAULT_DRILL extends com.rockstargames.u
       this.activeDisc = -1;
       var _loc4_ = this.device.display.drill._y;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.discs.length)
       {
-         var _loc3_ = Math.round((this.discs[_loc2_]._totalframes - 1) * (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_ENTER_POSITIONS[_loc2_] - y) / (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_ENTER_POSITIONS[_loc2_] - com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_EXIT_POSITIONS[_loc2_])) + 1;
+         _loc3_ = Math.round((this.discs[_loc2_]._totalframes - 1) * (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_ENTER_POSITIONS[_loc2_] - y) / (com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_ENTER_POSITIONS[_loc2_] - com.rockstargames.gtav.levelDesign.VAULT_DRILL.DISC_EXIT_POSITIONS[_loc2_])) + 1;
          if(allowHoleFilling || _loc3_ > this.discs[_loc2_]._currentframe)
          {
             this.discs[_loc2_].gotoAndStop(_loc3_);

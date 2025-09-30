@@ -1,14 +1,19 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__data;
+   var _data;
+   var _highlighted;
+   var _view;
+   var attachMovie;
+   var bgMC;
+   var colourBGMC;
+   var crewTagMC;
+   var getNextHighestDepth;
    var itemColour;
    var itemTextLeft;
-   var colourBGMC;
-   var tabMC;
-   var bgMC;
    var labelMC;
-   var _view;
-   var crewTagMC;
    var storedStatusColID;
+   var tabMC;
    static var AS_OFFLINE = 0;
    static var AS_ONLINE_DIFFERENT_SESSION = 1;
    static var AS_ONLINE_IN_SESSION = 2;
@@ -78,16 +83,18 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
          this.crewTagMC._x = this.itemTextLeft._x + this.itemTextLeft.textWidth + 8;
          this.crewTagMC._visible = true;
       }
+      var _loc3_;
+      var _loc5_;
       if(!this.IS_NEXT_JOB_LIST)
       {
          if(this.data[10] != undefined)
          {
-            var _loc3_ = this.data[10];
+            _loc3_ = this.data[10];
             if(_loc3_ == undefined)
             {
                _loc3_ = 0;
             }
-            var _loc5_ = com.rockstargames.gtav.constants.MPIconLabels.lookUp(_loc3_)[1];
+            _loc5_ = com.rockstargames.gtav.constants.MPIconLabels.lookUp(_loc3_)[1];
             this.setIcon(_loc5_,this.labelMC.platformMC);
          }
       }
@@ -128,13 +135,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
    }
    function setStatus(statusStr, statusColID)
    {
+      var _loc2_;
       if(statusStr)
       {
          this.labelMC.statusMC._visible = true;
          this.labelMC.statusMC.labelMC.itemTF.text = statusStr;
          this.labelMC.statusMC.bgMC._width = this.labelMC.statusMC.labelMC.itemTF.textWidth + 10;
          this.labelMC.statusMC.bgMC._x = 145 - this.labelMC.statusMC.bgMC._width;
-         var _loc2_ = 112;
+         _loc2_ = 112;
          if(this.labelMC.platformMC._currentframe != 1)
          {
             _loc2_ = 87;

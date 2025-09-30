@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Overlay
 {
-   var view;
-   var actionButtons;
    var _isShowing;
+   var actionButtons;
+   var view;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
    static var HEIGHT = 720;
    static var CENTRE_X = 640;
@@ -28,6 +28,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Overlay
       this.view.panelBackground.transform.colorTransform = colourScheme.dark;
       this.view.background.transform.colorTransform = colourScheme.dark;
       this.actionButtons.length = 0;
+      var _loc4_;
       if(cancelButtonLabel.length == 0)
       {
          this.view.gotoAndStop("single");
@@ -35,7 +36,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Overlay
       else
       {
          this.view.gotoAndStop("double");
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Button(com.rockstargames.gtav.levelDesign.islandHeistBoard.data.ButtonIDs.OVERLAY_CANCEL,this.view.cancelButton,colourScheme);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Button(com.rockstargames.gtav.levelDesign.islandHeistBoard.data.ButtonIDs.OVERLAY_CANCEL,this.view.cancelButton,colourScheme);
          _loc4_.setLabel(cancelButtonLabel.toUpperCase(),true);
          _loc4_.setState(false);
          this.actionButtons.push(_loc4_);
@@ -83,9 +84,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Overlay
    function updateSelectedButton(targetID)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.actionButtons.length)
       {
-         var _loc3_ = this.actionButtons[_loc2_];
+         _loc3_ = this.actionButtons[_loc2_];
          _loc3_.setState(targetID == _loc3_.id);
          _loc2_ = _loc2_ + 1;
       }

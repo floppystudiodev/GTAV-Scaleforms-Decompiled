@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.BreakingNewsTicker extends MovieClip
 {
-   var labelMC;
-   var curLabel;
    var bgMC;
+   var curLabel;
+   var labelMC;
    var labelCount = 0;
    function BreakingNewsTicker()
    {

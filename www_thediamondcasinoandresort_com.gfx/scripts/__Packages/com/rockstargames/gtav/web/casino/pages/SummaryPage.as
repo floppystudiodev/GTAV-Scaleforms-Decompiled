@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.web.casino.pages.SummaryPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var website;
    var prevPageName;
-   var view;
    var progressPanel;
+   var view;
+   var website;
    function SummaryPage(website, viewContainer, pageName, isFirstPage)
    {
       super(website,viewContainer,"summaryPage",pageName,isFirstPage);
@@ -145,6 +145,8 @@ class com.rockstargames.gtav.web.casino.pages.SummaryPage extends com.rockstarga
             break;
          case "stepButton":
             this.website.browser.GO_TO_WEBPAGE(this.progressPanel.getStepPageTarget(parseInt(id)));
+         default:
+            return;
       }
    }
    function dispose()

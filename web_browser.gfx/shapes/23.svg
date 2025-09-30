@@ -2,8 +2,8 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="17.5px" width="23.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, -0.55, -1.0)">
     <path d="M18.9 18.5 L0.55 18.45 0.55 1.5 18.9 1.5 Q20.75 1.55 22.15 2.9 23.55 4.3 23.55 6.3 L23.55 13.8 Q23.55 15.5 22.25 16.95 20.8 18.5 18.9 18.5" fill="#b0b0b4" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="true" height="16" id="PatternID_23_1" overflow="visible" patternTransform="matrix(37.3893, 0.0, 0.0, 1.0, -27.0, 1.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 16" width="16">
-      <image height="16" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVR4XmP4z8DwnxLMgC5AKh41YNSAUQMGiwEAMMT+EINtPrUAAAAASUVORK5CYII="/>
+    <pattern height="16" id="PatternID_23_1" overflow="visible" patternTransform="matrix(37.3893, 0.0, 0.0, 1.0, -27.0, 1.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 16" width="16">
+      <image height="16" style="image-rendering:optimizeQuality" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGUlEQVR42mP4z8DwnxLMMGrAqAGjBgwXAwAwxP4QisZM5QAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M21.85 15.6 Q20.6 17.0 18.9 17.0 L1.0 17.0 1.0 1.0 18.85 1.0 Q20.55 1.05 21.8 2.25 23.05 3.5 23.05 5.3 L23.05 12.8 Q23.05 14.3 21.85 15.6" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_23_1)"/>
     <path d="M8.15 5.05 L15.2 9.05 8.15 13.05 8.15 5.05" fill="#464646" fill-rule="evenodd" stroke="none"/>

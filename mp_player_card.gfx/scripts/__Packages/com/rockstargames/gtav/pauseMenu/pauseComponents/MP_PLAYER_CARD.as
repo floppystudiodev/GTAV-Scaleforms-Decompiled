@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
-   var menuList;
-   var statID;
-   var playerColourEnum;
-   var crewEmblemMC;
    var btnLayer;
+   var crewEmblemMC;
+   var menuList;
+   var playerColourEnum;
+   var statID;
    var DESC_TYPE_TXT = 0;
    var DESC_TYPE_SC = 1;
    var DESC_TYPE_INV_SENT = 2;
@@ -65,6 +65,11 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
       this.CONTENT.titleTF.text = title;
       this.playerColourEnum = arguments[2];
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.CONTENT.titleBGMC,this.playerColourEnum);
+      var _loc5_;
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc8_;
       if(arguments[1] == "" || arguments[1] == undefined)
       {
          this.CONTENT.crewInfoMC._visible = false;
@@ -76,8 +81,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
          this.CONTENT.crewTagMC._x = this.CONTENT.titleTF._x + this.CONTENT.titleTF.textWidth + 10;
          this.CONTENT.crewTagMC._visible = true;
          this.CONTENT.crewInfoMC.crewTagMC.UNPACK_CREW_TAG(arguments[5]);
-         var _loc5_ = arguments[6];
-         var _loc3_ = arguments[7];
+         _loc5_ = arguments[6];
+         _loc3_ = arguments[7];
          if(_loc5_ && _loc3_)
          {
             this.CONTENT.crewInfoMC.crewNameTF.text = arguments[1];
@@ -92,9 +97,9 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
                this.crewEmblemMC.removeTxdRef();
             }
             this.crewEmblemMC.init("PAUSE_MENU_SP_CONTENT",_loc5_,_loc3_,61,61);
-            var _loc7_ = 3;
-            var _loc4_ = String(this.crewEmblemMC).split(".");
-            var _loc8_ = _loc4_.slice(_loc4_.length - _loc7_).join(".");
+            _loc7_ = 3;
+            _loc4_ = String(this.crewEmblemMC).split(".");
+            _loc8_ = _loc4_.slice(_loc4_.length - _loc7_).join(".");
             this.crewEmblemMC.addTxdRef(_loc8_);
             if(arguments[9] != undefined)
             {
@@ -115,24 +120,33 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
    }
    function SET_DATA_SLOT(_viewIndex, _slotIndex)
    {
+      var _loc11_;
+      var _loc9_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
+      var _loc6_;
+      var _loc7_;
+      var _loc10_;
+      var _loc8_;
       if(_viewIndex == 0)
       {
          this.CONTENT.vehiclePanelMC.vehicleMC1._alpha = !arguments[5] ? 30 : 100;
          this.CONTENT.vehiclePanelMC.vehicleMC2._alpha = !arguments[6] ? 30 : 100;
          this.CONTENT.vehiclePanelMC.vehicleMC3._alpha = !arguments[7] ? 30 : 100;
          this.CONTENT.vehiclePanelMC.vehicleMC4._alpha = !arguments[8] ? 30 : 100;
-         var _loc11_ = arguments[9];
+         _loc11_ = arguments[9];
          this.CONTENT.rankNumTF.text = _loc11_;
          com.rockstargames.ui.utils.Colour.ApplyHudColour(this.CONTENT.rankEmblemMC,this.playerColourEnum);
-         var _loc9_ = arguments.length;
-         var _loc3_ = 10;
-         var _loc4_ = 0;
+         _loc9_ = arguments.length;
+         _loc3_ = 10;
+         _loc4_ = 0;
          while(_loc3_ < _loc9_)
          {
-            var _loc5_ = this.CONTENT["item" + _loc4_ + "TF"];
+            _loc5_ = this.CONTENT["item" + _loc4_ + "TF"];
             _loc5_.text = arguments[_loc3_] == undefined ? "" : arguments[_loc3_];
-            var _loc6_ = arguments[_loc3_ + 1];
-            var _loc7_ = this.CONTENT["icon" + _loc4_ + "MC"];
+            _loc6_ = arguments[_loc3_ + 1];
+            _loc7_ = this.CONTENT["icon" + _loc4_ + "MC"];
             _loc7_.gotoAndStop(com.rockstargames.gtav.constants.MPIconLabels.lookUp(_loc6_)[1]);
             if(_loc6_ != com.rockstargames.gtav.constants.MPIconLabels.EMPTY[0])
             {
@@ -145,8 +159,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
       }
       else
       {
-         var _loc10_ = _viewIndex - 1;
-         var _loc8_ = undefined;
+         _loc10_ = _viewIndex - 1;
          if(!this.menuList[_loc10_])
          {
             _loc8_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuPlayerCardItem(this.CONTENT.attachMovie(this.statID,this.statID + _loc10_ + "MC",_loc10_));
@@ -167,6 +180,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
    }
    function SET_DESCRIPTION(descStr, descType, crewTagStr)
    {
+      var _loc3_;
       if(descStr != "")
       {
          if(this.btnLayer)
@@ -174,7 +188,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD extends co
             this.btnLayer.removeMovieClip();
          }
          this.btnLayer = this.CONTENT.descMC.createEmptyMovieClip("btnLayer",1000);
-         var _loc3_ = new com.rockstargames.ui.utils.Text();
+         _loc3_ = new com.rockstargames.ui.utils.Text();
          _loc3_.setTextWithIcons(descStr,this.btnLayer,this.CONTENT.descMC.descTF,0,13,4,false);
          this.CONTENT.descMC.crewUpIconMC._visible = descType == this.DESC_TYPE_SC;
          this.CONTENT.descMC.crewTagMC._visible = descType == this.DESC_TYPE_INV_SENT;

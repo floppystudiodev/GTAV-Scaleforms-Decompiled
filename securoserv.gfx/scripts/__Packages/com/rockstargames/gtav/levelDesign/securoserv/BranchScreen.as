@@ -1,12 +1,13 @@
 class com.rockstargames.gtav.levelDesign.securoserv.BranchScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
    var app;
-   var view;
-   var specialCargoButton;
-   var importExportButton;
-   var specialVehiclesButton;
    var cursor;
+   var flashElementIn;
+   var importExportButton;
    var screensaver;
+   var specialCargoButton;
+   var specialVehiclesButton;
+   var view;
    static var SPECIAL_CARGO = 1001;
    static var SPECIAL_VEHICLES = 1002;
    static var IMPORT_EXPORT = 1003;
@@ -93,6 +94,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.BranchScreen extends com.roc
                {
                   this.app.showScreen(this.app.SPECIAL_VEHICLES_SCREEN);
                }
+            default:
+               return;
          }
       }
    }
@@ -120,6 +123,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.BranchScreen extends com.roc
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
             this.view.rightButton.gotoAndStop("on");
             this.view.rightButton.greyOut.label._visible = true;
+         default:
+            return;
       }
    }
    function dispose()

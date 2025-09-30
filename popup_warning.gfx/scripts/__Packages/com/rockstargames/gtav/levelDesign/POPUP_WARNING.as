@@ -2,11 +2,11 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
 {
    var CONTENT;
    var DispConf;
-   var itemContainer;
    var _componentsForLoadingImages;
+   var componentID;
+   var itemContainer;
    var loaderObject;
    var thisObj;
-   var componentID;
    var fadeSpeed = 300;
    var sitemList = new Array();
    function POPUP_WARNING()
@@ -29,6 +29,12 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
       this.CONTENT.calibrationMC._visible = false;
       var _loc6_ = 0;
       var _loc7_ = 1;
+      var _loc11_;
+      var _loc9_;
+      var _loc4_;
+      var _loc8_;
+      var _loc12_;
+      var _loc5_;
       if(alertType == _loc6_ || alertType == undefined)
       {
          com.rockstargames.ui.utils.Colour.ApplyHudColour(this.CONTENT.warningMC.innerMC.strapBGMC.topLineMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
@@ -55,9 +61,9 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
             this.CONTENT.warningMC.innerMC.labelTF._y = this.CONTENT.warningMC.innerMC.titleTF._y + this.CONTENT.warningMC.innerMC.titleTF.textHeight + 16;
             this.CONTENT.warningMC.innerMC.labelTF.autoSize = "center";
             this.CONTENT.warningMC.innerMC.labelTF.multiline = true;
-            var _loc11_ = new com.rockstargames.ui.utils.Text();
+            _loc11_ = new com.rockstargames.ui.utils.Text();
             this.CONTENT.warningMC.innerMC.buttonClip.removeMovieClip();
-            var _loc9_ = this.CONTENT.warningMC.innerMC.createEmptyMovieClip("buttonClip",this.CONTENT.warningMC.innerMC.getNextHighestDepth());
+            _loc9_ = this.CONTENT.warningMC.innerMC.createEmptyMovieClip("buttonClip",this.CONTENT.warningMC.innerMC.getNextHighestDepth());
             _loc11_.setTextWithIcons(warningMsg,_loc9_,this.CONTENT.warningMC.innerMC.labelTF,0,18,1.5,true);
             if(titleMsg == undefined || titleMsg == "")
             {
@@ -80,13 +86,13 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
             this.CONTENT.warningMC.errorTF.text = "";
          }
          this.CONTENT.warningMC.innerMC._y = 0;
-         var _loc4_ = 21;
-         var _loc8_ = 100;
+         _loc4_ = 21;
+         _loc8_ = 100;
          this.CONTENT.warningMC.innerMC.strapBGMC._width = this.CONTENT.warningMC.innerMC.labelTF.textWidth + _loc8_;
          this.CONTENT.warningMC.innerMC.strapBGMC._height = this.CONTENT.warningMC.innerMC.labelTF.textHeight + _loc4_;
          this.CONTENT.warningMC.innerMC.strapBGMC._y = this.CONTENT.warningMC.innerMC.labelTF._y - 7;
-         var _loc12_ = 12;
-         var _loc5_ = this.CONTENT.warningMC.innerMC._height + this.CONTENT.warningMC.innerMC.titleTF._y + _loc12_;
+         _loc12_ = 12;
+         _loc5_ = this.CONTENT.warningMC.innerMC._height + this.CONTENT.warningMC.innerMC.titleTF._y + _loc12_;
          this.CONTENT.warningMC.innerMC._y = (720 - _loc5_) * 0.5;
       }
       if(alertType == _loc7_)
@@ -119,10 +125,12 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
    }
    function SET_LIST_ROW(index, name, cash, rp, lvl, colour)
    {
+      var _loc2_;
+      var _loc3_;
       if(!this.itemContainer)
       {
-         var _loc2_ = this.CONTENT.warningMC.innerMC;
-         var _loc3_ = _loc2_.getNextHighestDepth();
+         _loc2_ = this.CONTENT.warningMC.innerMC;
+         _loc3_ = _loc2_.getNextHighestDepth();
          this.itemContainer = _loc2_.createEmptyMovieClip("itemContainerMC",_loc3_);
          this.sitemList = [];
       }
@@ -147,10 +155,12 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
    function REMOVE_LIST_ITEMS()
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.sitemList.length)
       {
-         var _loc4_ = this.sitemList[_loc2_];
-         var _loc3_ = _loc4_.mc;
+         _loc4_ = this.sitemList[_loc2_];
+         _loc3_ = _loc4_.mc;
          _loc3_.removeMovieClip();
          _loc2_ = _loc2_ + 1;
       }
@@ -159,21 +169,26 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
    }
    function repositionListY()
    {
+      var _loc2_;
       if(this.itemContainer)
       {
-         var _loc2_ = this.CONTENT.warningMC.innerMC.strapBGMC._y + this.CONTENT.warningMC.innerMC.strapBGMC._height;
+         _loc2_ = this.CONTENT.warningMC.innerMC.strapBGMC._y + this.CONTENT.warningMC.innerMC.strapBGMC._height;
          this.itemContainer._y = _loc2_ + 12;
       }
    }
    function repositionListGroup()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
       while(_loc2_ < this.sitemList.length)
       {
-         var _loc3_ = this.sitemList[_loc2_];
-         var _loc5_ = _loc3_.mc;
-         var _loc4_ = _loc2_ * 27;
-         var _loc6_ = 4 * _loc3_.i;
+         _loc3_ = this.sitemList[_loc2_];
+         _loc5_ = _loc3_.mc;
+         _loc4_ = _loc2_ * 27;
+         _loc6_ = 4 * _loc3_.i;
          _loc4_ += _loc6_;
          _loc5_._y = _loc4_;
          _loc2_ = _loc2_ + 1;
@@ -182,10 +197,12 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
    function SET_LIST_HIGHLIGHT(highlightIndex)
    {
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.sitemList.length)
       {
-         var _loc4_ = this.sitemList[_loc3_];
-         var _loc2_ = _loc4_.mc;
+         _loc4_ = this.sitemList[_loc3_];
+         _loc2_ = _loc4_.mc;
          com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc2_.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
          com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc2_.textMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK);
          _loc2_.bgMC._alpha = _loc4_.i != highlightIndex ? 20 : 100;
@@ -214,11 +231,14 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
    function loadTextureIntoMovieClip(txd, texture, targetLoadedInto)
    {
       this.CONTENT.warningMC.innerMC.main_image._visible = true;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
       if(txd != "" && texture != "")
       {
          var thisObj = this;
-         var _loc3_ = this._componentsForLoadingImages.length + 1;
-         var _loc2_ = new com.rockstargames.ui.core.BaseComponentInfo(_loc3_);
+         _loc3_ = this._componentsForLoadingImages.length + 1;
+         _loc2_ = new com.rockstargames.ui.core.BaseComponentInfo(_loc3_);
          this._componentsForLoadingImages[_loc3_] = _loc3_;
          _loc2_._depth = _loc3_ + 10;
          _loc2_._mc = targetLoadedInto;
@@ -233,7 +253,7 @@ class com.rockstargames.gtav.levelDesign.POPUP_WARNING extends com.rockstargames
             _loc2_._loader.removeListener(_loc2_._listener);
             _loc2_._loader = null;
          };
-         var _loc5_ = "img://" + txd + "/" + texture;
+         _loc5_ = "img://" + txd + "/" + texture;
          _loc2_._loader.loadClip(_loc5_,_loc2_._mc);
       }
    }

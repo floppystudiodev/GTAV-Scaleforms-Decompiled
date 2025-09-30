@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CREW_RANKS extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var scrollableContent;
-   var model;
-   var titleHeight;
-   var crewsList;
-   var columnIsFocused;
    var SEND_COLUMN_PARAMS;
+   var columnIsFocused;
+   var crewsList;
+   var dbgID;
+   var model;
+   var scrollableContent;
+   var titleHeight;
    function PAUSE_MENU_CREW_RANKS()
    {
       super();

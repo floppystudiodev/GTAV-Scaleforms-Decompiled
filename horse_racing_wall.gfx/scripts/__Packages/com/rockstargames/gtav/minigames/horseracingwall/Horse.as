@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.minigames.horseracingwall.Horse
 {
+   var currX;
+   var goalX;
+   var oscA;
+   var oscVX;
+   var oscX;
+   var raceDuration;
    var view;
    var x;
-   var goalX;
-   var raceDuration;
-   var currX;
-   var oscX;
-   var oscVX;
-   var oscA;
    static var AMP_MIN = 4;
    static var AMP_MAX = 8;
    static var AMP_RANGE = com.rockstargames.gtav.minigames.horseracingwall.Horse.AMP_MAX - com.rockstargames.gtav.minigames.horseracingwall.Horse.AMP_MIN;
@@ -28,6 +28,7 @@ class com.rockstargames.gtav.minigames.horseracingwall.Horse
    function init(view, isStationary)
    {
       this.view = view;
+      var _loc3_;
       if(isStationary)
       {
          view.num.gotoAndStop(this.number);
@@ -38,7 +39,7 @@ class com.rockstargames.gtav.minigames.horseracingwall.Horse
          view.attachMovie("horseNumber" + this.number,"num",view.getNextHighestDepth());
          view.num._x = view.horse._x;
          view.num._y = view.horse._y;
-         var _loc3_ = Math.floor(Math.random() * view.horse._totalframes) + 1;
+         _loc3_ = Math.floor(Math.random() * view.horse._totalframes) + 1;
          view.legs.gotoAndPlay(_loc3_);
          view.horse.gotoAndPlay(_loc3_);
          view.mane.gotoAndPlay(_loc3_);
@@ -77,16 +78,18 @@ class com.rockstargames.gtav.minigames.horseracingwall.Horse
    {
       this.currX = this.goalX * normElapsed;
       this.view._x = this.currX;
+      var _loc3_;
+      var _loc4_;
       if(normElapsed < 1)
       {
-         var _loc3_ = this.oscVX - this.oscA * this.oscX;
+         _loc3_ = this.oscVX - this.oscA * this.oscX;
          if((_loc3_ ^ this.oscVX) < 0)
          {
             this.oscA = com.rockstargames.gtav.minigames.horseracingwall.HORSE_RACING_WALL.rnd() * com.rockstargames.gtav.minigames.horseracingwall.Horse.FREQ_RANGE + com.rockstargames.gtav.minigames.horseracingwall.Horse.FREQ_MIN;
          }
          this.oscVX = _loc3_;
          this.oscX += this.oscVX;
-         var _loc4_ = 1 - normElapsed >= com.rockstargames.gtav.minigames.horseracingwall.Horse.OSCILLATION_DAMPING_THRESHOLD ? this.oscX : this.oscX * (1 - normElapsed) / com.rockstargames.gtav.minigames.horseracingwall.Horse.OSCILLATION_DAMPING_THRESHOLD;
+         _loc4_ = 1 - normElapsed >= com.rockstargames.gtav.minigames.horseracingwall.Horse.OSCILLATION_DAMPING_THRESHOLD ? this.oscX : this.oscX * (1 - normElapsed) / com.rockstargames.gtav.minigames.horseracingwall.Horse.OSCILLATION_DAMPING_THRESHOLD;
          this.view._x += _loc4_;
          this.x = this.view._x;
          return false;

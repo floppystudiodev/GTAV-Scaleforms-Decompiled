@@ -1,20 +1,21 @@
 class com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var selectedBusinessID;
-   var currScreenID;
+   var TIMELINE;
+   var _name;
    var businesses;
-   var userName;
-   var inputReceived;
+   var currScreen;
+   var currScreenID;
+   var cursor;
    var deactivated;
-   var startProductionEnabled;
    var displayConfig;
    var imageManager;
+   var inputReceived;
    var screenContainer;
-   var cursor;
-   var currScreen;
+   var selectedBusinessID;
+   var startProductionEnabled;
+   var userName;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -270,13 +271,14 @@ class com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES extends com.rockstarga
          return undefined;
       }
       this.inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Mouse_Move_Cursor");
@@ -357,17 +359,20 @@ class com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES extends com.rockstarga
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

@@ -1,26 +1,26 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
 {
-   var _view;
-   var _imageManager;
-   var _carSlots;
-   var _currentlySelectedVehicles;
-   var _currentTab;
+   var _allOfferLabels;
+   var _allRequirementDescriptions;
+   var _allRequirements;
+   var _allRequirementsLabels;
+   var _allValues;
    var _bonusMoneyForCollection;
+   var _buyerBackground;
+   var _buyerButtons;
+   var _carSlots;
+   var _commissionLabel;
+   var _commissionOfferString;
+   var _commissionString;
+   var _currentTab;
+   var _currentlySelectedVehicles;
    var _exportButton;
    var _exportString;
+   var _imageManager;
    var _moneyLabel;
    var _moneyString;
-   var _commissionLabel;
-   var _commissionString;
    var _upperBg;
-   var _buyerButtons;
-   var _commissionOfferString;
-   var _allOfferLabels;
-   var _buyerBackground;
-   var _allRequirementDescriptions;
-   var _allRequirementsLabels;
-   var _allRequirements;
-   var _allValues;
+   var _view;
    static var EXPORT_SELECTION_MAX = 4;
    static var UPPER_BG_HEIGHT_NORMAL = 208;
    static var UPPER_BG_HEIGHT_BUYER_SCREEN = 155;
@@ -37,9 +37,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
       this._currentTab = com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB;
       this._bonusMoneyForCollection = 0;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection.EXPORT_SELECTION_MAX)
       {
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(this._view["carSlot" + _loc2_]);
+         _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(this._view["carSlot" + _loc2_]);
          _loc3_.selected = false;
          this._carSlots.push(_loc3_);
          _loc2_ = _loc2_ + 1;
@@ -161,9 +162,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
       var _loc10_ = "<font color=\'#CC0000\'>$";
       var _loc9_ = "</font>";
       var _loc3_ = 0;
+      var _loc6_;
       while(_loc3_ < this._allRequirementsLabels.length)
       {
-         var _loc6_ = this._allRequirementDescriptions[_loc3_];
+         _loc6_ = this._allRequirementDescriptions[_loc3_];
          this._allRequirementsLabels[_loc3_].htmlText = _loc6_ + " " + _loc10_ + com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.formatNumber(this._allRequirements[_loc3_]) + _loc9_;
          _loc3_ = _loc3_ + 1;
       }
@@ -177,11 +179,12 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
       var _loc7_ = "<font color=\'#5CC45C\'>$";
       var _loc8_ = "</font>";
       var _loc2_ = 0;
+      var _loc5_;
       while(_loc2_ < this._allOfferLabels.length)
       {
          if(this._allValues[_loc2_])
          {
-            var _loc5_ = com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.formatNumber(this._allValues[_loc2_]);
+            _loc5_ = com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.formatNumber(this._allValues[_loc2_]);
             this._allOfferLabels[_loc2_].htmlText = this._commissionOfferString + " " + _loc7_ + _loc5_ + _loc8_;
          }
          _loc2_ = _loc2_ + 1;
@@ -201,18 +204,24 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
    function updateCooldown(button, cooldown, finalLabel)
    {
       var _loc2_ = Math.ceil(0.001 * (cooldown - getTimer()));
+      var _loc3_;
+      var _loc4_;
+      var _loc8_;
+      var _loc6_;
+      var _loc5_;
+      var _loc7_;
       if(_loc2_ <= 0)
       {
          this._exportButton.setLabel(this._exportString,true);
       }
       else
       {
-         var _loc3_ = _loc2_ % 60;
-         var _loc4_ = Math.floor((_loc2_ - _loc3_) / 60) % 60;
-         var _loc8_ = Math.floor((_loc2_ - _loc3_ - _loc4_ * 60) / 3600);
-         var _loc6_ = ("0" + _loc8_).substr(-2);
-         var _loc5_ = ("0" + _loc4_).substr(-2);
-         var _loc7_ = ("0" + _loc3_).substr(-2);
+         _loc3_ = _loc2_ % 60;
+         _loc4_ = Math.floor((_loc2_ - _loc3_) / 60) % 60;
+         _loc8_ = Math.floor((_loc2_ - _loc3_ - _loc4_ * 60) / 3600);
+         _loc6_ = ("0" + _loc8_).substr(-2);
+         _loc5_ = ("0" + _loc4_).substr(-2);
+         _loc7_ = ("0" + _loc3_).substr(-2);
          this._exportButton.setLabel(_loc6_ + ":" + _loc5_ + ":" + _loc7_,true);
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(button,0.25,{onCompleteScope:this,onComplete:this.updateCooldown,onCompleteArgs:[button,cooldown,finalLabel]});
       }
@@ -223,17 +232,22 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection
    }
    function updateSelectedVehicles()
    {
+      var _loc6_;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(this._currentTab != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB)
       {
-         var _loc6_ = 0;
-         var _loc5_ = 0;
-         var _loc2_ = 0;
+         _loc6_ = 0;
+         _loc5_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < com.rockstargames.gtav.levelDesign.importExportWarehouse.ExportSelection.EXPORT_SELECTION_MAX)
          {
-            var _loc4_ = this._currentlySelectedVehicles[this._currentTab][_loc2_];
+            _loc4_ = this._currentlySelectedVehicles[this._currentTab][_loc2_];
             if(_loc4_)
             {
-               var _loc3_ = this._carSlots[_loc2_];
+               _loc3_ = this._carSlots[_loc2_];
                if(_loc3_.id != _loc4_.id)
                {
                   _loc3_.reset();

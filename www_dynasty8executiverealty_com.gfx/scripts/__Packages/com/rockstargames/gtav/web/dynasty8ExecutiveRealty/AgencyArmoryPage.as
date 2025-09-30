@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyArmoryPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_AGENCY";
    static var IMAGES = ["ARMORY"];
    function AgencyArmoryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -82,6 +82,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyArmoryPage extend
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

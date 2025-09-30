@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.celebration.HEIST_CELEBRATION extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var dispConf;
-   var type;
-   var sequences;
    var CONTENT;
+   var dispConf;
    var localisationTF;
+   var sequences;
+   var type;
    function HEIST_CELEBRATION()
    {
       super();
@@ -187,7 +187,7 @@ class com.rockstargames.gtav.levelDesign.celebration.HEIST_CELEBRATION extends c
    }
    function createSequence(bgColour, sfxId, id)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(this.type)
       {
          case "BG":

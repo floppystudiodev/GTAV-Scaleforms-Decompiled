@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rockstargames.gtav.levelDesign.hangarCargo.Screen
 {
-   var view;
-   var showing;
-   var activeButtons;
-   var sellItems;
-   var sellAllButton;
-   var cursor;
-   var app;
-   var overlay;
    var _buttons;
+   var activeButtons;
+   var app;
+   var cursor;
+   var overlay;
+   var sellAllButton;
+   var sellItems;
+   var showing;
+   var view;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
    static var ELEMENT_FADE_IN_STEP = 0.1;
    static var NUM_COLS = 4;
@@ -59,7 +59,7 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
    function itemFadeInComplete(index)
    {
       var _loc3_ = this.sellItems[index];
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc2_ = 0;
       while(_loc2_ < this.app.cargos.length)
       {
@@ -70,9 +70,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
          }
          _loc2_ = _loc2_ + 1;
       }
+      var _loc6_;
       if(_loc4_ != undefined)
       {
-         var _loc6_ = _loc3_.update(_loc4_);
+         _loc6_ = _loc3_.update(_loc4_);
          if(_loc6_)
          {
             _loc2_ = 0;
@@ -120,19 +121,24 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
       }
       _loc4_ = 0;
       _loc7_ = this.app.cargos.length;
+      var _loc5_;
+      var _loc3_;
+      var _loc8_;
+      var _loc6_;
+      var _loc2_;
       while(_loc4_ < _loc7_)
       {
-         var _loc5_ = this.app.cargos[_loc4_];
+         _loc5_ = this.app.cargos[_loc4_];
          if(_loc5_.type > 0)
          {
-            var _loc3_ = this.sellItems[_loc5_.type - 1];
+            _loc3_ = this.sellItems[_loc5_.type - 1];
             if(_loc3_)
             {
-               var _loc8_ = _loc3_.update(_loc5_);
+               _loc8_ = _loc3_.update(_loc5_);
                if(_loc8_)
                {
-                  var _loc6_ = false;
-                  var _loc2_ = 0;
+                  _loc6_ = false;
+                  _loc2_ = 0;
                   while(_loc4_ < this.activeButtons.length)
                   {
                      if(this.activeButtons[_loc2_] == _loc3_.button)
@@ -158,9 +164,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
    function updateCooldown()
    {
       var _loc3_ = false;
+      var _loc2_;
       if(this.app.sellRemainingCooldown > 0)
       {
-         var _loc2_ = 100;
+         _loc2_ = 100;
          if(this.app.sellTotalCooldown > 0)
          {
             _loc2_ = 100 * this.app.sellRemainingCooldown / this.app.sellTotalCooldown;
@@ -203,15 +210,15 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.LB:
             if(!this.overlay.isShowing)
             {
                this.app.showScreen(this.app.STEAL_SCREEN);
             }
-            break;
+         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.RB:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)
@@ -226,21 +233,26 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.SellScreen extends com.rock
             break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.SELL_TAB:
             this.app.showScreen(this.app.SELL_SCREEN);
+         default:
+            return;
       }
    }
    function onTargetChange(targetID)
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(this.overlay.isShowing)
       {
          this.overlay.updateSelectedButton(targetID);
       }
       else
       {
-         var _loc2_ = 0;
-         var _loc4_ = this.buttons.length;
+         _loc2_ = 0;
+         _loc4_ = this.buttons.length;
          while(_loc2_ < _loc4_)
          {
-            var _loc3_ = this.buttons[_loc2_];
+            _loc3_ = this.buttons[_loc2_];
             _loc3_.view.gotoAndStop(_loc3_.id != targetID ? "off" : "on");
             _loc2_ = _loc2_ + 1;
          }

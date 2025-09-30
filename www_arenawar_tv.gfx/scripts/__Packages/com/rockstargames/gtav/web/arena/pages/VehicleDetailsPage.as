@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage extends com.rockstargames.gtav.web.arena.Page
 {
+   var buyItNowPriceAvailable;
+   var descriptionLabel;
    var progressPanel;
-   var textures;
-   var website;
    var showingArenaReady;
    var textureDictionary;
-   var buyItNowPriceAvailable;
+   var textures;
    var tradePriceAvailable;
-   var descriptionLabel;
    var view;
+   var website;
    static var IMAGE_FADE_OUT_DURATION = 0.2;
    static var IMAGE_FADE_IN_DURATION = 0.4;
    function VehicleDetailsPage(website, viewContainer, pageName, isFirstPage, progressPanel)
@@ -21,9 +21,10 @@ class com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage extends com.rock
       this.progressPanel.hide();
       this.textures = [];
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.website.vehicles.length)
       {
-         var _loc2_ = this.website.vehicles[_loc3_];
+         _loc2_ = this.website.vehicles[_loc3_];
          if(_loc2_.id == this.website.selectedVehicleId)
          {
             this.showingArenaReady = _loc2_.theme != -1;
@@ -168,6 +169,8 @@ class com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage extends com.rock
             break;
          case "themeButton":
             this.setTheme(parseInt(id),false);
+         default:
+            return;
       }
    }
    function setTheme(index, isInstant)
@@ -188,9 +191,10 @@ class com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage extends com.rock
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view.image,com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage.IMAGE_FADE_OUT_DURATION,{_alpha:0,onCompleteScope:this,onComplete:this.fadeInImage,onCompleteArgs:[index]});
       }
+      var _loc4_;
       if(!this.showingArenaReady)
       {
-         var _loc4_ = index != 1 ? this.descriptionLabel.substring(0,this.descriptionLabel.lastIndexOf("_")) + (index - 1) + "_DESC" : this.descriptionLabel;
+         _loc4_ = index != 1 ? this.descriptionLabel.substring(0,this.descriptionLabel.lastIndexOf("_")) + (index - 1) + "_DESC" : this.descriptionLabel;
          com.rockstargames.gtav.web.WWW_ARENAWAR_TV.setLocalisedText(this.view.description,_loc4_);
       }
    }

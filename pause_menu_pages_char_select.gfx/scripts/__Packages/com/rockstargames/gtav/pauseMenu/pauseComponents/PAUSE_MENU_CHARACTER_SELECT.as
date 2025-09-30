@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_SELECT extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
    var PCC;
+   var dbgID;
    var silAlpha = 15;
    var numAlpha = 5;
    var strLabelList = new Array();
@@ -23,9 +23,11 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_SELE
          this.CONTENT = this;
       }
       var _loc4_ = 1;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ <= 5)
       {
-         var _loc3_ = this["playerSil" + _loc4_ + "MC"];
+         _loc3_ = this["playerSil" + _loc4_ + "MC"];
          _loc3_.gotoAndStop(1);
          if(_loc4_ > 2)
          {
@@ -36,7 +38,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_SELE
          _loc3_.bgMC._visible = false;
          com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc3_.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG);
          _loc3_.numMC._alpha = this.numAlpha;
-         var _loc5_ = this["importedFrom" + _loc4_ + "MC"];
+         _loc5_ = this["importedFrom" + _loc4_ + "MC"];
          _loc5_._visible = false;
          _loc4_ = _loc4_ + 1;
       }
@@ -95,10 +97,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_SELE
       var _loc11_ = this.strLabelList[11];
       var _loc6_ = 13;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc5_;
       while(_loc3_ < 5)
       {
-         var _loc4_ = this["importedFrom" + (_loc3_ + 1) + "MC"];
-         var _loc5_ = this.strLabelList[_loc6_ + _loc3_];
+         _loc4_ = this["importedFrom" + (_loc3_ + 1) + "MC"];
+         _loc5_ = this.strLabelList[_loc6_ + _loc3_];
          if(_loc5_)
          {
             com.rockstargames.ui.utils.UIText.setSizedText(_loc4_.importedFromTF,_loc5_,true);
@@ -138,27 +142,37 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_SELE
       _loc11_.numMC.gotoAndStop(index);
       _loc11_.silhuetteMC._alpha = highlight != 1 ? this.silAlpha : 30;
       _loc11_.numMC._alpha = highlight != 1 ? this.numAlpha : this.numAlpha * 3;
+      var _loc10_;
+      var _loc9_;
+      var _loc14_;
+      var _loc2_;
+      var _loc7_;
+      var _loc8_;
+      var _loc12_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
       if(highlight == 1)
       {
-         var _loc10_ = 2;
-         var _loc9_ = 143;
-         var _loc14_ = index * _loc9_ + index * _loc10_;
+         _loc10_ = 2;
+         _loc9_ = 143;
+         _loc14_ = index * _loc9_ + index * _loc10_;
          this.PCC._x = _loc14_;
-         var _loc2_ = index + 1;
+         _loc2_ = index + 1;
          while(_loc2_ <= 5)
          {
-            var _loc7_ = this["playerSil" + _loc2_ + "MC"];
-            var _loc8_ = _loc2_ * _loc9_ + _loc2_ * _loc10_;
+            _loc7_ = this["playerSil" + _loc2_ + "MC"];
+            _loc8_ = _loc2_ * _loc9_ + _loc2_ * _loc10_;
             _loc7_._x = _loc8_;
             _loc2_ = _loc2_ + 1;
          }
-         var _loc12_ = this["playerSil" + index + "MC"];
+         _loc12_ = this["playerSil" + index + "MC"];
          _loc12_._x = (index - 1) * _loc9_ + (index - 1) * _loc10_;
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < 5)
          {
-            var _loc4_ = _loc3_ + 1;
-            var _loc5_ = this["importedFrom" + _loc4_ + "MC"];
+            _loc4_ = _loc3_ + 1;
+            _loc5_ = this["importedFrom" + _loc4_ + "MC"];
             if(index == _loc4_)
             {
                _loc5_._visible = true;

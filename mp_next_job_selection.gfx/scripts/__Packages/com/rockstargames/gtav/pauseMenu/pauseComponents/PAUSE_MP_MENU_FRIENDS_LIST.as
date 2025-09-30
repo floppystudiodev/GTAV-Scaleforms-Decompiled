@@ -1,6 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_FRIENDS_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
+   var SEND_COLUMN_PARAMS;
+   var canMouseNav;
+   var dbgID;
    var model;
    static var ICON_START_INDEX = 9;
    function PAUSE_MP_MENU_FRIENDS_LIST()
@@ -35,14 +38,16 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_FRIENDS_LIS
    function parseIcons(args)
    {
       var _loc1_ = com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_FRIENDS_LIST.ICON_START_INDEX;
+      var _loc2_;
+      var _loc3_;
       while(_loc1_ < com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_FRIENDS_LIST.ICON_START_INDEX + 3)
       {
-         var _loc2_ = args[_loc1_];
+         _loc2_ = args[_loc1_];
          if(_loc2_ == undefined)
          {
             _loc2_ = 0;
          }
-         var _loc3_ = com.rockstargames.gtav.constants.MPIconLabels.lookUp(_loc2_)[1];
+         _loc3_ = com.rockstargames.gtav.constants.MPIconLabels.lookUp(_loc2_)[1];
          args[_loc1_] = _loc3_;
          _loc1_ = _loc1_ + 1;
       }

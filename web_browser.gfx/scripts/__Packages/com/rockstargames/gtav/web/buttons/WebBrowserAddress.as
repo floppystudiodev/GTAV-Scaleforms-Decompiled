@@ -1,8 +1,10 @@
 class com.rockstargames.gtav.web.buttons.WebBrowserAddress extends com.rockstargames.gtav.web.buttons.WebButton
 {
    var CARET;
-   var browser;
    var addressText;
+   var browser;
+   var buttonType;
+   var isBrowserButton;
    function WebBrowserAddress()
    {
       super();

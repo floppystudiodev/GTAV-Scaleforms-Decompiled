@@ -1,30 +1,30 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.HeistData
 {
-   var tabLabels;
-   var tabsLocked;
-   var intelItem;
-   var prepItem;
-   var finaleItem;
-   var initialView;
-   var isHardMode;
-   var payoutsVisible;
-   var mainPayout;
-   var subPayout;
+   var approachVehicleID;
+   var compoundEntryPointID;
    var crew;
+   var crewCutID;
+   var crewCutsVisible;
+   var entryPointID;
+   var exitPointID;
+   var finaleItem;
+   var finaleListTitle;
    var icons;
+   var initialView;
+   var intelItem;
+   var isHardMode;
    var launchButtonEnabled;
    var launchButtonLabel;
-   var crewCutsVisible;
+   var mainPayout;
    var mapView;
-   var finaleListTitle;
-   var timeOfDayID;
-   var approachVehicleID;
-   var entryPointID;
-   var compoundEntryPointID;
-   var exitPointID;
-   var weaponsID;
+   var payoutsVisible;
+   var prepItem;
+   var subPayout;
    var supportCrewID;
-   var crewCutID;
+   var tabLabels;
+   var tabsLocked;
+   var timeOfDayID;
+   var weaponsID;
    function HeistData()
    {
       this.tabLabels = ["","",""];
@@ -108,11 +108,13 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.HeistData
    function removeFinaleItem(itemID)
    {
       var _loc4_ = this.getItemByID(itemID,this.finaleItem);
+      var _loc3_;
+      var _loc2_;
       if(_loc4_)
       {
          _loc4_.items.lenghth = 0;
-         var _loc3_ = this.getItemByID(_loc4_.parentID,this.finaleItem);
-         var _loc2_ = 0;
+         _loc3_ = this.getItemByID(_loc4_.parentID,this.finaleItem);
+         _loc2_ = 0;
          while(_loc2_ < _loc3_.items.length)
          {
             if(_loc3_.items[_loc2_] == _loc4_)
@@ -133,9 +135,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.HeistData
          return item;
       }
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < item.items.length)
       {
-         var _loc3_ = this.getItemByID(id,item.items[_loc2_]);
+         _loc3_ = this.getItemByID(id,item.items[_loc2_]);
          if(_loc3_ != null)
          {
             return _loc3_;
@@ -184,6 +187,8 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.HeistData
             break;
          case com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE:
             this.getItemByID(id,this.finaleItem).historyID = historyID;
+         default:
+            return;
       }
    }
    function getSetupItem(tabIndex, id)

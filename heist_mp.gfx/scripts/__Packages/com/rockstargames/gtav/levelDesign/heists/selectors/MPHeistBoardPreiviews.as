@@ -1,9 +1,11 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreiviews extends com.rockstargames.ui.components.GUIMenuItem
 {
+   var attachMovie;
+   var getNextHighestDepth;
    var imageRotation;
+   var mcArray;
    var rotationArray;
    var tapeArray;
-   var mcArray;
    var completedStr = "";
    var todoStr = "";
    function MPHeistBoardPreiviews()
@@ -34,20 +36,29 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreiviews 
    function set data(_d)
    {
       this._data = _d.slice(2);
+      var _loc10_;
+      var _loc9_;
+      var _loc4_;
+      var _loc8_;
+      var _loc2_;
+      var _loc5_;
+      var _loc3_;
+      var _loc7_;
+      var _loc6_;
       if(this._data[0] != undefined)
       {
-         var _loc10_ = 180;
-         var _loc9_ = 0;
-         var _loc4_ = this._data[0];
-         var _loc8_ = this.mcArray[_loc4_];
-         var _loc2_ = this[_loc8_];
-         var _loc5_ = this._data[1];
-         var _loc3_ = this._data[2];
-         var _loc7_ = _loc3_;
+         _loc10_ = 180;
+         _loc9_ = 0;
+         _loc4_ = this._data[0];
+         _loc8_ = this.mcArray[_loc4_];
+         _loc2_ = this[_loc8_];
+         _loc5_ = this._data[1];
+         _loc3_ = this._data[2];
+         _loc7_ = _loc3_;
          if(_loc3_ == undefined || _loc3_ == "" || _loc3_ == null)
          {
-            _loc3_ = undefined;
-            _loc7_ = undefined;
+            _loc3_;
+            _loc7_;
          }
          if(_loc2_ == undefined)
          {
@@ -81,7 +92,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardPreiviews 
          {
             _loc2_.titleMC.gotoAndStop(this.tapeArray[_loc4_ + 1]);
             _loc2_.titleMC.titleTF.text = "";
-            var _loc6_ = _loc2_.titleMC.titleTF.getNewTextFormat();
+            _loc6_ = _loc2_.titleMC.titleTF.getNewTextFormat();
             _loc6_.size = 20;
             _loc2_.titleMC.titleTF.setTextFormat(_loc6_);
             _loc2_.titleMC.titleTF._height = 26.35;

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var teamColours;
-   var icons;
-   var displayConfig;
-   var bounds;
-   var iconContainer;
    var CONTENT;
+   var bounds;
+   var displayConfig;
+   var iconContainer;
+   var icons;
    var message;
+   var teamColours;
    static var ICON_HORIZONTAL_PADDING = 8;
    static var ICON_VERTICAL_PADDING = 8;
    static var ICON_ROW_MARGIN = 200;
@@ -46,7 +46,7 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC extends com.rockstar
    }
    function ADD_ICON(type)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) !== 23)
       {
          this.icons.push(new com.rockstargames.gtav.Multiplayer.powerplay.GenericIcon(type,this.iconContainer));
@@ -127,10 +127,12 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC extends com.rockstar
       var _loc5_ = false;
       var _loc4_ = 0;
       var _loc7_ = title.length;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < _loc7_)
       {
-         var _loc2_ = 0;
-         var _loc3_ = com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC.DESCENDERS.length;
+         _loc2_ = 0;
+         _loc3_ = com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC.DESCENDERS.length;
          while(_loc2_ < _loc3_)
          {
             if(title.charCodeAt(_loc4_) == com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC.DESCENDERS[_loc2_])
@@ -211,9 +213,10 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC extends com.rockstar
       var _loc12_ = 0.5 * (endIndex - startIndex - 1) * (iconDiameter + com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC.ICON_HORIZONTAL_PADDING);
       var _loc4_ = _loc11_ - _loc12_;
       var _loc2_ = startIndex;
+      var _loc3_;
       while(_loc2_ < endIndex)
       {
-         var _loc3_ = iconList[_loc2_].view;
+         _loc3_ = iconList[_loc2_].view;
          _loc3_._x = _loc4_;
          _loc3_._y = y;
          _loc4_ += iconDiameter + com.rockstargames.gtav.Multiplayer.POWER_PLAY_GENERIC.ICON_HORIZONTAL_PADDING;

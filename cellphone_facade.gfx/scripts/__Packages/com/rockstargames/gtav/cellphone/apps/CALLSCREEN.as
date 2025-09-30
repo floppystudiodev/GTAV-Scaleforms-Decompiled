@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.cellphone.apps.CALLSCREEN extends MovieClip
 {
    var CONTENT;
-   var dataProviderUI;
+   var _callState;
    var callscreen;
    var contactMC;
-   var gfxFileName;
-   var currentStyle;
-   var _callState;
-   var currentID;
    var contactTXD;
-   var txd_loader;
-   var headerTextFormat;
+   var currentID;
+   var currentStyle;
+   var dataProviderUI;
    var gamertagTextFormat;
+   var gfxFileName;
+   var headerTextFormat;
+   var txd_loader;
    var currentSelection = -1;
    var isEngaged = false;
    var offStateAlpha = 60;
@@ -162,14 +162,19 @@ class com.rockstargames.gtav.cellphone.apps.CALLSCREEN extends MovieClip
    {
       var _loc5_ = str.indexOf("<C>");
       var _loc7_ = str.indexOf("</C>");
+      var _loc2_;
+      var _loc4_;
+      var _loc9_;
+      var _loc8_;
+      var _loc10_;
       if(_loc5_ != -1 && _loc7_ != -1)
       {
-         var _loc2_ = str.substring(0,_loc5_);
-         var _loc4_ = str.substring(_loc5_ + 3,_loc7_);
-         var _loc9_ = str.substring(_loc7_ + 4);
+         _loc2_ = str.substring(0,_loc5_);
+         _loc4_ = str.substring(_loc5_ + 3,_loc7_);
+         _loc9_ = str.substring(_loc7_ + 4);
          TF.text = _loc2_ + _loc4_ + _loc9_;
-         var _loc8_ = this.headerTextFormat;
-         var _loc10_ = this.gamertagTextFormat;
+         _loc8_ = this.headerTextFormat;
+         _loc10_ = this.gamertagTextFormat;
          TF.setTextFormat(0,_loc2_.length,_loc8_);
          TF.setTextFormat(_loc2_.length,_loc2_.length + _loc4_.length,_loc10_);
          TF.setTextFormat(_loc2_.length + _loc4_.length,_loc2_.length + _loc4_.length + _loc9_.length,_loc8_);

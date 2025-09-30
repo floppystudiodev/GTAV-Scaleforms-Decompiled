@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.HeistDataItem
 {
-   var id;
-   var parentID;
-   var title;
    var description;
-   var texture;
-   var items;
    var historyID;
+   var id;
+   var items;
+   var parentID;
+   var texture;
+   var title;
    function HeistDataItem(id, parentID, title, description, texture)
    {
       this.id = id;

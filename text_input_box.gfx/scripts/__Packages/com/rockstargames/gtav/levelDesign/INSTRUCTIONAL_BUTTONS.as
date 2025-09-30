@@ -1,29 +1,30 @@
 class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var textIndicatorList;
-   var MOUSE_EVT;
-   var _leadingSize;
-   var lineYPosition;
-   var spaceBetweenInstructions;
-   var maxLines;
-   var itemList;
-   var thisButtonArray;
-   var DispConf;
-   var buttonList;
-   var backgrounds;
-   var backgroundMCS;
-   var instructionalTextFormat;
-   var gamertagTextFormat;
-   var _debugSquare;
    var CONTENT;
+   var DispConf;
+   var MOUSE_EVT;
+   var TIMELINE;
+   var _backgroundMouseCatcher;
+   var _debugSquare;
+   var _inputID;
+   var _leadingSize;
+   var _parent;
+   var background;
+   var backgroundColours;
+   var backgroundMCS;
+   var backgrounds;
+   var buttonList;
    var container;
+   var gamertagTextFormat;
+   var instructionalTextFormat;
+   var itemList;
+   var lineYPosition;
+   var maxLines;
    var respawn_spinnerMC;
    var savingIconID;
-   var background;
-   var _inputID;
-   var backgroundColours;
-   var _backgroundMouseCatcher;
-   var TIMELINE;
+   var spaceBetweenInstructions;
+   var textIndicatorList;
+   var thisButtonArray;
    var PADDING = 6;
    var respawn_spinner_frame = 1;
    var numberOfItems = 0;
@@ -71,6 +72,20 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       this.DispConf = new com.rockstargames.ui.utils.DisplayConfig();
       this.DispConf = this.getDisplayConfig(true);
    }
+   function getDisplayConfig(shouldSet)
+   {
+      if(shouldSet == undefined)
+      {
+         shouldSet = true;
+      }
+      var _loc2_ = new com.rockstargames.ui.utils.DisplayConfig();
+      com.rockstargames.ui.game.GameInterface.call("SET_DISPLAY_CONFIG",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,_loc2_);
+      if(shouldSet)
+      {
+         this.SET_DISPLAY_CONFIG(_loc2_.screenWidth,_loc2_.screenHeight,_loc2_.safeTop,_loc2_.safeBottom,_loc2_.safeLeft,_loc2_.safeRight,_loc2_.isWideScreen,_loc2_.isCircleAccept,_loc2_.isAsian,_loc2_.actualWidth,_loc2_.actualHeight);
+      }
+      return _loc2_;
+   }
    function INITIALISE(mc)
    {
       this.SET_MAX_WIDTH(1);
@@ -111,10 +126,10 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    {
       this.container._x = this.FOUR_THREE_PADDING + this.DispConf.safeRight * this.DispConf.screenWidth;
       this.container._y = this.DispConf.safeBottom * this.DispConf.screenHeight;
-      var _loc6_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.backgroundMCS.length)
       {
@@ -144,13 +159,23 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       this.DispConf.safeTop = _safeTopPercent;
       this.DispConf.screenHeight = _screenHeightPixels;
       this.DispConf.screenWidth = _screenWidthPixels;
-      if(_actualWidth / _actualHeight > 1.5)
+      if(_actualWidth != undefined)
       {
-         this.iActualWidth = 1280;
-      }
-      else
-      {
-         this.iActualWidth = 890;
+         if(_actualHeight != undefined)
+         {
+            if(_actualWidth / _actualHeight > 1.5)
+            {
+               this.iActualWidth = 1280;
+            }
+            else
+            {
+               this.iActualWidth = 890;
+            }
+         }
+         else
+         {
+            this.iActualWidth = 1280;
+         }
       }
       this.initScreenLayout();
    }
@@ -160,9 +185,10 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    }
    function saveSpinerFrame()
    {
+      var _loc2_;
       if(typeof this.respawn_spinnerMC == "movieclip")
       {
-         var _loc2_ = this.respawn_spinnerMC.spinner;
+         _loc2_ = this.respawn_spinnerMC.spinner;
          if(_loc2_ != undefined)
          {
             this.respawn_spinner_frame = _loc2_._currentframe;
@@ -269,6 +295,9 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    function SET_DATA_SLOT()
    {
       var _loc6_ = arguments[0];
+      var _loc4_;
+      var _loc5_;
+      var _loc3_;
       if(_loc6_ != this.ICON_INVALID)
       {
          if(this.is_saving)
@@ -276,8 +305,7 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
             _loc6_ = _loc6_ + 1;
          }
          this.thisButtonArray = [];
-         var _loc4_ = arguments.slice(1);
-         var _loc5_ = undefined;
+         _loc4_ = arguments.slice(1);
          if(this.CLICKABLE)
          {
             _loc5_ = _loc4_.length - 3;
@@ -286,7 +314,7 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
          {
             _loc5_ = _loc4_.length - 1;
          }
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < _loc5_)
          {
             trace("incomingParam[i] " + _loc4_[_loc3_]);
@@ -330,9 +358,10 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       }
       this.backgroundMCS = [];
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this._allBackgroundRectangles.length)
       {
-         var _loc3_ = this.CONTENT["backgroundRectangle" + _loc2_];
+         _loc3_ = this.CONTENT["backgroundRectangle" + _loc2_];
          delete _loc3_.onRollOver;
          delete _loc3_.onRollOut;
          delete _loc3_.onReleaseOutside;
@@ -382,15 +411,15 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    }
    function createLineOfButtons(Xpos, startIndex)
    {
-      var _loc11_ = undefined;
+      var _loc11_;
       var _loc3_ = startIndex;
       var _loc6_ = 0;
       var _loc9_ = 0;
-      var _loc10_ = undefined;
-      var _loc2_ = undefined;
-      var _loc4_ = undefined;
-      var _loc12_ = undefined;
-      var _loc5_ = undefined;
+      var _loc10_;
+      var _loc2_;
+      var _loc4_;
+      var _loc12_;
+      var _loc5_;
       _loc3_ = startIndex;
       while(_loc3_ < this.itemList.length)
       {
@@ -443,7 +472,7 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       var _loc8_ = this.container.createEmptyMovieClip("item" + this.numberOfItems,this.container.getNextHighestDepth());
       this.numberOfItems = this.numberOfItems + 1;
       _loc8_._y = - this.iconSize;
-      var _loc7_ = undefined;
+      var _loc7_;
       var _loc6_ = 0;
       var _loc2_ = 0;
       while(_loc2_ < item.length)
@@ -588,14 +617,15 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
             }
          }
       }
-      var _loc3_ = undefined;
-      if(buttonID == 30 || buttonID == 31 || buttonID == 32 || buttonID == 33)
-      {
-         _loc3_ = buttonParent.attachMovie("face_button_" + buttonID,"button_" + buttonID,buttonID,{_height:20});
-      }
-      else if(buttonID == 999)
+      var _loc3_;
+      if(buttonID == 999)
       {
          _loc3_ = buttonParent.attachMovie("button_" + buttonID,"button_" + buttonParent.getNextHighestDepth(),buttonParent.getNextHighestDepth(),{_height:20});
+      }
+      else if(buttonID >= 3000)
+      {
+         buttonID -= 3000;
+         _loc3_ = buttonParent.attachMovie("button_" + buttonID + "_ps5","button_" + buttonID + "_ps5",buttonID,{_height:20});
       }
       else
       {
@@ -619,11 +649,14 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    }
    function SET_BACKGROUND()
    {
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
+      var _loc6_;
       var _loc2_ = 0;
+      var _loc8_;
+      var _loc0_;
+      var _loc7_;
       while(_loc2_ < this.backgrounds.length)
       {
          _loc3_ = this.backgrounds[_loc2_];
@@ -638,7 +671,7 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
          com.rockstargames.ui.utils.Colour.Colourise(_loc6_,this.backgroundColours[0],this.backgroundColours[1],this.backgroundColours[2],this.backgroundColours[3]);
          if(this.CLICKABLE)
          {
-            var _loc8_ = new flash.geom.Rectangle(_loc5_ - this.BACKGROUND_PADDING,_loc4_ - this.BACKGROUND_PADDING,_loc3_ + this.BACKGROUND_PADDING,this.iconSize + this.BACKGROUND_PADDING);
+            _loc8_ = new flash.geom.Rectangle(_loc5_ - this.BACKGROUND_PADDING,_loc4_ - this.BACKGROUND_PADDING,_loc3_ + this.BACKGROUND_PADDING,this.iconSize + this.BACKGROUND_PADDING);
             this._allBackgroundRectangles[_loc2_] = _loc8_;
             this._backgroundMouseCatcher = this.CONTENT.createEmptyMovieClip("backgroundRectangle" + _loc2_,11 + _loc2_);
             this._backgroundMouseCatcher.beginFill(65280,100);
@@ -652,8 +685,7 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
             this._backgroundMouseCatcher._x = _loc5_ - this.BACKGROUND_PADDING;
             this._backgroundMouseCatcher._y = _loc4_ - this.BACKGROUND_PADDING;
             this._backgroundMouseCatcher.onRollOver = mx.utils.Delegate.create(this,this.processRollOver);
-            var _loc0_ = null;
-            var _loc7_ = this._backgroundMouseCatcher.onRollOut = mx.utils.Delegate.create(this,this.processRollOut);
+            _loc7_ = this._backgroundMouseCatcher.onRollOut = mx.utils.Delegate.create(this,this.processRollOut);
             _loc7_.backgroundIndex = _loc2_;
             this._backgroundMouseCatcher.onReleaseOutside = this._backgroundMouseCatcher.onRollOut;
          }
@@ -693,28 +725,39 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       _loc2_.selectable = false;
       if(textString != undefined)
       {
-         var _loc3_ = textString.split("PlayStation");
-         if(_loc3_.length > 1)
-         {
-            var _loc5_ = textString.split("Store");
-            if(_loc5_.length > 1)
-            {
-               textString = "";
-               if(_loc3_[0] != "PlayStation")
-               {
-                  textString += _loc3_[0];
-               }
-               textString += "PlayStation" + String.fromCharCode(174) + "Store";
-               if(_loc3_[_loc3_.length] != "Store" && _loc3_[_loc3_.length] != undefined)
-               {
-                  textString += _loc3_[_loc3_.length];
-               }
-            }
-         }
+         textString = this.parseForPSStore(textString);
          this.parseForGamerName(_loc2_,textString);
       }
       _loc2_._y += _loc2_.textHeight / 5;
       return _loc2_;
+   }
+   function parseForPSStore(textString)
+   {
+      var _loc4_ = String.fromCharCode(174);
+      if(textString.indexOf("(TM)") > 0)
+      {
+         _loc4_ = String.fromCharCode(8482);
+      }
+      var _loc3_ = textString.split("PlayStation");
+      var _loc1_;
+      if(_loc3_.length > 1)
+      {
+         _loc1_ = textString.split("Store");
+         if(_loc1_.length > 1)
+         {
+            textString = "";
+            if(_loc3_[0] != "PlayStation")
+            {
+               textString += _loc3_[0];
+            }
+            textString += "PlayStation" + _loc4_ + "Store";
+            if(_loc1_[_loc1_.length - 1] != "Store" && _loc1_[_loc1_.length - 1] != undefined)
+            {
+               textString += _loc1_[_loc1_.length - 1];
+            }
+         }
+      }
+      return textString;
    }
    function SET_PADDING(top, right, bottom, left)
    {
@@ -750,9 +793,9 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
       {
          alpha = 100;
       }
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc2_ = this.buttonList[buttonID];
-      var _loc3_ = undefined;
+      var _loc3_;
       for(var _loc5_ in _loc2_)
       {
          if(typeof _loc2_[_loc5_] == "movieclip")
@@ -807,14 +850,16 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    }
    function parse(incomingStr)
    {
+      var _loc3_;
+      var _loc2_;
       if(typeof incomingStr == "number")
       {
          this.addButton(incomingStr);
       }
       else
       {
-         var _loc3_ = incomingStr.split(this.seperator);
-         var _loc2_ = 0;
+         _loc3_ = incomingStr.split(this.seperator);
+         _loc2_ = 0;
          while(_loc2_ < _loc3_.length)
          {
             if(this.isKey(_loc3_[_loc2_]))
@@ -883,15 +928,20 @@ class com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS extends com.rocks
    {
       var _loc6_ = str.indexOf("<C>");
       var _loc7_ = str.indexOf("</C>");
+      var _loc2_;
+      var _loc5_;
+      var _loc9_;
+      var _loc8_;
+      var _loc10_;
       if(_loc6_ != -1 && _loc7_ != -1)
       {
-         var _loc2_ = str.substring(0,_loc6_);
-         var _loc5_ = str.substring(_loc6_ + 3,_loc7_);
-         var _loc9_ = str.substring(_loc7_ + 4);
+         _loc2_ = str.substring(0,_loc6_);
+         _loc5_ = str.substring(_loc6_ + 3,_loc7_);
+         _loc9_ = str.substring(_loc7_ + 4);
          TF.text = _loc2_ + _loc5_ + _loc9_;
          trace("TF.text " + TF.text);
-         var _loc8_ = this.instructionalTextFormat;
-         var _loc10_ = this.gamertagTextFormat;
+         _loc8_ = this.instructionalTextFormat;
+         _loc10_ = this.gamertagTextFormat;
          TF.setTextFormat(0,_loc2_.length,_loc8_);
          TF.setTextFormat(_loc2_.length,_loc2_.length + _loc5_.length,_loc10_);
          TF.setTextFormat(_loc2_.length + _loc5_.length,_loc2_.length + _loc5_.length + _loc9_.length,_loc8_);

@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.minigames.dancing.Meter
 {
-   var view;
-   var r;
-   var mask;
    var controlPoints;
    var drawDirections;
+   var mask;
+   var r;
+   var view;
    static var MIN_ALPHA = 20;
    static var ALPHA_FALLOFF = 100 - com.rockstargames.gtav.minigames.dancing.Meter.MIN_ALPHA;
    function Meter(view, radius)
@@ -33,10 +33,12 @@ class com.rockstargames.gtav.minigames.dancing.Meter
          _loc3_++;
          _loc2_ += 2;
       }
+      var _loc7_;
+      var _loc6_;
       if(normValue < 1)
       {
-         var _loc7_ = !(_loc4_ & 1) ? normValue % 0.125 : 0.125 - normValue % 0.125;
-         var _loc6_ = this.r * Math.tan(6.283185307179586 * _loc7_);
+         _loc7_ = !(_loc4_ & 1) ? normValue % 0.125 : 0.125 - normValue % 0.125;
+         _loc6_ = this.r * Math.tan(6.283185307179586 * _loc7_);
          _loc4_ <<= 2;
          this.mask.lineTo(this.drawDirections[_loc4_] + _loc6_ * this.drawDirections[_loc4_ + 1],this.drawDirections[_loc4_ + 2] + _loc6_ * this.drawDirections[_loc4_ + 3]);
          this.mask.lineTo(0,0);

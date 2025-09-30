@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.ui.Overlay
 {
-   var app;
-   var view;
-   var cursor;
    var acceptButton;
+   var app;
    var cancelButton;
+   var cursor;
+   var view;
    var CENTRE = 960;
    function Overlay(app, view, cursor)
    {

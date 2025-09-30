@@ -31,7 +31,7 @@ class com.rockstargames.gtav.web.DynamicSiteContants
       {
          pageId = 1;
       }
-      var _loc1_ = undefined;
+      var _loc1_;
       switch(siteId)
       {
          case com.rockstargames.gtav.web.DynamicSiteContants.WWW_EYEFIND_INFO[0]:

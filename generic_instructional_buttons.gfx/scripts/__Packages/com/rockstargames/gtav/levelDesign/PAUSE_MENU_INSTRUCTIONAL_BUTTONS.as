@@ -1,5 +1,7 @@
 class com.rockstargames.gtav.levelDesign.PAUSE_MENU_INSTRUCTIONAL_BUTTONS extends com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS
 {
+   var FOUR_THREE_PADDING;
+   var SET_BACKGROUND_COLOUR;
    function PAUSE_MENU_INSTRUCTIONAL_BUTTONS()
    {
       super();

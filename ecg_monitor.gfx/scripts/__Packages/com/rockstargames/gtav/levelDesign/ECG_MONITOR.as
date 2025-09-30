@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.ECG_MONITOR extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var heartRateTF;
    var CONTENT;
+   var heartRateTF;
    var heartBeatsList = new Array();
    var heartBeatsIndex = 0;
    function ECG_MONITOR()

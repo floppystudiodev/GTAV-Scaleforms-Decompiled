@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.TEETH_PULLING extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var toothMC;
    var CONTENT;
+   var toothMC;
    var depth = 0;
    var angle = 30;
    var isFinished = false;

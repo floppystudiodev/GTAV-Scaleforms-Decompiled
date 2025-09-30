@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.Multiplayer.textchat.Input
 {
    var mc;
-   var text;
    var prefix;
+   var text;
    static var PREFIX_FORMAT = new TextFormat("$Font2",14,10197915);
    static var INPUT_FORMAT = new TextFormat("$Font2",14,16777215);
    function Input(container, x, y)

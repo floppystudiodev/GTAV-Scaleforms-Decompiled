@@ -1,56 +1,77 @@
 class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.rockstargames.gtav.web.vehicleSites.VehicleWebsite
 {
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var purchaseButtonOnColour;
-   var purchaseButtonOffColour;
-   var sortButtonOnColour;
-   var sortButtonOffColour;
-   var dropDownButtonOnColour;
-   var dropDownButtonOffColour;
-   var favourUpperCase;
-   var videoDisabled;
-   var DETAILS_PAGE;
-   var PURCHASE_PAGE;
-   var TOOLBAR_LABEL;
-   var HOME_PAGE_HEADER_LABEL;
-   var HOME_PAGE_BODY_LABEL;
    var BUY_NOW_LABEL;
-   var SORT_PRICE_LABEL;
-   var SORT_NEW_IN_LABEL;
-   var DESCRIPTION_HEADER_LABEL;
-   var LIVERY_HEADER_LABEL;
-   var STATS_HEADER_LABEL;
-   var FILTER_ALL_LABEL;
-   var DESCRIPTION_LABEL_PREFIX;
-   var VEHICLE_BUTTON_ROW_HEIGHT;
-   var DETAILS_PAGE_IMAGE_SUFFIX;
-   var persistentYPosition;
-   var displayConfig;
-   var browser;
-   var isMP;
-   var categoryOrder;
-   var showroomVehicles;
-   var polaroidVehicles;
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
    var CONTENT;
-   var vehicleMCs;
-   var currentVehicle;
-   var filterDropDown;
-   var currentPage;
-   var populateTextCount;
-   var currentPageInitialised;
-   var dataTextScope;
-   var pricesSet;
-   var currentShowroomImage;
-   var priceSortDirection;
+   var DESCRIPTION_HEADER_LABEL;
+   var DESCRIPTION_LABEL_PREFIX;
+   var DETAILS_PAGE;
+   var DETAILS_PAGE_IMAGE_SUFFIX;
+   var DETAILS_PAGE_VEHICLE_BUTTON_OFFSET;
+   var ERROR_PAGE;
+   var FAILED_PAGE;
+   var FILTER_ALL_LABEL;
+   var HOME_PAGE;
+   var HOME_PAGE_BODY_LABEL;
+   var HOME_PAGE_HEADER_LABEL;
+   var LIVERY_HEADER_LABEL;
+   var NUM_VEHICLE_BUTTON_COLUMNS;
+   var PAGE_NAMES;
+   var PURCHASE_PAGE;
+   var SORT_FADE_IN_DELAY;
+   var SORT_FADE_IN_DURATION;
+   var SORT_NEW_IN_LABEL;
+   var SORT_PRICE_LABEL;
+   var STATS_HEADER_LABEL;
+   var SUCCESS_PAGE;
+   var TOOLBAR_LABEL;
+   var USE_SEPARATE_DETAIL_IMAGES;
+   var VEHICLE_BUTTON_COLUMNS;
+   var VEHICLE_BUTTON_ROW_HEIGHT;
+   var VEHICLE_COLOURS;
+   var _name;
+   var addVehicleImage;
+   var browser;
+   var categoryOrder;
    var currentFilter;
-   var selectedOption;
+   var currentPage;
+   var currentPageInitialised;
+   var currentShowroomImage;
+   var currentVehicle;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayConfig;
+   var dropDownButtonOffColour;
+   var dropDownButtonOnColour;
+   var favourUpperCase;
+   var filterDropDown;
+   var formatPrice;
+   var getVehicleFromId;
+   var initFailedPage;
+   var initSelectedOption;
+   var initSortingButtons;
+   var initSuccessPage;
+   var isMP;
+   var persistentYPosition;
    var playerRank;
+   var polaroidVehicles;
+   var populateTextCount;
+   var priceSortDirection;
+   var pricesSet;
+   var purchaseButtonOffColour;
+   var purchaseButtonOnColour;
+   var selectedOption;
+   var setLocalisedText;
+   var setOptionsButtons;
+   var showroomVehicles;
+   var sortButtonOffColour;
+   var sortButtonOnColour;
+   var vehicleMCs;
+   var videoDisabled;
+   static var FIND_US_PAGE;
    static var SHOWROOM_PAGE;
    static var STOCK_PAGE;
-   static var FIND_US_PAGE;
    static var NUM_SHOWROOM_CARS = 2;
    static var NUM_SHOWROOM_THUMBNAILS = 4;
    static var STOCK_PAGE_VEHICLE_BUTTON_OFFSET = 306;
@@ -177,12 +198,14 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    }
    function TXD_HAS_LOADED(txd, success, id)
    {
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       if(success)
       {
-         var _loc5_ = parseInt(id.substring(id.lastIndexOf("_") + 1));
-         var _loc2_ = this.getVehicleFromId(_loc5_);
+         _loc5_ = parseInt(id.substring(id.lastIndexOf("_") + 1));
+         _loc2_ = this.getVehicleFromId(_loc5_);
          _loc2_.txdLoaded = true;
-         var _loc4_ = undefined;
          if(id.indexOf("showroom") != -1)
          {
             _loc4_ = id.substring(id.lastIndexOf("-") + 1);
@@ -214,11 +237,12 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    {
       super.SET_PRICES(id,price,secondaryPrice,reductionType,salePrice,secondaryPrice,award);
       var _loc3_ = this.getVehicleFromId(id);
+      var _loc4_;
       if(_loc3_ && _loc3_.crossLink)
       {
          if(_loc3_.crossLink[0] != id)
          {
-            var _loc4_ = this.getVehicleFromId(_loc3_.crossLink[0]);
+            _loc4_ = this.getVehicleFromId(_loc3_.crossLink[0]);
          }
          else
          {
@@ -244,20 +268,24 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       com.rockstargames.ui.tweenStar.TweenStarLite.removeAllTweens();
       this.filterDropDown.dispose();
       this.browser.SUPRESS_HISTORY(false);
+      var _loc8_;
       if(pageName.indexOf(this.DETAILS_PAGE) == 0)
       {
-         var _loc8_ = pageName;
+         _loc8_ = pageName;
          pageName = this.DETAILS_PAGE;
       }
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.currentPage != pageName)
       {
          this.populateTextCount = 1;
          this.currentPageInitialised = false;
          for(var _loc7_ in this.vehicles)
          {
-            var _loc3_ = this.vehicles[_loc7_];
-            var _loc2_ = 0;
-            var _loc4_ = _loc3_.length;
+            _loc3_ = this.vehicles[_loc7_];
+            _loc2_ = 0;
+            _loc4_ = _loc3_.length;
             while(_loc2_ < _loc4_)
             {
                _loc3_[_loc2_].txdRequested = false;
@@ -297,6 +325,8 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
          case this.FAILED_PAGE:
          case this.ERROR_PAGE:
             this.initFailedPage(newPage);
+         default:
+            return;
       }
    }
    function goToAnchor(link)
@@ -309,7 +339,7 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       {
          this.persistentYPosition = 0;
       }
-      var _loc4_ = undefined;
+      var _loc4_;
       if(link.indexOf("showroomCarButton") == 0)
       {
          _loc4_ = parseInt(link.substring(17));
@@ -334,7 +364,8 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
          case "findUsButton":
             this.browser.GO_TO_WEBPAGE(this._name + "_S_" + com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM.FIND_US_PAGE);
             break;
-         case "setWaypointButton":
+         default:
+            super.goToAnchor(link);
             break;
          case "vehicleWipe":
             this.playWipeAnimation();
@@ -344,9 +375,8 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
             break;
          case "showroomThumbnailButton":
             this.setShowroomImage(_loc4_);
-            break;
-         default:
-            super.goToAnchor(link);
+         case "setWaypointButton":
+            return;
       }
    }
    function initHomePage(newPage)
@@ -378,6 +408,8 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       {
          return undefined;
       }
+      var _loc3_;
+      var _loc4_;
       if(newPage)
       {
          this.dataTextScope.length = 0;
@@ -394,8 +426,8 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
             _loc2_.videoButton.btnTxt.textAutoSize = "shrink";
          }
          this.initTopMenu(_loc2_,"home");
-         var _loc3_ = 0;
-         var _loc4_ = this.polaroidVehicles.length;
+         _loc3_ = 0;
+         _loc4_ = this.polaroidVehicles.length;
          while(_loc3_ < _loc4_)
          {
             this.addHomePageImage(this.polaroidVehicles[_loc3_],_loc2_["photo" + _loc3_]);
@@ -448,13 +480,14 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    }
    function addHomePageImage(vehicle, container)
    {
+      var _loc3_;
       if(vehicle.txdLoaded)
       {
          this.displayImage(vehicle,container);
       }
       else
       {
-         var _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id + "-" + container._name;
+         _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id + "-" + container._name;
          com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",vehicle.txd,_loc3_,true);
          vehicle.txdRequested = true;
       }
@@ -462,12 +495,12 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    function initShowroomPage(newPage)
    {
       var _loc3_ = this.CONTENT.showroom;
+      var _loc2_;
       if(newPage)
       {
          this.dataTextScope.length = 0;
          this.vehicleMCs.length = 0;
          this.initTopMenu(_loc3_,"showroom");
-         var _loc2_ = undefined;
          _loc2_ = 0;
          while(_loc2_ < this.showroomVehicles.length)
          {
@@ -515,13 +548,14 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    }
    function addShowroomImage(vehicle, container)
    {
+      var _loc3_;
       if(vehicle.txdLoaded)
       {
          this.displayImage(vehicle,container);
       }
       else
       {
-         var _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id + "-" + container._name;
+         _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id + "-" + container._name;
          com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",vehicle.txd,_loc3_,true);
          vehicle.txdRequested = true;
       }
@@ -577,10 +611,12 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    {
       var _loc2_ = this.CONTENT.details;
       var _loc3_ = false;
+      var _loc4_;
+      var _loc5_;
       if(this.currentVehicle.crossLink)
       {
-         var _loc4_ = this.getVehicleFromId(this.currentVehicle.crossLink[0]);
-         var _loc5_ = this.getVehicleFromId(this.currentVehicle.crossLink[1]);
+         _loc4_ = this.getVehicleFromId(this.currentVehicle.crossLink[0]);
+         _loc5_ = this.getVehicleFromId(this.currentVehicle.crossLink[1]);
          _loc3_ = _loc4_.price >= 0 && _loc5_.price >= 0;
       }
       if(_loc3_)
@@ -594,6 +630,15 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       var _loc6_ = parseInt(pageName.substr(this.DETAILS_PAGE.length));
       this.currentVehicle = this.getVehicleFromId(_loc6_);
       this.initTopMenu(_loc2_,"stock");
+      if(this.currentVehicle.award > 0)
+      {
+         _loc2_.award.gotoAndStop(this.currentVehicle.award);
+         _loc2_.award._visible = true;
+      }
+      else
+      {
+         _loc2_.award._visible = false;
+      }
       this.addVehicleImage(this.currentVehicle,_loc2_);
       this.addVehicleImage(this.currentVehicle,_loc2_.vehicleWipe);
       if(!this.pricesSet)
@@ -649,9 +694,10 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    }
    function initPurchaseButtons(page, numOptions, maxWidth)
    {
-      var _loc2_ = undefined;
-      var _loc7_ = undefined;
+      var _loc2_;
+      var _loc7_;
       var _loc3_ = numOptions - 1;
+      var _loc6_;
       while(_loc3_ >= 0)
       {
          _loc2_ = page.purchaseButton.duplicateMovieClip(this.PURCHASE_PAGE + "_" + (_loc3_ + 1),page.getNextHighestDepth(),{_x:page.purchaseButton._x,_y:page.purchaseButton._y});
@@ -661,7 +707,7 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
          _loc2_.btnTxt.autoSize = "left";
          _loc2_.btnTxt.htmlText = this.setLocalisedText(_loc2_.label,this.BUY_NOW_LABEL);
          _loc2_.label.autoSize = "left";
-         var _loc6_ = !(this.currentVehicle.reduction == 3 && this.currentVehicle.salePrice) ? this.currentVehicle.price : this.currentVehicle.salePrice;
+         _loc6_ = !(this.currentVehicle.reduction == 3 && this.currentVehicle.salePrice) ? this.currentVehicle.price : this.currentVehicle.salePrice;
          _loc2_.label.htmlText = this.setLocalisedText(_loc2_.label,this.BUY_NOW_LABEL) + " <font color=\'#FFFFFF\'>" + this.formatPrice(_loc6_) + "</font>";
          _loc2_.arrow._x = _loc2_.label._width + 10;
          _loc2_.onColour = 16777215;
@@ -795,11 +841,14 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    {
       var _loc7_ = [];
       var _loc6_ = false;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       for(var _loc9_ in this.vehicles)
       {
-         var _loc3_ = this.vehicles[_loc9_];
-         var _loc2_ = 0;
-         var _loc4_ = _loc3_.length;
+         _loc3_ = this.vehicles[_loc9_];
+         _loc2_ = 0;
+         _loc4_ = _loc3_.length;
          while(_loc2_ < _loc4_)
          {
             if(_loc3_[_loc2_].showStar && _loc3_[_loc2_].price != -1)
@@ -815,7 +864,7 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       this.initMenuButton(page.topMenu.stockButton,"LSC_STOCK",selected == "stock",_loc7_,_loc6_);
       this.initMenuButton(page.topMenu.findUsButton,"LSC_FIND_US",selected == "findUs",_loc7_,false);
       _loc7_.sort(Array.NUMERIC | Array.DESCENDING);
-      var _loc8_ = undefined;
+      var _loc8_;
       if(this.displayConfig.isAsian == 1 && !this.displayConfig.isWideScreen)
       {
          _loc8_ = Math.min(100,100 * com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM.TOP_NAV_TEXT_WIDTH_ASIAN / _loc7_[0]);
@@ -888,11 +937,14 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
       var _loc12_ = page.getNextHighestDepth();
       super.initVehicleButtons(page,yOffset);
       var _loc3_ = 0;
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
       for(var _loc14_ in this.vehicleMCs)
       {
-         var _loc6_ = this.VEHICLE_BUTTON_COLUMNS[_loc3_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
-         var _loc5_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc3_ / this.NUM_VEHICLE_BUTTON_COLUMNS) + yOffset;
-         var _loc4_ = page.attachMovie("polaroidShadow","polaroidShadow" + _loc3_,page.getNextHighestDepth(),{_x:_loc6_,_y:_loc5_});
+         _loc6_ = this.VEHICLE_BUTTON_COLUMNS[_loc3_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
+         _loc5_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc3_ / this.NUM_VEHICLE_BUTTON_COLUMNS) + yOffset;
+         _loc4_ = page.attachMovie("polaroidShadow","polaroidShadow" + _loc3_,page.getNextHighestDepth(),{_x:_loc6_,_y:_loc5_});
          _loc4_.swapDepths(_loc12_++);
          _loc4_._alpha = 0;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc4_,this.SORT_FADE_IN_DURATION,{_alpha:100,delay:this.SORT_FADE_IN_DELAY * _loc3_});
@@ -996,15 +1048,19 @@ class com.rockstargames.gtav.web.WWW_BENNYSORIGINALMOTORWORKS_COM extends com.ro
    {
       var _loc8_ = super.initOptions(page);
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc7_;
+      var _loc5_;
       while(_loc3_ < _loc8_)
       {
-         var _loc4_ = page.options["swatch" + _loc3_];
+         _loc4_ = page.options["swatch" + _loc3_];
          _loc4_._rotation = Math.random() * 360;
          if(this.currentVehicle.swatches)
          {
-            var _loc6_ = this.currentVehicle.swatches[_loc3_] >> 16 & 0xFF;
-            var _loc7_ = this.currentVehicle.swatches[_loc3_] >> 8 & 0xFF;
-            var _loc5_ = this.currentVehicle.swatches[_loc3_] & 0xFF;
+            _loc6_ = this.currentVehicle.swatches[_loc3_] >> 16 & 0xFF;
+            _loc7_ = this.currentVehicle.swatches[_loc3_] >> 8 & 0xFF;
+            _loc5_ = this.currentVehicle.swatches[_loc3_] & 0xFF;
             com.rockstargames.ui.utils.Colour.Colourise(_loc4_,_loc6_,_loc7_,_loc5_,100);
          }
          else

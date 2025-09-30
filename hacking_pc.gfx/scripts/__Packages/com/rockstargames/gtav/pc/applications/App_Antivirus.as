@@ -1,15 +1,17 @@
 class com.rockstargames.gtav.pc.applications.App_Antivirus extends com.rockstargames.gtav.pc.applications.App_Base
 {
-   var instructionMC;
-   var continueMC;
-   var debugMC;
+   var __get__desktopRef;
+   var _visible;
    var actionBtn;
-   var windowBtn;
    var bgMC;
-   var scanbarMC;
-   var logoMC;
+   var continueMC;
    var debugList;
+   var debugMC;
+   var instructionMC;
+   var logoMC;
    var ref;
+   var scanbarMC;
+   var windowBtn;
    var isWindowOpen = false;
    var isRepairing = false;
    var isRepaired = false;
@@ -125,11 +127,12 @@ class com.rockstargames.gtav.pc.applications.App_Antivirus extends com.rockstarg
    }
    function updateDebug()
    {
+      var _loc2_;
       if(this.isAnimating)
       {
          if(Math.random() * 100 > 50)
          {
-            var _loc2_ = this.debugList[Math.floor(Math.random() * this.debugList.length)];
+            _loc2_ = this.debugList[Math.floor(Math.random() * this.debugList.length)];
             this.debugMC.labelTF.text = "";
             this.debugMC.labelTF.text = _loc2_;
          }

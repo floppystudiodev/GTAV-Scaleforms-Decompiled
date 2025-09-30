@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
-   var controls;
-   var ownedWarehouseIDs;
-   var userListPanelOffset;
-   var view;
    var app;
-   var cursor;
    var barGraphAnimateCount;
+   var controls;
+   var cursor;
+   var mapButton;
+   var organisationMembersShowing;
+   var ownedWarehouseIDs;
    var pieChart;
    var pieChartPercentage;
-   var organisationMembersShowing;
-   var mapButton;
    var safeZoneBottom;
    var safeZoneRight;
+   var userListPanelOffset;
+   var view;
    static var WAREHOUSE_MAP = 2001;
    static var BUY_0 = 2002;
    static var BUY_1 = 2003;
@@ -130,9 +130,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       var _loc7_ = [];
       var _loc6_ = 0;
       var _loc8_ = this.app.warehouses.length;
+      var _loc3_;
       while(_loc6_ < _loc8_)
       {
-         var _loc3_ = this.app.warehouses[_loc6_];
+         _loc3_ = this.app.warehouses[_loc6_];
          if(_loc3_.isOwned)
          {
             _loc7_.push(_loc3_);
@@ -143,17 +144,19 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       var _loc5_ = 0;
       _loc6_ = 0;
       _loc8_ = _loc7_.length;
+      var _loc2_;
+      var _loc9_;
       while(_loc6_ < _loc8_)
       {
          _loc3_ = _loc7_[_loc6_];
          if(_loc3_.isOwned)
          {
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc4_["colLabel" + _loc5_],_loc3_.name,"center");
-            var _loc2_ = _loc4_["bar" + _loc5_];
+            _loc2_ = _loc4_["bar" + _loc5_];
             _loc2_.barLinesMask._height = _loc2_.whiteBar._height = _loc2_.whiteBar.originalHeight = com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_SCALAR * Math.min(_loc3_.capacity,com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_MAX_VALUE);
             _loc2_.redBar._height = _loc2_.redBar.originalHeight = com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_SCALAR * Math.min(_loc3_.amountStored,com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_MAX_VALUE);
             _loc2_.whiteBar._height = _loc2_.barLinesMask._height = _loc2_.redBar._height = 0;
-            var _loc9_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.StatsScreen["BAR_" + _loc5_],_loc2_);
+            _loc9_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.StatsScreen["BAR_" + _loc5_],_loc2_);
             this.controls.push(_loc9_);
             this.ownedWarehouseIDs.push(_loc3_.id);
             _loc5_ = _loc5_ + 1;
@@ -173,12 +176,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       _loc8_.dottedLines.play();
       this.barGraphAnimateCount = 0;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < 5)
       {
-         var _loc3_ = _loc8_["bar" + _loc2_];
+         _loc3_ = _loc8_["bar" + _loc2_];
          if(_loc3_._visible)
          {
-            var _loc4_ = _loc2_ * com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_BAR_INTERVAL;
+            _loc4_ = _loc2_ * com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.BAR_GRAPH_BAR_INTERVAL;
             com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(_loc3_.whiteBar,_loc4_,{onCompleteScope:this,onComplete:this.startBarAnimation,onCompleteArgs:[_loc3_,_loc2_]});
          }
          _loc2_ = _loc2_ + 1;
@@ -230,9 +235,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       var _loc6_ = 0;
       var _loc2_ = 0;
       var _loc4_ = this.app.warehouses.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.app.warehouses[_loc2_];
+         _loc3_ = this.app.warehouses[_loc2_];
          if(_loc3_.isOwned)
          {
             _loc6_ += _loc3_.capacity;
@@ -273,18 +279,22 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
          offset = 0;
       }
       var _loc2_ = 0;
+      var _loc7_;
+      var _loc6_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < 5)
       {
-         var _loc7_ = (_loc2_ + offset) % _loc8_;
+         _loc7_ = (_loc2_ + offset) % _loc8_;
          if(_loc2_ < _loc8_)
          {
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc5_["activeOrganisation" + _loc2_].gamerTag,this.app.activeUsers[_loc7_].name,"left");
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc5_["activeOrganisation" + _loc2_].organisation,this.app.activeUsers[_loc7_].organisation,"left");
-            var _loc6_ = false;
-            var _loc3_ = 0;
+            _loc6_ = false;
+            _loc3_ = 0;
             while(_loc3_ < this.controls.length)
             {
-               var _loc4_ = this.controls[_loc3_];
+               _loc4_ = this.controls[_loc3_];
                if(_loc4_.id == com.rockstargames.gtav.levelDesign.securoserv.StatsScreen["ACTIVE_ORGANISATION_" + (_loc2_ + 1)])
                {
                   _loc6_ = true;
@@ -338,14 +348,16 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
    {
       this.view.map._x = this.app.mapStartX;
       this.view.map._y = this.app.mapStartY;
+      var _loc2_;
+      var _loc3_;
       if(this.app.mapStartMatrix)
       {
          this.view.map.transform.matrix = this.app.mapStartMatrix;
       }
       else
       {
-         var _loc2_ = this.view.map.transform.matrix;
-         var _loc3_ = this.app.mapStartScale / _loc2_.a;
+         _loc2_ = this.view.map.transform.matrix;
+         _loc3_ = this.app.mapStartScale / _loc2_.a;
          _loc2_.translate(- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
          _loc2_.scale(_loc3_,_loc3_);
          _loc2_.translate(com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
@@ -358,21 +370,22 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       {
          case com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.ACTIVE_ORGANISATION_1:
             this.showOrganisationMembers(0);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.ACTIVE_ORGANISATION_2:
             this.showOrganisationMembers(1);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.ACTIVE_ORGANISATION_3:
             this.showOrganisationMembers(2);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.ACTIVE_ORGANISATION_4:
             this.showOrganisationMembers(3);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.StatsScreen.ACTIVE_ORGANISATION_5:
             this.showOrganisationMembers(4);
-            break;
+            return;
          default:
             this.hideOrganisationMembers();
+            return;
       }
    }
    function showOrganisationMembers(organisationIndex)
@@ -383,12 +396,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       _loc2_.bg._height = _loc2_.member0._y + _loc2_.member0._height + 18;
       var _loc6_ = 0;
       var _loc4_ = 0;
+      var _loc5_;
+      var _loc3_;
       while(_loc4_ < 8)
       {
-         var _loc5_ = _loc7_.goons[_loc4_];
+         _loc5_ = _loc7_.goons[_loc4_];
          if(_loc5_ != undefined && _loc5_ != "")
          {
-            var _loc3_ = _loc2_["member" + (_loc6_ = _loc6_ + 1)];
+            _loc3_ = _loc2_["member" + (_loc6_ = _loc6_ + 1)];
             com.rockstargames.gtav.levelDesign.SECUROSERV.truncate(_loc3_,_loc5_,"left");
             _loc2_.bg._height = _loc3_._y + _loc3_._height + 18;
          }
@@ -472,6 +487,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
                this.app.selectedWarehouseID = -1;
                this.app.showScreen(this.app.MAP_SCREEN);
+            default:
+               return;
          }
       }
       else if(inputID == com.rockstargames.gtav.levelDesign.SECUROSERV.CANCEL || inputID == com.rockstargames.gtav.levelDesign.SECUROSERV.RIGHT_MOUSE)
@@ -491,9 +508,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.StatsScreen extends com.rock
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view.userListPanel);
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view.userListPanel.tweenController);
       var _loc4_ = 0;
+      var _loc3_;
       while(_loc4_ < 5)
       {
-         var _loc3_ = this.view.warehousesPanel["bar" + _loc4_];
+         _loc3_ = this.view.warehousesPanel["bar" + _loc4_];
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_.whiteBar);
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_.barLinesMask);

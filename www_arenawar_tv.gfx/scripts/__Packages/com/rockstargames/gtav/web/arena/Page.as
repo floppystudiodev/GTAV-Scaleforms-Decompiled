@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.web.arena.Page
 {
-   var website;
    var pageName;
    var progressPanel;
    var view;
+   var website;
    static var BUTTON_COLOUR = 15213100;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;

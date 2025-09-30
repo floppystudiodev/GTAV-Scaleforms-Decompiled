@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_SAVING extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
    var CONTENT;
-   var _enumID;
    var _HUD;
+   var _enumID;
    var hidden = true;
    var SAVEGAME_ICON_STYLE_NONE = 0;
    var SAVEGAME_ICON_STYLE_WORKING = 1;

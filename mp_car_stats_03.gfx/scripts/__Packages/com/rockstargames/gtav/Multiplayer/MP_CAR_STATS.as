@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.MP_CAR_STATS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var FILE_NAME;
    var CONTENT;
+   var FILE_NAME;
+   var _texture;
    var loaderObject;
    var playerName;
-   var _texture;
    var thisObj;
    function MP_CAR_STATS()
    {
@@ -147,17 +147,20 @@ class com.rockstargames.gtav.Multiplayer.MP_CAR_STATS extends com.rockstargames.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.web.casino.ProgressPanel
 {
+   var stepPageTargets;
    var view;
    var website;
-   var stepPageTargets;
    function ProgressPanel(view, website)
    {
       this.view = view;
@@ -91,6 +91,7 @@ class com.rockstargames.gtav.web.casino.ProgressPanel
    }
    function updateCostStep(costSums, stepView)
    {
+      var _loc3_;
       if(!costSums.hasPurchase)
       {
          stepView.gotoAndStop("normal");
@@ -107,7 +108,7 @@ class com.rockstargames.gtav.web.casino.ProgressPanel
          }
          else
          {
-            var _loc3_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(costSums.actual);
+            _loc3_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(costSums.actual);
             com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(stepView.cost,_loc3_,4,false,true);
          }
          if(costSums.actual < costSums.original)

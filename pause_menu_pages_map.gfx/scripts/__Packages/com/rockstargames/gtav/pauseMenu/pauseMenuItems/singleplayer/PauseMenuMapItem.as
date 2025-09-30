@@ -1,31 +1,31 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var selectedValue;
-   var valueIndicatorMC;
-   var labelMC;
-   var valueTF;
-   var lMC;
-   var rMC;
-   var newIconMC;
-   var valuesLength;
+   var __get__columnID;
    var __get__data;
-   var initialIndex;
-   var itemTextLeft;
+   var __get__uniqueID;
+   var _data;
    var _highlighted;
+   var _x;
+   var _xmouse;
+   var attachMovie;
+   var bMC;
+   var bgMC;
+   var getNextHighestDepth;
    var iconID;
    var iconMC;
-   var attachMovie;
-   var getNextHighestDepth;
-   var _data;
-   var bgMC;
-   var bMC;
-   var _x;
+   var index;
+   var initialIndex;
+   var itemTextLeft;
+   var lMC;
+   var labelMC;
+   var newIconMC;
+   var rMC;
+   var selectedValue;
    var storeFunc;
    var storeScope;
-   var index;
-   var __get__uniqueID;
-   var __get__columnID;
-   var _xmouse;
+   var valueIndicatorMC;
+   var valueTF;
+   var valuesLength;
    var _showBlips = true;
    var showBlipIndex = 12;
    var initalValueIndex = 4;
@@ -53,16 +53,21 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapI
    {
       var _loc6_ = searchString.indexOf("<C>");
       var _loc8_ = searchString.indexOf("</C>");
+      var _loc1_;
+      var _loc5_;
+      var _loc9_;
+      var _loc2_;
+      var _loc3_;
       if(_loc6_ != -1 && _loc8_ != -1)
       {
-         var _loc1_ = searchString.substring(0,_loc6_);
-         var _loc5_ = searchString.substring(_loc6_ + 3,_loc8_);
-         var _loc9_ = searchString.substring(_loc8_ + 4);
-         var _loc2_ = new TextFormat();
+         _loc1_ = searchString.substring(0,_loc6_);
+         _loc5_ = searchString.substring(_loc6_ + 3,_loc8_);
+         _loc9_ = searchString.substring(_loc8_ + 4);
+         _loc2_ = new TextFormat();
          _loc2_ = my_txt.getTextFormat();
          _loc2_.font = "$Font2";
          _loc2_.size = 13;
-         var _loc3_ = new TextFormat();
+         _loc3_ = new TextFormat();
          _loc3_ = my_txt.getTextFormat();
          _loc3_.font = "$Font2_cond_NOT_GAMERNAME";
          _loc3_.size = 18;
@@ -88,6 +93,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapI
          this.valueIndicatorMC._visible = false;
       }
       this.iconID = this.data[4];
+      var _loc4_;
       if(this.iconID != undefined)
       {
          if(this._showBlips == true && this.iconMC._name != this.iconID)
@@ -115,7 +121,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapI
          }
          else
          {
-            var _loc4_ = new com.rockstargames.ui.utils.HudColour();
+            _loc4_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_MENU_GREY,_loc4_);
             com.rockstargames.ui.utils.Colour.Colourise(this.iconMC,_loc4_.r,_loc4_.g,_loc4_.b,_loc4_.a);
          }
@@ -133,9 +139,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapI
       {
          this.bgMC._width = this.bMC._width = Math.round(this.itemTextLeft._x + this.itemTextLeft._width + 30);
       }
+      var _loc5_;
       if(this.data[7])
       {
-         var _loc5_ = this.newIconMC._width + 2;
+         _loc5_ = this.newIconMC._width + 2;
          this.labelMC._x = 5 + _loc5_;
          this.iconMC._x += _loc5_;
          this.bgMC._width += _loc5_;
@@ -206,16 +213,20 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapI
    }
    function mPress()
    {
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
       if(!this.highlighted)
       {
          _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,false);
       }
       else
       {
-         var _loc2_ = this._xmouse;
-         var _loc3_ = 48;
-         var _loc4_ = this.bgMC._width - _loc3_;
-         var _loc5_ = this.bgMC._width - _loc3_;
+         _loc2_ = this._xmouse;
+         _loc3_ = 48;
+         _loc4_ = this.bgMC._width - _loc3_;
+         _loc5_ = this.bgMC._width - _loc3_;
          if(_loc2_ > _loc5_)
          {
             this.stepVal(1);

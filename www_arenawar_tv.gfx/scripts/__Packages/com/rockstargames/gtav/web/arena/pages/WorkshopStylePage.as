@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.WorkshopStylePage extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var view;
+   var website;
    function WorkshopStylePage(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"workshopStylePage",pageName,isFirstPage,progressPanel);
@@ -49,9 +49,10 @@ class com.rockstargames.gtav.web.arena.pages.WorkshopStylePage extends com.rocks
    function initButtons()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < com.rockstargames.gtav.web.WWW_ARENAWAR_TV.NUM_STYLE_OPTIONS)
       {
-         var _loc2_ = this.view.buttons["optionButton_" + _loc3_];
+         _loc2_ = this.view.buttons["optionButton_" + _loc3_];
          _loc2_.onColour = 16777215;
          _loc2_.offColour = 13421772;
          _loc2_.btnTxt.text = com.rockstargames.gtav.web.WWW_ARENAWAR_TV.setLocalisedText(_loc2_.btnTxt,"MBA_STYLE_" + (_loc3_ + 1)).toUpperCase();

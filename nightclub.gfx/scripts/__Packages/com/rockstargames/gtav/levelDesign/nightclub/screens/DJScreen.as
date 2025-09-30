@@ -1,19 +1,20 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
-   var persistentContent;
-   var baseButtons;
    var _buttons;
-   var currDJTextures;
+   var app;
+   var audioButtons;
+   var baseButtons;
+   var checkNavigationButtons;
    var currDJDictionaries;
+   var currDJTextures;
+   var cursor;
    var djPanelPositions;
    var djPanels;
-   var view;
+   var overlay;
+   var persistentContent;
    var selectButtonPositions;
    var selectButtons;
-   var audioButtons;
-   var app;
-   var cursor;
-   var overlay;
+   var view;
    function DJScreen(app, viewContainer, cursor, persistentContent, overlay)
    {
       super(app,viewContainer,cursor,persistentContent,overlay,"djScreen");
@@ -38,9 +39,10 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
       this.djPanelPositions = [];
       this.djPanels = [];
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_DJS)
       {
-         var _loc2_ = this.view["djPanel" + _loc3_];
+         _loc2_ = this.view["djPanel" + _loc3_];
          _loc2_._visible = false;
          _loc2_.label.textAutoSize = "shrink";
          this.djPanels.push(_loc2_);
@@ -53,12 +55,14 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
       this.selectButtonPositions = [];
       this.selectButtons = [];
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_DJS)
       {
-         var _loc2_ = this.view["selectButton" + _loc3_];
+         _loc2_ = this.view["selectButton" + _loc3_];
          _loc2_._visible = false;
          _loc2_.booked.label.autoSize = "left";
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["DJ_SELECT_" + _loc3_],_loc2_);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["DJ_SELECT_" + _loc3_],_loc2_);
          _loc4_.enabled = false;
          this._buttons.push(_loc4_);
          this.selectButtons.push(_loc4_);
@@ -70,11 +74,13 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
    {
       this.audioButtons = [];
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_DJS)
       {
-         var _loc3_ = this.view["djPanel" + _loc2_].audioButton;
+         _loc3_ = this.view["djPanel" + _loc2_].audioButton;
          _loc3_.icon.gotoAndStop("on");
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["DJ_AUDIO_" + _loc2_],_loc3_,"CLUB_AUDIO_PLAY",false);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["DJ_AUDIO_" + _loc2_],_loc3_,"CLUB_AUDIO_PLAY",false);
          this._buttons.push(_loc4_);
          this.audioButtons[_loc2_] = _loc4_;
          _loc2_ = _loc2_ + 1;
@@ -84,12 +90,16 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
    {
       var _loc7_ = 0;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_DJS)
       {
-         var _loc3_ = this.app.djs[_loc2_];
-         var _loc5_ = _loc3_ != undefined && _loc3_.isAvailable;
-         var _loc4_ = this.djPanels[_loc2_];
-         var _loc6_ = this.selectButtons[_loc2_].view;
+         _loc3_ = this.app.djs[_loc2_];
+         _loc5_ = _loc3_ != undefined && _loc3_.isAvailable;
+         _loc4_ = this.djPanels[_loc2_];
+         _loc6_ = this.selectButtons[_loc2_].view;
          if(_loc5_)
          {
             _loc4_.label.text = _loc3_.name;
@@ -128,9 +138,10 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
    function resetAudioButtons()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_DJS)
       {
-         var _loc3_ = this.audioButtons[_loc2_].view;
+         _loc3_ = this.audioButtons[_loc2_].view;
          com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(_loc3_.label,"CLUB_AUDIO_PLAY");
          _loc3_.icon.gotoAndStop("on");
          _loc2_ = _loc2_ + 1;
@@ -145,23 +156,24 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
             com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(buttonView.label,"CLUB_DJ_BOOK");
             this.updateCost(buttonView,dj.isOnSale,dj.cost,dj.saleCost);
             buttonView.booked._visible = false;
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.nightclub.structs.DJ.STATE_COLLECT:
             this.showBooked(buttonView,"CLUB_DJ_COLLECT");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.nightclub.structs.DJ.STATE_AVAILABLE:
             com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(buttonView.label,"CLUB_DJ_REBOOK");
             this.updateCost(buttonView,dj.isOnSale,dj.cost,dj.saleCost);
             buttonView.booked._visible = false;
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.nightclub.structs.DJ.STATE_RESIDENT:
             this.showBooked(buttonView,"CLUB_DJ_RESIDENT" + _loc4_);
-            break;
+            return;
          default:
             buttonView.label.text = "";
             buttonView.cost.text = "";
             buttonView.strikethrough._visible = false;
             buttonView.booked._visible = false;
+            return;
       }
    }
    function showBooked(buttonView, label)
@@ -176,10 +188,14 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
    function updateCost(panel, isOnSale, originalCost, saleCost)
    {
       panel.cost.textAutoSize = "none";
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       if(isOnSale)
       {
-         var _loc2_ = "$" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(originalCost);
-         var _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(saleCost);
+         _loc2_ = "$" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(originalCost);
+         _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(saleCost);
          panel.cost.text = _loc2_ + _loc3_;
          if(panel.cost.textWidth > panel.cost._width)
          {
@@ -190,9 +206,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
          else
          {
             panel.cost.text = _loc2_;
-            var _loc5_ = panel.cost.textWidth;
+            _loc5_ = panel.cost.textWidth;
             panel.cost.appendText(_loc3_);
-            var _loc4_ = panel.cost.textWidth;
+            _loc4_ = panel.cost.textWidth;
             panel.strikethrough._x = 0.5 * (panel.cost._width - _loc4_) + panel.cost._x;
             panel.strikethrough._width = _loc5_ + 4;
          }
@@ -225,8 +241,6 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.LB:
             if(!this.overlay.isShowing)
             {
@@ -238,6 +252,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.DJScreen extends com.
             {
                this.app.showScreen(this.app.WAREHOUSE_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)

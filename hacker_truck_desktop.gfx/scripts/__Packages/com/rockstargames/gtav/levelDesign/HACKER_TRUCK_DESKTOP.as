@@ -1,23 +1,24 @@
 class com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
-   var prevScreenID;
-   var inputReceived;
+   var cursor;
    var deactivated;
-   var launchTimestamp;
    var displayConfig;
    var imageManager;
-   var screenContainer;
-   var overlay;
-   var cursor;
-   var missionStates;
-   var missionCooldowns;
+   var inputReceived;
    var jobs;
-   var currScreen;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var missionCooldowns;
+   var missionStates;
+   var overlay;
+   var prevScreenID;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -98,9 +99,10 @@ class com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP extends com.rockst
    }
    function ADD_JOB(index, title, value, valueType, tooltip, isAvailable, salePrice)
    {
+      var _loc2_;
       if(index >= 0 && index < com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.MAX_JOBS)
       {
-         var _loc2_ = this.jobs[index];
+         _loc2_ = this.jobs[index];
          _loc2_.title = title;
          _loc2_.value = value;
          _loc2_.valueType = valueType;
@@ -192,8 +194,9 @@ class com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP extends com.rockst
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(this.currScreen instanceof com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen)
+            if(this.currScreen instanceof com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen)
             {
                com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen(this.currScreen).hideJobOverlay();
             }
@@ -291,17 +294,20 @@ class com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP extends com.rockst
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

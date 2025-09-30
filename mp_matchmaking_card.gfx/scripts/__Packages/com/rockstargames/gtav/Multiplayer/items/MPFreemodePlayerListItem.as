@@ -1,23 +1,27 @@
 class com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var labelMC;
-   var rankNumTF;
-   var jpIconMC;
+   var __get__data;
+   var _highlighted;
+   var attachMovie;
+   var avatarBGMC;
+   var avatarImg;
    var bgMC;
+   var crewTagMC;
+   var friendOrCrewTF;
+   var getNextHighestDepth;
    var groupBGMC;
    var groupNumTF;
-   var crewTagMC;
-   var taggedMC;
+   var highlightBGMC;
    var icon1MC;
    var icon2MC;
-   var avatarBGMC;
-   var friendOrCrewTF;
-   var rankingTF;
-   var avatarImg;
-   var rankBGMC;
    var jobPointsTF;
+   var jpIconMC;
+   var labelMC;
+   var rankBGMC;
+   var rankNumTF;
+   var rankingTF;
    var scoreTF;
-   var highlightBGMC;
+   var taggedMC;
    static var dIndex = 0;
    var hBGColourEnum = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK;
    var SELECT_ALPHA = 100;
@@ -228,6 +232,7 @@ class com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem extends 
          this.avatarImg = com.rockstargames.ui.media.ImageLoaderMC(this.attachMovie("avatarImage","a",this.getNextHighestDepth(),{_x:25,_y:0}));
          this.avatarImg.swapDepths(this.rankingTF);
       }
+      var _loc3_;
       if(this.avatarImg.textureDict == txd)
       {
          if(this.avatarImg.isLoaded)
@@ -243,7 +248,7 @@ class com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem extends 
             this.avatarImg.removeTxdRef();
          }
          this.avatarImg.init(this.txdCallbackStr,txd,txn,25,25);
-         var _loc3_ = this.avatarImg.splitPath(String(this.avatarImg),this.txdLevel);
+         _loc3_ = this.avatarImg.splitPath(String(this.avatarImg),this.txdLevel);
          this.avatarImg.requestTxdRef(_loc3_,true);
       }
    }

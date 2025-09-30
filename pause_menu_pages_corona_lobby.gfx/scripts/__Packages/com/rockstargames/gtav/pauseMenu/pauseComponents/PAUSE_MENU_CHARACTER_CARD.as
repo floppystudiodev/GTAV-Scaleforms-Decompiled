@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
    var SET_FOCUS;
-   var hudColorEnum;
+   var dbgID;
    var highlightBitmask;
+   var hudColorEnum;
    var model;
    function PAUSE_MENU_CHARACTER_CARD()
    {
@@ -58,14 +58,17 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_CARD
       var _loc7_ = 3;
       var _loc8_ = 10;
       var _loc3_ = _loc7_;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
       while(_loc3_ < arguments.length)
       {
-         var _loc4_ = this.CONTENT.statsMC.statsLabelContainer["stat" + (_loc3_ - _loc7_)];
+         _loc4_ = this.CONTENT.statsMC.statsLabelContainer["stat" + (_loc3_ - _loc7_)];
          if(_loc4_ != undefined)
          {
             com.rockstargames.ui.utils.UIText.setSizedText(_loc4_,arguments[_loc3_],true);
-            var _loc6_ = true;
-            var _loc5_ = _loc8_ - _loc7_ + _loc3_;
+            _loc6_ = true;
+            _loc5_ = _loc8_ - _loc7_ + _loc3_;
             if(arguments[_loc5_] != undefined)
             {
                _loc6_ = arguments[_loc5_];
@@ -78,17 +81,21 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_CARD
    function SET_DESCRIPTION(bitmask)
    {
       this.highlightBitmask.bitfield = bitmask == undefined ? 0 : bitmask;
+      var _loc3_;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
       if(bitmask != undefined)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < arguments.length - 1)
          {
-            var _loc4_ = this.CONTENT.statsMC["statBarN" + _loc3_];
+            _loc4_ = this.CONTENT.statsMC["statBarN" + _loc3_];
             if(_loc4_ != undefined)
             {
                _loc4_.init(this.hudColorEnum,123);
-               var _loc6_ = arguments[_loc3_ + 1] * 100;
-               var _loc5_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc6_,23,2,5);
+               _loc6_ = arguments[_loc3_ + 1] * 100;
+               _loc5_ = com.rockstargames.gtav.utils.GTAVUIUtils.getAdjustedSegmentPct(_loc6_,23,2,5);
                _loc4_.percent(_loc5_,false);
             }
             _loc3_ = _loc3_ + 1;

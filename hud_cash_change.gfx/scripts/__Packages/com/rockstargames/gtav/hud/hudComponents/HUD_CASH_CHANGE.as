@@ -1,12 +1,14 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_CASH_CHANGE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var FADE_DURATION;
+   var ON_SCREEN_DURATION;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
    var defaultX;
    var defaultY;
-   var _enumID;
-   var _HUD;
    function HUD_CASH_CHANGE()
    {
       super();
@@ -29,7 +31,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_CASH_CHANGE extends com.rocks
    {
       var _loc3_ = params[0];
       var _loc4_ = params[1];
-      var _loc2_ = undefined;
+      var _loc2_;
       if(_loc4_)
       {
          _loc2_ = "+$";

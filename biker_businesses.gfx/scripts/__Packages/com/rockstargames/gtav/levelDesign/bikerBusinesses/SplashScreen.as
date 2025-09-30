@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.SplashScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var controls;
-   var view;
-   var cursor;
    var app;
+   var controls;
+   var cursor;
    var loginButton;
+   var view;
    static var LOGIN_BUTTON = 999;
    function SplashScreen(app, viewContainer, cursor)
    {
@@ -84,11 +84,13 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.SplashScreen extends co
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.ACCEPT:
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.LEFT_MOUSE:
             this.handleAcceptInput(inputID);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.app.GET_CURRENT_SELECTION()) === com.rockstargames.gtav.levelDesign.bikerBusinesses.SplashScreen.LOGIN_BUTTON)
       {
          this.app.showScreen(this.app.MANAGEMENT_SCREEN);

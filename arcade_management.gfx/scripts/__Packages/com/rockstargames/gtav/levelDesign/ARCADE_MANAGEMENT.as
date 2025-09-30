@@ -1,30 +1,31 @@
 class com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var currScreenID;
-   var prevScreenID;
-   var inputReceived;
-   var deactivated;
-   var launchTimestamp;
-   var navHistory;
-   var cabinets;
-   var upgrades;
-   var displayConfig;
-   var imageManager;
-   var persistentContent;
-   var screenContainer;
+   var TIMELINE;
+   var _name;
    var arcadeImage;
-   var overlay;
-   var cursor;
-   var gamername;
-   var mugshot;
-   var location;
-   var totalEarnings;
+   var cabinets;
    var currScreen;
+   var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var gamername;
+   var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var location;
+   var mugshot;
+   var navHistory;
+   var overlay;
+   var persistentContent;
+   var prevScreenID;
+   var screenContainer;
    var selectedCabinet;
+   var totalEarnings;
+   var upgrades;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -204,13 +205,15 @@ class com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT extends com.rockstarg
          return undefined;
       }
       this.inputReceived = true;
+      var _loc4_;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.arcadeManagement.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.arcadeManagement.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.arcadeManagement.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.arcadeManagement.Cursor.LEFT:
-            var _loc4_ = this.cursor.setTarget(inputID);
+            _loc4_ = this.cursor.setTarget(inputID);
             if(_loc4_)
             {
                com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.playSound("Mouse_Move_Cursor");
@@ -227,17 +230,19 @@ class com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT extends com.rockstarg
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.currScreen.customCancelResponse())
+            if(this.currScreen.customCancelResponse())
             {
-               if(this.navHistory.length > 0)
+               break;
+            }
+            if(this.navHistory.length > 0)
+            {
+               _loc2_ = Number(this.navHistory.pop());
+               if(_loc2_ != -1)
                {
-                  var _loc2_ = Number(this.navHistory.pop());
-                  if(_loc2_ != -1)
-                  {
-                     this.showScreen(_loc2_);
-                     this.navHistory.pop();
-                  }
+                  this.showScreen(_loc2_);
+                  this.navHistory.pop();
                }
             }
       }
@@ -399,17 +404,20 @@ class com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT extends com.rockstarg
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

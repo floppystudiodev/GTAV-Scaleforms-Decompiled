@@ -1,21 +1,22 @@
 class com.rockstargames.gtav.minigames.horseracingwall.HORSE_RACING_WALL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var countdownSecondsRemaining;
+   var currScreen;
+   var currScreenID;
+   var displayConfig;
+   var errorMessage;
+   var errorTitle;
+   var horses;
    var imageManager;
    var navigation;
-   var displayConfig;
-   var horses;
-   var players;
-   var winOrder;
    var navigationEnabled;
+   var players;
    var screenContainer;
-   var currScreenID;
-   var currScreen;
-   var countdownSecondsRemaining;
-   var errorTitle;
-   var errorMessage;
+   var winOrder;
    static var randomSeed = getTimer();
    var ACCEPT = 201;
    var CANCEL = 202;
@@ -250,17 +251,20 @@ class com.rockstargames.gtav.minigames.horseracingwall.HORSE_RACING_WALL extends
    function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

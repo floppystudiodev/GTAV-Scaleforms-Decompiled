@@ -1,22 +1,23 @@
 class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var SINGLE_TEXT_HEIGHT;
    var BIG_TEXT_OUTLINE_STRENGTH;
    var BigMessageMaster;
-   var CONTENT;
-   var shardBG_ID;
-   var isAnimating;
-   var hasMsgBG;
-   var crewEmblemImg;
-   var MESSAGE_POSITION;
-   var RankIconImageMC;
    var BigMessageTF;
    var BigMessageTextMC;
+   var CONTENT;
    var IconNameTF;
+   var MESSAGE_POSITION;
+   var RankIconImageMC;
    var RankUpIconMC;
+   var SINGLE_TEXT_HEIGHT;
+   var _width;
+   var crewEmblemImg;
+   var hasMsgBG;
+   var isAnimating;
+   var shardBG_ID;
+   var showDoubleBG;
    var strapline_background;
    var weaponPurchased;
-   var showDoubleBG;
    var BIG_MSG_DURATION = 0;
    var STRAP_MSG_DURATION = 0;
    var STRAP_MSG_DELAY_DURATION = 0;
@@ -84,12 +85,14 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.BigMessageMaster.shard,_loc14_);
       var _loc8_ = "gqyGYÃ‡";
       var _loc2_ = 0;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < _loc8_.length)
       {
          if(_loc3_.indexOf(_loc8_.charAt(_loc2_)) != -1)
          {
-            var _loc5_ = this.BigMessageMaster.BIG_TEXT_WRAPPER.BIG_TEXT.textHeight;
-            var _loc4_ = 0.18 * _loc5_;
+            _loc5_ = this.BigMessageMaster.BIG_TEXT_WRAPPER.BIG_TEXT.textHeight;
+            _loc4_ = 0.18 * _loc5_;
             this.BigMessageMaster.BIG_TEXT_WRAPPER._y -= _loc4_;
             break;
          }
@@ -119,11 +122,13 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
             _loc2_ = _loc2_ + 1;
          }
       }
+      var _loc10_;
+      var _loc11_;
       if(_loc6_)
       {
-         var _loc10_ = this.BigMessageMaster.BIG_TEXT_WRAPPER.BIG_TEXT;
+         _loc10_ = this.BigMessageMaster.BIG_TEXT_WRAPPER.BIG_TEXT;
          _loc10_._y -= 10;
-         var _loc11_ = _loc10_.getNewTextFormat();
+         _loc11_ = _loc10_.getNewTextFormat();
          _loc11_.size *= 0.85;
          _loc10_.setTextFormat(_loc11_);
       }
@@ -255,9 +260,10 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          this.BigMessageMaster.MESSAGE_TEXT_WRAPPER._alpha = 0;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.BigMessageMaster.MESSAGE_TEXT_WRAPPER,0.35,{_alpha:100});
       }
+      var _loc4_;
       if(msgText != "" && msgText != undefined)
       {
-         var _loc4_ = new flash.geom.Point(_loc3_.textWidth,_loc3_.textHeight);
+         _loc4_ = new flash.geom.Point(_loc3_.textWidth,_loc3_.textHeight);
          if(_loc4_.y > this.SINGLE_TEXT_HEIGHT)
          {
             this.BigMessageMaster.BLACK_BAR_DOUBLE._visible = true;
@@ -315,7 +321,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    }
    function SHOW_RANKUP_MP_MESSAGE(bigText)
    {
-      var _loc6_ = undefined;
+      var _loc6_;
       if(this.BigMessageMaster != undefined)
       {
          this.BigMessageMaster.removeMovieClip();
@@ -330,10 +336,11 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       this.BigMessageMaster.BIG_TEXT.htmlText = bigText;
       this.setBigMessageOutline(bigText);
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.BigMessageMaster.BLACK_BAR_SINGLE.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_INGAME_BG);
+      var _loc5_;
       if(_loc4_ != "" && _loc4_ != undefined)
       {
          this.BigMessageMaster.MESSAGE_TEXT.htmlText = _loc4_;
-         var _loc5_ = new flash.geom.Point(this.BigMessageMaster.MESSAGE_TEXT.textWidth,this.BigMessageMaster.MESSAGE_TEXT.textHeight);
+         _loc5_ = new flash.geom.Point(this.BigMessageMaster.MESSAGE_TEXT.textWidth,this.BigMessageMaster.MESSAGE_TEXT.textHeight);
          this.BigMessageMaster.BLACK_BAR_SINGLE._width = _loc5_.x + 10 + this.PADDING / 2 + this.BigMessageMaster.RANK_ICON._width;
          this.BigMessageMaster.BLACK_BAR_SINGLE._visible = true;
          _loc6_ = _loc5_.x + 10 + this.BigMessageMaster.RANK_ICON._width;
@@ -363,7 +370,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    }
    function SHOW_CREW_RANKUP_MP_MESSAGE(titleStr, msgStr, rankNumber, emblemTXD, emblemTXN, alpha)
    {
-      var _loc5_ = undefined;
+      var _loc5_;
       if(this.BigMessageMaster != undefined)
       {
          this.BigMessageMaster.removeMovieClip();
@@ -376,10 +383,11 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       this.setBigMessageOutline(titleStr);
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.BigMessageMaster.BLACK_BAR_SINGLE.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_INGAME_BG);
       var _loc2_ = 0;
+      var _loc3_;
       if(msgStr != "" && msgStr != undefined)
       {
          this.BigMessageMaster.MESSAGE_TEXT.htmlText = msgStr;
-         var _loc3_ = new flash.geom.Point(this.BigMessageMaster.MESSAGE_TEXT.textWidth,this.BigMessageMaster.MESSAGE_TEXT.textHeight);
+         _loc3_ = new flash.geom.Point(this.BigMessageMaster.MESSAGE_TEXT.textWidth,this.BigMessageMaster.MESSAGE_TEXT.textHeight);
          this.BigMessageMaster.BLACK_BAR_SINGLE._width = _loc3_.x + 10 + this.PADDING + this.BigMessageMaster.CREW_RANK_ICON._width;
          this.BigMessageMaster.BLACK_BAR_SINGLE._visible = true;
          _loc5_ = _loc3_.x + 10 + this.BigMessageMaster.CREW_RANK_ICON._width;
@@ -417,10 +425,13 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    }
    function SHOW_MISSION_PASSED_MESSAGE()
    {
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       if(arguments.length >= 5)
       {
-         var _loc3_ = arguments[4];
-         var _loc5_ = arguments[5];
+         _loc3_ = arguments[4];
+         _loc5_ = arguments[5];
          if(_loc5_ && _loc3_ > 0)
          {
             _loc3_ -= 1;
@@ -430,7 +441,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          if(arguments[1] && arguments[1] != "")
          {
             this.bigTextGoalY = this.BigMessageMaster.BIG_TEXT_WRAPPER._y;
-            var _loc4_ = 170;
+            _loc4_ = 170;
             this.BigMessageMaster.BIG_TEXT_WRAPPER._y = 0.5 * (_loc4_ - this.BigMessageMaster.BIG_TEXT_WRAPPER._height) + this.BigMessageMaster.shard._y;
             this.BigMessageMaster.MESSAGE_TEXT_WRAPPER.MESSAGE_TEXT._alpha = 0;
             this.bigTextGoalY -= this.BigMessageMaster.BIG_TEXT_WRAPPER._y;
@@ -474,6 +485,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          _loc2_.gotoAndStop(1);
       }
       _loc3_._x = 0 + _loc2_._x + _loc2_._width + _loc13_;
+      var _loc10_;
       if(_loc6_ != "" && _loc6_ != undefined)
       {
          _loc3_.autoSize = "left";
@@ -481,7 +493,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          _loc3_.htmlText = _loc6_;
          _loc8_.autoSize = "left";
          _loc8_._width = 2;
-         var _loc10_ = new flash.geom.Point(_loc3_.textWidth,_loc3_.textHeight);
+         _loc10_ = new flash.geom.Point(_loc3_.textWidth,_loc3_.textHeight);
          if(weaponDescription != undefined)
          {
             _loc2_._y = 0 + _loc4_._height / 2;
@@ -601,16 +613,18 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       var _loc3_ = arguments;
       var _loc8_ = _loc3_[0];
       var _loc9_ = _loc3_[3];
+      var _loc5_;
+      var _loc7_;
       if(_loc3_[2] != undefined)
       {
-         var _loc5_ = _loc3_[2];
+         _loc5_ = _loc3_[2];
          if(this.RankIconImageMC.numberTF != undefined)
          {
             this.RankIconImageMC.numberTF.htmlText = _loc5_;
             if(_loc5_ > 99)
             {
                this.RankIconImageMC.numberTF._y = 11;
-               var _loc7_ = this.RankIconImageMC.numberTF.getTextFormat();
+               _loc7_ = this.RankIconImageMC.numberTF.getTextFormat();
                _loc7_.size = 24;
                this.RankIconImageMC.numberTF.setTextFormat(_loc7_);
             }
@@ -648,9 +662,10 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    {
       colId = arguments[2];
       this.DO_SHARD(arguments,true,colId);
+      var _loc5_;
       if(darkenBackground)
       {
-         var _loc5_ = this.BigMessageMaster.bgMC.duplicateMovieClip("bgMC2",-1,{_x:this.BigMessageMaster.bgMC._x,_y:this.BigMessageMaster.bgMC._y,_alpha:20});
+         _loc5_ = this.BigMessageMaster.bgMC.duplicateMovieClip("bgMC2",-1,{_x:this.BigMessageMaster.bgMC._x,_y:this.BigMessageMaster.bgMC._y,_alpha:20});
       }
    }
    function SHOW_SHARD_CENTERED_TOP_MP_MESSAGE()
@@ -714,11 +729,13 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
             _loc2_ = _loc2_ + 1;
          }
       }
+      var _loc7_;
+      var _loc8_;
       if(_loc4_)
       {
-         var _loc7_ = this.BigMessageMaster.textHolderMC.titleMC.BIG_TEXT;
+         _loc7_ = this.BigMessageMaster.textHolderMC.titleMC.BIG_TEXT;
          _loc7_._y -= 10;
-         var _loc8_ = _loc7_.getNewTextFormat();
+         _loc8_ = _loc7_.getNewTextFormat();
          _loc8_.size *= 0.85;
          _loc7_.setTextFormat(_loc8_);
          _loc7_ = this.BigMessageMaster.textHolderMC.coltitleMC.BIG_TEXT;
@@ -738,14 +755,17 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       {
          com.rockstargames.ui.utils.Colour.ApplyHudColour(this.BigMessageMaster.bgMC,shardColID);
       }
+      var _loc14_;
+      var _loc13_;
+      var _loc6_;
       if(isCenter)
       {
-         var _loc14_ = 8;
-         var _loc13_ = 360 - _loc14_;
+         _loc14_ = 8;
+         _loc13_ = 360 - _loc14_;
          this.BigMessageMaster.bgMC._y = _loc13_;
          com.rockstargames.ui.utils.Debug.log("CENTRING TEXT");
          this.BigMessageMaster.textHolderMC._y = this.BigMessageMaster.bgMC._y - this.BigMessageMaster.textHolderMC._height / 2;
-         var _loc6_ = "gqyGYÃ‡";
+         _loc6_ = "gqyGYÃ‡";
          _loc2_ = 0;
          while(_loc2_ < _loc6_.length)
          {
@@ -774,14 +794,18 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    function parseForGamerTagTitleFonts(tf, str, stdPtSize)
    {
       var _loc3_ = str.split("<C>");
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
+      var _loc7_;
       if(_loc3_.length > 1)
       {
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ < _loc3_.length)
          {
-            var _loc6_ = String(_loc3_[_loc2_]).split("</C>");
-            var _loc4_ = undefined;
-            var _loc5_ = _loc6_[0].split("<");
+            _loc6_ = String(_loc3_[_loc2_]).split("</C>");
+            _loc5_ = _loc6_[0].split("<");
             if(_loc5_.length > 1)
             {
                _loc4_ = _loc5_[1].split(">")[1];
@@ -790,7 +814,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
             {
                _loc4_ = _loc6_[0];
             }
-            var _loc7_ = this.getFontSizeFit(_loc4_,stdPtSize + 3,tf._width);
+            _loc7_ = this.getFontSizeFit(_loc4_,stdPtSize + 3,tf._width);
             _loc3_[_loc2_] = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc7_ + "\'>" + _loc3_[_loc2_];
             _loc2_ += 2;
          }
@@ -820,6 +844,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       var _loc8_ = this.BigMessageMaster.textHolderMC.titleMC.BIG_TEXT;
       var _loc3_ = this.BigMessageMaster.textHolderMC.MESSAGE_TEXT;
       var _loc9_ = this.BigMessageMaster.textHolderMC.coltitleMC;
+      var _loc6_;
       if(bigText == "")
       {
          _loc8_._visible = false;
@@ -827,7 +852,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       else
       {
          _loc8_.htmlText = "<font color=\'#FFFFFF\'>" + bigText + "</font>";
-         var _loc6_ = _loc8_.textHeight;
+         _loc6_ = _loc8_.textHeight;
          _loc8_.textAutoSize = "shrink";
          _loc8_._visible = true;
       }
@@ -844,6 +869,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          _loc9_._visible = false;
          this.BigMessageMaster.textHolderMC.titleMC._alpha = 100;
       }
+      var _loc10_;
       if(msgText == "" || msgText == undefined)
       {
          _loc3_._visible = false;
@@ -858,7 +884,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          if(_loc8_._visible == true)
          {
             _loc3_._y = _loc6_;
-            var _loc10_ = 0.5 * _loc3_.textHeight + 2;
+            _loc10_ = 0.5 * _loc3_.textHeight + 2;
             _loc9_._y -= _loc10_;
             _loc8_._y -= _loc10_;
             _loc3_._y -= _loc10_;
@@ -867,11 +893,12 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
       }
       var _loc5_ = "gqyGYÃ‡";
       var _loc2_ = 0;
+      var _loc4_;
       while(_loc2_ < _loc5_.length)
       {
          if(bigText.indexOf(_loc5_.charAt(_loc2_)) != -1)
          {
-            var _loc4_ = 0.18 * _loc6_;
+            _loc4_ = 0.18 * _loc6_;
             _loc3_._y += _loc4_;
             break;
          }
@@ -896,14 +923,20 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
          colID = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK;
       }
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.BigMessageMaster.bgMC,colID);
+      var _loc2_;
+      var _loc3_;
+      var _loc6_;
+      var _loc7_;
+      var _loc9_;
+      var _loc10_;
       if(textColourId != undefined)
       {
-         var _loc2_ = this.BigMessageMaster.textHolderMC.titleMC;
-         var _loc3_ = this.BigMessageMaster.textHolderMC.coltitleMC;
-         var _loc6_ = _loc2_._alpha;
-         var _loc7_ = _loc3_._alpha;
-         var _loc9_ = _loc2_.BIG_TEXT;
-         var _loc10_ = this.BigMessageMaster.textHolderMC.MESSAGE_TEXT;
+         _loc2_ = this.BigMessageMaster.textHolderMC.titleMC;
+         _loc3_ = this.BigMessageMaster.textHolderMC.coltitleMC;
+         _loc6_ = _loc2_._alpha;
+         _loc7_ = _loc3_._alpha;
+         _loc9_ = _loc2_.BIG_TEXT;
+         _loc10_ = this.BigMessageMaster.textHolderMC.MESSAGE_TEXT;
          this.SHARD_SET_TEXT(_loc9_.text,_loc10_.text,textColourId);
          _loc2_._alpha = _loc7_;
          _loc3_._alpha = _loc6_;
@@ -918,7 +951,7 @@ class com.rockstargames.gtav.Multiplayer.MP_BIG_MESSAGE_FREEMODE extends com.roc
    }
    function playIconAnimation(iconText)
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc2_ = this.RankIconImageMC.strapline_background;
       this.IconNameTF.htmlText = iconText;
       this.IconNameTF.autoSize = true;

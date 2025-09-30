@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_MATCHMAKING_VEHICLE_INFO extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var m_eAlignment;
    var TOP_ROW_PADDING = 5;
    function MP_MATCHMAKING_VEHICLE_INFO()

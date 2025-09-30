@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.web.foreclosures.BasicProperty
 {
-   var _id;
-   var _name;
-   var _type;
    var _address;
    var _description;
+   var _id;
+   var _isInStarterPack;
+   var _isOwned;
+   var _name;
+   var _txd;
+   var _type;
    var _x;
    var _y;
-   var _txd;
-   var _isOwned;
-   var _isInStarterPack;
    var baseCost;
    var baseSaleCost;
    static var ID = 0;

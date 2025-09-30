@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_MP_INVENTORY extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var _enumID;
+   var CONTENT;
+   var TIMELINE;
    var _HUD;
+   var _enumID;
    function HUD_MP_INVENTORY()
    {
       super();
@@ -19,9 +19,10 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_MP_INVENTORY extends com.rock
    function SHOW_MP_INVENTORY_ITEM_WITH_TEXT(params)
    {
       var _loc4_ = params[0];
+      var _loc2_;
       if(params[1] != undefined)
       {
-         var _loc2_ = params[1];
+         _loc2_ = params[1];
          this.CONTENT.inventoryTF.text = _loc2_;
       }
       this.CONTENT.gotoAndStop(_loc4_ - 2);

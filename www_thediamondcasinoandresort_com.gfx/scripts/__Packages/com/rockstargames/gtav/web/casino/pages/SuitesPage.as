@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.casino.pages.SuitesPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var prevPageName;
-   var view;
-   var website;
-   var rolloverPoller;
-   var currStyle;
    var currPanel;
    var currPollerTarget;
+   var currStyle;
+   var prevPageName;
+   var rolloverPoller;
+   var view;
+   var website;
    static var PANEL_SHOW_Y = 144;
    static var PANEL_HIDE_Y = 482;
    static var PANEL_TWEEN_DURATION = 0.2;
@@ -49,9 +49,10 @@ class com.rockstargames.gtav.web.casino.pages.SuitesPage extends com.rockstargam
       this.website.dataTextScope.push(this.view.logo.btnTxt);
       this.initLabelButton(this.view.customiseButton,"CASWEB_SUITES_BUTTON",3);
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 4)
       {
-         var _loc3_ = this.view["panel" + _loc2_];
+         _loc3_ = this.view["panel" + _loc2_];
          this.website.dataTextScope.push(_loc3_.purchaseButton.btnTxt);
          _loc3_.purchaseButton.disabled = true;
          this.initLabelButton(_loc3_.showButton,"CASWEB_STYLE_" + _loc2_,4);
@@ -157,7 +158,7 @@ class com.rockstargames.gtav.web.casino.pages.SuitesPage extends com.rockstargam
    }
    function setPreset(currStyle)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       this.currStyle = currStyle;
       if(currStyle == 1)
       {
@@ -220,6 +221,7 @@ class com.rockstargames.gtav.web.casino.pages.SuitesPage extends com.rockstargam
    }
    function handleClick(type, id)
    {
+      var _loc2_;
       switch(type)
       {
          case "logo":
@@ -239,12 +241,14 @@ class com.rockstargames.gtav.web.casino.pages.SuitesPage extends com.rockstargam
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES.SUITE_OPTIONS_PAGE.name);
             break;
          case "showButton":
-            var _loc2_ = parseInt(id);
+            _loc2_ = parseInt(id);
             if(!this.website["preset" + (_loc2_ - 1) + "Disabled"])
             {
                this.setPreset(_loc2_);
                this.showPanel(this.view["panel" + id],true);
             }
+         default:
+            return;
       }
    }
    function handlePurchaseButtonClick()

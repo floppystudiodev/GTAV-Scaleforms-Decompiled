@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pc.applications.hacking.BFColumn extends MovieClip
 {
-   var passwordLetter;
    var containerMC;
+   var passwordLetter;
    var index = 0;
    var items = new Array();
    var letters = new Array();
@@ -64,20 +64,25 @@ class com.rockstargames.gtav.pc.applications.hacking.BFColumn extends MovieClip
       this.items = [];
       var _loc9_ = this.rows + 1;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc8_;
       while(_loc3_ < _loc9_)
       {
-         var _loc2_ = this.items[_loc3_];
+         _loc2_ = this.items[_loc3_];
          if(_loc2_ == undefined)
          {
-            var _loc7_ = this.index * _loc9_ + _loc3_;
+            _loc7_ = this.index * _loc9_ + _loc3_;
             _loc2_ = this.containerMC.attachMovie("gridnum","gridnumMC" + _loc7_,_loc7_);
             _loc2_._y = _loc3_ * (_loc2_._height + this.spacingY);
          }
-         var _loc5_ = Math.floor(Math.random() * _loc6_.length);
-         var _loc4_ = _loc6_[_loc5_];
+         _loc5_ = Math.floor(Math.random() * _loc6_.length);
+         _loc4_ = _loc6_[_loc5_];
          if(_loc4_ == this.passwordLetter)
          {
-            var _loc8_ = _loc6_.length - 1;
+            _loc8_ = _loc6_.length - 1;
             _loc5_ = Math.floor(Math.random() * _loc8_);
             if(_loc5_ > _loc6_.length - 1)
             {
@@ -118,20 +123,24 @@ class com.rockstargames.gtav.pc.applications.hacking.BFColumn extends MovieClip
    {
       this.containerMC._y += this.speed;
       this.letterPosY = this.letterIndex * this.wrapOffsetY + (this.wrapOffsetY - Math.abs(this.containerMC._y));
+      var _loc5_;
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
       if(this.containerMC._y > 0)
       {
-         var _loc5_ = String(this.letters.pop());
+         _loc5_ = String(this.letters.pop());
          this.letters.splice(0,0,_loc5_);
          this.letterIndex = this.letterIndex + 1;
          if(this.letterIndex > this.items.length - 1)
          {
             this.letterIndex = 0;
          }
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.items.length)
          {
-            var _loc3_ = this.items[_loc2_];
-            var _loc4_ = this.letters[_loc2_];
+            _loc3_ = this.items[_loc2_];
+            _loc4_ = this.letters[_loc2_];
             _loc3_.numTF.text = _loc4_;
             if(this.letterIndex == _loc2_)
             {

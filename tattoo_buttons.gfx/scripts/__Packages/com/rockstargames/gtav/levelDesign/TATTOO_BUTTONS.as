@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.TATTOO_BUTTONS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var canAddButton;
+   var CONTENT;
    var ONSCREEN_BUTTONS;
    var POSITIONAL_ALPHA_VALUES;
-   var CONTENT;
+   var canAddButton;
    var offset = 50;
    var DURATION = 0.3;
    var tick = 0;
@@ -52,15 +52,16 @@ class com.rockstargames.gtav.levelDesign.TATTOO_BUTTONS extends com.rockstargame
          }
          whichButton = this.tick;
       }
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
       if(this.canAddButton)
       {
          if(this.currentButtonID == -1)
          {
             this.currentButtonID = this.CONTENT.getNextHighestDepth();
          }
-         var _loc2_ = undefined;
-         var _loc5_ = this.ONSCREEN_BUTTONS.length * 100 + this.offset;
-         var _loc4_ = undefined;
+         _loc5_ = this.ONSCREEN_BUTTONS.length * 100 + this.offset;
          if(whichButton < 8)
          {
             _loc4_ = "LEFT_STICK";
@@ -119,10 +120,11 @@ class com.rockstargames.gtav.levelDesign.TATTOO_BUTTONS extends com.rockstargame
       var _loc2_ = this.ONSCREEN_BUTTONS[1];
       var _loc6_ = 0;
       var _loc5_ = 0;
+      var _loc4_;
       if(arAngle != undefined && arAngle >= 0)
       {
          arAngle -= 90;
-         var _loc4_ = 5;
+         _loc4_ = 5;
          _loc6_ = Math.cos(arAngle * 3.141592653589793 / 180) * _loc4_;
          _loc5_ = Math.sin(arAngle * 3.141592653589793 / 180) * _loc4_;
       }

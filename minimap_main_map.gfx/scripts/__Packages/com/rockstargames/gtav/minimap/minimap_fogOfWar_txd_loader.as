@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.minimap.minimap_fogOfWar_txd_loader extends MovieClip
 {
    var TXDmc;
+   var txd_loader;
    var x_size;
    var y_size;
-   var txd_loader;
    function minimap_fogOfWar_txd_loader()
    {
       super();

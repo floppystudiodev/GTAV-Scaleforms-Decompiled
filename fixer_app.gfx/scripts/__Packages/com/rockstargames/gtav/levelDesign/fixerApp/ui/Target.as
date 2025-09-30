@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.ui.Target
 {
-   var _id;
-   var _ul;
-   var _bl;
-   var _ur;
-   var _br;
-   var _ut;
-   var _bt;
-   var _ub;
    var _bb;
+   var _bl;
+   var _br;
+   var _bt;
    var _cx;
    var _cy;
    var _enabled;
+   var _id;
+   var _ub;
+   var _ul;
+   var _ur;
+   var _ut;
    function Target(id, left, right, top, bottom)
    {
       this.init(id,left,right,top,bottom);

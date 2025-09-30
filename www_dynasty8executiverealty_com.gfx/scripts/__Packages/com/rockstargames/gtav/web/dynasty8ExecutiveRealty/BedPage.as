@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.BedPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_DEFAULT";
    static var IMAGES = [["BED_EXEC_RICH_1","BED_EXEC_RICH_2"],["BED_EXEC_COOL_1","BED_EXEC_COOL_2"],["BED_EXEC_CONTRAST_1","BED_EXEC_CONTRAST_2"],["BED_OLDSPICE_WARM_1","BED_OLDSPICE_WARM_2"],["BED_OLDSPICE_CLASSICAL_1","BED_OLDSPICE_CLASSICAL_2"],["BED_OLDSPICE_VINTAGE_1","BED_OLDSPICE_VINTAGE_2"],["BED_POWER_ICE_1","BED_POWER_ICE_2"],["BED_POWER_CONSERVATIVE_1","BED_POWER_CONSERVATIVE_2"],["BED_POWER_POLISHED_1","BED_POWER_POLISHED_2"]];
    function BedPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -97,6 +97,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.BedPage extends com.roc
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

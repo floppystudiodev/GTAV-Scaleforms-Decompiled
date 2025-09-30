@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.web.WWW_CREDITCARDCONSOLIDATIONKINGS_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var browser;
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var OnColour;
+   var PAGE_NAMES;
    var TIMELINE;
    var answerState;
-   var mcScope;
-   var totalDebt;
-   var CONTENT;
+   var browser;
    var dataTextScope;
-   var resultsButtonIndex;
-   var OnColour;
    var defaultButtonOnColour;
+   var mcScope;
+   var resultsButtonIndex;
+   var totalDebt;
    var questionCount = 8;
    function WWW_CREDITCARDCONSOLIDATIONKINGS_COM()
    {
@@ -38,10 +38,11 @@ class com.rockstargames.gtav.web.WWW_CREDITCARDCONSOLIDATIONKINGS_COM extends co
    }
    function goToAnchor(AnchorLink)
    {
-      var _loc0_ = null;
+      var _loc0_;
+      var _loc2_;
       if((_loc0_ = AnchorLink) !== "RESULTS")
       {
-         var _loc2_ = Number(AnchorLink.charAt(1));
+         _loc2_ = Number(AnchorLink.charAt(1));
          this.answerState[_loc2_ - 1] = AnchorLink.charAt(2) != "y" ? false : true;
          this.mcScope["q" + _loc2_ + "y"].selectedMC._visible = this.answerState[_loc2_ - 1];
          this.mcScope["q" + _loc2_ + "n"].selectedMC._visible = !this.answerState[_loc2_ - 1];
@@ -152,7 +153,7 @@ class com.rockstargames.gtav.web.WWW_CREDITCARDCONSOLIDATIONKINGS_COM extends co
       var _loc3_ = val.toString();
       var _loc1_ = _loc3_.length;
       var _loc2_ = [];
-      var _loc5_ = undefined;
+      var _loc5_;
       while(_loc1_ > 0)
       {
          _loc2_.push(_loc3_.substring(_loc1_ - 3,_loc1_));

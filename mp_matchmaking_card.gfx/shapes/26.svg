@@ -2,8 +2,8 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="25.0px" width="25.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 12.5, 12.5)">
     <path d="M11.0 -11.0 L-11.0 -11.0 -11.0 11.0 11.0 11.0 11.0 -11.0 M12.5 12.5 L-12.5 12.5 -12.5 -12.5 12.5 -12.5 12.5 12.5" fill="#ffffff" fill-opacity="0.0" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="false" height="128" id="PatternID_26_1" overflow="visible" patternTransform="matrix(0.625, 0.0, 0.0, 0.625, -50.0, -10.0)" patternUnits="userSpaceOnUse" viewBox="0 0 128 128" width="128">
-      <image height="128" width="128" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAABS0lEQVR4Xu3SoQEAMBCEsNt/6a/vCkHEoNltF9f+EEsD4BoA1wC4BsA1AK4BcA2AawBcA+AaANcAuAbANQCuAXANgGsAXAPgGgDXALgGwDUArgFwDYBrAFwD4BoA1wC4BsA1AK4BcA2AawBcA+AaANcAuAbANQCuAXANgGsAXAPgGgDXALgGwDUArgFwDYBrAFwD4BoA1wC4BsA1AK4BcA2AawBcA+AaANcAuAbANQCuAXANgGsAXAPgGgDXALgGwDUArgFwDYBrAFwD4BoA1wC4BsA1AK4BcA2AawBcA+AaANcAuAbANQCuAXANgGsAXAPgGgDXALgGwDUArgFwDYBrAFwD4BoA1wC4BsA1AK4BcA2AawBcA+AaANcAuAbANQCuAXANgGsAXAPgGgDXALgGwDUArgFwDYBrAFwD4BoA1wC4BsA1AK4BcA9W0Ydy/DVfJgAAAABJRU5ErkJggg=="/>
+    <pattern height="128" id="PatternID_26_1" overflow="visible" patternTransform="matrix(0.625, 0.0, 0.0, 0.625, -50.0, -10.0)" patternUnits="userSpaceOnUse" viewBox="0 0 128 128" width="128">
+      <image height="128" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="128" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAA7klEQVR42u3SMQ0AAAjAsPk3DTZI6DEDS5sa/S0TADACAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEAAAmAGAEAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAbrRW0YdyUv8SrQAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M10.0 -10.0 L10.0 10.0 -10.0 10.0 -10.0 -10.0 10.0 -10.0" ffdec:fill-bitmapId="2" style="fill:url(#PatternID_26_1)"/>
   </g>

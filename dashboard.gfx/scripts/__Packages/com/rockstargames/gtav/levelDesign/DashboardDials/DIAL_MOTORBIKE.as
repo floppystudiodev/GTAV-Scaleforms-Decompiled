@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_MOTORBIKE extends com.rockstargames.gtav.levelDesign.DashboardDials.BaseVehicleDashboard
 {
-   var RPM_MIN_ROT;
-   var RPM_MAX_ROT;
-   var SPEED_MIN_ROT;
-   var SPEED_MAX_ROT;
-   var FUEL_MIN_ROT;
-   var FUEL_MAX_ROT;
-   var RPM_IS_CLOCKWISE;
-   var SPEED_IS_CLOCKWISE;
    var FUEL_IS_CLOCKWISE;
+   var FUEL_MAX_ROT;
+   var FUEL_MIN_ROT;
+   var RPM_IS_CLOCKWISE;
+   var RPM_MAX_ROT;
+   var RPM_MIN_ROT;
+   var SPEED_IS_CLOCKWISE;
+   var SPEED_MAX_ROT;
+   var SPEED_MIN_ROT;
    var TOP_SPEED;
    var _mcName = "MOTORBIKE";
    function DIAL_MOTORBIKE(mc)

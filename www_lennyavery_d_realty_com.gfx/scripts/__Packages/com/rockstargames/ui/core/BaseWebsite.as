@@ -1,12 +1,12 @@
 class com.rockstargames.ui.core.BaseWebsite extends MovieClip
 {
+   var BOUNDING_BOX;
+   var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
+   var TIMELINE;
    var dataProviderUI;
    var dataTextScope;
-   var PAGE_NAMES;
-   var CAN_STORE_PAGE;
-   var TIMELINE;
-   var CONTENT;
-   var BOUNDING_BOX;
    var IS_SITE_DYNAMIC = 0;
    var resetScroll = true;
    function BaseWebsite()

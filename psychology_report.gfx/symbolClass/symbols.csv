@@ -1,8 +1,8 @@
-1;Psych_Letter_Top
-2;Psych_Letter_Bottom
-6;letter_scraps
-12;CONTENT
-14;BOUNDING_BOX
-15;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-16;__Packages.com.rockstargames.gtav.levelDesign.LETTER_SCRAPS
-17;__Packages.com.rockstargames.gtav.levelDesign.PSYCHOLOGY_REPORT
+1;"Psych_Letter_Top"
+2;"Psych_Letter_Bottom"
+6;"letter_scraps"
+12;"CONTENT"
+14;"BOUNDING_BOX"
+15;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+16;"__Packages.com.rockstargames.gtav.levelDesign.LETTER_SCRAPS"
+17;"__Packages.com.rockstargames.gtav.levelDesign.PSYCHOLOGY_REPORT"

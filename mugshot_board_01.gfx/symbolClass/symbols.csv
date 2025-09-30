@@ -1,9 +1,8 @@
-1;PropBoardBG
-14;CONTENT
-16;BOUNDING_BOX
-17;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-18;__Packages.com.rockstargames.gtav.levelDesign.MUGSHOT_BOARD
-19;__Packages.com.rockstargames.ui.utils.HudColourLite
-20;__Packages.com.rockstargames.ui.utils.HudColour
-21;__Packages.com.rockstargames.ui.utils.Colour
-22;__Packages.com.rockstargames.ui.game.GameInterface
+13;"CONTENT"
+15;"BOUNDING_BOX"
+16;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+17;"__Packages.com.rockstargames.gtav.levelDesign.MUGSHOT_BOARD"
+18;"__Packages.com.rockstargames.ui.utils.Colour"
+19;"__Packages.com.rockstargames.ui.utils.HudColourLite"
+20;"__Packages.com.rockstargames.ui.utils.HudColour"
+21;"__Packages.com.rockstargames.ui.game.GameInterface"

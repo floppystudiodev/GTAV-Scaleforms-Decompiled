@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Slideshow
 {
-   var slides;
-   var index;
    var crossfadeArgs;
+   var index;
    var pauseArgs;
+   var slides;
    static var CROSSFADE_TIME = 0.5;
    static var PAUSE_TIME = 2;
    function Slideshow()

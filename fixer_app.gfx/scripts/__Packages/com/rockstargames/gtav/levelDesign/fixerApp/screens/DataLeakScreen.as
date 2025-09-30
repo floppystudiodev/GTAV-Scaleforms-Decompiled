@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
-   var dataObject;
+   var app;
    var buttons;
    var cursor;
+   var dataObject;
    var tabsDataObject;
    var updateDataObject;
-   var app;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    static var NORMAL = 1;
    function DataLeakScreen(app, viewContainer, cursor, dataObject)
@@ -221,9 +221,10 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakScreen extends
    }
    function initButton(id, buttonView, complete)
    {
+      var _loc2_;
       if(!complete)
       {
-         var _loc2_ = new com.rockstargames.gtav.levelDesign.fixerApp.ui.Button(id,buttonView);
+         _loc2_ = new com.rockstargames.gtav.levelDesign.fixerApp.ui.Button(id,buttonView);
          this.buttons.push(_loc2_);
          this.cursor.addTarget(_loc2_);
       }
@@ -320,7 +321,7 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakScreen extends
    }
    function onTargetChange(activeTarget)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 1;
       while(_loc2_ <= 10)
       {
@@ -335,7 +336,7 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakScreen extends
    }
    function formatLeaksFoundString()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.updateDataObject.leaksFound == undefined)
       {
          _loc2_ = "";
@@ -383,6 +384,8 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakScreen extends
             this.showStats(false);
             this.showTabs(false);
             this.updateStatusLabel(true);
+         default:
+            return;
       }
    }
    function showStats(visible)

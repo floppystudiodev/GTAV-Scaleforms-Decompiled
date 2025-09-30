@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.web.vehicleSites.DropDown
 {
+   var _isOpen;
    var container;
+   var itemContainer;
+   var itemContainerMask;
    var itemLinkage;
    var itemSpacing;
-   var onTextColour;
-   var offTextColour;
    var numItems;
-   var itemContainer;
-   var yClosed;
    var numVisibleItems;
-   var _isOpen;
+   var offTextColour;
+   var onTextColour;
+   var yClosed;
    var yOpen;
-   var itemContainerMask;
    static var OPEN_DURATION = 0.25;
    function DropDown(container, itemLinkage, defaultLabel, itemSpacing, headerOffset, onTextColour, offTextColour)
    {
@@ -78,9 +78,10 @@ class com.rockstargames.gtav.web.vehicleSites.DropDown
    {
       this.numVisibleItems = this.numItems;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.numItems)
       {
-         var _loc3_ = this.itemContainer.getInstanceAtDepth(_loc2_);
+         _loc3_ = this.itemContainer.getInstanceAtDepth(_loc2_);
          _loc3_._visible = true;
          _loc3_.disabled = !this._isOpen;
          _loc3_._y = _loc2_ * this.itemSpacing;

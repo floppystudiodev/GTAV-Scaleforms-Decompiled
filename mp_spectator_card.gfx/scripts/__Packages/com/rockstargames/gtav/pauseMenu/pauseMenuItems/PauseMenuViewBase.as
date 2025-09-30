@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase extends com.rockstargames.ui.components.GUIView
 {
+   var visibleItems;
    var maxVisibleItems = 16;
    function PauseMenuViewBase()
    {

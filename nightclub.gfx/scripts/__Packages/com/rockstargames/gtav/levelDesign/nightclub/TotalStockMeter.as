@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.nightclub.TotalStockMeter
 {
-   var view;
-   var delay;
    var columns;
+   var delay;
    var updateArgs;
+   var view;
    var COLUMN_SIZES = [8,7,7,6,6,6];
    var NUM_CUBES = 0;
    var NUM_COLUMNS = com.rockstargames.gtav.levelDesign.nightclub.TotalStockMeter.prototype.COLUMN_SIZES.length;
@@ -52,9 +52,10 @@ class com.rockstargames.gtav.levelDesign.nightclub.TotalStockMeter
       this.columns = [];
       this.updateArgs = {onCompleteScope:this,onComplete:this.update};
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.NUM_COLUMNS)
       {
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.nightclub.TotalColumn(this.view["column" + _loc2_].baseCube,this.COLUMN_SIZES[_loc2_],_loc2_);
+         _loc3_ = new com.rockstargames.gtav.levelDesign.nightclub.TotalColumn(this.view["column" + _loc2_].baseCube,this.COLUMN_SIZES[_loc2_],_loc2_);
          this.columns.push(_loc3_);
          this.NUM_CUBES += this.COLUMN_SIZES[_loc2_];
          _loc2_ = _loc2_ + 1;

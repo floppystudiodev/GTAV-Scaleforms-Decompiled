@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.utils.CONTROLLER_TEST
 {
-   var TIMELINE;
    var CONTENT;
-   var _mouseCursor;
+   var TIMELINE;
    var _coordinatesTextfield;
-   var _relativeCoordinatesTextfield;
+   var _leftTriggerMeter;
    var _mouseButtonStatesTextfield;
+   var _mouseCursor;
    var _mouseGraph;
    var _mouseGraphUpdateCounter;
    var _mouseWheelQueue;
-   var _leftTriggerMeter;
+   var _relativeCoordinatesTextfield;
    var _rightTriggerMeter;
-   var leftAnalogStickLines;
    var leftAnalogStickDots;
-   var rightAnalogStickLines;
-   var rightAnalogStickDots;
+   var leftAnalogStickLines;
    var leftStickPointer;
+   var rightAnalogStickDots;
+   var rightAnalogStickLines;
    var rightStickPointer;
    static var INPUT_FRONTEND_DOWN = 184;
    static var INPUT_FRONTEND_UP = 185;
@@ -173,18 +173,20 @@ class com.rockstargames.gtav.utils.CONTROLLER_TEST
          case com.rockstargames.ui.game.GamePadConstants.RIGHTSHOCK:
          case com.rockstargames.gtav.utils.CONTROLLER_TEST.INPUT_FRONTEND_RS:
             this.growIcon(this.CONTENT.RIGHTSTICK);
+         default:
+            return;
       }
    }
    function SET_ANALOG_STICK_INPUT(isLeftStick, mouseX, mouseY)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
-      var _loc7_ = undefined;
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc10_ = undefined;
-      var _loc11_ = undefined;
+      var _loc2_;
+      var _loc3_;
+      var _loc6_;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc10_;
+      var _loc11_;
       if(isLeftStick)
       {
          _loc2_ = this.CONTENT.LSTICK;
@@ -228,10 +230,12 @@ class com.rockstargames.gtav.utils.CONTROLLER_TEST
    }
    function SET_MOUSE_INPUT(mouseX, mouseY)
    {
+      var _loc2_;
+      var _loc3_;
       if(mouseX != 0.5 && mouseY != 0.5)
       {
-         var _loc2_ = com.rockstargames.ui.utils.MathStar.toFixedRound(mouseX,4);
-         var _loc3_ = com.rockstargames.ui.utils.MathStar.toFixedRound(mouseY,4);
+         _loc2_ = com.rockstargames.ui.utils.MathStar.toFixedRound(mouseX,4);
+         _loc3_ = com.rockstargames.ui.utils.MathStar.toFixedRound(mouseY,4);
          _loc2_ = this.clamp(_loc2_,0.0001,0.9999);
          _loc3_ = this.clamp(_loc3_,0.0001,0.9999);
          this._coordinatesTextfield.text = _loc2_ + " / " + _loc3_;
@@ -283,9 +287,10 @@ class com.rockstargames.gtav.utils.CONTROLLER_TEST
       this._mouseGraph.lineStyle(1,16711680,50,false,"none","none","bevel");
       this._mouseGraph.moveTo(com.rockstargames.gtav.utils.CONTROLLER_TEST.MOUSE_WHEEL_SAMPLE_SIZE,0);
       var _loc2_ = com.rockstargames.gtav.utils.CONTROLLER_TEST.MOUSE_WHEEL_SAMPLE_SIZE;
+      var _loc3_;
       while((_loc2_ = _loc2_ - 1) >= 0)
       {
-         var _loc3_ = (_loc2_ + this._mouseGraphUpdateCounter) % com.rockstargames.gtav.utils.CONTROLLER_TEST.MOUSE_WHEEL_SAMPLE_SIZE;
+         _loc3_ = (_loc2_ + this._mouseGraphUpdateCounter) % com.rockstargames.gtav.utils.CONTROLLER_TEST.MOUSE_WHEEL_SAMPLE_SIZE;
          this._mouseGraph.lineTo(_loc2_,this._mouseWheelQueue[_loc3_]);
       }
    }

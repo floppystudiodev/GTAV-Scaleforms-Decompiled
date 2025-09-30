@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.Organisation
 {
-   var _nom;
    var _members;
+   var _nom;
    function Organisation(_nom, _members)
    {
       this._nom = _nom;

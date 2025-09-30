@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_MP_CASH extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var isFadingOut;
-   var isFadingIn;
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
    var defaultX;
    var defaultY;
+   var isFadingIn;
+   var isFadingOut;
    var stayOnForever;
-   var _enumID;
-   var _HUD;
    function HUD_MP_CASH()
    {
       super();

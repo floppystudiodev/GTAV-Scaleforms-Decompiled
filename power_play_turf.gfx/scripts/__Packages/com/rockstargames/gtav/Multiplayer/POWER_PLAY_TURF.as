@@ -1,12 +1,19 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_TURF extends com.rockstargames.gtav.Multiplayer.POWER_PLAY
 {
+   var CONTENT;
+   var DURATION;
+   var RGBToHex;
+   var count;
+   var currentPct;
+   var icCurVals;
+   var iconList;
    var iconTypeList;
-   var teamColours;
    var myHudColourT3;
    var myHudColourT4;
-   var icCurVals;
-   var CONTENT;
-   var iconList;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
+   var teamColours;
    var timerIcon;
    var MAX_ICONS = 4;
    var IS_DEBUG = false;
@@ -136,7 +143,7 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_TURF extends com.rockstargam
       _loc9_._x = _loc11_;
       var _loc7_ = 54;
       _loc11_ = 0.5 * (this.safeRight + this.safeLeft);
-      var _loc6_ = undefined;
+      var _loc6_;
       if(this.numberOfIcons % 2 == 1)
       {
          _loc6_ = _loc11_ - _loc7_ * 0.5 * (this.numberOfIcons - 1);
@@ -147,10 +154,12 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_TURF extends com.rockstargam
       }
       var _loc10_ = this.safeTop;
       _loc2_ = 0;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < this.numberOfIcons)
       {
-         var _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayFill();
-         var _loc3_ = this.CONTENT.createEmptyMovieClip("icon" + _loc2_,this.CONTENT.getNextHighestDepth());
+         _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayFill();
+         _loc3_ = this.CONTENT.createEmptyMovieClip("icon" + _loc2_,this.CONTENT.getNextHighestDepth());
          _loc5_.init(_loc3_,this.iconTypeList[_loc2_],this.teamColours[_loc2_]);
          if(this.numberOfIcons % 2 == 0 && _loc2_ == 0.5 * this.numberOfIcons)
          {
@@ -190,6 +199,8 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_TURF extends com.rockstargam
             break;
          case 1:
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_,0.2,{_xscale:100,_yscale:100,onComplete:this.animateIcon,onCompleteScope:this,onCompleteArgs:[iconID,2]});
+         default:
+            return;
       }
    }
    function loop()

@@ -1,46 +1,47 @@
 class com.rockstargames.gtav.levelDesign.SECUROSERV extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var gamerTag;
-   var gamerHasAccess;
-   var totalEarnings;
-   var collectionsCompleted;
-   var collectionSuccessRate;
-   var salesCompleted;
-   var salesSuccessRate;
+   var TIMELINE;
+   var _name;
    var activeUsers;
-   var selectedWarehouseID;
+   var collectionSuccessRate;
+   var collectionsCompleted;
+   var currScreen;
    var currScreenID;
-   var returningPlayer;
-   var returningVehiclePlayer;
-   var warehouses;
-   var vehicleWarehouses;
-   var specialVehicles;
-   var statsShown;
-   var vehicleStatsShown;
-   var inputReceived;
+   var cursor;
    var deactivated;
-   var numVehiclesStolen;
-   var stealVehiclesSuccess;
-   var vehiclesExported;
+   var displayConfig;
    var exportVehiclesSuccess;
-   var totalVehicleEarnings;
+   var gamerHasAccess;
+   var gamerTag;
+   var hasSpecialCargoMissions;
+   var hasSpecialVehicleMissions;
+   var imageManager;
+   var importExportMissions;
+   var inputReceived;
+   var mapStartScale;
    var mapStartX;
    var mapStartY;
-   var mapStartScale;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var cursor;
+   var numVehiclesStolen;
    var organisation;
-   var hasSpecialVehicleMissions;
    var playerX;
    var playerY;
-   var hasSpecialCargoMissions;
-   var importExportMissions;
-   var currScreen;
+   var returningPlayer;
+   var returningVehiclePlayer;
+   var salesCompleted;
+   var salesSuccessRate;
+   var screenContainer;
+   var selectedWarehouseID;
+   var specialVehicles;
+   var statsShown;
+   var stealVehiclesSuccess;
+   var totalEarnings;
+   var totalVehicleEarnings;
+   var vehicleStatsShown;
+   var vehicleWarehouses;
+   var vehiclesExported;
+   var warehouses;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -266,10 +267,11 @@ class com.rockstargames.gtav.levelDesign.SECUROSERV extends com.rockstargames.ui
    }
    function UPDATE_COOLDOWN(remainingSeconds)
    {
+      var _loc2_;
       if(this.currScreen)
       {
          this.currScreen.updateCooldown(remainingSeconds);
-         var _loc2_ = this.getVehicleWarehouseByID(this.selectedWarehouseID);
+         _loc2_ = this.getVehicleWarehouseByID(this.selectedWarehouseID);
          if(_loc2_)
          {
             _loc2_.stealCooldown = remainingSeconds;
@@ -327,13 +329,14 @@ class com.rockstargames.gtav.levelDesign.SECUROSERV extends com.rockstargames.ui
          return undefined;
       }
       this.inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Mouse_Move_Cursor");
@@ -442,17 +445,20 @@ class com.rockstargames.gtav.levelDesign.SECUROSERV extends com.rockstargames.ui
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase extends com.rockstargames.ui.components.GUIController
 {
+   var CONTENT;
    var model;
    var scrollBase;
-   var CONTENT;
    var titleHeight = 27;
    var preloadTxds = false;
    var _columnID = -1;
@@ -110,9 +110,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
       this.SEND_COLUMN_PARAMS();
       var _loc4_ = this.model.getCurrentView().itemList;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_];
+         _loc3_ = _loc4_[_loc2_];
          _loc3_.highlighted = !isFocused ? false : this.model.getCurrentView().highlightedItem == _loc2_;
          _loc2_ = _loc2_ + 1;
       }
@@ -127,9 +128,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
       var _loc4_ = this.model.getCurrentView().itemList;
       com.rockstargames.ui.utils.Debug.log(" ====== SEND_COLUMN_PARAMS: items: " + _loc4_.length);
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_];
+         _loc3_ = _loc4_[_loc2_];
          _loc3_.columnID = this.columnID;
          com.rockstargames.ui.utils.Debug.log(_loc2_ + "  " + _loc3_ + " = SET COLUMNID to: " + _loc3_.columnID);
          _loc2_ = _loc2_ + 1;
@@ -172,7 +174,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
    }
    function getTxdData()
    {
-      var _loc1_ = undefined;
+      var _loc1_;
       return _loc1_;
    }
    function SET_INPUT_EVENT(direction)
@@ -182,6 +184,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
       {
          this.scrollBase.updateScroll();
       }
+   }
+   function SET_CHANGED(menuIndex, isChanged)
+   {
+   }
+   function REFRESH_CHANGED()
+   {
    }
    function ON_DESTROY()
    {

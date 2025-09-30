@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.nightclub.PersistentContent
 {
    var app;
-   var view;
+   var currMugshotTexture;
+   var currPopularity;
+   var currPropertyDictionary;
+   var currPropertyTexture;
    var navButtons;
    var popularityMeter;
-   var currPopularity;
    var slideshow;
-   var currPropertyTexture;
-   var currPropertyDictionary;
-   var currMugshotTexture;
+   var view;
    function PersistentContent(app, view)
    {
       this.app = app;

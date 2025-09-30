@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.securoserv.LoginScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
-   var view;
-   var loginButton;
+   var _userName;
    var accessDeniedQuitButton;
    var app;
-   var screensaver;
-   var _userName;
    var cursor;
+   var loginButton;
+   var screensaver;
+   var view;
    static var LOG_IN = 1001;
    static var QUIT = 1002;
    function LoginScreen(app, viewContainer, cursor)
@@ -68,6 +68,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.LoginScreen extends com.rock
                break;
             case this.accessDeniedQuitButton.id:
                this.app.quit();
+            default:
+               return;
          }
       }
    }
@@ -91,6 +93,7 @@ class com.rockstargames.gtav.levelDesign.securoserv.LoginScreen extends com.rock
       this.view.usernameEntry.text = this._userName.substring(0,_loc2_);
       this.setLetterSpacing(this.view.usernameEntry);
       this.view.caret._x = this.view.usernameEntry._x + this.view.usernameEntry.textWidth + 4;
+      var _loc3_;
       if(_loc2_ < this._userName.length)
       {
          com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Keyboard_Key");
@@ -101,7 +104,7 @@ class com.rockstargames.gtav.levelDesign.securoserv.LoginScreen extends com.rock
          this.view.caret._visible = false;
          this.view.passwordAnimation._visible = true;
          this.view.passwordAnimation.play();
-         var _loc3_ = this.view.passwordAnimation._totalFrames / 30;
+         _loc3_ = this.view.passwordAnimation._totalFrames / 30;
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this.view,_loc3_,{onComplete:this.activateLoginButton,onCompleteScope:this});
       }
    }

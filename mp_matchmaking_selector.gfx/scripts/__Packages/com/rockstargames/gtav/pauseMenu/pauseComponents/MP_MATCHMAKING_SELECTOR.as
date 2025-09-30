@@ -3,8 +3,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_MATCHMAKING_SELECTOR e
    var CONTENT;
    var betSelectorMC;
    var carSelectorMC;
-   var gamerInfoMC;
    var currSelectorMC;
+   var gamerInfoMC;
    function MP_MATCHMAKING_SELECTOR()
    {
       super();

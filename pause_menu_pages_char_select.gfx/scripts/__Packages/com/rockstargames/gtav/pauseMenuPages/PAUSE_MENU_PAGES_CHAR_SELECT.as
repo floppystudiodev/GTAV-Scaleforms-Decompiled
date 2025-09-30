@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CHAR_SELECT extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var timelineMC;
-   var columnList;
-   var column1;
    var addColumn;
+   var column1;
    var column2;
+   var columnList;
    var setupColumns;
    var showColumns;
+   var timelineMC;
    function PAUSE_MENU_PAGES_CHAR_SELECT()
    {
       super();

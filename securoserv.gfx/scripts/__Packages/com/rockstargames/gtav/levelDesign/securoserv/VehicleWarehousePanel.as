@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.levelDesign.securoserv.VehicleWarehousePanel
 {
-   var view;
-   var isAsian;
+   var _bottom;
    var _controls;
-   var currWarehouseID;
-   var capacityMeter;
-   var buyButton;
-   var stealButton;
-   var renovateButton;
-   var showingOwnedView;
    var _left;
    var _right;
    var _top;
-   var _bottom;
+   var buyButton;
+   var capacityMeter;
+   var currWarehouseID;
+   var isAsian;
+   var renovateButton;
+   var showingOwnedView;
+   var stealButton;
+   var view;
    function VehicleWarehousePanel(view, displayConfig)
    {
       this.view = view;
@@ -184,11 +184,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.VehicleWarehousePanel
       var _loc4_ = rightTF._x + rightTF._width;
       var _loc7_ = leftTF._width;
       var _loc8_ = rightTF._width;
+      var _loc5_;
+      var _loc3_;
+      var _loc1_;
       if(_loc7_ + _loc8_ > _loc4_ - _loc6_)
       {
-         var _loc5_ = _loc4_ - _loc6_ - _loc7_;
-         var _loc3_ = rightTF.text;
-         var _loc1_ = _loc3_.length;
+         _loc5_ = _loc4_ - _loc6_ - _loc7_;
+         _loc3_ = rightTF.text;
+         _loc1_ = _loc3_.length;
          while(_loc1_ > 0)
          {
             rightTF.text = _loc3_.substring(0,_loc1_) + "...";
@@ -212,16 +215,23 @@ class com.rockstargames.gtav.levelDesign.securoserv.VehicleWarehousePanel
       {
          remainingSeconds = 0;
       }
+      var _loc3_;
+      var _loc4_;
+      var _loc6_;
+      var _loc10_;
+      var _loc8_;
+      var _loc7_;
+      var _loc9_;
       if(remainingSeconds > 0)
       {
          _loc2_._alpha = 50;
-         var _loc3_ = Math.ceil(remainingSeconds);
-         var _loc4_ = _loc3_ % 60;
-         var _loc6_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
-         var _loc10_ = Math.floor((_loc3_ - _loc4_ - _loc6_ * 60) / 3600);
-         var _loc8_ = ("0" + _loc10_).substr(-2);
-         var _loc7_ = ("0" + _loc6_).substr(-2);
-         var _loc9_ = ("0" + _loc4_).substr(-2);
+         _loc3_ = Math.ceil(remainingSeconds);
+         _loc4_ = _loc3_ % 60;
+         _loc6_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
+         _loc10_ = Math.floor((_loc3_ - _loc4_ - _loc6_ * 60) / 3600);
+         _loc8_ = ("0" + _loc10_).substr(-2);
+         _loc7_ = ("0" + _loc6_).substr(-2);
+         _loc9_ = ("0" + _loc4_).substr(-2);
          _loc2_.label.text = _loc8_ + ":" + _loc7_ + ":" + _loc9_;
       }
       else

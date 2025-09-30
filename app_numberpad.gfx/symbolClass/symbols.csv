@@ -1,8 +1,8 @@
-1;Header_bar_Badger
-9;numberPad-IFRUIT
-13;numberPad-FACADE
-18;numberPad-BADGER
-19;__Packages.com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD
-20;__Packages.com.rockstargames.ui.utils.Colour
-21;__Packages.com.rockstargames.ui.utils.HudColour
-22;__Packages.com.rockstargames.ui.game.GameInterface
+1;"Header_bar_Badger"
+9;"numberPad-IFRUIT"
+13;"numberPad-FACADE"
+18;"numberPad-BADGER"
+19;"__Packages.com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD"
+20;"__Packages.com.rockstargames.ui.utils.Colour"
+21;"__Packages.com.rockstargames.ui.utils.HudColour"
+22;"__Packages.com.rockstargames.ui.game.GameInterface"

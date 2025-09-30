@@ -1,9 +1,16 @@
 class com.rockstargames.gtav.levelDesign.REMOTE_SNIPER_HUD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var windGaugeMC;
    var CONTENT;
-   var zoomLevelTF;
+   var SET_DISPLAY_CONFIG;
    var ref;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
+   var screenHeightPixels;
+   var screenWidthPixels;
+   var windGaugeMC;
+   var zoomLevelTF;
    var zoom = 0;
    var angle = 0;
    var aspeed = 4;
@@ -170,9 +177,10 @@ class com.rockstargames.gtav.levelDesign.REMOTE_SNIPER_HUD extends com.rockstarg
       var _loc6_ = Math.max(0,Math.min(this.angle,360));
       var _loc4_ = - _loc6_ / 360 * this.angleSteps;
       var _loc5_ = _loc4_ % 28;
+      var _loc2_;
       for(var _loc3_ in this.compassPointList)
       {
-         var _loc2_ = (this.angle + 90 * _loc3_) % 360;
+         _loc2_ = (this.angle + 90 * _loc3_) % 360;
          this.setCompassPointPos(this.compassPointList[_loc3_],_loc2_,_loc3_);
       }
       this.CONTENT.scopeMC.compassMC.compassInnerMC._x = 14 + _loc5_;

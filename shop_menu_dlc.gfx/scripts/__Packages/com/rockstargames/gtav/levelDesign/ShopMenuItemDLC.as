@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.ShopMenuItemDLC extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var newMC;
-   var boughtMC;
-   var wearingMC;
-   var itemTextRight;
-   var itemTextLeft;
    var backgroundMC;
+   var boughtMC;
+   var itemTextLeft;
+   var itemTextRight;
+   var newMC;
+   var wearingMC;
    var overText = 0;
    var offText = 14474460;
    var inactiveText = 14474460;

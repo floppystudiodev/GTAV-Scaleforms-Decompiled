@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.allWebsites
 {
-   static var websitesArray;
    static var isMP;
+   static var websitesArray;
    function allWebsites()
    {
    }

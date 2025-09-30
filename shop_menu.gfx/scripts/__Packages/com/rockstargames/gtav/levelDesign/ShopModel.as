@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.levelDesign.ShopModel extends com.rockstargames.ui.components.GUIModel
 {
    var _arrows;
+   var viewIndex;
+   var viewList;
    function ShopModel()
    {
       super();

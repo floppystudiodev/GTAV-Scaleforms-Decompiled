@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence
 {
+   var background;
    var backgroundColour;
-   var displayConfig;
-   var movieId;
-   var sequenceTypeBit;
-   var view;
    var backgroundContainer;
-   var stepsContainer;
-   var steps;
+   var backgroundTween;
+   var currentStep;
+   var displayConfig;
    var finalTweenOutStarted;
    var firstTweenOutComplete;
-   var syncedMovies;
-   var background;
-   var currentStep;
+   var movieId;
+   var sequenceTypeBit;
+   var steps;
+   var stepsContainer;
    var stepsTween;
-   var backgroundTween;
    var syncClearCallback;
+   var syncedMovies;
+   var view;
    static var SPEED_MULTIPLIER = 1;
    static var SCREEN_WIDTH = 1280;
    static var SCREEN_HEIGHT = 720;
@@ -150,9 +150,10 @@ class com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence
    }
    function nextStep()
    {
+      var _loc2_;
       if(this.currentStep < this.steps.length - 1)
       {
-         var _loc2_ = this.steps[this.currentStep].view._y;
+         _loc2_ = this.steps[this.currentStep].view._y;
          this.currentStep = this.currentStep + 1;
          _loc2_ -= this.steps[this.currentStep].height;
          this.steps[this.currentStep].init(this.stepsContainer,_loc2_);

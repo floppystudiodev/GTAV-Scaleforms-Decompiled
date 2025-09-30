@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_WANTED_STARS extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
    var defaultX;
    var defaultY;
    var flashStarsForever;
    var flashWholeMovie;
-   var _enumID;
-   var _HUD;
    var flashCycleCount = 0;
    var wantedEvasionTime = 0;
    var timeSpentFlashing = 0;

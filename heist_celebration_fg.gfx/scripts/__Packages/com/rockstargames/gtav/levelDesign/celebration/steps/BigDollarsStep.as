@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extends com.rockstargames.gtav.levelDesign.celebration.steps.Step
 {
-   var id;
-   var stats;
-   var initialised;
-   var view;
-   var topLines;
-   var bottomLines;
    var activeLine;
+   var bottomLines;
+   var counterStep;
    var currentStat;
+   var id;
+   var initialised;
    var sequence;
    var started;
-   var counterStep;
+   var stats;
+   var topLines;
+   var view;
    static var LINE_FADE_OUT_DURATION = com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.SPEED_MULTIPLIER * 0.25;
    static var PRE_ICON_ANIMATION_PAUSE = com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.SPEED_MULTIPLIER * 0.5;
    function BigDollarsStep(sequence, id)
@@ -66,6 +66,9 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
       _loc3_.bottomLineB.bottomText.autoSize = "left";
       _loc3_.bottomLineA.statText.autoSize = "right";
       _loc3_.bottomLineB.statText.autoSize = "right";
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       if(com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.IS_ASIAN)
       {
          _loc3_.bottomLineA.bottomText._y += 30;
@@ -74,12 +77,10 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
          _loc3_.bottomLineB.bottomText._y += 30;
          _loc3_.bottomLineB.statText._y += 30;
          _loc3_.bottomLineB.statIcon._y += 30;
-         var _loc5_ = undefined;
-         var _loc6_ = undefined;
          _loc5_ = _loc3_.cash.dollar.getNewTextFormat();
          _loc5_.font = "$CelebrationCash";
          _loc3_.cash.dollar.setTextFormat(_loc5_);
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < 10)
          {
             _loc6_ = _loc3_.cash.value["digit" + _loc4_];
@@ -133,6 +134,8 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
             break;
          case 6:
             this.sequence.playSound("Elite_Challenge_Appear","DLC_HEISTS_FINALE_SCREEN_SOUNDS");
+         default:
+            return;
       }
    }
    function finish()
@@ -155,9 +158,10 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
       var _loc7_ = this.stats[this.currentStat];
       var _loc8_ = this.stats[this.currentStat - 1].topText;
       var _loc5_ = _loc7_.topText;
+      var _loc2_;
       if(_loc8_ != _loc5_)
       {
-         var _loc2_ = this.topLines[this.activeLine];
+         _loc2_ = this.topLines[this.activeLine];
       }
       if(this.sequence.IS_CUTOUT)
       {
@@ -188,15 +192,17 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
       {
          _loc2_.topText._y = -18;
       }
+      var _loc6_;
+      var _loc4_;
       if(_loc8_ == _loc5_)
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(_loc2_,2 * com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep.LINE_FADE_OUT_DURATION,{onComplete:this.pauseBeforeStartingCashCounter,onCompleteScope:this,onCompleteArgs:[true]});
       }
       else
       {
-         var _loc6_ = {x:0,y:0};
+         _loc6_ = {x:0,y:0};
          this.view.content.localToGlobal(_loc6_);
-         var _loc4_ = _loc6_.y < 175;
+         _loc4_ = _loc6_.y < 175;
          _loc2_._y = - this.view._parent._y - this.view._y - _loc2_._height;
          _loc2_._alpha = this.sequence.DEFAULT_TEXT_ALPHA;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_,com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.DEFAULT_PUSHDOWN_DURATION,{_y:0,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_IN,onComplete:this.pauseBeforeStartingCashCounter,onCompleteScope:this,onCompleteArgs:[!_loc4_]});
@@ -225,6 +231,8 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
                break;
             case 7:
                this.sequence.playSound("Total_Cash_Earned","DLC_HEISTS_FINALE_SCREEN_SOUNDS");
+            default:
+               return;
          }
       }
    }
@@ -334,6 +342,8 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.BigDollarsStep extend
                   break;
                case 5:
                   this.sequence.playSound("Cut_Of_Take_Counter_Finish","DLC_HEISTS_FINALE_SCREEN_SOUNDS");
+               default:
+                  return;
             }
          }
       }

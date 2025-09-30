@@ -89,10 +89,6 @@ class com.rockstargames.ui.core.BaseScreenLayout extends com.rockstargames.gtav.
             _loc3_ = this.safeRight - _loc4_;
             _loc2_ = this.safeBottom - _loc5_;
             break;
-         case "RC":
-            _loc3_ = this.safeRight - _loc4_;
-            _loc2_ = this.safeTop + (this.safeBottom - this.safeTop) / 2 - _loc5_ / 2;
-            break;
          case "CC":
             _loc3_ = this.FILE_WIDTH / 2 - _loc4_ / 2;
             _loc2_ = this.safeTop + (this.safeBottom - this.safeTop) / 2 - _loc5_ / 2;

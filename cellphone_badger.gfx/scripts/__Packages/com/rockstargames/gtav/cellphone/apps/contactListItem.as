@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.cellphone.apps.contactListItem extends MovieClip
 {
-   var txd;
+   var gfxFileName;
    var thisName;
    var thumbnail;
-   var gfxFileName;
+   var txd;
    var txd_loader;
    function contactListItem()
    {

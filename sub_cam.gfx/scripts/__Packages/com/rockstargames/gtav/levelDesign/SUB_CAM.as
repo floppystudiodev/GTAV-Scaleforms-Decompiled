@@ -1,7 +1,15 @@
 class com.rockstargames.gtav.levelDesign.SUB_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
+   var SET_DISPLAY_CONFIG;
+   var positionToScreenLayout;
    var ref;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
+   var screenHeightPixels;
+   var screenWidthPixels;
    var afactor = 57.2957795130823;
    var compassPointList = new Array();
    var halfWidth = 196;
@@ -106,10 +114,12 @@ class com.rockstargames.gtav.levelDesign.SUB_CAM extends com.rockstargames.ui.co
       var _loc8_ = Math.max(0,Math.min(a,360));
       var _loc6_ = - _loc8_ / 360 * this.angleSteps;
       var _loc7_ = _loc6_ % 28;
+      var _loc3_;
+      var _loc2_;
       for(var _loc5_ in this.compassPointList)
       {
-         var _loc3_ = (a + 90 * _loc5_) % 360;
-         var _loc2_ = this.compassPointList[_loc5_];
+         _loc3_ = (a + 90 * _loc5_) % 360;
+         _loc2_ = this.compassPointList[_loc5_];
          _loc2_._x = Math.sin(_loc3_ / this.afactor) * this.halfWidth;
          _loc2_._alpha = Math.abs(_loc3_ - 180) / 1.8;
       }

@@ -1,8 +1,8 @@
-1;LST_logo
-28;CONTENT
-30;BOUNDING_BOX
-31;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-32;__Packages.com.rockstargames.ui.core.BaseScreenLayout
-33;__Packages.com.rockstargames.ui.utils.DisplayConfig
-34;__Packages.com.rockstargames.ui.game.GameInterface
-35;__Packages.com.rockstargames.gtav.levelDesign.TRAFFIC_CAM
+1;"LST_logo"
+28;"CONTENT"
+30;"BOUNDING_BOX"
+31;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+32;"__Packages.com.rockstargames.ui.core.BaseScreenLayout"
+33;"__Packages.com.rockstargames.ui.utils.DisplayConfig"
+34;"__Packages.com.rockstargames.ui.game.GameInterface"
+35;"__Packages.com.rockstargames.gtav.levelDesign.TRAFFIC_CAM"

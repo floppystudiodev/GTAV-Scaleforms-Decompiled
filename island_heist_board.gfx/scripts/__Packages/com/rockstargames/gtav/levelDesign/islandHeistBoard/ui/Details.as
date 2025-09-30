@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Details
 {
-   var view;
-   var imageManager;
    var colourScheme;
-   var firstRun;
-   var showImmediately;
-   var isHidden;
-   var isDeferring;
    var deferredTipText;
+   var firstRun;
+   var imageManager;
+   var isDeferring;
+   var isHidden;
+   var showImmediately;
+   var view;
    static var TXD = "ISLAND_HEIST_BOARD_IMG";
    function Details(view, imageManager, colourScheme)
    {
@@ -207,10 +207,12 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Details
       this.view.description.label.transform.colorTransform = this.colourScheme.light;
       this.view.description.reveal.transform.colorTransform = this.colourScheme.dark;
       this.view.description.reveal.gotoAndPlay(1);
+      var _loc3_;
+      var _loc2_;
       if(this.view.texture)
       {
-         var _loc3_ = this.view.texture.getDepth();
-         var _loc2_ = this.view.description.getDepth();
+         _loc3_ = this.view.texture.getDepth();
+         _loc2_ = this.view.description.getDepth();
          if(_loc3_ < _loc2_)
          {
             this.view.texture.swapDepths(_loc2_);
@@ -227,10 +229,12 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Details
       this.deferredTipText = "";
       this.view.description._alpha = 30;
       com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view.description,com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD.ELEMENT_FADE_OUT_DURATION,{_alpha:0,ease:com.rockstargames.gtav.levelDesign.ISLAND_HEIST_BOARD.ELEMENT_FADE_OUT_CURVE});
+      var _loc3_;
+      var _loc2_;
       if(this.view.texture)
       {
-         var _loc3_ = this.view.texture.getDepth();
-         var _loc2_ = this.view.description.getDepth();
+         _loc3_ = this.view.texture.getDepth();
+         _loc2_ = this.view.description.getDepth();
          if(_loc3_ > _loc2_)
          {
             this.view.texture.swapDepths(_loc2_);

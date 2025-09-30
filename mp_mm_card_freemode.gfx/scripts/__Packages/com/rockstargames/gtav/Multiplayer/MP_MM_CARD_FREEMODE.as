@@ -40,12 +40,16 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
    {
       var _loc8_ = arguments;
       var _loc4_ = 0;
+      var _loc6_;
+      var _loc7_;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ < 16)
       {
-         var _loc6_ = _loc8_[0] * 16 + _loc4_;
-         var _loc7_ = this.itemList[_loc6_];
-         var _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem(_loc7_);
-         var _loc5_ = _loc8_[_loc6_ + 1];
+         _loc6_ = _loc8_[0] * 16 + _loc4_;
+         _loc7_ = this.itemList[_loc6_];
+         _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem(_loc7_);
+         _loc5_ = _loc8_[_loc6_ + 1];
          if(_loc5_ != undefined)
          {
             if(_loc3_)
@@ -62,6 +66,8 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
       var _loc2_ = this.CONTENT.titleTF;
       var _loc3_ = this.CONTENT.diffTF;
       var _loc5_ = this.CONTENT.iconMC;
+      var _loc4_;
+      var _loc8_;
       if(str == undefined || str == "")
       {
          _loc2_.htmlText = "";
@@ -71,8 +77,8 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
       }
       else
       {
-         var _loc4_ = 0;
-         var _loc8_ = 4;
+         _loc4_ = 0;
+         _loc8_ = 4;
          if(str2 == undefined || str2 == "")
          {
             _loc3_.htmlText = "";
@@ -117,9 +123,10 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
    function SET_HIGHLIGHT(index)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.itemList.length)
       {
-         var _loc3_ = this.itemList[_loc2_];
+         _loc3_ = this.itemList[_loc2_];
          com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem(_loc3_).highlighted = index != _loc2_ ? false : true;
          _loc2_ = _loc2_ + 1;
       }
@@ -129,12 +136,16 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
       this.itemList = [];
       var _loc7_ = 25;
       var _loc3_ = 0;
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.dataList.length)
       {
-         var _loc5_ = this.dataList[_loc3_];
-         var _loc6_ = 0;
-         var _loc4_ = this.CONTENT.getNextHighestDepth();
-         var _loc2_ = this.CONTENT.attachMovie("playerListItem","playerListItem" + _loc4_ + "MC",_loc4_);
+         _loc5_ = this.dataList[_loc3_];
+         _loc6_ = 0;
+         _loc4_ = this.CONTENT.getNextHighestDepth();
+         _loc2_ = this.CONTENT.attachMovie("playerListItem","playerListItem" + _loc4_ + "MC",_loc4_);
          _loc2_._y = _loc7_ + _loc3_ * (25 + _loc6_);
          _loc2_._x = -25;
          com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem(_loc2_).data = _loc5_;
@@ -146,9 +157,10 @@ class com.rockstargames.gtav.Multiplayer.MP_MM_CARD_FREEMODE extends com.rocksta
    function SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.itemList.length)
       {
-         var _loc3_ = this.itemList[_loc2_];
+         _loc3_ = this.itemList[_loc2_];
          com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem(_loc3_).ON_DESTROY();
          _loc3_.removeMovieClip();
          _loc2_ = _loc2_ + 1;

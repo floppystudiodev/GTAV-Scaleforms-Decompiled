@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.web.WWW_MONETARYSCIENCE_US extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
    var browser;
+   var calcOptionsHowLong;
+   var calcOptionsHowMuch;
    var calcResults;
    var calcSelectedWhat;
-   var calcOptionsHowMuch;
-   var calcOptionsHowLong;
-   var selected;
-   var mcScope;
-   var CONTENT;
    var dataTextScope;
+   var mcScope;
+   var selected;
    function WWW_MONETARYSCIENCE_US()
    {
       super();
@@ -50,13 +50,14 @@ class com.rockstargames.gtav.web.WWW_MONETARYSCIENCE_US extends com.rockstargame
    }
    function doSelection(selection, direction)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc5_ = this.mcScope["select_" + selection];
+      var _loc2_;
       switch(selection)
       {
          case "what":
             _loc3_ = [];
-            var _loc2_ = 0;
+            _loc2_ = 0;
             while(_loc2_ < this.calcSelectedWhat.length)
             {
                _loc3_.push(this.calcSelectedWhat[_loc2_].item);
@@ -110,16 +111,17 @@ class com.rockstargames.gtav.web.WWW_MONETARYSCIENCE_US extends com.rockstargame
       this.mcScope = this.CONTENT[pageName];
       switch(pageName)
       {
-         case "PAGE1":
-            break;
          case "CALCULATOR":
             this.setupCalculator();
             break;
          case "RESULT":
             this.showResult();
+            break;
+         case "PAGE1":
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -127,7 +129,7 @@ class com.rockstargames.gtav.web.WWW_MONETARYSCIENCE_US extends com.rockstargame
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }

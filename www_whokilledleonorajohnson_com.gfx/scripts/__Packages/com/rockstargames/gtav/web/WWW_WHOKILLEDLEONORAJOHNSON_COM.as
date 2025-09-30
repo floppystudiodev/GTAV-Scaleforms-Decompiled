@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.WWW_WHOKILLEDLEONORAJOHNSON_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
    var CONTENT;
    var OnColour;
-   var mcScope;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
    var defaultButtonOnColour;
+   var mcScope;
    var isJapanese = false;
    function WWW_WHOKILLEDLEONORAJOHNSON_COM()
    {
@@ -80,6 +80,7 @@ class com.rockstargames.gtav.web.WWW_WHOKILLEDLEONORAJOHNSON_COM extends com.roc
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -87,7 +88,7 @@ class com.rockstargames.gtav.web.WWW_WHOKILLEDLEONORAJOHNSON_COM extends com.roc
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }
@@ -111,12 +112,14 @@ class com.rockstargames.gtav.web.WWW_WHOKILLEDLEONORAJOHNSON_COM extends com.roc
    }
    function scan_and_set_localised_text(scope)
    {
+      var _loc2_;
+      var _loc1_;
       for(var _loc4_ in scope)
       {
-         var _loc2_ = scope[_loc4_]._name;
+         _loc2_ = scope[_loc4_]._name;
          if(_loc2_.substr(0,4) == "WHO_")
          {
-            var _loc1_ = scope[_loc4_];
+            _loc1_ = scope[_loc4_];
             _loc1_.html = true;
             _loc1_.multiline = true;
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,_loc2_,_loc1_,true);

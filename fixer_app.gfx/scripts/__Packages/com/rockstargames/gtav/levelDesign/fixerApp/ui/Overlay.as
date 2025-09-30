@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.ui.Overlay
 {
-   var app;
-   var view;
-   var cursor;
-   var buttons;
    var acceptButton;
+   var app;
+   var buttons;
    var cancelButton;
+   var cursor;
+   var view;
    function Overlay(app, view, cursor)
    {
       this.app = app;

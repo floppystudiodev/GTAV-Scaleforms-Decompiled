@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
    var browser;
-   var quizAnswers;
-   var quizCorrectAnswers;
-   var quizResultsButtonIndex;
-   var gameTotalBalloons;
-   var mcScope;
-   var quizResultsButtonReady;
+   var dataTextScope;
    var gameBalloonsEaten;
    var gameBalloonsMax;
    var gameFailTimeout;
-   var CONTENT;
-   var dataTextScope;
+   var gameTotalBalloons;
+   var mcScope;
+   var quizAnswers;
+   var quizCorrectAnswers;
+   var quizResultsButtonIndex;
+   var quizResultsButtonReady;
    function WWW_SIXFIGURETEMPS_COM()
    {
       super();
@@ -120,11 +120,12 @@ class com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM extends com.rockstargame
    function UPDATE_GAME()
    {
       MovieClip(this.mcScope.game_addballoon).gotoAndPlay(2);
+      var _loc2_;
       if(this.gameBalloonsEaten <= this.gameBalloonsMax)
       {
          MovieClip(this.mcScope["balloon_tick_" + this.gameBalloonsEaten]).gotoAndPlay("show");
          MovieClip(this.mcScope["condom_" + this.gameBalloonsEaten])._visible = false;
-         var _loc2_ = MovieClip(this.mcScope.drugmule);
+         _loc2_ = MovieClip(this.mcScope.drugmule);
          _loc2_.gotoAndPlay("eat_" + this.gameBalloonsEaten);
          _loc2_.heart.gotoAndPlay("beat_" + this.gameBalloonsEaten);
          this.gameBalloonsEaten = this.gameBalloonsEaten + 1;
@@ -154,6 +155,8 @@ class com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM extends com.rockstargame
             break;
          case "game":
             this.UPDATE_GAME();
+         default:
+            return;
       }
    }
    function POPULATE_TEXT(pageName)
@@ -190,6 +193,7 @@ class com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM extends com.rockstargame
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -197,7 +201,7 @@ class com.rockstargames.gtav.web.WWW_SIXFIGURETEMPS_COM extends com.rockstargame
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }

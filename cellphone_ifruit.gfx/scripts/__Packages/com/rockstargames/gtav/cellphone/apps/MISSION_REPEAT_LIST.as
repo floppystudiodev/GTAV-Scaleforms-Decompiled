@@ -1,15 +1,17 @@
 class com.rockstargames.gtav.cellphone.apps.MISSION_REPEAT_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var dataProviderUI;
-   var linkageID;
    var CONTENT;
-   var row;
-   var container;
-   var gfxFileName;
-   var currentStyle;
-   var TextWhiteHex;
-   var offWhiteRGB;
    var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var linkageID;
+   var numberOfVisibleRows;
+   var offWhiteRGB;
+   var row;
    function MISSION_REPEAT_LIST()
    {
       super();
@@ -27,14 +29,18 @@ class com.rockstargames.gtav.cellphone.apps.MISSION_REPEAT_LIST extends com.rock
       this.CONTENT.messageTF.autoSize = "center";
       this.CONTENT.messageTF.text = "";
       this.row = 1;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc5_ = _loc3_ + this.arrayStartPoint;
-            var _loc4_ = this.dataProviderUI[_loc5_][1];
+            _loc2_ = "listItem" + this.row;
+            _loc5_ = _loc3_ + this.arrayStartPoint;
+            _loc4_ = this.dataProviderUI[_loc5_][1];
             this.container[_loc2_].icon._visible = false;
             this.container[_loc2_].iconBackground._visible = false;
             this.container[_loc2_].simpleLabelTF._x = 4;

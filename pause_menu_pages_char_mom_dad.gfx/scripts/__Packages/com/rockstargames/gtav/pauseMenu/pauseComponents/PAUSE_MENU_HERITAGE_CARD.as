@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HERITAGE_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
    var TextWithBlips;
-   var charTitleMC;
    var blipLayer;
+   var charTitleMC;
+   var dbgID;
+   var model;
    var hasTitle = true;
    function PAUSE_MENU_HERITAGE_CARD()
    {

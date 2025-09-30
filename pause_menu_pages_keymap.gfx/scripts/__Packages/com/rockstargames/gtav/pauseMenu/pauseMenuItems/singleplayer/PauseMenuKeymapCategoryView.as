@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuKeymapCategoryView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var isFadingOut;
-   var itemTextA;
-   var itemBGA;
-   var itemTabA;
-   var isTweening;
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemMC;
-   var itemList;
-   var rowSpacing;
    var dataList;
-   var topEdge;
-   var visibleItems;
    var highlightedItem;
+   var isFadingOut;
+   var isTweening;
+   var itemBGA;
+   var itemList;
+   var itemMC;
+   var itemTabA;
+   var itemTextA;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
+   var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    static var prototype;
    var TEXT_FADE_DURATION = 0.75;
    var TEXT_FADE_MIN_A = 60;
@@ -87,8 +87,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuKeym
          targetIndex -= this.topEdge;
          _loc7_ = false;
       }
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
       {

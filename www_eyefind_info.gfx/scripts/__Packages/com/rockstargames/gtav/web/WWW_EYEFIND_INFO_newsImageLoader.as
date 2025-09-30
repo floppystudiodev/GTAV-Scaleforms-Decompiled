@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.WWW_EYEFIND_INFO_newsImageLoader extends MovieClip
 {
-   var txd;
    var newsThumbnailTF;
+   var txd;
    function WWW_EYEFIND_INFO_newsImageLoader()
    {
       super();

@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.constants.PauseMenuLUT
 {
-   var clearRootColumns;
-   var menuChanged;
-   var menuAdvance;
    var callImmediately;
+   var clearRootColumns;
+   var menuAdvance;
+   var menuChanged;
    static var MAP = 1000;
    static var INFO = 1001;
    static var FRIENDS = 1002;

@@ -1,5 +1,11 @@
 class com.rockstargames.gtav.levelDesign.heists.HeistModel extends com.rockstargames.ui.components.GUIModel
 {
+   var addDataToView;
+   var dataList;
+   var getCurrentView;
+   var setItem;
+   var viewIndex;
+   var viewList;
    static var viewCrewMember = 0;
    static var viewGameplay = 1;
    static var viewTodo = 2;
@@ -10,9 +16,10 @@ class com.rockstargames.gtav.levelDesign.heists.HeistModel extends com.rockstarg
    function setLabel(_weaponname, _jobcut, _accuracy)
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.viewList.length)
       {
-         var _loc4_ = this.viewList[_loc3_];
+         _loc4_ = this.viewList[_loc3_];
          _loc4_.params.labels = arguments;
          _loc3_ = _loc3_ + 1;
       }
@@ -41,10 +48,11 @@ class com.rockstargames.gtav.levelDesign.heists.HeistModel extends com.rockstarg
    }
    function focusView(_viewIndex, clearOtherViews)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(clearOtherViews == -1)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.viewList.length)
          {
             _loc3_ = this.viewList[_loc2_];

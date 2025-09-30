@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.cutscenes.CAMERA_SHUTTER
 {
    var TIMEINE;
-   var shutter;
    var numberOfBlades;
+   var shutter;
    function CAMERA_SHUTTER(mc)
    {
       this.TIMEINE = mc;
@@ -25,9 +25,10 @@ class com.rockstargames.gtav.cutscenes.CAMERA_SHUTTER
    {
       var _loc2_ = 0;
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.numberOfBlades)
       {
-         var _loc3_ = this.shutter["blade" + _loc2_];
+         _loc3_ = this.shutter["blade" + _loc2_];
          _loc3_.gotoAndPlay(whichFrame);
          _loc2_ = _loc2_ + 1;
       }

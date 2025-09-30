@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var controls;
-   var showingMap;
    var app;
-   var view;
+   var controls;
    var cursor;
    var mapButton;
-   var slideshow;
-   var txds;
-   var slideshowImages;
    var mapImages;
    var overlay;
+   var showingMap;
+   var slideshow;
+   var slideshowImages;
+   var txds;
+   var view;
    static var OVERLAY_ACCEPT_BUTTON = 101;
    static var OVERLAY_CANCEL_BUTTON = 102;
    static var BUY_BUTTON = 2001;
@@ -49,7 +49,7 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen extends c
    }
    function initButtons(business)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.BUY_BUTTON,this.view.buyButton,"BIKEBIZ_BUY");
       this.view.buyButton.price.text = "$" + com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.formatNumber(business.price);
       if(business.salePrice > -1)
@@ -117,6 +117,8 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen extends c
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.CANCEL:
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.RIGHT_MOUSE:
             this.app.showScreen(this.app.BUSINESSES_SCREEN);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
@@ -126,18 +128,19 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen extends c
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.VIEW_BUTTON:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
             this.toggleSlideshow();
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.BACK_BUTTON:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
             this.app.showScreen(this.app.BUSINESSES_SCREEN);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.BUY_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.OVERLAY_ACCEPT_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.DetailsScreen.OVERLAY_CANCEL_BUTTON:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          default:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Generic");
+            return;
       }
    }
    function toggleSlideshow()

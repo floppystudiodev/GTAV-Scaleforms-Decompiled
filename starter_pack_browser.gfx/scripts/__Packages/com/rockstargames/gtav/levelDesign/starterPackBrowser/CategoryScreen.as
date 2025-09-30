@@ -2,13 +2,13 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
 {
    var app;
    var cursor;
-   var itemsInCategory;
-   var navElements;
-   var view;
    var handleMin;
    var handleRange;
+   var itemsInCategory;
+   var navElements;
    var safeZoneRight;
    var scrollTimeDelta;
+   var view;
    static var MAX_COLS = 4;
    static var HEADER_HEIGHT = 235;
    static var COL_OFFSET = 180;
@@ -38,9 +38,10 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
       this.itemsInCategory = [];
       var _loc2_ = 0;
       var _loc4_ = items.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = items[_loc2_];
+         _loc3_ = items[_loc2_];
          if(_loc3_.category == activeCategory)
          {
             this.itemsInCategory.push(_loc3_);
@@ -57,9 +58,12 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
       var _loc8_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Item.SUBCAT_NONE;
       var _loc3_ = 0;
       var _loc9_ = this.itemsInCategory.length;
+      var _loc6_;
+      var _loc7_;
+      var _loc5_;
       while(_loc3_ < _loc9_)
       {
-         var _loc6_ = this.itemsInCategory[_loc3_];
+         _loc6_ = this.itemsInCategory[_loc3_];
          if(_loc6_.subCategory != _loc8_)
          {
             _loc8_ = _loc6_.subCategory;
@@ -76,8 +80,8 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
          }
          else if(_loc3_ == 0)
          {
-            var _loc7_ = this.view.itemList.getNextHighestDepth();
-            var _loc5_ = this.view.itemList.attachMovie("dividerLine","dividerLine" + _loc7_,_loc7_);
+            _loc7_ = this.view.itemList.getNextHighestDepth();
+            _loc5_ = this.view.itemList.attachMovie("dividerLine","dividerLine" + _loc7_,_loc7_);
             _loc5_._x = com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen.COL_OFFSET;
             _loc5_._y = _loc2_;
             _loc2_ += _loc5_._height + 10;
@@ -132,9 +136,10 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
    {
       var _loc2_ = 0;
       var _loc4_ = this.itemsInCategory.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.itemsInCategory[_loc2_];
+         _loc3_ = this.itemsInCategory[_loc2_];
          if(activeElementID == _loc3_.id)
          {
             this.app.setActiveItem(_loc3_);
@@ -164,15 +169,21 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
       {
          _loc5_ *= 2;
       }
+      var _loc6_;
+      var _loc3_;
+      var _loc7_;
+      var _loc2_;
+      var _loc4_;
+      var _loc8_;
       if(!isLeftStick)
       {
-         var _loc6_ = getTimer();
-         var _loc3_ = _loc6_ - this.scrollTimeDelta;
+         _loc6_ = getTimer();
+         _loc3_ = _loc6_ - this.scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc7_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STICK_SCROLL_SPEED * _loc3_ / 32;
+         _loc7_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STICK_SCROLL_SPEED * _loc3_ / 32;
          this.scrollTimeDelta = _loc6_;
-         var _loc2_ = this.view.itemList._y - _loc7_ * _loc5_;
-         var _loc4_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STAGE_HEIGHT - this.view.itemList._height;
+         _loc2_ = this.view.itemList._y - _loc7_ * _loc5_;
+         _loc4_ = com.rockstargames.gtav.levelDesign.starterPackBrowser.Screen.STAGE_HEIGHT - this.view.itemList._height;
          if(_loc2_ > 0)
          {
             _loc2_ = 0;
@@ -182,7 +193,7 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
             _loc2_ = _loc4_;
          }
          this.view.itemList._y = _loc2_;
-         var _loc8_ = _loc2_ / _loc4_;
+         _loc8_ = _loc2_ / _loc4_;
          this.view.scrollbar.handle._y = _loc8_ * this.handleRange + this.handleMin;
          this.updateButtons();
          com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen.CONTENT_Y_HISTORY = this.view.itemList._y;
@@ -196,9 +207,10 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
       var _loc5_ = [];
       var _loc3_ = 0;
       var _loc4_ = this.navElements.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.navElements[_loc3_];
+         _loc2_ = this.navElements[_loc3_];
          _loc2_.updateBounds();
          if(_loc2_.bottom > _loc2_.top)
          {
@@ -212,9 +224,10 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.CategoryScreen exten
    {
       var _loc2_ = 0;
       var _loc4_ = this.navElements.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.navElements[_loc2_];
+         _loc3_ = this.navElements[_loc2_];
          _loc3_.view._parent.highlight._visible = _loc3_.id == activeElementID;
          _loc2_ = _loc2_ + 1;
       }

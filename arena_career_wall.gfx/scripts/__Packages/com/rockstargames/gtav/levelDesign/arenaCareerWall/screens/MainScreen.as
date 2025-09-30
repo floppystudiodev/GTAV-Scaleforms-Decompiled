@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.arenaCareerWall.screens.MainScreen extends com.rockstargames.gtav.levelDesign.arenaCareerWall.screens.Screen
 {
-   var view;
    var app;
+   var view;
    static var METER_TINT = new flash.geom.ColorTransform(0,0,0,1,229,91,201,0);
    static var METER_NO_TINT = new flash.geom.ColorTransform();
    static var NUM_UNLOCKS = 13;

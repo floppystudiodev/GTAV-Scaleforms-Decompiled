@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
+   var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_CLUB";
    function NightclubLightingPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -56,9 +56,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.
    function initOptionButtons()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + 1);
          _loc3_.selected._visible = false;
          this.website.dataTextScope.push(_loc3_.btnTxt);
@@ -69,9 +70,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.
    {
       var _loc4_ = {_x:this.view.playVideoButton0._x,_y:this.view.playVideoButton0._y};
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 4)
       {
-         var _loc2_ = _loc3_ != 0 ? this.view.playVideoButton0.duplicateMovieClip("playVideoButton" + _loc3_,this.view.getNextHighestDepth(),_loc4_) : this.view.playVideoButton0;
+         _loc2_ = _loc3_ != 0 ? this.view.playVideoButton0.duplicateMovieClip("playVideoButton" + _loc3_,this.view.getNextHighestDepth(),_loc4_) : this.view.playVideoButton0;
          _loc2_.onColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
          _loc2_.offColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
          _loc2_.btnTxt.textAutoSize = "shrink";
@@ -82,6 +84,8 @@ class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.
    }
    function handleClick(type, id)
    {
+      var _loc2_;
+      var _loc3_;
       switch(type)
       {
          case "lightingButton":
@@ -89,22 +93,25 @@ class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.
             this.updateSelectedItem();
             break;
          case "optionButton":
-            var _loc2_ = parseInt(id) + 1;
-            var _loc3_ = _loc2_ != this.website.nightclubLighting;
+            _loc2_ = parseInt(id) + 1;
+            _loc3_ = _loc2_ != this.website.nightclubLighting;
             this.website.nightclubLighting = _loc2_;
             this.updateSelectedItem(_loc3_);
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem(selectionHasChanged)
    {
       this.view.lightingButton.tick._visible = this.website.nightclubLighting != 0;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_._visible = this.website.nightclubLighting != 0;
          _loc3_.selected._visible = _loc2_ == this.website.nightclubLighting - 1;
          _loc3_.disabled = this.website.nightclubLighting == 0;
@@ -130,9 +137,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubLightingPage extends com.
    function setDisabledButtons()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view["playVideoButton" + _loc2_];
+         _loc3_ = this.view["playVideoButton" + _loc2_];
          _loc3_.disabled = _loc2_ != this.website.nightclubLighting - 1;
          if(this.website.videoDisabled)
          {

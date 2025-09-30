@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.ErrorScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var view;
    var app;
+   var view;
    function ErrorScreen(app, viewContainer, cursor)
    {
       super(app,viewContainer,"errorScreen",cursor);

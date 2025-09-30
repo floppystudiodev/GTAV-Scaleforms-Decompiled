@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
-   var scrollTimeDelta;
-   var cursor;
-   var view;
-   var overlay;
-   var backButton;
-   var app;
-   var safeZoneBottom;
    var activeScrollKey;
+   var app;
+   var backButton;
    var currTargetID;
+   var cursor;
+   var overlay;
+   var safeZoneBottom;
+   var scrollTimeDelta;
+   var view;
    static var BACK = 6001;
    static var OVERLAY_ACCEPT = 6002;
    static var OVERLAY_CANCEL = 6003;
@@ -49,14 +49,16 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
    {
       this.view.map._x = this.app.mapStartX;
       this.view.map._y = this.app.mapStartY;
+      var _loc2_;
+      var _loc3_;
       if(this.app.mapStartMatrix)
       {
          this.view.map.transform.matrix = this.app.mapStartMatrix;
       }
       else
       {
-         var _loc2_ = this.view.map.transform.matrix;
-         var _loc3_ = this.app.mapStartScale / _loc2_.a;
+         _loc2_ = this.view.map.transform.matrix;
+         _loc3_ = this.app.mapStartScale / _loc2_.a;
          _loc2_.translate(- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
          _loc2_.scale(_loc3_,_loc3_);
          _loc2_.translate(com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
@@ -75,19 +77,22 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
       var _loc7_ = 281;
       var _loc8_ = 246;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.app.specialVehicles.length)
       {
-         var _loc4_ = this.app.specialVehicles[_loc2_];
-         var _loc3_ = _loc5_.attachMovie("specialVehicle","specialVehicle" + _loc4_.id,_loc5_.getNextHighestDepth());
+         _loc4_ = this.app.specialVehicles[_loc2_];
+         _loc3_ = _loc5_.attachMovie("specialVehicle","specialVehicle" + _loc4_.id,_loc5_.getNextHighestDepth());
          _loc3_._x = _loc2_ % _loc6_ * _loc7_;
          _loc3_._y = Math.floor(_loc2_ / _loc6_) * _loc8_;
          this.initListItem(_loc3_,_loc4_);
          _loc2_ = _loc2_ + 1;
       }
+      var _loc9_;
       if(this.view.listMask._height > _loc5_._height)
       {
          this.view.listMask._height = _loc5_._height;
-         var _loc9_ = _loc5_._y + _loc5_._height + 16;
+         _loc9_ = _loc5_._y + _loc5_._height + 16;
          this.view.panelBG._height = _loc9_ - this.view.panelBG._y;
       }
    }
@@ -162,6 +167,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
          case com.rockstargames.gtav.levelDesign.SECUROSERV.KEY_DOWN:
             this.activeScrollKey = com.rockstargames.gtav.levelDesign.SECUROSERV.KEY_DOWN;
             this.scrollListFromKeyboard(1);
+         default:
+            return;
       }
    }
    function onTargetChange(targetID)
@@ -201,12 +208,15 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
       {
          _loc4_ *= 2;
       }
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
       if(!isLeftStick)
       {
-         var _loc5_ = getTimer();
-         var _loc3_ = _loc5_ - this.scrollTimeDelta;
+         _loc5_ = getTimer();
+         _loc3_ = _loc5_ - this.scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc6_ = com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen.SCROLL_SPEED * _loc3_ / 32;
+         _loc6_ = com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen.SCROLL_SPEED * _loc3_ / 32;
          this.scrollTimeDelta = _loc5_;
          this.scrollList((- _loc6_) * _loc4_);
          if(isMouseWheel)
@@ -241,6 +251,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
             {
                delete this.view.onEnterFrame;
             }
+         default:
+            return;
       }
    }
    function scrollListFromKeyboard(direction)
@@ -293,10 +305,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehiclesScreen extend
       }
       var _loc5_ = [this.backButton];
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < this.app.specialVehicles.length)
       {
-         var _loc2_ = this.app.specialVehicles[_loc4_].view;
-         var _loc3_ = this.app.specialVehicles[_loc4_].button;
+         _loc2_ = this.app.specialVehicles[_loc4_].view;
+         _loc3_ = this.app.specialVehicles[_loc4_].button;
          _loc3_.top = Math.max(this.view.listMask._y,_loc2_._y + _loc2_._parent._y);
          _loc3_.bottom = Math.min(this.view.listMask._y + this.view.listMask._height,_loc2_._y + _loc2_._height + _loc2_._parent._y);
          if(_loc3_.bottom - _loc3_.top > 0)

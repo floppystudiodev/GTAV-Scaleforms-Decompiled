@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.Multiplayer.MP_AWARD_FREEMODE extends com.rockstargames.gtav.Multiplayer.MP_AWARD_BASE
 {
-   var FILE_NAME;
-   var awardMainMC;
    var CONTENT;
-   var awardTitleTF;
-   var awardDescriptionTF;
-   var awardDescription2TF;
-   var awardIconMC;
+   var FILE_NAME;
+   var HUD_COLOURS;
    var TIMELINE;
+   var _texture;
+   var awardDescription2TF;
+   var awardDescriptionTF;
+   var awardIconMC;
+   var awardMainMC;
+   var awardTitleTF;
    var loaderObject;
    var thisObj;
-   var _texture;
-   var HUD_COLOURS;
    function MP_AWARD_FREEMODE()
    {
       super();

@@ -1,6 +1,11 @@
 class com.rockstargames.gtav.levelDesign.MissionCompleteView extends com.rockstargames.ui.components.GUIView
 {
+   var dataList;
+   var itemList;
+   var itemY;
+   var rowSpacing;
    var viewContainer;
+   var viewLinkageList;
    var selectableList = new Array();
    function MissionCompleteView()
    {

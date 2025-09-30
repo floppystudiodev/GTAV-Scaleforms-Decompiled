@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.droneCam.Warning
 {
-   var view;
-   var updateArgs;
-   var flashing;
-   var flashOnDuration;
    var flashOffDuration;
+   var flashOnDuration;
+   var flashing;
+   var updateArgs;
+   var view;
    static var MAX_FLASH_ON_DURATION = 1;
    static var MIN_FLASH_ON_DURATION = 0.15;
    static var MAX_FLASH_OFF_DURATION = 1;

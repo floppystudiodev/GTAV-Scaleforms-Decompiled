@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.SellScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
+   var _buttons;
+   var app;
+   var sellBCButton;
    var sellLSButton;
    var view;
-   var sellBCButton;
-   var app;
-   var _buttons;
    static var TXD = "UA_GENERIC";
    static var IMAGE = "UA_SELL_STOCK";
    function SellScreen(app, viewContainer, cursor)

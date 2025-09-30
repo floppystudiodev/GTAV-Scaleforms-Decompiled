@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakSelectionScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
-   var dataObject;
    var buttons;
    var cursor;
+   var dataObject;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    static var NORMAL = 1;
    function DataLeakSelectionScreen(app, viewContainer, cursor, dataObject)
@@ -75,9 +75,10 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakSelectionScree
    }
    function initButton(id, buttonView, complete)
    {
+      var _loc2_;
       if(!complete)
       {
-         var _loc2_ = new com.rockstargames.gtav.levelDesign.fixerApp.ui.Button(id,buttonView);
+         _loc2_ = new com.rockstargames.gtav.levelDesign.fixerApp.ui.Button(id,buttonView);
          this.buttons.push(_loc2_);
          this.cursor.addTarget(_loc2_);
       }
@@ -102,7 +103,7 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakSelectionScree
    }
    function onTargetChange(activeTarget)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 1;
       while(_loc2_ <= 5)
       {
@@ -177,6 +178,8 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.DataLeakSelectionScree
             this.setUpNumber(this.view.paymentText,this.dataObject.payment3,"$");
             com.rockstargames.gtav.levelDesign.FIXER_APP.setLocalisedText(this.view.statusText,"FAPP_COMPLETE");
             this.view.foundCheckmark._visible = true;
+         default:
+            return;
       }
    }
    function setButtonsEnabled(enabled)

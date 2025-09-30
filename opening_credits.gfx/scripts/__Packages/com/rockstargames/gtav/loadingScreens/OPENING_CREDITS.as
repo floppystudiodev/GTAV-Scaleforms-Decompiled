@@ -27,6 +27,11 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       this.CONTENT = mc;
       this.dispConf = new com.rockstargames.ui.utils.DisplayConfig();
       this.dispConf = this.getDisplayConfig(true);
+      if(!this.dispConf.isWideScreen)
+      {
+         Stage.scaleMode = "noBorder";
+         this.dispConf.screenWidth = 960;
+      }
    }
    function TEST_LOGO(fadeInDuration, fadeOutDuration, logoFadeInDuration, logoFadeOutDuration, logoFadeInDelay, logoFadeOutDelay, logoScaleDuration)
    {
@@ -78,12 +83,17 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
    }
    function ADD_TEXT_TO_SINGLE_LINE(mcName, text, font, colour, isRawText, language, yOffset)
    {
+      var _loc6_;
+      var _loc2_;
+      var _loc9_;
+      var _loc8_;
+      var _loc5_;
       if(font == this.FONT5)
       {
-         var _loc6_ = this.getMovieClipFromName(mcName).attachMovie("role","sl_" + this.getMovieClipFromName(mcName).getNextHighestDepth(),this.getMovieClipFromName(mcName).getNextHighestDepth());
-         var _loc2_ = _loc6_.roleTxt;
-         var _loc9_ = text.split("");
-         var _loc8_ = _loc9_[0];
+         _loc6_ = this.getMovieClipFromName(mcName).attachMovie("role","sl_" + this.getMovieClipFromName(mcName).getNextHighestDepth(),this.getMovieClipFromName(mcName).getNextHighestDepth());
+         _loc2_ = _loc6_.roleTxt;
+         _loc9_ = text.split("");
+         _loc8_ = _loc9_[0];
          if(this.stringInArray(this.descendersList,_loc8_))
          {
             text = " " + text;
@@ -99,7 +109,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
          }
          if(isNaN(yOffset) || !yOffset || yOffset == 0)
          {
-            var _loc5_ = new TextFormat();
+            _loc5_ = new TextFormat();
             switch(language)
             {
                case "ja":
@@ -141,7 +151,6 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       _loc6_._x = this.currentX;
       _loc2_.textColor = this.getColour(colour);
       _loc2_.autoSize = "left";
-      _loc2_.antiAliasType = "normal";
       _loc2_.wordWrap = false;
       _loc2_.embedFonts = true;
       this.currentX += _loc6_._width + 6;
@@ -176,6 +185,10 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
          default:
             _loc2_._x = this.dispConf.screenWidth / 2 - _loc2_._width / 2;
       }
+      if(!this.dispConf.isWideScreen)
+      {
+         _loc2_._x += 160;
+      }
       _loc2_._y = this.dispConf.screenHeight / 2 - _loc2_._height / 2 - 12;
       _loc2_._y += _loc3_.yOffset;
       if(_loc2_._y < this.safeTop)
@@ -187,9 +200,10 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
          _loc2_._y = this.safeBottom - _loc2_._height;
       }
       var _loc4_ = {_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.SINE_IN};
+      var _loc7_;
       if(this.getAnimInStyle(animInStyle) && !isNaN(animInValue))
       {
-         var _loc7_ = _loc2_[this.getAnimInStyle(animInStyle)];
+         _loc7_ = _loc2_[this.getAnimInStyle(animInStyle)];
          _loc4_[this.getAnimInStyle(animInStyle)] = _loc7_;
          _loc2_[this.getAnimInStyle(animInStyle)] = _loc2_[this.getAnimInStyle(animInStyle)] + animInValue;
       }
@@ -236,7 +250,6 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       var _loc3_ = _loc6_.roleTxt;
       _loc3_.textColor = this.getColour(colour);
       _loc3_.autoSize = "left";
-      _loc3_.antiAliasType = "normal";
       _loc3_.embedFonts = true;
       if(isRawText)
       {
@@ -246,13 +259,14 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       {
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(_loc3_,role,0,false);
       }
+      var _loc8_;
       switch(language)
       {
          case "ja":
          case "japanese":
          case "ko":
          case "korean":
-            var _loc8_ = new TextFormat();
+            _loc8_ = new TextFormat();
             _loc8_.size = 42;
             _loc3_.setTextFormat(_loc8_);
             _loc3_._y += 10;
@@ -306,14 +320,15 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       var _loc9_ = [];
       _loc12_.removeMovieClip();
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < _loc6_.length)
       {
-         var _loc3_ = this.getMovieClipFromName(mcName).attachMovie("name","name_" + this.getMovieClipFromName(mcName).getNextHighestDepth(),this.getMovieClipFromName(mcName).getNextHighestDepth(),{_x:xOffset,_y:this.currentY});
-         var _loc2_ = _loc3_.nameTxt;
+         _loc3_ = this.getMovieClipFromName(mcName).attachMovie("name","name_" + this.getMovieClipFromName(mcName).getNextHighestDepth(),this.getMovieClipFromName(mcName).getNextHighestDepth(),{_x:xOffset,_y:this.currentY});
+         _loc2_ = _loc3_.nameTxt;
          _loc9_.push(_loc3_);
          _loc2_.textColor = this.getColour("HUD_COLOUR_WHITE");
          _loc2_.autoSize = "left";
-         _loc2_.antiAliasType = "normal";
          _loc2_.wordWrap = false;
          _loc2_.multiline = false;
          _loc2_.html = true;
@@ -344,10 +359,20 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
             _loc2_._x = this.dispConf.safeLeft * this.dispConf.screenWidth;
          }
       }
+      if(!this.dispConf.isWideScreen)
+      {
+         _loc2_._x += 160;
+      }
       if(_loc2_._y + _loc2_._height > this.dispConf.safeBottom * this.dispConf.screenHeight)
       {
          _loc2_._y = this.dispConf.safeBottom * this.dispConf.screenHeight - _loc2_._height;
       }
+      var _loc7_;
+      var _loc8_;
+      var _loc6_;
+      var _loc10_;
+      var _loc3_;
+      var _loc4_;
       if(isNaN(stepDuration) || stepDuration == 0)
       {
          for(var _loc3_ in _loc2_)
@@ -357,10 +382,10 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
                MovieClip(_loc2_[_loc3_])._alpha = 100;
             }
          }
-         var _loc7_ = {_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.SINE_IN};
+         _loc7_ = {_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.SINE_IN};
          if(this.getAnimInStyle(animInStyle) && !isNaN(animInValue))
          {
-            var _loc8_ = _loc2_[this.getAnimInStyle(animInStyle)];
+            _loc8_ = _loc2_[this.getAnimInStyle(animInStyle)];
             _loc7_[this.getAnimInStyle(animInStyle)] = _loc8_;
             _loc2_[this.getAnimInStyle(animInStyle)] = _loc2_[this.getAnimInStyle(animInStyle)] + animInValue;
          }
@@ -368,7 +393,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       }
       else
       {
-         var _loc6_ = [];
+         _loc6_ = [];
          for(_loc3_ in _loc2_)
          {
             if(typeof _loc2_[_loc3_] == "movieclip")
@@ -376,11 +401,11 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
                _loc6_[_loc2_[_loc3_].getDepth()] = _loc2_[_loc3_];
             }
          }
-         var _loc10_ = 0;
-         var _loc3_ = 0;
+         _loc10_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < _loc6_.length)
          {
-            var _loc4_ = MovieClip(_loc6_[_loc3_]);
+            _loc4_ = MovieClip(_loc6_[_loc3_]);
             _loc4_._alpha = 0;
             _loc7_ = {delay:stepDuration * _loc10_,_alpha:100,ease:com.rockstargames.ui.tweenStar.Ease.SINE_IN};
             if(this.getAnimInStyle(animInStyle) != "" && !isNaN(animInValue))
@@ -467,11 +492,16 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       var _loc3_ = this.getMovieClipFromName(mcToHide);
       var _loc11_ = this.getObjectFromMcName(mcToHide);
       var _loc5_ = {_alpha:0,ease:com.rockstargames.ui.tweenStar.Ease.SINE_OUT,onCompleteScope:this};
+      var _loc8_;
+      var _loc4_;
+      var _loc9_;
+      var _loc2_;
+      var _loc7_;
       if(isNaN(stepDuration) || stepDuration == 0)
       {
          if(this.getAnimInStyle(animOutStyle) && !isNaN(animOutValue))
          {
-            var _loc8_ = _loc3_[this.getAnimInStyle(animOutStyle)] + animOutValue;
+            _loc8_ = _loc3_[this.getAnimInStyle(animOutStyle)] + animOutValue;
             _loc5_[this.getAnimInStyle(animOutStyle)] = _loc8_;
          }
          _loc5_.onComplete = this.REMOVE;
@@ -480,7 +510,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       }
       else
       {
-         var _loc4_ = [];
+         _loc4_ = [];
          for(var _loc2_ in _loc3_)
          {
             if(typeof _loc3_[_loc2_] == "movieclip")
@@ -488,11 +518,11 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
                _loc4_[_loc3_[_loc2_].getDepth()] = _loc3_[_loc2_];
             }
          }
-         var _loc9_ = 0;
-         var _loc2_ = _loc4_.length;
+         _loc9_ = 0;
+         _loc2_ = _loc4_.length;
          while(_loc2_ >= 0)
          {
-            var _loc7_ = MovieClip(_loc4_[_loc2_]);
+            _loc7_ = MovieClip(_loc4_[_loc2_]);
             _loc5_.delay = stepDuration * _loc9_;
             if(this.getAnimInStyle(animOutStyle) != "" && !isNaN(animOutValue))
             {
@@ -517,10 +547,12 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
    function REMOVE_ALL()
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.creditBlockList.length)
       {
-         var _loc4_ = this.creditBlockList[_loc2_];
-         var _loc3_ = this.getMovieClipFromName(_loc4_.mcName);
+         _loc4_ = this.creditBlockList[_loc2_];
+         _loc3_ = this.getMovieClipFromName(_loc4_.mcName);
          _loc3_.removeMovieClip();
          _loc2_ = _loc2_ + 1;
       }
@@ -615,9 +647,10 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
    function getObjectFromMcName(mcName)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.creditBlockList.length)
       {
-         var _loc3_ = this.creditBlockList[_loc2_];
+         _loc3_ = this.creditBlockList[_loc2_];
          if(_loc3_.mcName == mcName)
          {
             return _loc3_;

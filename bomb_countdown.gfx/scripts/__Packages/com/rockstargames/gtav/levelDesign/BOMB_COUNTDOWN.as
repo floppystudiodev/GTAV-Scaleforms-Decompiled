@@ -1,10 +1,11 @@
 class com.rockstargames.gtav.levelDesign.BOMB_COUNTDOWN extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var flashThreshold;
+   var TIMELINE;
+   var _name;
    var displays;
+   var flashThreshold;
    static var SEGS = [119,36,93,109,46,107,123,37,127,111];
    static var RED = new flash.geom.ColorTransform(0.95,0.29,0.29,1,0,0,0,0);
    static var NUM_DISPLAYS = 4;

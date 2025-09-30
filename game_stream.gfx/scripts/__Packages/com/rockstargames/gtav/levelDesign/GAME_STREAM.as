@@ -1,24 +1,24 @@
 class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var snapNextItemIntoPosition;
-   var componentList;
-   var pendingSSObjList;
+   var CONTENT;
+   var TIMELINE;
    var _displayConfig;
    var _enumID;
-   var safeTop;
-   var screenHeight;
-   var isAsianLang;
-   var topLine;
    var baseLine;
-   var defaultBaseLine;
    var bigmapBaseLine;
+   var componentList;
+   var currentHeight;
+   var defaultBaseLine;
+   var isAsianLang;
+   var isWideScreen;
    var loadingscreenBaseLine;
    var onlineBaseLine;
-   var currentHeight;
-   var isWideScreen;
+   var pendingSSObjList;
+   var safeTop;
+   var screenHeight;
+   var snapNextItemIntoPosition;
+   var topLine;
    var DISPLAY_STATE_MAP_OFF = 0;
    var DISPLAY_STATE_MAP_SMALL = 1;
    var DISPLAY_STATE_MAP_LARGE = 2;
@@ -165,8 +165,8 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
    }
    function getStreamComponent(type, id)
    {
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       var _loc5_ = this.componentList.length;
       var _loc2_ = 0;
       while(_loc2_ < _loc5_)
@@ -186,12 +186,16 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
       var _loc8_ = this.baseLine;
       currComp.ypos = currComp.mc._y = this.baseLine - currComp.mc.Background._height;
       var _loc9_ = this.componentList.length;
+      var _loc3_;
+      var _loc6_;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
       if(_loc9_ > 1)
       {
-         var _loc3_ = this.baseLine;
-         var _loc6_ = this.baseLine;
-         var _loc2_ = undefined;
-         var _loc5_ = 0;
+         _loc3_ = this.baseLine;
+         _loc6_ = this.baseLine;
+         _loc5_ = 0;
          while(_loc5_ < _loc9_)
          {
             _loc2_ = this.componentList[_loc5_];
@@ -201,7 +205,7 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
             }
             _loc5_ = _loc5_ + 1;
          }
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < _loc9_)
          {
             _loc2_ = this.componentList[_loc4_];
@@ -280,8 +284,8 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
    function reorderListComponents()
    {
       var _loc6_ = this.baseLine;
-      var _loc2_ = undefined;
-      var _loc8_ = undefined;
+      var _loc2_;
+      var _loc8_;
       _loc8_ = this.componentList[0];
       var _loc3_ = this.baseLine;
       var _loc5_ = this.baseLine;
@@ -354,7 +358,7 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
       var _loc5_ = false;
       var _loc4_ = !bFromPending ? this.componentList : this.pendingSSObjList;
       var _loc6_ = _loc4_.length;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < _loc6_)
       {
@@ -412,7 +416,7 @@ class com.rockstargames.gtav.levelDesign.GAME_STREAM extends MovieClip
    }
    function updatePendingItems()
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.pendingSSObjList.length)
       {

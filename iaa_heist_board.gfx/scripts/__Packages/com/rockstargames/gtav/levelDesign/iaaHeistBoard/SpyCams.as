@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SpyCams
 {
+   var bottomSpyCam;
+   var bottomTexture;
+   var dictionary;
    var leftTextures;
-   var rightTextures;
-   var view;
-   var topSpyCam;
    var middleLeftSpyCam;
    var middleRightSpyCam;
-   var bottomSpyCam;
-   var dictionary;
+   var rightTextures;
+   var topSpyCam;
    var topTexture;
-   var bottomTexture;
+   var view;
    function SpyCams()
    {
       this.leftTextures = [];

@@ -1,20 +1,24 @@
 class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
+   var CONTENT;
+   var actionReplayToggleIconMC;
+   var attachMovie;
+   var createEmptyMovieClip;
+   var defaultBgHeight;
+   var defaultSubtitleHeight;
+   var dynamicButtonMC;
+   var getNextHighestDepth;
+   var iconTF;
+   var isCircleAccept;
+   var progressColourHex;
+   var progressMC;
    var recordingIconBGMC;
    var recordingSpinnerMC;
+   var shouldStayOnFeedBottom;
    var spinnerMC;
-   var actionReplayToggleIconMC;
-   var progressMC;
-   var progressColourHex;
    var startStopRecordingIconMC;
-   var defaultBgHeight;
-   var CONTENT;
-   var defaultSubtitleHeight;
    var subtitleTF;
-   var isCircleAccept;
    var titleTF;
-   var dynamicButtonMC;
-   var iconTF;
    static var TYPE_DIRECTOR_RECORDING = 0;
    static var TYPE_BUTTON_ICON = 1;
    static var TYPE_ACTION_REPLAY = 2;
@@ -58,10 +62,12 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
       {
          this.CONTENT.Background._height = this.CONTENT.BackgroundHighlight._height = _loc9_;
       }
+      var _loc13_;
+      var _loc15_;
       if(sSubtitle == "")
       {
-         var _loc13_ = sTitle.split("<br>");
-         var _loc15_ = _loc13_.join(" ");
+         _loc13_ = sTitle.split("<br>");
+         _loc15_ = _loc13_.join(" ");
          this.titleTF.htmlText = _loc15_;
          if(this.titleTF.textWidth > this.titleTF._width)
          {
@@ -79,6 +85,14 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
             this.titleTF.textAutoSize = "shrink";
          }
       }
+      var _loc6_;
+      var _loc4_;
+      var _loc7_;
+      var _loc8_;
+      var _loc3_;
+      var _loc5_;
+      var _loc10_;
+      var _loc2_;
       if(eType == com.rockstargames.gtav.levelDesign.FEED_REPLAY.TYPE_DIRECTOR_RECORDING)
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.spinnerMC);
@@ -94,9 +108,9 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
                this.progressMC.clear();
                this.progressMC.moveTo(0,0);
                this.progressMC.beginFill(this.progressColourHex,100);
-               var _loc6_ = Math.min(pctComplete * 360,360);
-               var _loc4_ = 0;
-               var _loc7_ = 0.5;
+               _loc6_ = Math.min(pctComplete * 360,360);
+               _loc4_ = 0;
+               _loc7_ = 0.5;
                while(_loc4_ <= _loc6_)
                {
                   this.lineToPtOnWheel(_loc4_);
@@ -124,6 +138,8 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
                this.actionReplayToggleIconMC._visible = false;
                this.startStopRecordingIconMC._visible = true;
                this.pulseMC(true,this.startStopRecordingIconMC);
+            default:
+               return;
          }
       }
       else if(eType == com.rockstargames.gtav.levelDesign.FEED_REPLAY.TYPE_BUTTON_ICON)
@@ -145,7 +161,7 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
                {
                   this.dynamicButtonMC.removeMovieClip();
                }
-               var _loc8_ = iIcon;
+               _loc8_ = iIcon;
                if(this.isCircleAccept)
                {
                   if(_loc8_ == 30)
@@ -167,14 +183,14 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
                this.dynamicButtonMC.removeMovieClip();
             }
             this.dynamicButtonMC = this.createEmptyMovieClip("dynamicButton",this.getNextHighestDepth(),{_x:18,_y:18,_width:28,_height:28});
-            var _loc3_ = 20;
-            var _loc5_ = 1;
-            var _loc10_ = new com.rockstargames.ui.utils.Text();
+            _loc3_ = 20;
+            _loc5_ = 1;
+            _loc10_ = new com.rockstargames.ui.utils.Text();
             _loc10_.setTextWithIcons(sIcon,this.dynamicButtonMC,this.iconTF,0,20,1,false);
             while(this.iconTF.textWidth > this.iconTF._width && _loc3_ > _loc5_)
             {
                _loc3_ -= _loc5_;
-               var _loc2_ = this.iconTF.getTextFormat();
+               _loc2_ = this.iconTF.getTextFormat();
                _loc2_.size = _loc3_;
                this.iconTF.setTextFormat(_loc2_);
             }

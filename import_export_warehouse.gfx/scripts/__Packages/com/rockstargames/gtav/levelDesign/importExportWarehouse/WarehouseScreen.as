@@ -1,26 +1,26 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen extends com.rockstargames.gtav.levelDesign.importExportWarehouse.Screen
 {
-   var _controls;
-   var _tabButtons;
-   var _exportTabContent;
-   var _collectionTabContent;
+   var _activeScrollKey;
+   var _activeTabIndex;
    var _allCarTiles;
    var _allCollectionTiles;
-   var _activeTabIndex;
-   var view;
-   var _overlay;
-   var _filterSystem;
-   var _activeScrollKey;
-   var app;
-   var _exportSelection;
-   var _exportScrollbar;
-   var _collectionScrollbar;
-   var _exportTabButton;
-   var _collectionTabButton;
-   var _singleCarInventoryContainer;
    var _carSetsInventoryContainer;
-   var safeZoneBottom;
+   var _collectionScrollbar;
+   var _collectionTabButton;
+   var _collectionTabContent;
+   var _controls;
+   var _exportScrollbar;
+   var _exportSelection;
+   var _exportTabButton;
+   var _exportTabContent;
+   var _filterSystem;
+   var _overlay;
+   var _singleCarInventoryContainer;
+   var _tabButtons;
+   var app;
    var cursor;
+   var safeZoneBottom;
+   var view;
    static var ID_EXPORT_TAB = 0;
    static var ID_COLLECTION_TAB = 1;
    static var ID_BUYERS_TAB = 2;
@@ -77,20 +77,21 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       {
          case com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.LB:
             this.showTab(com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.RB:
             this.showTab(com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_COLLECTION_TAB);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.KEY_UP:
             this._activeScrollKey = com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.KEY_UP;
             this.scrollListFromKeyboard(-1);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.KEY_DOWN:
             this._activeScrollKey = com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.KEY_DOWN;
             this.scrollListFromKeyboard(1);
-            break;
+            return;
          default:
             this.handleInput(inputID);
+            return;
       }
    }
    function handleInput(inputID)
@@ -104,21 +105,26 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       {
          _loc3_ = inputID;
       }
+      var _loc6_;
+      var _loc4_;
+      var _loc7_;
+      var _loc5_;
+      var _loc2_;
       switch(_loc3_)
       {
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.EXPORT_TAB_BUTTON:
             this.showTab(com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.COLLECTION_TAB_BUTTON:
             this.showTab(com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_COLLECTION_TAB);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_VALUE:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_NAME:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_POSITION:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_COMPLETION:
             this._filterSystem.setSortOrder(_loc3_);
             this.applySortOrder();
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_DRIVERS:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_BUTTON_CLASS:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.ButtonId.FILTER_OPTION_NONE:
@@ -130,16 +136,19 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
             {
                this._filterSystem.setFilter(_loc3_);
                this.applyFilter();
-               break;
+               return;
             }
             this._filterSystem.openFilterOptions(_loc3_);
             this.updateControls();
+            return;
             break;
          case com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.CANCEL:
             if(this._activeTabIndex == com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB && !this._overlay.isShowing)
             {
                this.showTab(com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB);
+               return;
             }
+            return;
             break;
          default:
             if(_loc3_ != -1 && _loc3_ != undefined)
@@ -150,7 +159,7 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
                   {
                      _loc3_ -= com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile.CAR_BUTTON_ID_OFFSET;
                   }
-                  var _loc6_ = this.getVehicleByID(_loc3_);
+                  _loc6_ = this.getVehicleByID(_loc3_);
                   if(_loc6_)
                   {
                      this.setVehicleSelectedByID(_loc6_.id,!_loc6_.selected);
@@ -164,23 +173,27 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
                   {
                      _loc3_ -= com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile.COLLECTION_BUTTON_ID_OFFSET;
                   }
-                  var _loc4_ = this.getCollectionByID(_loc3_);
+                  _loc4_ = this.getCollectionByID(_loc3_);
                   if(_loc4_)
                   {
                      this.setCollectionSelectedByID(_loc4_.id,!_loc4_.selected);
                      this.onCollectionSelected(_loc3_);
-                     var _loc7_ = !_loc4_.selected ? 0 : _loc4_.value;
+                     _loc7_ = !_loc4_.selected ? 0 : _loc4_.value;
                      this._exportSelection.setBonusMoney(_loc7_);
-                     var _loc5_ = _loc4_.vehicles.length;
-                     var _loc2_ = 0;
+                     _loc5_ = _loc4_.vehicles.length;
+                     _loc2_ = 0;
                      while(_loc2_ < _loc5_)
                      {
                         this._exportSelection.addOrRemoveVehicle(_loc4_.vehicles[_loc2_]);
                         _loc2_ = _loc2_ + 1;
                      }
+                     return;
                   }
+                  return;
                }
+               return;
             }
+            return;
       }
    }
    function handleJoystickInput(isLeftStick, x, y, isMouseWheel, isSlowingDown)
@@ -208,9 +221,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
    {
       var _loc4_ = this._allCarTiles.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this._allCarTiles[_loc3_];
+         _loc2_ = this._allCarTiles[_loc3_];
          if(_loc2_.button.id == id)
          {
             _loc2_.selected = !_loc2_.selected;
@@ -251,9 +265,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       var _loc8_ = [];
       var _loc3_ = 0;
       var _loc9_ = _loc11_.length;
+      var _loc7_;
       while(_loc3_ < _loc9_)
       {
-         var _loc7_ = _loc11_[_loc3_];
+         _loc7_ = _loc11_[_loc3_];
          if(_loc7_.owned)
          {
             _loc8_.push(_loc7_);
@@ -262,13 +277,16 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       }
       var _loc2_ = 0;
       var _loc10_ = _loc8_.length;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
       while(_loc2_ < _loc10_)
       {
-         var _loc6_ = this._singleCarInventoryContainer.getNextHighestDepth();
-         var _loc4_ = this._singleCarInventoryContainer.attachMovie("singleCarTile","singleCarTile" + _loc6_,_loc6_);
+         _loc6_ = this._singleCarInventoryContainer.getNextHighestDepth();
+         _loc4_ = this._singleCarInventoryContainer.attachMovie("singleCarTile","singleCarTile" + _loc6_,_loc6_);
          _loc4_._x = _loc2_ % com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.NUM_COLS * com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.COL_WIDTH - com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.LIST_X_OFFSET_FOR_IMAGE_TEXTFIELD;
          _loc4_._y = Math.floor(_loc2_ / com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.NUM_COLS) * com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ROW_HEIGHT + com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.LIST_Y_OFFSET_TO_FILTER_BUTTONS;
-         var _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(_loc4_);
+         _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.SingleCarTile(_loc4_);
          _loc5_.initFull(_loc8_[_loc2_],this.app.imageManager);
          this._allCarTiles.push(_loc5_);
          _loc2_ = _loc2_ + 1;
@@ -288,15 +306,18 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       var _loc6_ = this.app.collections;
       var _loc2_ = 0;
       var _loc7_ = _loc6_.length;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
       while(_loc2_ < _loc7_)
       {
          if(!_loc6_[_loc2_].disabled)
          {
-            var _loc4_ = this._carSetsInventoryContainer.getNextHighestDepth();
-            var _loc3_ = this._carSetsInventoryContainer.attachMovie("carSetTile","carSetTile" + _loc4_,_loc4_);
+            _loc4_ = this._carSetsInventoryContainer.getNextHighestDepth();
+            _loc3_ = this._carSetsInventoryContainer.attachMovie("carSetTile","carSetTile" + _loc4_,_loc4_);
             _loc3_._x = 0;
             _loc3_._y = Math.floor(_loc2_ * (com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.COLLECTION_ROW_HEIGHT + 10)) + com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.LIST_Y_OFFSET_TO_FILTER_BUTTONS;
-            var _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile(_loc3_);
+            _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.CarCollectionTile(_loc3_);
             _loc5_.init(_loc6_[_loc2_],this.app.imageManager);
             this._allCollectionTiles.push(_loc5_);
          }
@@ -350,15 +371,17 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       {
          _loc3_ = _loc3_.concat(this._filterSystem.buttons);
       }
+      var _loc2_;
+      var _loc8_;
       if(this._activeTabIndex == com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB)
       {
          _loc3_.push(this._collectionTabButton);
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this._allCarTiles.length)
          {
             if(this._allCarTiles[_loc2_])
             {
-               var _loc8_ = this._allCarTiles[_loc2_].view._y + this._allCarTiles[_loc2_].view._height + this._allCarTiles[_loc2_].view._parent._y - this._allCarTiles[_loc2_].button.view._height;
+               _loc8_ = this._allCarTiles[_loc2_].view._y + this._allCarTiles[_loc2_].view._height + this._allCarTiles[_loc2_].view._parent._y - this._allCarTiles[_loc2_].button.view._height;
                if(_loc8_ > this.view.carList.carListMask._y && this._allCarTiles[_loc2_].isVisible)
                {
                   _loc3_.push(this._allCarTiles[_loc2_].button);
@@ -367,11 +390,12 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
             _loc2_ = _loc2_ + 1;
          }
       }
+      var _loc6_;
       if(this._activeTabIndex == com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_COLLECTION_TAB)
       {
          _loc3_.push(this._exportTabButton);
          _loc2_ = 0;
-         var _loc6_ = this._allCollectionTiles.length;
+         _loc6_ = this._allCollectionTiles.length;
          while(_loc2_ < _loc6_)
          {
             if(this._allCollectionTiles[_loc2_])
@@ -385,15 +409,19 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
             _loc2_ = _loc2_ + 1;
          }
       }
+      var _loc10_;
+      var _loc11_;
+      var _loc4_;
+      var _loc9_;
       if(this._exportSelection)
       {
          if(this._activeTabIndex != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB)
          {
             _loc3_.push(this._exportSelection.exportButton);
-            var _loc10_ = this._exportSelection.currentlySelectedVehicles[this._activeTabIndex];
-            var _loc11_ = this._exportSelection.carSlots;
-            var _loc4_ = 0;
-            var _loc9_ = _loc10_.length;
+            _loc10_ = this._exportSelection.currentlySelectedVehicles[this._activeTabIndex];
+            _loc11_ = this._exportSelection.carSlots;
+            _loc4_ = 0;
+            _loc9_ = _loc10_.length;
             while(_loc4_ < _loc9_)
             {
                if(_loc10_[_loc4_])
@@ -441,14 +469,16 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
    }
    function showTab(index)
    {
+      var _loc2_;
+      var _loc4_;
       if(this._activeTabIndex != index)
       {
          this._activeTabIndex = index;
          this._exportTabButton.view._visible = index != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB ? true : false;
          this._exportTabButton.view.gotoAndStop(index != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB ? "off" : "on");
          this._exportTabButton.setTextFromCache();
-         var _loc2_ = 0;
-         var _loc4_ = this._exportTabContent.length;
+         _loc2_ = 0;
+         _loc4_ = this._exportTabContent.length;
          while(_loc2_ < _loc4_)
          {
             this._exportTabContent[_loc2_]._visible = index == com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_EXPORT_TAB;
@@ -524,9 +554,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
    {
       var _loc4_ = this._allCollectionTiles.length;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._allCollectionTiles[_loc2_];
+         _loc3_ = this._allCollectionTiles[_loc2_];
          if(_loc3_.button.id == id)
          {
             _loc3_.selected = !_loc3_.selected;
@@ -618,12 +649,13 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       }
       _loc6_.sortOn(this._filterSystem.currentSortField,this._filterSystem.currentSortOrder);
       var _loc7_ = 0;
-      var _loc13_ = undefined;
+      var _loc13_;
       var _loc4_ = 0;
       var _loc9_ = _loc6_.length;
+      var _loc3_;
       while(_loc4_ < _loc9_)
       {
-         var _loc3_ = this._allCarTiles[_loc6_[_loc4_].index];
+         _loc3_ = this._allCarTiles[_loc6_[_loc4_].index];
          if(_loc3_.isVisible)
          {
             _loc3_.view._x = _loc7_ % com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.NUM_COLS * com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.COL_WIDTH - com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.LIST_X_OFFSET_FOR_IMAGE_TEXTFIELD;
@@ -648,12 +680,13 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen e
       }
       _loc6_.sortOn(this._filterSystem.currentSortField,this._filterSystem.currentSortOrder);
       var _loc9_ = 0;
-      var _loc13_ = undefined;
+      var _loc13_;
       var _loc4_ = 0;
       var _loc8_ = _loc6_.length;
+      var _loc3_;
       while(_loc4_ < _loc8_)
       {
-         var _loc3_ = this._allCollectionTiles[_loc6_[_loc4_].index];
+         _loc3_ = this._allCollectionTiles[_loc6_[_loc4_].index];
          if(_loc3_.isVisible)
          {
             _loc3_.view._x = 0;

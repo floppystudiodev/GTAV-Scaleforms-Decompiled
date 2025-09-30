@@ -3,12 +3,12 @@
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, -137.0, 0.05)">
     <path d="M1070.0 -0.05 L1145.05 -0.05 1143.05 1279.9 147.0 1279.9 149.0 -0.05 1068.8 0.0 1070.0 0.0 1070.0 -0.05" fill="#93b1d7" fill-rule="evenodd" stroke="none"/>
     <path d="M1068.8 0.0 L1067.55 0.0 1070.0 -0.05 1070.0 0.0 1068.8 0.0" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="true" height="12" id="PatternID_186_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 137.0, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
-      <image height="12" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4XmP4z8DwnxTMgC5ACI9qIAYPBw0AitMe8I23GAoAAAAASUVORK5CYII="/>
+    <pattern height="12" id="PatternID_186_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 137.0, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
+      <image height="12" style="image-rendering:optimizeQuality" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAFklEQVR42mP4z8DwnxTMMKphVAN2DACK0x7wax2lIAAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M149.0 -0.05 L149.0 1280.0 137.0 1280.0 137.0 -0.05 149.0 -0.05" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_186_1)"/>
-    <pattern ffdec:smoothed="true" height="12" id="PatternID_186_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 1143.9, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
-      <image height="12" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4XmP4z8DwnxTMgC5ACI9qIAYPBw0AitMe8I23GAoAAAAASUVORK5CYII="/>
+    <pattern height="12" id="PatternID_186_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 1143.9, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
+      <image height="12" style="image-rendering:optimizeQuality" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAFklEQVR42mP4z8DwnxTMMKphVAN2DACK0x7wax2lIAAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M1155.9 -0.05 L1155.9 1280.0 1143.9 1280.0 1143.9 -0.05 1155.9 -0.05" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_186_2)"/>
   </g>

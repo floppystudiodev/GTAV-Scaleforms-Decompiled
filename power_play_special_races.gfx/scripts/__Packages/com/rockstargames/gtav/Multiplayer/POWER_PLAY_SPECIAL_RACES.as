@@ -1,14 +1,16 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_SPECIAL_RACES extends com.rockstargames.gtav.Multiplayer.POWER_PLAY
 {
-   var iconTypeList;
-   var myHudColourT3;
-   var myHudColourT4;
-   var icCurVals;
    var CONTENT;
    var displayConfig;
+   var icCurVals;
+   var iconList;
+   var iconTypeList;
    var myHudColourT1;
    var myHudColourT2;
-   var iconList;
+   var myHudColourT3;
+   var myHudColourT4;
+   var safeLeft;
+   var safeRight;
    var teamThreeColourHex = 16777215;
    var teamFourColourHex = 0;
    function POWER_PLAY_SPECIAL_RACES()
@@ -72,9 +74,10 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_SPECIAL_RACES extends com.ro
    {
       var _loc2_ = 0;
       var _loc4_ = this.iconList.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.iconList[_loc2_].background;
+         _loc3_ = this.iconList[_loc2_].background;
          _loc3_.transform.colorTransform = new flash.geom.ColorTransform();
          _loc3_._alpha = 50;
          _loc2_ = _loc2_ + 1;
@@ -113,6 +116,8 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_SPECIAL_RACES extends com.ro
             break;
          case 1:
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc3_,0.2,{_xscale:100,_yscale:100,onComplete:this.animateIcon,onCompleteScope:this,onCompleteArgs:[iconID,2]});
+         default:
+            return;
       }
    }
    function loop()
@@ -150,10 +155,13 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_SPECIAL_RACES extends com.ro
       var _loc8_ = 0;
       var _loc7_ = [];
       var _loc3_ = 0;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < _loc13_)
       {
-         var _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx();
-         var _loc2_ = this.CONTENT.createEmptyMovieClip("icon" + _loc3_,this.CONTENT.getNextHighestDepth());
+         _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx();
+         _loc2_ = this.CONTENT.createEmptyMovieClip("icon" + _loc3_,this.CONTENT.getNextHighestDepth());
          if(_loc3_ < _loc14_)
          {
             _loc2_._x = _loc9_;
@@ -169,7 +177,7 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_SPECIAL_RACES extends com.ro
          _loc5_.init(_loc2_,this.iconTypeList[_loc3_],teamOneColourHex,teamTwoColourHex,teamThreeColourHex,teamFourColourHex);
          _loc2_._y += 0.5 * _loc2_._height;
          this.iconList[_loc3_] = _loc5_;
-         var _loc4_ = _loc2_._y + 0.5 * _loc2_._height;
+         _loc4_ = _loc2_._y + 0.5 * _loc2_._height;
          if(_loc4_ > _loc8_)
          {
             _loc8_ = _loc4_;

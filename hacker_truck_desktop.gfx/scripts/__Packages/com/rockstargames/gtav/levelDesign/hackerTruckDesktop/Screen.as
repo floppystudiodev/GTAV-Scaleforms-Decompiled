@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Screen
 {
+   var _buttons;
    var app;
    var cursor;
    var overlay;
-   var view;
-   var _buttons;
+   var prevTargetID;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
-   var prevTargetID;
+   var view;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Screen.STAGE_WIDTH;
@@ -86,9 +86,10 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Screen
    {
       var _loc3_ = 0;
       var _loc4_ = this.overlay.buttons.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.overlay.buttons[_loc3_];
+         _loc2_ = this.overlay.buttons[_loc3_];
          if(_loc2_.enabled)
          {
             _loc2_.view.gotoAndStop(_loc2_.id != targetID ? "off" : "on");

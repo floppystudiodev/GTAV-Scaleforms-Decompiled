@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_HELP extends MovieClip
 {
+   var _blipLayer;
+   var _data;
    var _textUtil;
    var bgMC;
    var helpTop;
-   var _data;
    var titleTF;
-   var _blipLayer;
    function COL_TYPE_LIST_HELP()
    {
       super();

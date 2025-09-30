@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_PLAYER_COMPARISON_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.MP_PLAYER_CARD
 {
    var CONTENT;
+   var dbgID;
    function PAUSE_MP_MENU_PLAYER_COMPARISON_CARD()
    {
       super();

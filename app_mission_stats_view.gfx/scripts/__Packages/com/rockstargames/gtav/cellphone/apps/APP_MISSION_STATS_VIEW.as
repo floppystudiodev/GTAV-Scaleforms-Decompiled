@@ -1,16 +1,18 @@
 class com.rockstargames.gtav.cellphone.apps.APP_MISSION_STATS_VIEW extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingView
 {
-   var scrollBar;
-   var gutterHeight;
-   var scrollerX;
-   var TIMELINE;
    var CONTENT;
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var currentStyle;
-   var linkageID;
-   var content;
+   var TIMELINE;
    var container;
+   var content;
+   var contentOriginX;
+   var currentStyle;
+   var dataProviderUI;
+   var gutterHeight;
+   var isLandscape;
+   var linkageID;
+   var scrollBar;
+   var scrollBarTimeout;
+   var scrollerX;
    var offsetY = 64;
    var offsetX = 0;
    var contentOriginY = 64;
@@ -54,14 +56,22 @@ class com.rockstargames.gtav.cellphone.apps.APP_MISSION_STATS_VIEW extends com.r
       var _loc11_ = 1;
       var _loc13_ = this.dataProviderUI.length - 2;
       var _loc5_ = 0;
+      var _loc4_;
+      var _loc10_;
+      var _loc7_;
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
+      var _loc9_;
+      var _loc8_;
       while(_loc5_ < _loc13_)
       {
-         var _loc4_ = _loc5_ + 1;
-         var _loc10_ = this.dataProviderUI[_loc4_][0];
-         var _loc7_ = this.dataProviderUI[_loc4_][1];
-         var _loc6_ = this.dataProviderUI[_loc4_][2];
-         var _loc3_ = this.dataProviderUI[_loc4_][3];
-         var _loc2_ = "listItem" + _loc11_;
+         _loc4_ = _loc5_ + 1;
+         _loc10_ = this.dataProviderUI[_loc4_][0];
+         _loc7_ = this.dataProviderUI[_loc4_][1];
+         _loc6_ = this.dataProviderUI[_loc4_][2];
+         _loc3_ = this.dataProviderUI[_loc4_][3];
+         _loc2_ = "listItem" + _loc11_;
          if(this.content[_loc2_] != undefined)
          {
             this.content[_loc2_].removeMovieClip();
@@ -84,8 +94,8 @@ class com.rockstargames.gtav.cellphone.apps.APP_MISSION_STATS_VIEW extends com.r
          }
          if(_loc6_ != undefined && _loc3_ != undefined)
          {
-            var _loc9_ = _loc6_.toString();
-            var _loc8_ = _loc3_.toString();
+            _loc9_ = _loc6_.toString();
+            _loc8_ = _loc3_.toString();
             if(_loc6_ < 10)
             {
                _loc9_ = "0" + _loc6_.toString();
@@ -119,12 +129,15 @@ class com.rockstargames.gtav.cellphone.apps.APP_MISSION_STATS_VIEW extends com.r
       {
          _loc12_.completion.text = _loc17_;
       }
+      var _loc22_;
+      var _loc25_;
+      var _loc23_;
       if(_loc16_ != undefined)
       {
          _loc12_.percentComplete.text = _loc16_.toString() + "%";
-         var _loc22_ = this.dataProviderUI[_loc14_][2];
-         var _loc25_ = this.dataProviderUI[_loc14_][3];
-         var _loc23_ = this.dataProviderUI[_loc14_][4];
+         _loc22_ = this.dataProviderUI[_loc14_][2];
+         _loc25_ = this.dataProviderUI[_loc14_][3];
+         _loc23_ = this.dataProviderUI[_loc14_][4];
          com.rockstargames.ui.utils.Colour.Colourise(_loc12_.missionStatusMC,_loc22_,_loc25_,_loc23_);
       }
       if(_loc12_._y + _loc12_._height > this.gutterHeight)

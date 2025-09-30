@@ -1,984 +1,861 @@
-class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM extends com.rockstargames.ui.core.BaseWebsite
+class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM extends com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER
 {
-   var browser;
-   var PAGE_NAMES;
+   var BUY_NOW_LABEL;
    var CAN_STORE_PAGE;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var vehicleData;
-   var TXDarray;
-   var carNameStr;
-   var carManuStr;
-   var displayArray;
-   var categoryData;
-   var carColoursArray;
    var CONTENT;
-   var outOfStockStr;
-   var buyNowStr;
-   var carNumber;
-   var colourNumber;
-   var mcScope;
-   var prevColourNumber;
-   var dataTextScope;
-   var prevCarNumber;
-   var intervalId;
+   var DESCRIPTION_HEADER_LABEL;
+   var DESCRIPTION_LABEL_PREFIX;
+   var DETAILS_PAGE;
+   var DETAILS_PAGE_IMAGE_SUFFIX;
+   var DETAILS_PAGE_VEHICLE_BUTTON_OFFSET;
+   var DROP_DOWN_HEADER_OFFSET;
+   var DROP_DOWN_ITEM_SPACING;
+   var ERROR_PAGE;
+   var FAILED_PAGE;
+   var FILTER_ALL_LABEL;
+   var HOME_PAGE;
+   var HOME_PAGE_BODY_LABEL;
+   var HOME_PAGE_HEADER_LABEL;
+   var HOME_PAGE_VEHICLE_BUTTON_OFFSET;
+   var LIVERY_HEADER_LABEL;
+   var NUM_COLOUR_OPTIONS;
+   var PAGE_NAMES;
+   var PURCHASE_PAGE;
+   var SORT_NEW_IN_LABEL;
+   var SORT_PRICE;
+   var SORT_PRICE_LABEL;
+   var STATS_HEADER_LABEL;
+   var SUCCESS_PAGE;
+   var TOOLBAR_LABEL;
+   var USE_SEPARATE_DETAIL_IMAGES;
+   var VEHICLE_BUTTON_ROW_HEIGHT;
+   var _name;
+   var addVehicleImage;
+   var browser;
+   var categoryOrder;
+   var currentFilter;
+   var currentPageInitialised;
+   var currentVehicle;
    var dataProviderUI;
-   var TIMELINE;
-   var currentRank = 0;
-   var isMP = false;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var dropDownButtonOffColour;
+   var dropDownButtonOnColour;
+   var favourUpperCase;
+   var formatPrice;
+   var getVehicleFromId;
+   var hasSelectedBuyItNow;
+   var initTabbedVehicleButtons;
+   var isMP;
+   var priceSortDirection;
+   var pricesSet;
+   var purchaseButtonOffColour;
+   var purchaseButtonOnColour;
+   var selectedOption;
+   var selectedStyle;
+   var setLocalisedText;
+   var setStylesButtons;
+   var sortButtonOffColour;
+   var sortButtonOnColour;
+   var sortTab;
+   var sortTabOffColour;
+   var sortVehicleButtons;
+   var vehicles;
+   static var PARTY_BUS_DATA_SLOT = 10;
    function WWW_SOUTHERNSANANDREASSUPERAUTOS_COM()
    {
       super();
       this._name = "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM";
-      this.IS_SITE_DYNAMIC = 0;
-      this.browser = _level0.TIMELINE;
-      this.browser.DebugTextContent = true;
-      if(this.browser.player == 1)
+      this.defaultButtonOnColour = 0;
+      this.defaultButtonOffColour = 0;
+      this.purchaseButtonOnColour = 16777215;
+      this.purchaseButtonOffColour = 16777215;
+      this.sortTabOffColour = 0;
+      this.sortButtonOnColour = 0;
+      this.sortButtonOffColour = 16777215;
+      this.dropDownButtonOnColour = 0;
+      this.dropDownButtonOffColour = 16777215;
+      this.favourUpperCase = false;
+      this.DETAILS_PAGE = "CARDETAILS";
+      this.PURCHASE_PAGE = "PURCHASECAR";
+      this.TOOLBAR_LABEL = "SSS_TOOLBAR";
+      this.HOME_PAGE_HEADER_LABEL = "SSS_PG1_HEADER";
+      this.HOME_PAGE_BODY_LABEL = "SSS_PG1_BODY1";
+      this.BUY_NOW_LABEL = "SSS_BUYNOW";
+      this.SORT_PRICE_LABEL = "SSSA_SORT_PRICE";
+      this.SORT_NEW_IN_LABEL = "SSSA_SORT_NEW_IN";
+      this.DESCRIPTION_HEADER_LABEL = "SSSA_DESCRIPTION_HEADER";
+      this.LIVERY_HEADER_LABEL = "SSSA_LIVERY_HEADER";
+      this.STATS_HEADER_LABEL = "SSSA_STATS_HEADER";
+      this.FILTER_ALL_LABEL = "SSSA_ALL";
+      this.DESCRIPTION_LABEL_PREFIX = "SSS_";
+      this.DROP_DOWN_ITEM_SPACING = 39;
+      this.DROP_DOWN_HEADER_OFFSET = 44;
+      this.VEHICLE_BUTTON_ROW_HEIGHT = 236;
+      this.USE_SEPARATE_DETAIL_IMAGES = true;
+      this.DETAILS_PAGE_IMAGE_SUFFIX = "B";
+      this.hasSelectedBuyItNow = true;
+   }
+   function filterVehicles()
+   {
+      var _loc6_;
+      var _loc7_;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
+      if(this.isMP)
       {
-         this.isMP = true;
+         this.categoryOrder = ["SSSA_EXCLUSIVE","SSSA_2DOOR","SSSA_4DOOR","SSSA_OFFROAD","SSSA_LUXURY","SSSA_MOTORBIKES","SSSA_KARTS"];
+         this.vehicles = {SSSA_EXCLUSIVE:[this.vehicles.DRIFTL352,this.vehicles.L352,this.vehicles.MINIMUS,this.vehicles.TAMPA4,this.vehicles.HARDY,this.vehicles.WOODLANDER,this.vehicles.URANUS,this.vehicles.FIREBOLT,this.vehicles.CHAVOSV6],SSSA_2DOOR:[this.vehicles.DRIFTL352,this.vehicles.L352,this.vehicles.TAMPA4,this.vehicles.URANUS,this.vehicles.FIREBOLT,this.vehicles.DOMINATOR10,this.vehicles.YOSEMITE4,this.vehicles.DOMINATOR9,this.vehicles.VIGERO3,this.vehicles.FR36,this.vehicles.GAUNTLET6,this.vehicles.CLIQUE2,this.vehicles.MONSTROCITI,this.vehicles.RATEL,this.vehicles.L35,this.vehicles.BOOR,this.vehicles.EVERON2,this.vehicles.TAHOMA,this.vehicles.TULIP2,this.vehicles.POSTLUDE,this.vehicles.KANJOSJ,this.vehicles.VIGERO2,this.vehicles.RUINER4,this.vehicles.S95,this.vehicles.ARBITERGT,this.vehicles.PREVION,this.vehicles.SULTAN3,this.vehicles.DOMINATOR7,this.vehicles.DOMINATOR8,this.vehicles.FUTO2,this.vehicles.REMUS,this.vehicles.CALICO,this.vehicles.WARRENER2,this.vehicles.RT3000,this.vehicles
+         .BRIOSO2,this.vehicles.SLAMTRUCK,this.vehicles.WEEVIL,this.vehicles.PENUMBRA2,this.vehicles.CLUB,this.vehicles.DUKES3,this.vehicles.KANJO,this.vehicles.YOSEMITE2,this.vehicles.RETINUE2,this.vehicles.ASBO,this.vehicles.PEYOTE2,this.vehicles.ZION3,this.vehicles.GAUNTLET4,this.vehicles.NEBULA,this.vehicles.GAUNTLET3,this.vehicles.ISSI7,this.vehicles.IMPALER,this.vehicles.VAMOS,this.vehicles.BLISTA3,this.vehicles.FUTO,this.vehicles.RUINER,this.vehicles.ROMERO,this.vehicles.PRAIRIE,this.vehicles.MICHELLI,this.vehicles.DOMINATOR3,this.vehicles.ISSI3,this.vehicles.ELLIE,this.vehicles.FAGALOA,this.vehicles.HOTRING,this.vehicles.HERMES,this.vehicles.SENTINEL3,this.vehicles.YOSEMITE,this.vehicles.RETINUE,this.vehicles.TORNADO6,this.vehicles.OMNIS,this.vehicles.TROPOS,this.vehicles.BRIOSO,this.vehicles.TAMPA2,this.vehicles.STALION2,this.vehicles.DOMINATOR2,this.vehicles.GAUNTLET2,this.vehicles.TAMPA,this.vehicles.LURCHER,this.vehicles.RLOADER2,this.vehicles.SLAMVAN,this.vehicles.MASSACRO2,this.vehicles
+         .JESTER2,this.vehicles.PIGALLE,this.vehicles.BLADE,this.vehicles.RHAPSODY,this.vehicles.PANTO,this.vehicles.SURFER,this.vehicles.YOUGA,this.vehicles.PICADOR,this.vehicles.DOMINATO,this.vehicles.F620,this.vehicles.FUSILADE,this.vehicles.PENUMBRA,this.vehicles.SENTINEL,this.vehicles.SENTINEL_CONVERTABLE,this.vehicles.RLOADER,this.vehicles.DUKES,this.vehicles.BLISTA2,this.vehicles.STALLION,this.vehicles.SCHWARZE,this.vehicles.ZION,this.vehicles.ZION2,this.vehicles.GAUNTLET,this.vehicles.VIGERO,this.vehicles.ISSI2],SSSA_OFFROAD:[this.vehicles.DRAUGUR,this.vehicles.PATRIOT3,this.vehicles.OUTLAW,this.vehicles.VAGRANT,this.vehicles.HELLION,this.vehicles.CARACARA2,this.vehicles.KAMACHO,this.vehicles.RIATA,this.vehicles.TROPHY,this.vehicles.TROPHY2,this.vehicles.RALLYTRUCK,this.vehicles.SEMINOLE,this.vehicles.RUMPO,this.vehicles.KALAHARI_TOPLESS,this.vehicles.REBEL2,this.vehicles.RANCHERX,this.vehicles.BIFTA,this.vehicles.KALAHARI,this.vehicles.SANDKIN2,this.vehicles.BODHI2,this.vehicles.DUNE,this
+         .vehicles.REBEL,this.vehicles.SADLER,this.vehicles.SANDKING,this.vehicles.BFINJECT,this.vehicles.BISON],SSSA_4DOOR:[this.vehicles.MINIMUS,this.vehicles.HARDY,this.vehicles.WOODLANDER,this.vehicles.CHAVOSV6,this.vehicles.VORSCHLAG,this.vehicles.CASTIGATOR,this.vehicles.TERMINUS,this.vehicles.IMPALER5,this.vehicles.CAVALCADE3,this.vehicles.DORADO,this.vehicles.ASTEROPE2,this.vehicles.IMPALER6,this.vehicles.VIVANITE,this.vehicles.BRIGHAM,this.vehicles.EUDORA,this.vehicles.ISSI8,this.vehicles.SURFER3,this.vehicles.JOURNEY2,this.vehicles.RHINEHART,this.vehicles.GREENWOOD,this.vehicles.BUFFALO4,this.vehicles.SEMINOLE2,this.vehicles.SUGOI,this.vehicles.SULTAN2,this.vehicles.DYNASTY,this.vehicles.TULIP,this.vehicles.BJXL,this.vehicles.FQ2,this.vehicles.SERRANO,this.vehicles.HABANERO,this.vehicles.CHEBUREK,this.vehicles.STREITER,this.vehicles.YOUGA2,this.vehicles.BUFFALO3,this.vehicles.RUMPO3,this.vehicles.BTYPE2,this.vehicles.GUARDIAN,this.vehicles.GBURRITO2,this.vehicles.KURUMA,this.vehicles.KURUMA2,this
+         .vehicles.JACKAL,this.vehicles.ORACLE1,this.vehicles.SCHAFTER2,this.vehicles.SURGE,this.vehicles.WARRENER,this.vehicles.GLENDALE,this.vehicles.REGINA,this.vehicles.PRIMO,this.vehicles.BUFFALO,this.vehicles.BUFFALO2,this.vehicles.TAILGATER,this.vehicles.ASEA,this.vehicles.GRANGER,this.vehicles.INGOT,this.vehicles.INTRUDER,this.vehicles.MINIVAN,this.vehicles.PREMIER,this.vehicles.RADI,this.vehicles.STANIER,this.vehicles.STRATUM,this.vehicles.WASHINGT,this.vehicles.ASTROPE,this.vehicles.PARADISE,this.vehicles.FUGITIVE,this.vehicles.DILETTAN],SSSA_LUXURY:[this.vehicles.GRANGER2,this.vehicles.IWAGEN,this.vehicles.LANDSTLKR2,this.vehicles.EVERON,this.vehicles.PBUS2,this.vehicles.PATRIOT2,this.vehicles.PATRIOT,this.vehicles.CONTENDER,this.vehicles.LANDSTALKER,this.vehicles.GRESLEY,this.vehicles.BOBCATXL,this.vehicles.CAVCADE2,this.vehicles.BALLER2,this.vehicles.CAVCADE,this.vehicles.ROCOTO,this.vehicles.FELON,this.vehicles.FELON2,this.vehicles.ORACLE,this.vehicles.STRETCH],SSSA_MOTORBIKES:[this
+         .vehicles.PIZZABOY,this.vehicles.WOLFSBANE,this.vehicles.FAGGIO3,this.vehicles.VORTEX,this.vehicles.BLAZER4,this.vehicles.SANCTUS,this.vehicles.MANCHEZ,this.vehicles.ESSKEY,this.vehicles.NIGHTBLADE,this.vehicles.DEFILER,this.vehicles.AVARUS,this.vehicles.ZOMBIEA,this.vehicles.ZOMBIEB,this.vehicles.CHIMERA,this.vehicles.DAEMON2,this.vehicles.RATBIKE,this.vehicles.BAGGER,this.vehicles.FAGGION,this.vehicles.CLIFFHANGER,this.vehicles.BF400,this.vehicles.GARGOYLE,this.vehicles.ENDURO,this.vehicles.NEMESIS,this.vehicles.HAKUCHOU,this.vehicles.INNOVATION,this.vehicles.SOVEREIGN,this.vehicles.BLAZER3,this.vehicles.SANCHEZ2,this.vehicles.BATI,this.vehicles.BATI2,this.vehicles.RUFFIAN,this.vehicles.VADER,this.vehicles.BLAZER,this.vehicles.PCJ,this.vehicles.SANCHEZ,this.vehicles.FAGGIO,this.vehicles.AKUMA,this.vehicles.DOUBLE,this.vehicles.HEXER],SSSA_KARTS:[this.vehicles.VETO2,this.vehicles.VETO,this.vehicles.RCBANDITO]};
       }
       else
       {
-         this.isMP = false;
+         this.categoryOrder = ["SSSA_EXCLUSIVE","SSSA_2DOOR","SSSA_SPORTS","SSSA_OFFROAD","SSSA_4DOOR","SSSA_LUXURY","SSSA_MOTORBIKES"];
+         this.vehicles = {SSSA_EXCLUSIVE:[this.vehicles.BTYPE2,this.vehicles.LURCHER,this.vehicles.RLOADER2,this.vehicles.SLAMVAN,this.vehicles.MASSACRO2,this.vehicles.JESTER2,this.vehicles.DUKES,this.vehicles.BLISTA2,this.vehicles.STALLION,this.vehicles.BLADE,this.vehicles.BIFTA,this.vehicles.PARADISE,this.vehicles.KALAHARI,this.vehicles.KALAHARI_TOPLESS,this.vehicles.INNOVATION],SSSA_2DOOR:[this.vehicles.SCHWARZE,this.vehicles.ZION,this.vehicles.GAUNTLET,this.vehicles.VIGERO,this.vehicles.ISSI2],SSSA_SPORTS:[this.vehicles.INFERNUS,this.vehicles.SURANO,this.vehicles.VACCA,this.vehicles.NINEF,this.vehicles.COMET2,this.vehicles.BANSHEE,this.vehicles.FELTZER],SSSA_OFFROAD:[this.vehicles.BFINJECT,this.vehicles.SANDKING],SSSA_4DOOR:[this.vehicles.FUGITIVE,this.vehicles.DILETTAN],SSSA_LUXURY:[this.vehicles.SUPERD,this.vehicles.EXEMPLAR,this.vehicles.BALLER2,this.vehicles.CAVCADE,this.vehicles.ROCOTO,this.vehicles.FELON,this.vehicles.ORACLE],SSSA_MOTORBIKES:[this.vehicles.BATI,this.vehicles.AKUMA,this
+         .vehicles.RUFFIAN,this.vehicles.VADER,this.vehicles.BLAZER,this.vehicles.PCJ,this.vehicles.SANCHEZ,this.vehicles.FAGGIO]};
+         _loc6_ = 0;
+         _loc7_ = this.categoryOrder.length;
+         while(_loc6_ < _loc7_)
+         {
+            _loc4_ = this.vehicles[this.categoryOrder[_loc6_]];
+            _loc2_ = 0;
+            _loc3_ = _loc4_.length;
+            while(_loc2_ < _loc3_)
+            {
+               _loc5_ = _loc4_[_loc2_];
+               _loc5_.buyItNow = false;
+               _loc2_ = _loc2_ + 1;
+            }
+            _loc6_ = _loc6_ + 1;
+         }
       }
-      this.PAGE_NAMES = new Array();
-      this.PAGE_NAMES[1] = "PAGE1";
-      this.PAGE_NAMES[2] = "SEARCH";
-      this.PAGE_NAMES[3] = "CARDETAILS1";
-      this.PAGE_NAMES[4] = "CARDETAILS2";
-      this.PAGE_NAMES[5] = "CARDETAILS3";
-      this.PAGE_NAMES[6] = "CARDETAILS4";
-      this.PAGE_NAMES[7] = "CARDETAILS5";
-      this.PAGE_NAMES[8] = "CARDETAILS6";
-      this.PAGE_NAMES[9] = "CARDETAILS7";
-      this.PAGE_NAMES[10] = "CARDETAILS8";
-      this.PAGE_NAMES[11] = "CARDETAILS9";
-      this.PAGE_NAMES[12] = "CARDETAILS10";
-      this.PAGE_NAMES[13] = "CARDETAILS11";
-      this.PAGE_NAMES[14] = "CARDETAILS12";
-      this.PAGE_NAMES[15] = "CARDETAILS13";
-      this.PAGE_NAMES[16] = "CARDETAILS14";
-      this.PAGE_NAMES[17] = "CARDETAILS15";
-      this.PAGE_NAMES[18] = "CARDETAILS16";
-      this.PAGE_NAMES[19] = "CARDETAILS17";
-      this.PAGE_NAMES[20] = "CARDETAILS18";
-      this.PAGE_NAMES[21] = "CARDETAILS19";
-      this.PAGE_NAMES[22] = "CARDETAILS20";
-      this.PAGE_NAMES[23] = "CARDETAILS21";
-      this.PAGE_NAMES[24] = "CARDETAILS22";
-      this.PAGE_NAMES[25] = "CARDETAILS23";
-      this.PAGE_NAMES[26] = "CARDETAILS24";
-      this.PAGE_NAMES[27] = "CARDETAILS25";
-      this.PAGE_NAMES[28] = "CARDETAILS26";
-      this.PAGE_NAMES[29] = "CARDETAILS27";
-      this.PAGE_NAMES[30] = "CARDETAILS28";
-      this.PAGE_NAMES[31] = "CARDETAILS29";
-      this.PAGE_NAMES[32] = "CARDETAILS30";
-      this.PAGE_NAMES[33] = "CARDETAILS31";
-      this.PAGE_NAMES[34] = "PURCHASECAR";
-      this.PAGE_NAMES[35] = "PURCHASE_D_FAILED";
-      this.PAGE_NAMES[36] = "PURCHASE_D_ERROR";
-      this.PAGE_NAMES[37] = "PURCHASE_D_CONFIRM";
-      this.PAGE_NAMES[38] = "CARDETAILS32";
-      this.PAGE_NAMES[39] = "CARDETAILS33";
-      this.PAGE_NAMES[40] = "CARDETAILS34";
-      this.PAGE_NAMES[41] = "CARDETAILS35";
-      this.PAGE_NAMES[42] = "CARDETAILS36";
-      this.PAGE_NAMES[43] = "CARDETAILS37";
-      this.PAGE_NAMES[44] = "CARDETAILS38";
-      this.PAGE_NAMES[45] = "CARDETAILS39";
-      this.PAGE_NAMES[46] = "CARDETAILS40";
-      this.PAGE_NAMES[47] = "CARDETAILS41";
-      this.PAGE_NAMES[48] = "CARDETAILS42";
-      this.PAGE_NAMES[49] = "CARDETAILS43";
-      this.PAGE_NAMES[50] = "CARDETAILS44";
-      this.PAGE_NAMES[51] = "CARDETAILS45";
-      this.PAGE_NAMES[52] = "CARDETAILS46";
-      this.PAGE_NAMES[53] = "CARDETAILS47";
-      this.PAGE_NAMES[54] = "CARDETAILS48";
-      this.PAGE_NAMES[55] = "CARDETAILS49";
-      this.PAGE_NAMES[56] = "CARDETAILS50";
-      this.CAN_STORE_PAGE = new Array();
-      this.CAN_STORE_PAGE[1] = true;
+   }
+   function setCommonPageIDs()
+   {
+      this.PAGE_NAMES[1] = this.HOME_PAGE;
+      this.PAGE_NAMES[2] = this.SUCCESS_PAGE;
+      this.PAGE_NAMES[34] = this.PURCHASE_PAGE;
+      this.PAGE_NAMES[35] = this.FAILED_PAGE;
+      this.PAGE_NAMES[36] = this.ERROR_PAGE;
       this.CAN_STORE_PAGE[2] = false;
-      this.CAN_STORE_PAGE[3] = true;
-      this.CAN_STORE_PAGE[4] = true;
-      this.CAN_STORE_PAGE[5] = true;
-      this.CAN_STORE_PAGE[6] = true;
-      this.CAN_STORE_PAGE[7] = true;
-      this.CAN_STORE_PAGE[8] = true;
-      this.CAN_STORE_PAGE[9] = true;
-      this.CAN_STORE_PAGE[10] = true;
-      this.CAN_STORE_PAGE[11] = true;
-      this.CAN_STORE_PAGE[12] = true;
-      this.CAN_STORE_PAGE[13] = true;
-      this.CAN_STORE_PAGE[14] = true;
-      this.CAN_STORE_PAGE[15] = true;
-      this.CAN_STORE_PAGE[16] = true;
-      this.CAN_STORE_PAGE[17] = true;
-      this.CAN_STORE_PAGE[18] = true;
-      this.CAN_STORE_PAGE[19] = true;
-      this.CAN_STORE_PAGE[20] = true;
-      this.CAN_STORE_PAGE[21] = true;
-      this.CAN_STORE_PAGE[22] = true;
-      this.CAN_STORE_PAGE[23] = true;
-      this.CAN_STORE_PAGE[24] = true;
-      this.CAN_STORE_PAGE[25] = true;
-      this.CAN_STORE_PAGE[26] = true;
-      this.CAN_STORE_PAGE[27] = true;
-      this.CAN_STORE_PAGE[28] = true;
-      this.CAN_STORE_PAGE[29] = true;
-      this.CAN_STORE_PAGE[30] = true;
-      this.CAN_STORE_PAGE[31] = true;
-      this.CAN_STORE_PAGE[32] = true;
-      this.CAN_STORE_PAGE[33] = true;
       this.CAN_STORE_PAGE[34] = false;
       this.CAN_STORE_PAGE[35] = false;
       this.CAN_STORE_PAGE[36] = false;
-      this.CAN_STORE_PAGE[37] = false;
-      this.CAN_STORE_PAGE[38] = true;
-      this.CAN_STORE_PAGE[39] = true;
-      this.CAN_STORE_PAGE[40] = true;
-      this.CAN_STORE_PAGE[41] = true;
-      this.CAN_STORE_PAGE[42] = true;
-      this.CAN_STORE_PAGE[43] = true;
-      this.CAN_STORE_PAGE[44] = true;
-      this.CAN_STORE_PAGE[45] = true;
-      this.CAN_STORE_PAGE[46] = true;
-      this.CAN_STORE_PAGE[47] = true;
-      this.CAN_STORE_PAGE[48] = true;
-      this.CAN_STORE_PAGE[49] = true;
-      this.CAN_STORE_PAGE[50] = true;
-      this.CAN_STORE_PAGE[51] = true;
-      this.CAN_STORE_PAGE[52] = true;
-      this.CAN_STORE_PAGE[53] = true;
-      this.CAN_STORE_PAGE[54] = true;
-      this.CAN_STORE_PAGE[55] = true;
-      this.CAN_STORE_PAGE[56] = true;
-      this.defaultButtonOnColour = 0;
-      this.defaultButtonOffColour = 3355443;
-      this.vehicleData = new Array();
-      this.vehicleData.push(undefined);
-      this.vehicleData.push({BRAND:"BENEFAC",VEHICLE:"SCHWARZE",PAGEID:3,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3086,TOP_SPEED:147});
-      this.vehicleData.push({BRAND:"UBERMACH",VEHICLE:"ZION",PAGEID:4,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:6,DRIVE:"REAR",WEIGHT:3086,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"BRAVADO",VEHICLE:"GAUNTLET",PAGEID:5,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3527,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"DECLASSE",VEHICLE:"VIGERO",PAGEID:6,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3968,TOP_SPEED:140});
-      this.vehicleData.push({BRAND:"WEENY",VEHICLE:"ISSI2",PAGEID:7,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"FRONT",WEIGHT:2646,TOP_SPEED:135});
-      this.vehicleData.push({BRAND:"PEGASSI",VEHICLE:"INFERNUS",PAGEID:8,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"BENEFAC",VEHICLE:"SURANO",PAGEID:9,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"PEGASSI",VEHICLE:"VACCA",PAGEID:10,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"OBEY",VEHICLE:"NINEF",PAGEID:11,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"PFISTER",VEHICLE:"COMET2",PAGEID:12,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"BRAVADO",VEHICLE:"BANSHEE",PAGEID:13,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"BENEFAC",VEHICLE:"FELTZER",PAGEID:14,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"BF",VEHICLE:"BFINJECT",PAGEID:15,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3968,TOP_SPEED:135});
-      this.vehicleData.push({BRAND:"VAPID",VEHICLE:"SANDKING",PAGEID:16,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:6,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"CHEVAL",VEHICLE:"FUGITIVE",PAGEID:17,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3527,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"KARIN",VEHICLE:"DILETTAN",PAGEID:18,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:1,DRIVE:"FRONT",WEIGHT:3086,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"ENUS",VEHICLE:"SUPERD",PAGEID:19,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"DEWBAUCH",VEHICLE:"EXEMPLAR",PAGEID:20,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:-1,DRIVE:"n/k",WEIGHT:-1,TOP_SPEED:-1});
-      this.vehicleData.push({BRAND:"GALLIVAN",VEHICLE:"BALLER2",PAGEID:21,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"ALBANY",VEHICLE:"CAVCADE",PAGEID:22,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:4,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:127});
-      this.vehicleData.push({BRAND:"OBEY",VEHICLE:"ROCOTO",PAGEID:23,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:139});
-      this.vehicleData.push({BRAND:"LAMPADA",VEHICLE:"FELON",PAGEID:24,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:6,DRIVE:"REAR",WEIGHT:3968,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"UBERMACH",VEHICLE:"ORACLE",PAGEID:25,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:4079,TOP_SPEED:150});
-      this.vehicleData.push({BRAND:"PEGASSI",VEHICLE:"BATI",PAGEID:26,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:6,DRIVE:"REAR",WEIGHT:507,TOP_SPEED:150});
-      this.vehicleData.push({BRAND:"DINKA",VEHICLE:"AKUMA",PAGEID:27,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:551,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"PEGASSI",VEHICLE:"RUFFIAN",PAGEID:28,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:551,TOP_SPEED:140});
-      this.vehicleData.push({BRAND:"SHITZU",VEHICLE:"VADER",PAGEID:29,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:507,TOP_SPEED:140});
-      this.vehicleData.push({BRAND:"NAGASAKI",VEHICLE:"BLAZER",PAGEID:30,PRICE:71,RANK:-1,SEATS:"01",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:1323,TOP_SPEED:120});
-      this.vehicleData.push({BRAND:"SHITZU",VEHICLE:"PCJ",PAGEID:31,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:551,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"MAIBATSU",VEHICLE:"SANCHEZ",PAGEID:32,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,LIVERY1:"SSS_SPRUNK",LIVERY2:"SSS_ATOMIC",LIVERY3:"SSS_PATRIOT",LIVERY4:"SSS_SHREWSBURY",GEARS:4,DRIVE:"REAR",WEIGHT:485,TOP_SPEED:118});
-      this.vehicleData.push({BRAND:"PRINCIPL",VEHICLE:"FAGGIO",PAGEID:33,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:3,DRIVE:"REAR",WEIGHT:220,TOP_SPEED:90});
-      this.vehicleData.push({BRAND:"BRAVADO",VEHICLE:"BISON",PAGEID:38,PRICE:71,RANK:-1,SEATS:"06",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:4630,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"DINKA",VEHICLE:"DOUBLE",PAGEID:39,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:441,TOP_SPEED:147});
-      this.vehicleData.push({BRAND:"LAMPADA",VEHICLE:"FELON2",PAGEID:40,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:6,DRIVE:"REAR",WEIGHT:4079,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"LCC",VEHICLE:"HEXER",PAGEID:41,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:4,DRIVE:"REAR",WEIGHT:551,TOP_SPEED:135});
-      this.vehicleData.push({BRAND:"UBERMACH",VEHICLE:"ZION2",PAGEID:42,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:6,DRIVE:"REAR",WEIGHT:3086,TOP_SPEED:145});
-      this.vehicleData.push({BRAND:"PEGASSI",VEHICLE:"BATI2",PAGEID:43,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,LIVERY1:"SSS_REDWOOD",LIVERY2:"SSS_CERVEZA",LIVERY3:"SSS_STRONZO",LIVERY4:"SSS_SPRUNK",GEARS:6,DRIVE:"REAR",WEIGHT:507,TOP_SPEED:150});
-      this.vehicleData.push({BRAND:"DUNDREAR",VEHICLE:"STRETCH",PAGEID:44,PRICE:71,RANK:-1,SEATS:"06",IS_DLC:false,NOCOLOUR:true,GEARS:5,DRIVE:"REAR",WEIGHT:5291,TOP_SPEED:135});
-      this.vehicleData.push({BRAND:"BF",VEHICLE:"BIFTA",PAGEID:45,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:true,GEARS:5,DRIVE:"REAR",WEIGHT:3086,TOP_SPEED:136});
-      this.vehicleData.push({BRAND:"CANIS",VEHICLE:"KALAHARI",PAGEID:46,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:true,GEARS:5,DRIVE:"ALL",WEIGHT:1764,TOP_SPEED:120});
-      this.vehicleData.push({BRAND:"BRAVADO",VEHICLE:"PARADISE",PAGEID:47,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:true,LIVERY1:"SSS_SURF",LIVERY2:"SSS_SHARK",LIVERY3:"SSS_LOGGER",LIVERY4:"SSS_OCTOPUS",GEARS:5,DRIVE:"REAR",WEIGHT:5512,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"CANIS",VEHICLE:"BODHI2",PAGEID:48,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:5732,TOP_SPEED:134});
-      this.vehicleData.push({BRAND:"BF",VEHICLE:"DUNE",PAGEID:49,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"REAR",WEIGHT:3968,TOP_SPEED:135});
-      this.vehicleData.push({BRAND:"KARIN",VEHICLE:"REBEL",PAGEID:50,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"VAPID",VEHICLE:"SADLER",PAGEID:51,PRICE:71,RANK:-1,SEATS:"04",IS_DLC:false,GEARS:5,DRIVE:"ALL",WEIGHT:4630,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"VAPID",VEHICLE:"SANDKIN2",PAGEID:52,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:6,DRIVE:"ALL",WEIGHT:5291,TOP_SPEED:130});
-      this.vehicleData.push({BRAND:"MAIBATSU",VEHICLE:"SANCHEZ2",PAGEID:53,PRICE:71,RANK:-1,SEATS:"02",IS_DLC:false,GEARS:4,DRIVE:"REAR",WEIGHT:485,TOP_SPEED:118});
-      this.vehicleData.push({BRAND:"",VEHICLE:"DUKES",PAGEID:54,PRICE:71,RANK:-1,SEATS:"00",IS_DLC:false,GEARS:0,DRIVE:"REAR",WEIGHT:0,TOP_SPEED:0});
-      this.vehicleData.push({BRAND:"",VEHICLE:"BLISTA2",PAGEID:55,PRICE:71,RANK:-1,SEATS:"00",IS_DLC:false,GEARS:0,DRIVE:"REAR",WEIGHT:0,TOP_SPEED:0});
-      this.vehicleData.push({BRAND:"",VEHICLE:"STALLION",PAGEID:56,PRICE:71,RANK:-1,SEATS:"00",IS_DLC:false,GEARS:0,DRIVE:"REAR",WEIGHT:0,TOP_SPEED:0});
-      this.TXDarray = new Array();
-      this.carNameStr = new Array();
-      this.carManuStr = new Array();
-      this.displayArray = new Array();
-      this.categoryData = new Array();
-      if(this.isMP == false)
-      {
-         this.displayArray = [48,49,50,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
-         this.categoryData[0] = [1,"2DOOR"];
-         this.categoryData[1] = [6,"SPORTS"];
-         this.categoryData[2] = [13,"OFFROAD"];
-         this.categoryData[3] = [15,"4DOOR"];
-         this.categoryData[4] = [17,"LUXURY"];
-         this.categoryData[5] = [24,"MOTORBIKES"];
-      }
-      else
-      {
-         this.displayArray = [39,40,41,1,2,36,3,4,5,13,14,32,42,43,44,45,46,15,16,19,20,21,22,34,23,38,24,37,26,27,28,29,30,47,31,25,33,35];
-         this.categoryData[0] = [1,"2DOOR"];
-         this.categoryData[1] = [13,"OFFROAD"];
-         this.categoryData[2] = [15,"4DOOR"];
-         this.categoryData[3] = [19,"LUXURY"];
-         this.categoryData[4] = [24,"MOTORBIKES"];
-      }
-      this.carColoursArray = new Array();
-      this.carColoursArray.push(new Array(0,0,0));
-      this.carColoursArray.push(new Array(204,0,0));
-      this.carColoursArray.push(new Array(255,0,153));
-      this.carColoursArray.push(new Array(255,255,0));
-      this.carColoursArray.push(new Array(253,173,7));
-      this.carColoursArray.push(new Array(102,204,51));
-      this.carColoursArray.push(new Array(0,102,204));
-      this.carColoursArray.push(new Array(25,25,25));
-      this.carColoursArray.push(new Array(255,255,255));
    }
-   function READY()
+   function setOptionsButtons(selectedOption)
    {
-   }
-   function SET_PRICES(slotID, price)
-   {
-      if(slotID < 34)
+      super.setOptionsButtons(selectedOption);
+      var _loc6_ = this.CONTENT.details;
+      var _loc9_ = !this.currentVehicle.livery ? this.NUM_COLOUR_OPTIONS : this.currentVehicle.livery.length;
+      var _loc8_;
+      var _loc11_;
+      if(this.currentVehicle.livery)
       {
-         this.vehicleData[slotID - 2].PRICE = price;
-      }
-      else
-      {
-         this.vehicleData[slotID - 6].PRICE = price;
-      }
-   }
-   function SET_RANKS(slotID, rank, current)
-   {
-      if(slotID < 34)
-      {
-         this.vehicleData[slotID - 2].RANK = rank;
-      }
-      else
-      {
-         this.vehicleData[slotID - 6].RANK = rank;
-      }
-      if(current != undefined)
-      {
-         this.currentRank = current;
-      }
-   }
-   function getCarStrings()
-   {
-      if(this.carManuStr.length == 0)
-      {
-         var _loc3_ = 0;
-         while(_loc3_ < this.displayArray.length)
+         _loc8_ = this.currentVehicle.price;
+         if(selectedOption != 0)
          {
-            var _loc2_ = this.displayArray[_loc3_];
-            if(this.vehicleData[_loc2_].BRAND != "")
+            if(this.currentVehicle.secondaryPrice != 0)
             {
-               this.set_localised_text(-1,this.CONTENT.localisationTF,this.vehicleData[_loc2_].BRAND);
-               this.carManuStr[_loc2_] = this.CONTENT.localisationTF.text;
+               _loc8_ = this.currentVehicle.secondaryPrice;
             }
-            else
+         }
+         if(this.currentVehicle.name == "PBUS2")
+         {
+            if(_loc8_ < 0)
             {
-               this.carManuStr[_loc2_] = "";
+               _loc8_ = this.currentVehicle.price;
             }
-            if(this.vehicleData[_loc2_].VEHICLE == "CAVCADE2")
+         }
+         if(_loc8_ == 0)
+         {
+            _loc6_.priceText.text = "";
+         }
+         else
+         {
+            _loc6_.priceText.text = !isNaN(_loc8_) ? this.formatPrice(_loc8_) : _loc8_;
+         }
+         _loc11_ = this.currentVehicle.salePrice;
+         if(selectedOption != 0)
+         {
+            if(this.currentVehicle.name == "PBUS2")
             {
-               this.set_localised_text(-1,this.CONTENT.localisationTF,"CAVCADE");
+               if(this.currentVehicle.secondarySalePrice > 0)
+               {
+                  _loc11_ = this.currentVehicle.secondarySalePrice;
+               }
             }
-            else
+            else if(this.currentVehicle.secondarySalePrice != 0)
             {
-               this.set_localised_text(-1,this.CONTENT.localisationTF,this.vehicleData[_loc2_].VEHICLE);
+               _loc11_ = this.currentVehicle.secondarySalePrice;
             }
-            this.carNameStr[_loc2_] = this.CONTENT.localisationTF.text;
+         }
+         if(_loc11_ == 0)
+         {
+            _loc6_.reducedPriceText.text = "";
+         }
+         else
+         {
+            _loc6_.reducedPriceText.text = !isNaN(_loc11_) ? this.formatPrice(_loc11_) : _loc11_;
+         }
+      }
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
+      if(this.currentVehicle.buyItNow)
+      {
+         if(this.currentVehicle.colourways || this.currentVehicle.livery)
+         {
+            _loc3_ = 0;
+            while(_loc3_ < _loc9_)
+            {
+               if(this.currentVehicle.secondaryPrice > 0)
+               {
+                  _loc4_ = _loc6_["BUYITNOWSTOCK_A" + (_loc3_ + 1)];
+                  _loc5_ = selectedOption == _loc3_;
+                  _loc4_.disabled = !_loc5_;
+                  _loc4_._alpha = !_loc5_ ? 50 : 100;
+                  _loc4_._visible = _loc5_;
+               }
+               _loc4_ = _loc6_["BUYITNOWSTOCK_B" + (_loc3_ + 1)];
+               _loc5_ = selectedOption == _loc3_;
+               _loc4_.disabled = !_loc5_;
+               _loc4_._alpha = !_loc5_ ? 50 : 100;
+               _loc4_._visible = _loc5_;
+               _loc3_ = _loc3_ + 1;
+            }
+         }
+         else
+         {
+            _loc6_.BUYITNOWSTOCK_1.disabled = false;
+            _loc6_.BUYITNOWSTOCK_1._alpha = 100;
+            _loc6_.BUYITNOWSTOCK_2.disabled = false;
+            _loc6_.BUYITNOWSTOCK_2._alpha = 100;
+         }
+      }
+      var _loc10_;
+      var _loc12_;
+      if(this.currentVehicle.id == 179)
+      {
+         _loc10_ = 1;
+         _loc12_ = 2;
+         _loc3_ = 0;
+         while(_loc3_ < 8)
+         {
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc10_ || this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc12_)
+            {
+               _loc6_[this.PURCHASE_PAGE + "_" + (_loc3_ + 1)].disabled = true;
+            }
             _loc3_ = _loc3_ + 1;
          }
-         this.set_localised_text(-1,this.CONTENT.localisationTF,"WEB_OUTOFSTOCK");
-         this.outOfStockStr = this.CONTENT.localisationTF.text;
-         this.set_localised_text(-1,this.CONTENT.localisationTF,"SSS_BUYNOW");
-         this.buyNowStr = this.CONTENT.localisationTF.text;
       }
    }
-   function goToAnchor(AnchorLink)
+   function initOutcomePage(headerText, bodyText, soldLabel, pauseBeforeShowing)
    {
-      var _loc3_ = new Array();
-      _loc3_ = AnchorLink.split("_");
-      if(_loc3_[0] == "car")
+      super.initOutcomePage(headerText,bodyText,soldLabel,pauseBeforeShowing);
+      var _loc3_ = this.CONTENT.purchase;
+      var _loc4_;
+      var _loc5_;
+      if(this.currentVehicle.livery)
       {
-         this.carNumber = parseInt(_loc3_[1]);
-         this.browser.GO_TO_WEBPAGE("WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_S_CARDETAILS" + this.carNumber);
-      }
-      else if(_loc3_[0] == "colour")
-      {
-         this.colourNumber = parseInt(_loc3_[1]);
-         this.setColourPicker(this.colourNumber);
-      }
-      else if(_loc3_[0] == "PURCHASECAR")
-      {
-         this.browser.GO_TO_WEBPAGE("WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_S_PURCHASECAR");
-      }
-      else if(_loc3_[0] == "thumbnail")
-      {
-         this.carNumber = parseInt(_loc3_[1]);
-         var _loc2_ = 1;
-         while(_loc2_ < 10)
+         _loc4_ = this.currentVehicle.price;
+         if(this.selectedOption != 0)
          {
-            this.mcScope["PURCHASECAR_" + _loc2_]._y = -50;
-            _loc2_ = _loc2_ + 1;
-         }
-         this.browser.GO_TO_WEBPAGE("WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_S_CARDETAILS" + this.carNumber);
-      }
-   }
-   function setColourPicker(col)
-   {
-      if(col == 0)
-      {
-         this.colourNumber = 1;
-      }
-      else
-      {
-         this.colourNumber = col;
-      }
-      var _loc2_ = 1;
-      while(_loc2_ < 9)
-      {
-         this.mcScope["PURCHASECAR_" + _loc2_]._y = -50;
-         _loc2_ = _loc2_ + 1;
-      }
-      var _loc3_ = undefined;
-      if(col == 0)
-      {
-         _loc3_ = this.mcScope.PURCHASECAR_1;
-         this.browser.DISABLE_BUTTON(17,true);
-         _loc3_._alpha = 10;
-         this.mcScope.colourSelectedMC._y = -50;
-      }
-      else
-      {
-         _loc3_ = this.mcScope["PURCHASECAR_" + this.colourNumber];
-         this.browser.DISABLE_BUTTON(col + 16,false);
-         _loc3_._alpha = 100;
-         this.mcScope.colourSelectedMC._x = this.mcScope["colour_" + this.colourNumber]._x;
-         this.mcScope.colourSelectedMC._y = this.mcScope["colour_" + this.colourNumber]._y;
-         this.prevColourNumber = this.colourNumber;
-      }
-      if(this.vehicleData[this.carNumber].NOCOLOUR == true)
-      {
-         _loc3_ = this.mcScope.PURCHASECAR_1;
-         this.browser.DISABLE_BUTTON(17,false);
-         _loc3_._alpha = 100;
-         this.mcScope.colourSelectedMC._y = -50;
-      }
-      _loc3_._x = 988;
-      _loc3_._y = 333;
-   }
-   function colouriseButtons()
-   {
-      if(this.vehicleData[this.carNumber].NOCOLOUR != true)
-      {
-         var _loc2_ = 1;
-         while(_loc2_ < 9)
-         {
-            com.rockstargames.ui.utils.Colour.Colourise(this.mcScope["colour_" + _loc2_],this.carColoursArray[_loc2_][0],this.carColoursArray[_loc2_][1],this.carColoursArray[_loc2_][2],100);
-            _loc2_ = _loc2_ + 1;
-         }
-      }
-   }
-   function makeThumbnails(startSlot)
-   {
-      var _loc16_ = 627;
-      var _loc9_ = 255;
-      var _loc17_ = 1000;
-      var _loc4_ = _loc9_;
-      var _loc6_ = 437;
-      var _loc10_ = 1;
-      var _loc5_ = 0;
-      while(_loc5_ < this.displayArray.length)
-      {
-         var _loc3_ = this.displayArray[_loc5_];
-         if(this.vehicleData[_loc3_].PRICE != -1)
-         {
-            var _loc2_ = "thumbnail_" + _loc3_;
-            if(this.mcScope[_loc2_] == undefined)
+            if(this.currentVehicle.secondaryPrice != 0)
             {
-               var _loc8_ = this.mcScope.attachMovie("button_car_box",_loc2_,this.mcScope.getNextHighestDepth(),{_x:_loc4_,_y:_loc6_,_alpha:0,_width:72.2,_height:52.6});
+               _loc4_ = this.currentVehicle.secondaryPrice;
+            }
+         }
+         if(_loc4_ == 0)
+         {
+            _loc3_.priceText.text = "";
+         }
+         else
+         {
+            _loc3_.priceText.text = !isNaN(_loc4_) ? this.formatPrice(_loc4_) : _loc4_;
+         }
+         _loc5_ = this.currentVehicle.salePrice;
+         if(this.selectedOption != 0)
+         {
+            if(this.currentVehicle.secondarySalePrice != 0)
+            {
+               _loc5_ = this.currentVehicle.secondarySalePrice;
+            }
+         }
+         if(_loc5_ == 0)
+         {
+            _loc3_.reducedPriceText.text = "";
+         }
+         else
+         {
+            _loc3_.reducedPriceText.text = !isNaN(_loc5_) ? this.formatPrice(_loc5_) : _loc5_;
+         }
+      }
+      if(this.currentVehicle.buyItNow)
+      {
+         if(this.hasSelectedBuyItNow)
+         {
+            if(this.currentVehicle.secondarySalePrice != undefined && this.currentVehicle.secondarySalePrice > 0)
+            {
+               _loc3_.priceText.text = this.formatPrice(this.currentVehicle.secondaryPrice);
+               _loc3_.reductionLine._width = _loc3_.priceText.textWidth + 5;
+               _loc3_.reducedPriceText._x = _loc3_.priceText._x - _loc3_.priceText.textWidth - 20;
+               _loc3_.reducedPriceText.text = this.formatPrice(this.currentVehicle.secondarySalePrice);
+               _loc3_.reductionLine._visible = true;
             }
             else
             {
-               this.mcScope[_loc2_]._x = _loc4_;
-               this.mcScope[_loc2_]._y = _loc6_;
-            }
-            this.displayVehicleImage(_loc2_,_loc3_,this.mcScope[_loc2_]);
-            this.dataTextScope[startSlot] = this.mcScope[_loc2_].btnTxt;
-            if(typeof this.vehicleData[_loc3_].PRICE == "string")
-            {
-               this.mcScope[_loc2_].carImages.outOfStock._alpha = 0;
-            }
-            else if(this.vehicleData[_loc3_].PRICE == 0)
-            {
-               this.mcScope[_loc2_].carImages.outOfStock._alpha = 100;
-               this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF.autoSize = "center";
-               this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF.multiline = true;
-               this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF.wordWrap = true;
-               this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF.htmlText = this.outOfStockStr;
-               this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF._y = 85 - this.mcScope[_loc2_].carImages.outOfStock.outOfStockTF._height / 2;
-               this.dataTextScope[startSlot] = undefined;
-            }
-            else if(this.vehicleData[_loc3_].PRICE > 0)
-            {
-               this.mcScope[_loc2_].carImages.outOfStock._alpha = 0;
-            }
-            if(this.isMP == true)
-            {
-               if(this.vehicleData[_loc3_].RANK > this.currentRank)
-               {
-                  _loc8_ = this.mcScope[_loc2_].attachMovie("MP_RANK BIG","MPrankBig",this.mcScope[_loc2_].getNextHighestDepth());
-                  _loc8_.rankTF.text = this.vehicleData[_loc3_].RANK;
-                  this.dataTextScope[startSlot] = undefined;
-               }
-            }
-            this.mcScope[_loc2_]._alpha = 100;
-            startSlot = startSlot + 1;
-            _loc16_ = _loc6_ + 98;
-            _loc4_ += 77;
-            if(_loc4_ > _loc17_)
-            {
-               _loc10_ = _loc10_ + 1;
-               if(!(_loc10_ & 1) == true)
-               {
-                  _loc4_ = _loc9_ - 35;
-               }
-               else
-               {
-                  _loc4_ = _loc9_;
-               }
-               _loc6_ += 61;
+               _loc3_.priceText.text = !isNaN(this.currentVehicle.secondaryPrice) ? this.formatPrice(this.currentVehicle.secondaryPrice) : this.currentVehicle.secondaryPrice;
+               _loc3_.reductionLine._visible = false;
             }
          }
-         _loc5_ = _loc5_ + 1;
+         else if(this.currentVehicle.salePrice != undefined && this.currentVehicle.salePrice > 0)
+         {
+            _loc3_.priceText.text = this.formatPrice(this.currentVehicle.price);
+            _loc3_.reductionLine._width = _loc3_.priceText.textWidth + 5;
+            _loc3_.reducedPriceText._x = _loc3_.priceText._x - _loc3_.priceText.textWidth - 20;
+            _loc3_.reducedPriceText.text = this.formatPrice(this.currentVehicle.salePrice);
+            _loc3_.reductionLine._visible = true;
+         }
+         else
+         {
+            _loc3_.priceText.text = !isNaN(this.currentVehicle.price) ? this.formatPrice(this.currentVehicle.price) : this.currentVehicle.price;
+            _loc3_.reductionLine._visible = false;
+         }
       }
-      return _loc16_;
    }
-   function labelAsDlcPack(targetMc, selection)
+   function initStats(page)
    {
-      if(!this.isMP)
+      page.statsHeaderText.autoSize = "left";
+      this.setLocalisedText(page.statsHeaderText,this.STATS_HEADER_LABEL);
+      this.setStatLine(page.stats.topSpeedLabel,"WEB_VEHICLE_TOP_SPEED",page.stats.topSpeed,this.currentVehicle.topSpeed);
+      this.setStatLine(page.stats.accelerationLabel,"WEB_VEHICLE_ACCELERATION",page.stats.acceleration,this.currentVehicle.acceleration);
+      this.setStatLine(page.stats.brakingLabel,"WEB_VEHICLE_BRAKING",page.stats.braking,this.currentVehicle.braking);
+      this.setStatLine(page.stats.tractionLabel,"WEB_VEHICLE_TRACTION",page.stats.traction,this.currentVehicle.traction);
+   }
+   function setStatLine(txt, label, bar, value)
+   {
+      txt.textAutoSize = "shrink";
+      this.setLocalisedText(txt,label);
+      value *= 500;
+      bar.bar4._xscale = Math.min(100,Math.max(0,value - 400));
+      bar.bar3._xscale = Math.min(100,Math.max(0,value - 300));
+      bar.bar2._xscale = Math.min(100,Math.max(0,value - 200));
+      bar.bar1._xscale = Math.min(100,Math.max(0,value - 100));
+      bar.bar0._xscale = Math.min(100,Math.max(0,value));
+   }
+   function goToAnchor(link)
+   {
+      var _loc7_ = Math.max(0,link.lastIndexOf("_")) || link.length;
+      var _loc6_ = link.slice(0,_loc7_);
+      var _loc4_ = link.slice(_loc7_ + 1);
+      var _loc5_;
+      var _loc8_;
+      if(_loc6_ == "BUYITNOWSTOCK")
+      {
+         _loc5_ = true;
+         _loc8_ = parseInt(_loc4_.substr(1)) - 1;
+         if(this.currentVehicle.name == "PBUS2")
+         {
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc8_] != 0)
+            {
+               _loc5_ = false;
+            }
+         }
+         if(_loc4_.charAt(0) == "A" && this.currentVehicle.price1Unlocked && _loc5_)
+         {
+            this.hasSelectedBuyItNow = false;
+            this.browser.GO_TO_WEBPAGE(this._name + "_S_" + this.PURCHASE_PAGE);
+         }
+         else if(_loc4_.charAt(0) == "B" && this.currentVehicle.price2Unlocked && _loc5_)
+         {
+            this.hasSelectedBuyItNow = true;
+            this.browser.GO_TO_WEBPAGE(this._name + "_S_" + this.PURCHASE_PAGE);
+         }
+      }
+      else if(_loc6_ == "priceSortButton")
+      {
+         if(this.isMP)
+         {
+            this.sortTab(this.SORT_PRICE,this.priceSortDirection + 17);
+         }
+         else
+         {
+            this.sortVehicleButtons(this.SORT_PRICE,this.priceSortDirection + 17);
+         }
+      }
+      else
+      {
+         super.goToAnchor(link);
+      }
+   }
+   function initDetailsPage(pageName, newPage)
+   {
+      var _loc2_ = this.CONTENT.details;
+      var _loc3_ = parseInt(pageName.substr(this.DETAILS_PAGE.length));
+      this.currentVehicle = this.getVehicleFromId(_loc3_);
+      if(pageName == "CARDETAILS179")
+      {
+         this.initPartyBus();
+      }
+      if(this.currentVehicle.buyItNow && this.currentVehicle.price >= 0 && this.currentVehicle.secondaryPrice >= 0)
+      {
+         this.initBuyItNowDetailsPage(_loc3_,this.currentVehicle,newPage,"buyItNow");
+      }
+      else
+      {
+         this.initSSSADetailsPage(pageName,newPage);
+      }
+      if(this.isMP)
+      {
+         _loc2_.priceSortButton._y = _loc2_.subHeader._y + _loc2_.subHeader._height * 0.5 - _loc2_.priceSortButton._height * 0.5;
+      }
+   }
+   function initSSSADetailsPage(pageName, newPage)
+   {
+      var _loc2_ = this.CONTENT.details;
+      this.dataTextScope.length = 0;
+      this.priceSortDirection = -1;
+      this.currentFilter = this.FILTER_ALL_LABEL;
+      this.selectedOption = -1;
+      this.selectedStyle = -1;
+      var _loc8_ = parseInt(pageName.substr(this.DETAILS_PAGE.length));
+      this.currentVehicle = this.getVehicleFromId(_loc8_);
+      _loc2_.nameText.text = this.setLocalisedText(_loc2_.nameText,this.currentVehicle.brand,this.favourUpperCase) + " " + this.setLocalisedText(_loc2_.nameText,this.currentVehicle.name,this.favourUpperCase);
+      if(this.currentVehicle.price != 0)
+      {
+         _loc2_.priceText.text = !isNaN(this.currentVehicle.price) ? this.formatPrice(this.currentVehicle.price) : this.currentVehicle.price;
+      }
+      if(this.currentVehicle.reduction == 3)
+      {
+         _loc2_.reductionLine._width = _loc2_.priceText.textWidth + 5;
+         _loc2_.reducedPriceText._x = _loc2_.priceText._x - _loc2_.priceText.textWidth - 20;
+         if(this.currentVehicle.salePrice === 0)
+         {
+            this.setLocalisedText(_loc2_.reducedPriceText,"CLUB_FREE");
+         }
+         else
+         {
+            _loc2_.reducedPriceText.text = !isNaN(this.currentVehicle.salePrice) ? this.formatPrice(this.currentVehicle.salePrice) : this.currentVehicle.salePrice;
+         }
+      }
+      else
+      {
+         _loc2_.reductionLine._visible = false;
+      }
+      if(this.currentVehicle.award > 0)
+      {
+         _loc2_.award.gotoAndStop(this.currentVehicle.award);
+         _loc2_.award._visible = true;
+      }
+      else
+      {
+         _loc2_.award._visible = false;
+      }
+      this.addVehicleImage(this.currentVehicle,_loc2_);
+      if(!this.pricesSet)
+      {
+         _loc2_.options._visible = false;
+         _loc2_.purchaseButton._visible = false;
+         return undefined;
+      }
+      if(!newPage && this.currentPageInitialised)
       {
          return undefined;
       }
-      targetMc.carImages.dlcPackTF.text = "";
-      if(this.vehicleData[selection].IS_DLC == true)
+      _loc2_.options._visible = true;
+      _loc2_.purchaseButton._visible = true;
+      var _loc4_ = this.initOptions(_loc2_) || 1;
+      this.initPurchaseButtons(_loc2_,_loc4_);
+      _loc2_.descriptionText.autoSize = "left";
+      if(this.currentVehicle.desc)
       {
-         var _loc2_ = targetMc.carImages.dlcPackTF;
-         _loc2_._visible = false;
-         _loc2_.autoSize = "center";
-         _loc2_.multiline = true;
-         _loc2_.wordWrap = true;
-         if(selection >= 39 && selection <= 41)
-         {
-            this.set_localised_text(-1,_loc2_,"SSS_BEACHBUM",true);
-         }
-         _loc2_._visible = true;
-      }
-   }
-   function POPULATE_TEXT(pageName, searchArgs, newPage)
-   {
-      this.CONTENT._y = 0;
-      this.browser.SUPRESS_HISTORY(false);
-      this.getCarStrings();
-      var _loc19_ = pageName;
-      if(_loc19_.substring(0,10) == "CARDETAILS")
-      {
-         _loc19_ = "CARDETAILS";
+         this.setLocalisedText(_loc2_.descriptionText,this.currentVehicle.desc);
       }
       else
       {
-         this.prevCarNumber = undefined;
+         this.setLocalisedText(_loc2_.descriptionText,this.DESCRIPTION_LABEL_PREFIX + this.currentVehicle.name);
       }
-      if(this.TXDarray.length > 0)
+      this.initStats(_loc2_);
+      _loc2_.options._y = _loc2_.optionsHeaderText._y + _loc2_.optionsHeaderText._height + 5;
+      var _loc5_ = !_loc2_.options._visible ? _loc2_.optionsHeaderText._y : _loc2_.options._y + _loc2_.options._height + 5;
+      var _loc3_ = 0;
+      while(_loc3_ < _loc4_)
       {
-         var _loc10_ = 0;
-         while(_loc10_ < this.TXDarray.length)
-         {
-            com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",this.TXDarray[_loc10_],"loadedCheck");
-            _loc10_ = _loc10_ + 1;
-         }
+         _loc2_[this.PURCHASE_PAGE + "_" + (_loc3_ + 1)]._y = _loc5_;
+         _loc3_ = _loc3_ + 1;
       }
-      switch(_loc19_)
+      _loc2_.lockedPurchase._y = _loc5_;
+      _loc2_.purchaseButton._y = _loc5_;
+      _loc2_.descriptionText._y = _loc2_.purchaseButton._y + _loc2_.purchaseButton._height + 16;
+      _loc2_.statsHeaderText._y = _loc2_.descriptionText._y + _loc2_.descriptionText._height + 16;
+      _loc2_.stats._y = _loc2_.statsHeaderText._y + _loc2_.statsHeaderText._height + 5;
+      var _loc7_ = _loc2_.stats._y + _loc2_.stats._height + 20;
+      var _loc6_ = 0;
+      if(_loc7_ > _loc2_.subHeader._y)
       {
-         case "PAGE1":
-            clearInterval(this.intervalId);
-            this.mcScope = this.CONTENT.PAGE1;
-            this.set_localised_text(0,this.CONTENT.localisationTF,"SSS_TOOLBAR");
-            this.browser.SET_TITLEBAR_TEXT(this.CONTENT.localisationTF.text,14474460);
-            this.dataTextScope = new Array();
-            var _loc23_ = 627;
-            var _loc7_ = 218;
-            var _loc17_ = 804;
-            var _loc8_ = _loc7_;
-            var _loc5_ = 370;
-            var _loc18_ = 293;
-            var _loc12_ = 213;
-            var _loc13_ = 1;
-            if(newPage == false)
-            {
-               _loc10_ = 0;
-               while(_loc10_ < this.displayArray.length)
-               {
-                  var _loc3_ = this.displayArray[_loc10_];
-                  if(this.vehicleData[_loc3_].PRICE != -1 && this.vehicleData[_loc3_].IS_DLC == true)
-                  {
-                     if(this.mcScope.CAT_EXCLUSIVE != undefined)
-                     {
-                        this.mcScope.CAT_EXCLUSIVE.removeMovieClip();
-                     }
-                     var _loc9_ = this.mcScope.attachMovie("categoryHeader","CAT_EXCLUSIVE",this.mcScope.getNextHighestDepth(),{_x:_loc7_,_y:_loc5_});
-                     this.set_localised_text(-1,_loc9_.categoryTF,"SSS_EXCLUSIVE");
-                     _loc5_ += _loc9_._height;
-                     break;
-                  }
-                  _loc10_ = _loc10_ + 1;
-               }
-               _loc10_ = 0;
-               while(_loc10_ < this.displayArray.length)
-               {
-                  _loc3_ = this.displayArray[_loc10_];
-                  var _loc4_ = 0;
-                  while(_loc4_ < this.categoryData.length)
-                  {
-                     if(this.categoryData[_loc4_][0] == _loc3_)
-                     {
-                        var _loc6_ = "CAT_" + this.categoryData[_loc4_][1];
-                        if(this.mcScope[_loc6_] != undefined)
-                        {
-                           this.mcScope[_loc6_].removeMovieClip();
-                        }
-                        if(_loc8_ > _loc7_)
-                        {
-                           _loc5_ += _loc12_;
-                        }
-                        _loc9_ = this.mcScope.attachMovie("categoryHeader",_loc6_,this.mcScope.getNextHighestDepth(),{_x:_loc7_,_y:_loc5_});
-                        var _loc11_ = "SSS_" + this.categoryData[_loc4_][1];
-                        this.set_localised_text(-1,_loc9_.categoryTF,_loc11_);
-                        _loc8_ = _loc7_;
-                        _loc5_ += _loc9_._height;
-                        break;
-                     }
-                     _loc4_ = _loc4_ + 1;
-                  }
-                  if(this.vehicleData[_loc3_].PRICE != -1)
-                  {
-                     var _loc22_ = "car_" + _loc3_;
-                     if(this.mcScope[_loc22_] != undefined)
-                     {
-                        this.mcScope[_loc22_].removeMovieClip();
-                     }
-                     var _loc2_ = this.mcScope.attachMovie("button_car_box",_loc22_,this.mcScope.getNextHighestDepth(),{_x:_loc8_,_y:_loc5_,_alpha:0});
-                     this.displayVehicleImage(_loc22_,_loc3_,_loc2_);
-                     _loc2_.btnTxt.text = this.carManuStr[_loc3_] + " " + this.carNameStr[_loc3_];
-                     this.dataTextScope[_loc13_] = _loc2_.btnTxt;
-                     _loc2_.carImages.outOfStock._alpha = 0;
-                     if(typeof this.vehicleData[_loc3_].PRICE == "string")
-                     {
-                        this.set_price_text(_loc2_.priceTF,this.vehicleData[_loc3_].PRICE);
-                     }
-                     else if(this.vehicleData[_loc3_].PRICE == 0)
-                     {
-                        _loc2_.carImages.outOfStock._alpha = 100;
-                        _loc2_.carImages.outOfStock.outOfStockTF.autoSize = "center";
-                        _loc2_.carImages.outOfStock.outOfStockTF.multiline = true;
-                        _loc2_.carImages.outOfStock.outOfStockTF.wordWrap = true;
-                        _loc2_.carImages.outOfStock.outOfStockTF.htmlText = this.outOfStockStr;
-                        _loc2_.carImages.outOfStock.outOfStockTF._y = 85 - _loc2_.carImages.outOfStock.outOfStockTF._height / 2;
-                        this.dataTextScope[_loc13_] = undefined;
-                     }
-                     else if(this.vehicleData[_loc3_].PRICE > 0)
-                     {
-                        this.set_price_text(_loc2_.priceTF,this.vehicleData[_loc3_].PRICE);
-                     }
-                     if(this.isMP == true)
-                     {
-                        if(this.vehicleData[_loc3_].RANK > this.currentRank)
-                        {
-                           var _loc21_ = _loc2_.attachMovie("MP_RANK","MPrank",_loc2_.getNextHighestDepth());
-                           _loc21_.rankTF.text = this.vehicleData[_loc3_].RANK;
-                           this.dataTextScope[_loc13_] = undefined;
-                        }
-                        if(this.vehicleData[_loc3_].SEATS != "")
-                        {
-                           _loc21_ = _loc2_.attachMovie("MP_VEHICLE_NUMBER","MPseats",_loc2_.getNextHighestDepth());
-                           _loc21_.seatsTF.text = this.vehicleData[_loc3_].SEATS;
-                        }
-                     }
-                     _loc13_ = _loc13_ + 1;
-                     _loc2_._alpha = 100;
-                     _loc23_ = _loc5_ + _loc12_ + 44;
-                     _loc8_ += _loc18_;
-                     if(_loc8_ > _loc17_)
-                     {
-                        _loc8_ = _loc7_;
-                        _loc5_ += _loc12_;
-                     }
-                  }
-                  _loc10_ = _loc10_ + 1;
-               }
-            }
-            this.set_localised_text(-1,this.mcScope.header,"SSS_PG1_HEADER");
-            this.set_localised_text(-1,this.mcScope.body1,"SSS_PG1_BODY1");
-            this.set_localised_text(-1,this.mcScope.header2,"SSS_PG1_HEADER2");
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.CONTENT.BOUNDING_BOX._height = _loc23_;
-            this.CONTENT.background._height = _loc23_;
-            break;
-         case "CARDETAILS":
-            clearInterval(this.intervalId);
-            this.mcScope = this.CONTENT.CARDETAILS;
-            this.prevColourNumber = undefined;
-            var _loc20_ = pageName.split("CARDETAILS");
-            this.carNumber = parseInt(_loc20_[1]);
-            if(newPage == true)
-            {
-               this.dataTextScope = new Array();
-               this.dataTextScope[0] = this.mcScope.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.btnTxt;
-               if(this.vehicleData[this.carNumber].LIVERY1 != undefined)
-               {
-                  this.mcScope.gotoAndStop("LIVERY");
-               }
-               else if(this.vehicleData[this.carNumber].NOCOLOUR == true)
-               {
-                  this.mcScope.gotoAndStop("NOCOLOURS");
-               }
-               else
-               {
-                  this.mcScope.gotoAndStop("COLOURS");
-                  this.colouriseButtons();
-               }
-               this.mcScope.carImages.outOfStock._alpha = 0;
-               if(this.vehicleData[this.carNumber].NOCOLOUR != true)
-               {
-                  this.dataTextScope[9] = this.mcScope.colour_1.btnTxt;
-                  this.dataTextScope[10] = this.mcScope.colour_2.btnTxt;
-                  this.dataTextScope[11] = this.mcScope.colour_3.btnTxt;
-                  this.dataTextScope[12] = this.mcScope.colour_4.btnTxt;
-                  if(this.vehicleData[this.carNumber].LIVERY1 != undefined)
-                  {
-                     this.set_localised_text(9,this.mcScope.colour_1.btnTxt,this.vehicleData[this.carNumber].LIVERY1);
-                     this.set_localised_text(10,this.mcScope.colour_2.btnTxt,this.vehicleData[this.carNumber].LIVERY2);
-                     this.set_localised_text(11,this.mcScope.colour_3.btnTxt,this.vehicleData[this.carNumber].LIVERY3);
-                     this.set_localised_text(12,this.mcScope.colour_4.btnTxt,this.vehicleData[this.carNumber].LIVERY4);
-                  }
-                  else
-                  {
-                     this.dataTextScope[13] = this.mcScope.colour_5.btnTxt;
-                     this.dataTextScope[14] = this.mcScope.colour_6.btnTxt;
-                     this.dataTextScope[15] = this.mcScope.colour_7.btnTxt;
-                     this.dataTextScope[16] = this.mcScope.colour_8.btnTxt;
-                  }
-               }
-               _loc10_ = 1;
-               while(_loc10_ < 10)
-               {
-                  this.mcScope["PURCHASECAR_" + _loc10_].btnTxt.text = this.buyNowStr;
-                  this.dataTextScope[_loc10_ + 16] = this.mcScope["PURCHASECAR_" + _loc10_].btnTxt;
-                  _loc10_ = _loc10_ + 1;
-               }
-               this.dataTextScope[26] = this.mcScope.gearsTF;
-               this.set_localised_text(26,this.mcScope.gearsTF,"SSS_GEARS");
-               this.mcScope.gearsTF.text += ": " + this.vehicleData[this.carNumber].GEARS;
-               this.dataTextScope[27] = this.mcScope.driveTF;
-               this.set_localised_text(27,this.mcScope.driveTF,"SSS_DRIVE_" + this.vehicleData[this.carNumber].DRIVE);
-               this.dataTextScope[28] = this.mcScope.weightTF;
-               this.set_localised_text(28,this.mcScope.weightTF,"SSS_WEIGHT");
-               this.mcScope.weightTF.text += ": " + this.vehicleData[this.carNumber].WEIGHT + "lbs";
-               this.dataTextScope[29] = this.mcScope.topSpeedTF;
-               this.set_localised_text(29,this.mcScope.topSpeedTF,"SSS_TOP_SPEED");
-               this.mcScope.topSpeedTF.text += ": " + this.vehicleData[this.carNumber].TOP_SPEED + "mph";
-               this.set_localised_text(8,this.mcScope.selectColourTF,"LGM_COLOUR");
-               if(this.isMP == true)
-               {
-                  if(this.vehicleData[this.carNumber].SEATS != "")
-                  {
-                     if(this.mcScope.carImages.MPseats != undefined)
-                     {
-                        this.mcScope.carImages.MPseats.removeMovieClip();
-                     }
-                     _loc21_ = this.mcScope.carImages.attachMovie("MP_VEHICLE_NUMBER","MPseats",this.mcScope.carImages.getNextHighestDepth());
-                     _loc21_.seatsTF.text = this.vehicleData[this.carNumber].SEATS;
-                  }
-               }
-               this.mcScope.body.multiline = true;
-               this.mcScope.body.wordWrap = true;
-               _loc22_ = "mainImage_" + this.carNumber;
-               if(this.prevCarNumber != this.carNumber)
-               {
-                  this.mcScope.carImages.vehicleTF.text = "";
-                  this.prevCarNumber = this.carNumber;
-               }
-               this.displayVehicleImage(_loc22_,this.carNumber,this.mcScope);
-               this.mcScope.carNameTF.text = this.carManuStr[this.carNumber] + " " + this.carNameStr[this.carNumber];
-               this.set_localised_text(5,this.mcScope.body1,"SSS_" + this.vehicleData[this.carNumber].VEHICLE);
-            }
-            _loc23_ = this.makeThumbnails(28);
-            this.CONTENT.BOUNDING_BOX._height = _loc23_;
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.setColourPicker(0);
-            this.set_price_text(this.mcScope.priceTF,this.vehicleData[this.carNumber].PRICE);
-            break;
-         case "PURCHASECAR":
-            clearInterval(this.intervalId);
-            this.mcScope = this.CONTENT.PURCHASECAR;
-            this.mcScope.body1._alpha = 0;
-            this.mcScope.soldTF._alpha = 0;
-            this.dataTextScope = new Array();
-            this.dataTextScope[0] = this.mcScope.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.btnTxt;
-            this.set_localised_text(5,this.mcScope.body1,"SSS_PURCHASED");
-            this.mcScope.body1.autoSize = true;
-            this.set_localised_text(6,this.mcScope.soldTF,"WEB_SOLD");
-            this.mcScope.body.multiline = true;
-            this.mcScope.body.wordWrap = true;
-            _loc22_ = "mainImage_" + this.carNumber;
-            this.displayVehicleImage(_loc22_,this.carNumber,this.mcScope);
-            this.mcScope.carNameTF.text = this.carManuStr[this.carNumber] + " " + this.carNameStr[this.carNumber];
-            this.set_price_text(this.mcScope[_loc22_].priceTF,this.vehicleData[this.carNumber].PRICE);
-            if(this.vehicleData[this.carNumber].LIVERY1 != undefined || this.vehicleData[this.carNumber].NOCOLOUR == true)
-            {
-               this.mcScope.colour._alpha = 0;
-            }
-            else
-            {
-               com.rockstargames.ui.utils.Colour.Colourise(this.mcScope.colour,this.carColoursArray[this.prevColourNumber][0],this.carColoursArray[this.prevColourNumber][1],this.carColoursArray[this.prevColourNumber][2],100);
-            }
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.CONTENT.BOUNDING_BOX._height = 627;
-            this.intervalId = setInterval(this,"displayPurchasedText",1500);
-            break;
-         case "PURCHASE_D_FAILED":
-            this.mcScope = this.CONTENT.PURCHASE_D_FAILED;
-            this.dataTextScope = new Array();
-            this.dataTextScope[0] = this.mcScope.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.btnTxt;
-            this.set_localised_text(1,this.mcScope.soldTF,"WEB_NOT_SOLD");
-            this.mcScope.carNameTF.text = this.carManuStr[this.carNumber] + " " + this.carNameStr[this.carNumber];
-            this.set_localised_text(-1,this.mcScope.soldTF,"WEB_NOT_SOLD");
-            this.mcScope.body1.autoSize = "center";
-            this.set_localised_text(-1,this.mcScope.body1,"SSS_FAILED");
-            _loc22_ = "mainImage_" + this.carNumber;
-            this.displayVehicleImage(_loc22_,this.carNumber,this.mcScope);
-            if(this.vehicleData[this.carNumber].LIVERY1 != undefined || this.prevColourNumber == undefined || this.vehicleData[this.carNumber].NOCOLOUR == true)
-            {
-               this.mcScope.colour._alpha = 0;
-            }
-            else
-            {
-               com.rockstargames.ui.utils.Colour.Colourise(this.mcScope.colour,this.carColoursArray[this.prevColourNumber][0],this.carColoursArray[this.prevColourNumber][1],this.carColoursArray[this.prevColourNumber][2],100);
-            }
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.CONTENT.BOUNDING_BOX._height = 627;
-            break;
-         case "PURCHASE_D_ERROR":
-            this.mcScope = this.CONTENT.PURCHASE_D_ERROR;
-            this.dataTextScope = new Array();
-            this.dataTextScope[0] = this.mcScope.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.btnTxt;
-            this.dataTextScope[1] = this.mcScope.soldTF;
-            if(this.dataProviderUI[1][0] != undefined)
-            {
-               this.dataTextScope[1].text = this.dataProviderUI[1][0];
-            }
-            this.mcScope.body1.multiline = true;
-            this.mcScope.body1.autoSize = "center";
-            if(this.dataProviderUI[2][0] != undefined)
-            {
-               this.mcScope.body1.text = this.dataProviderUI[2][0];
-            }
-            this.mcScope.carNameTF.text = this.carManuStr[this.carNumber] + " " + this.carNameStr[this.carNumber];
-            this.set_localised_text(-1,this.mcScope.soldTF,"WEB_NOT_SOLD");
-            _loc22_ = "mainImage_" + this.carNumber;
-            this.displayVehicleImage(_loc22_,this.carNumber,this.mcScope);
-            if(this.vehicleData[this.carNumber].LIVERY1 != undefined || this.prevColourNumber == undefined || this.vehicleData[this.carNumber].NOCOLOUR == true)
-            {
-               this.mcScope.colour._alpha = 0;
-            }
-            else
-            {
-               com.rockstargames.ui.utils.Colour.Colourise(this.mcScope.colour,this.carColoursArray[this.prevColourNumber][0],this.carColoursArray[this.prevColourNumber][1],this.carColoursArray[this.prevColourNumber][2],100);
-            }
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.CONTENT.BOUNDING_BOX._height = 627;
-            break;
-         case "PURCHASE_D_CONFIRM":
-            this.mcScope = this.CONTENT.PURCHASE_D_CONFIRM;
-            this.dataTextScope = new Array();
-            this.mcScope.body.multiline = true;
-            this.mcScope.body.wordWrap = true;
-            this.dataTextScope[1] = this.mcScope.body;
-            if(this.dataProviderUI[1] != undefined)
-            {
-               this.dataTextScope[1].htmlText = this.dataProviderUI[1];
-            }
-            this.dataTextScope[2] = this.mcScope.PURCHASECAR.btnTxt;
-            if(this.dataProviderUI[2] != undefined)
-            {
-               this.dataTextScope[2].htmlText = this.dataProviderUI[2];
-            }
-            this.dataTextScope[3] = this.mcScope.PURCHASE_D_FAILED.btnTxt;
-            if(this.dataProviderUI[3] != undefined)
-            {
-               this.dataTextScope[3].htmlText = this.dataProviderUI[3];
-            }
-            this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            this.CONTENT.BOUNDING_BOX._height = 627;
+         _loc6_ = _loc7_ - _loc2_.subHeader._y;
+         _loc2_.subHeader._y += _loc6_;
+         _loc2_.priceSortButton._y += _loc6_;
+         _loc2_.filterDropDown._y += _loc6_;
+      }
+      if(this.isMP)
+      {
+         _loc6_ += _loc2_.priceSortButton._height + 15;
+      }
+      this.initVehicleButtons(_loc2_,this.DETAILS_PAGE_VEHICLE_BUTTON_OFFSET + _loc6_);
+      this.initSortingButtons(_loc2_,_loc4_);
+      this.dataTextScope.push(_loc2_.PAGE1.btnTxt);
+      this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
+      this.currentPageInitialised = true;
+      if(this.currentVehicle.livery)
+      {
+         this.setOptionsButtons(0);
+      }
+      else if(this.currentVehicle.styles)
+      {
+         this.setOptionsButtons(0);
+         this.setStylesButtons(0);
       }
    }
-   function displayPurchasedText()
+   function initPartyBus()
    {
-      clearInterval(this.intervalId);
-      this.mcScope.carNameTF._alpha = 100;
-      this.mcScope.body1._alpha = 100;
-      this.mcScope.soldTF._alpha = 100;
-   }
-   function set_localised_text(slotID, TF, TextLabel, setDataSlot)
-   {
-      this.dataTextScope[slotID] = TF;
-      var _loc3_ = TF.html;
-      com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,TextLabel,TF,_loc3_);
-   }
-   function set_price_text(TF, price)
-   {
-      TF.text = "";
-      if(Number(price) > 0 || typeof price == "string")
-      {
-         TF._visible = false;
-         if(typeof price == "string")
-         {
-            TF.multiline = true;
-            TF.wordWrap = true;
-            TF.textAutoSize = "shrink";
-            TF.htmlText = price;
-         }
-         else
-         {
-            var _loc5_ = undefined;
-            var _loc3_ = price.toString();
-            var _loc7_ = _loc3_.length;
-            if(_loc7_ > 3)
-            {
-               var _loc6_ = "";
-               var _loc2_ = _loc3_.slice(0,-3);
-               var _loc8_ = "," + _loc3_.slice(-3);
-               if(_loc2_.length > 3)
-               {
-                  _loc6_ = _loc2_.slice(0,-3) + ",";
-                  _loc2_ = _loc2_.slice(-3);
-               }
-               _loc5_ = _loc6_ + _loc2_ + _loc8_;
-            }
-            else
-            {
-               _loc5_ = _loc3_;
-            }
-            TF.text = "$" + _loc5_;
-         }
-         if(TF._y == 128.35)
-         {
-            TF._y = 168 - TF._height;
-         }
-         TF._visible = true;
-      }
-   }
-   function displayVehicleImage(mcName, vehicleIndex, targetMc)
-   {
-      com.rockstargames.ui.utils.Debug.log("*****************************************************************");
-      com.rockstargames.ui.utils.Debug.log("WWW_SOUTHERNSANANDREASSUPERAUTOS_COM::displayVehicleImage: " + arguments);
-      com.rockstargames.ui.utils.Debug.log("*****************************************************************");
-      if(this.vehicleData[vehicleIndex].TXD == undefined)
-      {
-         targetMc.carImages.gotoAndStop(this.vehicleData[vehicleIndex].VEHICLE);
-      }
-      else
-      {
-         targetMc.carImages.gotoAndStop(1);
-         if(this.hasTxdLoaded(this.vehicleData[vehicleIndex].TXD) == true)
-         {
-            this.addImageToTextfield(this.vehicleData[vehicleIndex].TXD,mcName);
-         }
-         else
-         {
-            com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",this.vehicleData[vehicleIndex].TXD,mcName,true);
-         }
-      }
-      if(mcName.substr(0,9) != "thumbnail")
-      {
-         this.labelAsDlcPack(targetMc,vehicleIndex);
-      }
-   }
-   function TXD_HAS_LOADED(textureDict, success, uniqueID)
-   {
-      if(success == true)
-      {
-         if(this.hasTxdLoaded(textureDict) == false)
-         {
-            this.TXDarray.push(textureDict);
-         }
-         if(uniqueID != "loadedCheck")
-         {
-            this.addImageToTextfield(textureDict,uniqueID);
-         }
-      }
-   }
-   function addImageToTextfield(textureDict, mcName)
-   {
-      var _loc2_ = new Array();
-      _loc2_ = mcName.split("_");
-      var _loc4_ = parseInt(_loc2_[1]);
-      var _loc5_ = this.vehicleData[_loc4_].VEHICLE;
-      var _loc3_ = undefined;
-      if(_loc2_[0] == "mainImage")
-      {
-         _loc3_ = this.mcScope;
-      }
-      else
-      {
-         _loc3_ = this.mcScope[mcName];
-      }
-      _loc3_.carImages.vehicleTF.htmlText = "<img src=\'img://" + textureDict + "/" + _loc5_ + "\' vspace=\'0\' hspace=\'0\' width=\'256\' height=\'170\'/>";
-   }
-   function hasTxdLoaded(textureDict)
-   {
-      var _loc3_ = false;
+      var _loc8_ = 1;
+      var _loc6_ = 2;
+      var _loc3_ = this.CONTENT.details;
+      var _loc7_ = false;
+      _loc3_.award._visible = false;
       var _loc2_ = 0;
-      while(_loc2_ < this.TXDarray.length)
+      var _loc4_;
+      var _loc5_;
+      while(_loc2_ < 10)
       {
-         if(this.TXDarray[_loc2_] == textureDict)
+         if(_loc3_.options["tick" + _loc2_])
          {
-            _loc3_ = true;
-            break;
+            _loc3_.options["tick" + _loc2_].removeMovieClip();
+         }
+         _loc4_ = _loc3_.options["liveryText" + _loc2_];
+         if(_loc4_ != undefined)
+         {
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc2_] == _loc8_ || this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc2_] == _loc6_)
+            {
+               _loc5_ = _loc3_.options.attachMovie("tick","tick" + _loc2_,_loc3_.options.getNextHighestDepth());
+               _loc5_._x = _loc4_._x + _loc4_._width - _loc5_._width;
+               _loc5_._y = _loc4_._y;
+            }
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc2_] == _loc6_)
+            {
+               this.setLocalisedText(_loc3_.options["liveryText" + _loc2_],"PBUS2_SSA_" + (_loc2_ + 1) + "_EQP");
+               this.setOptionsButtons(_loc2_);
+               _loc7_ = true;
+            }
          }
          _loc2_ = _loc2_ + 1;
       }
-      return _loc3_;
-   }
-   function CLEANUP()
-   {
-      if(this.TXDarray.length > 0)
+      if(!_loc7_)
       {
-         this.TIMELINE.CONTENT.gotoAndStop(1);
-         var _loc2_ = 0;
-         while(_loc2_ < this.TXDarray.length)
-         {
-            if(this.TXDarray[_loc2_] != undefined)
-            {
-               com.rockstargames.ui.game.GameInterface.call("REMOVE_TXD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",this.TXDarray[_loc2_]);
-               this.TXDarray[_loc2_] = undefined;
-            }
-            _loc2_ = _loc2_ + 1;
-         }
-         this.TXDarray = new Array();
+         this.setOptionsButtons(0);
       }
+   }
+   function initPurchaseButtons(page, numOptions)
+   {
+      super.initPurchaseButtons(page,numOptions);
+      var _loc6_;
+      var _loc3_;
+      var _loc4_;
+      if(this.currentVehicle.name == "PBUS2")
+      {
+         _loc6_ = 1;
+         page = this.CONTENT.details;
+         _loc3_ = 0;
+         while(_loc3_ < numOptions)
+         {
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc6_)
+            {
+               _loc4_ = page[this.PURCHASE_PAGE + "_" + (_loc3_ + 1)];
+               this.setLocalisedText(_loc4_.btnTxt,"ELT_OWNED");
+            }
+            _loc3_ = _loc3_ + 1;
+         }
+      }
+   }
+   function initBuyItNowDetailsPage(id, currentVehicle, newPage, frame)
+   {
+      this.dataTextScope.length = 0;
+      this.priceSortDirection = -1;
+      this.currentFilter = this.FILTER_ALL_LABEL;
+      this.selectedOption = -1;
+      this.selectedStyle = -1;
+      var _loc2_ = this.CONTENT.details;
+      _loc2_.gotoAndStop(frame);
+      _loc2_.nameText.text = this.setLocalisedText(_loc2_.nameText,currentVehicle.brand,this.favourUpperCase) + " " + this.setLocalisedText(_loc2_.nameText,currentVehicle.name,this.favourUpperCase);
+      _loc2_.reductionLine._visible = false;
+      _loc2_.reducedPriceText._visible = false;
+      _loc2_.reductionLine._visible = false;
+      _loc2_.priceText._visible = false;
+      if(currentVehicle.award > 0)
+      {
+         _loc2_.award.gotoAndStop(currentVehicle.award);
+         _loc2_.award._visible = true;
+      }
+      else
+      {
+         _loc2_.award._visible = false;
+      }
+      this.addVehicleImage(currentVehicle,_loc2_);
+      if(!this.pricesSet)
+      {
+         _loc2_.options._visible = false;
+         _loc2_.purchaseButton._visible = false;
+         _loc2_.purchaseButton2._visible = false;
+         return undefined;
+      }
+      if(!newPage && this.currentPageInitialised)
+      {
+         return undefined;
+      }
+      _loc2_.options._visible = true;
+      _loc2_.purchaseButton._visible = true;
+      _loc2_.purchaseButton2._visible = true;
+      this.initStats(_loc2_);
+      var _loc4_ = this.initOptions(_loc2_) || 1;
+      this.initBuyItNowPriceButtons(_loc2_,_loc4_);
+      this.initNormalPriceButtons(_loc2_,_loc4_);
+      _loc2_.descriptionText.autoSize = "left";
+      if(currentVehicle.desc)
+      {
+         this.setLocalisedText(_loc2_.descriptionText,currentVehicle.desc);
+      }
+      else
+      {
+         this.setLocalisedText(_loc2_.descriptionText,this.DESCRIPTION_LABEL_PREFIX + currentVehicle.name);
+      }
+      _loc2_.options._y = _loc2_.optionsHeaderText._y + _loc2_.optionsHeaderText._height + 5;
+      var _loc5_ = !_loc2_.options._visible ? _loc2_.optionsHeaderText._y : _loc2_.options._y + _loc2_.options._height + 18;
+      var _loc3_;
+      if(currentVehicle.buyItNow)
+      {
+         _loc3_ = 1;
+         while(_loc3_ <= _loc4_)
+         {
+            _loc2_["BUYITNOWSTOCK_A" + _loc3_]._y = _loc5_;
+            _loc3_ = _loc3_ + 1;
+         }
+         if(currentVehicle.secondaryPrice > 0)
+         {
+            _loc5_ += _loc2_.BUYITNOWSTOCK_1._height + 10;
+         }
+         _loc3_ = 1;
+         while(_loc3_ <= _loc4_)
+         {
+            _loc2_["BUYITNOWSTOCK_B" + _loc3_]._y = _loc5_;
+            _loc3_ = _loc3_ + 1;
+         }
+         _loc5_ += _loc2_.BUYITNOWSTOCK_1._height + 10;
+      }
+      _loc2_.descriptionText._y = _loc5_;
+      _loc2_.statsHeaderText._y = _loc2_.descriptionText._y + _loc2_.descriptionText._height + 16;
+      _loc2_.stats._y = _loc2_.statsHeaderText._y + _loc2_.statsHeaderText._height + 5;
+      var _loc8_ = _loc2_.stats._y + _loc2_.stats._height + 20;
+      var _loc7_ = 0;
+      if(_loc8_ > _loc2_.subHeader._y)
+      {
+         _loc7_ = _loc8_ - _loc2_.subHeader._y;
+         _loc2_.subHeader._y += _loc7_;
+         _loc2_.priceSortButton._y += _loc7_;
+         _loc2_.filterDropDown._y += _loc7_;
+      }
+      if(this.isMP)
+      {
+         _loc7_ += _loc2_.priceSortButton._height + 15;
+      }
+      this.initVehicleButtons(_loc2_,this.DETAILS_PAGE_VEHICLE_BUTTON_OFFSET + _loc7_);
+      this.initSortingButtons(_loc2_,2 * _loc4_);
+      this.dataTextScope.push(_loc2_.PAGE1.btnTxt);
+      this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
+      this.currentPageInitialised = true;
+   }
+   function initOptions(page)
+   {
+      var _loc4_ = super.initOptions(page);
+      var _loc3_;
+      if(this.isMP)
+      {
+         _loc3_ = 0;
+         while(_loc3_ < 7)
+         {
+            this.dataTextScope.unshift(undefined);
+            _loc3_ = _loc3_ + 1;
+         }
+      }
+      return _loc4_;
+   }
+   function initVehicleButtons(page, yOffset)
+   {
+      if(this.isMP)
+      {
+         this.HOME_PAGE_VEHICLE_BUTTON_OFFSET = 315;
+         this.DETAILS_PAGE_VEHICLE_BUTTON_OFFSET = 787;
+         this.initTabbedVehicleButtons(page,yOffset);
+      }
+      else
+      {
+         super.initVehicleButtons(page,yOffset);
+      }
+   }
+   function initSortingButtons(page, numOptions)
+   {
+      if(this.isMP)
+      {
+         this.HOME_PAGE_VEHICLE_BUTTON_OFFSET = 315;
+         this.DETAILS_PAGE_VEHICLE_BUTTON_OFFSET = 787;
+         page.subHeaderText._visible = false;
+         page.priceSortButton._visible = true;
+         page.priceSortButton._y = page.headerBar._y - page.priceSortButton._height + 5;
+         page.filterDropDown._visible = false;
+      }
+      else
+      {
+         page.subHeaderText._visible = true;
+         page.priceSortButton._visible = true;
+         page.filterDropDown._visible = true;
+      }
+      super.initSortingButtons(page,numOptions);
+   }
+   function initNormalPriceButtons(page, numOptions)
+   {
+      var _loc2_;
+      var _loc6_ = page.BUYITNOWSTOCK_1;
+      var _loc3_ = numOptions - 1;
+      var _loc5_;
+      var _loc9_;
+      var _loc7_;
+      var _loc8_;
+      while(_loc3_ >= 0)
+      {
+         _loc2_ = _loc6_.duplicateMovieClip("BUYITNOWSTOCK_A" + (_loc3_ + 1),page.getNextHighestDepth(),{_x:_loc6_._x,_y:_loc6_._y});
+         _loc2_._visible = _loc3_ == 0;
+         _loc2_.onColour = this.purchaseButtonOnColour;
+         _loc2_.offColour = this.purchaseButtonOffColour;
+         _loc2_.disabled = numOptions > 1;
+         _loc2_._alpha = numOptions <= 1 ? 100 : 50;
+         if(this.currentVehicle.secondaryPrice > 0)
+         {
+            _loc2_.onColour = this.purchaseButtonOffColour;
+            _loc2_.offColour = this.purchaseButtonOffColour;
+            _loc5_ = _loc2_._width;
+            if(this.currentVehicle.salePrice != undefined && this.currentVehicle.salePrice > 0 && this.currentVehicle.salePrice != this.currentVehicle.price)
+            {
+               _loc2_.originalPriceText.text = this.formatPrice(this.currentVehicle.price);
+               _loc2_.priceText.text = this.formatPrice(this.currentVehicle.salePrice);
+               _loc9_ = _loc2_.originalPriceText.textWidth + _loc2_.priceText.textWidth + 10;
+               _loc2_.originalPriceText.autoSize = "left";
+               _loc2_.priceText.autoSize = "left";
+               _loc2_.originalPriceText._x = 0.5 * (_loc5_ - _loc9_);
+               _loc2_.originalPriceText._y = _loc2_.priceText._y + 5;
+               _loc2_.priceText._x = _loc2_.originalPriceText._x + _loc2_.originalPriceText.textWidth + 10;
+               _loc2_.reductionLine._x = _loc2_.originalPriceText._x + _loc2_.originalPriceText._width;
+               _loc2_.reductionLine._y = _loc2_.originalPriceText._y + 7;
+               _loc2_.reductionLine._width = _loc2_.originalPriceText._width;
+            }
+            else
+            {
+               _loc2_.priceText.text = this.formatPrice(this.currentVehicle.price);
+               _loc2_.reductionLine._visible = false;
+            }
+            _loc2_.padlock._visible = !this.currentVehicle.price1Unlocked;
+            this.setLocalisedText(_loc2_.buyItNowText,"SSSA_NORMAL_PRICE");
+            _loc2_.disabled = numOptions > 1;
+         }
+         else
+         {
+            _loc2_._visible = false;
+            page.buyItNowText._visible = false;
+         }
+         if(this.currentVehicle.name == "PBUS2")
+         {
+            _loc7_ = 1;
+            _loc8_ = 2;
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc8_ || this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc7_)
+            {
+               this.setLocalisedText(_loc2_.originalPriceText,"ELT_OWNED");
+               _loc2_.originalPriceText._x = 0.5 * (_loc5_ - _loc2_.originalPriceText.textWidth) - 10;
+               _loc2_.reductionLine._visible = false;
+               _loc2_.priceText.text = "";
+               _loc2_.buyItNowText.text = "";
+               _loc2_.padlock._visible = true;
+            }
+         }
+         this.dataTextScope.unshift(_loc2_.btnTxt);
+         _loc3_ = _loc3_ - 1;
+      }
+      _loc6_._visible = false;
+   }
+   function initBuyItNowPriceButtons(page, numOptions)
+   {
+      var _loc2_;
+      var _loc6_ = page.BUYITNOWSTOCK_2;
+      var _loc3_ = numOptions - 1;
+      var _loc5_;
+      var _loc9_;
+      var _loc7_;
+      var _loc8_;
+      while(_loc3_ >= 0)
+      {
+         _loc2_ = _loc6_.duplicateMovieClip("BUYITNOWSTOCK_B" + (_loc3_ + 1),page.getNextHighestDepth(),{_x:_loc6_._x,_y:_loc6_._y});
+         _loc2_._visible = _loc3_ == 0;
+         _loc2_.onColour = this.purchaseButtonOnColour;
+         _loc2_.offColour = this.purchaseButtonOffColour;
+         _loc2_.disabled = numOptions > 1;
+         _loc2_._alpha = numOptions <= 1 ? 100 : 50;
+         _loc2_.onColour = this.purchaseButtonOffColour;
+         _loc2_.offColour = this.purchaseButtonOffColour;
+         _loc5_ = _loc2_._width;
+         if(this.currentVehicle.secondarySalePrice != undefined && this.currentVehicle.secondarySalePrice > 0 && this.currentVehicle.secondarySalePrice != this.currentVehicle.secondaryPrice)
+         {
+            _loc2_.originalPriceText.text = this.formatPrice(this.currentVehicle.secondaryPrice);
+            _loc2_.priceText.text = this.formatPrice(this.currentVehicle.secondarySalePrice);
+            _loc9_ = _loc2_.originalPriceText.textWidth + _loc2_.priceText.textWidth + 10;
+            _loc2_.originalPriceText.autoSize = "left";
+            _loc2_.priceText.autoSize = "left";
+            _loc2_.originalPriceText._x = 0.5 * (_loc5_ - _loc9_);
+            _loc2_.originalPriceText._y = _loc2_.priceText._y + 5;
+            _loc2_.priceText._x = _loc2_.originalPriceText._x + _loc2_.originalPriceText.textWidth + 10;
+            _loc2_.reductionLine._x = _loc2_.originalPriceText._x + _loc2_.originalPriceText._width;
+            _loc2_.reductionLine._y = _loc2_.originalPriceText._y + 7;
+            _loc2_.reductionLine._width = _loc2_.originalPriceText._width;
+         }
+         else
+         {
+            _loc2_.priceText.text = this.formatPrice(this.currentVehicle.secondaryPrice);
+            _loc2_.reductionLine._visible = false;
+         }
+         _loc2_.padlock._visible = !this.currentVehicle.price2Unlocked;
+         this.setLocalisedText(_loc2_.buyItNowText,"SSSA_BIN_PRICE");
+         _loc2_.disabled = numOptions > 1;
+         if(this.currentVehicle.name == "PBUS2")
+         {
+            _loc7_ = 1;
+            _loc8_ = 2;
+            if(this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc8_ || this.dataProviderUI[com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM.PARTY_BUS_DATA_SLOT][_loc3_] == _loc7_)
+            {
+               this.setLocalisedText(_loc2_.originalPriceText,"ELT_OWNED");
+               _loc2_.originalPriceText._x = 0.5 * (_loc5_ - _loc2_.originalPriceText.textWidth) - 10;
+               _loc2_.reductionLine._visible = false;
+               _loc2_.priceText.text = "";
+               _loc2_.buyItNowText.text = "";
+               _loc2_.padlock._visible = true;
+            }
+         }
+         this.dataTextScope.unshift(_loc2_.btnTxt);
+         _loc3_ = _loc3_ - 1;
+      }
+      _loc6_._visible = false;
    }
 }

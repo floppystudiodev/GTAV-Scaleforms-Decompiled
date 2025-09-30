@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var menubar;
    var CONTENT;
-   var detailsMC;
-   var charMC;
-   var crewMC;
-   var storedBGTxd;
    var bgImgLoaderMC;
-   var crewImgLoaderMC;
    var charImgLoaderMC;
+   var charMC;
+   var crewImgLoaderMC;
+   var crewMC;
+   var detailsMC;
+   var menubar;
+   var storedBGTxd;
    var detailsXPositions = [868,822,775];
    var showChar = false;
    var showCrew = false;
@@ -57,9 +57,10 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    }
    function dbg(dbgStr)
    {
+      var _loc2_;
       if(this.dbgOn)
       {
-         var _loc2_ = "  " + dbgStr;
+         _loc2_ = "  " + dbgStr;
          com.rockstargames.ui.utils.Debug.log(_loc2_);
       }
    }
@@ -103,10 +104,12 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    {
       var _loc2_ = 0;
       var _loc5_ = arguments.length;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc5_)
       {
-         var _loc3_ = arguments[_loc2_];
-         var _loc4_ = _loc3_.getNewTextFormat();
+         _loc3_ = arguments[_loc2_];
+         _loc4_ = _loc3_.getNewTextFormat();
          _loc4_.size = 12;
          _loc3_.setNewTextFormat(_loc4_);
          _loc2_ = _loc2_ + 1;
@@ -120,6 +123,12 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
       {
          _loc9_ = true;
       }
+      var _loc3_;
+      var _loc5_;
+      var _loc10_;
+      var _loc4_;
+      var _loc7_;
+      var _loc6_;
       if(_loc9_ == true)
       {
          if(title != undefined)
@@ -132,15 +141,15 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
       }
       else
       {
-         var _loc3_ = 34;
-         var _loc5_ = 13;
-         var _loc10_ = 65;
+         _loc3_ = 34;
+         _loc5_ = 13;
+         _loc10_ = 65;
          _loc2_.headingTF.multiline = true;
          _loc2_.headingTF.wordWrap = true;
          _loc2_.headingTF.autoSize = "left";
-         var _loc4_ = description.length;
-         var _loc7_ = title.length;
-         var _loc6_ = -1.6;
+         _loc4_ = description.length;
+         _loc7_ = title.length;
+         _loc6_ = -1.6;
          if(_loc4_ < 146)
          {
             if(_loc7_ < 49)
@@ -243,9 +252,13 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
       }
       _loc2_.details1TF._x = - _loc2_.details1TF._width;
       _loc2_.details1condTF._x = - _loc2_.details1condTF._width;
+      var _loc7_;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
       if(str2 != undefined)
       {
-         var _loc7_ = str2.split(":").length > 1;
+         _loc7_ = str2.split(":").length > 1;
          if(!_loc7_)
          {
             _loc2_.details2TF.text = str2;
@@ -257,10 +270,10 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
          }
          else
          {
-            var _loc3_ = str2.split(" ");
-            var _loc5_ = _loc3_[_loc3_.length - 1];
+            _loc3_ = str2.split(" ");
+            _loc5_ = _loc3_[_loc3_.length - 1];
             _loc3_.pop();
-            var _loc6_ = _loc3_.join(" ");
+            _loc6_ = _loc3_.join(" ");
             _loc2_.timeTF.text = _loc5_;
             _loc2_.timeTF.autoSize = "left";
             _loc2_.timeTF.wordWrap = false;
@@ -301,6 +314,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    {
       this.storedBGTxd = txd;
       var _loc2_ = this.CONTENT.headerMC.bgcontainerMC;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
       if(txd != "")
       {
          if(this.bgImgLoaderMC == undefined)
@@ -312,9 +328,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
             this.bgImgLoaderMC.removeTxdRef();
          }
          this.bgImgLoaderMC.init("PAUSE_MENU_HEADER",txd,bgTexturePath);
-         var _loc4_ = 2;
-         var _loc3_ = String(this.bgImgLoaderMC).split(".");
-         var _loc5_ = _loc3_.slice(_loc3_.length - _loc4_).join(".");
+         _loc4_ = 2;
+         _loc3_ = String(this.bgImgLoaderMC).split(".");
+         _loc5_ = _loc3_.slice(_loc3_.length - _loc4_).join(".");
          this.bgImgLoaderMC.requestTxdRef(_loc5_,false,this.loadedBgImg,this);
       }
    }
@@ -328,6 +344,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    function SET_CREW_IMG(txd, crewTexturePath, show)
    {
       this.showCrew = show;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.showCrew)
       {
          if(txd != "")
@@ -341,9 +360,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
                this.crewImgLoaderMC.removeTxdRef();
             }
             this.crewImgLoaderMC.init("PAUSE_MENU_HEADER",txd,crewTexturePath,this.imgSize,this.imgSize);
-            var _loc3_ = 3;
-            var _loc2_ = String(this.crewImgLoaderMC).split(".");
-            var _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
+            _loc3_ = 3;
+            _loc2_ = String(this.crewImgLoaderMC).split(".");
+            _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
             this.crewImgLoaderMC.addTxdRef(_loc4_,this.loadedCrewImg,this);
             this.crewImgLoaderMC._alpha = 0;
          }
@@ -363,6 +382,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    function SET_CHAR_IMG(txd, charTexturePath, show)
    {
       this.showChar = show;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.showChar)
       {
          if(txd != "")
@@ -376,9 +398,9 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
                this.charImgLoaderMC.removeTxdRef();
             }
             this.charImgLoaderMC.init("PAUSE_MENU_HEADER",txd,charTexturePath,this.imgSize,this.imgSize);
-            var _loc3_ = 3;
-            var _loc2_ = String(this.charImgLoaderMC).split(".");
-            var _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
+            _loc3_ = 3;
+            _loc2_ = String(this.charImgLoaderMC).split(".");
+            _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
             this.charImgLoaderMC.addTxdRef(_loc4_,this.loadedCharImg,this);
             this.charImgLoaderMC._alpha = 0;
          }
@@ -467,16 +489,20 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_HEADER extends com.rockstargam
    {
       var _loc8_ = arguments.length;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
+      var _loc7_;
       while(_loc3_ < this.menubar.menuItemList.length)
       {
-         var _loc4_ = this.menubar.menuItemList[_loc3_];
-         var _loc6_ = arguments[_loc3_];
+         _loc4_ = this.menubar.menuItemList[_loc3_];
+         _loc6_ = arguments[_loc3_];
          _loc4_.resizeTabPx(_loc6_);
          _loc4_.width = _loc4_.mc.bgMC._width;
          if(_loc3_ > 0)
          {
-            var _loc5_ = this.menubar.menuItemList[_loc3_ - 1];
-            var _loc7_ = 2;
+            _loc5_ = this.menubar.menuItemList[_loc3_ - 1];
+            _loc7_ = 2;
             _loc4_._x = _loc5_._x + _loc5_.mc.bgMC._width + _loc7_;
          }
          _loc3_ = _loc3_ + 1;

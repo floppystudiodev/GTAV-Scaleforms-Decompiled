@@ -1,26 +1,27 @@
 class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
+   var BACKGROUND;
    var BOUNDING_BOX;
    var CONTENT;
-   var BACKGROUND;
-   var viewContainer;
-   var ref;
    var CURSOR;
-   var transactionMC;
-   var cashMC;
-   var menuMC;
-   var messageMC;
-   var dataProviderUI;
-   var buttonContainer;
-   var cursorInterval;
-   var previousKey;
-   var currentKey;
-   var numberOfRows;
-   var playerName;
+   var TIMELINE;
+   var _name;
    var balance;
    var balanceString;
+   var buttonContainer;
+   var cashMC;
    var container;
+   var currentKey;
+   var cursorInterval;
+   var dataProviderUI;
+   var menuMC;
+   var messageMC;
+   var numberOfRows;
+   var playerName;
+   var previousKey;
+   var ref;
+   var transactionMC;
+   var viewContainer;
    var wrapKey;
    var containerDepth = 40;
    var lineXPos = 237;
@@ -111,6 +112,8 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
                case 4:
                case 10:
                   this.navigate("LEFT");
+               default:
+                  return;
             }
          }
       }
@@ -214,12 +217,14 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
       var _loc5_ = {x:this.CURSOR._x,y:this.CURSOR._y};
       this.buttonContainer.globalToLocal(_loc5_);
       var _loc4_ = 1;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ <= this.numberOfColumns)
       {
-         var _loc3_ = 1;
+         _loc3_ = 1;
          while(_loc3_ <= this.numberOfRows)
          {
-            var _loc2_ = this.buttonContainer["c" + _loc4_ + "_" + _loc3_];
+            _loc2_ = this.buttonContainer["c" + _loc4_ + "_" + _loc3_];
             if(_loc5_.x > _loc2_._x && _loc5_.x < _loc2_._x + _loc2_._width)
             {
                if(_loc5_.y > _loc2_._y && _loc5_.y < _loc2_._y + _loc2_._height)
@@ -273,12 +278,13 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
          this.container.removeMovieClip();
       }
       this.container = this.transactionMC.transactionLayer.createEmptyMovieClip("container",this.containerDepth);
-      var _loc3_ = undefined;
-      var _loc7_ = undefined;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
-      var _loc11_ = undefined;
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc5_;
+      var _loc11_;
       var _loc2_ = 2;
+      var _loc6_;
       while(_loc2_ < this.dataProviderUI.length)
       {
          if(this.dataProviderUI[_loc2_] != undefined && this.dataProviderUI[_loc2_].length > 0)
@@ -286,7 +292,7 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
             _loc3_ = "item" + _loc2_;
             this.container.attachMovie("textLine",_loc3_,this.container.getNextHighestDepth(),{_x:this.lineXPos,_y:this.lineSpacing * (_loc2_ - 2) + this.lineYPos});
             _loc7_ = this.dataProviderUI[_loc2_][2];
-            var _loc6_ = this.dataProviderUI[_loc2_][1];
+            _loc6_ = this.dataProviderUI[_loc2_][1];
             if(this.dataProviderUI[_loc2_][0] == 0)
             {
                _loc4_ = "";
@@ -399,9 +405,10 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
       var _loc6_ = false;
       this.buttonContainer = this.container;
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ < this.numberOfRows * this.numberOfColumns + 1)
       {
-         var _loc3_ = "c" + _loc5_ + "_" + _loc4_;
+         _loc3_ = "c" + _loc5_ + "_" + _loc4_;
          if(this.dataProviderUI[_loc2_] != undefined && this.dataProviderUI[_loc2_].length > 0)
          {
             if(isNaN(this.dataProviderUI[_loc2_]))
@@ -453,9 +460,10 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
       var _loc4_ = 1;
       var _loc5_ = 1;
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ < this.numberOfRows * this.numberOfColumns + 1)
       {
-         var _loc3_ = "c" + _loc4_ + "_" + _loc5_;
+         _loc3_ = "c" + _loc4_ + "_" + _loc5_;
          if(this.dataProviderUI[_loc2_] != undefined && this.dataProviderUI[_loc2_].length > 0)
          {
             this.buttonContainer[_loc3_].valueTF.text = this.dataProviderUI[_loc2_];
@@ -506,6 +514,8 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
                break;
             case "transactionMC":
                this.transactionMC = this.viewContainer.attachMovie("transactionMC","transactionMC",this.viewContainer.getNextHighestDepth(),{_x:0,_y:160});
+            default:
+               return;
          }
       }
    }
@@ -522,12 +532,14 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
    function pinBeep()
    {
       this.counterPINanim = this.counterPINanim + 1;
+      var _loc3_;
       if(this.counterPINanim > 0 && this.counterPINanim < 5)
       {
-         var _loc3_ = this.CONTENT.pinAnimMC["pin" + this.counterPINanim];
+         _loc3_ = this.CONTENT.pinAnimMC["pin" + this.counterPINanim];
          _loc3_._alpha = 100;
          com.rockstargames.ui.game.GameInterface.call("PLAY_SOUND",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"Pin_Button","ATM_SOUNDS");
       }
+      var _loc2_;
       if(this.counterPINanim > 5)
       {
          this.playingPINanim = false;
@@ -536,7 +548,7 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
       }
       else
       {
-         var _loc2_ = Math.floor(Math.random() * 501) + 300;
+         _loc2_ = Math.floor(Math.random() * 501) + 300;
          if(this.counterPINanim == 5)
          {
             _loc2_ = 400;
@@ -700,9 +712,10 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
    function UPDATE_TEXT()
    {
       this.setupView("transactionMC");
+      var _loc12_;
       if(this.transactionMC.statementHeader == undefined)
       {
-         var _loc12_ = this.transactionMC.attachMovie("statementHeader","statementHeader",this.transactionMC.getNextHighestDepth(),{_x:237,_y:25});
+         _loc12_ = this.transactionMC.attachMovie("statementHeader","statementHeader",this.transactionMC.getNextHighestDepth(),{_x:237,_y:25});
       }
       this.transactionMC.c1_1._visible = false;
       if(this.dataProviderUI[1][0] != undefined)
@@ -713,25 +726,28 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
       {
          this.transactionMC.statementHeader.log.text = this.dataProviderUI[2][0];
       }
+      var _loc8_;
       if(this.dataProviderUI[3][0] != undefined)
       {
-         var _loc8_ = this.dataProviderUI[3][0];
+         _loc8_ = this.dataProviderUI[3][0];
       }
+      var _loc10_;
       if(this.dataProviderUI[3][1] != undefined)
       {
-         var _loc10_ = this.dataProviderUI[3][1];
+         _loc10_ = this.dataProviderUI[3][1];
       }
       if(this.container != undefined)
       {
          this.container.removeMovieClip();
       }
       this.container = this.transactionMC.transactionLayer.createEmptyMovieClip("container",this.containerDepth);
-      var _loc3_ = undefined;
-      var _loc7_ = undefined;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
-      var _loc15_ = undefined;
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc5_;
+      var _loc15_;
       var _loc2_ = 0;
+      var _loc6_;
       while(_loc2_ < this.dataProviderUI.length - 4)
       {
          if(this.dataProviderUI[_loc2_ + 4] != undefined)
@@ -739,7 +755,7 @@ class com.rockstargames.gtav.levelDesign.ATM extends com.rockstargames.ui.core.B
             _loc3_ = "item" + _loc2_;
             this.container.attachMovie("textLine",_loc3_,this.container.getNextHighestDepth(),{_x:this.lineXPos,_y:this.lineSpacing * _loc2_ + this.lineYPos});
             _loc7_ = this.dataProviderUI[_loc2_ + 4][2];
-            var _loc6_ = this.dataProviderUI[_loc2_ + 4][1];
+            _loc6_ = this.dataProviderUI[_loc2_ + 4][1];
             if(this.dataProviderUI[_loc2_ + 4][0] == 0)
             {
                _loc4_ = "";

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScreenMain extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var currActiveElementID;
-   var view;
    var app;
-   var countdown;
-   var horseCards;
    var buttons;
+   var countdown;
+   var currActiveElementID;
    var cursor;
+   var horseCards;
+   var view;
    function SelectionScreenMain(app, viewContainer, cursor)
    {
       super(app,viewContainer,"selectionScreenMain",cursor);
@@ -18,9 +18,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScree
       this.currActiveElementID = -1;
       var _loc3_ = 405;
       this.view.panel._x = Math.max(this.app.displayConfig.screenWidth * this.app.displayConfig.safeLeft,20);
+      var _loc5_;
       if(this.app.displayConfig.isWideScreen)
       {
-         var _loc5_ = 0.5 * (this.app.displayConfig.screenWidth - this.view.panel._x - _loc3_) + this.view.panel._x + _loc3_;
+         _loc5_ = 0.5 * (this.app.displayConfig.screenWidth - this.view.panel._x - _loc3_) + this.view.panel._x + _loc3_;
          this.view.content._x = _loc5_ - 0.5 * this.view.content._width;
       }
       else
@@ -36,11 +37,12 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScree
       {
          this.setCountdown(this.app.countdownSecondsRemaining);
       }
+      var _loc4_;
       if(!this.app.displayConfig.isWideScreen)
       {
          this.view.content.horse._xscale = 80;
          this.view.content.horse._yscale = 80;
-         var _loc4_ = this.view.content.countdown._x + 0.5 * this.view.content.countdown._width;
+         _loc4_ = this.view.content.countdown._x + 0.5 * this.view.content.countdown._width;
          this.view.content.horse._x = _loc4_ - 0.5 * this.view.content.horse._width;
       }
    }
@@ -52,9 +54,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScree
    {
       this.horseCards = [];
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 6)
       {
-         var _loc3_ = this.initHorseCard(this.view.panel["horseCard" + _loc2_],_loc2_);
+         _loc3_ = this.initHorseCard(this.view.panel["horseCard" + _loc2_],_loc2_);
          this.horseCards.push(_loc3_);
          this.buttons.push(_loc3_);
          _loc2_ = _loc2_ + 1;
@@ -95,9 +98,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScree
       }
       this.currActiveElementID = activeElementID;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.view.gotoAndStop(_loc3_.id != activeElementID ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }
@@ -132,6 +136,8 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.SelectionScree
             break;
          case com.rockstargames.gtav.minigames.horseracingconsole.NavigationIDs.CANCEL_BUTTON:
             this.app.playSound("nav_back");
+         default:
+            return;
       }
    }
    function setHorseView(horse)

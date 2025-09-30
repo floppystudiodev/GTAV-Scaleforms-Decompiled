@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuDialogueView extends com.rockstargames.ui.components.GUIView
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
-   var direction;
-   var viewMaskHeight;
    var __get__index;
+   var direction;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
+   var viewMaskHeight;
    static var MAX_ITEMS_ON_SCREEN = 8;
    function PauseMenuDialogueView()
    {
@@ -43,17 +43,21 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuDial
       var _loc6_ = this.direction(targetIndex);
       var _loc5_ = _loc6_ >= 0 ? 1 : -1;
       var _loc7_ = this.getHeightOfAllItems();
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
+      var _loc8_;
       if(_loc6_ != 0 && _loc7_ > this.viewMaskHeight)
       {
-         var _loc4_ = this.viewContainer._y;
-         var _loc2_ = this.index;
+         _loc4_ = this.viewContainer._y;
+         _loc2_ = this.index;
          while(_loc2_ != this.index + _loc6_)
          {
-            var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem(this.itemList[_loc2_]).getHeight();
+            _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem(this.itemList[_loc2_]).getHeight();
             _loc4_ -= (_loc3_ + this.rowSpacing) * _loc5_;
             _loc2_ += _loc5_;
          }
-         var _loc8_ = - _loc7_ + this.viewMaskHeight;
+         _loc8_ = - _loc7_ + this.viewMaskHeight;
          if(_loc4_ < _loc8_)
          {
             _loc4_ = _loc8_;

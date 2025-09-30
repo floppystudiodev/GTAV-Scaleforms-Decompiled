@@ -2,6 +2,6 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="40.0px" width="1280.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
     <path d="M1280.0 40.0 L0.0 40.0 0.0 0.0 1280.0 0.0 1280.0 40.0" fill="#bd1f2a" fill-opacity="0.85882354" fill-rule="evenodd" stroke="none"/>
-    <path d="M1280.0 40.0 L0.0 40.0 0.0 0.0 1280.0 0.0 1280.0 40.0 Z" fill="none" stroke="#bd1f2a" stroke-linecap="butt" stroke-linejoin="miter-clip" stroke-miterlimit="3.0" stroke-width="0.05"/>
+    <path d="M1280.0 40.0 L0.0 40.0 0.0 0.0 1280.0 0.0 1280.0 40.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#bd1f2a" stroke-linecap="butt" stroke-linejoin="miter-clip" stroke-miterlimit="3.0" stroke-width="1.0"/>
   </g>
 </svg>

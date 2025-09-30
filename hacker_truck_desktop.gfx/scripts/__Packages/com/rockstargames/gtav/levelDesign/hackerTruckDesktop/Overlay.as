@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Overlay
 {
-   var view;
    var actionButtons;
+   var view;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
    static var HEIGHT = 720;
    static var CENTRE_X = 640;
@@ -72,9 +72,10 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Overlay
    function updateSelectedButton(targetID)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.actionButtons.length)
       {
-         var _loc3_ = this.actionButtons[_loc2_];
+         _loc3_ = this.actionButtons[_loc2_];
          _loc3_.view.gotoAndStop(targetID != _loc3_.id ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }

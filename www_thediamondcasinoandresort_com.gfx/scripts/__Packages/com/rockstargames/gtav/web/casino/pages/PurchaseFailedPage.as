@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.casino.pages.PurchaseFailedPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var website;
    var view;
+   var website;
    function PurchaseFailedPage(website, viewContainer, pageName, isFirstPage)
    {
       super(website,viewContainer,"purchaseFailedPage",pageName,isFirstPage);
@@ -44,7 +44,7 @@ class com.rockstargames.gtav.web.casino.pages.PurchaseFailedPage extends com.roc
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "homeButton")
       {
          this.website.browser.GO_TO_WEBPAGE(this.website.browser.GET_CURRENT_WEBSITE());

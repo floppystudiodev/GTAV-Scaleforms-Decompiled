@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel
 {
-   var view;
-   var tags;
    var bars;
    var caps;
    var goalWidths;
+   var tags;
    var updateDistributionArgs;
+   var view;
    static var DEFAULT_COLOUR = new flash.geom.ColorTransform(1,1,1,1,77,77,77,0);
    static var ACTIVE_COLOUR = new flash.geom.ColorTransform(1,1,1,1,228,0,0,0);
    function CashDistributionPanel(view)
@@ -21,30 +21,34 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel
       this.goalWidths = [0,0,0,0];
       this.updateDistributionArgs = {onCompleteScope:this,onComplete:this.updateDistribution};
       this.setLocalisedText(this.view.title,"IAA_TAKE");
+      var _loc6_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
          this.view.title._y = this.view.titleBG._y - 6;
-         var _loc6_ = this.view.title.getTextFormat();
+         _loc6_ = this.view.title.getTextFormat();
          _loc6_.size = 18;
          this.view.title.setTextFormat(_loc6_);
          this.view.title.verticalAlign = "bottom";
       }
       this.view.titleBG._width = this.view.title.textWidth + 12;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_FINALE_PLAYERS)
       {
-         var _loc3_ = this.view.barChart["player" + _loc2_];
+         _loc3_ = this.view.barChart["player" + _loc2_];
          _loc3_.label.autoSize = "center";
          _loc3_.label.text = this.setLocalisedText(_loc3_.label,"IAA_PLAYER") + "_0" + (_loc2_ + 1);
          _loc3_.transform.colorTransform = com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.DEFAULT_COLOUR;
          _loc3_._visible = false;
          this.tags[_loc2_] = _loc3_;
-         var _loc4_ = this.view.barChart["bar" + _loc2_];
+         _loc4_ = this.view.barChart["bar" + _loc2_];
          _loc4_._width = 0;
          _loc4_.transform.colorTransform = com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.DEFAULT_COLOUR;
          _loc4_._visible = false;
          this.bars[_loc2_] = _loc4_;
-         var _loc5_ = this.view.barChart["cap" + _loc2_];
+         _loc5_ = this.view.barChart["cap" + _loc2_];
          _loc5_._x = 0;
          _loc5_._visible = false;
          this.caps[_loc2_] = _loc5_;
@@ -57,12 +61,16 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel
       var _loc9_ = 0;
       var _loc2_ = 0;
       var _loc7_ = finalePlayers.length;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
       while(_loc2_ < _loc7_)
       {
-         var _loc4_ = finalePlayers[_loc2_];
-         var _loc3_ = this.bars[_loc2_];
-         var _loc5_ = this.tags[_loc2_];
-         var _loc6_ = this.caps[_loc2_];
+         _loc4_ = finalePlayers[_loc2_];
+         _loc3_ = this.bars[_loc2_];
+         _loc5_ = this.tags[_loc2_];
+         _loc6_ = this.caps[_loc2_];
          if(_loc4_.isEnabled)
          {
             this.goalWidths[_loc2_] = _loc10_ * _loc4_.cash / totalCash;
@@ -94,9 +102,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel
    function updateActiveState(activeIndex)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = activeIndex != _loc2_ ? com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.DEFAULT_COLOUR : com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.ACTIVE_COLOUR;
+         _loc3_ = activeIndex != _loc2_ ? com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.DEFAULT_COLOUR : com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel.ACTIVE_COLOUR;
          this.view.barChart["bar" + _loc2_].transform.colorTransform = _loc3_;
          this.view.barChart["player" + _loc2_].transform.colorTransform = _loc3_;
          _loc2_ = _loc2_ + 1;
@@ -109,11 +118,14 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.CashDistributionPanel
       var _loc4_ = 0;
       var _loc2_ = 0;
       var _loc5_ = this.goalWidths.length;
+      var _loc3_;
+      var _loc6_;
+      var _loc7_;
       while(_loc2_ < _loc5_)
       {
-         var _loc3_ = this.bars[_loc2_];
-         var _loc6_ = this.tags[_loc2_];
-         var _loc7_ = this.caps[_loc2_];
+         _loc3_ = this.bars[_loc2_];
+         _loc6_ = this.tags[_loc2_];
+         _loc7_ = this.caps[_loc2_];
          _loc3_._x = _loc4_;
          _loc3_._width += _loc8_ * (this.goalWidths[_loc2_] - _loc3_._width);
          _loc6_._x = 0.5 * _loc3_._width + _loc4_;

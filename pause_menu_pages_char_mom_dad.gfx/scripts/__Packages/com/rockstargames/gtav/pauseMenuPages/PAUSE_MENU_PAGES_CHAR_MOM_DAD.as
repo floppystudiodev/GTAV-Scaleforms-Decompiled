@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CHAR_MOM_DAD extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
+   var column1;
    var column2;
    var column3;
    var column4;
@@ -9,8 +9,8 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CHAR_MOM_DAD extend
    var column6;
    var column7;
    var column8;
-   var showColumns;
    var columnList;
+   var showColumns;
    function PAUSE_MENU_PAGES_CHAR_MOM_DAD()
    {
       super();
@@ -35,9 +35,10 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CHAR_MOM_DAD extend
    function setupColumns()
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < arguments.length)
       {
-         var _loc4_ = arguments[_loc3_];
+         _loc4_ = arguments[_loc3_];
          _loc4_.INITIALISE();
          this.columnList[_loc3_] = _loc4_;
          _loc3_ = _loc3_ + 1;

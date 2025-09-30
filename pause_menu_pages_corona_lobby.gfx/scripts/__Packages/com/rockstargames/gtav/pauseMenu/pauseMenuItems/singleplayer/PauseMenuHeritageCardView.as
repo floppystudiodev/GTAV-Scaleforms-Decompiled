@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeritageCardView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
    var dataList;
    var direction;
-   var topEdge;
-   var visibleItems;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
+   var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var initialValueIndex = 4;
    function PauseMenuHeritageCardView()
    {
@@ -34,10 +34,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuHeri
    {
       var _loc6_ = this.direction(targetIndex);
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       if(_loc6_ != 0)
       {
-         var _loc3_ = targetIndex;
-         var _loc4_ = 0;
+         _loc3_ = targetIndex;
+         _loc4_ = 0;
          if(_loc6_ > 0)
          {
             if(_loc3_ >= this.topEdge + this.visibleItems)

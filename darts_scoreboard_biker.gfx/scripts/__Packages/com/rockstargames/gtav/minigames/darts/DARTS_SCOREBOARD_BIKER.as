@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.minigames.darts.DARTS_SCOREBOARD_BIKER extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var colPositions;
-   var plyrOneScores;
-   var plyrTwoScores;
-   var plyrScores;
-   var playerOneName;
    var CONTENT;
+   var colPositions;
+   var playerOneName;
    var playerTwoName;
+   var plyrOneScores;
+   var plyrScores;
+   var plyrTwoScores;
    var MAX_ROWS = 7;
    var ROW_SPACER = 7;
    var FIRST_ROW_YPOS = 85;
@@ -100,7 +100,7 @@ class com.rockstargames.gtav.minigames.darts.DARTS_SCOREBOARD_BIKER extends com.
    }
    function ADD_DARTS_SCORE(playerID, score)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       if(playerID == 0)
       {
          if(this.numberOfRowsPlyrOne > this.MAX_ROWS)
@@ -136,9 +136,10 @@ class com.rockstargames.gtav.minigames.darts.DARTS_SCOREBOARD_BIKER extends com.
       _loc2_._x = this.colPositions[playerID];
       _loc2_._y = _loc9_;
       _loc5_.push(_loc2_);
+      var _loc8_;
       if(_loc3_ > 0)
       {
-         var _loc8_ = _loc5_[_loc6_];
+         _loc8_ = _loc5_[_loc6_];
          _loc8_.strikethrough._alpha = 100;
       }
    }
@@ -154,7 +155,7 @@ class com.rockstargames.gtav.minigames.darts.DARTS_SCOREBOARD_BIKER extends com.
    {
       var _loc4_ = this.plyrScores[playerID];
       var _loc5_ = _loc4_.length;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < _loc5_)
       {

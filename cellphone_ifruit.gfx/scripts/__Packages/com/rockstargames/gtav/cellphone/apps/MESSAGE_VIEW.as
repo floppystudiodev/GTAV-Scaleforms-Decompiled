@@ -1,22 +1,22 @@
 class com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingView
 {
-   var gutterHeight;
-   var scrollerX;
-   var offsetY;
-   var offsetX;
+   var CONTENT;
+   var contactTXD;
+   var container;
+   var content;
    var contentOriginX;
    var contentOriginY;
    var dataProviderUI;
-   var scrollBarTimeout;
-   var linkageID;
-   var CONTENT;
    var gfxFileName;
-   var scrollBar;
+   var gutterHeight;
+   var linkageID;
    var messageBody;
-   var content;
-   var contactTXD;
+   var offsetX;
+   var offsetY;
+   var scrollBar;
+   var scrollBarTimeout;
+   var scrollerX;
    var txd_loader;
-   var container;
    var TXDStr = "";
    var prevTXDStr = "";
    var TXDStrToRemove = "";
@@ -144,17 +144,24 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW extends com.rockstargam
       }
       this.content.fromAddress.text = "";
       this.content.fromAddressCond.text = "";
+      var _loc4_;
+      var _loc6_;
+      var _loc9_;
+      var _loc12_;
+      var _loc11_;
+      var _loc10_;
+      var _loc8_;
       if(_loc2_ != undefined)
       {
-         var _loc4_ = _loc2_.indexOf("<C>");
-         var _loc6_ = _loc2_.indexOf("</C>");
-         var _loc9_ = _loc4_ != -1 && _loc6_ != -1;
+         _loc4_ = _loc2_.indexOf("<C>");
+         _loc6_ = _loc2_.indexOf("</C>");
+         _loc9_ = _loc4_ != -1 && _loc6_ != -1;
          if(_loc9_)
          {
-            var _loc12_ = _loc2_.substring(0,_loc4_);
-            var _loc11_ = _loc2_.substring(_loc4_ + 3,_loc6_);
-            var _loc10_ = _loc2_.substring(_loc6_ + 4);
-            var _loc8_ = _loc12_ + _loc11_ + _loc10_;
+            _loc12_ = _loc2_.substring(0,_loc4_);
+            _loc11_ = _loc2_.substring(_loc4_ + 3,_loc6_);
+            _loc10_ = _loc2_.substring(_loc6_ + 4);
+            _loc8_ = _loc12_ + _loc11_ + _loc10_;
             this.content.fromAddressCond.textAutoSize = "shrink";
             this.content.fromAddressCond.text = _loc8_;
          }
@@ -189,9 +196,10 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW extends com.rockstargam
       _loc7_ = this.messageBody.split("#E1E1E1");
       this.messageBody = _loc7_.join("#000000");
       var _loc5_ = this.messageBody.indexOf("<img src=\'img://");
+      var _loc13_;
       if(_loc5_ != -1)
       {
-         var _loc13_ = this.messageBody.substr(_loc5_ + 16).indexOf("/");
+         _loc13_ = this.messageBody.substr(_loc5_ + 16).indexOf("/");
          this.TXDStr = this.messageBody.substr(_loc5_ + 16,_loc13_);
       }
       if(this.TXDStr != undefined && this.TXDStr != "" && this.prevTXDStr != this.TXDStr)
@@ -264,7 +272,7 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW extends com.rockstargam
    }
    function onLoadInit(target_mc)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.gfxFileName) !== "CELLPHONE_FACADE")
       {
          target_mc._width = 42;

@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
    var pageName;
-   var view;
    var progressPanel;
    var summaryPageName;
+   var view;
+   var website;
    static var MAP_START_X = -370;
    static var MAP_START_Y = -2703.8;
    static var MAP_START_SCALE = 0.5;
@@ -76,10 +76,12 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
       {
          this.view.map._y = this.website.mapY;
       }
+      var _loc2_;
+      var _loc3_;
       if(this.website.mapMatrix == undefined)
       {
-         var _loc2_ = this.view.map.transform.matrix;
-         var _loc3_ = com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.MAP_START_SCALE / _loc2_.a;
+         _loc2_ = this.view.map.transform.matrix;
+         _loc3_ = com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.MAP_START_SCALE / _loc2_.a;
          _loc2_.translate(- com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.STAGE_CENTRE_X,- com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.STAGE_CENTRE_Y);
          _loc2_.scale(_loc3_,_loc3_);
          _loc2_.translate(com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.STAGE_CENTRE_X,com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page.STAGE_CENTRE_Y);

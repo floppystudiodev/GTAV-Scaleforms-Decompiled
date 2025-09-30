@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_AWARDS extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
+   var column1;
    var column2;
-   var setupColumns;
-   var setupColMouseNav;
    var columnList;
+   var setupColMouseNav;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_AWARDS()
    {

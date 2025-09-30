@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.casino.Page
 {
-   var website;
-   var pageName;
-   var view;
-   var prevPageName;
    var nextPageName;
+   var pageName;
+   var prevPageName;
+   var view;
+   var website;
    static var BUTTON_COLOUR = 15213100;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;

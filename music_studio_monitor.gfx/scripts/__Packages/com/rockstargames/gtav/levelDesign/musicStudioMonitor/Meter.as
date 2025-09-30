@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.musicStudioMonitor.Meter
 {
-   var view;
    var leftValue;
-   var rightValue;
-   var noiseSamplePoint;
    var noiseDifferentialSamplePoint;
+   var noiseSamplePoint;
+   var rightValue;
+   var view;
    static var METER_BITMAP_WIDTH = 18;
    static var METER_BITMAP_HEIGHT = 151;
    static var DAMPING = 0.96;

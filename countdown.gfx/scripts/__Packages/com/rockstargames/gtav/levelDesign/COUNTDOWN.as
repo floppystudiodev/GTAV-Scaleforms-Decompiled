@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.levelDesign.COUNTDOWN extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var messageMC;
    var CONTENT;
+   var bar;
+   var circleAlphaMC;
+   var circleArray;
+   var circleMC;
+   var countdownFiveMC;
+   var directionMC;
+   var goMC;
    var messageAlphaMC;
+   var messageMC;
    var messageText;
    var messageTextOutline;
-   var goMC;
-   var directionMC;
    var startPosition;
    var startPositionMP;
-   var circleMC;
-   var circleAlphaMC;
-   var bar;
-   var countdownFiveMC;
-   var circleArray;
    var defaultFadeDuration = 500;
    var debugTimeModifier = 1;
    var BIG_TEXT_OUTLINE_STRENGTH = 9;
@@ -107,11 +107,12 @@ class com.rockstargames.gtav.levelDesign.COUNTDOWN extends com.rockstargames.gta
       {
          this.bar._alpha = 0;
       }
+      var _loc2_;
       if(isNaN(newString))
       {
          this.messageText._alpha = 0;
          this.goMC._visible = true;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.messageMC,0.33 * this.debugTimeModifier,{delay:0.66 * this.debugTimeModifier,_y:_loc2_ + (this.messageMC._y - this.circleMC._y),ease:com.rockstargames.ui.tweenStar.Ease.CUBIC_IN});
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.circleMC,0.33 * this.debugTimeModifier,{delay:0.66 * this.debugTimeModifier,_y:_loc2_,delay:0.66,ease:com.rockstargames.ui.tweenStar.Ease.CUBIC_IN});
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.messageAlphaMC,0.33 * this.debugTimeModifier,{delay:0.66 * this.debugTimeModifier,_alpha:0,ease:com.rockstargames.ui.tweenStar.Ease.CUBIC_IN});
@@ -133,9 +134,10 @@ class com.rockstargames.gtav.levelDesign.COUNTDOWN extends com.rockstargames.gta
    function SET_DIRECTION(direction, r, g, b)
    {
       var _loc7_ = direction == 7;
+      var _loc6_;
       if(_loc7_)
       {
-         var _loc6_ = "hexagon";
+         _loc6_ = "hexagon";
          if(isNaN(r))
          {
             r = 224;

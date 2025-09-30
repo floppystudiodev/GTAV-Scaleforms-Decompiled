@@ -97,6 +97,8 @@ class com.rockstargames.ui.core.ScreenLayoutManager
             break;
          case com.rockstargames.ui.core.ScreenLayoutManager.SCREEN_FORMAT_NON_WIDE:
             this.ratio = this.screenRatioNonWide;
+         default:
+            return;
       }
    }
    function setSafeZone()
@@ -107,18 +109,19 @@ class com.rockstargames.ui.core.ScreenLayoutManager
          case com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_A[0]:
             this.safearea.width = com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_A[1];
             this.safearea.height = com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_A[2];
-            break;
+            return;
          case com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_B[0]:
             this.safearea.width = com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_B[1];
             this.safearea.height = com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_B[2];
-            break;
+            return;
          case com.rockstargames.ui.core.ScreenLayoutManager.SAFE_ZONE_C[0]:
             this.safearea.width = _loc3_[1];
             this.safearea.height = _loc3_[2];
-            break;
+            return;
          default:
             this.safearea.width = 0;
             this.safearea.height = 0;
+            return;
       }
    }
    function get ST()

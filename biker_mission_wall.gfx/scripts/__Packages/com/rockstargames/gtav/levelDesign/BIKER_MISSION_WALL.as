@@ -1,10 +1,11 @@
 class com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var txdRefs;
+   var TIMELINE;
+   var _name;
    var imageQueue;
+   var txdRefs;
    static var MAP_WIDTH = 280;
    static var MAP_HEIGHT = 373;
    static var MAP_SCALAR = 0.091064453125;
@@ -28,9 +29,10 @@ class com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL extends com.rockstar
       this.txdRefs = [];
       this.imageQueue = [];
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 3)
       {
-         var _loc3_ = this.CONTENT.map["marker" + _loc2_];
+         _loc3_ = this.CONTENT.map["marker" + _loc2_];
          _loc3_.gotoAndStop(_loc2_ + 1);
          _loc2_ = _loc2_ + 1;
       }
@@ -69,10 +71,12 @@ class com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL extends com.rockstar
    function SET_SELECTED_MISSION(index)
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < 3)
       {
-         var _loc3_ = this.CONTENT["mission" + _loc2_];
-         var _loc4_ = _loc2_ != index ? com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL.DIM_TRANSFORM : com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL.NORMAL_TRANSFORM;
+         _loc3_ = this.CONTENT["mission" + _loc2_];
+         _loc4_ = _loc2_ != index ? com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL.DIM_TRANSFORM : com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL.NORMAL_TRANSFORM;
          _loc3_.imageWrapper.transform.colorTransform = _loc4_;
          _loc3_.fg.transform.colorTransform = _loc4_;
          _loc3_.bg.transform.colorTransform = _loc4_;
@@ -116,14 +120,18 @@ class com.rockstargames.gtav.levelDesign.BIKER_MISSION_WALL extends com.rockstar
    {
       this.txdRefs[txd] = "loaded";
       var _loc6_ = this.imageQueue.length - 1;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc6_ >= 0)
       {
-         var _loc7_ = this.imageQueue[_loc6_];
+         _loc7_ = this.imageQueue[_loc6_];
          if(_loc7_.txd == txd)
          {
-            var _loc5_ = _loc7_.path.split(".");
-            var _loc4_ = _root;
-            var _loc3_ = 1;
+            _loc5_ = _loc7_.path.split(".");
+            _loc4_ = _root;
+            _loc3_ = 1;
             while(_loc3_ < _loc5_.length)
             {
                _loc4_ = _loc4_[_loc5_[_loc3_]];

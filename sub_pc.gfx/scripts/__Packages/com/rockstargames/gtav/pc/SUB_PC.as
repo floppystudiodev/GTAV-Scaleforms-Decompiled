@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pc.SUB_PC extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var desktopIconsList;
-   var buttonsList;
-   var popupData;
    var CONTENT;
+   var buttonUnderCursor;
+   var buttonsList;
+   var desktopIconsList;
    var mouse;
+   var popupApp;
+   var popupData;
    var ref;
    var subApp;
-   var popupApp;
-   var buttonUnderCursor;
    var rows = 6;
    var columns = 6;
    var rowspace = 168;
@@ -118,13 +118,18 @@ class com.rockstargames.gtav.pc.SUB_PC extends com.rockstargames.ui.core.BaseScr
    }
    function ADD_PROGRAM(i, enum, lbl)
    {
+      var _loc6_;
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
+      var _loc3_;
       if(enum != undefined)
       {
-         var _loc6_ = this.sideMargin + this.colspace * ((i - 1) % this.columns);
-         var _loc5_ = this.bottomMargin + this.rowspace * Math.floor((i - 1) / this.rows);
-         var _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
-         var _loc7_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc6_,_y:_loc5_});
-         var _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
+         _loc6_ = this.sideMargin + this.colspace * ((i - 1) % this.columns);
+         _loc5_ = this.bottomMargin + this.rowspace * Math.floor((i - 1) / this.rows);
+         _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
+         _loc7_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc6_,_y:_loc5_});
+         _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
          _loc3_.init(_loc7_,enum,{depth:i},i,lbl);
          this.desktopIconsList.push(_loc3_);
       }
@@ -159,9 +164,10 @@ class com.rockstargames.gtav.pc.SUB_PC extends com.rockstargames.ui.core.BaseScr
    }
    function REMOVE_BUTTONS(m)
    {
+      var _loc2_;
       for(var _loc4_ in this.buttonsList)
       {
-         var _loc2_ = this.buttonsList[_loc4_];
+         _loc2_ = this.buttonsList[_loc4_];
          if(m == _loc2_)
          {
             this.buttonsList.splice(_loc4_,1);
@@ -209,11 +215,12 @@ class com.rockstargames.gtav.pc.SUB_PC extends com.rockstargames.ui.core.BaseScr
    function testList(list)
    {
       var _loc5_ = false;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc3_ = -1;
+      var _loc2_;
       for(var _loc7_ in list)
       {
-         var _loc2_ = list[_loc7_];
+         _loc2_ = list[_loc7_];
          if(_loc2_.active)
          {
             if(this.mouse.mc.hitMC.hitTest(_loc2_.mc))
@@ -272,9 +279,9 @@ class com.rockstargames.gtav.pc.SUB_PC extends com.rockstargames.ui.core.BaseScr
    }
    function openApp(i)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
-      var _loc0_ = null;
+      var _loc2_;
+      var _loc3_;
+      var _loc0_;
       if((_loc0_ = i) === com.rockstargames.gtav.constants.PCAppLUT.PC_SUB[0])
       {
          if(this.popupApp == undefined)

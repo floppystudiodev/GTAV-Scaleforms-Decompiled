@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends MovieClip
 {
-   var view;
    var state;
+   var view;
    static var STATE_NO_SIGNAL = 0;
    static var STATE_HACKING = 1;
    static var STATE_COMPLETE = 2;
@@ -52,6 +52,8 @@ class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends Movie
             break;
          case com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_WEAK_SIGNAL:
             this.initWeakSignal();
+         default:
+            return;
       }
    }
    function initNoSignal()
@@ -66,11 +68,14 @@ class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends Movie
    }
    function initWeakSignal()
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.state != com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_WEAK_SIGNAL)
       {
          this.state = com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_WEAK_SIGNAL;
          this.view.gotoAndStop("weakSignal");
-         var _loc3_ = _level0.TIMELINE.securoServHackingViewProvider[0][2];
+         _loc3_ = _level0.TIMELINE.securoServHackingViewProvider[0][2];
          if(_loc3_ != undefined)
          {
             this.initMessage(_loc3_,true);
@@ -79,10 +84,10 @@ class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends Movie
          {
             this.initMessage("CELL_SECURO_WEAK",false);
          }
-         var _loc2_ = this.view.completeAnimation.label.getTextFormat();
+         _loc2_ = this.view.completeAnimation.label.getTextFormat();
          _loc2_.color = 16777215;
          this.view.completeAnimation.label.setTextFormat(_loc2_);
-         var _loc4_ = new flash.geom.ColorTransform();
+         _loc4_ = new flash.geom.ColorTransform();
          _loc4_.rgb = 12527916;
          this.view.completeAnimation.bg.transform.colorTransform = _loc4_;
       }
@@ -101,11 +106,12 @@ class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends Movie
    }
    function initComplete()
    {
+      var _loc2_;
       if(this.state != com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_COMPLETE)
       {
          this.state = com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_COMPLETE;
          this.view.gotoAndStop("complete");
-         var _loc2_ = _level0.TIMELINE.securoServHackingViewProvider[0][3];
+         _loc2_ = _level0.TIMELINE.securoServHackingViewProvider[0][3];
          if(_loc2_ != undefined)
          {
             this.initMessage(_loc2_,true);
@@ -118,11 +124,12 @@ class com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING extends Movie
    }
    function initProgress()
    {
+      var _loc2_;
       if(this.state != com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_PROGRESS)
       {
          this.state = com.rockstargames.gtav.cellphone.apps.APP_SECUROSERV_HACKING.STATE_PROGRESS;
          this.view.gotoAndStop("progress");
-         var _loc2_ = _level0.TIMELINE.securoServHackingViewProvider[0][2];
+         _loc2_ = _level0.TIMELINE.securoServHackingViewProvider[0][2];
          if(_loc2_ != undefined)
          {
             this.initMessage(_loc2_,true);

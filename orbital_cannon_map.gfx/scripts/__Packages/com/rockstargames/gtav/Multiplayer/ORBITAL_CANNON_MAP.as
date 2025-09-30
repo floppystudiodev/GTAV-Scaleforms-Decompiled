@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.Multiplayer.ORBITAL_CANNON_MAP extends com.rockstargames.ui.core.BaseScreenLayout
 {
+   var CONTENT;
    var m;
    var noise;
    var noiseStep;
-   var updateArgs;
-   var scaleGoal;
-   var xGoal;
-   var yGoal;
-   var x;
-   var y;
    var scale;
-   var CONTENT;
+   var scaleGoal;
+   var updateArgs;
+   var x;
+   var xGoal;
+   var y;
+   var yGoal;
    static var MAP_COORD_SCALE = 0.3415;
    static var MAP_ORIGIN_X = 1415.5;
    static var MAP_ORIGIN_Y = 2774;
@@ -98,10 +98,12 @@ class com.rockstargames.gtav.Multiplayer.ORBITAL_CANNON_MAP extends com.rockstar
       this.m.translate(- this.x,- this.y);
       this.m.scale(this.scale,this.scale);
       this.m.translate(com.rockstargames.gtav.Multiplayer.ORBITAL_CANNON_MAP.MAP_OFFSET_X,com.rockstargames.gtav.Multiplayer.ORBITAL_CANNON_MAP.MAP_OFFSET_Y);
+      var _loc9_;
+      var _loc8_;
       if(_loc10_)
       {
-         var _loc9_ = 120 * this.noise.getValue(this.noiseStep);
-         var _loc8_ = 120 * this.noise.getValue(this.noiseStep + 5);
+         _loc9_ = 120 * this.noise.getValue(this.noiseStep);
+         _loc8_ = 120 * this.noise.getValue(this.noiseStep + 5);
          this.noiseStep += 0.15;
          this.m.translate(_loc9_,_loc8_);
       }

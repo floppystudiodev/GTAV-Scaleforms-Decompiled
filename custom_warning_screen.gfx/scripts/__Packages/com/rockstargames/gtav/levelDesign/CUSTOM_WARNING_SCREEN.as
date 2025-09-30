@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.CUSTOM_WARNING_SCREEN extends com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS
 {
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
    function CUSTOM_WARNING_SCREEN()
    {
       super();
@@ -20,7 +20,7 @@ class com.rockstargames.gtav.levelDesign.CUSTOM_WARNING_SCREEN extends com.rocks
       var _loc15_ = this.CONTENT.Divider1MC;
       var _loc14_ = this.CONTENT.Divider2MC;
       var _loc11_ = arguments[6];
-      var _loc3_ = undefined;
+      var _loc3_;
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.CONTENT.HeaderTF,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_YELLOW);
       _loc12_.text = arguments[7];
       _loc13_.text = arguments[8];
@@ -42,19 +42,21 @@ class com.rockstargames.gtav.levelDesign.CUSTOM_WARNING_SCREEN extends com.rocks
       var _loc9_ = _loc6_.length;
       var _loc7_ = 0;
       _loc3_ = 0;
+      var _loc5_;
       while(_loc3_ < _loc9_)
       {
-         var _loc5_ = _loc6_[_loc3_];
+         _loc5_ = _loc6_[_loc3_];
          _loc7_ += _loc5_[0]._height;
          _loc7_ += _loc5_[1];
          _loc3_ = _loc3_ + 1;
       }
       var _loc8_ = (this.BOUNDING_BOX._height - _loc7_) * 0.5;
       _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < _loc9_)
       {
          _loc5_ = _loc6_[_loc3_];
-         var _loc4_ = _loc5_[0];
+         _loc4_ = _loc5_[0];
          _loc4_._y = _loc8_;
          _loc8_ += _loc4_._height + _loc5_[1];
          _loc3_ = _loc3_ + 1;

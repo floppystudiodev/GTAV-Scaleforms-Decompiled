@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TextPrintItem
 {
+   var index;
+   var preDelay;
    var text;
    var textField;
-   var preDelay;
-   var updateMultiplier;
-   var index;
    var updateCount;
+   var updateMultiplier;
    function TextPrintItem(text, textField, preDelay, updateMultiplier)
    {
       this.text = text;

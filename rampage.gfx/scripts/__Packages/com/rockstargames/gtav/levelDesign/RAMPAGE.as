@@ -52,9 +52,10 @@ class com.rockstargames.gtav.levelDesign.RAMPAGE extends com.rockstargames.ui.co
       var _loc6_ = arguments;
       var _loc18_ = _loc6_[0];
       var _loc16_ = _loc6_[1];
+      var _loc11_;
       if(_loc16_)
       {
-         var _loc11_ = (_loc6_.length - 5) / 2;
+         _loc11_ = (_loc6_.length - 5) / 2;
       }
       else
       {
@@ -87,10 +88,11 @@ class com.rockstargames.gtav.levelDesign.RAMPAGE extends com.rockstargames.ui.co
       var _loc3_ = 2;
       var _loc9_ = 11;
       var _loc7_ = 0;
+      var _loc5_;
+      var _loc8_;
       while(_loc7_ < _loc11_)
       {
-         var _loc5_ = undefined;
-         var _loc8_ = "outroStatMC" + (_loc3_ - 1);
+         _loc8_ = "outroStatMC" + (_loc3_ - 1);
          _loc5_ = _loc4_.attachMovie("outroStatMC",_loc8_,_loc4_.getNextHighestDepth(),{_x:0,_y:_loc9_});
          _loc5_.s1TF.text = _loc6_[_loc3_];
          _loc5_.s2TF.text = _loc6_[_loc3_ + 1];
@@ -98,12 +100,15 @@ class com.rockstargames.gtav.levelDesign.RAMPAGE extends com.rockstargames.ui.co
          _loc9_ += 21;
          _loc7_ = _loc7_ + 1;
       }
+      var _loc20_;
+      var _loc19_;
+      var _loc15_;
+      var _loc14_;
       if(_loc16_)
       {
-         var _loc20_ = _loc6_[_loc6_.length - 3];
-         var _loc19_ = _loc6_[_loc6_.length - 2];
-         var _loc15_ = _loc6_[_loc6_.length - 1];
-         var _loc14_ = undefined;
+         _loc20_ = _loc6_[_loc6_.length - 3];
+         _loc19_ = _loc6_[_loc6_.length - 2];
+         _loc15_ = _loc6_[_loc6_.length - 1];
          _loc14_ = _loc4_.attachMovie("outroFooterMC","outroFooterMC",_loc4_.getNextHighestDepth(),{_x:0,_y:_loc9_});
          _loc14_.ratingTF.text = _loc20_;
          _loc14_.medalTF.text = _loc19_;

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen
 {
    var app;
+   var controls;
    var cursor;
    var overlay;
-   var controls;
-   var view;
    var specialItemTXD;
+   var view;
    static var SELL_BUTTON_0 = 1;
    static var SELL_BUTTON_1 = 2;
    static var SELL_BUTTON_2 = 3;
@@ -115,11 +115,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen
       var _loc6_ = -1;
       var _loc9_ = true;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc7_;
+      var _loc5_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = _loc4_["sellButton_" + _loc2_];
-         var _loc7_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen["SELL_BUTTON_" + _loc2_],_loc3_);
-         var _loc5_ = com.rockstargames.gtav.levelDesign.WAREHOUSE.setLocalisedText(_loc3_.label,"WAREHOUSE_SELL") + " $" + com.rockstargames.gtav.levelDesign.WAREHOUSE.formatNumber(this.app.offerPrices[_loc2_]);
+         _loc3_ = _loc4_["sellButton_" + _loc2_];
+         _loc7_ = new com.rockstargames.gtav.levelDesign.securoserv.Button(com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen["SELL_BUTTON_" + _loc2_],_loc3_);
+         _loc5_ = com.rockstargames.gtav.levelDesign.WAREHOUSE.setLocalisedText(_loc3_.label,"WAREHOUSE_SELL") + " $" + com.rockstargames.gtav.levelDesign.WAREHOUSE.formatNumber(this.app.offerPrices[_loc2_]);
          _loc3_.label.verticalAlign = "center";
          if(warehouse.sellCooldown > getTimer())
          {
@@ -170,6 +173,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen
    function updateCooldown(button, cooldown, finalLabel)
    {
       var _loc2_ = Math.ceil(0.001 * (cooldown - getTimer()));
+      var _loc3_;
+      var _loc5_;
+      var _loc9_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
       if(_loc2_ <= 0)
       {
          button._alpha = 100;
@@ -177,12 +186,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen
       }
       else
       {
-         var _loc3_ = _loc2_ % 60;
-         var _loc5_ = Math.floor((_loc2_ - _loc3_) / 60) % 60;
-         var _loc9_ = Math.floor((_loc2_ - _loc3_ - _loc5_ * 60) / 3600);
-         var _loc7_ = ("0" + _loc9_).substr(-2);
-         var _loc6_ = ("0" + _loc5_).substr(-2);
-         var _loc8_ = ("0" + _loc3_).substr(-2);
+         _loc3_ = _loc2_ % 60;
+         _loc5_ = Math.floor((_loc2_ - _loc3_) / 60) % 60;
+         _loc9_ = Math.floor((_loc2_ - _loc3_ - _loc5_ * 60) / 3600);
+         _loc7_ = ("0" + _loc9_).substr(-2);
+         _loc6_ = ("0" + _loc5_).substr(-2);
+         _loc8_ = ("0" + _loc3_).substr(-2);
          com.rockstargames.gtav.levelDesign.WAREHOUSE.setSpacedTextField(button.label,_loc7_ + ":" + _loc6_ + ":" + _loc8_,1,true);
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(button,0.25,{onCompleteScope:this,onComplete:this.updateCooldown,onCompleteArgs:[button,cooldown,finalLabel]});
       }
@@ -195,11 +204,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseScreen
       var _loc4_ = rightTF._x + rightTF._width;
       var _loc7_ = leftTF._width;
       var _loc8_ = rightTF._width;
+      var _loc5_;
+      var _loc3_;
+      var _loc1_;
       if(_loc7_ + _loc8_ > _loc4_ - _loc6_)
       {
-         var _loc5_ = _loc4_ - _loc6_ - _loc7_;
-         var _loc3_ = rightTF.text;
-         var _loc1_ = _loc3_.length;
+         _loc5_ = _loc4_ - _loc6_ - _loc7_;
+         _loc3_ = rightTF.text;
+         _loc1_ = _loc3_.length;
          while(_loc1_ > 0)
          {
             rightTF.text = _loc3_.substring(0,_loc1_) + "...";

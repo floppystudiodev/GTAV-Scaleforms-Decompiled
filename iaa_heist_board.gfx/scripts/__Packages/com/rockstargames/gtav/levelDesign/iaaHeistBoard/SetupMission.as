@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
 {
    var activeNavigationElements;
-   var isActive;
-   var titles;
    var descriptions;
-   var titleIndex;
-   var prep1Texture;
-   var prep2Texture;
+   var finalStat;
+   var finalState;
    var finalTexture;
    var index;
-   var prep1State;
-   var prep1Stat;
-   var prep2State;
-   var prep2Stat;
-   var finalState;
-   var finalStat;
+   var isActive;
    var lockedMessage;
+   var prep1Stat;
+   var prep1State;
+   var prep1Texture;
+   var prep2Stat;
+   var prep2State;
+   var prep2Texture;
+   var titleIndex;
+   var titles;
    var txd;
    var view;
    static var STATE_NULL = -1;
@@ -117,10 +117,12 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
       var _loc7_ = false;
       var _loc3_ = 0;
       var _loc5_ = this.activeNavigationElements.length;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < _loc5_)
       {
-         var _loc4_ = this.activeNavigationElements[_loc3_];
-         var _loc2_ = _loc4_.view._parent;
+         _loc4_ = this.activeNavigationElements[_loc3_];
+         _loc2_ = _loc4_.view._parent;
          if(_loc4_.id == activeElementID)
          {
             _loc7_ = true;
@@ -148,7 +150,7 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
       }
       var _loc3_ = Math.floor((activeElementID - 1) / 3);
       var _loc4_ = (activeElementID - 1) % 3;
-      var _loc2_ = undefined;
+      var _loc2_;
       if(_loc3_ == this.index)
       {
          _loc2_ = _loc4_;
@@ -268,9 +270,9 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
       this.setEllipsis(this.titles[0],this.view.prep1Double.title);
       this.setEllipsis(this.titles[1],this.view.prep2.title);
       this.setEllipsis(this.titles[2],this.view.final.title);
+      var _loc2_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
-         var _loc2_ = undefined;
          _loc2_ = this.view.prep1Single.title.getTextFormat();
          _loc2_.size = 20;
          this.view.prep1Single.title.setTextFormat(_loc2_);
@@ -291,6 +293,7 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
    }
    function setState(block, state, stat, lockedMessage)
    {
+      var _loc3_;
       switch(state)
       {
          case com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission.STATE_AVAILABLE:
@@ -319,7 +322,6 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
             this.setLocalisedText(block._parent.complete.label,"IAA_STOLEN");
             if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
             {
-               var _loc3_ = undefined;
                _loc3_ = block._parent.complete.label.getTextFormat();
                _loc3_.size = 20;
                block._parent.complete.label.setTextFormat(_loc3_);
@@ -359,11 +361,9 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
             if(lockedMessage == undefined || lockedMessage.length == 0)
             {
                this.setLocalisedText(block.label,"IAA_LOCKED");
+               break;
             }
-            else
-            {
-               block.label.text = lockedMessage;
-            }
+            block.label.text = lockedMessage;
             break;
          default:
             block.gotoAndStop("available");
@@ -419,9 +419,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.SetupMission
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

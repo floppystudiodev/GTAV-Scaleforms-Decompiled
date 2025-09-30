@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__columnID;
+   var __get__data;
+   var __get__highlighted;
+   var _highlighted;
+   var attachMovie;
+   var bMC;
+   var bgMC;
+   var getNextHighestDepth;
+   var index;
+   var initialIndex;
+   var isSelectable;
    var itemTextLeft;
    var labelMC;
-   var bMC;
-   var type;
    var notificationMC;
    var tickBoxMC;
-   var initialIndex;
-   var attachMovie;
-   var getNextHighestDepth;
-   var __get__data;
-   var _highlighted;
-   var isSelectable;
-   var bgMC;
-   var index;
-   var __get__columnID;
-   var __get__highlighted;
+   var type;
    static var AS_REGULAR = 0;
    static var AS_NOTIFICATION = 1;
    static var AS_CHECKBOX = 2;
@@ -69,8 +69,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrew
                this.notificationMC.numTF.wordWrap = false;
                this.notificationMC.bgMC._width = this.notificationMC.numTF._width + 4;
                this.notificationMC._x = 288 - this.notificationMC.bgMC._width - 5;
+               break;
             }
-            else if(this.notificationMC != undefined)
+            if(this.notificationMC != undefined)
             {
                this.notificationMC.removeMovieClip();
                this.notificationMC = null;
@@ -90,8 +91,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrew
                }
                this.tickBoxMC.tickMC._visible = Boolean(this.data[2]);
                this.itemTextLeft._width = 277 - this.tickBoxMC._width;
+               break;
             }
-            else if(this.tickBoxMC)
+            if(this.tickBoxMC)
             {
                this.tickBoxMC.removeMovieClip();
                this.tickBoxMC = null;

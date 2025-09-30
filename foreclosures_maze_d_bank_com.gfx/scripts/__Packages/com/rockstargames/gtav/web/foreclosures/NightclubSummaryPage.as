@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.foreclosures.NightclubSummaryPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
-   var view;
-   var progressPanel;
    var buttonsHiddenByAlert;
+   var prevPageName;
+   var progressPanel;
    var tradeInAlert;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_CLUB";
    function NightclubSummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -54,9 +54,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubSummaryPage extends com.r
       var _loc4_ = this.website.purchasedNightclubStorage != -1 ? this.website.purchasedNightclubStorage + 1 : 1;
       var _loc5_ = this.website.purchasedNightclubGarage != -1 ? this.website.purchasedNightclubGarage + 1 : 1;
       var _loc3_ = 1;
+      var _loc2_;
       while(_loc3_ <= 5)
       {
-         var _loc2_ = this.view["storage" + _loc3_];
+         _loc2_ = this.view["storage" + _loc3_];
          _loc2_.gotoAndStop(_loc3_ > this.website.nightclubStorage + 1 ? "off" : "on");
          if(_loc3_ > 1)
          {
@@ -192,6 +193,8 @@ class com.rockstargames.gtav.web.foreclosures.NightclubSummaryPage extends com.r
             this.hideTradeInAlert();
             this.website.dispatchPlayerNightclubSelections();
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name);
+         default:
+            return;
       }
    }
    function handleLB()

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.Multiplayer.MP_UNLOCKS_FREEMODE extends com.rockstargames.gtav.Multiplayer.MP_AWARD_BASE
 {
-   var TIMELINE;
-   var FILE_NAME;
    var CONTENT;
+   var FILE_NAME;
+   var TIMELINE;
    function MP_UNLOCKS_FREEMODE()
    {
       super();
@@ -30,11 +30,12 @@ class com.rockstargames.gtav.Multiplayer.MP_UNLOCKS_FREEMODE extends com.rocksta
       this.CONTENT.BIG_TEXT.htmlText = awTitle;
       this.CONTENT.MESSAGE_TEXT.autoSize = "center";
       this.CONTENT.MESSAGE_TEXT.htmlText = awDesc;
+      var _loc3_;
       if(awDesc2 != undefined && awDesc2 != "")
       {
          this.CONTENT.INFO_TEXT.htmlText = awDesc2;
          this.CONTENT.BLACK_BAR._height = 52;
-         var _loc3_ = Math.max(this.CONTENT.INFO_TEXT.textWidth,this.CONTENT.MESSAGE_TEXT.textWidth);
+         _loc3_ = Math.max(this.CONTENT.INFO_TEXT.textWidth,this.CONTENT.MESSAGE_TEXT.textWidth);
          this.CONTENT.BLACK_BAR._width = _loc3_ + 100;
       }
       else

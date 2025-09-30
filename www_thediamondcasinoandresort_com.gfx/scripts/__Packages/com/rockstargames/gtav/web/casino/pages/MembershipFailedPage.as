@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.casino.pages.MembershipFailedPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var website;
    var view;
+   var website;
    function MembershipFailedPage(website, viewContainer, pageName, isFirstPage)
    {
       super(website,viewContainer,"membershipFailedPage",pageName,isFirstPage);
@@ -45,7 +45,7 @@ class com.rockstargames.gtav.web.casino.pages.MembershipFailedPage extends com.r
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "homeButton")
       {
          this.website.browser.GO_TO_WEBPAGE(this.website.browser.GET_CURRENT_WEBSITE());

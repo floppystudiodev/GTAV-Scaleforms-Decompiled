@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
 {
-   var TIMELINE;
-   var mapComponents;
-   var TXDLAYER;
    var ROADS;
+   var TIMELINE;
+   var TXDLAYER;
+   var mapComponents;
    function MINIMAP_MAIN_MAP(mc)
    {
       super();
@@ -37,11 +37,11 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
    function hideALlComponents()
    {
       var _loc4_ = _level0.asRootContainer.asMapContainer.asMapContainer.map;
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.mapComponents.length)
       {
-         var _loc3_ = undefined;
          _loc3_ = _loc4_.main_map[this.mapComponents[_loc2_]];
          _loc3_._visible = false;
          _loc2_ = _loc2_ + 1;
@@ -50,11 +50,13 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
    function TOGGLE_COMPONENT(component, visible, hudColour)
    {
       var _loc5_ = _level0.asRootContainer.asMapContainer.asMapContainer.map;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc7_ = 4;
+      var _loc3_;
+      var _loc4_;
       if(component == _loc7_)
       {
-         var _loc3_ = _level0.asRootContainer.asMapContainer.asMapContainer.asBackgroundOverlay3D.asFreewayLayer;
+         _loc3_ = _level0.asRootContainer.asMapContainer.asMapContainer.asBackgroundOverlay3D.asFreewayLayer;
          if(this.ROADS != undefined)
          {
             _loc3_ = this.ROADS;
@@ -63,7 +65,7 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
       }
       else if(component < this.mapComponents.length)
       {
-         var _loc4_ = this.mapComponents[component];
+         _loc4_ = this.mapComponents[component];
          _loc2_ = _loc5_.main_map[_loc4_];
       }
       _loc2_._visible = visible;
@@ -75,11 +77,13 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
    function debug(component, visible, hudColour)
    {
       var _loc5_ = _level0.asRootContainer.asMapContainer.asMapContainer.map;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc7_ = 4;
+      var _loc3_;
+      var _loc4_;
       if(component == _loc7_)
       {
-         var _loc3_ = _level0.asRootContainer.asMapContainer.asMapContainer.asBackgroundOverlay3D.asFreewayLayer;
+         _loc3_ = _level0.asRootContainer.asMapContainer.asMapContainer.asBackgroundOverlay3D.asFreewayLayer;
          if(this.ROADS != undefined)
          {
             _loc3_ = this.ROADS;
@@ -88,7 +92,7 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
       }
       else if(component < this.mapComponents.length)
       {
-         var _loc4_ = this.mapComponents[component];
+         _loc4_ = this.mapComponents[component];
          _loc2_ = _loc5_.main_map[_loc4_];
       }
       _loc2_._visible = visible;

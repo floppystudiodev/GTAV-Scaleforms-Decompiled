@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextView extends com.rockstargames.ui.components.GUIView
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
    var direction;
-   var viewMaskHeight;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
+   var viewMaskHeight;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;

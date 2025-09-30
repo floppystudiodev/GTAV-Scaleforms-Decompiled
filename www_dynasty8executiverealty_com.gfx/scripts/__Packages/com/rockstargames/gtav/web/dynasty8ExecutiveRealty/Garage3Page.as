@@ -1,13 +1,19 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage3Page extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GaragePage
 {
-   var website;
-   var prevPageName;
-   var nextPageName;
-   var view;
-   var progressPanel;
    var activeTab;
-   var summaryPageName;
+   var nextPageName;
+   var prevPageName;
+   var progressPanel;
+   var selectTab;
    var slideshow;
+   var summaryPageName;
+   var updateEquipped;
+   var updateSelectedLighting;
+   var updateSelectedNumber;
+   var updateSelectedStyle;
+   var updateTab;
+   var view;
+   var website;
    function Garage3Page(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,pageName,isFirstPage,progressPanel,header);
@@ -150,16 +156,19 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage3Page extends com
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateDisplay()
    {
       this.updateSlideshow();
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
       if(this.website.garage3Equipped)
       {
-         var _loc2_ = this.website.getSelectedOffice();
-         var _loc3_ = undefined;
-         var _loc4_ = undefined;
+         _loc2_ = this.website.getSelectedOffice();
          _loc3_ = _loc2_.getGarage3StyleCost(this.website.garage3Style,this.website.purchasedGarage3Style);
          _loc4_ = _loc2_.getGarage3StyleRawSaleCost(this.website.garage3Style);
          this.updateTab(this.view.styleTabPrices,_loc3_,_loc4_);
@@ -189,6 +198,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage3Page extends com
             break;
          case this.view.numberTab:
             this.slideshow.show("DYN_GARAGE",["SIGNAGE_3_" + this.website.garage3Number]);
+         default:
+            return;
       }
    }
 }

@@ -1,17 +1,19 @@
 class com.rockstargames.gtav.cellphone.apps.SETTINGS extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
+   var CONTENT;
+   var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
    var dataProviderUI;
    var gfxFileName;
    var iconOFF;
-   var currentStyle;
    var linkageID;
-   var CONTENT;
-   var row;
-   var container;
-   var whiteRGB;
-   var TextWhiteHex;
+   var numberOfVisibleRows;
    var offWhiteRGB;
-   var TextBlackHex;
+   var row;
+   var whiteRGB;
    function SETTINGS()
    {
       super();
@@ -35,13 +37,16 @@ class com.rockstargames.gtav.cellphone.apps.SETTINGS extends com.rockstargames.g
    {
       this.dataProviderUI = _level0.TIMELINE.settingsDataProviderUI;
       this.row = 1;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc3_ = _loc4_ + this.arrayStartPoint;
+            _loc2_ = "listItem" + this.row;
+            _loc3_ = _loc4_ + this.arrayStartPoint;
             if(this.dataProviderUI[_loc3_][0] != undefined && this.dataProviderUI[_loc3_][0] != 0)
             {
                this.setIcon(this.container[_loc2_],this.dataProviderUI[_loc3_][0]);

@@ -1,9 +1,15 @@
 class com.rockstargames.gtav.levelDesign.FEED_MESSAGE_TEXT extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var baseClassStrID;
    var contactImage;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
+   var important;
+   var parseForFonts;
+   var parseForGamerTagTitleFonts;
+   var returnPath1;
+   var returnPathLvl;
    function FEED_MESSAGE_TEXT()
    {
       super();
@@ -26,9 +32,10 @@ class com.rockstargames.gtav.levelDesign.FEED_MESSAGE_TEXT extends com.rockstarg
          this.CONTENT.iconMC._y = 3;
       }
       this.CONTENT.icon2MC.gotoAndStop(icon2Enum + 1);
+      var _loc3_;
       if(nameStr != undefined)
       {
-         var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+         _loc3_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(iTextColor,_loc3_);
          this.CONTENT.nameTF.textAutoSize = "shrink";
          this.CONTENT.subtitleTF.textAutoSize = "shrink";
@@ -64,7 +71,7 @@ class com.rockstargames.gtav.levelDesign.FEED_MESSAGE_TEXT extends com.rockstarg
       }
       this.CONTENT.bodyTF.multiline = true;
       this.CONTENT.bodyTF.wordWrap = true;
-      var _loc2_ = undefined;
+      var _loc2_;
       if(bodyStr != undefined && bodyStr != "")
       {
          _loc2_ = this.CONTENT.bodyTF._y + this.CONTENT.bodyTF._height + 4;

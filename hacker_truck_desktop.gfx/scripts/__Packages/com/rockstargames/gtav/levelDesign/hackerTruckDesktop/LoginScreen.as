@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.LoginScreen extends com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Screen
 {
-   var view;
    var app;
+   var view;
    static var ANIMATION_DURATION = 1.8;
    function LoginScreen(app, viewContainer, cursor, overlay)
    {

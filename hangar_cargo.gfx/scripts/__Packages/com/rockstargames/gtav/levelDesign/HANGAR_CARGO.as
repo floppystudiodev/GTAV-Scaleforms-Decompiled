@@ -1,35 +1,36 @@
 class com.rockstargames.gtav.levelDesign.HANGAR_CARGO extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var currScreenID;
-   var inputReceived;
-   var deactivated;
-   var organisations;
+   var TIMELINE;
+   var _name;
+   var bonusEarnings;
    var cargos;
+   var currScreen;
+   var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var filledSpace;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var location;
+   var organisationName;
+   var organisations;
+   var overlay;
+   var rivalCratesStolen;
+   var saleEarnings;
+   var salesCompleted;
+   var salesSuccessRate;
+   var screenContainer;
+   var sellAllPrice;
    var sellRemainingCooldown;
    var sellTotalCooldown;
    var stealCooldown;
-   var launchTimestamp;
-   var displayConfig;
-   var screenContainer;
-   var overlay;
-   var cursor;
-   var organisationName;
-   var location;
-   var stealsCompleted;
    var stealSuccessRate;
-   var salesCompleted;
-   var salesSuccessRate;
-   var rivalCratesStolen;
-   var saleEarnings;
-   var bonusEarnings;
-   var filledSpace;
+   var stealsCompleted;
    var totalSpace;
-   var sellAllPrice;
-   var currScreen;
    static var NUM_CARGO_TYPES = 8;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
@@ -161,9 +162,10 @@ class com.rockstargames.gtav.levelDesign.HANGAR_CARGO extends com.rockstargames.
    {
       var _loc5_ = [];
       var _loc3_ = 1;
+      var _loc4_;
       while(_loc3_ < arguments.length)
       {
-         var _loc4_ = arguments[_loc3_];
+         _loc4_ = arguments[_loc3_];
          if(_loc4_.length > 0)
          {
             _loc5_.push(_loc4_);
@@ -256,13 +258,14 @@ class com.rockstargames.gtav.levelDesign.HANGAR_CARGO extends com.rockstargames.
          return undefined;
       }
       this.inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.HANGAR_CARGO.playSound("Mouse_Move_Cursor");
@@ -362,17 +365,20 @@ class com.rockstargames.gtav.levelDesign.HANGAR_CARGO extends com.rockstargames.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

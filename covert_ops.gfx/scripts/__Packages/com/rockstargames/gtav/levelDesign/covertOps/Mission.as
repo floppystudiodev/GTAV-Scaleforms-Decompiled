@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.covertOps.Mission
 {
-   var _id;
-   var _missionName;
-   var _description;
-   var _txd;
-   var _lockNum;
-   var _enabled;
    var _cashBonus;
+   var _description;
+   var _enabled;
+   var _id;
+   var _lockNum;
+   var _missionName;
    var _rpBonus;
+   var _txd;
    function Mission(_id, _missionName, _description, _txd, _lockNum, _enabled, _cashBonus, _rpBonus)
    {
       this._id = _id;

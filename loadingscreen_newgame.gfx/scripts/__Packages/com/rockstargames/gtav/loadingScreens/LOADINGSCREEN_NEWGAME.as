@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.loadingScreens.LOADINGSCREEN_NEWGAME extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var PROGRESS_INFO;
    var CONTENT;
    var GTAV_LOGO;
+   var PROGRESS_INFO;
    var object;
    function LOADINGSCREEN_NEWGAME()
    {

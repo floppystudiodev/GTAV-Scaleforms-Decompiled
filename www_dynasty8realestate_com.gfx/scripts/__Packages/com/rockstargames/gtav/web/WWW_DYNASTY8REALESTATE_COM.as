@@ -1,34 +1,35 @@
 class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var propertyArray;
-   var sortedPropertyArray;
-   var sizeArray;
-   var priceArray;
-   var locationArray;
-   var propLocArray;
-   var visiblePropertyIDs;
-   var displayConfig;
-   var pinNumber;
-   var propertyButtonContainer;
-   var mcScope;
-   var filterChange;
-   var sortChange;
-   var locationChange;
    var CONTENT;
-   var headerMC;
-   var pageName;
-   var intervalId;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var dataTextScope;
    var MapMC;
-   var pinHitArea;
+   var PAGE_NAMES;
+   var _name;
+   var browser;
    var dataProviderUI;
-   var propertyMC;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayConfig;
+   var filterChange;
+   var headerMC;
    var interiorMC;
+   var intervalId;
+   var locationArray;
+   var locationChange;
+   var mcScope;
+   var pageName;
+   var pinHitArea;
+   var pinNumber;
+   var priceArray;
+   var propLocArray;
+   var propertyArray;
+   var propertyButtonContainer;
+   var propertyMC;
+   var sizeArray;
+   var sortChange;
+   var sortedPropertyArray;
+   var visiblePropertyIDs;
    var firstRun = true;
    var lastPinClicked = 0;
    var bottomLine = 0;
@@ -144,12 +145,15 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
          this.currentTint = parseInt(_loc2_[1]);
          this.updateOptions(this.currentIndex,this.currentTint);
       }
+      var _loc4_;
+      var _loc3_;
+      var _loc10_;
       if(_loc2_[0] == "pin")
       {
          this.browser.SET_CURRENT_SELECTION(this.pinNumber);
          if(this.lastPinClicked != this.pinNumber)
          {
-            var _loc4_ = this.propertyButtonContainer["property_" + this.lastPinClicked];
+            _loc4_ = this.propertyButtonContainer["property_" + this.lastPinClicked];
             if(_loc4_ != undefined)
             {
                _loc4_.propertyListTextMC.propertyTF.textColor = this.textColGrey;
@@ -163,7 +167,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                   _loc4_.buyMC.removeMovieClip();
                }
             }
-            var _loc3_ = this.propertyButtonContainer["property_" + this.pinNumber];
+            _loc3_ = this.propertyButtonContainer["property_" + this.pinNumber];
             if(_loc3_ != undefined)
             {
                _loc3_.propertyListTextMC.propertyTF.textColor = this.textColBlack;
@@ -173,7 +177,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                _loc3_.highlight._visible = true;
                if(_loc3_.buyMC == undefined)
                {
-                  var _loc10_ = _loc3_.attachMovie("buyMC","buyMC",_loc3_.getNextHighestDepth(),{_x:236,_y:171.5});
+                  _loc10_ = _loc3_.attachMovie("buyMC","buyMC",_loc3_.getNextHighestDepth(),{_x:236,_y:171.5});
                   if(this.buyTextString == "")
                   {
                      com.rockstargames.ui.utils.Localisation.setTextWithTranslation(_loc3_.buyMC.buyTF,"DYN_BUY",0,true);
@@ -278,6 +282,8 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
       this.filterChange = false;
       this.sortChange = false;
       this.locationChange = false;
+      var _loc7_;
+      var _loc6_;
       if(_loc2_[0] == "sizeAll" || _loc2_[0] == "sizeHigh" || _loc2_[0] == "sizeMed" || _loc2_[0] == "sizeLow" || _loc2_[0] == "sizeNew")
       {
          switch(_loc2_[0])
@@ -292,14 +298,14 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                this.sizeArray[0].sizeMed = false;
                this.sizeArray[0].sizeLow = false;
                this.sizeArray[0].sizeNew = false;
-               var _loc7_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
+               _loc7_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
                this.locationArray[0].locationDowntown = true;
                this.locationArray[0].locationEastLS = true;
                this.locationArray[0].locationWestLS = true;
                this.locationArray[0].locationNorthLS = true;
                this.locationArray[0].locationSouthLS = true;
                this.locationArray[0].locationBlaineCounty = true;
-               var _loc6_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
+               _loc6_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
                if(_loc7_ != _loc6_)
                {
                   this.filterChange = true;
@@ -383,9 +389,10 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                this.priceArray[0].priceHighToLow = true;
          }
       }
+      var _loc5_;
       if(_loc2_[0] == "locationDowntown" || _loc2_[0] == "locationEastLS" || _loc2_[0] == "locationWestLS" || _loc2_[0] == "locationNorthLS" || _loc2_[0] == "locationSouthLS" || _loc2_[0] == "locationBlaineCounty")
       {
-         var _loc5_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
+         _loc5_ = this.locationArray[0].locationDowntown + this.locationArray[0].locationEastLS + this.locationArray[0].locationWestLS + this.locationArray[0].locationNorthLS + this.locationArray[0].locationSouthLS + this.locationArray[0].locationBlaineCounty;
          switch(_loc2_[0])
          {
             case "locationDowntown":
@@ -435,7 +442,6 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                }
                this.locationArray[0].locationBlaineCounty = !this.locationArray[0].locationBlaineCounty;
                this.locationChange = true;
-               break;
          }
       }
       this.updateFilterButtons();
@@ -499,12 +505,16 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
    }
    function sortProperties()
    {
+      var _loc12_;
+      var _loc10_;
+      var _loc13_;
+      var _loc6_;
       if(this.firstRun == true)
       {
-         var _loc12_ = [];
-         var _loc10_ = [];
-         var _loc13_ = [];
-         var _loc6_ = 0;
+         _loc12_ = [];
+         _loc10_ = [];
+         _loc13_ = [];
+         _loc6_ = 0;
          while(_loc6_ < this.sortedPropertyArray.length)
          {
             if(this.sortedPropertyArray[_loc6_].INTERIORS)
@@ -544,18 +554,22 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
       this.westls = 0;
       this.blaine = 0;
       this.noLocation = 0;
-      var _loc11_ = undefined;
+      var _loc11_;
       var _loc8_ = 0;
       var _loc7_ = 179;
       var _loc14_ = this.propertyButtonContainer.shadowMC;
       _loc14_._visible = false;
       _loc6_ = 0;
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc6_ < this.sortedPropertyArray.length)
       {
-         var _loc2_ = this.sortedPropertyArray[_loc6_].INDEX;
-         var _loc3_ = this.propertyButtonContainer["property_" + _loc2_];
+         _loc2_ = this.sortedPropertyArray[_loc6_].INDEX;
+         _loc3_ = this.propertyButtonContainer["property_" + _loc2_];
          _loc3_.highlight._visible = false;
-         var _loc5_ = this.mcScope.MapContainer.map.pinContainer["pin_" + _loc2_];
+         _loc5_ = this.mcScope.MapContainer.map.pinContainer["pin_" + _loc2_];
          if(this.propertyArray[_loc2_].SIZE == 3 || this.propertyArray[_loc2_].SIZE == 6 || this.propertyArray[_loc2_].SIZE == 7)
          {
             this.highEnd = this.highEnd + 1;
@@ -596,7 +610,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
          {
             this.blaine = this.blaine + 1;
          }
-         var _loc4_ = true;
+         _loc4_ = true;
          if(this.sizeArray[0].sizeAll == false)
          {
             if(this.sizeArray[0].sizeHigh == false)
@@ -704,6 +718,8 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
       {
          this.lastPinClicked = _loc11_;
       }
+      var _loc9_;
+      var _loc17_;
       if(_loc8_ > 0)
       {
          this.mcScope.MapContainer.map.zoomScale = 250;
@@ -715,13 +731,13 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
          {
             this.mcScope.MapContainer.map.zoomInOnPin(this.lastPinClicked,false);
          }
-         var _loc9_ = this.propertyButtonContainer["property_" + this.lastPinClicked];
+         _loc9_ = this.propertyButtonContainer["property_" + this.lastPinClicked];
          this.scrollListingsPage(_loc9_._y,this.comeFromAnotherPage);
          this.comeFromAnotherPage = false;
          _loc9_.highlight._visible = true;
          if(_loc9_.buyMC == undefined)
          {
-            var _loc17_ = _loc9_.attachMovie("buyMC","buyMC",_loc9_.getNextHighestDepth(),{_x:236,_y:171.5});
+            _loc17_ = _loc9_.attachMovie("buyMC","buyMC",_loc9_.getNextHighestDepth(),{_x:236,_y:171.5});
             if(this.buyTextString == "")
             {
                com.rockstargames.ui.utils.Localisation.setTextWithTranslation(_loc9_.buyMC.buyTF,"DYN_BUY",0,true);
@@ -790,9 +806,10 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
    }
    function zoomAndScrollToLastProperty()
    {
+      var _loc2_;
       if(this.lastPinClicked >= 0)
       {
-         var _loc2_ = "pin_" + this.lastPinClicked;
+         _loc2_ = "pin_" + this.lastPinClicked;
          this.lastPinClicked = -1;
          this.goToAnchor(_loc2_);
       }
@@ -808,9 +825,10 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
       this.defaultButtonOnColour = 1141559;
       this.defaultButtonOffColour = 16777215;
       this.browser.SET_BUTTON_MASK();
+      var _loc15_;
       if(this.propLocArray[0] == false)
       {
-         var _loc15_ = 1;
+         _loc15_ = 1;
          while(_loc15_ < this.propLocArray.length)
          {
             _loc3_(this.CONTENT.localisationTF,this.propLocArray[_loc15_],0,false);
@@ -822,6 +840,46 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
       }
       this.browser.GUTTER._height = 627;
       this.browser.GUTTER._y = this.browser.TOOLBAR._y + 45;
+      var _loc58_;
+      var _loc57_;
+      var _loc55_;
+      var _loc53_;
+      var _loc20_;
+      var _loc14_;
+      var _loc5_;
+      var _loc11_;
+      var _loc54_;
+      var _loc70_;
+      var _loc67_;
+      var _loc69_;
+      var _loc65_;
+      var _loc61_;
+      var _loc63_;
+      var _loc13_;
+      var _loc10_;
+      var _loc16_;
+      var _loc6_;
+      var _loc9_;
+      var _loc36_;
+      var _loc7_;
+      var _loc60_;
+      var _loc56_;
+      var _loc43_;
+      var _loc17_;
+      var _loc2_;
+      var _loc48_;
+      var _loc18_;
+      var _loc19_;
+      var _loc52_;
+      var _loc45_;
+      var _loc4_;
+      var _loc22_;
+      var _loc21_;
+      var _loc44_;
+      var _loc12_;
+      var _loc8_;
+      var _loc51_;
+      var _loc0_;
       switch(this.pageName)
       {
          case "PAGE1":
@@ -833,17 +891,17 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             this.defaultButtonOffColour = this.textColWhite;
             if(newPage == true)
             {
-               var _loc58_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC1",this.mcScope.images.getNextHighestDepth(),{_x:116,_y:0});
-               var _loc57_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC2",this.mcScope.images.getNextHighestDepth(),{_x:380,_y:0});
-               var _loc55_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC3",this.mcScope.images.getNextHighestDepth(),{_x:116,_y:136});
-               var _loc53_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC4",this.mcScope.images.getNextHighestDepth(),{_x:380,_y:136});
-               var _loc20_ = [];
+               _loc58_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC1",this.mcScope.images.getNextHighestDepth(),{_x:116,_y:0});
+               _loc57_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC2",this.mcScope.images.getNextHighestDepth(),{_x:380,_y:0});
+               _loc55_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC3",this.mcScope.images.getNextHighestDepth(),{_x:116,_y:136});
+               _loc53_ = this.mcScope.images.attachMovie("propertyTextureMC","propertyMC4",this.mcScope.images.getNextHighestDepth(),{_x:380,_y:136});
+               _loc20_ = [];
                _loc15_ = 6;
                while(_loc15_ < 36)
                {
-                  var _loc14_ = false;
-                  var _loc5_ = 0;
-                  var _loc11_ = this.visiblePropertyIDs.length;
+                  _loc14_ = false;
+                  _loc5_ = 0;
+                  _loc11_ = this.visiblePropertyIDs.length;
                   while(_loc5_ < _loc11_)
                   {
                      if(this.visiblePropertyIDs[_loc5_] == _loc15_)
@@ -895,9 +953,6 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             {
                this.CONTENT._y = 0;
                this.dataTextScope = new Array();
-               var _loc54_ = undefined;
-               var _loc70_ = undefined;
-               var _loc67_ = undefined;
                this.MapMC = this.mcScope.MapContainer.attachMovie("map","map",this.mcScope.MapContainer.getNextHighestDepth());
                _loc54_ = this.mcScope.MapContainer.attachMovie("mapMask","mapMask",this.mcScope.MapContainer.getNextHighestDepth());
                this.MapMC.setMask(_loc54_);
@@ -909,10 +964,10 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                this.pinHitArea = this.mcScope.MapContainer.attachMovie("pinHitArea","pinHitArea",this.mcScope.MapContainer.getNextHighestDepth(),{_visible:false});
                _loc70_ = this.mcScope.MapContainer.attachMovie("button_zoom_in","zoomIn",this.mcScope.MapContainer.getNextHighestDepth(),{_x:265,_y:-107});
                _loc67_ = this.mcScope.MapContainer.attachMovie("button_zoom_out","zoomOut",this.mcScope.MapContainer.getNextHighestDepth(),{_x:265,_y:-83});
-               var _loc69_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapUP",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-224,_y:-97});
-               var _loc65_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapDOWN",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-224,_y:-57,_rotation:180});
-               var _loc61_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapLEFT",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-244,_y:-77,_rotation:270});
-               var _loc63_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapRIGHT",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-204,_y:-77,_rotation:90});
+               _loc69_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapUP",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-224,_y:-97});
+               _loc65_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapDOWN",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-224,_y:-57,_rotation:180});
+               _loc61_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapLEFT",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-244,_y:-77,_rotation:270});
+               _loc63_ = this.mcScope.MapContainer.attachMovie("button_map_move","mapRIGHT",this.mcScope.MapContainer.getNextHighestDepth(),{_x:-204,_y:-77,_rotation:90});
                this.headerMC = this.mcScope.MapContainer.header;
                com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.mcScope.MapContainer.mapTF,"DYN_INTMAP",0,false);
                _loc3_(this.headerMC.sizeAll.textTF,"DYN_FILTER_ALL",0,true);
@@ -938,14 +993,14 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                this.headerMC.filterButtonsMC.locationNorthLS.tickMC._visible = false;
                this.headerMC.filterButtonsMC.locationSouthLS.tickMC._visible = false;
                this.headerMC.filterButtonsMC.locationBlaineCounty.tickMC._visible = false;
-               var _loc13_ = new Array("priceLowToHigh","priceHighToLow");
-               var _loc10_ = this.headerMC.filterButtonsMC.priceTF._x + this.headerMC.filterButtonsMC.priceTF.textWidth + 10;
-               var _loc16_ = 14;
+               _loc13_ = new Array("priceLowToHigh","priceHighToLow");
+               _loc10_ = this.headerMC.filterButtonsMC.priceTF._x + this.headerMC.filterButtonsMC.priceTF.textWidth + 10;
+               _loc16_ = 14;
                _loc15_ = 0;
                while(_loc15_ < _loc13_.length)
                {
-                  var _loc6_ = this.headerMC.filterButtonsMC[_loc13_[_loc15_]];
-                  var _loc9_ = _loc6_.textTF.textWidth + 4;
+                  _loc6_ = this.headerMC.filterButtonsMC[_loc13_[_loc15_]];
+                  _loc9_ = _loc6_.textTF.textWidth + 4;
                   _loc6_.textTF._width = _loc9_;
                   _loc6_.textTF._x = - _loc9_ / 2;
                   _loc6_.background._width = _loc9_;
@@ -953,7 +1008,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                   _loc10_ += _loc9_ + _loc16_;
                   if(_loc15_ == 0)
                   {
-                     var _loc36_ = this.headerMC.filterButtonsMC.attachMovie("nav_divider","nav_divider_price",this.headerMC.filterButtonsMC.getNextHighestDepth(),{_x:_loc10_ - _loc16_ / 2,_y:_loc6_._y});
+                     _loc36_ = this.headerMC.filterButtonsMC.attachMovie("nav_divider","nav_divider_price",this.headerMC.filterButtonsMC.getNextHighestDepth(),{_x:_loc10_ - _loc16_ / 2,_y:_loc6_._y});
                   }
                   _loc15_ = _loc15_ + 1;
                }
@@ -987,7 +1042,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                _loc15_ = 0;
                while(_loc15_ < this.dataProviderUI.length)
                {
-                  var _loc7_ = this.dataProviderUI[_loc15_][3];
+                  _loc7_ = this.dataProviderUI[_loc15_][3];
                   if(this.dataProviderUI[_loc15_][12] && this.dataProviderUI[_loc15_][12] > 0)
                   {
                      _loc7_ = this.dataProviderUI[_loc15_][12];
@@ -1003,15 +1058,14 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             }
             if(newPage == false)
             {
-               var _loc60_ = this.mcScope.MapContainer.attachMovie("button_mask","button_mask",this.mcScope.MapContainer.getNextHighestDepth(),{_visible:false});
+               _loc60_ = this.mcScope.MapContainer.attachMovie("button_mask","button_mask",this.mcScope.MapContainer.getNextHighestDepth(),{_visible:false});
                this.browser.SET_BUTTON_MASK(this.mcScope.MapContainer.button_mask);
-               var _loc56_ = this.mcScope.MapContainer.attachMovie("property_hitArea","property_hitArea",this.mcScope.MapContainer.getNextHighestDepth(),{_visible:false});
+               _loc56_ = this.mcScope.MapContainer.attachMovie("property_hitArea","property_hitArea",this.mcScope.MapContainer.getNextHighestDepth(),{_visible:false});
                this.mcScope.MapContainer.map.initialiseMap(this);
                this.propertyButtonContainer = this.mcScope.buttonBase.attachMovie("buttonContainerMC","propertyButtonContainer",this.mcScope.getNextHighestDepth());
-               var _loc43_ = 213;
-               var _loc17_ = 179;
-               var _loc2_ = undefined;
-               var _loc48_ = this.propertyButtonContainer.attachMovie("shadowMC","shadowMC",this.propertyButtonContainer.getNextHighestDepth(),{_x:_loc43_ - 10,_y:_loc17_ - 5,_width:296,_visible:false});
+               _loc43_ = 213;
+               _loc17_ = 179;
+               _loc48_ = this.propertyButtonContainer.attachMovie("shadowMC","shadowMC",this.propertyButtonContainer.getNextHighestDepth(),{_x:_loc43_ - 10,_y:_loc17_ - 5,_width:296,_visible:false});
                if(this.mcScope.MapContainer.map.pinReferenceMC != undefined)
                {
                   pinReferenceMC.removeMovieClip();
@@ -1046,10 +1100,10 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                   {
                      this.propertyArray[_loc15_].LOCATION = 6;
                   }
-                  var _loc18_ = "property_" + _loc15_;
+                  _loc18_ = "property_" + _loc15_;
                   _loc2_ = this.propertyButtonContainer.attachMovie("button_propertyList",_loc18_,this.propertyButtonContainer.getNextHighestDepth(),{_x:_loc43_,_y:_loc17_});
                   _loc2_.highlight._visible = false;
-                  var _loc19_ = "propertyMC" + _loc15_;
+                  _loc19_ = "propertyMC" + _loc15_;
                   this.propertyMC = _loc2_.attachMovie("propertyTextureMC",_loc19_,_loc2_.getNextHighestDepth(),{_x:10,_y:9});
                   if(this.propertyArray[_loc15_].SALE && this.propertyArray[_loc15_].SALE_PRICE != this.propertyArray[_loc15_].PRICE)
                   {
@@ -1059,7 +1113,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                      {
                         _loc2_.saleBanner.label.text = _loc2_.saleBanner.label.text + ": " + this.formatAmount(this.propertyArray[_loc15_].SALE_PRICE);
                      }
-                     var _loc52_ = _loc2_.saleBanner.label._width;
+                     _loc52_ = _loc2_.saleBanner.label._width;
                      _loc2_.saleBanner.right._x = _loc2_.saleBanner.label._x + _loc52_;
                      _loc2_.saleBanner.centre._width = _loc2_.saleBanner.right._x - _loc2_.saleBanner.centre._x;
                      _loc2_.saleBanner.swapDepths(_loc2_.getNextHighestDepth());
@@ -1208,7 +1262,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             this.mcScope.propertyCost.htmlText = this.formatAmount(this.propertyArray[this.pinNumber].PRICE);
             this.mcScope.descTF.autoSize = "left";
             this.mcScope.descTF.htmlText = this.propertyArray[this.pinNumber].DESCRIPTION;
-            var _loc45_ = this.mcScope.descTF._y + this.mcScope.descTF.textHeight + 10;
+            _loc45_ = this.mcScope.descTF._y + this.mcScope.descTF.textHeight + 10;
             if(_loc45_ > this.mcScope.PURCHASE._y)
             {
                this.mcScope.PURCHASE._y = _loc45_;
@@ -1267,7 +1321,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             _loc15_ = 1;
             while(_loc15_ <= com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM.NUM_INTERIOR_OPTIONS)
             {
-               var _loc4_ = this.mcScope["PURCHASE_" + _loc15_];
+               _loc4_ = this.mcScope["PURCHASE_" + _loc15_];
                this.dataTextScope[_loc15_] = _loc4_.btnTxt;
                _loc3_(_loc4_.btnTxt,"DYN_PURCHASEPROP",0,false);
                _loc4_.btnTxt.textAutoSize = "shrink";
@@ -1283,9 +1337,9 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             this.dataTextScope[10] = this.mcScope.GETDIRECTIONS.btnTxt;
             _loc3_(this.mcScope.GETDIRECTIONS.btnTxt,"DYN_PROP_GETDIR",0,false);
             this.mcScope.GETDIRECTIONS.btnTxt.textAutoSize = "shrink";
-            var _loc22_ = 1;
-            var _loc21_ = this.mcScope.OPTION_0._y;
-            var _loc44_ = this.mcScope.OPTION_1._y - this.mcScope.OPTION_0._y;
+            _loc22_ = 1;
+            _loc21_ = this.mcScope.OPTION_0._y;
+            _loc44_ = this.mcScope.OPTION_1._y - this.mcScope.OPTION_0._y;
             if(this.propertyArray[this.pinNumber].INTERIORS === true)
             {
                this.propertyArray[this.pinNumber].INTERIORS = 255;
@@ -1301,7 +1355,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                {
                   this.mcScope["OPTION_" + _loc15_]._y = _loc21_;
                   _loc21_ += _loc44_;
-                  var _loc12_ = this.mcScope["OPTION_" + _loc15_].btnTxt;
+                  _loc12_ = this.mcScope["OPTION_" + _loc15_].btnTxt;
                   this.dataTextScope[_loc15_ + 11] = _loc12_;
                   _loc12_.autoSize = "left";
                   if(this.useTints)
@@ -1333,7 +1387,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
                _loc15_ = 0;
                while(_loc15_ < com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM.NUM_INTERIOR_TINTS)
                {
-                  var _loc8_ = this.mcScope.tintButtons["TINT_" + _loc15_];
+                  _loc8_ = this.mcScope.tintButtons["TINT_" + _loc15_];
                   _loc8_.onColour = 16777215;
                   _loc8_.offColour = 16777215;
                   _loc8_.swatch.gotoAndStop(_loc15_ + 1);
@@ -1389,8 +1443,7 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             {
                if(this.displayConfig.isAsian == 1)
                {
-                  var _loc51_ = this.mcScope.propertyCost._width;
-                  var _loc0_ = null;
+                  _loc51_ = this.mcScope.propertyCost._width;
                   this.mcScope.propertyCost._yscale = _loc0_ = 75;
                   this.mcScope.propertyCost._xscale = _loc0_;
                   this.mcScope.propertyCost._width = _loc51_ / 0.75;
@@ -1573,13 +1626,15 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
             this.mcScope.signMC.signTF.autoSize = "center";
             this.mcScope.signMC.signTF._y = 118 - this.mcScope.signMC.signTF.textHeight / 2;
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
+         default:
+            return;
       }
    }
    function updateOptions(selectedIndex, selectedTint)
    {
       var _loc3_ = this.CONTENT.PROPERTY_D_INTERIORS;
-      var _loc5_ = undefined;
-      var _loc2_ = undefined;
+      var _loc5_;
+      var _loc2_;
       _loc5_ = 0;
       while(_loc5_ < com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM.NUM_INTERIOR_OPTIONS)
       {
@@ -1633,9 +1688,11 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
    }
    function TXD_HAS_LOADED(textureDict, success, uniqueID)
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
       if(success == true)
       {
-         var _loc2_ = undefined;
          if(uniqueID == "propertyMC")
          {
             _loc2_ = this.mcScope[uniqueID];
@@ -1662,8 +1719,8 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
          }
          else
          {
-            var _loc4_ = uniqueID.split("propertyMC").join("");
-            var _loc5_ = this.propertyButtonContainer["property_" + _loc4_];
+            _loc4_ = uniqueID.split("propertyMC").join("");
+            _loc5_ = this.propertyButtonContainer["property_" + _loc4_];
             _loc2_ = _loc5_[uniqueID];
             if(_loc2_ != undefined)
             {
@@ -1682,11 +1739,14 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8REALESTATE_COM extends com.rockstar
    function formatAmount(value)
    {
       var _loc2_ = "$";
+      var _loc3_;
+      var _loc5_;
+      var _loc1_;
       if(typeof value != "string")
       {
-         var _loc3_ = value.toString().length;
-         var _loc5_ = ",";
-         var _loc1_ = 0;
+         _loc3_ = value.toString().length;
+         _loc5_ = ",";
+         _loc1_ = 0;
          while(_loc1_ < _loc3_)
          {
             if((_loc3_ - _loc1_) % 3 == 0 && _loc1_ != 0)

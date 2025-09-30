@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.trustAndSafety.navigation.Button extends com.rockstargames.gtav.levelDesign.trustAndSafety.navigation.Target
 {
-   var view;
-   var _ul;
-   var _bl;
-   var _ur;
-   var _br;
-   var _ut;
-   var _bt;
-   var _ub;
    var _bb;
+   var _bl;
+   var _br;
+   var _bt;
    var _cx;
    var _cy;
+   var _ub;
+   var _ul;
+   var _ur;
+   var _ut;
+   var view;
    function Button(id, view)
    {
       super();

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation
 {
-   var elements;
    var activeElement;
+   var elements;
    var navigationChangeListener;
    static var DOWN = 187;
    static var UP = 188;
@@ -40,9 +40,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation
    {
       var _loc2_ = 0;
       var _loc4_ = this.elements.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.elements[_loc2_];
+         _loc3_ = this.elements[_loc2_];
          if(_loc3_.id == id)
          {
             if(this.activeElement)
@@ -73,9 +74,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation
    {
       var _loc2_ = 0;
       var _loc4_ = this.elements.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.elements[_loc2_];
+         _loc3_ = this.elements[_loc2_];
          if(_loc3_.id == id)
          {
             return _loc3_;
@@ -94,12 +96,12 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation
    }
    function navigate(direction)
    {
-      var _loc11_ = undefined;
-      var _loc13_ = undefined;
-      var _loc12_ = undefined;
-      var _loc10_ = undefined;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc11_;
+      var _loc13_;
+      var _loc12_;
+      var _loc10_;
+      var _loc3_;
+      var _loc4_;
       if(direction == com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation.LEFT || direction == com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation.RIGHT)
       {
          _loc11_ = "deltaX";
@@ -120,9 +122,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation
       var _loc14_ = !(direction == com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation.LEFT || direction == com.rockstargames.gtav.levelDesign.iaaHeistBoard.Navigation.UP) ? 1 : -1;
       var _loc5_ = 0;
       var _loc8_ = this.elements.length;
+      var _loc2_;
       while(_loc5_ < _loc8_)
       {
-         var _loc2_ = this.elements[_loc5_];
+         _loc2_ = this.elements[_loc5_];
          if(!(_loc2_ == this.activeElement || !_loc2_.enabled))
          {
             _loc4_ = Math.abs(_loc2_[_loc13_](_loc10_));

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_IMG_PROJ_INFO extends com.rockstargames.gtav.ng.Replay.ReplayBaseItem
 {
-   var myHeight;
-   var bgMC;
-   var hudColourBlack;
-   var bgMCLower;
    var APP_DATA;
+   var bgMC;
+   var bgMCLower;
+   var hudColourBlack;
    var labelMC;
+   var myHeight;
    function COL_TYPE_IMG_PROJ_INFO()
    {
       super();

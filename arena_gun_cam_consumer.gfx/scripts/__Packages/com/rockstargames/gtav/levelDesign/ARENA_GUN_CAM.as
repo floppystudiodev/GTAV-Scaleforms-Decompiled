@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.ARENA_GUN_CAM extends com.rockstargames.gtav.levelDesign.TURRET_CAM
 {
-   var wpnSelect;
    var CONTENT;
+   var fovMC;
    var wpnMG;
    var wpnMissile;
    var wpnMissilePilot;
-   var fovMC;
+   var wpnSelect;
    function ARENA_GUN_CAM()
    {
       super();

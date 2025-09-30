@@ -2,6 +2,7 @@ class com.rockstargames.gtav.levelDesign.HACKING_MESSAGE extends com.rockstargam
 {
    var CONTENT;
    var TIMELINE;
+   var isWideScreen;
    function HACKING_MESSAGE()
    {
       super();
@@ -40,12 +41,13 @@ class com.rockstargames.gtav.levelDesign.HACKING_MESSAGE extends com.rockstargam
          _loc2_.lester.head.laugh = null;
          _loc2_.lester._visible = false;
       }
+      var _loc3_;
       if(!isNaN(red) && !isNaN(green) && !isNaN(blue))
       {
          red = Math.max(0,Math.min(255,red));
          green = Math.max(0,Math.min(255,green));
          blue = Math.max(0,Math.min(255,blue));
-         var _loc3_ = new flash.geom.ColorTransform();
+         _loc3_ = new flash.geom.ColorTransform();
          _loc3_.rgb = red << 16 | green << 8 | blue;
          _loc2_.labels.transform.colorTransform = _loc3_;
          _loc2_.locks.transform.colorTransform = _loc3_;

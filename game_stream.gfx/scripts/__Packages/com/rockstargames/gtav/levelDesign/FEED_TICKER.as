@@ -1,7 +1,9 @@
 class com.rockstargames.gtav.levelDesign.FEED_TICKER extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
-   var iconLayerMC;
    var CONTENT;
+   var iconLayerMC;
+   var important;
+   var parseForFonts;
    static var ICON_FLASH_DURATION = 1;
    function FEED_TICKER()
    {
@@ -10,6 +12,7 @@ class com.rockstargames.gtav.levelDesign.FEED_TICKER extends com.rockstargames.g
    function SET_FEED_COMPONENT(sBody, bIsImportant, bHasTokens, numIconFlashes)
    {
       this.important = bIsImportant;
+      var _loc2_;
       if(bHasTokens)
       {
          if(this.iconLayerMC)
@@ -17,7 +20,7 @@ class com.rockstargames.gtav.levelDesign.FEED_TICKER extends com.rockstargames.g
             this.iconLayerMC.removeMovieClip();
          }
          this.iconLayerMC = this.CONTENT.createEmptyMovieClip("iconLayerMC",1000);
-         var _loc2_ = new com.rockstargames.ui.utils.Text();
+         _loc2_ = new com.rockstargames.ui.utils.Text();
          _loc2_.setTextWithIcons(sBody,this.iconLayerMC,this.CONTENT.bodyTF,0,12,1,false);
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this,com.rockstargames.gtav.levelDesign.FEED_TICKER.ICON_FLASH_DURATION / 2,{onComplete:this.toggleIconVisibility,onCompleteScope:this,onCompleteArgs:[numIconFlashes]});
       }

@@ -1,10 +1,12 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_AREA_VEHICLE_STREET_NAME extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var _enumID;
+   var CONTENT;
+   var FADE_DURATION;
+   var ON_SCREEN_DURATION;
+   var TIMELINE;
    var _HUD;
+   var _enumID;
    var forceShow = false;
    function HUD_AREA_VEHICLE_STREET_NAME()
    {

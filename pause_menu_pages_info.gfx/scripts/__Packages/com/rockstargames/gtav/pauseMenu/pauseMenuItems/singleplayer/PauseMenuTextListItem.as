@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var _highlighted;
    var bgMC;
    var itemTextLeft;
-   var _highlighted;
    function PauseMenuTextListItem()
    {
       super();

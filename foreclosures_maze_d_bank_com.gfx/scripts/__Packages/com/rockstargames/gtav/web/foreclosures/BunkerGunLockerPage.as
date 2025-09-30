@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.BunkerGunLockerPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_BUNKER";
    function BunkerGunLockerPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -70,6 +70,8 @@ class com.rockstargames.gtav.web.foreclosures.BunkerGunLockerPage extends com.ro
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.web.foreclosures.Slideshow
 {
-   var imageManager;
-   var view;
-   var txds;
-   var imageIDs;
-   var index;
-   var labels;
    var bgImageIDs;
    var bgTXDs;
-   var widths;
+   var defaultWidth;
+   var imageIDs;
+   var imageManager;
+   var index;
+   var labels;
    var stopIndex;
    var stopped;
-   var defaultWidth;
+   var txds;
+   var view;
+   var widths;
    static var CROSSFADE_TIME = 0.5;
    static var PAUSE_TIME = 2;
    function Slideshow(imageManager, view)

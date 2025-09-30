@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_MAP extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column0;
    var addColumn;
+   var column0;
    var column1;
    var column2;
-   var setupColumns;
-   var setupColScroll;
    var columnList;
+   var setupColScroll;
+   var setupColumns;
    var showColumns;
    var dx = 0;
    var dy = 430;
@@ -36,12 +36,16 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_MAP extends com.roc
       var _loc4_ = _loc2_.model.getCurrentView().viewContainer;
       _screenWidthPixels = 1280;
       _screenHeightPixels = 720;
+      var _loc7_;
+      var _loc11_;
+      var _loc6_;
+      var _loc9_;
       if(this.inFullscreenMode)
       {
-         var _loc7_ = Math.round(_safeTopPercent * _screenHeightPixels);
-         var _loc11_ = Math.round(_safeBottomPercent * _screenHeightPixels);
-         var _loc6_ = Math.round(_safeLeftPercent * _screenWidthPixels);
-         var _loc9_ = Math.round(_safeRightPercent * _screenWidthPixels);
+         _loc7_ = Math.round(_safeTopPercent * _screenHeightPixels);
+         _loc11_ = Math.round(_safeBottomPercent * _screenHeightPixels);
+         _loc6_ = Math.round(_safeLeftPercent * _screenWidthPixels);
+         _loc9_ = Math.round(_safeRightPercent * _screenWidthPixels);
          _loc3_.details._x = _loc2_.details._x = _loc6_;
          _loc3_.details._y = _loc2_.details._y = _loc11_;
          _loc5_._x = _loc4_._x = _loc9_;

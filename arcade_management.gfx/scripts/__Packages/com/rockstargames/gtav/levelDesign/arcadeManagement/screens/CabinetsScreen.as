@@ -1,14 +1,15 @@
 class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.CabinetsScreen extends com.rockstargames.gtav.levelDesign.arcadeManagement.screens.Screen
 {
-   var cabinetViews;
-   var numCabinets;
-   var app;
-   var view;
-   var scroller;
-   var persistentContent;
    var _buttons;
+   var app;
+   var cabinetViews;
    var cursor;
+   var delegate;
+   var numCabinets;
+   var persistentContent;
    var scrollContent;
+   var scroller;
+   var view;
    static var NUM_CABINET_COLS = 3;
    static var CABINET_COL_WIDTH = 291;
    static var CABINET_ROW_HEIGHT = 530;
@@ -94,12 +95,14 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.CabinetsScreen
    {
       var _loc3_ = 0;
       var _loc5_ = this.app.cabinets.length;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < _loc5_)
       {
-         var _loc2_ = this.app.cabinets[_loc3_];
+         _loc2_ = this.app.cabinets[_loc3_];
          if(forceRender || _loc2_.isDirty)
          {
-            var _loc4_ = this.getCabinetView(_loc2_.id);
+            _loc4_ = this.getCabinetView(_loc2_.id);
             _loc2_.render(_loc4_,this.app.imageManager,forceRender,this.app.displayConfig.isAsian);
          }
          _loc3_ = _loc3_ + 1;
@@ -138,9 +141,10 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.CabinetsScreen
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          _loc3_.updateBounds();
          _loc2_ = _loc2_ + 1;
       }

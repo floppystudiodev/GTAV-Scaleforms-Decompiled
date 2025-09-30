@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.AUDIO_CLIP extends MovieClip
 {
-   var myBtnType;
+   var BACKGROUND;
+   var ICON;
    var MOUSE_EVT;
    var TEXT_FADE_OUT;
    var TEXT_LABEL;
-   var BACKGROUND;
-   var ICON;
+   var myBtnType;
    var _isMouseEnabled = true;
    var SF_BASE_CLASS_MOUSE = 10;
    function AUDIO_CLIP()

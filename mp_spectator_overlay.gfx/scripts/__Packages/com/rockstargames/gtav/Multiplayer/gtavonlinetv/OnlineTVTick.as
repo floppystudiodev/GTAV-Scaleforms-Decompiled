@@ -13,10 +13,11 @@ class com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTick extends Movie
    }
    function setLabel(enum, str)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc5_ = 0;
       var _loc7_ = 14;
       var _loc4_ = 0;
+      var _loc6_;
       while(_loc4_ < arguments.length)
       {
          switch(arguments[_loc4_])
@@ -41,7 +42,7 @@ class com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTick extends Movie
          }
          _loc3_.textTF.autoSize = true;
          _loc3_.textTF.htmlText = arguments[_loc4_ + 1];
-         var _loc6_ = _loc3_.textTF._width + _loc7_ * 2;
+         _loc6_ = _loc3_.textTF._width + _loc7_ * 2;
          _loc3_.bgMC._width = _loc6_;
          _loc3_.textTF._x = _loc7_;
          _loc5_ = _loc3_._x + _loc6_;

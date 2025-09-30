@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.StatsPanel
 {
-   var view;
    var showing;
+   var view;
    static var PANEL_FADE_DELAY = 0.15;
    static var PANEL_FADE_DURATION = 0.25;
    static var ELEMENT_FADE_IN_DURATION = 0.5;

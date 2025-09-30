@@ -217,7 +217,7 @@ class com.rockstargames.ui.components.GUIView
    }
    function focusHighlightStyle(targetIndex)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
@@ -232,10 +232,11 @@ class com.rockstargames.ui.components.GUIView
    {
       this.itemList[0].highlighted = true;
       var _loc3_ = this.direction(targetIndex);
+      var _loc2_;
       if(_loc3_ != 0)
       {
          _loc3_ != 1 ? this.dataList.splice(0,0,this.dataList.pop()) : this.dataList.splice(this.maxitems,0,this.dataList.shift());
-         var _loc2_ = 0;
+         _loc2_ = 0;
          _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {
@@ -247,15 +248,17 @@ class com.rockstargames.ui.components.GUIView
    function reorderHighlightStyle(targetIndex)
    {
       var _loc5_ = this.direction(targetIndex);
+      var _loc3_;
+      var _loc2_;
       if(_loc5_ != 0)
       {
-         var _loc3_ = targetIndex;
+         _loc3_ = targetIndex;
          if(_loc3_ > this.dataList.length - this.itemList.length)
          {
             targetIndex = this.dataList.length - this.itemList.length;
          }
          _loc3_ -= targetIndex;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {
@@ -269,11 +272,14 @@ class com.rockstargames.ui.components.GUIView
    function scrollHighlightStyle(targetIndex)
    {
       var _loc5_ = this.direction(targetIndex);
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(_loc5_ != 0)
       {
-         var _loc3_ = targetIndex;
-         var _loc2_ = 0;
-         var _loc4_ = 0;
+         _loc3_ = targetIndex;
+         _loc2_ = 0;
+         _loc4_ = 0;
          if(_loc5_ > 0)
          {
             if(_loc3_ >= this.topEdge + this.visibleItems)
@@ -323,12 +329,17 @@ class com.rockstargames.ui.components.GUIView
    function scrollAllHighlightStyle(targetIndex)
    {
       var _loc8_ = this.direction(targetIndex);
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
+      var _loc7_;
+      var _loc2_;
       if(_loc8_ != 0)
       {
-         var _loc6_ = com.rockstargames.ui.components.GUIMenuItem(this.itemList[targetIndex]);
-         var _loc4_ = 0;
-         var _loc5_ = _loc6_._y + _loc6_._height - this.rowSpacing;
-         var _loc7_ = _loc6_._y;
+         _loc6_ = com.rockstargames.ui.components.GUIMenuItem(this.itemList[targetIndex]);
+         _loc4_ = 0;
+         _loc5_ = _loc6_._y + _loc6_._height - this.rowSpacing;
+         _loc7_ = _loc6_._y;
          if(_loc8_ > 0)
          {
             if(_loc5_ > this.topEdge + this.viewMaskHeight)
@@ -356,7 +367,7 @@ class com.rockstargames.ui.components.GUIView
             this.topEdge = this.viewContainer._height - this.viewMaskHeight;
             this.viewContainer._y = _loc4_;
          }
-         var _loc2_ = 0;
+         _loc2_ = 0;
          _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {

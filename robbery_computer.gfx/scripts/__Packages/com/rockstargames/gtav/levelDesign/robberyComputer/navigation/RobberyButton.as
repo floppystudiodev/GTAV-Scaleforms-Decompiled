@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.navigation.RobberyButton extends com.rockstargames.gtav.levelDesign.robberyComputer.navigation.Target
 {
+   var init;
    var view;
    function RobberyButton(id, view)
    {

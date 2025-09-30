@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.cellphone.prologue.HomeMenuKeys_Prologue extends com.rockstargames.ui.core.PhoneUIComponent
 {
-   var container;
-   var offsetY;
-   var scrollBar;
-   var dataProviderUI;
-   var needsScrollbars;
-   var currentID;
-   var menuTitleBar;
    var TextBlackHex;
+   var container;
+   var currentID;
    var currentKey;
+   var dataProviderUI;
+   var menuTitleBar;
+   var needsScrollbars;
+   var offsetY;
    var previousKey;
+   var scrollBar;
    var menuTitle = "";
    var numberOfRows = 0;
    function HomeMenuKeys_Prologue()
@@ -24,8 +24,8 @@ class com.rockstargames.gtav.cellphone.prologue.HomeMenuKeys_Prologue extends co
       this.scrollBar.scrollBarContainer.scrubber._height = _loc5_ / this.dataProviderUI.length;
       this.scrollBar.scrollBarContainer.scrubber._y = this.scrollBar.scrollBarContainer.gutter._y + this.scrollBar.scrollBarContainer.scrubber._height * Math.floor(this.dataProviderUI.length / 2);
       this.setScrollBarVisibility(true);
-      var _loc6_ = undefined;
-      var _loc3_ = undefined;
+      var _loc6_;
+      var _loc3_;
       var _loc7_ = 0;
       this.needsScrollbars = false;
       if(this.currentID == undefined)

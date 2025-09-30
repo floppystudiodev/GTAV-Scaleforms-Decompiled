@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel
 {
-   var view;
-   var allButtons;
    var activeButtons;
-   var noButtons;
-   var organisations;
-   var listOffset;
-   var arrowMinY;
+   var allButtons;
    var arrowMaxY;
-   var onColour;
+   var arrowMinY;
+   var listOffset;
+   var noButtons;
    var offColour;
+   var onColour;
+   var organisations;
    var showing;
+   var view;
    static var MAX_ORGANISATIONS = 5;
    static var MAX_MEMBERS = 6;
    static var PANEL_FADE_DELAY = 0.3;
@@ -43,9 +43,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel
       com.rockstargames.gtav.levelDesign.HANGAR_CARGO.setLocalisedText(this.view.memberPanel.title.label,"HC_MEMBERS");
       this.view.memberPanel._alpha = 0;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel.MAX_ORGANISATIONS)
       {
-         var _loc3_ = this.view["listItem" + _loc2_];
+         _loc3_ = this.view["listItem" + _loc2_];
          _loc3_.transform.colorTransform = this.offColour;
          _loc3_._alpha = 0;
          this.allButtons.push(new com.rockstargames.gtav.levelDesign.hangarCargo.Button(com.rockstargames.gtav.levelDesign.HANGAR_CARGO["ORGANISATION_" + _loc2_],_loc3_));
@@ -68,11 +69,14 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel
       this.activeButtons.length = 0;
       this.listOffset = offset;
       var _loc2_ = 0;
+      var _loc6_;
+      var _loc3_;
+      var _loc5_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel.MAX_ORGANISATIONS)
       {
-         var _loc6_ = this.view["listItem" + _loc2_].label;
-         var _loc3_ = (_loc2_ + offset) % _loc4_;
-         var _loc5_ = _loc2_ >= _loc4_ ? "" : this.organisations[_loc3_].name;
+         _loc6_ = this.view["listItem" + _loc2_].label;
+         _loc3_ = (_loc2_ + offset) % _loc4_;
+         _loc5_ = _loc2_ >= _loc4_ ? "" : this.organisations[_loc3_].name;
          com.rockstargames.gtav.levelDesign.HANGAR_CARGO.truncate(_loc6_,_loc5_,"left");
          if(_loc2_ < _loc4_)
          {
@@ -122,11 +126,14 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel
    {
       var _loc6_ = members.length;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel.MAX_MEMBERS)
       {
-         var _loc4_ = this.view.memberPanel["listItem" + _loc2_].label;
-         var _loc5_ = (_loc2_ + offset) % _loc6_;
-         var _loc3_ = _loc2_ >= _loc6_ ? "" : members[_loc5_];
+         _loc4_ = this.view.memberPanel["listItem" + _loc2_].label;
+         _loc5_ = (_loc2_ + offset) % _loc6_;
+         _loc3_ = _loc2_ >= _loc6_ ? "" : members[_loc5_];
          com.rockstargames.gtav.levelDesign.HANGAR_CARGO.truncate(_loc4_,_loc3_,"left");
          _loc2_ = _loc2_ + 1;
       }
@@ -179,9 +186,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OrganisationsPanel
    {
       var _loc3_ = 0;
       var _loc4_ = this.allButtons.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.allButtons[_loc3_];
+         _loc2_ = this.allButtons[_loc3_];
          if(_loc2_.id == activeButtonID)
          {
             _loc2_.view.transform.colorTransform = this.onColour;

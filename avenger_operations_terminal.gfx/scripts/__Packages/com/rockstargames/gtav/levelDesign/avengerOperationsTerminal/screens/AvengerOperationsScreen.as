@@ -1,9 +1,11 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.AvengerOperationsScreen extends com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Screen
 {
-   var view;
    var buttons;
    var cursor;
    var operationDataObject;
+   var setUpLabel;
+   var setUpText;
+   var view;
    var numButtons = 6;
    function AvengerOperationsScreen(app, viewContainer, cursor, dataObject)
    {

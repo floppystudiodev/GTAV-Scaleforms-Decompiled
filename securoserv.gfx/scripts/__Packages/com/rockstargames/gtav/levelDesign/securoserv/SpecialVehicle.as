@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.securoserv.SpecialVehicle
 {
-   var _id;
-   var _vehicleName;
-   var _description;
-   var _txd;
-   var _lockNum;
-   var _enabled;
    var _cashBonus;
+   var _description;
+   var _enabled;
+   var _id;
+   var _lockNum;
    var _rpBonus;
+   var _txd;
+   var _vehicleName;
    function SpecialVehicle(_id, _vehicleName, _description, _txd, _lockNum, _enabled, _cashBonus, _rpBonus)
    {
       this._id = _id;

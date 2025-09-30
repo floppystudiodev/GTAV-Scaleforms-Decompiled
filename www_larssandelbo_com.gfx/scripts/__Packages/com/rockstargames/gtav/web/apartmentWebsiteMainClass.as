@@ -1,30 +1,30 @@
 class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstargames.ui.core.BaseWebsite
 {
-   var browser;
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var vehicleData;
-   var TXDarray;
-   var carNameStr;
-   var carManuStr;
-   var displayArray;
-   var categoryData;
-   var carColoursArray;
    var CONTENT;
-   var outOfStockStr;
-   var freeStr;
-   var buyNowStr;
-   var carNumber;
-   var colourNumber;
-   var mcScope;
-   var prevColourNumber;
-   var dataTextScope;
-   var prevCarNumber;
-   var intervalId;
-   var dataProviderUI;
+   var PAGE_NAMES;
    var TIMELINE;
+   var TXDarray;
+   var browser;
+   var buyNowStr;
+   var carColoursArray;
+   var carManuStr;
+   var carNameStr;
+   var carNumber;
+   var categoryData;
+   var colourNumber;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayArray;
+   var freeStr;
+   var intervalId;
+   var mcScope;
+   var outOfStockStr;
+   var prevCarNumber;
+   var prevColourNumber;
+   var vehicleData;
    var currentRank = 0;
    var isMP = false;
    function apartmentWebsiteMainClass()
@@ -332,12 +332,14 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    }
    function getCarStrings()
    {
+      var _loc3_;
+      var _loc2_;
       if(this.carManuStr.length == 0)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.displayArray.length)
          {
-            var _loc2_ = this.displayArray[_loc3_];
+            _loc2_ = this.displayArray[_loc3_];
             if(this.vehicleData[_loc2_].BRAND != "")
             {
                this.set_localised_text(-1,this.CONTENT.localisationTF,this.vehicleData[_loc2_].BRAND);
@@ -370,6 +372,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    {
       var _loc3_ = new Array();
       _loc3_ = AnchorLink.split("_");
+      var _loc2_;
       if(_loc3_[0] == "car")
       {
          this.carNumber = parseInt(_loc3_[1]);
@@ -387,7 +390,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
       else if(_loc3_[0] == "thumbnail")
       {
          this.carNumber = parseInt(_loc3_[1]);
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ < 10)
          {
             this.mcScope["PURCHASECAR_" + _loc2_]._y = -50;
@@ -412,7 +415,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
          this.mcScope["PURCHASECAR_" + _loc2_]._y = -50;
          _loc2_ = _loc2_ + 1;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       if(col == 0)
       {
          _loc3_ = this.mcScope.PURCHASECAR_1;
@@ -441,9 +444,10 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    }
    function colouriseButtons()
    {
+      var _loc2_;
       if(this.vehicleData[this.carNumber].NOCOLOUR != true)
       {
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ < 9)
          {
             com.rockstargames.ui.utils.Colour.Colourise(this.mcScope["colour_" + _loc2_],this.carColoursArray[_loc2_][0],this.carColoursArray[_loc2_][1],this.carColoursArray[_loc2_][2],100);
@@ -460,15 +464,18 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
       var _loc6_ = 407;
       var _loc10_ = 1;
       var _loc5_ = 0;
+      var _loc3_;
+      var _loc2_;
+      var _loc8_;
       while(_loc5_ < this.displayArray.length)
       {
-         var _loc3_ = this.displayArray[_loc5_];
+         _loc3_ = this.displayArray[_loc5_];
          if(this.vehicleData[_loc3_].PRICE != -1)
          {
-            var _loc2_ = "thumbnail_" + _loc3_;
+            _loc2_ = "thumbnail_" + _loc3_;
             if(this.mcScope[_loc2_] == undefined)
             {
-               var _loc8_ = this.mcScope.attachMovie("button_car_box",_loc2_,this.mcScope.getNextHighestDepth(),{_x:_loc4_,_y:_loc6_,_alpha:0,_width:72.2,_height:52.6});
+               _loc8_ = this.mcScope.attachMovie("button_car_box",_loc2_,this.mcScope.getNextHighestDepth(),{_x:_loc4_,_y:_loc6_,_alpha:0,_width:72.2,_height:52.6});
             }
             else
             {
@@ -525,9 +532,10 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    function labelAsDlcPack(targetMc, selection)
    {
       targetMc.carImages.dlcPackTF.text = "";
+      var _loc2_;
       if(this.vehicleData[selection].IS_DLC == true)
       {
-         var _loc2_ = targetMc.carImages.dlcPackTF;
+         _loc2_ = targetMc.carImages.dlcPackTF;
          _loc2_._visible = false;
          _loc2_.autoSize = "center";
          _loc2_.multiline = true;
@@ -557,15 +565,33 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
       {
          this.prevCarNumber = undefined;
       }
+      var _loc10_;
       if(this.TXDarray.length > 0)
       {
-         var _loc10_ = 0;
+         _loc10_ = 0;
          while(_loc10_ < this.TXDarray.length)
          {
             com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",this.TXDarray[_loc10_],"loadedCheck");
             _loc10_ = _loc10_ + 1;
          }
       }
+      var _loc23_;
+      var _loc7_;
+      var _loc17_;
+      var _loc8_;
+      var _loc5_;
+      var _loc18_;
+      var _loc12_;
+      var _loc13_;
+      var _loc3_;
+      var _loc9_;
+      var _loc4_;
+      var _loc6_;
+      var _loc11_;
+      var _loc22_;
+      var _loc2_;
+      var _loc21_;
+      var _loc20_;
       switch(_loc19_)
       {
          case "PAGE1":
@@ -574,27 +600,27 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
             this.set_localised_text(0,this.CONTENT.localisationTF,"SSS_TOOLBAR");
             this.browser.SET_TITLEBAR_TEXT(this.CONTENT.localisationTF.text,14474460);
             this.dataTextScope = new Array();
-            var _loc23_ = 627;
-            var _loc7_ = 218;
-            var _loc17_ = 804;
-            var _loc8_ = _loc7_;
-            var _loc5_ = 370;
-            var _loc18_ = 293;
-            var _loc12_ = 213;
-            var _loc13_ = 1;
+            _loc23_ = 627;
+            _loc7_ = 218;
+            _loc17_ = 804;
+            _loc8_ = _loc7_;
+            _loc5_ = 370;
+            _loc18_ = 293;
+            _loc12_ = 213;
+            _loc13_ = 1;
             if(newPage == false)
             {
                _loc10_ = 0;
                while(_loc10_ < this.displayArray.length)
                {
-                  var _loc3_ = this.displayArray[_loc10_];
+                  _loc3_ = this.displayArray[_loc10_];
                   if(this.vehicleData[_loc3_].PRICE != -1 && this.vehicleData[_loc3_].IS_DLC == true)
                   {
                      if(this.mcScope.CAT_EXCLUSIVE != undefined)
                      {
                         this.mcScope.CAT_EXCLUSIVE.removeMovieClip();
                      }
-                     var _loc9_ = this.mcScope.attachMovie("categoryHeader","CAT_EXCLUSIVE",this.mcScope.getNextHighestDepth(),{_x:_loc7_,_y:_loc5_});
+                     _loc9_ = this.mcScope.attachMovie("categoryHeader","CAT_EXCLUSIVE",this.mcScope.getNextHighestDepth(),{_x:_loc7_,_y:_loc5_});
                      this.set_localised_text(-1,_loc9_.categoryTF,"SSS_EXCLUSIVE");
                      _loc5_ += _loc9_._height;
                      break;
@@ -605,12 +631,12 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
                while(_loc10_ < this.displayArray.length)
                {
                   _loc3_ = this.displayArray[_loc10_];
-                  var _loc4_ = 0;
+                  _loc4_ = 0;
                   while(_loc4_ < this.categoryData.length)
                   {
                      if(this.categoryData[_loc4_][0] == _loc3_)
                      {
-                        var _loc6_ = "CAT_" + this.categoryData[_loc4_][1];
+                        _loc6_ = "CAT_" + this.categoryData[_loc4_][1];
                         if(this.mcScope[_loc6_] != undefined)
                         {
                            this.mcScope[_loc6_].removeMovieClip();
@@ -620,7 +646,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
                            _loc5_ += _loc12_;
                         }
                         _loc9_ = this.mcScope.attachMovie("categoryHeader",_loc6_,this.mcScope.getNextHighestDepth(),{_x:_loc7_,_y:_loc5_});
-                        var _loc11_ = "SSS_" + this.categoryData[_loc4_][1];
+                        _loc11_ = "SSS_" + this.categoryData[_loc4_][1];
                         this.set_localised_text(-1,_loc9_.categoryTF,_loc11_);
                         _loc8_ = _loc7_;
                         _loc5_ += _loc9_._height;
@@ -630,12 +656,12 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
                   }
                   if(this.vehicleData[_loc3_].PRICE != -1)
                   {
-                     var _loc22_ = "car_" + _loc3_;
+                     _loc22_ = "car_" + _loc3_;
                      if(this.mcScope[_loc22_] != undefined)
                      {
                         this.mcScope[_loc22_].removeMovieClip();
                      }
-                     var _loc2_ = this.mcScope.attachMovie("button_car_box",_loc22_,this.mcScope.getNextHighestDepth(),{_x:_loc8_,_y:_loc5_,_alpha:0});
+                     _loc2_ = this.mcScope.attachMovie("button_car_box",_loc22_,this.mcScope.getNextHighestDepth(),{_x:_loc8_,_y:_loc5_,_alpha:0});
                      this.displayVehicleImage(_loc22_,_loc3_,_loc2_);
                      _loc2_.btnTxt.text = this.carManuStr[_loc3_] + " " + this.carNameStr[_loc3_];
                      this.dataTextScope[_loc13_] = _loc2_.btnTxt;
@@ -658,7 +684,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
                      {
                         if(this.vehicleData[_loc3_].RANK > this.currentRank)
                         {
-                           var _loc21_ = _loc2_.attachMovie("MP_RANK","MPrank",_loc2_.getNextHighestDepth());
+                           _loc21_ = _loc2_.attachMovie("MP_RANK","MPrank",_loc2_.getNextHighestDepth());
                            _loc21_.rankTF.text = this.vehicleData[_loc3_].RANK;
                            this.dataTextScope[_loc13_] = undefined;
                         }
@@ -692,7 +718,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
             clearInterval(this.intervalId);
             this.mcScope = this.CONTENT.CARDETAILS;
             this.prevColourNumber = undefined;
-            var _loc20_ = pageName.split("CARDETAILS");
+            _loc20_ = pageName.split("CARDETAILS");
             this.carNumber = parseInt(_loc20_[1]);
             if(newPage == true)
             {
@@ -873,6 +899,8 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
             }
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
             this.CONTENT.BOUNDING_BOX._height = 627;
+         default:
+            return;
       }
    }
    function displayPurchasedText()
@@ -891,6 +919,12 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    function set_price_text(TF, price)
    {
       TF.text = "";
+      var _loc5_;
+      var _loc3_;
+      var _loc7_;
+      var _loc6_;
+      var _loc2_;
+      var _loc8_;
       if(price > 0 || isNaN(price))
       {
          TF._visible = false;
@@ -903,14 +937,13 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
          }
          else
          {
-            var _loc5_ = undefined;
-            var _loc3_ = price.toString();
-            var _loc7_ = _loc3_.length;
+            _loc3_ = price.toString();
+            _loc7_ = _loc3_.length;
             if(_loc7_ > 3)
             {
-               var _loc6_ = "";
-               var _loc2_ = _loc3_.slice(0,-3);
-               var _loc8_ = "," + _loc3_.slice(-3);
+               _loc6_ = "";
+               _loc2_ = _loc3_.slice(0,-3);
+               _loc8_ = "," + _loc3_.slice(-3);
                if(_loc2_.length > 3)
                {
                   _loc6_ = _loc2_.slice(0,-3) + ",";
@@ -974,7 +1007,7 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
       _loc2_ = mcName.split("_");
       var _loc4_ = parseInt(_loc2_[1]);
       var _loc5_ = this.vehicleData[_loc4_].VEHICLE;
-      var _loc3_ = undefined;
+      var _loc3_;
       if(_loc2_[0] == "mainImage")
       {
          _loc3_ = this.mcScope;
@@ -1002,10 +1035,11 @@ class com.rockstargames.gtav.web.apartmentWebsiteMainClass extends com.rockstarg
    }
    function CLEANUP()
    {
+      var _loc2_;
       if(this.TXDarray.length > 0)
       {
          this.TIMELINE.CONTENT.gotoAndStop(1);
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.TXDarray.length)
          {
             if(this.TXDarray[_loc2_] != undefined)

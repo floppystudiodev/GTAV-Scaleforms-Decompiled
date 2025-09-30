@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.MissionResultStep extends com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
+   var baseY;
+   var height;
+   var initialised;
+   var message;
    var missionTitle;
    var passFail;
-   var message;
-   var initialised;
-   var view;
    var sequence;
-   var height;
-   var baseY;
    var started;
+   var view;
    function MissionResultStep(sequence, missionTitle, passFail, message)
    {
       super(sequence,com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.SCREEN_HEIGHT,"MissionResultStep");
@@ -56,10 +56,12 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.MissionResultStep ext
       var _loc7_ = [100,68,104,72,107,75,98,66,192,193,194,195,196,197,200,201,202,203,204,206,207,209,210,211,212,213,214,217,218,219,220,223,224,225,226,227,228,229,232,233,234,235,236,237,238,239,241,242,243,244,245,246,249,250,251,252,272,273,321,323,324,346,347,1061,360,361,366,367,377,378,379,380,1049,1081];
       var _loc10_ = false;
       var _loc6_ = 0;
+      var _loc8_;
+      var _loc4_;
       while(_loc6_ < this.passFail.length)
       {
-         var _loc8_ = this.passFail.charCodeAt(_loc6_);
-         var _loc4_ = 0;
+         _loc8_ = this.passFail.charCodeAt(_loc6_);
+         _loc4_ = 0;
          while(_loc4_ < _loc7_.length)
          {
             if(_loc8_ == _loc7_[_loc4_])
@@ -82,12 +84,15 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.MissionResultStep ext
          _loc6_ = _loc6_ + 1;
       }
       var _loc5_ = [103,121,113,71,89,81,1062,1065,1094,1097];
+      var _loc17_;
+      var _loc9_;
+      var _loc11_;
       if(this.message != "")
       {
          _loc3_.messageText._alpha = this.sequence.DEFAULT_TEXT_ALPHA;
          _loc3_.messageText.autoSize = "left";
          _loc3_.messageText.text = this.message;
-         var _loc17_ = com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.SCREEN_WIDTH - 2 * _loc3_.messageText._x;
+         _loc17_ = com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.SCREEN_WIDTH - 2 * _loc3_.messageText._x;
          if(_loc3_.messageText._width > _loc17_)
          {
             _loc15_ = 100 * _loc17_ / _loc3_.messageText._width;
@@ -95,8 +100,8 @@ class com.rockstargames.gtav.Multiplayer.celebration.steps.MissionResultStep ext
             _loc3_.messageText._yscale = _loc15_;
          }
          _loc3_.passFailText.text = "";
-         var _loc9_ = false;
-         var _loc11_ = 0;
+         _loc9_ = false;
+         _loc11_ = 0;
          _loc6_ = 0;
          while(_loc6_ < this.passFail.length)
          {

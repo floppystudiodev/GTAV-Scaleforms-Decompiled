@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var TextWithBlips;
-   var model;
-   var ccbgMC;
-   var titleMC;
-   var dependentColumnMC;
-   var charTitleMC;
-   var canMouseNav;
    var SEND_COLUMN_PARAMS;
-   var linkedMC;
+   var TextWithBlips;
    var blipLayer;
-   var scrollBase;
+   var canMouseNav;
+   var ccbgMC;
+   var charTitleMC;
    var columnIsFocused;
+   var dbgID;
+   var dependentColumnMC;
+   var linkedMC;
+   var model;
+   var scrollBase;
+   var titleMC;
    var hasCustomScrollPos = false;
    var hasTitle = false;
    var rowOffset = 27;
@@ -73,9 +73,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
    {
       var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeView(this.model.getCurrentView());
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.itemList.length)
       {
-         var _loc3_ = _loc4_.itemList[_loc2_];
+         _loc3_ = _loc4_.itemList[_loc2_];
          if(_loc2_ == _loc4_.itemList.length - 1)
          {
             _loc3_.dummybgMC._height = 25;
@@ -86,14 +87,19 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
    }
    function setCharCreatorItem()
    {
+      var _loc4_;
+      var _loc5_;
+      var _loc2_;
+      var _loc3_;
+      var _loc6_;
       if(this.isCharSelect)
       {
-         var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeView(this.model.getCurrentView());
-         var _loc5_ = _loc4_.itemList.length - 1;
-         var _loc2_ = 0;
+         _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeView(this.model.getCurrentView());
+         _loc5_ = _loc4_.itemList.length - 1;
+         _loc2_ = 0;
          while(_loc2_ < _loc4_.itemList.length)
          {
-            var _loc3_ = _loc4_.itemList[_loc2_];
+            _loc3_ = _loc4_.itemList[_loc2_];
             _loc3_.isCharCreatorItem = true;
             _loc3_._y = _loc2_ * this.charSelectHeight;
             if(_loc3_.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeItem.COLOUR_ALL_ITEM)
@@ -106,7 +112,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
             }
             _loc2_ = _loc2_ + 1;
          }
-         var _loc6_ = _loc4_.itemList[_loc5_];
+         _loc6_ = _loc4_.itemList[_loc5_];
          this.ccbgMC._visible = true;
          this.ccbgMC._y = this.charTitleMC._height;
          this.ccbgMC._height = _loc6_._y + this.charSelectHeight;
@@ -127,21 +133,25 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
             this.model.getCurrentView().visibleItems = 8;
             com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeView(this.model.getCurrentView()).maxVisibleItems = 8;
             this.hasCustomScrollPos = true;
+            break;
          case 1:
-            this.isCharSelect = true;
-            var _loc2_ = this.CONTENT.tMC;
-            if(_loc2_)
-            {
-               _loc2_._visible = false;
-            }
-            this.charTitleMC = this.CONTENT.attachMovie("charSelectTitle","csMC",this.CONTENT.getNextHighestDepth());
-            this.charTitleMC._visible = false;
-            com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
-            com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.bgsubMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK);
-            com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.headingMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
-            com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.subMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
-            this.model.getCurrentView().viewContainer._y = this.charTitleMC._height;
+            break;
+         default:
+            return;
       }
+      this.isCharSelect = true;
+      var _loc2_ = this.CONTENT.tMC;
+      if(_loc2_)
+      {
+         _loc2_._visible = false;
+      }
+      this.charTitleMC = this.CONTENT.attachMovie("charSelectTitle","csMC",this.CONTENT.getNextHighestDepth());
+      this.charTitleMC._visible = false;
+      com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
+      com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.bgsubMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK);
+      com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.headingMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
+      com.rockstargames.ui.utils.Colour.ApplyHudColour(this.charTitleMC.subMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
+      this.model.getCurrentView().viewContainer._y = this.charTitleMC._height;
    }
    function SET_HIGHLIGHT(i)
    {
@@ -237,18 +247,20 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
    function INIT_SCROLL_BAR(visible, columns, scrollType, arrowPosition, override, xColOffset)
    {
       super.INIT_SCROLL_BAR(visible,columns,scrollType,arrowPosition,override,xColOffset);
+      var _loc3_;
       if(this.scrollBase != undefined && this.hasCustomScrollPos == true)
       {
-         var _loc3_ = this.getHelpY();
+         _loc3_ = this.getHelpY();
          this.scrollBase._y = _loc3_;
       }
    }
    function SET_SCROLL_BAR(currentPosition, maxPosition, maxVisible, caption)
    {
       super.SET_SCROLL_BAR(currentPosition,maxPosition,maxVisible,caption);
+      var _loc3_;
       if(this.scrollBase != undefined && this.hasCustomScrollPos == true)
       {
-         var _loc3_ = this.getHelpY();
+         _loc3_ = this.getHelpY();
          this.scrollBase._y = _loc3_;
       }
    }
@@ -275,10 +287,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
    }
    function setLinkedMCPos(yOrigin)
    {
+      var _loc3_;
+      var _loc2_;
       if(this.linkedMC)
       {
-         var _loc3_ = yOrigin;
-         var _loc2_ = 0;
+         _loc3_ = yOrigin;
+         _loc2_ = 0;
          if(this.CONTENT.helpMC._visible)
          {
             _loc3_ = this.CONTENT.helpMC._y + this.CONTENT.helpMC.bgMC._height;

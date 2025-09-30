@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuMissionHelpView extends com.rockstargames.ui.components.GUIView
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
    var direction;
-   var viewMaskHeight;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
+   var viewMaskHeight;
    var SCROLL_DURATION = 0.2;
    var SCROLL_DY = 27;
    var titleHeight = 25;
@@ -58,11 +58,13 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuMissionHelpView e
       }
       var _loc4_ = this.direction(targetIndex);
       var _loc3_ = this.viewContainer._height;
+      var _loc2_;
+      var _loc5_;
       if(_loc4_ != 0 && _loc3_ > this.viewMaskHeight)
       {
-         var _loc2_ = this.viewContainer._y;
+         _loc2_ = this.viewContainer._y;
          _loc2_ -= this.SCROLL_DY * _loc4_;
-         var _loc5_ = - _loc3_ + this.viewMaskHeight;
+         _loc5_ = - _loc3_ + this.viewMaskHeight;
          if(_loc2_ < _loc5_)
          {
             _loc2_ = _loc5_;

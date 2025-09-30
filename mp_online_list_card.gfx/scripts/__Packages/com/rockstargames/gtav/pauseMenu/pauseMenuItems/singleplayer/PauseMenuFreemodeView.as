@@ -1,12 +1,20 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
+   var dataList;
+   var highlightedItem;
    var isFadingOut;
-   var itemTextA;
-   var itemBGA;
-   var itemTabA;
    var isTweening;
-   var viewContainer;
+   var itemBGA;
+   var itemList;
    var itemMC;
+   var itemTabA;
+   var itemTextA;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
+   var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var TEXT_FADE_DURATION = 0.75;
    var TEXT_FADE_MIN_A = 60;
    var TEXT_FADE_MAX_A = 100;
@@ -86,8 +94,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
          targetIndex -= this.topEdge;
          _loc7_ = false;
       }
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
       {

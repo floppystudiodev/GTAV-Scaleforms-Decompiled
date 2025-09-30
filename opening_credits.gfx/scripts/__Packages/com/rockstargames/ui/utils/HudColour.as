@@ -1,9 +1,9 @@
-class com.rockstargames.ui.utils.HudColour extends com.rockstargames.ui.utils.HudColourLite
+class com.rockstargames.ui.utils.HudColour
 {
-   var r;
-   var g;
-   var b;
    var a;
+   var b;
+   var g;
+   var r;
    static var HUD_COLOUR_PURE_WHITE = 0;
    static var HUD_COLOUR_WHITE = 1;
    static var HUD_COLOUR_BLACK = 2;
@@ -167,103 +167,11 @@ class com.rockstargames.ui.utils.HudColour extends com.rockstargames.ui.utils.Hu
    static var HUD_COLOUR_PM_WEAPONS_LOCKED = 160;
    static var HUD_COLOUR_END_SCREEN_BG = 161;
    static var HUD_COLOUR_CHOP = 162;
-   static var HUD_COLOUR_PAUSEMAP_TINT_HALF = 163;
-   static var HUD_COLOUR_NORTH_BLUE_OFFICIAL = 164;
-   static var HUD_COLOUR_SCRIPT_VARIABLE_2 = 165;
-   static var HUD_COLOUR_H = 166;
-   static var HUD_COLOUR_HDARK = 167;
-   static var HUD_COLOUR_T = 168;
-   static var HUD_COLOUR_TDARK = 169;
-   static var HUD_COLOUR_HSHARD = 170;
-   static var HUD_COLOUR_CONTROLLER_MICHAEL = 171;
-   static var HUD_COLOUR_CONTROLLER_FRANKLIN = 172;
-   static var HUD_COLOUR_CONTROLLER_TREVOR = 173;
-   static var HUD_COLOUR_CONTROLLER_CHOP = 174;
-   static var HUD_COLOUR_VIDEO_EDITOR_VIDEO = 175;
-   static var HUD_COLOUR_VIDEO_EDITOR_AUDIO = 176;
-   static var HUD_COLOUR_VIDEO_EDITOR_TEXT = 177;
-   static var HUD_COLOUR_HB_BLUE = 178;
-   static var HUD_COLOUR_HB_YELLOW = 179;
-   static var HUD_COLOUR_VIDEO_EDITOR_SCORE = 180;
-   static var HUD_COLOUR_VIDEO_EDITOR_AUDIO_FADEOUT = 181;
-   static var HUD_COLOUR_VIDEO_EDITOR_TEXT_FADEOUT = 182;
-   static var HUD_COLOUR_VIDEO_EDITOR_SCORE_FADEOUT = 183;
-   static var HUD_COLOUR_HEIST_BACKGROUND = 184;
-   static var HUD_COLOUR_VIDEO_EDITOR_AMBIENT = 185;
-   static var HUD_COLOUR_VIDEO_EDITOR_AMBIENT_FADEOUT = 186;
-   static var HUD_COLOUR_GB = 187;
-   static var HUD_COLOUR_G = 188;
-   static var HUD_COLOUR_B = 189;
-   static var HUD_COLOUR_LOW_FLOW = 190;
-   static var HUD_COLOUR_LOW_FLOW_DARK = 191;
-   static var HUD_COLOUR_G1 = 192;
-   static var HUD_COLOUR_G2 = 193;
-   static var HUD_COLOUR_G3 = 194;
-   static var HUD_COLOUR_G4 = 195;
-   static var HUD_COLOUR_G5 = 196;
-   static var HUD_COLOUR_G6 = 197;
-   static var HUD_COLOUR_G7 = 198;
-   static var HUD_COLOUR_G8 = 199;
-   static var HUD_COLOUR_G9 = 200;
-   static var HUD_COLOUR_G10 = 201;
-   static var HUD_COLOUR_G11 = 202;
-   static var HUD_COLOUR_G12 = 203;
-   static var HUD_COLOUR_G13 = 204;
-   static var HUD_COLOUR_G14 = 205;
-   static var HUD_COLOUR_G15 = 206;
-   static var HUD_COLOUR_ADVERSARY = 207;
-   static var HUD_COLOUR_DEGEN_RED = 208;
-   static var HUD_COLOUR_DEGEN_YELLOW = 209;
-   static var HUD_COLOUR_DEGEN_GREEN = 210;
-   static var HUD_COLOUR_DEGEN_CYAN = 211;
-   static var HUD_COLOUR_DEGEN_BLUE = 212;
-   static var HUD_COLOUR_DEGEN_MAGENTA = 213;
-   static var HUD_COLOUR_STUNT_1 = 214;
-   static var HUD_COLOUR_STUNT_2 = 215;
-   static var HUD_COLOUR_SPECIAL_RACE_SERIES = 216;
-   static var HUD_COLOUR_SPECIAL_RACE_SERIES_DARK = 217;
-   static var HUD_COLOUR_CS = 218;
-   static var HUD_COLOUR_CS_DARK = 219;
-   static var HUD_COLOUR_TECH_GREEN = 220;
-   static var HUD_COLOUR_TECH_GREEN_DARK = 221;
-   static var HUD_COLOUR_TECH_RED = 222;
-   static var HUD_COLOUR_TECH_GREEN_VERY_DARK = 223;
-   static var HUD_COLOUR_PLACEHOLDER_01 = 224;
-   static var HUD_COLOUR_PLACEHOLDER_02 = 225;
-   static var HUD_COLOUR_PLACEHOLDER_03 = 226;
-   static var HUD_COLOUR_PLACEHOLDER_04 = 227;
-   static var HUD_COLOUR_PLACEHOLDER_05 = 228;
-   static var HUD_COLOUR_PLACEHOLDER_06 = 229;
-   static var HUD_COLOUR_PLACEHOLDER_07 = 230;
-   static var HUD_COLOUR_PLACEHOLDER_08 = 231;
-   static var HUD_COLOUR_PLACEHOLDER_09 = 232;
-   static var HUD_COLOUR_PLACEHOLDER_10 = 233;
-   static var HUD_COLOUR_JUNK_ENERGY = 234;
    function HudColour()
    {
-      super();
       this.r = 255;
       this.g = 255;
       this.b = 255;
       this.a = 100;
-   }
-   static function getGlobeColID(rankNum)
-   {
-      if(rankNum <= 99)
-      {
-         return com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE;
-      }
-      if(rankNum >= 100 && rankNum <= 499)
-      {
-         return com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BRONZE;
-      }
-      if(rankNum >= 500 && rankNum <= 749)
-      {
-         return com.rockstargames.ui.utils.HudColour.HUD_COLOUR_SILVER;
-      }
-      if(rankNum >= 750)
-      {
-         return com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GOLD;
-      }
    }
 }

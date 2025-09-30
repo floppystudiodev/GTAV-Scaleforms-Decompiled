@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_STATS_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var scrollableContent;
-   var model;
-   var titleHeight;
+   var SEND_COLUMN_PARAMS;
    var bgMC;
    var canMouseNav;
-   var SEND_COLUMN_PARAMS;
+   var dbgID;
+   var model;
+   var scrollableContent;
+   var titleHeight;
    var _highlightTitle = false;
    function PAUSE_MENU_STATS_LIST()
    {
@@ -85,6 +85,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_STATS_LIST ext
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADDOWN:
             this.model.nextItem();
+         default:
+            return;
       }
    }
 }

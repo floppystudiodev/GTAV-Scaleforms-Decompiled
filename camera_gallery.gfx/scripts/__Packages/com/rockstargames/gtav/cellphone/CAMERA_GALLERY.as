@@ -62,13 +62,14 @@ class com.rockstargames.gtav.cellphone.CAMERA_GALLERY extends com.rockstargames.
    }
    function SET_REMAINING_PHOTOS(photosTaken, photosLeft)
    {
+      var _loc2_;
       if(photosLeft == 1)
       {
          this.SHOW_REMAINING_PHOTOS(false);
       }
       else
       {
-         var _loc2_ = photosTaken + "/" + photosLeft;
+         _loc2_ = photosTaken + "/" + photosLeft;
          this.CONTENT.savedPhotos.photosLeftTF.text = _loc2_;
          this.CONTENT.savedPhotos.photosLeftTFOutline.text = _loc2_;
          this.SHOW_REMAINING_PHOTOS(true);

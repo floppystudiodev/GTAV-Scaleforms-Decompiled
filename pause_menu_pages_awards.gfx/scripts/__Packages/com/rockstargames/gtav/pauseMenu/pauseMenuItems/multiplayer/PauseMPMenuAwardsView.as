@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwardsView extends com.rockstargames.ui.components.GUIView
 {
-   var container;
-   var viewLinkageList;
-   var viewContainer;
-   var rowSpacing;
-   var columnSpacing;
-   var itemList;
-   var itemY;
    var _index;
+   var columnSpacing;
+   var container;
    var dataList;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
    var batchW = 0;
    var batchH = 106;
    var batchCols = 3;
@@ -97,6 +97,15 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwa
       var _loc2_ = this.container.descMC.colWhiteMC;
       var _loc6_ = this.container.descMC.colMC;
       com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc2_.hexMC.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
+      var _loc7_;
+      var _loc13_;
+      var _loc9_;
+      var _loc10_;
+      var _loc8_;
+      var _loc11_;
+      var _loc12_;
+      var _loc5_;
+      var _loc4_;
       if(num == -1)
       {
          _loc2_.titleTF.text = "";
@@ -111,18 +120,18 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwa
       {
          com.rockstargames.ui.utils.UIText.setSizedText(_loc2_.titleTF,_loc3_[0]);
          com.rockstargames.ui.utils.UIText.setDescText(_loc2_.descTF,_loc3_[1],false);
-         var _loc7_ = _loc3_[4];
-         var _loc13_ = _loc3_[5];
-         var _loc9_ = _loc3_[6];
-         var _loc10_ = _loc3_[7];
-         var _loc8_ = _loc3_[8];
-         var _loc11_ = _loc3_[9];
-         var _loc12_ = _loc3_[10];
+         _loc7_ = _loc3_[4];
+         _loc13_ = _loc3_[5];
+         _loc9_ = _loc3_[6];
+         _loc10_ = _loc3_[7];
+         _loc8_ = _loc3_[8];
+         _loc11_ = _loc3_[9];
+         _loc12_ = _loc3_[10];
          if(_loc9_ != undefined)
          {
             com.rockstargames.ui.utils.UIText.setSizedText(_loc2_.progressTF,_loc9_,true);
          }
-         var _loc5_ = _loc13_ < 100;
+         _loc5_ = _loc13_ < 100;
          _loc2_.awardsTF._visible = _loc5_;
          _loc2_.hexMC._visible = _loc5_;
          _loc2_.awardsValTF._visible = _loc5_;
@@ -151,7 +160,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwa
             com.rockstargames.ui.utils.UIText.setSizedText(_loc6_.colValTF,_loc12_,false,true);
             _loc6_._x = 572 - _loc6_._width;
          }
-         var _loc4_ = new com.rockstargames.ui.utils.HudColour();
+         _loc4_ = new com.rockstargames.ui.utils.HudColour();
          if(_loc7_ != undefined)
          {
             com.rockstargames.ui.utils.Colour.setHudColour(_loc7_,_loc4_);
@@ -171,7 +180,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwa
    }
    function focusHighlightStyle(targetIndex)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)

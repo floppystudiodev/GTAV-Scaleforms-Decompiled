@@ -2,10 +2,11 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREE_MODE exte
 {
    var CONTENT;
    var TextWithBlips;
-   var model;
-   var titleMC;
    var blipLayer;
+   var dbgID;
+   var model;
    var scrollBase;
+   var titleMC;
    var hasTitle = false;
    var rowOffset = 27;
    function PAUSE_MENU_FREE_MODE()

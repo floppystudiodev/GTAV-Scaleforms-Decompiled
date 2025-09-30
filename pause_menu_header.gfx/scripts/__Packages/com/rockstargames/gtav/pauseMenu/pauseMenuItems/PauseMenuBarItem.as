@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem extends MovieClip
 {
+   var PMB;
+   var _highlight;
+   var _menuenum;
+   var _mywidth;
+   var _rollover;
+   var hasMouse;
+   var lockMC;
+   var mc;
    var tabMC;
    var textMC;
-   var mc;
-   var hasMouse;
-   var PMB;
-   var _menuenum;
-   var _rollover;
-   var lockMC;
-   var _highlight;
    var warnAlertText;
-   var _mywidth;
    var isLocked = false;
    var mIndex = 0;
    function PauseMenuBarItem()
@@ -176,9 +176,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBarItem extends M
    function realignText(widthSpan)
    {
       var _loc2_ = this.width;
+      var _loc4_;
       if(widthSpan)
       {
-         var _loc4_ = 2;
+         _loc4_ = 2;
          _loc2_ = this._mywidth * widthSpan + _loc4_ * (widthSpan - 1);
          this.tabMC._width = this.mc.bgMC._width = this.mc.rolloverMC._width = _loc2_;
       }

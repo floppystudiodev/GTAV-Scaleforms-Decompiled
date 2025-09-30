@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.WWW_TOESHOESUSA_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mcScope;
    var CONTENT;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
    var HOME_PAGE = "PAGE1";
    var ANATOMY_PAGE = "ANATOMY";
    var NUM_SLIDESHOW_IMAGES = 5;
@@ -90,6 +90,8 @@ class com.rockstargames.gtav.web.WWW_TOESHOESUSA_COM extends com.rockstargames.u
             break;
          case "anatomy":
             this.mcScope.descriptionMC.gotoAndStop(_loc2_);
+         default:
+            return;
       }
    }
 }

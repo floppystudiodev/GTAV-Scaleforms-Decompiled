@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.StaffScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var staff1Button;
-   var view;
-   var staff2Button;
-   var staff3Button;
    var _buttons;
    var app;
+   var staff1Button;
+   var staff2Button;
+   var staff3Button;
+   var view;
    static var TXD = "UA_GENERIC";
    static var IMAGES = ["UA_STAFF_MFG","UA_STAFF_RSCH","UA_STAFF_BOTH"];
    function StaffScreen(app, viewContainer, cursor)
@@ -35,6 +35,8 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.StaffScreen extends
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.ACCEPT:
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.LEFT_MOUSE:
             this.handleAcceptInput(inputID);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
@@ -49,6 +51,8 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.StaffScreen extends
             break;
          case com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.STAFF_BOTH:
             com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.playSound("Click_Generic");
+         default:
+            return;
       }
    }
    function updateStaffButtonState(currState)

@@ -1,30 +1,30 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var nextOfficePageName;
-   var nextGaragePageName;
-   var nextAgencyPageName;
-   var officeDataSet;
-   var markers;
+   var agencyData;
+   var currentFilter;
+   var cursorDragX0;
+   var cursorDragY0;
    var garageMarkers;
+   var mapDragX0;
+   var mapDragY0;
+   var mapIsBeingDragged;
    var mapMoveX;
    var mapMoveY;
    var mapScaleStep;
-   var mapIsBeingDragged;
+   var markers;
+   var nextAgencyPageName;
+   var nextGaragePageName;
+   var nextOfficePageName;
+   var officeData;
+   var officeDataSet;
+   var progressPanel;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
    var scrollWheelValue;
    var view;
-   var currentFilter;
    var website;
-   var officeData;
-   var agencyData;
-   var progressPanel;
-   var mapDragX0;
-   var mapDragY0;
-   var cursorDragX0;
-   var cursorDragY0;
    static var MAP_SCALE_STEP = 0.1;
    static var MAP_SCALE_MIN = 0.2;
    static var MAP_SCALE_MAX = 1.25;
@@ -81,7 +81,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
    function arrangeFilterButtons(hasOffices, hasAgencies)
    {
       var _loc3_ = 10;
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.safeZoneRight - _loc3_;
       if(hasAgencies)
       {
@@ -117,11 +117,14 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
       this.agencyData = agencyData;
       var _loc5_ = 0;
       var _loc7_ = officeData.length;
+      var _loc4_;
+      var _loc6_;
+      var _loc8_;
       while(_loc5_ < _loc7_)
       {
-         var _loc4_ = officeData[_loc5_].id;
-         var _loc6_ = "officeMarker_" + _loc4_;
-         var _loc8_ = this.view.markers[_loc6_] || this.view.markers.marker0.duplicateMovieClip(_loc6_,_loc4_);
+         _loc4_ = officeData[_loc5_].id;
+         _loc6_ = "officeMarker_" + _loc4_;
+         _loc8_ = this.view.markers[_loc6_] || this.view.markers.marker0.duplicateMovieClip(_loc6_,_loc4_);
          if(_loc4_ != this.website.selectedOfficeID)
          {
             _loc8_._xscale = _loc8_._yscale = 1;
@@ -165,9 +168,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
       this.updateMarkers();
       this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
       this.officeDataSet = true;
+      var _loc13_;
       if(this.website.selectedOfficeID != -1)
       {
-         var _loc13_ = this.website.getOfficeByID(this.website.selectedOfficeID);
+         _loc13_ = this.website.getOfficeByID(this.website.selectedOfficeID);
          if(_loc13_)
          {
             if(_loc13_.hasGarage)
@@ -199,9 +203,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
             }
          }
       }
+      var _loc14_;
       if(this.website.selectedAgencyID != -1)
       {
-         var _loc14_ = this.website.getAgencyByID(this.website.selectedAgencyID);
+         _loc14_ = this.website.getAgencyByID(this.website.selectedAgencyID);
          if(_loc14_)
          {
             this.showAgencyDetails(true);
@@ -242,8 +247,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
    }
    function handleClick(type, id)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = parseInt(id);
+      var _loc5_;
+      var _loc6_;
       if(type == "officeMarker")
       {
          this.website.setSelectedAgency(-1);
@@ -253,7 +260,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
             this.website.setSelectedOffice(_loc2_);
             this.showOfficeDetails(false);
          }
-         var _loc5_ = this.website.getOfficeByID(_loc2_);
+         _loc5_ = this.website.getOfficeByID(_loc2_);
          if(_loc5_)
          {
             if(_loc5_.hasGarage)
@@ -286,7 +293,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
             this.website.setSelectedAgency(_loc2_);
             this.showAgencyDetails(false);
          }
-         var _loc6_ = this.website.getAgencyByID(_loc2_);
+         _loc6_ = this.website.getAgencyByID(_loc2_);
          if(_loc6_)
          {
             _loc3_ = this.markers[_loc2_];
@@ -391,9 +398,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
    }
    function handleRB()
    {
+      var _loc2_;
       if(this.website.garageSelected)
       {
-         var _loc2_ = this.website.getSelectedOffice();
+         _loc2_ = this.website.getSelectedOffice();
          if(_loc2_ && _loc2_.isOwned)
          {
             this.website.browser.GO_TO_WEBPAGE(this.nextGaragePageName);
@@ -584,17 +592,22 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
       var _loc4_ = this.view.map.transform.matrix.a;
       var _loc3_ = 0;
       var _loc8_ = this.officeData.length;
+      var _loc9_;
+      var _loc2_;
+      var _loc11_;
+      var _loc10_;
+      var _loc5_;
       while(_loc3_ < _loc8_)
       {
-         var _loc9_ = this.officeData[_loc3_].id;
-         var _loc2_ = this.markers[_loc9_];
+         _loc9_ = this.officeData[_loc3_].id;
+         _loc2_ = this.markers[_loc9_];
          if(_loc2_)
          {
-            var _loc11_ = _loc4_ * this.officeData[_loc3_].x + _loc7_;
-            var _loc10_ = _loc4_ * this.officeData[_loc3_].y + _loc6_;
+            _loc11_ = _loc4_ * this.officeData[_loc3_].x + _loc7_;
+            _loc10_ = _loc4_ * this.officeData[_loc3_].y + _loc6_;
             _loc2_._x = _loc11_;
             _loc2_._y = _loc10_;
-            var _loc5_ = this.currentFilter == "all" || this.currentFilter == "offices";
+            _loc5_ = this.currentFilter == "all" || this.currentFilter == "offices";
             if(this.isHiddenByProgressPanel(_loc2_) || this.isOffScreen(_loc2_))
             {
                _loc2_.disabled = true;
@@ -663,10 +676,12 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage extends com.roc
       var _loc5_ = this.website.selectedOfficeID;
       var _loc2_ = 0;
       var _loc6_ = this.officeData.length;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < _loc6_)
       {
-         var _loc4_ = this.officeData[_loc2_].id;
-         var _loc3_ = this.markers[_loc4_];
+         _loc4_ = this.officeData[_loc2_].id;
+         _loc3_ = this.markers[_loc4_];
          if(_loc3_)
          {
             if(!holdActiveOffice || _loc4_ != _loc5_)

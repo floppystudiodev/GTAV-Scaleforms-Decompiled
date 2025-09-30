@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.Overlay
 {
-   var view;
+   var _controls;
    var acceptID;
    var cancelID;
-   var _controls;
+   var view;
    function Overlay(view, acceptID, cancelID)
    {
       this.view = view;
@@ -18,10 +18,11 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.Overlay
       this.view.title.text = title;
       this.view.message.text = message;
       this._controls.length = 0;
-      var _loc4_ = undefined;
+      var _loc4_;
+      var _loc3_;
       if(acceptButtonLabel && acceptButtonLabel.length > 0)
       {
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this.acceptID,this.view.acceptButton);
+         _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this.acceptID,this.view.acceptButton);
          this.view.acceptButton.label.text = acceptButtonLabel;
          this._controls.push(_loc3_);
          this.view.acceptButton._visible = true;
@@ -32,9 +33,10 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.Overlay
          this.view.acceptButton.label.text = "";
          _loc4_ = this.view.cancelButton;
       }
+      var _loc5_;
       if(cancelButtonLabel && cancelButtonLabel.length > 0)
       {
-         var _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this.cancelID,this.view.cancelButton);
+         _loc5_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this.cancelID,this.view.cancelButton);
          this.view.cancelButton.label.text = cancelButtonLabel;
          this._controls.push(_loc5_);
          this.view.cancelButton._visible = true;

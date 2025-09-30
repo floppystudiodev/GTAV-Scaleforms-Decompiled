@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
+   var DispConf;
    var PAGES;
    var PAGES_CACHE;
    var TEXT_CHECK;
+   var TIMELINE;
    var pageHistory;
    var regTextFormat;
-   var DispConf;
    static var SCROLL_TYPE_UP = 0;
    static var SCROLL_TYPE_DOWN = 1;
    static var SCROLL_TYPE_END = 2;
@@ -213,6 +213,7 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
             MovieClip(this.TIMELINE.PAGES_POLICY.scrollArrowDown)._alpha = 0;
             return true;
          default:
+            return;
       }
    }
    function INIT_DOWNLOADED_POLICY()
@@ -349,6 +350,7 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
    function DISPLAY_ONLINE_POLICY()
    {
       this.SHOW_PAGE_BY_ID(this.INDEX_ONLINE_POLICY);
+      var _loc2_;
       if(!this.TEXT_CHECK[this.INDEX_ONLINE_POLICY])
       {
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_ONLINE_POLICY.SCOPTitle,"ONLINE_POLICIES_TITLE");
@@ -358,7 +360,7 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_ONLINE_POLICY.SCOPPolicy3.policyText,"ONLINE_POLICY_LINK_TOS",undefined,true);
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_ONLINE_POLICY.AcceptText,"ONLINE_POLICY_ACCEPT",undefined,true);
          this.TIMELINE.PAGES_ONLINE_POLICY.SCOPTitle.text = this.TIMELINE.PAGES_ONLINE_POLICY.SCOPTitle.text.toUpperCase();
-         var _loc2_ = this.regTextFormat;
+         _loc2_ = this.regTextFormat;
          if(this.DispConf.isAsian)
          {
             _loc2_.align = "left";
@@ -424,10 +426,12 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
    }
    function SHOW_PAGE_BY_ID(pageID)
    {
+      var _loc3_;
+      var _loc6_;
       if(this.pageHistory[this.pageHistory.length - 1] >= 0)
       {
-         var _loc3_ = this.pageHistory[this.pageHistory.length - 1];
-         var _loc6_ = this.PAGES[_loc3_];
+         _loc3_ = this.pageHistory[this.pageHistory.length - 1];
+         _loc6_ = this.PAGES[_loc3_];
          if(!_loc6_.store && this.PAGES_CACHE[_loc3_])
          {
             MovieClip(this.PAGES_CACHE[_loc3_]).removeMovieClip();
@@ -441,13 +445,14 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
       }
       this.pageHistory.push(pageID);
       var _loc4_ = this.PAGES[pageID];
+      var _loc5_;
       if(this.PAGES_CACHE[pageID])
       {
          MovieClip(this.PAGES_CACHE[pageID])._visible = true;
       }
       else
       {
-         var _loc5_ = this.TIMELINE.attachMovie(_loc4_.linkageId,_loc4_.pageName,this.TIMELINE.getNextHighestDepth());
+         _loc5_ = this.TIMELINE.attachMovie(_loc4_.linkageId,_loc4_.pageName,this.TIMELINE.getNextHighestDepth());
          this.PAGES_CACHE[pageID] = _loc5_;
          this.TEXT_CHECK[pageID] = false;
       }
@@ -458,6 +463,8 @@ class com.rockstargames.gtav.loadingScreens.ONLINE_POLICIES extends com.rockstar
             break;
          case this.INDEX_POLICY:
             this.INIT_TOS_BUTTONS();
+         default:
+            return;
       }
    }
    function INIT_BUTTONS()

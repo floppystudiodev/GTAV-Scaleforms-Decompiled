@@ -14,11 +14,12 @@ class com.rockstargames.gtav.web.buttons.ButtonManager
    {
       this.buttonMCList = [];
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < dataArray.length)
       {
          if(dataArray[_loc2_]._name == "btnTxt")
          {
-            var _loc3_ = dataArray[_loc2_]._parent;
+            _loc3_ = dataArray[_loc2_]._parent;
             this.buttonMCList.push(_loc3_);
             _loc3_.slot = _loc2_;
          }

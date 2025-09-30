@@ -1,8 +1,15 @@
 class com.rockstargames.gtav.levelDesign.TV_FRAME extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var frameMC;
    var CONTENT;
+   var FOUR_THREE_PADDING;
+   var frameMC;
+   var isHiDef;
+   var isWideScreen;
+   var safeBottom;
+   var safeLeft;
    var safeMC;
+   var safeRight;
+   var safeTop;
    function TV_FRAME()
    {
       super();

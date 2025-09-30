@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ReplayMission
 {
-   var isActive;
-   var texture;
-   var txd;
-   var index;
-   var title;
-   var description;
    var cost;
+   var description;
+   var index;
+   var isActive;
    var isUnavailable;
-   var view;
    var navigationElement;
+   var texture;
+   var title;
+   var txd;
+   var view;
    function ReplayMission()
    {
       this.isActive = false;
@@ -98,9 +98,9 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ReplayMission
          this.view.titleBlock.costBG._width = this.view.titleBlock.cost.textWidth + 5;
          this.setLocalisedText(this.view.titleBlock.costTitle,"IAA_S_COST");
       }
+      var _loc2_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
-         var _loc2_ = undefined;
          _loc2_ = this.view.titleBlock.costTitle.getTextFormat();
          _loc2_.size = 20;
          this.view.titleBlock.costTitle.setTextFormat(_loc2_);
@@ -126,9 +126,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ReplayMission
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

@@ -1,6 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.ReplayModel extends com.rockstargames.ui.components.GUIModel
 {
+   var addDataToView;
    var columnMovieClips;
+   var getCurrentSelection;
+   var setItem;
+   var viewIndex;
+   var viewList;
    function ReplayModel()
    {
       super();
@@ -27,10 +32,13 @@ class com.rockstargames.gtav.ng.Replay.ReplayModel extends com.rockstargames.ui.
    }
    function focusView(_viewIndex, clearOtherViews)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
+      var _loc6_;
       if(clearOtherViews)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.viewList.length)
          {
             _loc3_ = this.viewList[_loc2_];
@@ -43,8 +51,8 @@ class com.rockstargames.gtav.ng.Replay.ReplayModel extends com.rockstargames.ui.
       {
          _loc3_ = this.viewList[_viewIndex];
          _loc3_.highlighted = true;
-         var _loc5_ = this.getCurrentSelection(this.viewIndex);
-         var _loc6_ = _loc3_.itemList[_loc5_];
+         _loc5_ = this.getCurrentSelection(this.viewIndex);
+         _loc6_ = _loc3_.itemList[_loc5_];
          _loc6_.highlighted = true;
       }
    }

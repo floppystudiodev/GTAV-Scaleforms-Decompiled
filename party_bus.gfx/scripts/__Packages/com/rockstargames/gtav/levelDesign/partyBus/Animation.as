@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.partyBus.Animation
 {
-   var width;
-   var height;
    var beatStep;
+   var height;
    var view;
+   var width;
    static var FADE_TIME = 0.25;
    function Animation(container, width, height, viewLinkage)
    {

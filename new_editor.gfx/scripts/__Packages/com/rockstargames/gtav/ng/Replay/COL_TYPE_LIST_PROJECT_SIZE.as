@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_PROJECT_SIZE extends MovieClip
 {
-   var _textUtil;
+   var _blipLayer;
+   var _data;
    var _hudColourGreen;
    var _hudColourOrange;
    var _hudColourRed;
-   var bgMC;
-   var helpTop;
+   var _textUtil;
    var barBg;
    var barMc;
-   var _data;
+   var bgMC;
+   var helpTop;
    var titleTF;
-   var _blipLayer;
    static var ALPHA_BG = 30;
    static var ALPHA_BAR = 100;
    function COL_TYPE_LIST_PROJECT_SIZE()
@@ -57,7 +57,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_PROJECT_SIZE extends MovieC
       {
          value = 100;
       }
-      var _loc2_ = undefined;
+      var _loc2_;
       if(value < 51)
       {
          _loc2_ = this._hudColourGreen;

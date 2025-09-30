@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstargames.ui.components.GUIView
 {
-   var viewContainer;
    var paperMC;
+   var viewContainer;
    function HeistView()
    {
       super();
@@ -39,11 +39,12 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
       {
          case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay:
             this.dataList[i] = com.rockstargames.gtav.constants.HeistGameplayLUT.lookUp(_dataArray[0]);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewCrewMember:
          case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewTodo:
          default:
             this.dataList[i] = _dataArray;
+            return;
       }
    }
    function addDisplayItem(i, _dataArray)
@@ -54,11 +55,11 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
       var _loc5_ = this.rowSpacing * i;
       switch(this.viewID)
       {
-         case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay:
-            break;
          case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewTodo:
             _loc6_ = -8;
             _loc5_ = -36 + 18 * i;
+            break;
+         case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay:
       }
       _loc3_._x = _loc6_;
       _loc3_._y = _loc5_;
@@ -77,7 +78,7 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
    }
    function focusHighlightStyle(targetIndex)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       var _loc5_ = this.itemList.length - 1;
       var _loc4_ = _loc5_ - 1;
@@ -103,12 +104,14 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
    function set highlighted(_h)
    {
       this._highlighted = _h;
+      var _loc2_;
+      var _loc3_;
       if(this.viewID != com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {
-            var _loc3_ = false;
+            _loc3_ = false;
             if(_loc2_ == this.highlightedItem)
             {
                if(_h)
@@ -120,12 +123,13 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
             _loc2_ = _loc2_ + 1;
          }
       }
+      var _loc4_;
       if(this.viewID == com.rockstargames.gtav.levelDesign.heists.HeistModel.viewCrewMember)
       {
          _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {
-            var _loc4_ = this.itemList[_loc2_];
+            _loc4_ = this.itemList[_loc2_];
             if(_h)
             {
                com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc4_,0.1,{_x:this.columnSpacing * _loc2_,_y:this.rowSpacing * _loc2_,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_OUT});
@@ -145,13 +149,15 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
          forceCrewReset = false;
       }
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < this.itemList.length)
       {
-         var _loc2_ = this.itemList[_loc3_];
+         _loc2_ = this.itemList[_loc3_];
          switch(this.viewID)
          {
             case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay:
-               var _loc4_ = _loc2_.highlighted;
+               _loc4_ = _loc2_.highlighted;
                _loc2_.highlighted = _loc4_;
                break;
             case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewTodo:
@@ -165,12 +171,13 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
          }
          _loc3_ = _loc3_ + 1;
       }
+      var _loc5_;
       if(this.viewID == com.rockstargames.gtav.levelDesign.heists.HeistModel.viewCrewMember)
       {
          _loc3_ = 0;
          while(_loc3_ < this.itemList.length)
          {
-            var _loc5_ = this.itemList[_loc3_];
+            _loc5_ = this.itemList[_loc3_];
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc5_,0.1,{_x:0,_y:0,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_OUT});
             _loc3_ = _loc3_ + 1;
          }
@@ -178,12 +185,14 @@ class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstarga
    }
    function destroy()
    {
+      var _loc2_;
+      var _loc3_;
       if(this.viewID == com.rockstargames.gtav.levelDesign.heists.HeistModel.viewCrewMember || this.viewID == com.rockstargames.gtav.levelDesign.heists.HeistModel.viewGameplay)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {
-            var _loc3_ = this.itemList[_loc2_];
+            _loc3_ = this.itemList[_loc2_];
             com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
             _loc2_ = _loc2_ + 1;
          }

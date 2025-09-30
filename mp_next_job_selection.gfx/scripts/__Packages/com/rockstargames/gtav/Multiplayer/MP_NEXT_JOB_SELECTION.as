@@ -20,10 +20,12 @@ class com.rockstargames.gtav.Multiplayer.MP_NEXT_JOB_SELECTION extends com.rocks
          this.CONTENT._y = 54;
       }
       var _loc3_ = 0;
+      var _loc5_;
+      var _loc4_;
       while(_loc3_ < this.NUM_DETAILS_ITEMS)
       {
-         var _loc5_ = _loc3_ * 27 + this.CONTENT.bgMC.descBGMC._y;
-         var _loc4_ = this.CONTENT.attachMovie("missiondetailsItem","detailsItemMC" + _loc3_,this.CONTENT.getNextHighestDepth(),{_x:580,_y:_loc5_});
+         _loc5_ = _loc3_ * 27 + this.CONTENT.bgMC.descBGMC._y;
+         _loc4_ = this.CONTENT.attachMovie("missiondetailsItem","detailsItemMC" + _loc3_,this.CONTENT.getNextHighestDepth(),{_x:580,_y:_loc5_});
          _loc4_._visible = false;
          _loc3_ = _loc3_ + 1;
       }
@@ -61,11 +63,14 @@ class com.rockstargames.gtav.Multiplayer.MP_NEXT_JOB_SELECTION extends com.rocks
    function SET_GRID_ITEM(i, sTitle, sTXD, sTXN, textureLoadType, verifiedType, eIcon, bCheck, rpMult, cashMult, bDisabled, iconCol, apMult, cmMult)
    {
       var _loc2_ = this.CONTENT["itemMC" + i];
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
       if(!_loc2_)
       {
-         var _loc4_ = this.CONTENT["itemMC" + (i - 3)];
-         var _loc6_ = i % 3 * this.SELECTION_ITEM_WIDTH;
-         var _loc5_ = (!_loc4_ ? this.HEADER_HEIGHT : _loc4_._y + _loc4_.getHeight()) + this.GRID_ITEM_PADDING;
+         _loc4_ = this.CONTENT["itemMC" + (i - 3)];
+         _loc6_ = i % 3 * this.SELECTION_ITEM_WIDTH;
+         _loc5_ = (!_loc4_ ? this.HEADER_HEIGHT : _loc4_._y + _loc4_.getHeight()) + this.GRID_ITEM_PADDING;
          _loc2_ = com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem(this.CONTENT.attachMovie("selectionPanelItem","itemMC" + i,this.CONTENT.getNextHighestDepth(),{_x:_loc6_,_y:_loc5_}));
          _loc2_.swapDepths(this.CONTENT.highlightMC);
          this._hoverMC.swapDepths(this.CONTENT.getNextHighestDepth());
@@ -91,9 +96,10 @@ class com.rockstargames.gtav.Multiplayer.MP_NEXT_JOB_SELECTION extends com.rocks
       var _loc6_ = sTitle != "" || sDetails != "";
       this.CONTENT.bgMC.descBGMC._visible = _loc6_;
       i = 0;
+      var _loc3_;
       while(i < this.NUM_DETAILS_ITEMS)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsItem(this.CONTENT["detailsItemMC" + i]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsItem(this.CONTENT["detailsItemMC" + i]);
          _loc3_._visible = _loc3_._wasVisible = false;
          i = i + 1;
       }
@@ -141,9 +147,10 @@ class com.rockstargames.gtav.Multiplayer.MP_NEXT_JOB_SELECTION extends com.rocks
       this.CONTENT.bgMC.bg8MC._visible = !bShowList;
       this.CONTENT.bgMC.detailsMC._visible = !bShowList;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.NUM_DETAILS_ITEMS)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsItem(this.CONTENT["detailsItemMC" + _loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsItem(this.CONTENT["detailsItemMC" + _loc2_]);
          _loc3_._visible = !bShowList && _loc3_._wasVisible;
          _loc2_ = _loc2_ + 1;
       }

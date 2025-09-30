@@ -1,6 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
+   var dataList;
+   var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
    var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;
@@ -31,9 +39,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
       var _loc2_ = 0;
       var _loc4_ = true;
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.itemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem(this.itemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem(this.itemList[_loc2_]);
          if(_loc3_.kick >= 1)
          {
             _loc4_ = false;
@@ -61,9 +70,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
       this.kickAnim < 1 ? this.kickAnim++ : (this.kickAnim = 0);
       var _loc2_ = 0;
       _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.itemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem(this.itemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem(this.itemList[_loc2_]);
          if(_loc3_.kick >= 1)
          {
             _loc3_.kickflip(this.kickAnim);
@@ -94,8 +104,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
          _loc6_ = this.topEdge;
          targetIndex -= this.topEdge;
       }
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
       {

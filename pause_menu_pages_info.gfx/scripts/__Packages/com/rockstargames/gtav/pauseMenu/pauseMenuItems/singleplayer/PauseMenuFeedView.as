@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFeedView extends com.rockstargames.ui.components.GUIView
 {
-   var viewHeight;
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
-   var viewMaskHeight;
    var direction;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewHeight;
+   var viewLinkageList;
+   var viewMaskHeight;
    var SCROLL_DURATION = 0.2;
    var SCROLL_DY = 27;
    function PauseMenuFeedView()
@@ -49,11 +49,13 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFeed
          tween = true;
       }
       var _loc3_ = this.direction(targetIndex);
+      var _loc2_;
+      var _loc4_;
       if(_loc3_ != 0 && this.viewHeight > this.viewMaskHeight)
       {
-         var _loc2_ = this.viewContainer._y;
+         _loc2_ = this.viewContainer._y;
          _loc2_ -= this.SCROLL_DY * _loc3_;
-         var _loc4_ = this.viewMaskHeight - this.viewHeight;
+         _loc4_ = this.viewMaskHeight - this.viewHeight;
          if(_loc2_ < _loc4_)
          {
             _loc2_ = _loc4_;

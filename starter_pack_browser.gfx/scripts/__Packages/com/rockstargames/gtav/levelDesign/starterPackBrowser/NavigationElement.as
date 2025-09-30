@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.starterPackBrowser.NavigationElement extends com.rockstargames.gtav.levelDesign.starterPackBrowser.Rect
 {
-   var _view;
-   var id;
-   var depth;
    var _enabled;
-   var left;
-   var right;
-   var top;
+   var _view;
    var bottom;
    var cx;
    var cy;
+   var depth;
+   var id;
+   var left;
+   var right;
+   var top;
    static var Y_MIN = 2;
    static var Y_MAX = 700;
    function NavigationElement(_view, id)

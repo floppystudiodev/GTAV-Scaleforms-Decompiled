@@ -28,11 +28,13 @@ class com.rockstargames.ui.controls.WebCursor extends MovieClip
       var _loc4_ = 720;
       var _loc6_ = this._width;
       var _loc7_ = this._height;
+      var _loc2_;
+      var _loc3_;
       if(this.browser.keyboardFocus == "")
       {
          if(this.browser.MOUSE_MODE == false)
          {
-            var _loc2_ = this._x + this.xMove;
+            _loc2_ = this._x + this.xMove;
             if(_loc2_ < this.safeArea)
             {
                _loc2_ = this.safeArea;
@@ -42,7 +44,7 @@ class com.rockstargames.ui.controls.WebCursor extends MovieClip
                _loc2_ = _loc5_ - this.safeArea - _loc6_;
             }
             this._x = _loc2_;
-            var _loc3_ = this._y + this.yMove;
+            _loc3_ = this._y + this.yMove;
             if(_loc3_ < this.browser.safeFrameY)
             {
                _loc3_ = this.browser.safeFrameY;

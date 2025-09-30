@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
 {
+   var colourScheme;
+   var currentItemID;
+   var currentTabIndex;
+   var firstRun;
+   var heistData;
+   var listItems;
    var view;
    var viewPrev;
-   var heistData;
-   var colourScheme;
-   var currentTabIndex;
-   var currentItemID;
-   var listItems;
-   var firstRun;
    static var MAX_LIST_ITEMS = 8;
    static var CREW_LIST_ITEMS = 4;
    function List(viewA, viewB, heistData, colourScheme)
@@ -81,15 +81,19 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
    }
    function updateFinaleItem(itemID, isSelected)
    {
+      var _loc3_;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       if(this.currentTabIndex == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE)
       {
          if(this.currentItemID == 0)
          {
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < this.listItems.length)
             {
-               var _loc5_ = this.heistData.getFinaleItem(this.listItems[_loc3_].id);
-               var _loc2_ = this.listItems[_loc3_];
+               _loc5_ = this.heistData.getFinaleItem(this.listItems[_loc3_].id);
+               _loc2_ = this.listItems[_loc3_];
                if(_loc2_.id == this.heistData.timeOfDayID)
                {
                   this.updateFinaleTopLevelItem(_loc5_,_loc2_,"");
@@ -106,7 +110,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
             _loc3_ = 0;
             while(_loc3_ < this.listItems.length)
             {
-               var _loc4_ = this.listItems[_loc3_];
+               _loc4_ = this.listItems[_loc3_];
                if(_loc4_.id == itemID)
                {
                   _loc4_.checkBox1Selected = isSelected;
@@ -119,14 +123,18 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
    function updateCrew()
    {
       var _loc5_ = 0;
+      var _loc4_;
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
       while(_loc5_ < this.listItems.length)
       {
-         var _loc4_ = this.listItems[_loc5_];
-         var _loc6_ = false;
-         var _loc3_ = 0;
+         _loc4_ = this.listItems[_loc5_];
+         _loc6_ = false;
+         _loc3_ = 0;
          while(_loc3_ < this.heistData.crew.length)
          {
-            var _loc2_ = this.heistData.crew[_loc3_];
+            _loc2_ = this.heistData.crew[_loc3_];
             if(_loc2_.id == _loc4_.id)
             {
                _loc4_.populate(_loc5_,_loc2_.gamertag,_loc2_.percentage,_loc2_.headsetState);
@@ -143,9 +151,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
    function setCrewCutsVisible(isVisible)
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.listItems.length)
       {
-         var _loc2_ = this.listItems[_loc3_];
+         _loc2_ = this.listItems[_loc3_];
          if(_loc2_.id == this.heistData.crewCutID)
          {
             _loc2_.enabled = this.heistData.crewCutsVisible;
@@ -167,15 +176,22 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
       this.clearListItems();
       this.swapListViews(itemID != 0 ? "setupSubLevel" : "setupTopLevel");
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
+      var _loc8_;
+      var _loc9_;
+      var _loc6_;
+      var _loc7_;
       while(_loc3_ < _loc10_.length)
       {
-         var _loc2_ = _loc10_[_loc3_];
-         var _loc5_ = this.view["listItem" + _loc3_];
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem(_loc2_.id,_loc5_,this.colourScheme);
-         var _loc8_ = _loc2_.numComplete;
-         var _loc9_ = _loc2_.numTotal;
-         var _loc6_ = _loc2_.locked == 1;
-         var _loc7_ = _loc2_.locked == 2;
+         _loc2_ = _loc10_[_loc3_];
+         _loc5_ = this.view["listItem" + _loc3_];
+         _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem(_loc2_.id,_loc5_,this.colourScheme);
+         _loc8_ = _loc2_.numComplete;
+         _loc9_ = _loc2_.numTotal;
+         _loc6_ = _loc2_.locked == 1;
+         _loc7_ = _loc2_.locked == 2;
          _loc4_.populate(_loc2_.title,true,_loc2_.numerator,_loc2_.denominator,_loc8_,_loc9_,_loc6_,_loc7_,_loc2_.isMandatory,_loc2_.showDollar);
          this.listItems.push(_loc4_);
          _loc5_._visible = true;
@@ -232,8 +248,8 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
       this.initFinaleTopLevelItem(this.heistData.getFinaleItem(this.heistData.compoundEntryPointID),this.view.compoundEntryPoint,"// ");
       this.initFinaleTopLevelItem(this.heistData.getFinaleItem(this.heistData.exitPointID),this.view.exitPoint,"// ");
       this.initFinaleTopLevelItem(this.heistData.getFinaleItem(this.heistData.timeOfDayID),this.view.timeOfDay,"// ");
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       _loc2_ = this.heistData.getFinaleItem(this.heistData.weaponsID);
       _loc3_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.FinaleListItem(_loc2_.id,this.view.weapons,this.colourScheme);
       _loc3_.populate(_loc2_.title,true,!_loc2_.showDollar ? "" : "$",false,false);
@@ -299,11 +315,14 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
       this.clearListItems();
       this.swapListViews("finaleCrewCut");
       var _loc2_ = 0;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc6_.length)
       {
-         var _loc5_ = _loc6_[_loc2_];
-         var _loc3_ = this.view["listItem" + _loc2_];
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.CrewListItem(_loc5_.id,_loc3_,this.colourScheme);
+         _loc5_ = _loc6_[_loc2_];
+         _loc3_ = this.view["listItem" + _loc2_];
+         _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.CrewListItem(_loc5_.id,_loc3_,this.colourScheme);
          this.listItems.push(_loc4_);
          _loc3_._visible = true;
          _loc2_ = _loc2_ + 1;
@@ -329,13 +348,18 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.List
       this.clearListItems();
       this.swapListViews("finaleSubLevel");
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
+      var _loc7_;
       while(_loc2_ < _loc8_.length)
       {
-         var _loc3_ = _loc8_[_loc2_];
-         var _loc5_ = this.view["listItem" + _loc2_];
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem(_loc3_.id,_loc5_,this.colourScheme);
-         var _loc6_ = _loc3_.locked == 1;
-         var _loc7_ = _loc3_.locked == 2;
+         _loc3_ = _loc8_[_loc2_];
+         _loc5_ = this.view["listItem" + _loc2_];
+         _loc4_ = new com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem(_loc3_.id,_loc5_,this.colourScheme);
+         _loc6_ = _loc3_.locked == 1;
+         _loc7_ = _loc3_.locked == 2;
          _loc4_.populate(_loc3_.title,true,0,0,!_loc3_.isSelected ? 0 : 1,1,_loc6_,_loc7_,false,_loc3_.showDollar);
          this.listItems.push(_loc4_);
          _loc5_._visible = true;

@@ -1,8 +1,8 @@
-1;texture2
-2;texture1
-3;pattern
-23;PAGE1
-25;BOUNDING_BOX
-26;CONTENT
-27;__Packages.com.rockstargames.ui.core.BaseWebsite
-28;__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT
+1;"texture2"
+2;"texture1"
+3;"pattern"
+23;"PAGE1"
+25;"BOUNDING_BOX"
+26;"CONTENT"
+27;"__Packages.com.rockstargames.ui.core.BaseWebsite"
+28;"__Packages.com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT"

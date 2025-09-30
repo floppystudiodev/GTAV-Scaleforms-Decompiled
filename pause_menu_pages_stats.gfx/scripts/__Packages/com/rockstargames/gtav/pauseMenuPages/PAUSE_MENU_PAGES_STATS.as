@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_STATS extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
+   var column1;
    var column2;
    var column3;
-   var setupColumns;
-   var setupColScroll;
-   var setupColFooterScroll;
-   var footerScrollOverride;
    var columnList;
+   var footerScrollOverride;
+   var setupColFooterScroll;
+   var setupColScroll;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_STATS()
    {

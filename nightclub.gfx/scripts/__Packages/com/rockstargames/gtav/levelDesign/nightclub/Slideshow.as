@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.nightclub.Slideshow
 {
-   var slides;
-   var index;
    var crossfadeArgs;
+   var index;
    var pauseArgs;
+   var slides;
    static var CROSSFADE_TIME = 0.75;
    static var PAUSE_TIME = 3;
    function Slideshow()

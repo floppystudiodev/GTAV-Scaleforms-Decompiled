@@ -1,32 +1,32 @@
 class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
+   var allChats;
    var browser;
-   var chatButtonIndex;
    var chatButtonActiveString;
-   var chatButtonUnavailableString;
+   var chatButtonIndex;
    var chatButtonThinkingString;
-   var people;
-   var chatMichael1;
-   var chatMichael2;
-   var chatMichael3;
+   var chatButtonUnavailableString;
+   var chatCharacter;
    var chatFranklin1;
    var chatFranklin2;
    var chatFranklin3;
+   var chatHolder;
+   var chatMichael1;
+   var chatMichael2;
+   var chatMichael3;
+   var chatNumber;
    var chatTrevor1;
    var chatTrevor2;
    var chatTrevor3;
-   var allChats;
-   var chatHolder;
-   var mcScope;
    var currentChat;
-   var chatCharacter;
-   var chatNumber;
    var currentLine;
-   var maxChatNumber;
-   var CONTENT;
    var dataTextScope;
+   var maxChatNumber;
+   var mcScope;
+   var people;
    var browserPlayers = ["michael","multiplayer","franklin","trevor"];
    function WWW_PSYCHICSHOUTOUT_COM()
    {
@@ -188,31 +188,40 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
    }
    function writeLine()
    {
+      var _loc4_;
+      var _loc3_;
+      var _loc7_;
+      var _loc11_;
+      var _loc5_;
+      var _loc6_;
+      var _loc2_;
+      var _loc8_;
+      var _loc9_;
       if(this.currentLine < this.currentChat.length)
       {
-         var _loc4_ = this.currentChat[this.currentLine];
-         var _loc3_ = _loc4_.user;
-         var _loc7_ = _loc4_.userText;
-         var _loc11_ = this.mcScope.testText;
-         var _loc5_ = "playerchat";
-         var _loc6_ = 0;
+         _loc4_ = this.currentChat[this.currentLine];
+         _loc3_ = _loc4_.user;
+         _loc7_ = _loc4_.userText;
+         _loc11_ = this.mcScope.testText;
+         _loc5_ = "playerchat";
+         _loc6_ = 0;
          if(_loc3_ != "Michael" && _loc3_ != "Franklin" && _loc3_ != "Trevor")
          {
             _loc5_ = "psychicchat";
             _loc6_ = 2;
          }
-         var _loc2_ = this.chatHolder.attachMovie(_loc5_,"chat_" + this.currentLine,this.chatHolder.getNextHighestDepth());
+         _loc2_ = this.chatHolder.attachMovie(_loc5_,"chat_" + this.currentLine,this.chatHolder.getNextHighestDepth());
          _loc2_._y = (_loc2_._height + 10) * this.currentLine;
          _loc2_.user.text = _loc3_;
          _loc2_.userText.text = _loc7_;
-         var _loc8_ = this.mcScope.chatmask._y + this.mcScope.chatmask._height - (this.currentLine + 1) * (_loc2_._height + 10);
+         _loc8_ = this.mcScope.chatmask._y + this.mcScope.chatmask._height - (this.currentLine + 1) * (_loc2_._height + 10);
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.chatHolder,0.5,{_y:_loc8_,ease:3,onComplete:this.writeNextLine,onCompleteScope:this,delay:_loc6_});
          this.currentLine = this.currentLine + 1;
       }
       else
       {
          this.updateChatButton(this.chatButtonUnavailableString,false);
-         var _loc9_ = this.chatNumber + 1;
+         _loc9_ = this.chatNumber + 1;
          this.setChatNumber(_loc9_);
       }
    }
@@ -235,6 +244,7 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
    {
       var _loc3_ = this.currentChat[this.currentLine];
       var _loc2_ = _loc3_.user;
+      var _loc4_;
       if(this.currentLine < this.currentChat.length)
       {
          if(_loc2_ != "Michael" && _loc2_ != "Franklin" && _loc2_ != "Trevor")
@@ -250,7 +260,7 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
       else
       {
          this.updateChatButton(this.chatButtonUnavailableString,false);
-         var _loc4_ = this.chatNumber + 1;
+         _loc4_ = this.chatNumber + 1;
          this.setChatNumber(_loc4_);
       }
    }
@@ -277,7 +287,7 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
    {
       var _loc2_ = new Array();
       _loc2_ = AnchorLink.split("_");
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = _loc2_[0]) === "chat")
       {
          this.writeLine();
@@ -307,6 +317,7 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -314,7 +325,7 @@ class com.rockstargames.gtav.web.WWW_PSYCHICSHOUTOUT_COM extends com.rockstargam
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }

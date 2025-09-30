@@ -1,12 +1,14 @@
 class com.rockstargames.gtav.levelDesign.TURRET_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var DispConf;
    var CONTENT;
-   var compassMC;
-   var cWords;
-   var fovMC;
-   var tMC;
+   var DispConf;
+   var FILE_WIDTH;
    var bMC;
+   var cWords;
+   var compassMC;
+   var fovMC;
+   var getDisplayConfig;
+   var tMC;
    static var MAX_ARROW_DX = 169;
    var afactor = 57.2957795130823;
    var compassPointList = new Array();
@@ -88,11 +90,14 @@ class com.rockstargames.gtav.levelDesign.TURRET_CAM extends com.rockstargames.ui
       var _loc9_ = Math.max(0,Math.min(a,360));
       var _loc8_ = - _loc9_ / 360 * this.angleSteps;
       var _loc6_ = _loc8_ % 28;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       for(var _loc7_ in this.compassPointList)
       {
-         var _loc3_ = (a + 90 * _loc7_) % 360;
-         var _loc2_ = this.compassPointList[_loc7_];
-         var _loc4_ = this.compassPointList2[_loc7_];
+         _loc3_ = (a + 90 * _loc7_) % 360;
+         _loc2_ = this.compassPointList[_loc7_];
+         _loc4_ = this.compassPointList2[_loc7_];
          _loc2_._x = Math.sin(_loc3_ / this.afactor) * this.halfWidth;
          _loc4_._x = _loc2_._x;
          _loc2_._alpha = Math.abs(_loc3_ - 180) / 1.8;

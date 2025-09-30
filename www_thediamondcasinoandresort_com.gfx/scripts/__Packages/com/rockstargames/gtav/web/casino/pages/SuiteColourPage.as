@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.casino.pages.SuiteColourPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var website;
-   var rolloverPoller;
-   var view;
-   var prevPageName;
-   var nextPageName;
    var currSlideshowIndex;
-   var slideshow;
+   var nextPageName;
+   var prevPageName;
    var progressPanel;
+   var rolloverPoller;
+   var slideshow;
+   var view;
+   var website;
    static var TXD = "CASINO_SUITES";
    function SuiteColourPage(website, viewContainer, pageName, isFirstPage)
    {
@@ -62,13 +62,16 @@ class com.rockstargames.gtav.web.casino.pages.SuiteColourPage extends com.rockst
       this.website.dataTextScope.push(this.view.logo.btnTxt);
       this.initLabelButton(this.view.nextButton,"CASWEB_NEXT",3);
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
       while(_loc3_ < com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.NUM_COLOUR_OPTIONS)
       {
-         var _loc2_ = this.view["optionButton_" + _loc3_];
+         _loc2_ = this.view["optionButton_" + _loc3_];
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
          this.rolloverPoller.addPollTarget(_loc2_);
-         var _loc5_ = this.website.getColourCost(_loc3_,false);
-         var _loc4_ = this.website.getColourCost(_loc3_,true);
+         _loc5_ = this.website.getColourCost(_loc3_,false);
+         _loc4_ = this.website.getColourCost(_loc3_,true);
          if(this.website.suiteIsOwned && _loc3_ == this.website.purchasedColourOption)
          {
             _loc2_.cost._visible = false;
@@ -96,14 +99,16 @@ class com.rockstargames.gtav.web.casino.pages.SuiteColourPage extends com.rockst
    }
    function onRolloverChange(index, target)
    {
+      var _loc2_;
+      var _loc3_;
       if(index == -1)
       {
          this.view.tooltip._visible = false;
       }
       else
       {
-         var _loc2_ = target._x + 0.5 * target._width;
-         var _loc3_ = this.view.optionButton_0._x;
+         _loc2_ = target._x + 0.5 * target._width;
+         _loc3_ = this.view.optionButton_0._x;
          this.view.tooltip.label.autoSize = "left";
          com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(this.view.tooltip.label,"CASWEB_COLOUR_" + (index + 1),4,true,false);
          this.view.tooltip.bg._width = Math.max(74,this.view.tooltip.label._width);
@@ -129,14 +134,17 @@ class com.rockstargames.gtav.web.casino.pages.SuiteColourPage extends com.rockst
             break;
          case "stepButton":
             this.website.browser.GO_TO_WEBPAGE(this.progressPanel.getStepPageTarget(parseInt(id)));
+         default:
+            return;
       }
    }
    function updateView()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.NUM_COLOUR_OPTIONS)
       {
-         var _loc3_ = this.view["optionButton_" + _loc2_];
+         _loc3_ = this.view["optionButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.colourOption;
          _loc3_.cost._visible = _loc2_ == this.website.colourOption;
          _loc2_ = _loc2_ + 1;

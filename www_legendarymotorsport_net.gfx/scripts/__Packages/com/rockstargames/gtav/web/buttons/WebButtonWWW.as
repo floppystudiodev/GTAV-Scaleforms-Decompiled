@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.web.buttons.WebButtonWWW extends com.rockstargames.gtav.web.buttons.WebButton
 {
    var browser;
+   var buttonType;
    function WebButtonWWW()
    {
       super();

@@ -1,14 +1,15 @@
 class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var testAnswers;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mcScope;
    var CONTENT;
+   var PAGE_NAMES;
+   var _name;
+   var browser;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
+   var testAnswers;
    function WWW_JOCKCRANLEY_COM()
    {
       super();
@@ -47,10 +48,12 @@ class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.u
       var _loc5_ = Math.ceil(_loc7_ / 3);
       var _loc10_ = 3 - Math.round((_loc5_ - _loc7_ / 3) * 3);
       var _loc2_ = 1;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= 3)
       {
-         var _loc3_ = _loc5_ * 3 - _loc2_ + 1;
-         var _loc4_ = "tick" + _loc3_;
+         _loc3_ = _loc5_ * 3 - _loc2_ + 1;
+         _loc4_ = "tick" + _loc3_;
          this.mcScope[_loc4_].tickbox.gotoAndStop("off");
          this.testAnswers[_loc3_ - 1] = 0;
          _loc2_ = _loc2_ + 1;
@@ -71,6 +74,9 @@ class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.u
    }
    function POPULATE_TEXT(pageName)
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       switch(pageName)
       {
          case "PAGE1":
@@ -98,10 +104,10 @@ class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.u
             this.dataTextScope[0] = this.mcScope.WWW_JOCKCRANLEY_COM_S_PAGE1.btnTxt;
             this.dataTextScope[1] = this.mcScope.WWW_JOCKCRANLEY_COM_S_PLEDGES.btnTxt;
             this.dataTextScope[2] = this.mcScope.WWW_JOCKCRANLEY_COM_S_RESULTS.btnTxt;
-            var _loc2_ = 1;
+            _loc2_ = 1;
             while(_loc2_ <= 24)
             {
-               var _loc4_ = "tick" + _loc2_;
+               _loc4_ = "tick" + _loc2_;
                this.mcScope[_loc4_].gotoAndStop("off");
                this.dataTextScope[_loc2_ + 2] = this.mcScope[_loc4_].btnTxt;
                _loc2_ = _loc2_ + 1;
@@ -112,7 +118,7 @@ class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.u
             break;
          case "RESULTS":
             this.mcScope = this.CONTENT.RESULTS;
-            var _loc3_ = new Array();
+            _loc3_ = new Array();
             _loc3_.push({QUESTION:"A",RESULT:0,PAGE:"RESULTS_D_A"});
             _loc3_.push({QUESTION:"B",RESULT:0,PAGE:"RESULTS_D_B"});
             _loc3_.push({QUESTION:"C",RESULT:0,PAGE:"RESULTS_D_C"});
@@ -154,6 +160,8 @@ class com.rockstargames.gtav.web.WWW_JOCKCRANLEY_COM extends com.rockstargames.u
             this.dataTextScope[2] = this.mcScope.WWW_JOCKCRANLEY_COM_S_PATRIOTTEST.btnTxt;
             this.ADD_TEXT(3);
             this.CONTENT.BOUNDING_BOX._height = 627;
+         default:
+            return;
       }
    }
    function ADD_TEXT(numberOfSlots)

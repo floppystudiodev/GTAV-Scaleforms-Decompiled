@@ -1,7 +1,8 @@
 class com.rockstargames.gtav.web.WWW_LARSSANDELBO_COM extends com.rockstargames.gtav.web.apartmentWebsiteMainClass
 {
-   var defaultButtonOnColour;
+   var _name;
    var defaultButtonOffColour;
+   var defaultButtonOnColour;
    function WWW_LARSSANDELBO_COM()
    {
       super();

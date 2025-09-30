@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.Multiplayer.MP_CAR_STATS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var FILE_NAME;
    var CONTENT;
-   var loaderObject;
+   var FILE_NAME;
    var _texture;
+   var loaderObject;
    var thisObj;
    function MP_CAR_STATS()
    {

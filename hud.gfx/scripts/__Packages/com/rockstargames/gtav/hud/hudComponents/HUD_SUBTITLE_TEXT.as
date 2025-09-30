@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_SUBTITLE_TEXT extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
+   var BOUNDING_BOX;
+   var CONTENT;
    var ON_SCREEN_DURATION_ONE_FRAME;
    var ON_SCREEN_DURATION_PER_WORD;
-   var TIMELINE;
-   var CONTENT;
-   var BOUNDING_BOX;
-   var subtitleTextField;
-   var subtitleTextFieldGlow;
-   var blipLayer;
    var ON_SCREEN_DURATION_TOTAL;
+   var TIMELINE;
    var _HUD;
    var _enumID;
+   var blipLayer;
+   var subtitleTextField;
+   var subtitleTextFieldGlow;
    var initCalled = false;
    var NEEDS_BIGGER_HELP_AND_SUBTITLES = false;
    var WIDTH_SCALE_STANDARD = 0.415;
@@ -103,15 +103,20 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_SUBTITLE_TEXT extends com.roc
    function parseForGamerTag(str, size, textField)
    {
       var _loc3_ = str.indexOf("<C>");
+      var _loc2_;
+      var _loc7_;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
       if(_loc3_ != -1)
       {
-         var _loc2_ = str.indexOf("</C>");
+         _loc2_ = str.indexOf("</C>");
          if(_loc2_ != -1)
          {
-            var _loc7_ = str.substring(_loc3_ + 3,_loc2_);
-            var _loc6_ = size * 1.1;
-            var _loc4_ = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc6_ + "\'>";
-            var _loc5_ = "<FONT FACE=\'$Font2\' SIZE=\'" + size + "\'>";
+            _loc7_ = str.substring(_loc3_ + 3,_loc2_);
+            _loc6_ = size * 1.1;
+            _loc4_ = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc6_ + "\'>";
+            _loc5_ = "<FONT FACE=\'$Font2\' SIZE=\'" + size + "\'>";
             str = str.split("<C>").join(_loc4_).split("</C>").join(_loc5_);
             textField.html = true;
          }

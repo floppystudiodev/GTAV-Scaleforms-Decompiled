@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.hud.hudComponents.WeaponAmmoCounter extends MovieClip
 {
-   var ammoIcon;
-   var ammoTF;
-   var clipTF;
-   var ammoCenterTF;
-   var ammoStrokeTF;
-   var clipStrokeTF;
    var ammoCenterStrokeTF;
+   var ammoCenterTF;
+   var ammoIcon;
+   var ammoStrokeTF;
+   var ammoTF;
+   var clipStrokeTF;
+   var clipTF;
    var currAmmoType;
    function WeaponAmmoCounter()
    {
@@ -16,6 +16,10 @@ class com.rockstargames.gtav.hud.hudComponents.WeaponAmmoCounter extends MovieCl
    function SET_AMMO_COUNT(params)
    {
       var _loc3_ = params[3];
+      var _loc2_;
+      var _loc5_;
+      var _loc6_;
+      var _loc7_;
       switch(_loc3_)
       {
          case com.rockstargames.gtav.constants.WeaponsLUT.WEAPON_STUNGUN:
@@ -52,10 +56,10 @@ class com.rockstargames.gtav.hud.hudComponents.WeaponAmmoCounter extends MovieCl
             this.ammoIcon._visible = false;
             break;
          default:
-            var _loc2_ = String(params[0]);
-            var _loc5_ = String(params[1]);
-            var _loc6_ = params[2];
-            var _loc7_ = params[4];
+            _loc2_ = String(params[0]);
+            _loc5_ = String(params[1]);
+            _loc6_ = params[2];
+            _loc7_ = params[4];
             if(_loc6_ <= 1)
             {
                this.clipTF.text = "";

@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen extends com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.Screen
 {
+   var _buttons;
+   var app;
+   var colourScheme;
+   var cursor;
+   var details;
+   var hardModeWarning;
+   var heistData;
+   var launchButton;
+   var list;
+   var mainPayout;
+   var map;
+   var playerList;
+   var subPayout;
    var tabGroup;
    var view;
-   var heistData;
-   var colourScheme;
-   var list;
-   var details;
-   var app;
-   var playerList;
-   var map;
-   var mainPayout;
-   var subPayout;
-   var hardModeWarning;
-   var launchButton;
-   var _buttons;
-   var cursor;
    function MainScreen(app, viewContainer, cursor, overlay, heistData, colourScheme)
    {
       super(app,viewContainer,cursor,overlay,heistData,colourScheme,"mainScreen");
@@ -67,16 +67,21 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
                this.list.showItems(this.tabGroup.getActiveTabIndex(),0,false);
             }
       }
+      var _loc8_;
+      var _loc6_;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(_loc5_)
       {
-         var _loc8_ = this.tabGroup.getActiveTabIndex();
-         var _loc6_ = this.heistData.getHistoryID(_loc8_,this.list.getCurrentItemID());
+         _loc8_ = this.tabGroup.getActiveTabIndex();
+         _loc6_ = this.heistData.getHistoryID(_loc8_,this.list.getCurrentItemID());
          this._buttons = this.list.getListItems().concat(this.launchButton);
-         var _loc4_ = 0;
-         var _loc2_ = 0;
+         _loc4_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this._buttons.length)
          {
-            var _loc3_ = this._buttons[_loc2_];
+            _loc3_ = this._buttons[_loc2_];
             if(_loc3_.enabled)
             {
                _loc4_ = _loc2_;
@@ -112,6 +117,9 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
    }
    function setCurrentSelection(itemID)
    {
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       if(itemID == com.rockstargames.gtav.levelDesign.islandHeistBoard.data.ButtonIDs.LAUNCH)
       {
          this.tabGroup.setTab(com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE);
@@ -120,11 +128,11 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
          this.list.showItems(com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE,0,false);
          this._buttons = this.list.getListItems().concat(this.launchButton);
          this.updateLaunchButton();
-         var _loc5_ = 0;
-         var _loc2_ = 0;
+         _loc5_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this._buttons.length)
          {
-            var _loc4_ = this._buttons[_loc2_];
+            _loc4_ = this._buttons[_loc2_];
             if(_loc4_.enabled && _loc4_.id == itemID)
             {
                _loc5_ = _loc2_;
@@ -146,7 +154,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
          }
          _loc2_ = _loc2_ + 1;
       }
-      var _loc6_ = undefined;
+      var _loc6_;
       if(this.heistData.getSetupItem(com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.INTEL,itemID) != null)
       {
          _loc6_ = com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.INTEL;
@@ -159,6 +167,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
       {
          _loc6_ = com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE;
       }
+      var _loc7_;
       if(_loc6_ != undefined)
       {
          this.tabGroup.setTab(_loc6_);
@@ -166,7 +175,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
          {
             this.playerList.setVisible(false);
          }
-         var _loc7_ = this.heistData.getParentID(_loc6_,itemID);
+         _loc7_ = this.heistData.getParentID(_loc6_,itemID);
          this.list.showItems(_loc6_,_loc7_,false);
          this._buttons = this.list.getListItems().concat(this.launchButton);
          _loc5_ = 0;
@@ -206,15 +215,18 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
    function updateListAfterRemoval(itemID, parentID)
    {
       var _loc5_ = this.list.getCurrentItemID();
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(_loc5_ == itemID || _loc5_ == parentID)
       {
          this.list.showItemsAfterRemoval(this.tabGroup.getActiveTabIndex(),parentID);
          this._buttons = this.list.getListItems().concat(this.launchButton);
-         var _loc4_ = 0;
-         var _loc2_ = 0;
+         _loc4_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this._buttons.length)
          {
-            var _loc3_ = this._buttons[_loc2_];
+            _loc3_ = this._buttons[_loc2_];
             if(_loc3_.enabled)
             {
                _loc4_ = _loc2_;
@@ -227,14 +239,20 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
    }
    function updateCrew()
    {
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
+      var _loc8_;
+      var _loc7_;
       if(this.tabGroup.getActiveTabIndex() == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.TabGroup.FINALE && this.list.getCurrentItemID() == this.heistData.crewCutID)
       {
          this.list.updateCrew();
-         var _loc6_ = this.cursor.getTargetIDUnderCursor();
-         var _loc5_ = false;
-         var _loc4_ = -1;
-         var _loc2_ = undefined;
-         var _loc3_ = 0;
+         _loc6_ = this.cursor.getTargetIDUnderCursor();
+         _loc5_ = false;
+         _loc4_ = -1;
+         _loc3_ = 0;
          while(_loc3_ < this._buttons.length)
          {
             _loc2_ = this._buttons[_loc3_];
@@ -252,8 +270,8 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.MainScreen ext
          if(_loc5_)
          {
             _loc2_ = this._buttons[_loc4_];
-            var _loc8_ = 0.5 * (_loc2_.left + _loc2_.right);
-            var _loc7_ = 0.5 * (_loc2_.top + _loc2_.bottom);
+            _loc8_ = 0.5 * (_loc2_.left + _loc2_.right);
+            _loc7_ = 0.5 * (_loc2_.top + _loc2_.bottom);
             this.cursor.moveTo(_loc8_,_loc7_,true);
          }
       }

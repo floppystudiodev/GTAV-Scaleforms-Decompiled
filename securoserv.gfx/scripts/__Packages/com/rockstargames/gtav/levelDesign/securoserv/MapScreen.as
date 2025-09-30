@@ -1,33 +1,33 @@
 class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockstargames.gtav.levelDesign.securoserv.Screen
 {
-   var cursor;
-   var view;
-   var officeMarker;
-   var markers;
-   var controls;
-   var warehousePanel;
-   var overlay;
-   var mapDragActive;
-   var app;
-   var mapZoomSoundPlaying;
-   var mapPanSoundPlaying;
-   var safeZoneLeft;
-   var safeZoneTop;
-   var safeZoneRight;
-   var zoomInButton;
-   var zoomOutButton;
+   var activeMarker;
    var allButton;
-   var ownedButton;
-   var smallButton;
-   var mediumButton;
-   var largeButton;
+   var app;
+   var controls;
    var currentFilter;
-   var safeZoneBottom;
-   var statsButton;
-   var warehousePanelMarker;
+   var cursor;
    var dragX;
    var dragY;
-   var activeMarker;
+   var largeButton;
+   var mapDragActive;
+   var mapPanSoundPlaying;
+   var mapZoomSoundPlaying;
+   var markers;
+   var mediumButton;
+   var officeMarker;
+   var overlay;
+   var ownedButton;
+   var safeZoneBottom;
+   var safeZoneLeft;
+   var safeZoneRight;
+   var safeZoneTop;
+   var smallButton;
+   var statsButton;
+   var view;
+   var warehousePanel;
+   var warehousePanelMarker;
+   var zoomInButton;
+   var zoomOutButton;
    static var MAP_SCALE_STEP = 0.1;
    static var MAP_SCALE_MIN = 0.2;
    static var MAP_SCALE_MAX = 2.5;
@@ -99,10 +99,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    {
       var _loc2_ = 0;
       var _loc3_ = this.app.warehouses.length;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < _loc3_)
       {
-         var _loc5_ = this.app.warehouses[_loc2_];
-         var _loc4_ = this.view.markers["marker" + _loc2_];
+         _loc5_ = this.app.warehouses[_loc2_];
+         _loc4_ = this.view.markers["marker" + _loc2_];
          _loc4_.gotoAndStop(!_loc5_.isOwned ? "unownedInactive" : "ownedInactive");
          _loc2_ = _loc2_ + 1;
       }
@@ -131,14 +133,16 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    {
       this.view.map._x = this.app.mapStartX;
       this.view.map._y = this.app.mapStartY;
+      var _loc2_;
+      var _loc3_;
       if(this.app.mapStartMatrix)
       {
          this.view.map.transform.matrix = this.app.mapStartMatrix;
       }
       else
       {
-         var _loc2_ = this.view.map.transform.matrix;
-         var _loc3_ = this.app.mapStartScale / _loc2_.a;
+         _loc2_ = this.view.map.transform.matrix;
+         _loc3_ = this.app.mapStartScale / _loc2_.a;
          _loc2_.translate(- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,- com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
          _loc2_.scale(_loc3_,_loc3_);
          _loc2_.translate(com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X,com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y);
@@ -159,11 +163,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    {
       var _loc2_ = 0;
       var _loc6_ = this.app.warehouses.length;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < _loc6_)
       {
-         var _loc3_ = this.app.warehouses[_loc2_];
-         var _loc5_ = "marker" + _loc2_;
-         var _loc4_ = this.view.markers[_loc5_] || this.view.markers.marker0.duplicateMovieClip(_loc5_,this.view.markers.getNextHighestDepth());
+         _loc3_ = this.app.warehouses[_loc2_];
+         _loc5_ = "marker" + _loc2_;
+         _loc4_ = this.view.markers[_loc5_] || this.view.markers.marker0.duplicateMovieClip(_loc5_,this.view.markers.getNextHighestDepth());
          _loc4_.gotoAndStop(!_loc3_.isOwned ? "unownedInactive" : "ownedInactive");
          _loc3_.markerIndex = this.markers.length;
          this.markers.push(new com.rockstargames.gtav.levelDesign.securoserv.Marker(_loc3_.id,_loc4_));
@@ -217,10 +224,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
       var _loc9_ = false;
       var _loc14_ = 0;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.app.warehouses.length)
       {
-         var _loc4_ = this.app.warehouses[_loc2_].size;
-         var _loc3_ = this.app.warehouses[_loc2_].isOwned;
+         _loc4_ = this.app.warehouses[_loc2_].size;
+         _loc3_ = this.app.warehouses[_loc2_].isOwned;
          if(_loc4_ == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_SMALL)
          {
             _loc5_ = true;
@@ -361,6 +370,7 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
       {
          this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
       }
+      var _loc10_;
       if(initButtonDisplay)
       {
          if(_loc9_)
@@ -371,7 +381,7 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
          {
             this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
          }
-         var _loc10_ = 0.1;
+         _loc10_ = 0.1;
          if(_loc17_)
          {
             this.flashElementIn(this.view.allButton,_loc10_);
@@ -427,19 +437,24 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    }
    function showInitialWarehouse()
    {
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
+      var _loc4_;
+      var _loc2_;
       if(this.app.selectedWarehouseID != -1)
       {
-         var _loc5_ = 0;
+         _loc5_ = 0;
          while(_loc5_ < this.markers.length)
          {
-            var _loc3_ = this.markers[_loc5_];
+            _loc3_ = this.markers[_loc5_];
             if(_loc3_.id == this.app.selectedWarehouseID)
             {
-               var _loc6_ = _loc3_.getView();
-               var _loc4_ = {x:0,y:0};
+               _loc6_ = _loc3_.getView();
+               _loc4_ = {x:0,y:0};
                _loc6_.localToGlobal(_loc4_);
                this.moveMap(com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_X - _loc4_.x,com.rockstargames.gtav.levelDesign.securoserv.Screen.STAGE_CENTRE_Y - _loc4_.y);
-               var _loc2_ = this.app.getWarehouseByID(_loc3_.id);
+               _loc2_ = this.app.getWarehouseByID(_loc3_.id);
                this.showWarehousePanel(_loc2_);
                this.updateMarkers();
                if(_loc2_.isOwned)
@@ -516,11 +531,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
                this.nextFilter();
             }
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
    {
       var _loc2_ = this.app.GET_CURRENT_SELECTION();
+      var _loc3_;
       switch(_loc2_)
       {
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL:
@@ -530,47 +548,49 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
             this.filterWarehouses(_loc2_);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.ZOOM_IN:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
             this.scaleMap(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.MAP_SCALE_STEP);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.ZOOM_OUT:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
             this.scaleMap(- com.rockstargames.gtav.levelDesign.securoserv.MapScreen.MAP_SCALE_STEP);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.OVERLAY_ACCEPT:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Popup_Confirm");
             this.checkReturningPlayerStatus();
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.OVERLAY_CANCEL:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Popup_Cancel");
             this.checkReturningPlayerStatus();
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.STATS:
             if(this.app.returningPlayer)
             {
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Navigate");
                this.app.showScreen(this.app.STATS_SCREEN);
+               return;
             }
+            return;
             break;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.BUY_WAREHOUSE:
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.SMALL_SHIPMENT:
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.MEDIUM_SHIPMENT:
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.LARGE_SHIPMENT:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Buy");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.SELL_CONTRABAND:
             com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Sell");
-            break;
+            return;
          default:
-            var _loc3_ = this.app.getWarehouseByID(_loc2_);
+            _loc3_ = this.app.getWarehouseByID(_loc2_);
             if(_loc3_ != null)
             {
                com.rockstargames.gtav.levelDesign.SECUROSERV.playSound("Map_Warehouse_Select");
                this.showWarehousePanel(_loc3_);
                this.updateMarkers();
-               break;
+               return;
             }
             if(!this.overlay.isShowing)
             {
@@ -580,9 +600,11 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
                   this.dragX = this.cursor.x;
                   this.dragY = this.cursor.y;
                   this.mapDragActive = true;
+                  return;
                }
+               return;
             }
-            break;
+            return;
       }
    }
    function handleButtonInputRelease(inputID)
@@ -628,10 +650,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    }
    function handleMouseInput(x, y)
    {
+      var _loc3_;
+      var _loc2_;
       if(this.mapDragActive)
       {
-         var _loc3_ = this.cursor.x - this.dragX;
-         var _loc2_ = this.cursor.y - this.dragY;
+         _loc3_ = this.cursor.x - this.dragX;
+         _loc2_ = this.cursor.y - this.dragY;
          this.moveMap(_loc3_,_loc2_);
          this.dragX = this.cursor.x;
          this.dragY = this.cursor.y;
@@ -699,35 +723,34 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
             if(this.view.largeButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE:
             if(this.view.mediumButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM:
             if(this.view.smallButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL:
             if(this.view.ownedButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED:
             if(this.view.allButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
-               break;
+               return;
             }
-         default:
-            this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
       }
+      this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
    }
    function nextFilter()
    {
@@ -737,35 +760,34 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
             if(this.view.ownedButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED:
             if(this.view.smallButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL:
             if(this.view.mediumButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM:
             if(this.view.largeButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE);
-               break;
+               return;
             }
          case com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE:
             if(this.view.allButton._visible)
             {
                this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
-               break;
+               return;
             }
-         default:
-            this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
       }
+      this.filterWarehouses(com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL);
    }
    function moveMap(dx, dy)
    {
@@ -858,9 +880,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
       var _loc15_ = false;
       var _loc6_ = 0;
       var _loc8_ = this.app.warehouses.length;
+      var _loc2_;
       while(_loc6_ < _loc8_)
       {
-         var _loc2_ = this.app.warehouses[_loc6_];
+         _loc2_ = this.app.warehouses[_loc6_];
          if(_loc2_.isOwned)
          {
             _loc14_ = _loc14_ + 1;
@@ -877,16 +900,25 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
       }
       _loc6_ = 0;
       _loc8_ = this.app.warehouses.length;
+      var _loc3_;
+      var _loc4_;
+      var _loc12_;
+      var _loc9_;
+      var _loc11_;
+      var _loc5_;
+      var _loc10_;
+      var _loc20_;
+      var _loc19_;
       while(_loc6_ < _loc8_)
       {
          _loc2_ = this.app.warehouses[_loc6_];
-         var _loc3_ = this.markers[_loc2_.markerIndex];
-         var _loc4_ = false;
-         var _loc12_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_SMALL;
-         var _loc9_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_MEDIUM;
-         var _loc11_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_LARGE;
-         var _loc5_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL;
-         var _loc10_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED && _loc2_.isOwned;
+         _loc3_ = this.markers[_loc2_.markerIndex];
+         _loc4_ = false;
+         _loc12_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_SMALL && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_SMALL;
+         _loc9_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_MEDIUM && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_MEDIUM;
+         _loc11_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_LARGE && _loc2_.size == com.rockstargames.gtav.levelDesign.securoserv.Warehouse.SIZE_LARGE;
+         _loc5_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL;
+         _loc10_ = this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_OWNED && _loc2_.isOwned;
          if(this.currentFilter == com.rockstargames.gtav.levelDesign.securoserv.MapScreen.FILTER_ALL)
          {
             if(_loc14_ == 5)
@@ -903,8 +935,8 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
          }
          if(_loc12_ || _loc9_ || _loc11_ || _loc5_ || _loc10_)
          {
-            var _loc20_ = _loc13_ * _loc2_.x + _loc18_;
-            var _loc19_ = _loc13_ * _loc2_.y + _loc17_;
+            _loc20_ = _loc13_ * _loc2_.x + _loc18_;
+            _loc19_ = _loc13_ * _loc2_.y + _loc17_;
             _loc3_.updatePosition(_loc20_,_loc19_);
             if(_loc3_.isOnStage(this.safeZoneLeft,this.safeZoneRight,this.safeZoneTop,this.safeZoneBottom))
             {
@@ -946,11 +978,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
          this.flashElementIn(this.view.warehousePanel,0.1);
       }
       this.warehousePanel.show(warehouse,this.app.imageManager);
+      var _loc5_;
       if(this.warehousePanelMarker)
       {
          if(this.warehousePanelMarker.id != warehouse.id)
          {
-            var _loc5_ = this.app.getWarehouseByID(this.warehousePanelMarker.id);
+            _loc5_ = this.app.getWarehouseByID(this.warehousePanelMarker.id);
             this.warehousePanelMarker.setState(!_loc5_.isOwned ? "unownedInactive" : "ownedInactive");
          }
       }
@@ -984,18 +1017,20 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    {
       var _loc2_ = 0;
       var _loc3_ = this.markers.length;
+      var _loc4_;
       while(_loc2_ < _loc3_)
       {
          if(this.markers[_loc2_].id == targetID)
          {
-            var _loc4_ = this.markers[_loc2_];
+            _loc4_ = this.markers[_loc2_];
             break;
          }
          _loc2_ = _loc2_ + 1;
       }
+      var _loc6_;
       if(this.activeMarker && this.activeMarker != _loc4_ && this.activeMarker != this.warehousePanelMarker)
       {
-         var _loc6_ = this.app.getWarehouseByID(this.activeMarker.id);
+         _loc6_ = this.app.getWarehouseByID(this.activeMarker.id);
          this.activeMarker.setState(!_loc6_.isOwned ? "unownedInactive" : "ownedInactive");
       }
       if(targetID == -1)
@@ -1037,9 +1072,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.MapScreen extends com.rockst
    }
    function hideWarehousePanel()
    {
+      var _loc2_;
       if(this.warehousePanelMarker)
       {
-         var _loc2_ = this.app.getWarehouseByID(this.warehousePanelMarker.id);
+         _loc2_ = this.app.getWarehouseByID(this.warehousePanelMarker.id);
          this.warehousePanelMarker.setState(!_loc2_.isOwned ? "unownedInactive" : "ownedInactive");
          this.warehousePanelMarker = null;
       }

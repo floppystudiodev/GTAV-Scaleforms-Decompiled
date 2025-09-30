@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.ng.Replay.PlaybackPanelButton extends MovieClip
 {
-   var myBtnType;
    var MOUSE_EVT;
    var _initialPosX;
+   var myBtnType;
    var SF_BASE_CLASS_MOUSE = 10;
    function PlaybackPanelButton()
    {

@@ -1,45 +1,45 @@
 class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
 {
-   var TIMELINE;
-   var screenWidth;
-   var screenHeight;
-   var centerScreenX;
-   var centerScreenY;
-   var depthLevelForMap;
-   var worldMapWidth;
-   var worldMapHeight;
-   var healthContainer;
-   var CONTENT;
-   var BOUNDING_BOX;
-   var wantedOverlayActive;
-   var colourHealth;
-   var colourArmour;
-   var colourAbility;
-   var colourAir;
-   var colourRed;
-   var gangColours;
-   var HEALTH_ARMOUR_ABILITY;
-   var STALLWARNING;
-   var HEALTH_ARMOUR_BAR_MC;
-   var HEALTH;
-   var ARMOUR;
-   var ABILITY_BAR_MC;
    var ABILITY;
    var ABILITY_BAR_GLOW_MC;
    var ABILITY_BAR_GLOW_POINT_MC;
-   var AIR_BAR_MC;
+   var ABILITY_BAR_MC;
    var AIR;
+   var AIR_BAR_MC;
+   var ARMOUR;
+   var BOUNDING_BOX;
+   var CONTENT;
+   var DEPTHGUAGE;
+   var GANGLAYER;
+   var HEALTH;
+   var HEALTH_ARMOUR_ABILITY;
+   var HEALTH_ARMOUR_BAR_MC;
+   var MINIMAP_MASK;
    var SATNAV;
-   var flashMaxCyclesAbilityGlow;
+   var SONAR;
+   var STALLWARNING;
+   var TIMELINE;
+   var centerScreenX;
+   var centerScreenY;
+   var colourAbility;
+   var colourAir;
+   var colourArmour;
+   var colourHealth;
+   var colourRed;
+   var depthLevelForMap;
+   var flashAbilityCycleCount;
    var flashAbilityGlowCycleCount;
+   var flashMaxCyclesAbility;
+   var flashMaxCyclesAbilityGlow;
+   var gangColours;
+   var healthContainer;
    var isAbilityFlashing;
    var queuedAbilityVisibility;
-   var MINIMAP_MASK;
-   var flashAbilityCycleCount;
-   var flashMaxCyclesAbility;
-   var DEPTHGUAGE;
-   var SONAR;
-   var GANGLAYER;
+   var screenHeight;
+   var screenWidth;
+   var wantedOverlayActive;
+   var worldMapHeight;
+   var worldMapWidth;
    var MINIMAP_FILENAME = "MINIMAP";
    var BLIP_DEATH_DURATION = 1;
    var currentHealthValue = 0;
@@ -104,6 +104,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    {
       this.mapType = healthType;
       this.restarted = true;
+      var _loc3_;
       if(this.healthContainer != undefined)
       {
          if(healthType == 1)
@@ -149,7 +150,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
                this.FLASH_WANTED_OVERLAY();
             }
             this.SET_HEALTH_DAMAGE_VISIBLE(false);
-            var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+            _loc3_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_DAMAGE,_loc3_);
             if(this.HEALTH_ARMOUR_ABILITY.healthHitMC != undefined)
             {
@@ -254,9 +255,10 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SET_PLAYER_HEALTH(newHealthValue, wasAdded, capacity, showDamage)
    {
+      var _loc3_;
       if(capacity != undefined && capacity <= 100)
       {
-         var _loc3_ = newHealthValue * (100 / capacity);
+         _loc3_ = newHealthValue * (100 / capacity);
          newHealthValue = _loc3_;
       }
       if(newHealthValue > 0 && newHealthValue < 101)
@@ -392,9 +394,10 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SET_PLAYER_ARMOUR(newArmourValue, wasAdded, capacity)
    {
+      var _loc4_;
       if(capacity != undefined && capacity <= 100)
       {
-         var _loc4_ = newArmourValue * (100 / capacity);
+         _loc4_ = newArmourValue * (100 / capacity);
          newArmourValue = _loc4_;
       }
       else
@@ -474,11 +477,12 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SET_ABILITY_BAR(newAbilityValue, wasAdded, capacity)
    {
+      var _loc4_;
       if(this.isMultiplayer == false || this.allowAbilityBarInMP)
       {
          if(capacity != undefined && capacity <= 100)
          {
-            var _loc4_ = newAbilityValue * (100 / capacity);
+            _loc4_ = newAbilityValue * (100 / capacity);
             newAbilityValue = _loc4_;
             if(newAbilityValue > 100)
             {
@@ -712,7 +716,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SET_BLIP_DEATH(mc, isDead)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(mc.blip_mp_death != undefined)
       {
          _loc2_ = mc.deathBlip;
@@ -734,7 +738,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    function SET_BLIP_LABEL(mc, str, labelScale)
    {
       var _loc1_ = new MovieClip();
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc1_ = mc.attachMovie("blipLabel","textLabel",mc.getNextHighestDepth(),{_x:0,_y:0});
       if(labelScale == undefined)
       {
@@ -771,9 +775,9 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    function REMOVE_BLIP(mc)
    {
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(mc);
+      var _loc2_;
       if(mc.blip_mp_death != undefined)
       {
-         var _loc2_ = undefined;
          _loc2_ = mc.deathBlip;
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc2_);
       }
@@ -826,10 +830,11 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    function flashAbilityOn(blinkSpeed)
    {
       this.flashAbilityCycleCount = this.flashAbilityCycleCount + 1;
+      var _loc2_;
       if(this.flashAbilityCycleCount < this.flashMaxCyclesAbility)
       {
          this.ABILITY._visible = true;
-         var _loc2_ = this.ABILITY._alpha;
+         _loc2_ = this.ABILITY._alpha;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.ABILITY,0,{_alpha:_loc2_,delay:blinkSpeed,onCompleteScope:this,onComplete:this.flashAbilityOff,onCompleteArgs:[blinkSpeed]});
       }
       else
@@ -840,10 +845,11 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    function flashAbilityOff(blinkSpeed)
    {
       this.flashAbilityCycleCount = this.flashAbilityCycleCount + 1;
+      var _loc2_;
       if(this.flashAbilityCycleCount < this.flashMaxCyclesAbility)
       {
          this.ABILITY._visible = false;
-         var _loc2_ = this.ABILITY._alpha;
+         _loc2_ = this.ABILITY._alpha;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.ABILITY,0,{_alpha:_loc2_,delay:blinkSpeed,onCompleteScope:this,onComplete:this.flashAbilityOn,onCompleteArgs:[blinkSpeed]});
       }
       else
@@ -934,10 +940,10 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
       var _loc6_ = 0;
       var _loc5_ = 0;
       var _loc7_ = 0.41421356237309503;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
-      var _loc9_ = undefined;
-      var _loc8_ = undefined;
+      var _loc3_;
+      var _loc4_;
+      var _loc9_;
+      var _loc8_;
       var _loc11_ = new flash.geom.Matrix();
       circle.beginBitmapFill(_loc13_,_loc11_,true,true);
       circle.moveTo(_loc6_ + _loc2_,_loc5_);
@@ -990,6 +996,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SET_SATNAV_DIRECTION(iconEnum)
    {
+      var _loc2_;
       if(this.SATNAV != undefined)
       {
          if(isNaN(iconEnum))
@@ -999,7 +1006,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
          }
          else
          {
-            var _loc2_ = com.rockstargames.gtav.constants.SatNavIconsLUT.lookUp(iconEnum);
+            _loc2_ = com.rockstargames.gtav.constants.SatNavIconsLUT.lookUp(iconEnum);
             this.SATNAV.satNavDirection.gotoAndStop(_loc2_[1]);
          }
          if(this.SATNAV.satNavDirection._alpha == 0)
@@ -1101,15 +1108,22 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function formatDistance(distance, isMetric)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc4_;
+      var _loc2_;
+      var _loc7_;
+      var _loc8_;
+      var _loc5_;
+      var _loc1_;
+      var _loc9_;
       if(isMetric == true)
       {
-         var _loc4_ = distance / 1000;
+         _loc4_ = distance / 1000;
          if(_loc4_ >= 1)
          {
             _loc4_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc4_,2);
-            var _loc2_ = _loc4_.toString();
-            var _loc7_ = _loc2_.lastIndexOf(".");
+            _loc2_ = _loc4_.toString();
+            _loc7_ = _loc2_.lastIndexOf(".");
             if(_loc7_ == -1)
             {
                _loc2_ += ".00";
@@ -1122,17 +1136,17 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
          }
          else
          {
-            var _loc8_ = Math.round(distance);
+            _loc8_ = Math.round(distance);
             _loc3_ = _loc8_ + "m";
          }
       }
       else
       {
-         var _loc5_ = distance * 0.0006213;
+         _loc5_ = distance * 0.0006213;
          if(_loc5_ > 0.1)
          {
             _loc5_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc5_,2);
-            var _loc1_ = _loc5_.toString();
+            _loc1_ = _loc5_.toString();
             _loc7_ = _loc1_.lastIndexOf(".");
             if(_loc7_ == -1)
             {
@@ -1146,7 +1160,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
          }
          else
          {
-            var _loc9_ = Math.round(distance * 3.2808399);
+            _loc9_ = Math.round(distance * 3.2808399);
             _loc3_ = _loc9_ + "ft";
          }
       }
@@ -1209,6 +1223,9 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function SHOW_YOKE(xFloat, yFloat, vis, alpha)
    {
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
       if(vis == false || vis == undefined)
       {
          if(this.healthContainer.yoke != undefined)
@@ -1224,10 +1241,9 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
             {
                alpha = 50;
             }
-            var _loc6_ = undefined;
             _loc6_ = this.healthContainer.attachMovie("yoke_icon","yoke",4,{_x:86.5,_y:59,_alpha:alpha});
          }
-         var _loc3_ = 95.5 + 76.5 * xFloat;
+         _loc3_ = 95.5 + 76.5 * xFloat;
          if(_loc3_ < 19)
          {
             _loc3_ = 19;
@@ -1236,7 +1252,7 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
          {
             _loc3_ = 172;
          }
-         var _loc2_ = 68 + 46 * yFloat;
+         _loc2_ = 68 + 46 * yFloat;
          if(_loc2_ < 22)
          {
             _loc2_ = 22;
@@ -1285,10 +1301,11 @@ class com.rockstargames.gtav.minimap.MINIMAP extends MovieClip
    }
    function CYCLE_GANG_COLOURS(mc, propertyID, currentOwner, ownerArray)
    {
+      var _loc3_;
       if(typeof mc == "movieclip")
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(mc);
-         var _loc3_ = ownerArray[currentOwner];
+         _loc3_ = ownerArray[currentOwner];
          if(_loc3_ < 3)
          {
             com.rockstargames.ui.utils.Colour.Colourise(mc,this.gangColours[_loc3_][0],this.gangColours[_loc3_][1],this.gangColours[_loc3_][2],65);

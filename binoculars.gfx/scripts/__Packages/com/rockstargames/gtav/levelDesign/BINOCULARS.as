@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.levelDesign.BINOCULARS extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
+   var positionToScreenLayout;
    function BINOCULARS()
    {
       super();

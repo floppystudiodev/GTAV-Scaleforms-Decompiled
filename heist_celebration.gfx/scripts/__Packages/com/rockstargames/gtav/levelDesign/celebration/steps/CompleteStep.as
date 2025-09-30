@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.celebration.steps.CompleteStep extends com.rockstargames.gtav.levelDesign.celebration.steps.Step
 {
-   var missionTitle;
    var complete;
    var initialised;
-   var view;
+   var missionTitle;
    var sequence;
    var started;
+   var view;
    static var SLIDE_IN_MULTIPLIER = 1.2;
    function CompleteStep(sequence, missionTitle, complete)
    {
@@ -43,10 +43,12 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.CompleteStep extends 
       var _loc6_ = [100,68,104,72,107,75,98,66,192,193,194,195,196,197,200,201,202,203,204,206,207,209,210,211,212,213,214,217,218,219,220,223,224,225,226,227,228,229,232,233,234,235,236,237,238,239,241,242,243,244,245,246,249,250,251,252,272,273,321,323,324,346,347,1061,360,361,366,367,377,378,379,380,1049,1081];
       var _loc8_ = false;
       var _loc5_ = 0;
+      var _loc7_;
+      var _loc3_;
       while(_loc5_ < this.complete.length)
       {
-         var _loc7_ = this.complete.charCodeAt(_loc5_);
-         var _loc3_ = 0;
+         _loc7_ = this.complete.charCodeAt(_loc5_);
+         _loc3_ = 0;
          while(_loc3_ < _loc6_.length)
          {
             if(_loc7_ == _loc6_[_loc3_])

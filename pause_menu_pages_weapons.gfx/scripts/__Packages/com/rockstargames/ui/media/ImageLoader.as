@@ -56,10 +56,12 @@ class com.rockstargames.ui.media.ImageLoader
       {
          imageTextField = this.textureContainer;
       }
+      var _loc5_;
+      var _loc6_;
       if(imageTextField != undefined)
       {
-         var _loc5_ = "img://" + this.textureDict + "/" + this.textureFilename;
-         var _loc6_ = "<img src=\'" + _loc5_ + "\' vspace=\'0\' hspace=\'0\' width=\'" + _loc4_ + "\' height=\'" + _loc2_ + "\'/>";
+         _loc5_ = "img://" + this.textureDict + "/" + this.textureFilename;
+         _loc6_ = "<img src=\'" + _loc5_ + "\' vspace=\'0\' hspace=\'0\' width=\'" + _loc4_ + "\' height=\'" + _loc2_ + "\'/>";
          imageTextField.htmlText = _loc6_;
          imageTextField.autoSize = true;
       }

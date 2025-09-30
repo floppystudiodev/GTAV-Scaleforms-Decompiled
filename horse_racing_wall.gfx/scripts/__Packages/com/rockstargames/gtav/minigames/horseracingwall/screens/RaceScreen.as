@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extends com.rockstargames.gtav.minigames.horseracingwall.Screen
 {
-   var state;
-   var view;
-   var parallaxLayers;
-   var horseContainer;
-   var finishingLine;
    var app;
-   var raceProgress;
-   var raceDuration;
-   var raceDistance;
-   var postRaceOffset;
-   var offset;
    var asyncOffset;
-   var startTimestamp;
-   var updateArgs;
+   var finishingLine;
+   var horseContainer;
+   var offset;
+   var parallaxLayers;
+   var postRaceOffset;
+   var raceDistance;
+   var raceDuration;
    var raceFinishTimestamp;
+   var raceProgress;
+   var startTimestamp;
+   var state;
+   var updateArgs;
+   var view;
    var HORSE_Y_MIN = 520;
    var HORSE_Y_MAX = 875;
    var HORSE_SCALE_MIN = 90;
@@ -64,9 +64,10 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
       var _loc4_ = this.HORSE_SCALE_MIN;
       var _loc7_ = (this.HORSE_SCALE_MAX - this.HORSE_SCALE_MIN) / (_loc6_ - 1);
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc6_)
       {
-         var _loc2_ = this.horseContainer.attachMovie("horse","horse" + _loc3_,this.horseContainer.getNextHighestDepth());
+         _loc2_ = this.horseContainer.attachMovie("horse","horse" + _loc3_,this.horseContainer.getNextHighestDepth());
          _loc2_._x = 0;
          _loc2_._y = _loc5_;
          _loc2_._xscale = _loc4_;
@@ -97,10 +98,12 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
       this.app.winOrder.length = 0;
       var _loc8_ = this.raceDistance;
       var _loc3_ = 2;
+      var _loc6_;
+      var _loc7_;
       while(_loc3_ < 8)
       {
-         var _loc6_ = arguments[_loc3_] - 1;
-         var _loc7_ = this.app.horses[_loc6_];
+         _loc6_ = arguments[_loc3_] - 1;
+         _loc7_ = this.app.horses[_loc6_];
          if(_loc7_)
          {
             this.app.winOrder.push(_loc6_);
@@ -117,6 +120,7 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
       }
       this.state = this.STATE_RACING;
       this.postRaceOffset = 0;
+      var _loc4_;
       if(offset > 0)
       {
          if(offset > this.raceDuration)
@@ -137,7 +141,7 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
             this.updateAsyncOffset();
             return undefined;
          }
-         var _loc4_ = this.OFFSET_INTERVAL;
+         _loc4_ = this.OFFSET_INTERVAL;
          do
          {
             if(_loc4_ > offset)
@@ -212,9 +216,10 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
       var _loc4_ = false;
       var _loc7_ = this.app.horses.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc7_)
       {
-         var _loc2_ = this.app.horses[_loc3_];
+         _loc2_ = this.app.horses[_loc3_];
          _loc4_ = _loc2_.update(normElapsed,this.postRaceOffset) || _loc4_;
          if(_loc2_.view._x > _loc5_)
          {
@@ -232,11 +237,14 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
          this.state = this.STATE_COMPLETE;
          this.initPhotoFinish();
       }
+      var _loc12_;
+      var _loc10_;
+      var _loc11_;
       if(this.state == this.STATE_RACING)
       {
-         var _loc12_ = normElapsed * this.TRACKING_X_RANGE + this.TRACKING_X_MIN;
-         var _loc10_ = _loc8_ / _loc7_;
-         var _loc11_ = normElapsed * (_loc5_ - _loc10_) + _loc10_;
+         _loc12_ = normElapsed * this.TRACKING_X_RANGE + this.TRACKING_X_MIN;
+         _loc10_ = _loc8_ / _loc7_;
+         _loc11_ = normElapsed * (_loc5_ - _loc10_) + _loc10_;
          this.horseContainer._x = _loc12_ - _loc11_;
       }
    }
@@ -264,9 +272,10 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.RaceScreen extend
    function stopHorses()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.app.horses.length)
       {
-         var _loc2_ = this.app.horses[_loc3_].view;
+         _loc2_ = this.app.horses[_loc3_].view;
          for(var _loc4_ in _loc2_)
          {
             _loc2_[_loc4_].stop();

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.RACE_POSITION extends com.rockstargames.ui.core.ScreenLayoutUI
 {
-   var racePositionMC;
    var CONTENT;
-   var screenManager;
-   var raceTimeMC;
    var bestTimeMC;
    var gateCounterMC;
+   var racePositionMC;
    var raceScoreBoardMC;
+   var raceTimeMC;
+   var screenManager;
    var position = 1;
    var racers = 6;
    var gateposition = 0;
@@ -37,13 +37,16 @@ class com.rockstargames.gtav.levelDesign.RACE_POSITION extends com.rockstargames
    }
    function getKeys()
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(Key.isDown(38))
       {
          this.SET_RACE_POSITION(Math.ceil(Math.random() * 8));
          this.SET_GATES_POSITION(Math.ceil(Math.random() * 20));
-         var _loc3_ = Math.ceil(Math.random() * 999);
-         var _loc2_ = Math.ceil(Math.random() * 60);
-         var _loc4_ = Math.ceil(Math.random() * 1);
+         _loc3_ = Math.ceil(Math.random() * 999);
+         _loc2_ = Math.ceil(Math.random() * 60);
+         _loc4_ = Math.ceil(Math.random() * 1);
          this.SET_RACE_TIME(_loc4_ + "\'" + _loc2_ + "\"" + _loc3_);
       }
       else if(!Key.isDown(39))
@@ -99,10 +102,12 @@ class com.rockstargames.gtav.levelDesign.RACE_POSITION extends com.rockstargames
    function setResults()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < this.racers)
       {
-         var _loc3_ = this.raceResultSlots[_loc2_];
-         var _loc4_ = this.raceResultData[_loc2_];
+         _loc3_ = this.raceResultSlots[_loc2_];
+         _loc4_ = this.raceResultData[_loc2_];
          this.setText(_loc3_.positionTF,_loc4_[0]);
          this.setText(_loc3_.racerTF,_loc4_[1]);
          this.setText(_loc3_.timeTF,_loc4_[2]);
@@ -115,9 +120,10 @@ class com.rockstargames.gtav.levelDesign.RACE_POSITION extends com.rockstargames
       this.raceResultSlots = [];
       var _loc4_ = 50;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.racers)
       {
-         var _loc2_ = this.raceScoreBoardMC.innerMC.attachMovie("raceresultslot","result" + _loc3_ + "MC",_loc3_);
+         _loc2_ = this.raceScoreBoardMC.innerMC.attachMovie("raceresultslot","result" + _loc3_ + "MC",_loc3_);
          _loc2_._x = (- _loc2_._width) * 0.5;
          _loc2_._y = _loc4_ + (_loc2_._height + 2) * _loc3_;
          this.raceResultSlots.push(_loc2_);

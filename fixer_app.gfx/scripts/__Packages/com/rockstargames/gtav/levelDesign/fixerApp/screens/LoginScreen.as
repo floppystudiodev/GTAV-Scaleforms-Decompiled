@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.LoginScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
+   var animationIndex;
+   var app;
    var buttons;
-   var userName;
+   var cursor;
    var dataObject;
    var password;
-   var app;
-   var animationIndex;
-   var cursor;
+   var userName;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    function LoginScreen(app, viewContainer, cursor, dataObject)
    {

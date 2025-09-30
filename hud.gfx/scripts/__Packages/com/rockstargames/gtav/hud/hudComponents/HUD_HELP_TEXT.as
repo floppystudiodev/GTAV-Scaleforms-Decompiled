@@ -1,40 +1,40 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_HELP_TEXT extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
+   var BOUNDING_BOX;
+   var CONTENT;
+   var ON_SCREEN_DURATION_ONE_FRAME;
+   var ON_SCREEN_DURATION_PER_WORD;
+   var ON_SCREEN_DURATION_TOTAL;
+   var OVERRIDE_DURATION;
    var TICKET_NUMBER;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
+   var _fadeType;
+   var arrow;
+   var arrowHeight;
+   var arrowMCOffscreen;
+   var arrowPosition;
+   var arrowWidth;
+   var background;
+   var blipLayer;
+   var bottomPadding;
+   var currentStyle;
+   var defaultHelpTextStyle;
    var defaultWidth;
+   var helpTextBackgroundOffscreen;
+   var helpTextType;
+   var helpTextfield;
+   var isAnimating;
+   var isClearing;
    var leftPadding;
+   var logo;
+   var offScreenIndicator;
    var rightPadding;
    var sidePadding;
    var topPadding;
-   var bottomPadding;
-   var isAnimating;
-   var isClearing;
-   var OVERRIDE_DURATION;
-   var ON_SCREEN_DURATION_ONE_FRAME;
-   var ON_SCREEN_DURATION_PER_WORD;
    var trimForOneLineText;
-   var currentStyle;
-   var defaultHelpTextStyle;
-   var helpTextType;
    var txtFormat;
-   var CONTENT;
-   var TIMELINE;
-   var BOUNDING_BOX;
-   var blipLayer;
-   var background;
-   var helpTextBackgroundOffscreen;
-   var arrowMCOffscreen;
-   var offScreenIndicator;
-   var arrow;
-   var arrowHeight;
-   var arrowWidth;
-   var helpTextfield;
-   var _HUD;
-   var _fadeType;
-   var ON_SCREEN_DURATION_TOTAL;
-   var arrowPosition;
-   var logo;
-   var _enumID;
    var screenWidth = 1280;
    var screenHeight = 720;
    function HUD_HELP_TEXT()
@@ -119,11 +119,14 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_HELP_TEXT extends com.rocksta
          this.SET_HELP_TEXT_STYLE(this.defaultHelpTextStyle);
       }
       this.calculateOnScreenDuration(_loc2_);
+      var _loc6_;
+      var _loc7_;
+      var _loc4_;
       if(bSetWithIcons)
       {
-         var _loc6_ = new com.rockstargames.ui.utils.Text();
-         var _loc7_ = !this._HUD.NEEDS_BIGGER_HELP_AND_SUBTITLES ? 14.4 : 20;
-         var _loc4_ = !this._HUD.NEEDS_BIGGER_HELP_AND_SUBTITLES ? 2.65 : 5;
+         _loc6_ = new com.rockstargames.ui.utils.Text();
+         _loc7_ = !this._HUD.NEEDS_BIGGER_HELP_AND_SUBTITLES ? 14.4 : 20;
+         _loc4_ = !this._HUD.NEEDS_BIGGER_HELP_AND_SUBTITLES ? 2.65 : 5;
          _loc6_.setTextWithIcons(_loc2_,this.blipLayer,this.CONTENT.helpText,0,_loc7_,_loc4_,false);
       }
       else
@@ -138,11 +141,13 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_HELP_TEXT extends com.rocksta
    function calculateOnScreenDuration(str)
    {
       this.ON_SCREEN_DURATION_TOTAL = this.ON_SCREEN_DURATION;
+      var _loc3_;
+      var _loc2_;
       if(this.OVERRIDE_DURATION <= 0)
       {
-         var _loc3_ = str.split(" ");
+         _loc3_ = str.split(" ");
          this.ON_SCREEN_DURATION_TOTAL += _loc3_.length * this.ON_SCREEN_DURATION_PER_WORD;
-         var _loc2_ = this.ON_SCREEN_DURATION_TOTAL / 100 * 30;
+         _loc2_ = this.ON_SCREEN_DURATION_TOTAL / 100 * 30;
          this.ON_SCREEN_DURATION_TOTAL += _loc2_;
       }
       else
@@ -278,7 +283,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_HELP_TEXT extends com.rocksta
             this.background._x = 0;
             this.background._y = _loc2_;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       if(this.logo != undefined)
       {
          _loc3_ = (this.logo._height + this.background._height) / 720;

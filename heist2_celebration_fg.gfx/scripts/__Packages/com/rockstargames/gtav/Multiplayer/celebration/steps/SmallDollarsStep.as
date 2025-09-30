@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.Multiplayer.celebration.steps.SmallDollarsStep extends com.rockstargames.gtav.Multiplayer.celebration.steps.Step
 {
-   var title;
+   var counterStep;
    var description;
-   var value;
    var initialised;
-   var view;
    var sequence;
    var started;
-   var counterStep;
+   var title;
+   var value;
+   var view;
    function SmallDollarsStep(sequence, title, description, value)
    {
       super(sequence,260,"SmallDollarsStep");

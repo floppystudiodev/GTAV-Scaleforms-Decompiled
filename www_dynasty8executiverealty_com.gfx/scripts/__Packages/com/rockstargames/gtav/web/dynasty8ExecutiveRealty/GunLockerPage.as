@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GunLockerPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_DEFAULT";
    static var IMAGES = ["GUNLOCKER_EXEC_RICH","GUNLOCKER_EXEC_COOL","GUNLOCKER_EXEC_CONTRAST","GUNLOCKER_OLDSPICE_WARM","GUNLOCKER_OLDSPICE_CLASSICAL","GUNLOCKER_OLDSPICE_VINTAGE","GUNLOCKER_POWER_ICE","GUNLOCKER_POWER_CONSERVATIVE","GUNLOCKER_POWER_POLISHED"];
    function GunLockerPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -89,6 +89,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GunLockerPage extends c
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

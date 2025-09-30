@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.orbitalCannonCam.Menu
 {
-   var view;
+   var highlightedItem;
    var items;
    var itemsContainer;
    var scrollGoalY;
-   var updateScrollArgs;
-   var highlightedItem;
    var scrollMaxY;
+   var updateScrollArgs;
+   var view;
    static var DOWN = 187;
    static var UP = 188;
    static var MAX_HEIGHT = 574;
@@ -52,9 +52,10 @@ class com.rockstargames.gtav.levelDesign.orbitalCannonCam.Menu
    {
       var _loc2_ = 0;
       var _loc3_ = this.items.length;
+      var _loc9_;
       while(_loc2_ < _loc3_)
       {
-         var _loc9_ = this.items[_loc2_];
+         _loc9_ = this.items[_loc2_];
          if(_loc9_.id == id)
          {
             _loc9_.update(leftText,rightText,strikethroughText,isActive);
@@ -75,9 +76,10 @@ class com.rockstargames.gtav.levelDesign.orbitalCannonCam.Menu
    {
       var _loc2_ = 0;
       var _loc4_ = this.items.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.items[_loc2_];
+         _loc3_ = this.items[_loc2_];
          if(_loc3_.id == id)
          {
             if(this.highlightedItem == _loc3_)
@@ -100,9 +102,10 @@ class com.rockstargames.gtav.levelDesign.orbitalCannonCam.Menu
    {
       var _loc2_ = 0;
       var _loc4_ = this.items.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.items[_loc2_];
+         _loc3_ = this.items[_loc2_];
          if(_loc3_.id == id)
          {
             _loc3_.setState(isActive);
@@ -155,9 +158,10 @@ class com.rockstargames.gtav.levelDesign.orbitalCannonCam.Menu
       var _loc5_ = 0;
       var _loc2_ = 0;
       var _loc4_ = this.items.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.items[_loc2_];
+         _loc3_ = this.items[_loc2_];
          _loc3_.view._y = _loc5_;
          _loc5_ += Math.round(_loc3_.view._height) - 1;
          _loc2_ = _loc2_ + 1;

@@ -3,8 +3,8 @@
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.5)">
     <path d="M1059.5 0.0 L1084.25 0.0 1084.25 1480.0 1059.5 1480.0 1059.5 0.0 M219.5 1480.0 L206.05 1480.0 206.05 0.0 219.5 0.0 219.5 1480.0" fill="#26a9e0" fill-rule="evenodd" stroke="none"/>
     <path d="M1059.5 0.0 L1084.25 0.0 1084.25 1480.0 1059.5 1480.0 M219.5 1480.0 L206.05 1480.0 206.05 0.0 219.5 0.0" fill="none" stroke="#acacac" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
-    <pattern ffdec:smoothed="true" height="36" id="PatternID_13_1" overflow="visible" patternTransform="matrix(35.5561, 0.0, 0.0, 43.3328, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 36 36" width="36">
-      <image height="36" width="36" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAP0lEQVR4Xu3OoQEAIAzAsP3/9PCYSBAVMVWdndmfzB1ea0gakoakIWlIGpKGpCFpSBqShqQhaUgakoakIWlIDiDbFnc/NKtVAAAAAElFTkSuQmCC"/>
+    <pattern height="36" id="PatternID_13_1" overflow="visible" patternTransform="matrix(35.5561, 0.0, 0.0, 43.3328, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 36 36" width="36">
+      <image height="36" style="image-rendering:optimizeQuality" width="36" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAMElEQVR42u3OsQ0AAAjAoP7/tL6hCQM7Tc0lCQkJCQkJCQkJCQkJCQkJCQkJCX0KLSDbFnfVHwK+AAAAAElFTkSuQmCC"/>
     </pattern>
     <path d="M0.0 0.0 L1280.0 0.0 1280.0 1560.0 0.0 1560.0 0.0 0.0" ffdec:fill-bitmapId="2" style="fill:url(#PatternID_13_1)"/>
     <path d="M219.5 0.0 L1059.5 0.0 1059.5 1560.0 219.5 1560.0 219.5 0.0" fill="#e8e9e9" fill-rule="evenodd" stroke="none"/>

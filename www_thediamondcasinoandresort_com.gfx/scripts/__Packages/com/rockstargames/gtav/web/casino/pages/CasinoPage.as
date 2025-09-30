@@ -39,9 +39,10 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
    function initSubHeadings()
    {
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 9)
       {
-         var _loc3_ = !(_loc2_ & 1);
+         _loc3_ = !(_loc2_ & 1);
          this.initSubHeading(this.view["subHeading" + _loc2_],"CASWEB_CASINO_SUBHEADING" + _loc2_,_loc3_);
          _loc2_ = _loc2_ + 1;
       }
@@ -62,9 +63,10 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
       this.initLabelButton(this.view.waypointButton,"CASWEB_WAYPOINT",3);
       this.view.waypointButton._y = this.view.body9._y + this.view.body9._height + 18;
       this.website.dataTextScope.push(this.view.logo.btnTxt);
+      var _loc2_;
       if(this.website.isAMember)
       {
-         var _loc2_ = 2;
+         _loc2_ = 2;
          while(_loc2_ <= 8)
          {
             this.view["membership" + _loc2_ + "Button"]._visible = false;
@@ -88,6 +90,12 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
    }
    function initPurchaseBox()
    {
+      var _loc6_;
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
+      var _loc7_;
+      var _loc3_;
       if(this.website.isAMember)
       {
          this.view.purchaseBox._visible = false;
@@ -95,9 +103,9 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
       else
       {
          com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(this.view.purchaseBox.title,"CASWEB_MEMB",4,true,false);
-         var _loc6_ = this.website.getMembershipCost(false);
-         var _loc2_ = this.website.getMembershipCost(true);
-         var _loc4_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc6_);
+         _loc6_ = this.website.getMembershipCost(false);
+         _loc2_ = this.website.getMembershipCost(true);
+         _loc4_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc6_);
          if(_loc2_ == -1)
          {
             com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(this.view.purchaseBox.price,_loc4_,9,false,true);
@@ -105,11 +113,11 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
          }
          else
          {
-            var _loc5_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc2_);
+            _loc5_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc2_);
             com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(this.view.purchaseBox.salePrice,_loc5_,8,false,true);
             com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.setSpacedTextField(this.view.purchaseBox.originalPrice,_loc4_,8,false,true);
-            var _loc7_ = this.view.purchaseBox.originalPrice._width;
-            var _loc3_ = this.view.purchaseBox.originalPrice.textWidth;
+            _loc7_ = this.view.purchaseBox.originalPrice._width;
+            _loc3_ = this.view.purchaseBox.originalPrice.textWidth;
             this.view.purchaseBox.strikethrough._x = 0.5 * (_loc7_ - _loc3_);
             this.view.purchaseBox.strikethrough._width = _loc3_;
          }
@@ -149,6 +157,8 @@ class com.rockstargames.gtav.web.casino.pages.CasinoPage extends com.rockstargam
          case "membership7Button":
          case "membership8Button":
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES.MEMBERSHIP_PAGE.name);
+         default:
+            return;
       }
    }
 }

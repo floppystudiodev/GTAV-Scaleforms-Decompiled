@@ -4,12 +4,12 @@
     <path d="M1070.0 -0.05 L1145.05 -0.05 1144.25 512.15 1143.25 1154.3 1143.05 1279.9 1068.0 1279.9 1068.25 1154.3 1069.55 512.15 1070.0 266.0 304.6 266.0 304.6 266.05 224.5 266.05 223.95 498.1 223.9 509.1 223.9 512.15 222.9 926.2 222.55 1055.25 222.3 1154.3 222.0 1279.9 147.0 1279.9 147.2 1154.3 147.35 1055.25 147.55 926.2 148.2 512.15 148.2 509.1 148.25 498.1 149.0 -0.05 1068.8 0.0 1070.0 0.0 1070.0 -0.05 M266.15 522.6 L1026.15 522.6 1026.15 658.2 266.15 658.2 266.15 522.6" fill="#93b1d7" fill-rule="evenodd" stroke="none"/>
     <path d="M1068.8 0.0 L1067.55 0.0 1070.0 -0.05 1070.0 0.0 1068.8 0.0 M1068.0 1279.9 L222.0 1279.9 222.3 1154.3 222.55 1055.25 222.9 926.2 223.9 512.15 223.9 509.1 223.95 498.1 224.5 266.05 304.6 266.05 304.6 266.0 1070.0 266.0 1069.55 512.15 1068.25 1154.3 1068.0 1279.9 M1036.15 512.6 L256.15 512.6 256.15 912.6 1036.15 912.6 1036.15 512.6" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
     <path d="M266.15 522.6 L266.15 658.2 1026.15 658.2 1026.15 522.6 266.15 522.6 M1036.15 512.6 L1036.15 912.6 256.15 912.6 256.15 512.6 1036.15 512.6" fill="#6690b5" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="true" height="12" id="PatternID_79_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 137.0, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
-      <image height="12" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4XmP4z8DwnxTMgC5ACI9qIAYPBw0AitMe8I23GAoAAAAASUVORK5CYII="/>
+    <pattern height="12" id="PatternID_79_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 137.0, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
+      <image height="12" style="image-rendering:optimizeQuality" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAFklEQVR42mP4z8DwnxTMMKphVAN2DACK0x7wax2lIAAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M149.0 -0.05 L149.0 1280.0 137.0 1280.0 137.0 -0.05 149.0 -0.05" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_79_1)"/>
-    <pattern ffdec:smoothed="true" height="12" id="PatternID_79_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 1143.9, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
-      <image height="12" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4XmP4z8DwnxTMgC5ACI9qIAYPBw0AitMe8I23GAoAAAAASUVORK5CYII="/>
+    <pattern height="12" id="PatternID_79_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 40.5082, 1143.9, 396.95)" patternUnits="userSpaceOnUse" viewBox="0 0 12 12" width="12">
+      <image height="12" style="image-rendering:optimizeQuality" width="12" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAFklEQVR42mP4z8DwnxTMMKphVAN2DACK0x7wax2lIAAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M1155.9 -0.05 L1155.9 1280.0 1143.9 1280.0 1143.9 -0.05 1155.9 -0.05" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_79_2)"/>
   </g>

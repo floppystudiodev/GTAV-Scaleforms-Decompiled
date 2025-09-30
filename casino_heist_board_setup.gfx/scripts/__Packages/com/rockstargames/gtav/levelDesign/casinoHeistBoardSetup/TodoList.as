@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.TodoList
 {
-   var view;
-   var nextItemY;
    var items;
+   var nextItemY;
+   var view;
    static var ROW_SPACING = -3;
    static var ROW_TOP_OFFSET = 30;
    function TodoList(view, titleLabel)

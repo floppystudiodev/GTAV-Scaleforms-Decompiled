@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.HomeScreen extends com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Screen
 {
    var buttons;
-   var view;
    var cursor;
+   var view;
    var buttonWidth = 398;
    function HomeScreen(app, viewContainer, cursor, dataObject)
    {

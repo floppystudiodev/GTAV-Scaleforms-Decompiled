@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var cursorPosition;
    var displays;
    var values;
@@ -48,15 +49,16 @@ class com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY extends com.rockst
       {
          case com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.STATE_OFF:
             this.show("      ",com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.WHITE);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.STATE_ERROR:
             this.show("ERROR!",com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.RED);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.STATE_OPEN:
             this.show("*OPEN*",com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.WHITE);
-            break;
+            return;
          default:
             this.restoreView();
+            return;
       }
    }
    function SET_CURSOR_POSITION(position)
@@ -97,9 +99,10 @@ class com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY extends com.rockst
    function restoreView()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.DIGITAL_SAFE_DISPLAY.NUM_DISPLAYS)
       {
-         var _loc3_ = this.values[_loc2_] != -1 ? ("0" + this.values[_loc2_]).substr(-2) : "--";
+         _loc3_ = this.values[_loc2_] != -1 ? ("0" + this.values[_loc2_]).substr(-2) : "--";
          this.setChar(this.displays[_loc2_].left,_loc3_.charAt(0));
          this.setChar(this.displays[_loc2_].right,_loc3_.charAt(1));
          this.displays[_loc2_].arrows._visible = _loc2_ == this.cursorPosition;

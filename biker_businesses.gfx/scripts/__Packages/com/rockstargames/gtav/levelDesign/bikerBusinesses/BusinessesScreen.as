@@ -1,22 +1,22 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var controls;
-   var filterButtons;
-   var tabs;
-   var tabContent;
-   var ownedBusinessCards;
-   var forSaleBusinessCards;
+   var activeFilterButtonView;
+   var activeScrollKey;
    var activeSortOrder;
    var activeTabIndex;
-   var scrollTimeDelta;
    var app;
-   var view;
-   var filterButtonY0;
-   var filterButtonDY;
-   var safeZoneBottom;
-   var activeScrollKey;
-   var activeFilterButtonView;
+   var controls;
    var cursor;
+   var filterButtonDY;
+   var filterButtonY0;
+   var filterButtons;
+   var forSaleBusinessCards;
+   var ownedBusinessCards;
+   var safeZoneBottom;
+   var scrollTimeDelta;
+   var tabContent;
+   var tabs;
+   var view;
    static var OWNED_TAB = 1001;
    static var FOR_SALE_TAB = 1002;
    static var FILTER_ALL = 1003;
@@ -157,9 +157,10 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       var _loc6_ = [];
       var _loc2_ = 0;
       var _loc4_ = this.app.businesses.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.app.businesses[_loc2_];
+         _loc3_ = this.app.businesses[_loc2_];
          if(_loc3_.isOwned)
          {
             _loc5_.push(_loc3_);
@@ -180,13 +181,16 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
    {
       var _loc2_ = 0;
       var _loc7_ = businesses.length;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < _loc7_)
       {
-         var _loc5_ = container.getNextHighestDepth();
-         var _loc4_ = container.attachMovie("businessCard","businessCard" + _loc5_,_loc5_);
+         _loc5_ = container.getNextHighestDepth();
+         _loc4_ = container.attachMovie("businessCard","businessCard" + _loc5_,_loc5_);
          _loc4_._x = _loc2_ % com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.NUM_COLS * com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.COL_WIDTH;
          _loc4_._y = Math.floor(_loc2_ / com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.NUM_COLS) * com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.ROW_HEIGHT;
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessCard(_loc4_,this.view.forSaleBusinessesMask._y);
+         _loc3_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessCard(_loc4_,this.view.forSaleBusinessesMask._y);
          if(isOwned)
          {
             _loc3_.initOwnedView(businesses[_loc2_],this.app.imageManager,_loc2_,0);
@@ -225,6 +229,8 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.KEY_DOWN:
             this.activeScrollKey = com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.KEY_DOWN;
             this.scrollListFromKeyboard(1);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
@@ -244,41 +250,42 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.OWNED_TAB:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.showTab(0);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FOR_SALE_TAB:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.showTab(1);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_ALL:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterAll,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_WEED | 1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_DOCS | 1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_CASH | 1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_METH | 1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_CRACK);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_WEED:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterWeed,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_WEED);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_DOCS:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterDocs,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_DOCS);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_CASH:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterCash,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_CASH);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_METH:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterMeth,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_METH);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.FILTER_CRACK:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applyFilter(this.view.filterCrack,1 << com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.TYPE_CRACK);
-               break;
+               return;
             case com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.SORT_LIST:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
                this.applySortOrder(this.activeSortOrder != Array.NUMERIC ? Array.NUMERIC : Array.NUMERIC | Array.DESCENDING);
-               break;
+               return;
             default:
                com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Generic");
+               return;
          }
       }
    }
@@ -289,12 +296,15 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       {
          _loc4_ *= 2;
       }
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
       if(!isLeftStick)
       {
-         var _loc5_ = getTimer();
-         var _loc3_ = _loc5_ - this.scrollTimeDelta;
+         _loc5_ = getTimer();
+         _loc3_ = _loc5_ - this.scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc6_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.SCROLL_SPEED * _loc3_ / 32;
+         _loc6_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.SCROLL_SPEED * _loc3_ / 32;
          this.scrollTimeDelta = _loc5_;
          this.scrollList((- _loc6_) * _loc4_);
          if(isMouseWheel)
@@ -329,6 +339,8 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
             {
                delete this.view.onEnterFrame;
             }
+         default:
+            return;
       }
    }
    function scrollListFromKeyboard(direction)
@@ -364,9 +376,10 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       this.activeTabIndex = index;
       var _loc2_ = 0;
       var _loc5_ = this.tabs.length;
+      var _loc3_;
       while(_loc2_ < _loc5_)
       {
-         var _loc3_ = this.tabs[_loc2_].view;
+         _loc3_ = this.tabs[_loc2_].view;
          _loc3_.gotoAndStop(_loc2_ != index ? "off" : "on");
          _loc3_.gradientBG._visible = _loc3_.greyBG._visible = _loc2_ == index;
          this.tabContent[_loc2_]._visible = _loc2_ == index;
@@ -440,9 +453,10 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       var _loc6_ = 0;
       _loc2_ = 0;
       _loc7_ = _loc4_.length;
+      var _loc3_;
       while(_loc2_ < _loc7_)
       {
-         var _loc3_ = _loc5_[_loc4_[_loc2_].index];
+         _loc3_ = _loc5_[_loc4_[_loc2_].index];
          if(_loc3_.isVisible)
          {
             _loc3_.view._x = _loc6_ % com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.NUM_COLS * com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen.COL_WIDTH;
@@ -499,11 +513,12 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       }
       var _loc2_ = this.activeTabIndex != 0 ? this.forSaleBusinessCards : this.ownedBusinessCards;
       _loc3_ = 0;
+      var _loc5_;
       while(_loc3_ < _loc2_.length)
       {
          if(_loc2_[_loc3_].view._visible)
          {
-            var _loc5_ = _loc2_[_loc3_].view._y + _loc2_[_loc3_].view._height + _loc2_[_loc3_].view._parent._y;
+            _loc5_ = _loc2_[_loc3_].view._y + _loc2_[_loc3_].view._height + _loc2_[_loc3_].view._parent._y;
             if(_loc5_ > this.view.forSaleBusinessesMask._y)
             {
                _loc4_.push(_loc2_[_loc3_]);
@@ -528,6 +543,12 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
    {
       var _loc2_ = this.view.greyBG._y + 3;
       var _loc3_ = this.view.forSaleBusinessesMask._y + this.view.forSaleBusinessesMask._height;
+      var _loc4_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
+      var _loc9_;
+      var _loc5_;
       if(this.activeTabIndex == 0)
       {
          this.view.scrollbar._y = _loc2_;
@@ -535,13 +556,13 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.BusinessesScreen extend
       }
       else
       {
-         var _loc4_ = this.safeZoneBottom - this.view.forSaleContent._height - this.view.footer._height;
-         var _loc7_ = this.view.forSaleBusinessesMask._y;
-         var _loc6_ = (this.view.forSaleContent._y - _loc4_) / (_loc7_ - _loc4_);
-         var _loc8_ = Math.min(_loc2_ + this.view.forSaleBusinessesMask._height,this.view.forSaleContent._y + this.view.forSaleContent._height);
-         var _loc9_ = Math.min(1,(_loc8_ - _loc2_) / this.view.forSaleContent._height);
+         _loc4_ = this.safeZoneBottom - this.view.forSaleContent._height - this.view.footer._height;
+         _loc7_ = this.view.forSaleBusinessesMask._y;
+         _loc6_ = (this.view.forSaleContent._y - _loc4_) / (_loc7_ - _loc4_);
+         _loc8_ = Math.min(_loc2_ + this.view.forSaleBusinessesMask._height,this.view.forSaleContent._y + this.view.forSaleContent._height);
+         _loc9_ = Math.min(1,(_loc8_ - _loc2_) / this.view.forSaleContent._height);
          this.view.scrollbar._height = _loc9_ * (_loc3_ - _loc2_);
-         var _loc5_ = _loc3_ - this.view.scrollbar._height;
+         _loc5_ = _loc3_ - this.view.scrollbar._height;
          this.view.scrollbar._y = (1 - _loc6_) * (_loc5_ - _loc2_) + _loc2_;
       }
       this.view.scrollbar._alpha = 100;

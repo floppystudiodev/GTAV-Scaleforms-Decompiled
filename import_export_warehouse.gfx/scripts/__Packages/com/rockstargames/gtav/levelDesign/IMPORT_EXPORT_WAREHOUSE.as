@@ -1,19 +1,20 @@
 class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var displayConfig;
-   var _imageManager;
-   var _screenContainer;
+   var TIMELINE;
+   var _collections;
+   var _currScreen;
+   var _currScreenID;
    var _cursor;
    var _deactivated;
-   var _inputReceived;
-   var _currScreenID;
-   var _vehicles;
-   var _collections;
    var _exportCooldown;
-   var _currScreen;
+   var _imageManager;
+   var _inputReceived;
+   var _name;
+   var _screenContainer;
+   var _vehicles;
+   var displayConfig;
    static var IS_DEBUG = false;
    static var VC_SUPER = 0;
    static var VC_SPORT = 1;
@@ -117,12 +118,16 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
    function UPDATE_VEHICLE(id, value, collectionValue, selected, owned, rangeCategory, actualValue)
    {
       var _loc6_ = this.getVehicleById(id);
+      var _loc4_;
+      var _loc5_;
+      var _loc2_;
+      var _loc3_;
       if(_loc6_)
       {
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Vehicle(_loc6_.id,_loc6_.texture,_loc6_.texture,_loc6_.category,value,collectionValue,selected,owned,rangeCategory,actualValue);
-         var _loc5_ = false;
-         var _loc2_ = 0;
-         var _loc3_ = this._vehicles.length;
+         _loc4_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Vehicle(_loc6_.id,_loc6_.texture,_loc6_.texture,_loc6_.category,value,collectionValue,selected,owned,rangeCategory,actualValue);
+         _loc5_ = false;
+         _loc2_ = 0;
+         _loc3_ = this._vehicles.length;
          while(_loc2_ < _loc3_)
          {
             if(this._vehicles[_loc2_].id == id)
@@ -142,15 +147,25 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
    function UPDATE_COLLECTION(id, value, selected, disabled)
    {
       var _loc7_ = this.getCollectionFromStaticDataById(id);
+      var _loc9_;
+      var _loc8_;
+      var _loc11_;
+      var _loc4_;
+      var _loc3_;
+      var _loc14_;
+      var _loc10_;
+      var _loc12_;
+      var _loc2_;
+      var _loc5_;
       if(_loc7_)
       {
-         var _loc9_ = [];
-         var _loc8_ = _loc7_.cars.length;
-         var _loc11_ = 0;
-         var _loc4_ = 0;
+         _loc9_ = [];
+         _loc8_ = _loc7_.cars.length;
+         _loc11_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < _loc8_)
          {
-            var _loc3_ = this.getVehicleById(_loc7_.cars[_loc4_]);
+            _loc3_ = this.getVehicleById(_loc7_.cars[_loc4_]);
             _loc3_.associatedCollection = id;
             if(_loc3_.owned)
             {
@@ -159,11 +174,11 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
             _loc9_.push(_loc3_);
             _loc4_ = _loc4_ + 1;
          }
-         var _loc14_ = _loc8_ != 0 ? Math.floor(_loc11_ / _loc8_ * 100) : 0;
-         var _loc10_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.VehicleCollection(id,_loc7_.collectionNameToken,value,_loc9_,selected,disabled,_loc14_);
-         var _loc12_ = false;
-         var _loc2_ = 0;
-         var _loc5_ = this._collections.length;
+         _loc14_ = _loc8_ != 0 ? Math.floor(_loc11_ / _loc8_ * 100) : 0;
+         _loc10_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.VehicleCollection(id,_loc7_.collectionNameToken,value,_loc9_,selected,disabled,_loc14_);
+         _loc12_ = false;
+         _loc2_ = 0;
+         _loc5_ = this._collections.length;
          while(_loc2_ < _loc5_)
          {
             if(this._collections[_loc2_].id == id)
@@ -250,13 +265,14 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
          return undefined;
       }
       this._inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.importExportWarehouse.Cursor.LEFT:
-            var _loc3_ = this._cursor.setTarget(inputID);
+            _loc3_ = this._cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE.playSound("Mouse_Move_Cursor");
@@ -345,9 +361,10 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
    {
       var _loc4_ = this._vehicles.length;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._vehicles[_loc2_];
+         _loc3_ = this._vehicles[_loc2_];
          if(_loc3_.id == id)
          {
             return _loc3_;
@@ -358,9 +375,10 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
    }
    function getCollectionFromStaticDataById(id)
    {
+      var _loc2_;
       for(var _loc5_ in this._staticCollectionData)
       {
-         var _loc2_ = this._staticCollectionData[_loc5_];
+         _loc2_ = this._staticCollectionData[_loc5_];
          for(var _loc4_ in _loc2_)
          {
             if(_loc2_[_loc4_] == id)
@@ -373,10 +391,12 @@ class com.rockstargames.gtav.levelDesign.IMPORT_EXPORT_WAREHOUSE extends com.roc
    }
    function createVehicleClasses()
    {
+      var _loc2_;
+      var _loc3_;
       for(var _loc4_ in this._staticVehicleData)
       {
-         var _loc2_ = this._staticVehicleData[_loc4_];
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Vehicle(_loc2_.id,_loc2_.texture,_loc2_.texture,_loc2_.category,0,0,false,false);
+         _loc2_ = this._staticVehicleData[_loc4_];
+         _loc3_ = new com.rockstargames.gtav.levelDesign.importExportWarehouse.Vehicle(_loc2_.id,_loc2_.texture,_loc2_.texture,_loc2_.category,0,0,false,false);
          this._vehicles.push(_loc3_);
       }
       this._staticVehicleData = [];

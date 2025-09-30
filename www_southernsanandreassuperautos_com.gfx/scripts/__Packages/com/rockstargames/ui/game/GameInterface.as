@@ -11,6 +11,7 @@ class com.rockstargames.ui.game.GameInterface
    static var GAMESTREAM = 8;
    static var SF_BASE_CLASS_VIDEO_EDITOR = 9;
    static var SF_BASE_CLASS_MOUSE = 10;
+   static var SF_BASE_CLASS_TEXT_INPUT = 11;
    function GameInterface()
    {
    }

@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.STUNT_JUMPS extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
-   var CONTENT;
    var BigMessageMaster;
+   var CONTENT;
+   var TIMELINE;
+   var screenHeightPixels;
    function STUNT_JUMPS()
    {
       super();

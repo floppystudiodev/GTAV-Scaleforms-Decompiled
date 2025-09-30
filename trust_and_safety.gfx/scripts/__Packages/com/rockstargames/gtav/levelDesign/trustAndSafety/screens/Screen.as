@@ -2,12 +2,12 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.Screen
 {
    var app;
    var cursor;
-   var view;
    var cursorListenerID;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var view;
    function Screen(app, viewContainer, cursor, viewLinkage)
    {
       this.app = app;

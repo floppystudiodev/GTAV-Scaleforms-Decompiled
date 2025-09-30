@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.BaseLoungePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_BASE";
    function BaseLoungePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -69,9 +69,10 @@ class com.rockstargames.gtav.web.foreclosures.BaseLoungePage extends com.rocksta
    function initOptionButtons()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 3)
       {
-         var _loc2_ = this.view["optionButton_" + _loc3_];
+         _loc2_ = this.view["optionButton_" + _loc3_];
          _loc2_.onColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
          _loc2_.offColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
@@ -95,15 +96,18 @@ class com.rockstargames.gtav.web.foreclosures.BaseLoungePage extends com.rocksta
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       this.view.windowButton.tick._visible = this.website.baseWindow != 0;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 3)
       {
-         var _loc3_ = this.view["optionButton_" + _loc2_];
+         _loc3_ = this.view["optionButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.baseLounge;
          _loc2_ = _loc2_ + 1;
       }

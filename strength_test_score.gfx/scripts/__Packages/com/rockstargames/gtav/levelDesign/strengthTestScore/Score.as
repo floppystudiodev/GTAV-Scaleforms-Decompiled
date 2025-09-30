@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.strengthTestScore.Score
 {
-   var view;
-   var tweenArgs;
-   var goalValue;
-   var startValue;
-   var currValue;
-   var countUpDuration;
-   var holdDuration;
-   var countDownDuration;
-   var animationStartTimestamp;
    var animationDuration;
+   var animationStartTimestamp;
    var animationState;
+   var countDownDuration;
+   var countUpDuration;
+   var currValue;
+   var goalValue;
+   var holdDuration;
+   var startValue;
+   var tweenArgs;
+   var view;
    static var ANIMATE_IDLE = 0;
    static var ANIMATE_COUNT_UP = 1;
    static var ANIMATE_HOLD = 2;
@@ -80,14 +80,15 @@ class com.rockstargames.gtav.levelDesign.strengthTestScore.Score
          case com.rockstargames.gtav.levelDesign.strengthTestScore.Score.ANIMATE_COUNT_UP:
             this.animationState = com.rockstargames.gtav.levelDesign.strengthTestScore.Score.ANIMATE_HOLD;
             this.animationDuration = this.holdDuration;
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.strengthTestScore.Score.ANIMATE_HOLD:
             this.animationState = com.rockstargames.gtav.levelDesign.strengthTestScore.Score.ANIMATE_COUNT_DOWN;
             this.animationDuration = this.countDownDuration;
             this.goalValue = 0;
-            break;
+            return;
          default:
             this.animationState = com.rockstargames.gtav.levelDesign.strengthTestScore.Score.ANIMATE_IDLE;
+            return;
       }
    }
 }

@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.OverviewScreen extends com.rockstargames.gtav.levelDesign.hangarCargo.Screen
 {
-   var view;
-   var statsPanel;
-   var graphPanel;
-   var totalStockPanel;
-   var organisationsPanel;
-   var cursor;
    var _buttons;
    var app;
+   var cursor;
+   var graphPanel;
+   var organisationsPanel;
    var overlay;
+   var statsPanel;
+   var totalStockPanel;
+   var view;
    function OverviewScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"overviewScreen");
@@ -38,14 +38,15 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OverviewScreen extends com.
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
-         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.LB:
-            break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.RB:
             if(!this.overlay.isShowing)
             {
                this.app.showScreen(this.app.STEAL_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.CANCEL:
+         case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.LB:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)
@@ -60,6 +61,8 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OverviewScreen extends com.
             break;
          case com.rockstargames.gtav.levelDesign.HANGAR_CARGO.SELL_TAB:
             this.app.showScreen(this.app.SELL_SCREEN);
+         default:
+            return;
       }
    }
    function updateStats()
@@ -77,10 +80,12 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OverviewScreen extends com.
    {
       var _loc3_ = 0;
       var _loc4_ = this.app.cargos.length;
+      var _loc2_;
+      var _loc5_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.app.cargos[_loc3_];
-         var _loc5_ = 100 * _loc2_.currentStockLevel / _loc2_.totalStockLevel;
+         _loc2_ = this.app.cargos[_loc3_];
+         _loc5_ = 100 * _loc2_.currentStockLevel / _loc2_.totalStockLevel;
          this.graphPanel.update(_loc2_.type,_loc5_);
          _loc3_ = _loc3_ + 1;
       }
@@ -116,9 +121,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.OverviewScreen extends com.
       this.overlay.updateSelectedButton(targetID);
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          _loc3_.view.gotoAndStop(_loc3_.id != targetID ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }

@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var currencyTypes;
-   var browser;
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var _isUser;
    var CONTENT;
-   var intervalId;
-   var _userName;
-   var mcScope;
-   var dataTextScope;
-   var dataProviderUI;
    var OnColour;
+   var PAGE_NAMES;
+   var _isUser;
+   var _userName;
+   var browser;
+   var currencyTypes;
+   var dataProviderUI;
+   var dataTextScope;
    var defaultButtonOnColour;
+   var intervalId;
+   var mcScope;
    function WWW_IWILLSURVIVEITALL_COM()
    {
       super();
@@ -66,6 +66,8 @@ class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstarg
             {
                this.browser.GO_TO_WEBPAGE("WWW_IWILLSURVIVEITALL_COM_S_PURCHASE_D_CONFIRM");
             }
+         default:
+            return;
       }
    }
    function POPULATE_TEXT(pageName)
@@ -90,6 +92,7 @@ class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstarg
       this.mcScope = this.CONTENT[pageName];
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc6_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc6_] == "movieclip")
@@ -97,13 +100,15 @@ class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstarg
             if(this.mcScope[_loc6_].btnTxt != undefined)
             {
                this.mcScope[_loc6_].offColour = this.mcScope[_loc6_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc6_];
+               _loc2_ = this.mcScope[_loc6_];
                this.dataTextScope[_loc3_] = _loc2_.btnTxt;
                _loc3_ = _loc3_ + 1;
             }
          }
       }
       this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
+      var _loc5_;
+      var _loc4_;
       switch(this.browser.pageName)
       {
          case "PURCHASE_D_CONFIRM":
@@ -125,8 +130,6 @@ class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstarg
             break;
          case "MY_D_PORTFOLIO":
             this.mcScope.greetingTF.text = "Welcome back, " + this._userName + "!";
-            var _loc5_ = undefined;
-            var _loc4_ = undefined;
             if(Math.random() > 0.75)
             {
                _loc5_ = this.addCommas(Math.round(Math.random() * 99999999));
@@ -182,7 +185,7 @@ class com.rockstargames.gtav.web.WWW_IWILLSURVIVEITALL_COM extends com.rockstarg
       var _loc3_ = val.toString();
       var _loc1_ = _loc3_.length;
       var _loc2_ = [];
-      var _loc5_ = undefined;
+      var _loc5_;
       while(_loc1_ > 0)
       {
          _loc2_.push(_loc3_.substring(_loc1_ - 3,_loc1_));

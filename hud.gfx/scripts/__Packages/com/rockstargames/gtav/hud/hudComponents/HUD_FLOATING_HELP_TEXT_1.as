@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT_1 extends com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT
 {
-   var hudCompEnum;
-   var helpTextType;
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
+   var helpTextType;
+   var hudCompEnum;
    function HUD_FLOATING_HELP_TEXT_1()
    {
       super();

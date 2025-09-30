@@ -1,25 +1,25 @@
 class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var password1;
-   var password2;
+   var CONTENT;
+   var PAGE_NAMES;
+   var anagramResult;
+   var anagramsMc;
    var autoPassword1;
    var autoPassword2;
    var autoPassword3;
    var autoPassword4;
-   var intervalId;
-   var mcScope;
-   var CONTENT;
-   var timerIntervalId;
+   var browser;
+   var currentAnagramMc;
    var dataProviderUI;
    var dataTextScope;
-   var defaultButtonOnColour;
    var defaultButtonOffColour;
-   var anagramResult;
-   var anagramsMc;
-   var currentAnagramMc;
+   var defaultButtonOnColour;
+   var intervalId;
+   var mcScope;
+   var password1;
+   var password2;
+   var timerIntervalId;
    var completedStatus = 0;
    var slides = [];
    var slideIndex = 0;
@@ -82,7 +82,7 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
    {
       var _loc2_ = new Array();
       _loc2_ = AnchorLink.split("_");
-      var _loc4_ = undefined;
+      var _loc4_;
       clearInterval(this.intervalId);
       if(AnchorLink == "LOGINSUBMIT")
       {
@@ -95,21 +95,17 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
                   if(this.completedStatus == 1)
                   {
                      this.browser.GO_TO_WEBPAGE("STAGE2_D_JOIN");
+                     break;
                   }
-                  else
-                  {
-                     com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_INCORRECT",this.mcScope.loginPassword.btnTxt);
-                  }
+                  com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_INCORRECT",this.mcScope.loginPassword.btnTxt);
                   break;
                case this.password2:
                   if(this.completedStatus == 4)
                   {
                      this.browser.GO_TO_WEBPAGE("STAGE4");
+                     break;
                   }
-                  else
-                  {
-                     com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_INCORRECT",this.mcScope.loginPassword.btnTxt);
-                  }
+                  com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_INCORRECT",this.mcScope.loginPassword.btnTxt);
                   break;
                case this.autoPassword1:
                   this.gotoStage2();
@@ -254,6 +250,9 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
       this.defaultButtonOnColour = 16777215;
       this.defaultButtonOffColour = 2533856;
       var _loc5_ = 10;
+      var _loc3_;
+      var _loc4_;
+      var _loc2_;
       for(var _loc6_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc6_] == "movieclip")
@@ -261,9 +260,9 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
             if(this.mcScope[_loc6_].btnTxt != undefined)
             {
                this.mcScope[_loc6_].offColour = this.mcScope[_loc6_].btnTxt.textColor;
-               var _loc3_ = this.mcScope[_loc6_].btnTxt;
-               var _loc4_ = false;
-               var _loc2_ = 0;
+               _loc3_ = this.mcScope[_loc6_].btnTxt;
+               _loc4_ = false;
+               _loc2_ = 0;
                while(_loc2_ < this.dataTextScope.length)
                {
                   if(this.dataTextScope[_loc2_] == _loc3_)
@@ -327,15 +326,19 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
    }
    function scan_and_set_localised_text(scope, noShrinkList)
    {
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
+      var _loc1_;
       for(var _loc7_ in scope)
       {
-         var _loc2_ = scope[_loc7_]._name;
+         _loc2_ = scope[_loc7_]._name;
          if(_loc2_.indexOf("COM_") == 0)
          {
-            var _loc3_ = scope[_loc7_];
+            _loc3_ = scope[_loc7_];
             _loc3_.html = true;
-            var _loc5_ = !_loc3_.multiline;
-            var _loc1_ = 0;
+            _loc5_ = !_loc3_.multiline;
+            _loc1_ = 0;
             while(_loc1_ < noShrinkList.length)
             {
                if(_loc2_ == noShrinkList[_loc1_])
@@ -368,41 +371,42 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
             scope.loginPassword.btnTxt.text = this.autoPassword1;
             scope.loginPassword._visible = false;
             this.browser.DISABLE_BUTTON(1,true);
-            break;
+            return;
          case "3":
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_STAGE3",scope.PG1_ENTRY,true);
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_COPY_STAGE3",scope.PG1_ENTRY_COPY,true);
             scope.loginPassword.btnTxt.text = this.autoPassword2;
             scope.loginPassword._visible = false;
             this.browser.DISABLE_BUTTON(1,true);
-            break;
+            return;
          case "4":
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_STAGE4",scope.PG1_ENTRY,true);
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_STAGE4_PASSWORD_COPY",scope.PG1_ENTRY_COPY,true);
             scope.loginPassword.btnTxt.text = "";
             scope.loginPassword._visible = true;
             this.browser.DISABLE_BUTTON(1,false);
-            break;
+            return;
          case "5":
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_STAGE4",scope.PG1_ENTRY,true);
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_COPY_STAGE4",scope.PG1_ENTRY_COPY,true);
             scope.loginPassword.btnTxt.text = this.autoPassword3;
             scope.loginPassword._visible = false;
             this.browser.DISABLE_BUTTON(1,true);
-            break;
+            return;
          case "6":
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_STAGE5",scope.PG1_ENTRY,true);
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_COPY_STAGE5",scope.PG1_ENTRY_COPY,true);
             scope.loginPassword.btnTxt.text = this.autoPassword4;
             scope.loginPassword._visible = false;
             this.browser.DISABLE_BUTTON(1,true);
-            break;
+            return;
          default:
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY",scope.PG1_ENTRY,true);
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"COM_PG1_ENTRY_COPY",scope.PG1_ENTRY_COPY,true);
             scope.loginPassword.btnTxt.text = "";
             scope.loginPassword._visible = true;
             this.browser.DISABLE_BUTTON(1,false);
+            return;
       }
    }
    function initAnagrams(scope)
@@ -448,9 +452,10 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
       var _loc4_ = scope.STG2_TIMER_TF._x + scope.STG2_TIMER_TF._width / 2 - _loc5_.length * 50 / 2 + 40;
       var _loc6_ = this.anagramsMc.createEmptyMovieClip("results",this.anagramsMc.getNextHighestDepth());
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc5_.length)
       {
-         var _loc3_ = _loc6_.attachMovie("resultslot","resultslot_" + _loc2_,_loc6_.getNextHighestDepth(),{_x:_loc4_,_y:540});
+         _loc3_ = _loc6_.attachMovie("resultslot","resultslot_" + _loc2_,_loc6_.getNextHighestDepth(),{_x:_loc4_,_y:540});
          this.anagramResultSlots.push(_loc3_);
          if(_loc5_[_loc2_] == " ")
          {
@@ -466,9 +471,10 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
    }
    function updateAnagramTimer()
    {
+      var _loc2_;
       if(this.timeRemaining >= 0)
       {
-         var _loc2_ = String(this.timeRemaining);
+         _loc2_ = String(this.timeRemaining);
          if(_loc2_.length < 2)
          {
             _loc2_ = "0" + _loc2_;
@@ -488,12 +494,16 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
       var _loc8_ = _loc10_.mc;
       _loc8_.swapDepths(50);
       var _loc16_ = _loc10_.isSelected;
-      var _loc13_ = undefined;
+      var _loc13_;
+      var _loc11_;
+      var _loc9_;
+      var _loc5_;
+      var _loc12_;
+      var _loc14_;
       if(!_loc16_)
       {
-         var _loc11_ = false;
-         var _loc9_ = undefined;
-         var _loc5_ = 0;
+         _loc11_ = false;
+         _loc5_ = 0;
          while(_loc5_ < this.userAnagram.length)
          {
             if(this.userAnagram[_loc5_] == "-")
@@ -510,7 +520,7 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
             this.userAnagram.push(_loc8_.btnTxt.text);
             _loc9_ = this.userAnagram.length - 1;
          }
-         var _loc12_ = this.anagramAnswerSlots[_loc9_];
+         _loc12_ = this.anagramAnswerSlots[_loc9_];
          _loc13_ = {_x:_loc12_._x,_y:_loc12_._y,_rotation:0};
          _loc10_.isSelected = true;
          _loc10_.targetSlotIndex = _loc9_;
@@ -518,25 +528,31 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
       else
       {
          this.userAnagram[_loc10_.targetSlotIndex] = "-";
-         var _loc14_ = _loc10_.setup;
+         _loc14_ = _loc10_.setup;
          _loc13_ = _loc14_;
          _loc10_.isSelected = false;
       }
       com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc8_,0.5,_loc13_);
       var _loc17_ = this.userAnagram.join("");
+      var _loc15_;
+      var _loc7_;
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(_loc17_.toLowerCase() == String(this.anagrams[this.anagramIndex].answer).toLowerCase())
       {
-         var _loc15_ = this.anagrams[this.anagramIndex];
-         var _loc7_ = this.anagramResult.split("");
-         var _loc6_ = String(_loc15_.specialletters).split("");
+         _loc15_ = this.anagrams[this.anagramIndex];
+         _loc7_ = this.anagramResult.split("");
+         _loc6_ = String(_loc15_.specialletters).split("");
          _loc5_ = 0;
          while(_loc5_ < _loc6_.length)
          {
-            var _loc3_ = _loc6_[_loc5_];
-            var _loc2_ = 0;
+            _loc3_ = _loc6_[_loc5_];
+            _loc2_ = 0;
             while(_loc2_ < this.anagramResultSlots.length)
             {
-               var _loc4_ = this.anagramResultSlots[_loc2_];
+               _loc4_ = this.anagramResultSlots[_loc2_];
                if(String(_loc7_[_loc2_]).toLowerCase() == _loc3_.toLowerCase())
                {
                   _loc4_.txt.text = _loc3_.toUpperCase();
@@ -593,10 +609,12 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
          _loc3_ = _loc3_ + 1;
       }
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc5_;
       while(_loc2_ < this.anagramLettertileSlots.length)
       {
-         var _loc4_ = this.anagramLettertileSlots[_loc2_];
-         var _loc5_ = _loc4_.mc;
+         _loc4_ = this.anagramLettertileSlots[_loc2_];
+         _loc5_ = _loc4_.mc;
          _loc5_.removeMovieClip();
          _loc2_ = _loc2_ + 1;
       }
@@ -617,23 +635,28 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
       var _loc7_ = scope.STG2_TIMER_TF._x + scope.STG2_TIMER_TF._width / 2 - _loc6_.length * 50 / 2;
       var _loc11_ = [];
       var _loc2_ = 0;
+      var _loc8_;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
+      var _loc9_;
       while(_loc2_ < _loc12_.length)
       {
-         var _loc8_ = Math.floor(Math.random() * 16) - 8;
-         var _loc4_ = {_x:_loc7_,_rotation:_loc8_,_y:460};
-         var _loc3_ = _loc13_.attachMovie("button_lettertile","LETTER_" + this.anagramIndex + "_" + _loc2_,_loc13_.getNextHighestDepth(),{_x:(scope.STG2_TIMER_TF._x + scope.STG2_TIMER_TF._width) / 2,_y:900});
+         _loc8_ = Math.floor(Math.random() * 16) - 8;
+         _loc4_ = {_x:_loc7_,_rotation:_loc8_,_y:460};
+         _loc3_ = _loc13_.attachMovie("button_lettertile","LETTER_" + this.anagramIndex + "_" + _loc2_,_loc13_.getNextHighestDepth(),{_x:(scope.STG2_TIMER_TF._x + scope.STG2_TIMER_TF._width) / 2,_y:900});
          _loc3_.btnTxt.text = String(_loc12_[_loc2_]).toUpperCase();
          this.anagramLettertileSlots.push({mc:_loc3_,setup:_loc4_,selected:false});
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc3_,0.3,_loc4_);
          this.dataTextScope.push(_loc3_.btnTxt);
          _loc3_.offColour = _loc3_.btnTxt.textColor;
-         var _loc5_ = "letterslot";
+         _loc5_ = "letterslot";
          if(this.stringInArray(_loc21_,_loc6_[_loc2_]) && !this.stringInArray(_loc11_,_loc6_[_loc2_]))
          {
             _loc5_ = "resultslot";
             _loc11_.push(_loc6_[_loc2_]);
          }
-         var _loc9_ = _loc10_.attachMovie(_loc5_,"letterslot_" + this.anagramIndex + "_" + _loc2_,_loc10_.getNextHighestDepth(),{_x:_loc7_,_y:400});
+         _loc9_ = _loc10_.attachMovie(_loc5_,"letterslot_" + this.anagramIndex + "_" + _loc2_,_loc10_.getNextHighestDepth(),{_x:_loc7_,_y:400});
          this.anagramAnswerSlots.push(_loc9_);
          _loc7_ += 50;
          _loc2_ = _loc2_ + 1;
@@ -643,10 +666,12 @@ class com.rockstargames.gtav.web.WWW_THECHILDRENOFTHEMOUNTAIN_COM extends com.ro
    function shuffleArray(input)
    {
       var _loc1_ = input.length - 1;
+      var _loc3_;
+      var _loc4_;
       while(_loc1_ >= 0)
       {
-         var _loc3_ = Math.floor(Math.random() * (_loc1_ + 1));
-         var _loc4_ = input[_loc3_];
+         _loc3_ = Math.floor(Math.random() * (_loc1_ + 1));
+         _loc4_ = input[_loc3_];
          input[_loc3_] = input[_loc1_];
          input[_loc1_] = _loc4_;
          _loc1_ = _loc1_ - 1;

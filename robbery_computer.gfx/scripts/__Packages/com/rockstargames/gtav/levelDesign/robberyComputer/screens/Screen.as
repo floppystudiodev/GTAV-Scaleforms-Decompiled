@@ -2,13 +2,13 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.Screen
 {
    var app;
    var cursor;
-   var overlay;
-   var view;
    var cursorListenerID;
+   var overlay;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var view;
    function Screen(app, viewContainer, cursor, overlay, viewLinkage)
    {
       this.app = app;

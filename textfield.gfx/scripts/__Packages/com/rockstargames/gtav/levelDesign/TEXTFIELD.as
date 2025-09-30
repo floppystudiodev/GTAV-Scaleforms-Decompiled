@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.TEXTFIELD extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
    var CONTENT;
-   var tf;
    var bgMC;
-   var imageLoader;
    var blipLayerMC;
+   var imageLoader;
+   var tf;
    static var GFX_NAME = "textfield";
    function TEXTFIELD()
    {
@@ -57,6 +57,8 @@ class com.rockstargames.gtav.levelDesign.TEXTFIELD extends com.rockstargames.gta
    }
    function SET_TEXT(str)
    {
+      var _loc2_;
+      var _loc3_;
       if(str == "")
       {
          this.CONTENT._visible = false;
@@ -64,8 +66,8 @@ class com.rockstargames.gtav.levelDesign.TEXTFIELD extends com.rockstargames.gta
       else
       {
          this.CONTENT._visible = true;
-         var _loc2_ = this.tf.getTextFormat();
-         var _loc3_ = new com.rockstargames.ui.utils.Text();
+         _loc2_ = this.tf.getTextFormat();
+         _loc3_ = new com.rockstargames.ui.utils.Text();
          if(this.blipLayerMC)
          {
             this.blipLayerMC.removeMovieClip();

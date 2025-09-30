@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.minigames.axeOfFury.AXE_OF_FURY extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var displayConfig;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;

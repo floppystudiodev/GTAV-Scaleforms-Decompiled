@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.Multiplayer.powerplay.ScoreRingIcon extends com.rockstargames.gtav.Multiplayer.powerplay.GenericIcon
 {
-   var ring;
-   var view;
    var icon;
    var meterContainer;
+   var ring;
+   var view;
    function ScoreRingIcon(type, container)
    {
       super(type,container);

@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.PLAYER_SWITCH extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var dataList;
-   var loaderObject;
-   var switchMCList;
    var CONTENT;
-   var switchContainerMC;
+   var dataList;
    var hotswapchar0;
    var hotswapchar1;
    var hotswapchar2;
    var hotswapchar3;
+   var loaderObject;
+   var switchContainerMC;
+   var switchMCList;
    var thisObj;
    var FILE_NAME = "";
    var selectedIndex = 0;
@@ -50,6 +50,7 @@ class com.rockstargames.gtav.levelDesign.PLAYER_SWITCH extends com.rockstargames
    }
    function renderDisplay(index)
    {
+      var _loc3_;
       if(index == undefined)
       {
          this.hotswapchar0.setSlot(this.dataList[0]);
@@ -59,7 +60,7 @@ class com.rockstargames.gtav.levelDesign.PLAYER_SWITCH extends com.rockstargames
       }
       else
       {
-         var _loc3_ = this.switchMCList[index];
+         _loc3_ = this.switchMCList[index];
          _loc3_.setSlot(this.dataList[index]);
       }
    }
@@ -91,7 +92,7 @@ class com.rockstargames.gtav.levelDesign.PLAYER_SWITCH extends com.rockstargames
          this.loadComponent(_newTXD,this.switchContainerMC.hotswapchar2.mc.imagesMC.stateMC.mpMC.multiplayerPIC,true);
          return undefined;
       }
-      var _loc2_ = undefined;
+      var _loc2_;
       if(_newTXD == undefined)
       {
          _loc2_ = this.dataList[2][5];
@@ -224,7 +225,7 @@ class com.rockstargames.gtav.levelDesign.PLAYER_SWITCH extends com.rockstargames
          _loc2_._loader.removeListener(_loc2_._listener);
          _loc2_._loader = null;
       };
-      var _loc3_ = undefined;
+      var _loc3_;
       if(isDirectorMode)
       {
          _loc3_ = "img://" + this.FILE_NAME + "/" + txd;

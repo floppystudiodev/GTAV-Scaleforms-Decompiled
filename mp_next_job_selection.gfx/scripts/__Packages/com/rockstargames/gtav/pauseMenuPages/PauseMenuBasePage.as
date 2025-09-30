@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
 {
-   var timelineMC;
    var pageMC;
+   var timelineMC;
    var columnList = new Array();
    var footerScrollOverride = 99;
    function PauseMenuBasePage()
@@ -24,9 +24,10 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function setupColumns()
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < arguments.length)
       {
-         var _loc4_ = arguments[_loc3_];
+         _loc4_ = arguments[_loc3_];
          _loc4_.INITIALISE();
          this.columnList[_loc3_] = _loc4_;
          _loc3_ = _loc3_ + 1;
@@ -36,11 +37,12 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function setupColScroll(colList, canScrollList)
    {
       var _loc1_ = 0;
+      var _loc2_;
       while(_loc1_ < colList.length)
       {
          if(canScrollList[_loc1_] != undefined)
          {
-            var _loc2_ = colList[_loc1_];
+            _loc2_ = colList[_loc1_];
             _loc2_.canWheelScroll = canScrollList[_loc1_];
          }
          _loc1_ = _loc1_ + 1;
@@ -49,11 +51,12 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function setupColMouseNav(colList, canNavList)
    {
       var _loc1_ = 0;
+      var _loc2_;
       while(_loc1_ < colList.length)
       {
          if(canNavList[_loc1_] != undefined)
          {
-            var _loc2_ = colList[_loc1_];
+            _loc2_ = colList[_loc1_];
             _loc2_.canMouseNav = canNavList[_loc1_];
          }
          _loc1_ = _loc1_ + 1;
@@ -62,11 +65,12 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function setupColFooterScroll(colList, overrideScrollList)
    {
       var _loc1_ = 0;
+      var _loc2_;
       while(_loc1_ < colList.length)
       {
          if(overrideScrollList[_loc1_] != undefined)
          {
-            var _loc2_ = colList[_loc1_];
+            _loc2_ = colList[_loc1_];
             _loc2_.footerScrollOverrideIndex = overrideScrollList[_loc1_];
          }
          _loc1_ = _loc1_ + 1;
@@ -103,9 +107,10 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function hideColumns()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.columnList.length)
       {
-         var _loc3_ = this.columnList[_loc2_];
+         _loc3_ = this.columnList[_loc2_];
          _loc3_._visible = false;
          _loc3_.columnID = -1;
          _loc2_ = _loc2_ + 1;
@@ -115,9 +120,10 @@ class com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage extends MovieClip
    function showColumns()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.columnList.length)
       {
-         var _loc3_ = this.columnList[_loc2_];
+         _loc3_ = this.columnList[_loc2_];
          _loc3_._visible = true;
          _loc3_.columnID = _loc2_;
          _loc2_ = _loc2_ + 1;

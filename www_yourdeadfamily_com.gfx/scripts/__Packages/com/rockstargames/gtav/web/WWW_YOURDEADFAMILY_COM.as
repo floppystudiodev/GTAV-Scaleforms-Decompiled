@@ -1,13 +1,14 @@
 class com.rockstargames.gtav.web.WWW_YOURDEADFAMILY_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var mcScope;
    var CONTENT;
-   var dataTextScope;
+   var IS_SITE_DYNAMIC;
    var OnColour;
+   var PAGE_NAMES;
+   var browser;
+   var dataTextScope;
    var defaultButtonOnColour;
+   var mcScope;
    function WWW_YOURDEADFAMILY_COM()
    {
       super();
@@ -28,9 +29,9 @@ class com.rockstargames.gtav.web.WWW_YOURDEADFAMILY_COM extends com.rockstargame
    }
    function goToAnchor(AnchorLink)
    {
+      var _loc0_;
       if(this.browser.pageName == "PAGE1")
       {
-         var _loc0_ = null;
          if((_loc0_ = AnchorLink) === "SEARCH")
          {
             if(this.mcScope.nameMC.btnTxt.text == "" || this.mcScope.surnameMC.btnTxt.text == "" || this.mcScope.ageMC.btnTxt.text == "")
@@ -53,6 +54,7 @@ class com.rockstargames.gtav.web.WWW_YOURDEADFAMILY_COM extends com.rockstargame
       this.mcScope = this.CONTENT[pageName];
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -60,14 +62,14 @@ class com.rockstargames.gtav.web.WWW_YOURDEADFAMILY_COM extends com.rockstargame
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }
          }
       }
       this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.browser.pageName) === "PAGE1")
       {
          this.mcScope.formErrorTF._visible = false;

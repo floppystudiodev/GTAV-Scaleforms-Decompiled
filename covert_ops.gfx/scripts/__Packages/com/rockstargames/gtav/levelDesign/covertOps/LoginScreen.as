@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.covertOps.LoginScreen extends com.rockstargames.gtav.levelDesign.covertOps.Screen
 {
-   var view;
-   var loginButton;
-   var app;
    var _userName;
+   var app;
    var cursor;
+   var loginButton;
+   var view;
    static var LOG_IN = 100;
    function LoginScreen(app, viewContainer, cursor)
    {
@@ -41,9 +41,9 @@ class com.rockstargames.gtav.levelDesign.covertOps.LoginScreen extends com.rocks
    }
    function handleButtonInput(inputID)
    {
+      var _loc0_;
       if(inputID == com.rockstargames.gtav.levelDesign.COVERT_OPS.ACCEPT || inputID == com.rockstargames.gtav.levelDesign.COVERT_OPS.LEFT_MOUSE)
       {
-         var _loc0_ = null;
          if((_loc0_ = this.app.GET_CURRENT_SELECTION()) === this.loginButton.id)
          {
             com.rockstargames.gtav.levelDesign.COVERT_OPS.playSound("Log_In");
@@ -69,6 +69,7 @@ class com.rockstargames.gtav.levelDesign.covertOps.LoginScreen extends com.rocks
       this.view.usernameEntry.text = this._userName.substring(0,_loc2_);
       this.setLetterSpacing(this.view.usernameEntry);
       this.view.caret._x = this.view.usernameEntry._x + this.view.usernameEntry.textWidth + 4;
+      var _loc3_;
       if(_loc2_ < this._userName.length)
       {
          com.rockstargames.gtav.levelDesign.COVERT_OPS.playSound("Type_Key");
@@ -79,7 +80,7 @@ class com.rockstargames.gtav.levelDesign.covertOps.LoginScreen extends com.rocks
          this.view.caret._visible = false;
          this.view.passwordAnimation._visible = true;
          this.view.passwordAnimation.play();
-         var _loc3_ = this.view.passwordAnimation._totalFrames / 30;
+         _loc3_ = this.view.passwordAnimation._totalFrames / 30;
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this.view,_loc3_,{onComplete:this.activateLoginButton,onCompleteScope:this});
       }
    }

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.droneCam.ZoomMeter
 {
-   var view;
    var steps;
+   var view;
    static var NUM_STEPS = 5;
    function ZoomMeter(view, visible)
    {

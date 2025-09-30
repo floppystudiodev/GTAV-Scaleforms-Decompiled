@@ -1,42 +1,42 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
+   var BOUNDING_BOX;
+   var CONTENT;
+   var IS_OFFSCREEN;
+   var ON_SCREEN_DURATION_ONE_FRAME;
+   var ON_SCREEN_DURATION_PER_WORD;
+   var ON_SCREEN_DURATION_TOTAL;
+   var TICKET_NUMBER;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
+   var _fadeType;
+   var arrow;
+   var arrowHeight;
+   var arrowMCOffscreen;
+   var arrowPosition;
+   var arrowWidth;
+   var background;
+   var blipLayer;
+   var bottomPadding;
+   var boxOffset;
+   var currentStyle;
+   var defaultHelpTextStyle;
    var defaultWidth;
+   var helpTextBackgroundOffscreen;
+   var helpTextType;
+   var helpTextfield;
+   var hudCompEnum;
+   var isAnimating;
+   var isClearing;
+   var isOnscreen;
    var leftPadding;
+   var offScreenIndicator;
    var rightPadding;
    var sidePadding;
    var topPadding;
-   var bottomPadding;
-   var isAnimating;
-   var isClearing;
-   var ON_SCREEN_DURATION_ONE_FRAME;
-   var ON_SCREEN_DURATION_PER_WORD;
    var trimForOneLineText;
-   var currentStyle;
-   var defaultHelpTextStyle;
-   var hudCompEnum;
-   var helpTextType;
    var txtFormat;
-   var CONTENT;
-   var TIMELINE;
-   var BOUNDING_BOX;
-   var background;
-   var helpTextBackgroundOffscreen;
-   var arrowMCOffscreen;
-   var offScreenIndicator;
-   var arrow;
-   var arrowHeight;
-   var arrowWidth;
-   var helpTextfield;
-   var blipLayer;
-   var isOnscreen;
-   var IS_OFFSCREEN;
-   var arrowPosition;
-   var boxOffset;
-   var ON_SCREEN_DURATION_TOTAL;
-   var TICKET_NUMBER;
-   var _fadeType;
-   var _enumID;
-   var _HUD;
    var screenWidth = 1280;
    var screenHeight = 720;
    function HUD_FLOATING_HELP_TEXT()
@@ -184,10 +184,10 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT extends co
    {
       this.arrow._visible = false;
       var _loc7_ = params[0];
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
-      var _loc2_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc6_;
+      var _loc2_;
+      var _loc4_;
       this.arrowPosition = params[1];
       if(this.arrowPosition == undefined)
       {
@@ -317,7 +317,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_FLOATING_HELP_TEXT extends co
       {
          this.background._width = this.defaultWidth;
       }
-      var _loc7_ = undefined;
+      var _loc7_;
       switch(this.arrowPosition)
       {
          case 0:

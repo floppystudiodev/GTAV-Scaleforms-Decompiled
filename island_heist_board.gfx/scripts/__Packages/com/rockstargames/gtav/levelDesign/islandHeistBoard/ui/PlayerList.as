@@ -5,9 +5,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.PlayerList
    {
       this.view = view;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 4)
       {
-         var _loc2_ = view["player" + _loc3_];
+         _loc2_ = view["player" + _loc3_];
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
          _loc2_.swatch.transform.colorTransform = colourScheme.mid;
          _loc2_.gamertag.transform.colorTransform = colourScheme.light;
@@ -42,9 +43,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.PlayerList
    function update(crewList)
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 4)
       {
-         var _loc2_ = crewList[_loc3_];
+         _loc2_ = crewList[_loc3_];
          if(_loc2_.id == -1)
          {
             this.clear(_loc3_);

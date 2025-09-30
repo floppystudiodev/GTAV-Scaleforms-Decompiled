@@ -1,17 +1,18 @@
 class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var inputReceived;
+   var TIMELINE;
+   var _name;
+   var currScreen;
+   var cursor;
    var deactivated;
    var displayConfig;
    var imageManager;
-   var screenContainer;
-   var cursor;
+   var inputReceived;
+   var lastClickedButtonID;
    var overlay;
-   var currScreen;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -97,9 +98,10 @@ class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.roc
    }
    function GET_CURRENT_SELECTION()
    {
+      var _loc2_;
       if(this.inputReceived)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          return !_loc2_ ? -1 : _loc2_.id;
       }
       return this.lastClickedButtonID;
@@ -120,6 +122,7 @@ class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.roc
          return undefined;
       }
       this.inputReceived = true;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor.UP:
@@ -129,7 +132,7 @@ class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.roc
             this.cursor.snapInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS.ACCEPT:
-            var _loc2_ = this.cursor.getTargetUnderCursor();
+            _loc2_ = this.cursor.getTargetUnderCursor();
             this.lastClickedButtonID = !_loc2_ ? -1 : _loc2_.id;
             break;
          case com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS.CANCEL:
@@ -191,15 +194,18 @@ class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.roc
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc5_;
       if(!isNaN(letterSpacing))
       {
-         var _loc5_ = tf.getTextFormat();
+         _loc5_ = tf.getTextFormat();
          _loc5_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc5_);
       }
+      var _loc2_;
+      var _loc6_;
       if(tf.multiline && tf.maxscroll > 1)
       {
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -218,7 +224,7 @@ class com.rockstargames.gtav.levelDesign.SALVAGE_VEHICLE_TARGETS extends com.roc
       }
       else if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
          _loc2_ = txt.length;
          while(_loc2_ > 0)

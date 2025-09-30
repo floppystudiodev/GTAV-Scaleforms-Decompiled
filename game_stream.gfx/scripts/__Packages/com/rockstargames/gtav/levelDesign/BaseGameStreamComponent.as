@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.BaseGameStreamComponent extends MovieClip
 {
-   var bgColor;
    var CONTENT;
+   var bgColor;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
    var intervalId;
@@ -106,14 +106,18 @@ class com.rockstargames.gtav.levelDesign.BaseGameStreamComponent extends MovieCl
    function parseForGamerTagTitleFonts(tf, str, stdPtSize)
    {
       var _loc3_ = str.split("<C>");
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
+      var _loc7_;
       if(_loc3_.length > 1)
       {
-         var _loc2_ = 1;
+         _loc2_ = 1;
          while(_loc2_ < _loc3_.length)
          {
-            var _loc6_ = String(_loc3_[_loc2_]).split("</C>");
-            var _loc4_ = undefined;
-            var _loc5_ = _loc6_[0].split("<");
+            _loc6_ = String(_loc3_[_loc2_]).split("</C>");
+            _loc5_ = _loc6_[0].split("<");
             if(_loc5_.length > 1)
             {
                _loc4_ = _loc5_[1].split(">")[1];
@@ -122,7 +126,7 @@ class com.rockstargames.gtav.levelDesign.BaseGameStreamComponent extends MovieCl
             {
                _loc4_ = _loc6_[0];
             }
-            var _loc7_ = this.getFontSizeFit(_loc4_,stdPtSize + 3,tf._width);
+            _loc7_ = this.getFontSizeFit(_loc4_,stdPtSize + 3,tf._width);
             _loc3_[_loc2_] = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc7_ + "\'>" + _loc3_[_loc2_];
             _loc2_ += 2;
          }
@@ -134,7 +138,7 @@ class com.rockstargames.gtav.levelDesign.BaseGameStreamComponent extends MovieCl
    function getFontSizeFit(gamerName, fontSize, widthToFit)
    {
       var _loc2_ = new TextFormat("$Font2_cond");
-      var _loc3_ = undefined;
+      var _loc3_;
       do
       {
          _loc2_.size = fontSize;

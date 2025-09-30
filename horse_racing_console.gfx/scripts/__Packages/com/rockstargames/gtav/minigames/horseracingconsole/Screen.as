@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
    var app;
-   var cursor;
    var buttons;
+   var cursor;
    var view;
    static var CONSOLE_WIDTH = 1280;
    static var CONSOLE_HEIGHT = 720;

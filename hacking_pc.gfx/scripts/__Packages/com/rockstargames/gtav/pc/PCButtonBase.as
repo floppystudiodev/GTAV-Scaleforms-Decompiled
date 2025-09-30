@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pc.PCButtonBase
 {
+   var args;
+   var id;
    var mc;
    var type;
-   var id;
-   var args;
    var _active = true;
    var _highlight = false;
    function PCButtonBase()

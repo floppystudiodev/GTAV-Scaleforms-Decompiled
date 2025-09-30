@@ -1,10 +1,11 @@
 class com.rockstargames.gtav.levelDesign.STRENGTH_TEST_SCORE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var score;
+   var TIMELINE;
+   var _name;
    var highScore;
+   var score;
    function STRENGTH_TEST_SCORE()
    {
       super();

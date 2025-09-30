@@ -1,10 +1,15 @@
 class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var baseClassStrID;
+   var colourRed;
    var contactImage;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
-   var colourRed;
+   var important;
+   var parseForFonts;
+   var returnPath1;
+   var returnPathLvl;
    var stepVal = 0;
    function FEED_STATS()
    {
@@ -14,7 +19,7 @@ class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gt
    {
       this.important = isImportant;
       var _loc3_ = new com.rockstargames.ui.utils.HudColour();
-      var _loc5_ = undefined;
+      var _loc5_;
       switch(txd)
       {
          case "CHAR_MICHAEL":
@@ -39,6 +44,7 @@ class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gt
          com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.barMC.fadeMC,_loc3_.r,_loc3_.g,_loc3_.b,50);
       }
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.CONTENT.barMC.modifiedMC);
+      var _loc7_;
       if(txd != undefined)
       {
          if(this.contactImage == undefined)
@@ -46,7 +52,7 @@ class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gt
             this.contactImage = com.rockstargames.ui.media.ImageLoaderMC(this.CONTENT.attachMovie("imageLoader","iMC",1000));
          }
          this.contactImage.init(this.baseClassStrID,txd,txn,com.rockstargames.gtav.levelDesign.BaseGameStreamComponent.IMG_SIZE,com.rockstargames.gtav.levelDesign.BaseGameStreamComponent.IMG_SIZE);
-         var _loc7_ = String(this.contactImage).split(".");
+         _loc7_ = String(this.contactImage).split(".");
          this.returnPath1 = _loc7_.slice(_loc7_.length - this.returnPathLvl).join(".");
          if(txd.substr(0,5) == "CHAR_")
          {
@@ -65,9 +71,9 @@ class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gt
       this.CONTENT.titleTF.htmlText = this.parseForFonts(statTitleStr);
       this.CONTENT.bodyTF.autoSize = true;
       this.CONTENT.bodyTF.htmlText = this.parseForFonts(statBodyStr);
+      var _loc0_;
       if(this.CONTENT.bodyTF._y + this.CONTENT.bodyTF._height > 39)
       {
-         var _loc0_ = null;
          this.CONTENT.maskMC._y = _loc0_ = this.CONTENT.bodyTF._y + this.CONTENT.bodyTF._height;
          this.CONTENT.barMC._y = _loc0_;
       }

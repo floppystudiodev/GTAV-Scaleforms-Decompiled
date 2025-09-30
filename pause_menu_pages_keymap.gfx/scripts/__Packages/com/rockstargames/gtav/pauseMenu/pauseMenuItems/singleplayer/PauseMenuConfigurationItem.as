@@ -1,31 +1,31 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextMid;
-   var labelMC;
-   var itemTextRight;
-   var warningMC;
-   var bgMC;
-   var bMC;
+   var __get__columnID;
+   var __get__data;
+   var __get__highlighted;
+   var _data;
+   var _highlighted;
+   var _uniqueID;
+   var _xmouse;
    var attachMovie;
    var bAlpha;
-   var mOver;
-   var mOut;
-   var _data;
-   var itemTextLeft;
-   var type;
-   var gotoAndStop;
-   var __get__data;
-   var isLastItem;
-   var highlightMC;
-   var initialIndex;
-   var _highlighted;
+   var bMC;
+   var bgMC;
    var checkSelectable;
-   var _xmouse;
-   var __get__highlighted;
    var configListRef;
+   var gotoAndStop;
+   var highlightMC;
    var index;
-   var __get__columnID;
-   var _uniqueID;
+   var initialIndex;
+   var isLastItem;
+   var itemTextLeft;
+   var itemTextMid;
+   var itemTextRight;
+   var labelMC;
+   var mOut;
+   var mOver;
+   var type;
+   var warningMC;
    var defaultLabelColourEnum = 0;
    var keyFocus = 1;
    function PauseMenuConfigurationItem()
@@ -65,10 +65,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConf
       this.fadeStop(bindingItem);
       bindingItem.icons.removeMovieClip();
       bindingItem.iconsBG.removeMovieClip();
+      var _loc4_;
+      var _loc5_;
       if(text != undefined && text != "")
       {
-         var _loc4_ = bindingItem.createEmptyMovieClip("iconsBG",bindingItem.getNextHighestDepth());
-         var _loc5_ = bindingItem.createEmptyMovieClip("icons",bindingItem.getNextHighestDepth());
+         _loc4_ = bindingItem.createEmptyMovieClip("iconsBG",bindingItem.getNextHighestDepth());
+         _loc5_ = bindingItem.createEmptyMovieClip("icons",bindingItem.getNextHighestDepth());
          com.rockstargames.ui.game.GameInterface.call("SET_FORMATTED_TEXT_WITH_ICONS_EXPLICIT",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,text,_loc5_,bindingItem.valueTF,0,13,3,true,false,slot);
          com.rockstargames.ui.game.GameInterface.call("SET_FORMATTED_TEXT_WITH_ICONS_EXPLICIT",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"~HUD_COLOUR_BLACK~" + text,_loc4_,bindingItem.valueBorderTF,0,15,3,true,false,slot);
       }

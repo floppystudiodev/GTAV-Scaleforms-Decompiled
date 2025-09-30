@@ -1,7 +1,12 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardLaunchButton extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var launchTF;
+   var _visible;
+   var _x;
+   var _xscale;
+   var _y;
+   var _yscale;
    var launchButtonFrameMC;
+   var launchTF;
    var isVisible = false;
    var enabled = false;
    function MPHeistBoardLaunchButton()

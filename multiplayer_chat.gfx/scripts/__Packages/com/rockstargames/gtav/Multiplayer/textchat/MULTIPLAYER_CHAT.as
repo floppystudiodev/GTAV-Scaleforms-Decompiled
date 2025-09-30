@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT extends com.rockstargames.ui.core.BaseScreenLayout
 {
+   var CONTENT;
    var DispConf;
+   var eHudColour;
    var feeds;
+   var focusMode;
    var history;
    var historyIndex;
    var hudColour;
-   var eHudColour;
    var player;
    var scope;
-   var focusMode;
    var textInput;
-   var CONTENT;
    static var VISIBLE_STATE_HIDDEN = 0;
    static var VISIBLE_STATE_DEFAULT = 1;
    static var VISIBLE_STATE_TYPING = 2;
@@ -110,7 +110,7 @@ class com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT extends com.r
    function showFeed()
    {
       this.textInput.hide();
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.focusMode) !== com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.FOCUS_MODE_LOBBY)
       {
          this.feeds[0].hide();
@@ -126,19 +126,23 @@ class com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT extends com.r
    {
       var _loc4_ = 0;
       var _loc6_ = this.feeds.length;
+      var _loc2_;
+      var _loc5_;
+      var _loc3_;
+      var _loc7_;
       while(_loc4_ < _loc6_)
       {
-         var _loc2_ = this.feeds[_loc4_];
+         _loc2_ = this.feeds[_loc4_];
          if(_loc2_.historyOffset > - com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE)
          {
-            var _loc5_ = (this.historyIndex - _loc2_.maxLines + _loc2_.historyOffset + com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE) % com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE;
+            _loc5_ = (this.historyIndex - _loc2_.maxLines + _loc2_.historyOffset + com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE) % com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE;
             if(_loc5_ != this.historyIndex - 1)
             {
-               var _loc3_ = this.history[_loc5_];
+               _loc3_ = this.history[_loc5_];
                if(_loc3_ != undefined)
                {
                   com.rockstargames.ui.utils.Colour.setHudColour(_loc3_.hudColour,this.hudColour);
-                  var _loc7_ = this.hudColour.r << 16 | this.hudColour.g << 8 | this.hudColour.b;
+                  _loc7_ = this.hudColour.r << 16 | this.hudColour.g << 8 | this.hudColour.b;
                   _loc2_.addLine(_loc3_.player,_loc3_.scope,_loc3_.message,_loc7_,true,false);
                   _loc2_.historyOffset = _loc2_.historyOffset - 1;
                }
@@ -152,15 +156,19 @@ class com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT extends com.r
       var _loc8_ = true;
       var _loc4_ = 0;
       var _loc5_ = this.feeds.length;
+      var _loc2_;
+      var _loc7_;
+      var _loc3_;
+      var _loc6_;
       while(_loc4_ < _loc5_)
       {
-         var _loc2_ = this.feeds[_loc4_];
+         _loc2_ = this.feeds[_loc4_];
          if(_loc2_.historyOffset < 0)
          {
-            var _loc7_ = (this.historyIndex + this.history.length + _loc2_.historyOffset) % com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE;
-            var _loc3_ = this.history[_loc7_];
+            _loc7_ = (this.historyIndex + this.history.length + _loc2_.historyOffset) % com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.MAX_HISTORY_SIZE;
+            _loc3_ = this.history[_loc7_];
             com.rockstargames.ui.utils.Colour.setHudColour(_loc3_.hudColour,this.hudColour);
-            var _loc6_ = this.hudColour.r << 16 | this.hudColour.g << 8 | this.hudColour.b;
+            _loc6_ = this.hudColour.r << 16 | this.hudColour.g << 8 | this.hudColour.b;
             _loc2_.addLine(_loc3_.player,_loc3_.scope,_loc3_.message,_loc6_,false,forceFinishTweens);
             _loc2_.historyOffset = _loc2_.historyOffset + 1;
             _loc8_ = false;
@@ -217,13 +225,14 @@ class com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT extends com.r
       {
          case com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.VISIBLE_STATE_HIDDEN:
             this.hide();
-            break;
+            return;
          case com.rockstargames.gtav.Multiplayer.textchat.MULTIPLAYER_CHAT.VISIBLE_STATE_TYPING:
             this.showFeed();
             this.showInput(scope,eHudColour);
-            break;
+            return;
          default:
             this.showFeed();
+            return;
       }
    }
    function SET_FOCUS_MODE(focusMode)

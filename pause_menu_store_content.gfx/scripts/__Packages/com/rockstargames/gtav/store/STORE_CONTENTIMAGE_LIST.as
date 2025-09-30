@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstargames.gtav.store.EcommerceStoreBaseClass
 {
-   var data;
    var COLUMN;
-   var menuBgCol;
    var blackCol;
-   var whiteCol;
+   var data;
+   var imageHeight;
+   var menuBgCol;
+   var offset;
    var scrollIndicator;
    var scrollIndicatorbgMC;
-   var offset;
-   var imageHeight;
+   var whiteCol;
    var scrollPos = 0;
    var currentIndex = 0;
    var maxitems = 0;
@@ -59,6 +59,7 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
    }
    function SET_DATA_EMPTY(_slot)
    {
+      var _loc2_;
       if(_slot == undefined)
       {
          this.removeAllSlots();
@@ -74,7 +75,7 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
       }
       else
       {
-         var _loc2_ = "listItem" + _slot;
+         _loc2_ = "listItem" + _slot;
          if(typeof this.COLUMN[_loc2_].picMC == "movieclip")
          {
             this.COLUMN[_loc2_].REMOVE_PIC();
@@ -110,6 +111,8 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
          case 1:
             this.offset = 432;
             this.imageHeight = 430;
+         default:
+            return;
       }
    }
    function UPDATE_CONTENTIMAGE_SIZE(_maxVisItems)
@@ -125,9 +128,10 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
    function removeAllSlots()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.data.length)
       {
-         var _loc2_ = "listItem" + _loc3_;
+         _loc2_ = "listItem" + _loc3_;
          if(typeof this.COLUMN[_loc2_].picMC == "movieclip")
          {
             this.COLUMN[_loc2_].REMOVE_PIC();
@@ -172,7 +176,7 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
       {
          this.arrayStartPoint = 0;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       _loc3_ = this.arrayStartPoint;
       if(_loc3_ == -1)
       {
@@ -185,21 +189,25 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
       var _loc14_ = _loc3_;
       var _loc4_ = 0;
       var _loc7_ = 0;
+      var _loc2_;
+      var _loc5_;
+      var _loc8_;
+      var _loc6_;
       while(_loc7_ < this.data.length)
       {
-         var _loc2_ = "listItem" + _loc3_;
+         _loc2_ = "listItem" + _loc3_;
          if(_loc4_ < this.visItems)
          {
             if(this.data[_loc3_] != undefined)
             {
                if(this.COLUMN[_loc2_].picMC == undefined)
                {
-                  var _loc5_ = this.data[_loc3_][0];
+                  _loc5_ = this.data[_loc3_][0];
                   if(_loc5_ == "")
                   {
-                     _loc5_ = undefined;
+                     _loc5_;
                   }
-                  var _loc8_ = _loc3_;
+                  _loc8_ = _loc3_;
                   this.COLUMN[_loc2_] = this.COLUMN.attachMovie("contentImageListItem" + this.maxVisItems,_loc2_,_loc8_,{_name:_loc2_,_x:0,_y:_loc4_ * this.offset,txd:_loc5_,slot:_loc3_});
                   this.COLUMN[_loc2_].itemHilite._visible = false;
                   this.COLUMN[_loc2_].newItemIndicator._visible = false;
@@ -234,7 +242,7 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
                   this.COLUMN[_loc2_].labelMC._visible = true;
                   this.COLUMN[_loc2_].textBgMC._visible = true;
                }
-               var _loc6_ = false;
+               _loc6_ = false;
                if(_loc4_ == this.currentIndex && this.currentColumn == 1)
                {
                   _loc6_ = true;
@@ -336,11 +344,9 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
                   if(this.arrayStartPoint < 1)
                   {
                      this.arrayStartPoint = this.data.length - 1;
+                     break;
                   }
-                  else
-                  {
-                     this.arrayStartPoint = this.arrayStartPoint - 1;
-                  }
+                  this.arrayStartPoint = this.arrayStartPoint - 1;
                }
             }
             break;
@@ -356,11 +362,9 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
                   if(this.arrayStartPoint >= this.data.length - 1)
                   {
                      this.arrayStartPoint = 0;
+                     break;
                   }
-                  else
-                  {
-                     this.arrayStartPoint = this.arrayStartPoint + 1;
-                  }
+                  this.arrayStartPoint = this.arrayStartPoint + 1;
                }
             }
       }
@@ -399,7 +403,7 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
    function SET_FOCUS(isFocused)
    {
       this.hasFocus = isFocused;
-      var _loc2_ = undefined;
+      var _loc2_;
       if(isFocused)
       {
          this.highlight(this.currentSelection,true);
@@ -410,10 +414,12 @@ class com.rockstargames.gtav.store.STORE_CONTENTIMAGE_LIST extends com.rockstarg
          this.highlight(this.currentSelection,false);
          _loc2_ = 0.3;
       }
+      var _loc3_;
+      var _loc4_;
       if(this.COLUMN.bgMC != undefined)
       {
-         var _loc3_ = new flash.geom.Transform(this.COLUMN.bgMC);
-         var _loc4_ = new flash.geom.ColorTransform(_loc2_,_loc2_,_loc2_,1,1,1,1,0);
+         _loc3_ = new flash.geom.Transform(this.COLUMN.bgMC);
+         _loc4_ = new flash.geom.ColorTransform(_loc2_,_loc2_,_loc2_,1,1,1,1,0);
          _loc3_.colorTransform = _loc4_;
       }
       if(this.COLUMN.scrollIndicatorMC != undefined)

@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.ui.Button extends com.rockstargames.gtav.levelDesign.fixerApp.ui.Target
 {
+   var init;
    var view;
    function Button(id, view)
    {

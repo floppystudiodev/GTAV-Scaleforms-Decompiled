@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel
 {
-   var view;
    var graphButtons;
    var showing;
+   var view;
    static var PANEL_FADE_DELAY = 0;
    static var PANEL_FADE_DURATION = 0.25;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
@@ -20,15 +20,17 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel
       com.rockstargames.gtav.levelDesign.HANGAR_CARGO.setLocalisedText(this.view.stockLevelsLabel.label,"HC_STOCK_LEVELS");
       this.view.totalStockLabel._alpha = 0;
       var _loc3_ = 1;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ <= com.rockstargames.gtav.levelDesign.HANGAR_CARGO.NUM_CARGO_TYPES)
       {
-         var _loc2_ = this.view.bars["bar" + _loc3_];
+         _loc2_ = this.view.bars["bar" + _loc3_];
          _loc2_._alpha = 0;
          _loc2_.graphic._yscale = 0;
          _loc2_.buttonHitArea._yscale = 0;
          _loc2_.label.textAutoSize = "shrink";
          com.rockstargames.gtav.levelDesign.HANGAR_CARGO.setLocalisedText(_loc2_.label,"HC_CARGO_" + _loc3_);
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.hangarCargo.Button(com.rockstargames.gtav.levelDesign.HANGAR_CARGO["GRAPH_BAR_" + _loc3_],_loc2_.buttonHitArea);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.hangarCargo.Button(com.rockstargames.gtav.levelDesign.HANGAR_CARGO["GRAPH_BAR_" + _loc3_],_loc2_.buttonHitArea);
          this.graphButtons.push(_loc4_);
          _loc3_ = _loc3_ + 1;
       }
@@ -76,9 +78,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel
       com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view.stockLevelsLabel,com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel.ELEMENT_FADE_IN_DURATION,_loc4_);
       _loc4_.delay += com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel.ELEMENT_FADE_IN_STEP;
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= com.rockstargames.gtav.levelDesign.HANGAR_CARGO.NUM_CARGO_TYPES)
       {
-         var _loc3_ = this.view.bars["bar" + _loc2_];
+         _loc3_ = this.view.bars["bar" + _loc2_];
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc3_,com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel.ELEMENT_FADE_IN_DURATION,_loc4_);
          _loc4_.delay += com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel.ELEMENT_FADE_IN_STEP;
          _loc2_ = _loc2_ + 1;
@@ -101,10 +104,12 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel
    {
       var _loc2_ = 0;
       var _loc5_ = this.graphButtons.length;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc5_)
       {
-         var _loc3_ = this.graphButtons[_loc2_];
-         var _loc4_ = _loc3_.view._parent.graphic;
+         _loc3_ = this.graphButtons[_loc2_];
+         _loc4_ = _loc3_.view._parent.graphic;
          if(_loc3_.id == activeButtonID)
          {
             _loc4_.gotoAndPlay("on");
@@ -136,9 +141,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.GraphPanel
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view.stockLevelsLabel);
       com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.view);
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= com.rockstargames.gtav.levelDesign.HANGAR_CARGO.NUM_CARGO_TYPES)
       {
-         var _loc3_ = this.view.bars["bar" + _loc2_];
+         _loc3_ = this.view.bars["bar" + _loc2_];
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_.graphic);
          _loc2_ = _loc2_ + 1;

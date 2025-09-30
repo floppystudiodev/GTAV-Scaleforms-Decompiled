@@ -28,17 +28,19 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_IFRUIT extends MovieClip
       {
          this.currentID = 4;
       }
-      var _loc9_ = undefined;
-      var _loc10_ = undefined;
+      var _loc9_;
+      var _loc10_;
       var _loc8_ = 0;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc4_ = 1;
       var _loc5_ = 1;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc7_;
       while(_loc3_ < 9)
       {
-         var _loc2_ = _loc4_ + "_" + _loc5_;
-         var _loc7_ = "c" + _loc4_ + "_" + _loc5_;
+         _loc2_ = _loc4_ + "_" + _loc5_;
+         _loc7_ = "c" + _loc4_ + "_" + _loc5_;
          if(this.container[_loc7_])
          {
             this.container[_loc7_]._name = _loc2_;
@@ -158,9 +160,10 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_IFRUIT extends MovieClip
    }
    function setIcon(target, menuIconFrameEnum, iconAlpha)
    {
+      var _loc2_;
       if(target != undefined)
       {
-         var _loc2_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
+         _loc2_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
          target.homeMenuIcons.gotoAndStop(_loc2_[1]);
          target.homeMenuIcons._alpha = iconAlpha;
       }

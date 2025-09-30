@@ -29,7 +29,7 @@ class com.rockstargames.gtav.web.arena.pages.VehiclePurchasedPage extends com.ro
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "homeButton")
       {
          this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.SPLASH_PAGE.name);

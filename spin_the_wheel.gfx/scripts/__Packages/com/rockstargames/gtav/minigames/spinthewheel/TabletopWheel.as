@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel extends com.rockstargames.gtav.minigames.spinthewheel.Wheel
 {
+   var acceleration;
+   var currSpinStep;
    var isSpectatorWheel;
-   var view;
-   var winPauseDuration;
-   var winIcon;
-   var winMessage;
    var numSpinSteps;
    var segments;
-   var currSpinStep;
-   var acceleration;
    var spinStepDuration;
+   var view;
+   var winIcon;
+   var winMessage;
+   var winPauseDuration;
    static var INITIAL_FADE_IN_DURATION = 0.5;
    static var INITIAL_FADE_IN_DELAY = 0.01;
    static var SPIN_STEP_FADE_OUT_DURATION = 1;
@@ -129,12 +129,15 @@ class com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel extends com.ro
       this.view.centreIcon.label.text = _loc2_.label.text;
       this.view.centreIcon.glowIcon.gotoAndStop(_loc2_.icon._currentframe);
       com.rockstargames.ui.game.GameInterface.call("PLAY_SOUND",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"Wheel_Spin_Selection_Change","DLC_AW_Arena_Spin_Wheel_Game_Sounds");
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       if(this.currSpinStep < this.numSpinSteps)
       {
          this.currSpinStep = this.currSpinStep + 1;
-         var _loc5_ = this.numSpinSteps - this.currSpinStep;
-         var _loc4_ = Math.sqrt(2 * _loc5_ / this.acceleration);
-         var _loc3_ = this.spinStepDuration - _loc4_;
+         _loc5_ = this.numSpinSteps - this.currSpinStep;
+         _loc4_ = Math.sqrt(2 * _loc5_ / this.acceleration);
+         _loc3_ = this.spinStepDuration - _loc4_;
          this.spinStepDuration = _loc4_;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_.glowIcon,com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel.SPIN_STEP_FADE_OUT_DURATION,{_alpha:com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel.SPIN_STEP_FADE_OUT_ALPHA,delay:_loc3_});
          com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_.glowBG,com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel.SPIN_STEP_FADE_OUT_DURATION,{_alpha:com.rockstargames.gtav.minigames.spinthewheel.TabletopWheel.SPIN_STEP_FADE_OUT_ALPHA,delay:_loc3_});

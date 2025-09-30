@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.StylePage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_DEFAULT";
    static var IMAGES = [["DECOR_EXEC_RICH_1","DECOR_EXEC_RICH_2","DECOR_EXEC_RICH_n"],["DECOR_EXEC_COOL_1","DECOR_EXEC_COOL_2","DECOR_EXEC_COOL_n"],["DECOR_EXEC_CONTRAST_1","DECOR_EXEC_CONTRAST_2","DECOR_EXEC_CONTRAST_n"],["DECOR_OLDSPICE_WARM_1","DECOR_OLDSPICE_WARM_2","DECOR_OLDSPICE_WARM_n"],["DECOR_OLDSPICE_CLASSICAL_1","DECOR_OLDSPICE_CLASSICAL_2","DECOR_OLDSPICE_CLASSICAL_n"],["DECOR_OLDSPICE_VINTAGE_1","DECOR_OLDSPICE_VINTAGE_2","DECOR_OLDSPICE_VINTAGE_n"],["DECOR_POWER_ICE_1","DECOR_POWER_ICE_2","DECOR_POWER_ICE_n"],["DECOR_POWER_CONSERVATIVE_1","DECOR_POWER_CONSERVATIVE_2","DECOR_POWER_CONSERVATIVE_n"],["DECOR_POWER_POLISHED_1","DECOR_POWER_POLISHED_2","DECOR_POWER_POLISHED_n"]];
    function StylePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -33,9 +33,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.StylePage extends com.r
    function initStyleButtons()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < 9)
       {
-         var _loc2_ = this.view.styleButtons["styleButton_" + _loc3_];
+         _loc2_ = this.view.styleButtons["styleButton_" + _loc3_];
          _loc2_.onColour = 16777215;
          _loc2_.offColour = 16777215;
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
@@ -56,15 +57,18 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.StylePage extends com.r
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       this.progressPanel.updateCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 9)
       {
-         var _loc3_ = this.view.styleButtons["styleButton_" + _loc2_];
+         _loc3_ = this.view.styleButtons["styleButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.style;
          _loc2_ = _loc2_ + 1;
       }

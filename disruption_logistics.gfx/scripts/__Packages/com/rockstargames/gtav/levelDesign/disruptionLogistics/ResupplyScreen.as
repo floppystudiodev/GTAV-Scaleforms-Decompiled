@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResupplyScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var buyButton;
-   var view;
-   var stealButton;
-   var app;
    var _buttons;
+   var app;
+   var buyButton;
+   var stealButton;
+   var view;
    static var TXD = "UA_GENERIC";
    static var IMAGE = "UA_RESUPPLY";
    function ResupplyScreen(app, viewContainer, cursor)
@@ -30,6 +30,7 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResupplyScreen exte
       super.update();
       this.buyButton.state = this.app.resupplyButtonState;
       this.stealButton.state = this.app.stealButtonState;
+      var _loc3_;
       if(this.app.resupplyButtonState == com.rockstargames.gtav.levelDesign.disruptionLogistics.Button.ACTIVE)
       {
          if(this.app.resupplySaleCost >= 0)
@@ -37,7 +38,7 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.ResupplyScreen exte
             this.view.buySuppliesButton.label.text = "$" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.resupplyCost);
             this.view.buySuppliesButton.line._width = this.view.buySuppliesButton.label.textWidth + 4;
             this.view.buySuppliesButton.label.text = com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.setLocalisedText(this.view.buySuppliesButton.label,"UA_BUY") + ": $" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.resupplyCost);
-            var _loc3_ = this.view.buySuppliesButton.label.textWidth;
+            _loc3_ = this.view.buySuppliesButton.label.textWidth;
             this.view.buySuppliesButton.line._x = 0.5 * (this.view.buySuppliesButton._width + _loc3_) - this.view.buySuppliesButton.line._width + 2;
             this.view.buySuppliesButton.label.text += " $" + com.rockstargames.gtav.levelDesign.DISRUPTION_LOGISTICS.formatNumber(this.app.resupplySaleCost);
             this.view.buySuppliesButton.line._x -= 0.5 * (this.view.buySuppliesButton.label.textWidth - _loc3_);

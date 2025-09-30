@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.autoShopBoard.screens.SelectionScreen extends com.rockstargames.gtav.levelDesign.autoShopBoard.screens.Screen
 {
-   var dataObject;
-   var view;
+   var app;
    var buttons;
    var cursor;
-   var app;
+   var dataObject;
+   var view;
    static var TXD = "AUTO_SHOP_BOARD_IMG";
    static var STATE_LOCKED = 0;
    static var STATE_AVAILABLE = 1;
@@ -86,9 +86,10 @@ class com.rockstargames.gtav.levelDesign.autoShopBoard.screens.SelectionScreen e
    }
    function initButton(id, buttonView, isNavigable)
    {
+      var _loc2_;
       if(isNavigable)
       {
-         var _loc2_ = new com.rockstargames.gtav.levelDesign.autoShopBoard.ui.Button(id,buttonView);
+         _loc2_ = new com.rockstargames.gtav.levelDesign.autoShopBoard.ui.Button(id,buttonView);
          this.buttons.push(_loc2_);
          this.cursor.addTarget(_loc2_);
       }

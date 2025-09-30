@@ -1,11 +1,12 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extends com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
+   var _buttons;
+   var app;
+   var checkNavigationButtons;
+   var overlay;
    var persistentContent;
    var upgradeButtons;
    var view;
-   var app;
-   var _buttons;
-   var overlay;
    function UpgradesScreen(app, viewContainer, cursor, persistentContent, overlay)
    {
       super(app,viewContainer,cursor,persistentContent,overlay,"upgradesScreen");
@@ -24,13 +25,15 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extend
    {
       this.upgradeButtons = [];
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_UPGRADES)
       {
-         var _loc3_ = this.view["upgradeButton" + _loc2_];
+         _loc3_ = this.view["upgradeButton" + _loc2_];
          com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(_loc3_.title,"CLUB_UPG_" + _loc2_);
          com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(_loc3_.description,"CLUB_UPG_DESC_" + _loc2_);
          _loc3_.image.gotoAndStop(_loc2_ * 3 + this.app.clubStyle + 1);
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["UPGRADE_" + _loc2_],_loc3_);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.nightclub.Button(com.rockstargames.gtav.levelDesign.nightclub.ButtonIDs["UPGRADE_" + _loc2_],_loc3_);
          this._buttons.push(_loc4_);
          this.upgradeButtons.push(_loc4_);
          _loc2_ = _loc2_ + 1;
@@ -43,10 +46,12 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extend
    function updateUpgradeButtons()
    {
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < com.rockstargames.gtav.levelDesign.NIGHTCLUB.NUM_UPGRADES)
       {
-         var _loc2_ = this.upgradeButtons[_loc4_].view;
-         var _loc3_ = this.app.upgrades[_loc4_];
+         _loc2_ = this.upgradeButtons[_loc4_].view;
+         _loc3_ = this.app.upgrades[_loc4_];
          if(_loc3_.availability == com.rockstargames.gtav.levelDesign.nightclub.structs.Upgrade.LOCKED)
          {
             _loc2_.locked._visible = true;
@@ -73,10 +78,12 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extend
    {
       panel.cost.textAutoSize = "none";
       panel.strikethrough._x = panel.cost._x;
+      var _loc2_;
+      var _loc3_;
       if(isOnSale)
       {
-         var _loc2_ = "$" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(originalCost);
-         var _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(saleCost);
+         _loc2_ = "$" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(originalCost);
+         _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.NIGHTCLUB.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.NIGHTCLUB.formatNumber(saleCost);
          panel.cost.text = _loc2_ + _loc3_;
          if(panel.cost.textWidth > panel.cost._width)
          {
@@ -109,8 +116,6 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extend
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.LB:
             if(!this.overlay.isShowing)
             {
@@ -122,6 +127,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.UpgradesScreen extend
             {
                this.app.showScreen(this.app.HOME_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)

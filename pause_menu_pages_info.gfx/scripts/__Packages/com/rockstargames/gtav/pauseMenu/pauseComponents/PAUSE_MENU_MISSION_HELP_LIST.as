@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MISSION_HELP_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
-   var scrollMask;
    var CONTENT;
-   var containerMC;
-   var model;
-   var titleHeight;
+   var SEND_COLUMN_PARAMS;
    var SET_SCROLL_BAR;
    var columnIsFocused;
-   var SEND_COLUMN_PARAMS;
+   var containerMC;
+   var dbgID;
+   var model;
+   var scrollMask;
+   var titleHeight;
    function PAUSE_MENU_MISSION_HELP_LIST()
    {
       super();

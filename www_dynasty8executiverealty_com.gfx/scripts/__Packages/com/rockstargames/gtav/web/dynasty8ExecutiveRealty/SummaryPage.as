@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SummaryPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
    var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var view;
+   var website;
    static var WIDE_PERSONNEL_IMAGES = ["PERSONNEL_FEMALE_WIDE","PERSONNEL_MALE_WIDE"];
    static var TXD = "DYN8_EXEC_DEFAULT";
    function SummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -131,7 +131,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SummaryPage extends com
    {
       this.view.garageSummary._visible = false;
       var _loc2_ = "";
-      var _loc3_ = undefined;
+      var _loc3_;
       if(this.website.signage != "")
       {
          _loc3_ = this.website.signage;
@@ -411,7 +411,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SummaryPage extends com
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "purchaseButton")
       {
          if(this.website.garageSelected)

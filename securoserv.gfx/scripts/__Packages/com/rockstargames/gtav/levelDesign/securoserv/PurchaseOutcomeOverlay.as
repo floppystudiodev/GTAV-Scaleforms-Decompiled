@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.securoserv.PurchaseOutcomeOverlay
 {
-   var view;
+   var _controls;
    var acceptButtonID;
    var cancelButtonID;
-   var _controls;
+   var view;
    function PurchaseOutcomeOverlay(view, acceptButtonID, cancelButtonID)
    {
       this.view = view;
@@ -18,10 +18,11 @@ class com.rockstargames.gtav.levelDesign.securoserv.PurchaseOutcomeOverlay
       this.view.message.text = messageLabel;
       this.view.titleBG.gotoAndStop(!success ? "failure" : "success");
       this._controls.length = 0;
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(acceptButtonLabel && acceptButtonLabel.length > 0)
       {
-         var _loc2_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(this.acceptButtonID,this.view.acceptButton,acceptButtonLabel,undefined,undefined,true);
+         _loc2_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(this.acceptButtonID,this.view.acceptButton,acceptButtonLabel,undefined,undefined,true);
          this._controls.push(_loc2_);
          this.view.acceptButton._visible = true;
       }
@@ -30,9 +31,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.PurchaseOutcomeOverlay
          this.view.acceptButton._visible = false;
          _loc3_ = this.view.cancelButton;
       }
+      var _loc4_;
       if(cancelButtonLabel && cancelButtonLabel.length > 0)
       {
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(this.cancelButtonID,this.view.cancelButton,cancelButtonLabel,undefined,undefined,true);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.securoserv.StretchButton(this.cancelButtonID,this.view.cancelButton,cancelButtonLabel,undefined,undefined,true);
          this._controls.push(_loc4_);
          this.view.cancelButton._visible = true;
       }

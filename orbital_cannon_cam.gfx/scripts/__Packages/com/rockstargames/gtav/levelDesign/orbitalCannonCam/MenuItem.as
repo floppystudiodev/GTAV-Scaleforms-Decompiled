@@ -69,9 +69,10 @@ class com.rockstargames.gtav.levelDesign.orbitalCannonCam.MenuItem
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

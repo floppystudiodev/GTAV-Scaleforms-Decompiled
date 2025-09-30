@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_LONG_AUDIO extends com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST
 {
-   var labelMC;
    var _isSelected;
    var animatedAudioIcon;
+   var labelMC;
    function COL_TYPE_LIST_LONG_AUDIO()
    {
       super();

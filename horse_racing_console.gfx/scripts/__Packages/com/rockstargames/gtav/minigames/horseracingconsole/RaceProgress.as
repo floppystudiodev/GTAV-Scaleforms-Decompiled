@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.RaceProgress
 {
-   var view;
-   var cards;
    var cardPositions;
+   var cards;
    var currLeader;
+   var view;
    function RaceProgress(view, horses, selectedHorseIndex)
    {
       this.view = view;
@@ -14,10 +14,12 @@ class com.rockstargames.gtav.minigames.horseracingconsole.RaceProgress
       this.cards = [];
       this.cardPositions = [];
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < horses.length)
       {
-         var _loc3_ = horses[_loc4_];
-         var _loc2_ = this.view["card" + _loc3_.number];
+         _loc3_ = horses[_loc4_];
+         _loc2_ = this.view["card" + _loc3_.number];
          _loc2_.num.text = _loc3_.number;
          _loc2_.odds.text = _loc3_.odds;
          _loc2_.star._visible = _loc4_ == selectedHorseIndex;
@@ -40,9 +42,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.RaceProgress
       this.view.meter.marker._x = this.view.meter.bar._width;
       var _loc4_ = [].concat(horses).sortOn("x",Array.NUMERIC | Array.DESCENDING);
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_].number;
+         _loc3_ = _loc4_[_loc2_].number;
          this.cards[_loc3_]._x = this.cardPositions[_loc2_];
          _loc2_ = _loc2_ + 1;
       }

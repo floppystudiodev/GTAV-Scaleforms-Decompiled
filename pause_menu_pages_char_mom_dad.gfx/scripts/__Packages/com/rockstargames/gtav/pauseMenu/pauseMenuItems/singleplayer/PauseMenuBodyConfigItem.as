@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuBodyConfigItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextRight;
-   var labelMC;
-   var isAdjustable;
+   var _data;
+   var _highlighted;
+   var bgMC;
    var dotMC;
    var gridMC;
-   var _data;
+   var isAdjustable;
    var isSelectable;
-   var bgMC;
-   var _highlighted;
+   var itemTextRight;
+   var labelMC;
    var padding = 0;
    var mx = 0;
    var my = 0;

@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem extends MovieClip
 {
+   var avatarBGMC;
+   var avatarImg;
+   var bgMC;
+   var bikerDLCIconMC;
+   var crewTagMC;
+   var friendOrCrewTF;
+   var highlightBGMC;
+   var icon2MC;
+   var jobPointsTF;
+   var jpIconMC;
    var labelMC;
    var rankNumTF;
-   var jpIconMC;
-   var bgMC;
-   var crewTagMC;
-   var taggedMC;
-   var icon2MC;
-   var avatarBGMC;
-   var friendOrCrewTF;
    var rankingTF;
-   var avatarImg;
-   var jobPointsTF;
    var scoreTF;
-   var bikerDLCIconMC;
-   var highlightBGMC;
+   var taggedMC;
    var index = 0;
    var initialIndex = 0;
    var _highlighted = false;
@@ -227,6 +227,7 @@ class com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem extends MovieCli
          this.avatarImg = com.rockstargames.ui.media.ImageLoaderMC(this.attachMovie("avatarImage","a",this.getNextHighestDepth(),{_x:25,_y:0}));
          this.avatarImg.swapDepths(this.rankingTF);
       }
+      var _loc3_;
       if(this.avatarImg.textureDict == txd)
       {
          if(this.avatarImg.isLoaded)
@@ -242,7 +243,7 @@ class com.rockstargames.gtav.Multiplayer.items.MPMMFreemodeItem extends MovieCli
             this.avatarImg.removeTxdRef();
          }
          this.avatarImg.init("MP_MM_CARD_FREEMODE",txd,txn,25,25);
-         var _loc3_ = this.avatarImg.splitPath(String(this.avatarImg),2);
+         _loc3_ = this.avatarImg.splitPath(String(this.avatarImg),2);
          this.avatarImg.requestTxdRef(_loc3_,true,this.fadeIn,this);
       }
    }

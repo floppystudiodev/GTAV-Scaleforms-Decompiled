@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScrollingList
 {
-   var view;
    var items;
    var nextItemY;
-   var viewMinY;
-   var viewMaxY;
-   var scrollMinY;
-   var scrollMaxY;
-   var scrollGoalY;
-   var updateScrollArgs;
    var scrollContainer;
+   var scrollGoalY;
+   var scrollMaxY;
+   var scrollMinY;
+   var updateScrollArgs;
+   var view;
+   var viewMaxY;
+   var viewMinY;
    static var ITEM_SPACING = 17;
    static var DAMPING = 0.35;
    function ScrollingList(view)

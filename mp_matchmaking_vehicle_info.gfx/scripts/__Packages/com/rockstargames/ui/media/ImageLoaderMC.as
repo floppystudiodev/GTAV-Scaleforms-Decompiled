@@ -1,13 +1,13 @@
 class com.rockstargames.ui.media.ImageLoaderMC extends MovieClip
 {
-   var txdListener;
-   var w;
-   var h;
    var callbackFunc;
    var callbackScope;
-   var txdDummy;
-   var txdLoader;
+   var h;
    var thisScope;
+   var txdDummy;
+   var txdListener;
+   var txdLoader;
+   var w;
    var gfxFileName = "";
    var textureDict = "";
    var textureFilename = "";
@@ -72,10 +72,11 @@ class com.rockstargames.ui.media.ImageLoaderMC extends MovieClip
    }
    function requestTxdRef(callbackStrID, _txdAlreadyLoaded, _callbackFunc, _callbackScope)
    {
+      var _loc2_;
       if(this.gfxFileName != "" && this.textureDict != "")
       {
          this.onResponse(_callbackFunc,_callbackScope);
-         var _loc2_ = false;
+         _loc2_ = false;
          if(_txdAlreadyLoaded != undefined)
          {
             _loc2_ = _txdAlreadyLoaded;

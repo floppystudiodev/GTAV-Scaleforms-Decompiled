@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.TATTOO_KEYS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var canAddButton;
+   var CONTENT;
    var ONSCREEN_BUTTONS;
    var POSITIONAL_ALPHA_VALUES;
-   var CONTENT;
+   var canAddButton;
    static var USE_KEYS = false;
    var offset = 50;
    var DURATION = 0.3;
@@ -38,15 +38,17 @@ class com.rockstargames.gtav.levelDesign.TATTOO_KEYS extends com.rockstargames.g
          }
          whichButton = this.tick;
       }
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
       if(this.canAddButton)
       {
          if(this.currentButtonID == -1)
          {
             this.currentButtonID = this.CONTENT.getNextHighestDepth();
          }
-         var _loc2_ = undefined;
-         var _loc6_ = this.ONSCREEN_BUTTONS.length * 100 + this.offset;
-         var _loc5_ = undefined;
+         _loc6_ = this.ONSCREEN_BUTTONS.length * 100 + this.offset;
          if(whichButton < 8)
          {
             _loc5_ = !com.rockstargames.gtav.levelDesign.TATTOO_KEYS.USE_KEYS ? "LEFT_STICK" : "DIRECTION_KEYS";
@@ -62,7 +64,7 @@ class com.rockstargames.gtav.levelDesign.TATTOO_KEYS extends com.rockstargames.g
          _loc2_ = this.CONTENT.attachMovie(_loc5_,"button" + this.CONTENT.getNextHighestDepth(),this.CONTENT.getNextHighestDepth(),{_x:_loc6_,_y:this.offset});
          if(com.rockstargames.gtav.levelDesign.TATTOO_KEYS.USE_KEYS)
          {
-            var _loc4_ = whichButton % 8 * 45;
+            _loc4_ = whichButton % 8 * 45;
             _loc2_.keys.keyW.gotoAndStop(!this.angleIsCloseTo(_loc4_,0,45) ? 1 : 2);
             _loc2_.keys.keyA.gotoAndStop(!this.angleIsCloseTo(_loc4_,270,45) ? 1 : 2);
             _loc2_.keys.keyS.gotoAndStop(!this.angleIsCloseTo(_loc4_,180,45) ? 1 : 2);
@@ -122,15 +124,19 @@ class com.rockstargames.gtav.levelDesign.TATTOO_KEYS extends com.rockstargames.g
    }
    function SET_STICK_POINTER_ANGLE(arAngle, color)
    {
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
       if(!com.rockstargames.gtav.levelDesign.TATTOO_KEYS.USE_KEYS)
       {
-         var _loc2_ = this.ONSCREEN_BUTTONS[1];
-         var _loc6_ = 0;
-         var _loc5_ = 0;
+         _loc2_ = this.ONSCREEN_BUTTONS[1];
+         _loc6_ = 0;
+         _loc5_ = 0;
          if(arAngle != undefined && arAngle >= 0)
          {
             arAngle -= 90;
-            var _loc4_ = 5;
+            _loc4_ = 5;
             _loc6_ = Math.cos(arAngle * 3.141592653589793 / 180) * _loc4_;
             _loc5_ = Math.sin(arAngle * 3.141592653589793 / 180) * _loc4_;
          }

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.web.casino.pages.MembershipPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var view;
    var prevPageName;
+   var view;
    var website;
    function MembershipPage(website, viewContainer, pageName, isFirstPage)
    {
@@ -43,6 +43,11 @@ class com.rockstargames.gtav.web.casino.pages.MembershipPage extends com.rocksta
       cardView.cost._x = cardView.fee._x + cardView.fee.textWidth + 10;
       var _loc5_ = this.website.getMembershipCost(false);
       var _loc4_ = this.website.getMembershipCost(true);
+      var _loc3_;
+      var _loc7_;
+      var _loc8_;
+      var _loc6_;
+      var _loc9_;
       if(_loc4_ == -1)
       {
          cardView.cost.text = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc5_);
@@ -50,12 +55,12 @@ class com.rockstargames.gtav.web.casino.pages.MembershipPage extends com.rocksta
       }
       else
       {
-         var _loc3_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc5_);
+         _loc3_ = "$" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc5_);
          cardView.cost.text = _loc3_ + "  $" + com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.formatNumber(_loc4_);
-         var _loc7_ = cardView.cost.text.indexOf(_loc3_);
-         var _loc8_ = _loc7_ + _loc3_.length;
-         var _loc6_ = cardView.cost.getExactCharBoundaries(_loc7_).left;
-         var _loc9_ = cardView.cost.getExactCharBoundaries(_loc8_).right;
+         _loc7_ = cardView.cost.text.indexOf(_loc3_);
+         _loc8_ = _loc7_ + _loc3_.length;
+         _loc6_ = cardView.cost.getExactCharBoundaries(_loc7_).left;
+         _loc9_ = cardView.cost.getExactCharBoundaries(_loc8_).right;
          cardView.strikethrough._x = cardView.cost._x + _loc6_ - 4;
          cardView.strikethrough._width = _loc9_ - _loc6_;
       }
@@ -88,6 +93,8 @@ class com.rockstargames.gtav.web.casino.pages.MembershipPage extends com.rocksta
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES.MEMBERSHIP_PENDING_PAGE.name);
+         default:
+            return;
       }
    }
 }

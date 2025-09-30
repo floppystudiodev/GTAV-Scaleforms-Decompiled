@@ -1,18 +1,19 @@
 class com.rockstargames.gtav.pc.applications.App_Hacking extends com.rockstargames.gtav.pc.applications.hacking.BaseHacking
 {
-   var mainPopupMC;
-   var errorContainerMC;
-   var hackingMC;
    var app01MC;
    var app02MC;
+   var attachMovie;
    var computerBtn;
-   var networkBtn;
-   var hackingBtn;
+   var downloadBtn;
+   var errorContainerMC;
    var hackingApp1;
    var hackingApp2;
-   var downloadBtn;
+   var hackingBtn;
+   var hackingMC;
    var hackingRef;
+   var mainPopupMC;
    var mouse;
+   var networkBtn;
    var oldbtnManagerIndex = 0;
    var btnManagerIndex = 0;
    var btnManagerList = new Array();
@@ -83,9 +84,10 @@ class com.rockstargames.gtav.pc.applications.App_Hacking extends com.rockstargam
    function buttonsState(index)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.btnManagerList.length)
       {
-         var _loc3_ = this.btnManagerList[_loc2_];
+         _loc3_ = this.btnManagerList[_loc2_];
          _loc3_.active = this.btnManagerStateList[index][_loc2_];
          _loc2_ = _loc2_ + 1;
       }
@@ -228,6 +230,8 @@ class com.rockstargames.gtav.pc.applications.App_Hacking extends com.rockstargam
             break;
          case 1:
             this.openApp02(true);
+         default:
+            return;
       }
    }
    function closeAllApps()

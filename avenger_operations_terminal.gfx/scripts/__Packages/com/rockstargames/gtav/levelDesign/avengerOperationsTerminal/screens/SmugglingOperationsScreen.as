@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.SmugglingOperationsScreen extends com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Screen
 {
-   var view;
    var buttons;
    var cursor;
    var operationDataObject;
+   var view;
    var numButtons = 3;
    function SmugglingOperationsScreen(app, viewContainer, cursor, dataObject)
    {

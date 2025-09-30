@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Screen
 {
-   var missionButtons;
-   var view;
-   var jobButtons;
    var _buttons;
-   var cursor;
-   var slideshow;
    var app;
+   var cursor;
+   var jobButtons;
+   var missionButtons;
    var overlay;
+   var slideshow;
+   var view;
    function MainScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"mainScreen");
@@ -42,9 +42,10 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       view.title.label.verticalAlign = "center";
       com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.setLocalisedText(view.title.label,title);
       com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.setLocalisedText(view.description.label,description);
+      var _loc3_;
       if(this.app.displayConfig.isAsian)
       {
-         var _loc3_ = view.description.label.getTextFormat();
+         _loc3_ = view.description.label.getTextFormat();
          _loc3_.leading = 2;
          view.description.label.setTextFormat(_loc3_);
       }
@@ -56,10 +57,12 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
    function update()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < this.app.missionStates.length)
       {
-         var _loc3_ = this.missionButtons[_loc2_].view;
-         var _loc4_ = this.app.missionStates[_loc2_];
+         _loc3_ = this.missionButtons[_loc2_].view;
+         _loc4_ = this.app.missionStates[_loc2_];
          _loc3_.padlock._visible = !_loc4_;
          _loc3_.image._alpha = !_loc4_ ? 30 : 100;
          _loc3_.cooldown.text = this.app.missionCooldowns[_loc2_] <= 0 ? "" : com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatTime(this.app.missionCooldowns[_loc2_]);
@@ -71,10 +74,11 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       this.stopSlideshow();
       var _loc3_ = 0;
       var _loc4_ = this.missionButtons.length;
+      var _loc5_;
       while(_loc3_ < _loc4_)
       {
          this.missionButtons[_loc3_].view.gotoAndStop("off");
-         var _loc5_ = (button.view.image._currentFrame - 1) % _loc4_ + 1;
+         _loc5_ = (button.view.image._currentFrame - 1) % _loc4_ + 1;
          button.view.image.gotoAndStop(_loc5_);
          _loc3_ = _loc3_ + 1;
       }
@@ -89,10 +93,11 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       this._buttons.length = 0;
       var _loc6_ = this.jobButtons[0].view._y;
       _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.jobButtons.length)
       {
          var button = this.jobButtons[_loc3_];
-         var _loc2_ = jobs[_loc3_];
+         _loc2_ = jobs[_loc3_];
          if(_loc2_.title.length > 0)
          {
             button.updateBounds();
@@ -142,10 +147,12 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       var _loc1_ = panel.value;
       var _loc2_ = panel.strikethrough;
       _loc1_.textAutoSize = "none";
+      var _loc3_;
+      var _loc4_;
       if(isOnSale)
       {
-         var _loc3_ = "$" + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatNumber(originalCost);
-         var _loc4_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.setLocalisedText(_loc1_,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatNumber(saleCost);
+         _loc3_ = "$" + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatNumber(originalCost);
+         _loc4_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.setLocalisedText(_loc1_,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatNumber(saleCost);
          _loc1_.text = _loc4_ + "  " + _loc3_;
          if(_loc1_.textWidth > _loc1_._width)
          {
@@ -183,12 +190,14 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
    }
    function updateCooldown(index)
    {
+      var _loc2_;
+      var _loc3_;
       if(this.view.jobOverlay._visible)
       {
-         var _loc2_ = this.app.jobs[index];
+         _loc2_ = this.app.jobs[index];
          if(_loc2_.valueType == com.rockstargames.gtav.levelDesign.hackerTruckDesktop.Job.VALUE_TYPE_SECONDS)
          {
-            var _loc3_ = this.jobButtons[index].view;
+            _loc3_ = this.jobButtons[index].view;
             _loc3_.value.text = _loc2_.value <= 0 ? "" : com.rockstargames.gtav.levelDesign.HACKER_TRUCK_DESKTOP.formatTime(_loc2_.value);
             _loc3_._alpha = !(_loc2_.value == 0 && _loc2_.isAvailable) ? 50 : 100;
             _loc3_.padlock._visible = _loc2_.value == 0 && !_loc2_.isAvailable;
@@ -201,12 +210,14 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       this.stopSlideshow();
       var _loc4_ = 0;
       var _loc8_ = this.missionButtons.length;
+      var _loc6_;
+      var _loc5_;
       while(_loc4_ < _loc8_)
       {
-         var _loc6_ = this.missionButtons[_loc4_];
+         _loc6_ = this.missionButtons[_loc4_];
          if(_loc6_.enabled && !_loc6_.view.padlock._visible)
          {
-            var _loc5_ = (_loc6_.view.image._currentFrame - 1) % _loc8_ + 1;
+            _loc5_ = (_loc6_.view.image._currentFrame - 1) % _loc8_ + 1;
             if(_loc6_.id == targetID)
             {
                _loc6_.view.image.gotoAndStop(_loc5_ + _loc8_);
@@ -223,12 +234,13 @@ class com.rockstargames.gtav.levelDesign.hackerTruckDesktop.MainScreen extends c
       var _loc3_ = this.view.jobOverlay.panel.tooltip;
       _loc4_ = 0;
       _loc8_ = this.jobButtons.length;
+      var _loc7_;
       while(_loc4_ < _loc8_)
       {
          _loc6_ = this.jobButtons[_loc4_];
          if(_loc6_.id == targetID)
          {
-            var _loc7_ = this.app.jobs[_loc4_].tooltip;
+            _loc7_ = this.app.jobs[_loc4_].tooltip;
             if(_loc7_.length > 0)
             {
                _loc3_._y = _loc6_.view._y;

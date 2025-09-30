@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate extends MovieClip implements com.rockstargames.gtav.ng.Replay.TextCanvas.ITextTemplate
 {
-   var _textfieldsContainer;
+   var _allTextfields;
+   var _constrainedCanvas;
+   var _constrainedHeight;
+   var _constrainedWidth;
    var _currentTemplateId;
    var _isCanvasConstrained;
    var _mask;
-   var _constrainedCanvas;
-   var _constrainedWidth;
-   var _constrainedHeight;
-   var _allTextfields;
+   var _textfieldsContainer;
    static var HD_TITLE_SAFE = 0.8;
    static var NON_WIDESCREEN_TITLE_SAFE_WIDTH = 0.75;
    static var MINIMUM_FONT_SIZE = 55;
@@ -51,6 +51,8 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
             break;
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.FONT:
             this.updateFontByLabel(itemIndex,data);
+         default:
+            return;
       }
    }
    function updatePropertyWithNumber(itemIndex, propertyId, data)
@@ -71,12 +73,14 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
             break;
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.SCALE:
             this.updateScale(data);
+         default:
+            return;
       }
    }
    function init(templateTypeId)
    {
       this._currentTemplateId = templateTypeId;
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this._currentTemplateId) !== com.rockstargames.gtav.ng.Replay.TextCanvas.types.TemplateTypes.NEW_TEMPLATES)
       {
          this._numTextfields = 1;
@@ -155,9 +159,12 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
          _loc7_.align = "center";
       }
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc5_;
+      var _loc6_;
       while(_loc3_ < this._numTextfields)
       {
-         var _loc2_ = this._textfieldsContainer.createTextField(String(_loc3_),this._textfieldsContainer.getNextHighestDepth(),0,0,1,1);
+         _loc2_ = this._textfieldsContainer.createTextField(String(_loc3_),this._textfieldsContainer.getNextHighestDepth(),0,0,1,1);
          if(!this._isCanvasConstrained)
          {
             _loc2_._width = this._screenWidthPixels * com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate.HD_TITLE_SAFE * 0.25;
@@ -179,18 +186,20 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
          _loc2_.text = "";
          if(this._allTextfields.length != 0)
          {
-            var _loc5_ = TextField(this._allTextfields[_loc3_ - 1]).getTextFormat();
-            var _loc6_ = TextField(this._allTextfields[_loc3_ - 1])._y + _loc5_.size;
+            _loc5_ = TextField(this._allTextfields[_loc3_ - 1]).getTextFormat();
+            _loc6_ = TextField(this._allTextfields[_loc3_ - 1])._y + _loc5_.size;
             _loc2_._y = _loc6_;
          }
          this._allTextfields.push(_loc2_);
          this.updateTextfieldXPositionInContainer(_loc2_);
          _loc3_ = _loc3_ + 1;
       }
+      var _loc8_;
+      var _loc4_;
       if(this._numTextfields > 1)
       {
-         var _loc8_ = (- this._textfieldsContainer._height) * 0.5;
-         var _loc4_ = 0;
+         _loc8_ = (- this._textfieldsContainer._height) * 0.5;
+         _loc4_ = 0;
          while(_loc4_ < this._numTextfields)
          {
             this._allTextfields[_loc4_]._y += _loc8_;
@@ -222,9 +231,10 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
       var _loc4_ = this._textfieldsContainer._width;
       _loc3_.text = currentData;
       _loc3_._visible = true;
+      var _loc2_;
       if(this._currentTemplateId == com.rockstargames.gtav.ng.Replay.TextCanvas.types.TemplateTypes.NEW_TEMPLATES)
       {
-         var _loc2_ = _loc3_.getTextFormat();
+         _loc2_ = _loc3_.getTextFormat();
          while(_loc3_.textWidth > this._constrainedWidth)
          {
             _loc2_.size = Number(_loc2_.size) - 1;
@@ -259,26 +269,32 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
    function updateTextfieldYPositionInContainer()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
+      var _loc7_;
       while(_loc2_ < this._numTextfields)
       {
-         var _loc3_ = this._allTextfields[_loc2_];
+         _loc3_ = this._allTextfields[_loc2_];
          if(_loc2_ == 0)
          {
-            var _loc5_ = _loc3_.getTextFormat();
+            _loc5_ = _loc3_.getTextFormat();
             _loc3_._y = (- (_loc3_._height - Number(_loc5_.size))) * 0.5;
          }
          else
          {
-            var _loc6_ = TextField(this._allTextfields[_loc2_ - 1]).getTextFormat();
-            var _loc7_ = TextField(this._allTextfields[_loc2_ - 1])._y + Number(_loc6_.size);
+            _loc6_ = TextField(this._allTextfields[_loc2_ - 1]).getTextFormat();
+            _loc7_ = TextField(this._allTextfields[_loc2_ - 1])._y + Number(_loc6_.size);
             _loc3_._y = _loc7_;
          }
          _loc2_ = _loc2_ + 1;
       }
+      var _loc8_;
+      var _loc4_;
       if(this._numTextfields > 1)
       {
-         var _loc8_ = (- this._textfieldsContainer._height) * 0.5;
-         var _loc4_ = 0;
+         _loc8_ = (- this._textfieldsContainer._height) * 0.5;
+         _loc4_ = 0;
          while(_loc4_ < this._allTextfields.length)
          {
             this._allTextfields[_loc4_]._y += _loc8_;
@@ -293,10 +309,12 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
    }
    function updateFontByLabel(itemIndex, currentData)
    {
+      var _loc3_;
+      var _loc2_;
       if(currentData != "")
       {
-         var _loc3_ = TextField(this._allTextfields[itemIndex]);
-         var _loc2_ = _loc3_.getTextFormat();
+         _loc3_ = TextField(this._allTextfields[itemIndex]);
+         _loc2_ = _loc3_.getTextFormat();
          _loc2_.bold = Boolean(currentData == com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate.MACHINE_BOLD);
          _loc2_.font = currentData;
          _loc3_.setNewTextFormat(_loc2_);
@@ -312,13 +330,16 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate
    }
    function updateScale(currentData)
    {
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
       if(this._currentTemplateId != com.rockstargames.gtav.ng.Replay.TextCanvas.types.TemplateTypes.NEW_TEMPLATES)
       {
          if(currentData >= com.rockstargames.gtav.ng.Replay.TextCanvas.customtemplates.CustomTemplate.MINIMUM_FONT_SIZE)
          {
-            var _loc2_ = TextField(this._allTextfields[0]);
-            var _loc3_ = _loc2_.getTextFormat();
-            var _loc4_ = 0.209 * (currentData - 65) + 16;
+            _loc2_ = TextField(this._allTextfields[0]);
+            _loc3_ = _loc2_.getTextFormat();
+            _loc4_ = 0.209 * (currentData - 65) + 16;
             _loc3_.size = _loc4_ >> 0;
             _loc2_.setNewTextFormat(_loc3_);
             _loc2_.setTextFormat(_loc3_);

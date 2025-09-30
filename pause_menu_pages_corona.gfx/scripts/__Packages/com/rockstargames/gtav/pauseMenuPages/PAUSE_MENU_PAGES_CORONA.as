@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CORONA extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
+   var column1;
    var column2;
    var column3;
    var column4;
-   var setupColumns;
-   var setupColScroll;
    var columnList;
+   var setupColScroll;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_CORONA()
    {

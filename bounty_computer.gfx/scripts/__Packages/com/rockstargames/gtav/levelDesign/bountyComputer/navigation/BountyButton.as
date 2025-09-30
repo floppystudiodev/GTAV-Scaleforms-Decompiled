@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.bountyComputer.navigation.BountyButton extends com.rockstargames.gtav.levelDesign.bountyComputer.navigation.Target
 {
+   var init;
    var view;
    function BountyButton(id, view)
    {

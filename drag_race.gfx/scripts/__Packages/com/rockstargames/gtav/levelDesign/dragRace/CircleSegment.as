@@ -34,11 +34,14 @@ class com.rockstargames.gtav.levelDesign.dragRace.CircleSegment
          com.rockstargames.gtav.levelDesign.dragRace.CircleSegment.drawSubSegment(_loc11_,_loc9_,radius,segmentMask,xOffset,yOffset);
       }
       var _loc1_ = 0;
+      var _loc3_;
+      var _loc6_;
+      var _loc5_;
       while(_loc1_ <= _loc10_)
       {
-         var _loc3_ = (_loc1_ + _loc9_) % 8;
-         var _loc6_ = com.rockstargames.gtav.levelDesign.dragRace.CircleSegment.controlPoints[_loc3_ * 2] * radius + xOffset;
-         var _loc5_ = com.rockstargames.gtav.levelDesign.dragRace.CircleSegment.controlPoints[_loc3_ * 2 + 1] * radius + yOffset;
+         _loc3_ = (_loc1_ + _loc9_) % 8;
+         _loc6_ = com.rockstargames.gtav.levelDesign.dragRace.CircleSegment.controlPoints[_loc3_ * 2] * radius + xOffset;
+         _loc5_ = com.rockstargames.gtav.levelDesign.dragRace.CircleSegment.controlPoints[_loc3_ * 2 + 1] * radius + yOffset;
          segmentMask.lineTo(_loc6_,_loc5_);
          _loc1_ = _loc1_ + 1;
       }

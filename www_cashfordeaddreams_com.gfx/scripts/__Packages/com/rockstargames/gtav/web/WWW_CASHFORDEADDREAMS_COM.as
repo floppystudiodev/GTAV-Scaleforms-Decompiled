@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.WWW_CASHFORDEADDREAMS_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var mcScope;
    var CONTENT;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
    function WWW_CASHFORDEADDREAMS_COM()
    {
       super();

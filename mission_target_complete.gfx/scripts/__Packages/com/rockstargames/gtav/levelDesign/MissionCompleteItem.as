@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.MissionCompleteItem extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var innerMC;
-   var id;
+   var _alpha;
    var bgMC;
+   var id;
+   var innerMC;
    function MissionCompleteItem()
    {
       super();
@@ -29,6 +30,10 @@ class com.rockstargames.gtav.levelDesign.MissionCompleteItem extends com.rocksta
       var _loc2_ = "";
       var _loc9_ = this._data[this._data.length - 1];
       this.innerMC._alpha = 100;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
+      var _loc7_;
       switch(this.id)
       {
          case 0:
@@ -42,14 +47,14 @@ class com.rockstargames.gtav.levelDesign.MissionCompleteItem extends com.rocksta
             _loc2_ = com.rockstargames.ui.utils.MathStar.toFixedRound(this._data[this._data.length - 2],2) + "%";
             break;
          case 4:
-            var _loc4_ = this._data[this._data.length - 3];
-            var _loc6_ = String(_loc4_);
+            _loc4_ = this._data[this._data.length - 3];
+            _loc6_ = String(_loc4_);
             if(_loc4_ < 10)
             {
                _loc6_ = "0" + _loc4_;
             }
-            var _loc5_ = this._data[this._data.length - 2];
-            var _loc7_ = String(_loc5_);
+            _loc5_ = this._data[this._data.length - 2];
+            _loc7_ = String(_loc5_);
             if(_loc5_ < 10)
             {
                _loc7_ = "0" + _loc5_;

@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.trustAndSafety.ui.Scroller
 {
-   var content;
-   var mask;
-   var handle;
-   var track;
-   var topFade;
    var bottomFade;
+   var bottomFadeTweenDirection;
+   var content;
+   var contentMax;
+   var contentMin;
+   var handle;
+   var handleMax;
+   var handleMin;
+   var mask;
+   var momentumArgs;
    var momentumListener;
    var restoreIndex;
-   var contentMax;
-   var handleMin;
+   var topFade;
    var topFadeTweenDirection;
-   var bottomFadeTweenDirection;
-   var momentumArgs;
-   var contentMin;
-   var handleMax;
+   var track;
    static var SCROLL_SPEED = 10;
    static var MOUSEWHEEL_SPEED_MULTIPLIER = 2;
    static var MOUSEWHEEL_MOMENTUM_DAMPING = 0.85;
@@ -73,10 +73,12 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.ui.Scroller
    }
    function itemIsVisible(item)
    {
+      var _loc2_;
+      var _loc3_;
       if(item._parent == this.content)
       {
-         var _loc2_ = item._y + this.content._y;
-         var _loc3_ = _loc2_ + item._height;
+         _loc2_ = item._y + this.content._y;
+         _loc3_ = _loc2_ + item._height;
          return _loc2_ < this.mask._y + this.mask._height && _loc3_ > this.mask._y;
       }
       return false;

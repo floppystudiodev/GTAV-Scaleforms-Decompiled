@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.PieChart
 {
-   var view;
    var currAngle;
    var goalAngle;
+   var view;
    static var ANIMATION_SPEED = 10;
    static var FRAME_DURATION = 0.03333333333333333;
    function PieChart(view)

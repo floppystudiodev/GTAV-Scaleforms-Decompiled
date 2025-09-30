@@ -4,8 +4,8 @@
     <path d="M805.5 971.8 L803.45 978.05 796.9 978.05 794.85 971.8 800.2 967.95 805.5 971.8" fill="#666666" fill-rule="evenodd" stroke="none"/>
     <path d="M790.6 971.8 L788.55 978.05 782.0 978.05 779.95 971.8 785.3 967.95 790.6 971.8" fill="#666666" fill-rule="evenodd" stroke="none"/>
     <path d="M820.0 480.0 L0.0 480.0 0.0 0.0 820.0 0.0 820.0 480.0" fill="#e6e7e8" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="true" height="32" id="PatternID_140_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 394.0, -0.8)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
-      <image height="32" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAL0lEQVR4Xu3OoQEAAAjDsP3/9PAcACaipipp0s+yx3UAAAAAAAAAAAAAAAAAAAADVA34anrqPFAAAAAASUVORK5CYII="/>
+    <pattern height="32" id="PatternID_140_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 394.0, -0.8)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
+      <image height="32" style="image-rendering:optimizeQuality" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAK0lEQVR42u3OIQEAAAwEoetfeovxBoGnq1tKQEBAQEBAQEBAQEBAQEBgHXhUDfhqeP5ugAAAAABJRU5ErkJggg=="/>
     </pattern>
     <path d="M820.0 -0.8 L820.0 31.2 0.0 31.2 0.0 -0.8 820.0 -0.8" ffdec:fill-bitmapId="3" style="fill:url(#PatternID_140_1)"/>
   </g>

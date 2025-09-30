@@ -1,54 +1,54 @@
 class com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
+   var CAN_STORE_PAGE;
    var CONTENT;
-   var browser;
-   var currPage;
-   var offices;
-   var agencies;
-   var dataProviderUI;
-   var isMP;
-   var imageManager;
-   var progressPanel;
-   var _selectedOfficeID;
-   var style;
-   var personnel;
-   var font;
-   var colour;
-   var gunLocker;
-   var vault;
-   var bed;
-   var styleWhenLastOnSignagePage;
-   var garage1Equipped;
-   var garage1Style;
-   var garage1Lighting;
-   var garage1Number;
-   var garage2Equipped;
-   var garage2Style;
-   var garage2Lighting;
-   var garage2Number;
-   var garage3Equipped;
-   var garage3Style;
-   var garage3Lighting;
-   var garage3Number;
-   var modShopEquipped;
-   var modShop;
-   var officeToMarkAsPurchased;
+   var PAGE_NAMES;
    var _selectedAgencyID;
-   var agencyArt;
-   var agencyWallpaper;
-   var agencyHighlight;
-   var agencyVehicle;
+   var _selectedOfficeID;
+   var agencies;
    var agencyArmory;
+   var agencyArt;
+   var agencyHighlight;
    var agencyQuarters;
    var agencyToMarkAsPurchased;
-   var PAGE_NAMES;
-   var displayConfig;
-   var CAN_STORE_PAGE;
-   var pageContainer;
-   var header;
+   var agencyVehicle;
+   var agencyWallpaper;
+   var bed;
+   var browser;
+   var colour;
+   var currPage;
+   var dataProviderUI;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayConfig;
+   var font;
+   var garage1Equipped;
+   var garage1Lighting;
+   var garage1Number;
+   var garage1Style;
+   var garage2Equipped;
+   var garage2Lighting;
+   var garage2Number;
+   var garage2Style;
+   var garage3Equipped;
+   var garage3Lighting;
+   var garage3Number;
+   var garage3Style;
+   var gunLocker;
+   var header;
+   var imageManager;
+   var isMP;
+   var modShop;
+   var modShopEquipped;
+   var officeToMarkAsPurchased;
+   var offices;
+   var pageContainer;
+   var personnel;
+   var progressPanel;
+   var style;
+   var styleWhenLastOnSignagePage;
+   var vault;
    static var PAGES = {SPLASH_PAGE:{name:"PAGE1",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SplashPage},MAP_PAGE:{name:"OFFICES",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.MapPage},STYLE_PAGE:{name:"DECOR",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.StylePage},PERSONNEL_PAGE:{name:"PERSONNEL",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PersonnelPage},SIGNAGE_PAGE:{name:"ORGANIZATION_D_NAME",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SignagePage},GUN_LOCKER_PAGE:{name:"GUN_D_LOCKER",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.GunLockerPage},VAULT_PAGE:{name:"SAFE",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.VaultPage},BED_PAGE:{name:"ACCOMMODATION",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.BedPage},SUMMARY_PAGE:{name:"SUMMARY",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SummaryPage},PURCHASE_PAGE:{name:"PURCHASE",pageClass:com.rockstargames
    .gtav.web.dynasty8ExecutiveRealty.PurchasePage},SUCCESS_PAGE:{name:"PURCHASE_D_SUCCESS",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage},FAILED_PAGE:{name:"PURCHASE_D_FAILED",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage},ERROR_PAGE:{name:"PURCHASE_D_ERROR",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage},WAYPOINT_SET:{name:"WAYPOINT_D_SET",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.PurchasePage},UNDER_CONSTRUCTION_PAGE:{name:"UNDER_CONSTRUCTION",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.UnderConstructionPage},GARAGE_1_PAGE:{name:"GARAGE_D_LEVEL_D_1",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage1Page},GARAGE_2_PAGE:{name:"GARAGE_D_LEVEL_D_2",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage2Page},GARAGE_3_PAGE:{name:"GARAGE_D_LEVEL_D_3",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage3Page},MOD_SHOP_PAGE:{name:"MOD_D_SHOP",pageClass:com
    .rockstargames.gtav.web.dynasty8ExecutiveRealty.ModShopPage},AGENCY_ART_PAGE:{name:"AGENCY_D_ART",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyArtPage},AGENCY_WALLPAPER_PAGE:{name:"AGENCY_D_WALLPAPER",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage},AGENCY_HIGHLIGHT_PAGE:{name:"AGENCY_D_HIGHLIGHT",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyHighlightPage},AGENCY_ARMORY_PAGE:{name:"AGENCY_D_ARMORY",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyArmoryPage},AGENCY_QUARTERS_PAGE:{name:"AGENCY_D_PERSONAL_D_QUARTERS",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyQuartersPage},AGENCY_VEHICLE_PAGE:{name:"AGENCY_D_VEHICLE_D_WORKSHOP",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyVehiclePage},AGENCY_SUMMARY_PAGE:{name:"AGENCY_D_SUMMARY",pageClass:com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencySummaryPage}};
@@ -84,12 +84,14 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM extends com.roc
    {
       this.offices.length = 0;
       var _loc2_ = com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.OFFICE_DATA_START_INDEX;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.OFFICE_DATA_END_INDEX)
       {
          if(this.dataProviderUI[_loc2_])
          {
-            var _loc3_ = this.dataProviderUI[_loc2_][0] == this.dataProviderUI[0][0];
-            var _loc4_ = _loc3_ && this.dataProviderUI[0][11] > 0;
+            _loc3_ = this.dataProviderUI[_loc2_][0] == this.dataProviderUI[0][0];
+            _loc4_ = _loc3_ && this.dataProviderUI[0][11] > 0;
             this.offices.push(new com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Office(this.dataProviderUI[_loc2_],_loc3_,_loc4_));
          }
          _loc2_ = _loc2_ + 1;
@@ -99,11 +101,12 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM extends com.roc
    {
       this.agencies.length = 0;
       var _loc2_ = com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.AGENCY_DATA_START_INDEX;
+      var _loc3_;
       while(_loc2_ <= com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.AGENCY_DATA_END_INDEX)
       {
          if(this.dataProviderUI[_loc2_])
          {
-            var _loc3_ = this.dataProviderUI[_loc2_][0] == this.dataProviderUI[com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.OWNED_AGENCY_DATA_INDEX][0];
+            _loc3_ = this.dataProviderUI[_loc2_][0] == this.dataProviderUI[com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.OWNED_AGENCY_DATA_INDEX][0];
             this.agencies.push(new com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Agency(this.dataProviderUI[_loc2_],_loc3_));
          }
          _loc2_ = _loc2_ + 1;
@@ -548,8 +551,8 @@ class com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM extends com.roc
       var _loc10_ = 4;
       var _loc12_ = 5;
       var _loc7_ = 1;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       var _loc6_ = 0;
       var _loc2_ = 0;
       var _loc5_ = this.offices.length;

@@ -1,19 +1,20 @@
 class com.rockstargames.gtav.levelDesign.COVERT_OPS extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var cursor;
-   var missions;
-   var lastClickedButtonID;
-   var deactivated;
-   var gamerTag;
+   var TIMELINE;
+   var _name;
    var currScreen;
-   var inputReceived;
    var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var gamerTag;
+   var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
+   var missions;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -226,17 +227,20 @@ class com.rockstargames.gtav.levelDesign.COVERT_OPS extends com.rockstargames.ui
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

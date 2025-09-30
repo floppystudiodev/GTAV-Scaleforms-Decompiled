@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_REPLAY_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
-   var canMouseNav;
    var SEND_COLUMN_PARAMS;
+   var canMouseNav;
+   var dbgID;
+   var model;
    function PAUSE_MENU_REPLAY_LIST()
    {
       super();

@@ -1,11 +1,15 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_DAY_NIGHT extends com.rockstargames.gtav.Multiplayer.POWER_PLAY
 {
+   var CONTENT;
+   var count;
+   var currentPct;
+   var icCurVals;
    var iconList;
    var iconTypeList;
-   var icCurVals;
-   var CONTENT;
    var myHudColourT1;
    var myHudColourT2;
+   var teamOneColourHex;
+   var teamTwoColourHex;
    var _initIconType = -1;
    var MAX_ICONS = 4;
    function POWER_PLAY_DAY_NIGHT()
@@ -52,10 +56,12 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_DAY_NIGHT extends com.rockst
       this.teamOneColourHex = com.rockstargames.ui.utils.Colour.RGBToHex(this.myHudColourT1.r,this.myHudColourT1.g,this.myHudColourT1.b);
       this.teamTwoColourHex = com.rockstargames.ui.utils.Colour.RGBToHex(this.myHudColourT2.r,this.myHudColourT2.g,this.myHudColourT2.b);
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < 2)
       {
-         var _loc4_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIcon();
-         var _loc3_ = this.CONTENT.createEmptyMovieClip("icon" + _loc2_,this.CONTENT.getNextHighestDepth());
+         _loc4_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIcon();
+         _loc3_ = this.CONTENT.createEmptyMovieClip("icon" + _loc2_,this.CONTENT.getNextHighestDepth());
          _loc3_._x = this.CONTENT.icon_one._x;
          _loc3_._y = this.CONTENT.icon_one._y;
          _loc4_.init(_loc3_,this.iconTypeList[_loc2_],this.teamOneColourHex,this.teamTwoColourHex);
@@ -103,6 +109,8 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_DAY_NIGHT extends com.rockst
             break;
          case 1:
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc3_,0.2,{_xscale:100,_yscale:100,onComplete:this.animateIcon,onCompleteScope:this,onCompleteArgs:[iconID,2]});
+         default:
+            return;
       }
    }
    function ACTIVATE_ICON(iconID, titleText, strapText, greyOtherIcons, teamColourID)

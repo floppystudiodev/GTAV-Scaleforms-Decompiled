@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TextPrintManager
 {
-   var updateMovieClip;
    var printItems;
-   var updateArgs;
    var running;
+   var updateArgs;
+   var updateMovieClip;
    static var UPDATE_INTERVAL = 0.03;
    function TextPrintManager(updateMovieClip)
    {
@@ -16,9 +16,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TextPrintManager
    {
       var _loc2_ = 0;
       var _loc3_ = this.printItems.length;
+      var _loc6_;
       while(_loc2_ < _loc3_)
       {
-         var _loc6_ = this.printItems[_loc2_];
+         _loc6_ = this.printItems[_loc2_];
          if(_loc6_.textFieldMatches(textField))
          {
             if(_loc6_.textMatches(text))
@@ -47,9 +48,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TextPrintManager
    function update()
    {
       var _loc2_ = this.printItems.length - 1;
+      var _loc3_;
       while(_loc2_ >= 0)
       {
-         var _loc3_ = this.printItems[_loc2_].update();
+         _loc3_ = this.printItems[_loc2_].update();
          if(_loc3_)
          {
             this.printItems.splice(_loc2_,1);

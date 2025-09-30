@@ -1,22 +1,18 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__data;
+   var _alpha;
+   var _highlighted;
+   var bMC;
+   var bgMC;
    var bookmarkMC;
-   var spinnerMC;
    var corruptedMC;
    var defaultMC;
-   var bgMC;
-   var type;
-   var imageLoaderMC;
-   var ic;
-   var __get__data;
-   var scIconMC;
-   var _alpha;
-   var __get__highlighted;
-   var bMC;
-   var index;
-   var __get__columnID;
    var highlightMC;
-   var _highlighted;
+   var ic;
+   var imageLoaderMC;
+   var scIconMC;
+   var spinnerMC;
    static var ITEM_STATE_EMPTY = 0;
    static var ITEM_STATE_CORRUPTED = 1;
    static var ITEM_STATE_QUEUED = 2;
@@ -112,20 +108,6 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGall
       else
       {
          this.bMC._alpha = 0;
-      }
-   }
-   function mPress()
-   {
-      if(this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuGalleryItem.ITEM_STATE_EMPTY)
-      {
-         if(!this.highlighted)
-         {
-            _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,false);
-         }
-         else
-         {
-            _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,true);
-         }
       }
    }
    function resetDisplay()

@@ -1,10 +1,11 @@
 class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var txdRefs;
+   var TIMELINE;
+   var _name;
    var imageQueue;
+   var txdRefs;
    static var ACTION_NONE = 0;
    static var ACTION_CROSS = 1;
    static var ACTION_TICK = 2;
@@ -36,15 +37,19 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
       this.CONTENT.hud._visible = false;
       this.CONTENT.lobby._visible = false;
       var _loc5_ = 1;
+      var _loc7_;
+      var _loc6_;
+      var _loc4_;
+      var _loc3_;
+      var _loc2_;
       while(_loc5_ <= 4)
       {
-         var _loc7_ = new com.rockstargames.ui.utils.HudColour();
+         _loc7_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE["PLAYER_" + _loc5_ + "_COLOUR"],_loc7_);
-         var _loc6_ = _loc7_.r << 16 | _loc7_.g << 8 | _loc7_.b;
-         var _loc4_ = new flash.geom.ColorTransform();
+         _loc6_ = _loc7_.r << 16 | _loc7_.g << 8 | _loc7_.b;
+         _loc4_ = new flash.geom.ColorTransform();
          _loc4_.rgb = _loc6_;
-         var _loc3_ = undefined;
-         var _loc2_ = this.CONTENT.hud["player" + _loc5_];
+         _loc2_ = this.CONTENT.hud["player" + _loc5_];
          _loc3_ = _loc2_.gamerTag.getNewTextFormat();
          _loc3_.color = _loc6_;
          _loc2_.gamerTag.setNewTextFormat(_loc3_);
@@ -81,14 +86,17 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
       this.HIDE_LOBBY();
       var _loc4_ = !this.CONTENT.hud._visible ? 300 : 327;
       this.setOutlineText(this.CONTENT.centralMessage,message,hudColourEnum,true);
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
       if(secondaryMessage != undefined && secondaryMessage != "")
       {
-         var _loc5_ = new flash.geom.ColorTransform();
+         _loc5_ = new flash.geom.ColorTransform();
          if(this.hudColourIsValid(secondaryHudColourEnum))
          {
-            var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+            _loc2_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(secondaryHudColourEnum,_loc2_);
-            var _loc7_ = _loc2_.r << 16 | _loc2_.g << 8 | _loc2_.b;
+            _loc7_ = _loc2_.r << 16 | _loc2_.g << 8 | _loc2_.b;
             _loc5_.rgb = _loc7_;
          }
          this.CONTENT.centralMessage.secondary.transform.colorTransform = _loc5_;
@@ -100,7 +108,7 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
          this.CONTENT.centralMessage.secondary.text = "";
          this.CONTENT.centralMessage._y = _loc4_;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       switch(effectEnum)
       {
          case com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE.EFFECT_SCANLINES:
@@ -157,9 +165,10 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
       var _loc7_ = 640;
       var _loc4_ = _loc7_ - 0.5 * (_loc8_ - 1) * _loc5_;
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 4)
       {
-         var _loc3_ = this.CONTENT.hud["player" + _loc2_];
+         _loc3_ = this.CONTENT.hud["player" + _loc2_];
          if(_loc3_._visible)
          {
             _loc3_._x = _loc4_;
@@ -240,14 +249,18 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
    {
       this.txdRefs[txd] = "loaded";
       var _loc6_ = this.imageQueue.length - 1;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc6_ >= 0)
       {
-         var _loc7_ = this.imageQueue[_loc6_];
+         _loc7_ = this.imageQueue[_loc6_];
          if(_loc7_.txd == txd)
          {
-            var _loc5_ = _loc7_.path.split(".");
-            var _loc4_ = _root;
-            var _loc3_ = 1;
+            _loc5_ = _loc7_.path.split(".");
+            _loc4_ = _root;
+            _loc3_ = 1;
             while(_loc3_ < _loc5_.length)
             {
                _loc4_ = _loc4_[_loc5_[_loc3_]];
@@ -276,20 +289,23 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
    {
       text = text.toUpperCase();
       var _loc8_ = new flash.geom.ColorTransform();
+      var _loc7_;
+      var _loc9_;
       if(this.hudColourIsValid(hudColourEnum))
       {
-         var _loc7_ = new com.rockstargames.ui.utils.HudColour();
+         _loc7_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(hudColourEnum,_loc7_);
-         var _loc9_ = _loc7_.r << 16 | _loc7_.g << 8 | _loc7_.b;
+         _loc9_ = _loc7_.r << 16 | _loc7_.g << 8 | _loc7_.b;
          _loc8_.rgb = _loc9_;
       }
       container.fill.transform.colorTransform = _loc8_;
       container.fill.label.textAutoSize = !shrink ? "none" : "shrink";
       container.fill.label.text = text;
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 16)
       {
-         var _loc3_ = container["border" + _loc2_];
+         _loc3_ = container["border" + _loc2_];
          _loc3_.textAutoSize = !shrink ? "none" : "shrink";
          _loc3_.text = text;
          _loc2_ = _loc2_ + 1;
@@ -305,15 +321,16 @@ class com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE exte
       {
          case com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE.MIC_ACTIVE:
             mc.gotoAndStop("active");
-            break;
+            return;
          case com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE.MIC_INACTIVE:
             mc.gotoAndStop("inactive");
-            break;
+            return;
          case com.rockstargames.gtav.minigames.dontcrosstheline.DONT_CROSS_THE_LINE.MIC_MUTED:
             mc.gotoAndStop("muted");
-            break;
+            return;
          default:
             mc.gotoAndStop("hidden");
+            return;
       }
    }
 }

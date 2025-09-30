@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.arcadeManagement.Button
 {
-   var id;
-   var view;
+   var bottom;
    var depth;
-   var extents;
    var enabled;
+   var extents;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
+   var view;
    function Button(id, view, label, isStringLiteral)
    {
       this.id = id;

@@ -1,15 +1,15 @@
 class com.rockstargames.ui.core.BrowserUIComponent extends MovieClip
 {
-   var dataProviderUI;
-   var linkageKey;
-   var container;
+   var _levelDepth;
    var _numberOfColumns;
    var _numberOfVisibleRows;
    var _offsetX;
    var _offsetY;
    var _primaryColour;
    var _secondaryColour;
-   var _levelDepth;
+   var container;
+   var dataProviderUI;
+   var linkageKey;
    var _rowSpace = 0;
    var _currentSelection = -1;
    var _columnSpace = 0;

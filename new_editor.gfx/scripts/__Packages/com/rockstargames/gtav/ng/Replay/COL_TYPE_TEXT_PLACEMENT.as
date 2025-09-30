@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_TEXT_PLACEMENT extends com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG
 {
-   var myHeight;
+   var APP_DATA;
    var bgMC;
    var hudColourBlack;
-   var APP_DATA;
+   var myHeight;
    var BLACK_ALPHA = 70;
    function COL_TYPE_TEXT_PLACEMENT()
    {

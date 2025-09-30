@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.WarningScreenListItem extends MovieClip
 {
-   var ListItemTextTF;
    var BackgroundMC;
+   var ListItemTextTF;
    function WarningScreenListItem()
    {
       super();

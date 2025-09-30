@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var slots;
-   var scColor;
-   var whiteColor;
-   var blackColor;
-   var blackAlphaColor;
-   var leaderboard;
    var CONTENT;
-   var columnCount;
+   var blackAlphaColor;
+   var blackColor;
    var cellXSpacing;
+   var columnCount;
+   var leaderboard;
+   var scColor;
+   var slots;
+   var whiteColor;
    static var SLOT_STATE_PLAIN = 0;
    static var SLOT_STATE_IS_PLAYER = 1;
    static var SLOT_STATE_OUTLINE = 2;
@@ -67,11 +67,13 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
    {
       this.isWideScreen = _isWideScreen;
       this.isHiDef = _isHiDef;
+      var _loc4_;
+      var _loc3_;
       if(!this.isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc4_ = 1.7777777777777777;
-         var _loc3_ = 1.3333333333333333;
+         _loc4_ = 1.7777777777777777;
+         _loc3_ = 1.3333333333333333;
          this.FOUR_THREE_PADDING = (this.FILE_WIDTH - Math.round(this.FILE_WIDTH / _loc4_ * _loc3_)) / 2;
          _screenWidthPixels = this.FILE_WIDTH - this.FOUR_THREE_PADDING * 2;
       }
@@ -147,8 +149,8 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
          this.columnsMax = this.columnCount;
       }
       this.cellXSpacing = Math.round((_loc5_.bgMC._width - this.cellsStartX) / this.columnCount);
-      var _loc3_ = undefined;
-      var _loc6_ = undefined;
+      var _loc3_;
+      var _loc6_;
       var _loc4_ = 0;
       while(_loc4_ < this.columnsMax + this.requiredCells)
       {
@@ -198,13 +200,17 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
       _loc5_.iconsMC._visible = false;
       this.SET_SLOT_STATE(id,state);
       var _loc6_ = arguments.slice(2);
-      var _loc4_ = undefined;
-      var _loc7_ = undefined;
+      var _loc4_;
+      var _loc7_;
+      var _loc14_;
+      var _loc3_;
+      var _loc8_;
+      var _loc9_;
       if(_loc5_.isDesc)
       {
          _loc4_ = _loc5_.labelsMC.attachMovie("CellDescription","desc",_loc5_.labelsMC.getNextHighestDepth());
          _loc4_._x = 16;
-         var _loc14_ = new com.rockstargames.ui.utils.Text();
+         _loc14_ = new com.rockstargames.ui.utils.Text();
          _loc14_.setTextWithIcons(_loc6_[0],_loc4_,_loc4_.labelTF,0,14,0,false);
          _loc4_.labelTF.autoSize = true;
          if(_loc4_._width > 837)
@@ -224,7 +230,7 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
       }
       else
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.columnsMax + this.requiredCells)
          {
             if(_loc3_ == 0)
@@ -247,8 +253,8 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
             }
             else if(_loc3_ == 2 && _loc6_[_loc3_] != undefined && _loc6_[_loc3_] != "")
             {
-               var _loc8_ = _loc5_.tag;
-               var _loc9_ = _loc5_.labelsMC["c" + (_loc3_ - 1)];
+               _loc8_ = _loc5_.tag;
+               _loc9_ = _loc5_.labelsMC["c" + (_loc3_ - 1)];
                if(_loc8_ == undefined)
                {
                   _loc8_ = com.rockstargames.gtav.Multiplayer.CREW_TAG_MOVIECLIP(_loc5_.attachMovie("CREW_TAG_MOVIECLIP","tag",_loc5_.getNextHighestDepth(),{_y:4.5,_xscale:70,_yscale:70}));
@@ -293,6 +299,8 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
             break;
          case com.rockstargames.ui.mouse.MOUSE_EVENTS.MOUSE_ROLL_OVER:
             _loc1_.hover._visible = true;
+         default:
+            return;
       }
    }
    function SET_SLOT_STATE(id, state)
@@ -302,9 +310,9 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
       _loc2_.outlineMC._visible = _loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_OUTLINE);
       _loc2_.isHeader = _loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_WORLD) || _loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_FRIENDS) || _loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_CREW);
       _loc2_.isDesc = _loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_DESCRIPTION);
-      var _loc5_ = undefined;
-      var _loc6_ = undefined;
-      var _loc3_ = undefined;
+      var _loc5_;
+      var _loc6_;
+      var _loc3_;
       var _loc7_ = this.whiteColor;
       if(_loc4_.isBitSet(com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD.SLOT_STATE_SELECTED))
       {
@@ -399,8 +407,8 @@ class com.rockstargames.gtav.minigames.scleaderboard.SC_LEADERBOARD extends com.
    }
    function updateDisplay()
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       _loc3_ = 0;
       while(_loc3_ < this.slots.length)
       {

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.web.foreclosures.NamePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_SIGNAGE";
    static var FONT_LABELS = ["FC_FONT_1","FC_FONT_2","FC_FONT_3","FC_FONT_4","FC_FONT_5","FC_FONT_6","FC_FONT_7","FC_FONT_8","FC_FONT_9","FC_FONT_10","FC_FONT_11","FC_FONT_12","FC_FONT_13"];
    static var SIGNAGE_INSTRUCTIONS = "FORECLOSURES_SIGNAGE_INSTRUCTIONS";
@@ -107,10 +107,12 @@ class com.rockstargames.gtav.web.foreclosures.NamePage extends com.rockstargames
    {
       this.view.colourButtons._y = this.view.fontSelect._y + this.view.fontSelect._height + 10;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < 8)
       {
-         var _loc4_ = this.view.colourButtons["colourButton_" + _loc2_];
-         var _loc3_ = parseInt("0x" + com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.COLOURS[_loc2_]);
+         _loc4_ = this.view.colourButtons["colourButton_" + _loc2_];
+         _loc3_ = parseInt("0x" + com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.COLOURS[_loc2_]);
          _loc4_.swatch.transform.colorTransform = new flash.geom.ColorTransform(0,0,0,1,_loc3_ >> 16 & 0xFF,_loc3_ >> 8 & 0xFF,_loc3_ & 0xFF,0);
          _loc4_.selected._visible = _loc2_ == this.website.fontColour;
          this.website.dataTextScope.push(_loc4_.btnTxt);
@@ -153,6 +155,8 @@ class com.rockstargames.gtav.web.foreclosures.NamePage extends com.rockstargames
          case "showSignageButton":
             this.website.hideSignage ^= 1;
             this.updateShowSignage();
+         default:
+            return;
       }
    }
    function updateShowSignage()
@@ -167,9 +171,10 @@ class com.rockstargames.gtav.web.foreclosures.NamePage extends com.rockstargames
    function updateColourSelect()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 8)
       {
-         var _loc3_ = this.view.colourButtons["colourButton_" + _loc2_];
+         _loc3_ = this.view.colourButtons["colourButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.fontColour;
          _loc2_ = _loc2_ + 1;
       }

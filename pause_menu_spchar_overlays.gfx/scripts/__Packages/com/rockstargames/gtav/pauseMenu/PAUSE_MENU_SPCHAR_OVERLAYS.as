@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SPCHAR_OVERLAYS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var imgLdr;
    var CONTENT;
+   var imgLdr;
    function PAUSE_MENU_SPCHAR_OVERLAYS()
    {
       super();

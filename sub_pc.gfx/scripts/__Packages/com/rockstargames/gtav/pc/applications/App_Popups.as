@@ -1,5 +1,14 @@
 class com.rockstargames.gtav.pc.applications.App_Popups extends com.rockstargames.gtav.pc.applications.App_Base
 {
+   var __get__desktopRef;
+   var attachMovie;
+   var getNextHighestDepth;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
+   var screenHeightPixels;
+   var screenWidthPixels;
    var max = 12;
    var items = new Array();
    var _data = new Array();
@@ -18,13 +27,15 @@ class com.rockstargames.gtav.pc.applications.App_Popups extends com.rockstargame
    function ready()
    {
       this.items = [];
-      var _loc9_ = undefined;
-      var _loc3_ = undefined;
-      var _loc10_ = undefined;
+      var _loc9_;
+      var _loc3_;
+      var _loc10_;
       var _loc4_ = [];
-      var _loc5_ = undefined;
-      var _loc6_ = undefined;
+      var _loc5_;
+      var _loc6_;
       var _loc2_ = 0;
+      var _loc8_;
+      var _loc7_;
       while(_loc2_ < this.data.length)
       {
          _loc9_ = this.getNextHighestDepth();
@@ -37,8 +48,8 @@ class com.rockstargames.gtav.pc.applications.App_Popups extends com.rockstargame
             _loc4_ = this.data[_loc2_];
          }
          _loc3_.init(_loc10_,_loc4_);
-         var _loc8_ = 0;
-         var _loc7_ = 0;
+         _loc8_ = 0;
+         _loc7_ = 0;
          if(_loc4_[1] != undefined)
          {
             _loc8_ = _loc4_[1];
@@ -83,11 +94,14 @@ class com.rockstargames.gtav.pc.applications.App_Popups extends com.rockstargame
       this.safeLeft = _safeLeftPercent;
       this.safeRight = _safeRightPercent;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < this.items.length)
       {
-         var _loc3_ = this.items[_loc2_];
-         var _loc5_ = this.data[_loc2_][1];
-         var _loc4_ = this.data[_loc2_][2];
+         _loc3_ = this.items[_loc2_];
+         _loc5_ = this.data[_loc2_][1];
+         _loc4_ = this.data[_loc2_][2];
          this.setPopupPostion(_loc3_,_loc5_,_loc4_);
          _loc2_ = _loc2_ + 1;
       }

@@ -1,13 +1,18 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVerticalListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__data;
+   var _data;
+   var _highlighted;
+   var attachMovie;
+   var bgMC;
+   var crewTagMC;
+   var getNextHighestDepth;
+   var itemTextLeft;
    var itemTextRight;
    var labelMC;
-   var crewTagMC;
-   var itemTextLeft;
+   var selectedValue;
    var storeFunc;
    var storeScope;
-   var selectedValue;
-   var bgMC;
    var multiListIndex = 0;
    var multiListItems = new Array();
    function PauseMenuVerticalListItem()
@@ -69,7 +74,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVert
    }
    function stepVal(dir)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.type) === 1)
       {
          this.multiListIndex += dir;

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.TEXT_INPUT_BOX extends com.rockstargames.gtav.levelDesign.INSTRUCTIONAL_BUTTONS
 {
    var CONTENT;
-   var lastTrackedCursorLocation;
-   var bTrackCursorLoc;
-   var bTrackCursorDrag;
-   var cursorLocations;
    var TIMELINE;
+   var bTrackCursorDrag;
+   var bTrackCursorLoc;
+   var cursorLocations;
+   var lastTrackedCursorLocation;
    function TEXT_INPUT_BOX()
    {
       super();
@@ -95,20 +95,26 @@ class com.rockstargames.gtav.levelDesign.TEXT_INPUT_BOX extends com.rockstargame
          default:
             this.clearCursorHistory();
       }
+      var _loc3_;
+      var _loc2_;
+      var _loc8_;
+      var _loc5_;
+      var _loc6_;
+      var _loc7_;
+      var _loc9_;
       if(_loc4_ != 0)
       {
-         var _loc3_ = this.CONTENT.InputTF;
-         var _loc2_ = _loc3_.getExactCharBoundaries(this.lastTrackedCursorLocation);
-         var _loc8_ = _loc2_.height;
-         var _loc5_ = undefined;
-         var _loc6_ = _loc3_.getLineIndexAtPoint(_loc2_.x,_loc2_.y);
+         _loc3_ = this.CONTENT.InputTF;
+         _loc2_ = _loc3_.getExactCharBoundaries(this.lastTrackedCursorLocation);
+         _loc8_ = _loc2_.height;
+         _loc6_ = _loc3_.getLineIndexAtPoint(_loc2_.x,_loc2_.y);
          if(this.cursorLocations[_loc6_ + _loc4_])
          {
             _loc5_ = this.cursorLocations[_loc6_ + _loc4_];
          }
          else
          {
-            var _loc7_ = _loc3_.getCharIndexAtPoint(_loc2_.x,_loc2_.y + _loc8_ * 0.5 + _loc4_ * _loc8_);
+            _loc7_ = _loc3_.getCharIndexAtPoint(_loc2_.x,_loc2_.y + _loc8_ * 0.5 + _loc4_ * _loc8_);
             _loc5_ = _loc7_;
             if(_loc5_ == -1)
             {
@@ -119,7 +125,7 @@ class com.rockstargames.gtav.levelDesign.TEXT_INPUT_BOX extends com.rockstargame
             }
             else
             {
-               var _loc9_ = _loc3_.getExactCharBoundaries(_loc7_);
+               _loc9_ = _loc3_.getExactCharBoundaries(_loc7_);
                if(_loc2_.x > _loc9_.x + _loc9_.width * 0.5)
                {
                   _loc5_ += 1;

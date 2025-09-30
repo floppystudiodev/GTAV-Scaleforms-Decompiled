@@ -1,7 +1,8 @@
 class com.rockstargames.gtav.levelDesign.heists.HEIST_DOCKS extends com.rockstargames.gtav.levelDesign.heists.HeistControllerBase
 {
-   var model;
    var CONTENT;
+   var SET_INPUT_EVENT;
+   var model;
    var heistAssetList = new Array();
    function HEIST_DOCKS()
    {
@@ -112,6 +113,8 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_DOCKS extends com.rockstar
             break;
          case com.rockstargames.gtav.levelDesign.heists.HeistModel.viewTodo:
             this.model.createView(viewIndex,{id:viewType,x:_loc12_,y:_loc11_,rowSpacing:10,columnSpacing:10,container:this.CONTENT.containerMC,visibleItems:1,selectstyle:0,linkage:["todolistSelection"]});
+         default:
+            return;
       }
    }
    function REPOSITION_VIEW(viewIndex, xp, yp)

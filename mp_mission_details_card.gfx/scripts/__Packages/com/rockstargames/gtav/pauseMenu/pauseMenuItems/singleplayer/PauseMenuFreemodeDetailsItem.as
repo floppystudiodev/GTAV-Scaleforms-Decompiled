@@ -1,14 +1,19 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var outlineMC;
-   var itemTextRight;
-   var labelMC;
-   var itemTextLeft;
-   var leftlabelMC;
+   var __get__data;
+   var _data;
+   var _highlighted;
+   var attachMovie;
    var bgMC;
    var checkMC;
-   var iconMC;
    var crewTagMC;
+   var getNextHighestDepth;
+   var iconMC;
+   var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var leftlabelMC;
+   var outlineMC;
    var basetextW = 266;
    function PauseMenuFreemodeDetailsItem()
    {
@@ -46,6 +51,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
             this.bgMC._visible = true;
          }
       }
+      var _loc6_;
+      var _loc8_;
+      var _loc7_;
+      var _loc4_;
+      var _loc0_;
+      var _loc9_;
+      var _loc5_;
+      var _loc3_;
       switch(this.type)
       {
          case 0:
@@ -56,7 +69,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
          case 2:
             if(this.iconMC != undefined)
             {
-               var _loc6_ = 1;
+               _loc6_ = 1;
                if(this.data[2] != undefined)
                {
                   _loc6_ = this.data[2] + 2;
@@ -64,9 +77,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
                this.iconMC.gotoAndStop(_loc6_);
                this.iconMC._x = this.bgMC._width - this.iconMC._width * 0.5 - 5;
                this.iconMC._y = 15;
-               var _loc8_ = 5;
+               _loc8_ = 5;
                this.itemTextRight._x = this.iconMC._x - this.iconMC._width * 0.5 - 132 - _loc8_;
-               var _loc7_ = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE;
+               _loc7_ = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE;
                if(this.data[3] != undefined)
                {
                   _loc7_ = this.data[3];
@@ -84,7 +97,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
          case 3:
             this.labelMC.nameTF.text = this.data[1];
             this.itemTextRight._visible = false;
-            var _loc4_ = this.data[2];
+            _loc4_ = this.data[2];
             if(_loc4_ == undefined || _loc4_ == "")
             {
                if(this.crewTagMC)
@@ -107,22 +120,19 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
             {
                this.labelMC.scIconMC._visible = true;
                this.labelMC.nameTF._x = 124;
+               break;
             }
-            else
-            {
-               this.labelMC.scIconMC._visible = false;
-            }
+            this.labelMC.scIconMC._visible = false;
             break;
          case 4:
             this.outlineMC._visible = true;
-            var _loc0_ = null;
             this.leftlabelMC._y = _loc0_ = 2;
             this.labelMC._y = _loc0_;
             this.bgMC._y = _loc0_;
             break;
          case 5:
-            var _loc9_ = this._data[0];
-            var _loc5_ = this.itemTextLeft.getTextFormat();
+            _loc9_ = this._data[0];
+            _loc5_ = this.itemTextLeft.getTextFormat();
             _loc5_.size = com.rockstargames.ui.utils.UIText.SIZE;
             this.itemTextLeft.setNewTextFormat(_loc5_);
             this.itemTextLeft.wordWrap = true;
@@ -135,7 +145,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
                this.itemTextLeft._height = 100;
                while(this.itemTextLeft.textHeight > this.itemTextLeft._height)
                {
-                  var _loc3_ = this.itemTextLeft.text.substr(0,this.itemTextLeft.text.length - 4) + "...";
+                  _loc3_ = this.itemTextLeft.text.substr(0,this.itemTextLeft.text.length - 4) + "...";
                   this.itemTextLeft.text = _loc3_;
                }
                this.itemTextLeft.autoSize = true;

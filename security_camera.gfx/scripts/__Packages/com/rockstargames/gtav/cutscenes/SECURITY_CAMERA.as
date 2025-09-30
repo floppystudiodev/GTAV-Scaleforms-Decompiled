@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.cutscenes.SECURITY_CAMERA extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var overlayMC;
    var CONTENT;
+   var overlayMC;
    var staticMC;
    function SECURITY_CAMERA()
    {

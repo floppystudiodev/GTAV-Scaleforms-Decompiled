@@ -1,0 +1,74 @@
+class com.rockstargames.gtav.web.warstock.ChopperVehiclePage extends com.rockstargames.gtav.web.warstock.ChopperPage
+{
+   var buttons;
+   var nextPageName;
+   var prevPageName;
+   var progressPanel;
+   var setLocalisedText;
+   var view;
+   var website;
+   function ChopperVehiclePage(view, website, progressPanel)
+   {
+      super(view,website,progressPanel);
+   }
+   function init()
+   {
+      super.init();
+      if(this.website.purchasedChopperTurret != 1)
+      {
+         this.prevPageName = com.rockstargames.gtav.web.WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM.CHOPPER_TURRET_PAGE;
+      }
+      else
+      {
+         this.prevPageName = com.rockstargames.gtav.web.WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM.CHOPPER_INTERIOR_PAGE;
+      }
+      if(this.website.purchasedChopperWeapon != 1)
+      {
+         this.nextPageName = com.rockstargames.gtav.web.WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM.CHOPPER_WEAPON_PAGE;
+      }
+      else if(this.website.purchasedChopperTerminal != 1)
+      {
+         this.nextPageName = com.rockstargames.gtav.web.WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM.CHOPPER_TERMINAL_PAGE;
+      }
+      else
+      {
+         this.nextPageName = com.rockstargames.gtav.web.WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM.CHOPPER_SUMMARY_PAGE;
+      }
+      this.website.imageManager.addImage("CANDC_CHOPPER","vehicle",this.view.image.tf);
+      this.progressPanel.updateCosts();
+      this.progressPanel.showBuyButton();
+      this.progressPanel.setActiveStep(2);
+      this.progressPanel.enable();
+      this.setLocalisedText(this.view.description,"CANDC_CHOPPER_V_MOD_DESC");
+      var _loc3_ = this.view.selection;
+      this.setLocalisedText(_loc3_.btnTxt,"CANDC_CHOPPER_V_MOD");
+      _loc3_.gotoAndStop(this.website.chopperVehicle != 1 ? "unselected" : "selected");
+      if(this.website.purchasedChopperVehicle != 1)
+      {
+         this.buttons.push(_loc3_.btnTxt);
+      }
+   }
+   function handleClick(id, attribute)
+   {
+      var _loc2_;
+      if(id == "selection")
+      {
+         _loc2_ = this.view.selection;
+         if(this.website.chopperVehicle == 1)
+         {
+            this.website.chopperVehicle = 0;
+            _loc2_.gotoAndStop("unselected");
+         }
+         else
+         {
+            this.website.chopperVehicle = 1;
+            _loc2_.gotoAndStop("selected");
+         }
+         this.progressPanel.updateCosts();
+      }
+   }
+   function dispose()
+   {
+      super.dispose();
+   }
+}

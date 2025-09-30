@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.BANK_JOB_LOGIN extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var loginView;
    function BANK_JOB_LOGIN()
    {

@@ -1,34 +1,34 @@
 class com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem extends MovieClip
 {
-   var verifiedbgMC;
-   var bgFlashMC;
-   var titleTF;
-   var defaultTitleA;
-   var imgPlaceholderMC;
-   var defaultPlaceholderA;
-   var votesTF;
-   var nameTF;
-   var iconCheckMC;
-   var rpIconMC;
-   var cashIconMC;
-   var imgMC;
-   var queuedGamerNames;
-   var imgContainerMC;
-   var mouseCatcher;
    var _greyFilterMC;
+   var apIconMC;
+   var apMultTF;
+   var bgFlashMC;
+   var cashIconMC;
+   var cashMultTF;
+   var checkMarkMC;
+   var cmIconMC;
+   var cmMultTF;
+   var defaultPlaceholderA;
+   var defaultTitleA;
+   var flashingName;
+   var iconCheckMC;
+   var iconMC;
+   var imgContainerMC;
+   var imgMC;
+   var imgPlaceholderMC;
+   var mouseCatcher;
+   var nameTF;
+   var queuedGamerNames;
+   var rpIconMC;
+   var rpMultTF;
+   var titleTF;
+   var verifiedMC;
+   var verifiedbgMC;
+   var voteBGColour;
    var voteBGMC;
    var votecircMC;
-   var checkMarkMC;
-   var verifiedMC;
-   var iconMC;
-   var rpMultTF;
-   var cashMultTF;
-   var apMultTF;
-   var apIconMC;
-   var cmMultTF;
-   var cmIconMC;
-   var voteBGColour;
-   var flashingName;
+   var votesTF;
    static var IMAGE_TYPE_CLOUD = 0;
    static var IMAGE_TYPE_DISK = 1;
    static var NUM_IMGS = 2;
@@ -75,17 +75,20 @@ class com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem extends Mo
       this.titleTF.text = sTitle;
       this.titleTF._x = 272 - this.titleTF.textWidth;
       this.setVotes(0,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
+      var _loc2_;
+      var _loc8_;
+      var _loc5_;
+      var _loc6_;
       if(textureLoadType != -1)
       {
          if(txd != undefined && txn != undefined && txd != "" && txn != "")
          {
-            var _loc2_ = undefined;
             if(this.imgMC.length < com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem.NUM_IMGS)
             {
                this.imgMC.push(com.rockstargames.ui.media.ImageLoaderMC(this.imgContainerMC.attachMovie("GenericImageLoader","imgMC" + this.imgMCIdx,this.imgContainerMC.getNextHighestDepth())));
             }
             _loc2_ = this.imgMC[this.imgMCIdx];
-            var _loc8_ = _loc2_.textureDict == txd && _loc2_.textureFilename == txn;
+            _loc8_ = _loc2_.textureDict == txd && _loc2_.textureFilename == txn;
             if(!_loc8_)
             {
                if(_loc2_.isLoaded)
@@ -94,8 +97,8 @@ class com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem extends Mo
                }
             }
             _loc2_.init("MP_NEXT_JOB_SELECTION",txd,txn,288,160,0,0);
-            var _loc5_ = String(_loc2_).split(".");
-            var _loc6_ = _loc5_.slice(_loc5_.length - 4).join(".");
+            _loc5_ = String(_loc2_).split(".");
+            _loc6_ = _loc5_.slice(_loc5_.length - 4).join(".");
             if(textureLoadType == com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem.IMAGE_TYPE_CLOUD)
             {
                _loc2_.addTxdRef(_loc6_,this.transitionInBitmap,this);
@@ -132,9 +135,10 @@ class com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem extends Mo
             this._greyFilterMC._height = 52;
          }
       }
+      var _loc7_;
       if(verifiedType != undefined)
       {
-         var _loc7_ = 1.5;
+         _loc7_ = 1.5;
          if(!this.verifiedMC)
          {
             this.verifiedMC = com.rockstargames.gtav.Multiplayer.ROCKSTAR_VERIFIED(this.attachMovie("verified","verifiedMC",this.getNextHighestDepth(),{_x:this.verifiedbgMC._x + _loc7_,_y:this.verifiedbgMC._y + _loc7_}));
@@ -261,9 +265,10 @@ class com.rockstargames.gtav.Multiplayer.items.MPNextJobSelectionItem extends Mo
    }
    function onNameFadeOutComplete()
    {
+      var _loc2_;
       if(this.queuedGamerNames.length > 0)
       {
-         var _loc2_ = this.queuedGamerNames.shift();
+         _loc2_ = this.queuedGamerNames.shift();
          this.flashGamerName(_loc2_.name,_loc2_.colour);
       }
       else

@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.partyBus.Grid extends com.rockstargames.gtav.levelDesign.partyBus.Animation
 {
-   var skew;
-   var leftGrid;
-   var view;
-   var rightGrid;
    var beatStep;
+   var leftGrid;
+   var rightGrid;
+   var skew;
+   var view;
    static var BEAT_SCALES = [1.5,0.5];
    static var GRID_WIDTH = 768;
    function Grid(container, width, height)

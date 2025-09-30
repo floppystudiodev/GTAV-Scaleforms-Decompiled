@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLine
 {
-   var screenHeight;
-   var view;
-   var preDelay;
-   var y;
    var height;
+   var preDelay;
+   var screenHeight;
    var speed;
+   var view;
+   var y;
    function ScanLine(container, screenHeight)
    {
       this.screenHeight = screenHeight;

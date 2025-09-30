@@ -1,12 +1,13 @@
 class com.rockstargames.gtav.levelDesign.HACKING_TERMINAL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
    var displayConfig;
    var screenContainer;
-   var currScreen;
    var START_SCREEN = 0;
    var CODE_SCREEN = 1;
    var ACTIVATING_SCREEN = 2;

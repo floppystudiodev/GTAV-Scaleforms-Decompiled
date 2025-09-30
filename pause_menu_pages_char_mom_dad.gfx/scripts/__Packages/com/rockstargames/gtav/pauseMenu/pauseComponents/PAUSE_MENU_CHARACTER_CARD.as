@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var SEND_COLUMN_PARAMS;
    var TextWithBlips;
+   var blipLayer;
    var charTitleMC;
+   var columnIsFocused;
+   var dbgID;
    var model;
    var scrollBase;
-   var columnIsFocused;
-   var SEND_COLUMN_PARAMS;
-   var blipLayer;
    var hasTitle = true;
    function PAUSE_MENU_CHARACTER_CARD()
    {
@@ -69,9 +69,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CHARACTER_CARD
       this.SEND_COLUMN_PARAMS();
       var _loc4_ = this.model.getCurrentView().itemList;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_];
+         _loc3_ = _loc4_[_loc2_];
          _loc3_.highlighted = !isFocused ? false : this.model.getCurrentView().highlightedItem == _loc2_;
          _loc2_ = _loc2_ + 1;
       }

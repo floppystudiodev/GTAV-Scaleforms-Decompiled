@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
+   var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_AGENCY";
    static var IMAGES = ["WALLPAPER0","WALLPAPER1","WALLPAPER2","WALLPAPER3","WALLPAPER4","WALLPAPER5","WALLPAPER6","WALLPAPER7","WALLPAPER8"];
    static var NUM_WALLPAPER_OPTIONS = 9;
@@ -45,9 +45,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage ext
    function initOptionButtons()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage.NUM_WALLPAPER_OPTIONS)
       {
-         var _loc2_ = this.view.optionButtons["wallpaperButton_" + _loc3_];
+         _loc2_ = this.view.optionButtons["wallpaperButton_" + _loc3_];
          _loc2_.onColour = 16777215;
          _loc2_.offColour = 16777215;
          _loc2_.swatch.gotoAndStop(_loc3_ + 1);
@@ -68,15 +69,18 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage ext
          case "purchaseButton":
             this.website.dispatchPlayerAgencySelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       this.progressPanel.updateAgencyCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.dynasty8ExecutiveRealty.AgencyWallpaperPage.NUM_WALLPAPER_OPTIONS)
       {
-         var _loc3_ = this.view.optionButtons["wallpaperButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["wallpaperButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.agencyWallpaper;
          _loc2_ = _loc2_ + 1;
       }

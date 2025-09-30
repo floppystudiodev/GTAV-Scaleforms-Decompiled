@@ -12,7 +12,7 @@ class com.rockstargames.gtav.minimap.WantedRadiusBlip extends MovieClip
    }
    function wantedColour()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.redVis)
       {
          _loc2_ = true;

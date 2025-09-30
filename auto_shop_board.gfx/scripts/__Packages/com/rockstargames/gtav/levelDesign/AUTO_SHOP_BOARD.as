@@ -1,17 +1,18 @@
 class com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
-   var inputReceived;
+   var cursor;
    var deactivated;
    var displayConfig;
    var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
    var screenContainer;
-   var cursor;
-   var currScreen;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -127,9 +128,10 @@ class com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD extends com.rockstargam
    }
    function GET_CURRENT_SELECTION()
    {
+      var _loc2_;
       if(this.inputReceived)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          return !_loc2_ ? -1 : _loc2_.id;
       }
       return this.lastClickedButtonID;
@@ -150,6 +152,7 @@ class com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD extends com.rockstargam
          return undefined;
       }
       this.inputReceived = true;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.autoShopBoard.ui.Cursor.UP:
@@ -159,7 +162,7 @@ class com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD extends com.rockstargam
             this.cursor.snapInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD.ACCEPT:
-            var _loc2_ = this.cursor.getTargetUnderCursor();
+            _loc2_ = this.cursor.getTargetUnderCursor();
             this.lastClickedButtonID = !_loc2_ ? -1 : _loc2_.id;
       }
       this.currScreen.handleButtonInput(inputID);
@@ -225,17 +228,20 @@ class com.rockstargames.gtav.levelDesign.AUTO_SHOP_BOARD extends com.rockstargam
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

@@ -1,13 +1,14 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.NightclubScreen extends com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
-   var persistentContent;
-   var lineGraph;
-   var view;
-   var lineGraphSFXPlayed;
-   var manageClubButton;
    var _buttons;
    var app;
+   var checkNavigationButtons;
+   var lineGraph;
+   var lineGraphSFXPlayed;
+   var manageClubButton;
    var overlay;
+   var persistentContent;
+   var view;
    static var CUSTOMER_LEVELS = [111,91,71,51];
    function NightclubScreen(app, viewContainer, cursor, persistentContent, overlay)
    {
@@ -71,8 +72,6 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.NightclubScreen exten
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.ACCEPT:
             this.handleAcceptButton(this.app.GET_CURRENT_SELECTION());
             break;
-         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.NIGHTCLUB.LB:
             if(!this.overlay.isShowing)
             {
@@ -84,6 +83,9 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.NightclubScreen exten
             {
                this.app.showScreen(this.app.DJ_SCREEN);
             }
+         case com.rockstargames.gtav.levelDesign.NIGHTCLUB.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(id)

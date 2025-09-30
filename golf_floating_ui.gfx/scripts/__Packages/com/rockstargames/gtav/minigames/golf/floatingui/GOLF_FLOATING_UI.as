@@ -1,12 +1,14 @@
 class com.rockstargames.gtav.minigames.golf.floatingui.GOLF_FLOATING_UI extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var floatingUIMC;
-   var CONTENT;
-   var slotContainerMC;
-   var bgMC;
-   var slotsData;
-   var slots;
    var BOUNDING_BOX;
+   var CONTENT;
+   var _alpha;
+   var _visible;
+   var bgMC;
+   var floatingUIMC;
+   var slotContainerMC;
+   var slots;
+   var slotsData;
    var ARROW_OFF = 0;
    var ARROW_UP = 1;
    var ARROW_DOWN = 2;
@@ -26,7 +28,7 @@ class com.rockstargames.gtav.minigames.golf.floatingui.GOLF_FLOATING_UI extends 
       this.bgMC._height = 0;
       this.slotsData = [];
       this.slots = [];
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc4_ = 0;
       while(_loc4_ < this.slots.length)
       {
@@ -73,8 +75,8 @@ class com.rockstargames.gtav.minigames.golf.floatingui.GOLF_FLOATING_UI extends 
          }
       }
       var _loc8_ = this.slots.length < this.slotsData.length ? this.slotsData.length : this.slots.length;
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       _loc3_ = 0;
       while(_loc3_ < _loc8_)
       {

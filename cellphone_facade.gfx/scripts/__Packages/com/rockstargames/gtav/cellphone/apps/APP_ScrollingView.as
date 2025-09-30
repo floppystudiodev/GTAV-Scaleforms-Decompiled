@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.cellphone.apps.APP_ScrollingView extends MovieClip
 {
-   var dataProviderUI;
    var CONTENT;
-   var linkageID;
    var container;
-   var scrollBarTimeout;
-   var scrollBar;
-   var scrollerX;
-   var offsetY;
-   var gutterHeight;
-   var gfxFileName;
-   var whiteRGB;
-   var offWhiteRGB;
-   var currentStyle;
    var content;
-   var contentOriginY;
    var contentOriginX;
+   var contentOriginY;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var gutterHeight;
+   var linkageID;
+   var offWhiteRGB;
+   var offsetY;
+   var scrollBar;
+   var scrollBarTimeout;
+   var scrollerX;
+   var whiteRGB;
    var isLandscape = false;
    var scrollamount = 20;
    var needsScrollbars = false;
@@ -88,13 +88,14 @@ class com.rockstargames.gtav.cellphone.apps.APP_ScrollingView extends MovieClip
                _loc2_ = this.contentOriginY - (this.content._height - this.gutterHeight);
             }
       }
+      var _loc4_;
+      var _loc3_;
       if(Math.round(_loc2_) != Math.round(this.content._y))
       {
          this.scrollBar.scrollBarContainer._visible = true;
          this.setScrollBarVisibility(true);
          this.content._y = Math.round(_loc2_);
-         var _loc4_ = undefined;
-         var _loc3_ = this.contentOriginY - this.content._y;
+         _loc3_ = this.contentOriginY - this.content._y;
          _loc4_ = _loc3_ / (this.content._height - this.gutterHeight) * 100;
          this.scrollBar.scrollToPercentage(_loc4_);
       }

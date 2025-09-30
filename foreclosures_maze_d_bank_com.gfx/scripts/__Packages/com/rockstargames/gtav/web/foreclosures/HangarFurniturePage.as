@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.HangarFurniturePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_HANGAR";
    function HangarFurniturePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -48,7 +48,7 @@ class com.rockstargames.gtav.web.foreclosures.HangarFurniturePage extends com.ro
    }
    function initOptionButtons()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = 0;
       while(_loc3_ < 3)
       {
@@ -72,14 +72,17 @@ class com.rockstargames.gtav.web.foreclosures.HangarFurniturePage extends com.ro
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 3)
       {
-         var _loc3_ = this.view["optionButton_" + _loc2_];
+         _loc3_ = this.view["optionButton_" + _loc2_];
          _loc3_.selected._visible = this.website.hangarFurniture == _loc2_;
          _loc2_ = _loc2_ + 1;
       }

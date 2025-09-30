@@ -1,8 +1,8 @@
 class com.rockstargames.ui.hud.HUD_COMPONENT extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    var _enumID;
    var IS_PAUSED = false;
    var FADE_DURATION = 800;

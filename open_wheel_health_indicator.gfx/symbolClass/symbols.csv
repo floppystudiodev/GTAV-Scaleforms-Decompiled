@@ -1,8 +1,8 @@
-17;CONTENT
-19;BOUNDING_BOX
-20;__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI
-21;__Packages.com.rockstargames.gtav.Multiplayer.OPEN_WHEEL_HEALTH_INDICATOR
-22;__Packages.com.rockstargames.ui.utils.Colour
-23;__Packages.com.rockstargames.ui.utils.HudColourLite
-24;__Packages.com.rockstargames.ui.utils.HudColour
-25;__Packages.com.rockstargames.ui.game.GameInterface
+17;"CONTENT"
+19;"BOUNDING_BOX"
+20;"__Packages.com.rockstargames.gtav.levelDesign.BaseScriptUI"
+21;"__Packages.com.rockstargames.gtav.Multiplayer.OPEN_WHEEL_HEALTH_INDICATOR"
+22;"__Packages.com.rockstargames.ui.utils.Colour"
+23;"__Packages.com.rockstargames.ui.utils.HudColourLite"
+24;"__Packages.com.rockstargames.ui.utils.HudColour"
+25;"__Packages.com.rockstargames.ui.game.GameInterface"

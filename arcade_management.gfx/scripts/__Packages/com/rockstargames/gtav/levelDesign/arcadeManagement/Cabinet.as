@@ -2,12 +2,12 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet
 {
    var _id;
    var _texture;
-   var textureIsDirty;
+   var isDirty;
    var name;
    var owned;
-   var salePrice;
    var price;
-   var isDirty;
+   var salePrice;
+   var textureIsDirty;
    static var TXD = "ARCADE_MGMT";
    function Cabinet(_id)
    {
@@ -38,6 +38,7 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet
          imageManager.addImage(com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet.TXD,this._texture + "_FRONT",view.image);
          this.textureIsDirty = false;
       }
+      var _loc3_;
       if(this.owned)
       {
          view.costButton.label.strikethrough._visible = false;
@@ -49,7 +50,7 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet
       }
       else
       {
-         var _loc3_ = this.salePrice >= 0 && this.salePrice < this.price;
+         _loc3_ = this.salePrice >= 0 && this.salePrice < this.price;
          this.updateCentreAlignedCost(view.costButton.label,_loc3_,this.price,this.salePrice,isAsian);
       }
       this.isDirty = false;
@@ -57,10 +58,14 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet
    function updateCentreAlignedCost(panel, isOnSale, originalCost, saleCost, isAsian)
    {
       panel.cost.textAutoSize = "none";
+      var _loc2_;
+      var _loc3_;
+      var _loc6_;
+      var _loc5_;
       if(isOnSale)
       {
-         var _loc2_ = "$" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(originalCost);
-         var _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(saleCost);
+         _loc2_ = "$" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(originalCost);
+         _loc3_ = saleCost <= 0 ? "  " + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setLocalisedText(panel.cost,"CLUB_FREE") : "  $" + com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.formatNumber(saleCost);
          com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc2_ + "  " + _loc3_,3,true,true);
          if(isAsian)
          {
@@ -75,13 +80,13 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.Cabinet
          else
          {
             com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc2_,3,true,true);
-            var _loc6_ = panel.cost.textWidth;
+            _loc6_ = panel.cost.textWidth;
             com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.setSpacedTextField(panel.cost,_loc2_ + _loc3_,3,true,true);
             if(isAsian)
             {
                com.rockstargames.gtav.levelDesign.ARCADE_MANAGEMENT.resizeAsianText(panel.cost);
             }
-            var _loc5_ = panel.cost.textWidth;
+            _loc5_ = panel.cost.textWidth;
             panel.strikethrough._x = 0.5 * (panel.cost._width - _loc5_) + panel.cost._x;
             panel.strikethrough._width = _loc6_ + 4;
          }

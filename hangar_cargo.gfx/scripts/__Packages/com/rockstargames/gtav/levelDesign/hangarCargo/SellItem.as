@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.SellItem
 {
-   var view;
-   var type;
    var button;
    var pieChart;
+   var type;
+   var view;
    static var ELEMENT_FADE_IN_DURATION = 0.5;
    function SellItem(view, type)
    {

@@ -1,42 +1,42 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMatchmakingCardItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var hBGColour;
-   var leftIconColour;
-   var rightIconColour;
-   var selectAlpha;
-   var nonSelectAlpha;
-   var kickAnim;
-   var isAnimating;
-   var labelMC;
-   var rankNumTF;
-   var oddsTF;
-   var bgMC;
    var __get__data;
-   var type;
-   var groupBGMC;
-   var groupNumTF;
+   var __get__uniqueID;
+   var _highlighted;
+   var attachMovie;
+   var avatarImg;
+   var betMC;
+   var bgMC;
+   var carIconBGMC;
    var colourIconL;
    var colourIconR;
    var colourStrokeMC;
-   var eyeMC;
    var crewTagMC;
+   var eyeMC;
+   var getNextHighestDepth;
+   var groupBGMC;
+   var groupNumTF;
+   var hBGColour;
+   var highlightBGMC;
    var hostMC;
    var icon1MC;
-   var betMC;
    var icon2MC;
    var icon3MC;
-   var carIconBGMC;
-   var isSelectable;
-   var rankingTF;
-   var scoreTF;
    var initialIndex;
+   var isAnimating;
+   var isSelectable;
+   var kickAnim;
+   var labelMC;
+   var leftIconColour;
+   var nonSelectAlpha;
+   var oddsTF;
    var rankBGMC;
-   var _highlighted;
-   var __get__uniqueID;
-   var attachMovie;
-   var getNextHighestDepth;
-   var highlightBGMC;
-   var avatarImg;
+   var rankNumTF;
+   var rankingTF;
+   var rightIconColour;
+   var scoreTF;
+   var selectAlpha;
+   var type;
    static var VEHICLE_ITEM = 0;
    static var PLAYER_BET_ITEM = 1;
    static var PLAYER_ITEM = 2;
@@ -84,9 +84,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMat
       {
          _loc3_ = 1;
       }
+      var _loc7_;
       if(_loc3_ == 1 || _loc3_ == 0)
       {
-         var _loc7_ = !Boolean(_loc3_) ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED : com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLUE;
+         _loc7_ = !Boolean(_loc3_) ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED : com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLUE;
          com.rockstargames.ui.utils.Colour.setHudColour(_loc7_,this.hBGColour);
          com.rockstargames.ui.utils.Colour.ApplyHudColour(this.hostMC,_loc7_);
       }
@@ -106,6 +107,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMat
       }
       var _loc4_ = false;
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.carIconBGMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK);
+      var _loc8_;
       switch(this.type)
       {
          case com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMatchmakingCardItem.VEHICLE_ITEM:
@@ -152,7 +154,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMat
             {
                this.oddsTF._visible = false;
             }
-            var _loc8_ = Boolean(this.isSelectable);
+            _loc8_ = Boolean(this.isSelectable);
             if(_loc8_)
             {
                this.betMC.bgMC._visible = true;
@@ -305,6 +307,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMat
          this.avatarImg = com.rockstargames.ui.media.ImageLoaderMC(this.attachMovie("avatarImage","a",this.getNextHighestDepth(),{_x:25,_y:0}));
       }
       var _loc4_ = !this.isStandalone ? "PAUSE_MENU_SP_CONTENT" : "mp_matchmaking_card";
+      var _loc2_;
+      var _loc5_;
       if(this.avatarImg.textureDict == txd)
       {
          if(this.avatarImg.isLoaded)
@@ -323,12 +327,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMat
             this.avatarImg.removeTxdRef();
          }
          this.avatarImg.init(_loc4_,txd,txn,25,25);
-         var _loc2_ = !this.isStandalone ? 4 : 3;
+         _loc2_ = !this.isStandalone ? 4 : 3;
          if(this.txdCallbackDepth != -1)
          {
             _loc2_ = this.txdCallbackDepth;
          }
-         var _loc5_ = this.avatarImg.splitPath(String(this.avatarImg),_loc2_);
+         _loc5_ = this.avatarImg.splitPath(String(this.avatarImg),_loc2_);
          this.avatarImg.requestTxdRef(_loc5_,true);
       }
    }

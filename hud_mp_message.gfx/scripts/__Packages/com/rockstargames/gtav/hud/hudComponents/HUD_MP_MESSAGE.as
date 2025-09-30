@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_MP_MESSAGE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var messageMC;
    var CONTENT;
-   var defaultX;
    var TIMELINE;
-   var defaultY;
-   var _enumID;
    var _HUD;
+   var _enumID;
+   var defaultX;
+   var defaultY;
+   var messageMC;
    function HUD_MP_MESSAGE()
    {
       super();

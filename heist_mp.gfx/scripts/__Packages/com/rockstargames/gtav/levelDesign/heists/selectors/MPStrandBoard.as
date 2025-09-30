@@ -1,7 +1,10 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPStrandBoard extends com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard
 {
-   var planningItemTitle;
+   var _data;
+   var blueRGB;
+   var numItems;
    var planningImage;
+   var planningItemTitle;
    var dataLeftLinkage = "strandData_left";
    var titleLinkage = "strandItemTitle";
    function MPStrandBoard()
@@ -12,9 +15,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPStrandBoard extends 
    {
       super.data = _d;
       var _loc4_ = 0;
+      var _loc3_;
       while(_loc4_ < this.numItems)
       {
-         var _loc3_ = this["item" + _loc4_];
+         _loc3_ = this["item" + _loc4_];
          _loc3_._x = 115;
          _loc3_.postItNote._visible = false;
          _loc3_.completedTickMC._visible = false;
@@ -41,9 +45,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPStrandBoard extends 
    {
       super.subHighlight(_subItemIndex,leftArrowVis,rightArrowVis);
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.numItems)
       {
-         var _loc4_ = this["item" + _loc3_];
+         _loc4_ = this["item" + _loc3_];
          _loc4_.postItNote._visible = false;
          _loc4_.completedTickMC._visible = false;
          _loc3_ = _loc3_ + 1;

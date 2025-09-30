@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.loadingScreens.LandingPageButton extends MovieClip
 {
    var _buttonId;
-   var label;
-   var bg;
-   var _greyColourHex;
    var _greyColourAlpha;
+   var _greyColourHex;
    var _mouseCatcher;
+   var bg;
+   var label;
    function LandingPageButton()
    {
       super();

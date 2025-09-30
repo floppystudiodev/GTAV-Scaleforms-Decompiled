@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.CrewListItem extends com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.ListItem
 {
-   var view;
    var colourScheme;
+   var view;
    function CrewListItem(id, view, colourScheme)
    {
       super(id,view,colourScheme);

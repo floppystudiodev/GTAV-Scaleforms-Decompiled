@@ -1,11 +1,11 @@
 class com.rockstargames.ui.core.UICanvasItem
 {
+   var anchor;
+   var gridPos;
    var mc;
+   var offset;
    var originalBounds;
    var scaledBounds;
-   var gridPos;
-   var anchor;
-   var offset;
    function UICanvasItem()
    {
    }

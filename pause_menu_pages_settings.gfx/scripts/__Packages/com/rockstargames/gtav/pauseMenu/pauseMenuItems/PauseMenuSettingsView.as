@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
    var bgMC;
-   var viewContainer;
+   var dataList;
+   var highlightedItem;
+   var itemList;
    var itemY;
    var rowSpacing;
+   var topEdge;
+   var viewContainer;
    var viewLinkageList;
    var visibleItems;
-   var itemList;
-   var dataList;
-   var topEdge;
-   var highlightedItem;
    var initialValueIndex = 4;
    function PauseMenuSettingsView()
    {
@@ -18,10 +18,11 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsView exte
    function set params(_p)
    {
       super.params = _p;
+      var _loc3_;
       if(this.bgMC == undefined)
       {
          this.bgMC = this.viewContainer.attachMovie("settingsBg","settingsBgMC",-1);
-         var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+         _loc3_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG,_loc3_);
          com.rockstargames.ui.utils.Colour.Colourise(this.bgMC,_loc3_.r,_loc3_.g,_loc3_.b,_loc3_.a);
          this.bgMC._visible = false;

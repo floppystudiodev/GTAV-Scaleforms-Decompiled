@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.foreclosures.BasicPropertyPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
-   var view;
    var buttonsHiddenByAlert;
+   var prevPageName;
    var tradeInAlert;
+   var view;
+   var website;
    function BasicPropertyPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"basicPropertyPage",pageName,isFirstPage,progressPanel,header);
@@ -12,7 +12,7 @@ class com.rockstargames.gtav.web.foreclosures.BasicPropertyPage extends com.rock
    }
    function init()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.website.isInGarmentFactoryFlow)
       {
          _loc2_ = this.website.getSelectedGarmentFactory();
@@ -71,6 +71,8 @@ class com.rockstargames.gtav.web.foreclosures.BasicPropertyPage extends com.rock
             this.hideTradeInAlert();
             this.website.dispatchPlayerBailOfficeSelections();
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.PURCHASE_PAGE.name);
+         default:
+            return;
       }
    }
    function handleLB()

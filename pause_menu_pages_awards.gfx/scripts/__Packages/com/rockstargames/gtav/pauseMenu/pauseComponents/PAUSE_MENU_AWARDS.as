@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_AWARDS extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var model;
    var maxGridItems = 12;
    function PAUSE_MENU_AWARDS()
@@ -49,6 +49,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_AWARDS extends
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADLEFT:
             com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuAwardsView(this.model.getCurrentView()).moveHorz(-1);
+         default:
+            return;
       }
    }
    function SET_HIGHLIGHT(i)

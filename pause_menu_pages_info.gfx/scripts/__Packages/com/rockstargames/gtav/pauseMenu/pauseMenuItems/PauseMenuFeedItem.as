@@ -1,23 +1,23 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var labelMC;
-   var iconMC;
-   var feedImgContainer2;
-   var createEmptyMovieClip;
-   var getNextHighestDepth;
-   var feedImgContainer1;
-   var bodyMC;
-   var itemTextLeft;
    var __get__data;
-   var feedImgDefaultMC;
-   var placeholderImgMC;
-   var type;
-   var textIconLayerMC;
-   var crewTagMC;
-   var attachMovie;
-   var feedImgSecondaryMC;
    var _height;
    var _highlighted;
+   var attachMovie;
+   var bodyMC;
+   var createEmptyMovieClip;
+   var crewTagMC;
+   var feedImgContainer1;
+   var feedImgContainer2;
+   var feedImgDefaultMC;
+   var feedImgSecondaryMC;
+   var getNextHighestDepth;
+   var iconMC;
+   var itemTextLeft;
+   var labelMC;
+   var placeholderImgMC;
+   var textIconLayerMC;
+   var type;
    static var TEXT_X;
    static var IMAGE_X = 8;
    static var IMAGE_Y = 6;
@@ -49,10 +49,15 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends 
       this.bodyMC.bodyTF.wordWrap = true;
       this.bodyMC.bodyTF.htmlText = this.parseForFonts(_loc10_);
       this.placeholderImgMC._visible = true;
+      var _loc6_;
+      var _loc11_;
+      var _loc7_;
+      var _loc9_;
+      var _loc3_;
       switch(this.type)
       {
          case com.rockstargames.gtav.levelDesign.GAME_STREAM_ENUMS.AWARD:
-            var _loc6_ = this.data[5];
+            _loc6_ = this.data[5];
             com.rockstargames.ui.utils.Colour.ApplyHudColour(this.feedImgDefaultMC,_loc6_);
             com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.labelMC.subtitleTF,_loc6_);
             break;
@@ -73,7 +78,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends 
             this.textIconLayerMC = this.createEmptyMovieClip("textIconLayerMC",this.getNextHighestDepth());
             this.textIconLayerMC._x = this.bodyMC._x;
             this.textIconLayerMC._y = this.bodyMC._y;
-            var _loc11_ = new com.rockstargames.ui.utils.Text();
+            _loc11_ = new com.rockstargames.ui.utils.Text();
             _loc11_.setTextWithIcons(this.bodyMC.bodyTF.text,this.textIconLayerMC,this.bodyMC.bodyTF,0,13,3,false);
             break;
          case com.rockstargames.gtav.levelDesign.GAME_STREAM_ENUMS.CREW_TAG:
@@ -89,9 +94,9 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends 
          case com.rockstargames.gtav.levelDesign.GAME_STREAM_ENUMS.STATS:
             this.placeholderImgMC._visible = true;
             this.bodyMC._visible = false;
-            var _loc7_ = !this.data[5] ? 0 : this.data[5];
-            var _loc9_ = !this.data[6] ? 0 : this.data[6];
-            var _loc3_ = !this.data[7] ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE : this.data[7];
+            _loc7_ = !this.data[5] ? 0 : this.data[5];
+            _loc9_ = !this.data[6] ? 0 : this.data[6];
+            _loc3_ = !this.data[7] ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE : this.data[7];
             switch(_loc4_)
             {
                case "CHAR_MICHAEL":
@@ -142,6 +147,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends 
    }
    function loadFeedTexture(loaderMC, containerMC, name, txd, txn, x, y, w, h, callback)
    {
+      var _loc5_;
       if(txd == undefined || txn == undefined || txd == "" || txn == "")
       {
          if(loaderMC)
@@ -173,7 +179,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuFeedItem extends 
             loaderMC.init("PAUSE_MENU_SP_CONTENT",txd,txn,w,h);
             if(txd.substr(0,5) == "CHAR_" || txn.substr(0,5) == "HC_N_")
             {
-               var _loc5_ = loaderMC.splitPath(String(loaderMC),6);
+               _loc5_ = loaderMC.splitPath(String(loaderMC),6);
                loaderMC.requestTxdRef(_loc5_,true,callback,this);
             }
             else

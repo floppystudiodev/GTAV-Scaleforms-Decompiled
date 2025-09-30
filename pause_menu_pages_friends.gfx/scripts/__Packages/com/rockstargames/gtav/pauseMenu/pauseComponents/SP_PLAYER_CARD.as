@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var menuList;
-   var currAngle;
-   var statsMaxDegrees;
-   var dbgID;
    var CONTENT;
-   var wheelRadius;
+   var currAngle;
+   var dbgID;
    var getNextHighestDepth;
+   var menuList;
+   var statsMaxDegrees;
+   var wheelRadius;
    static var PI_OVER_180 = 0.017453292519943295;
    static var NUM_STAT_ITEMS = 5;
    static var BG_FILL_ALPHA = 20;
@@ -40,10 +40,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD extends co
       this.CONTENT.statWheelMC.bgFillMC._alpha = com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD.BG_FILL_ALPHA;
       var _loc6_ = 135;
       var _loc3_ = 0;
+      var _loc5_;
+      var _loc4_;
       while(_loc3_ < com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD.NUM_STAT_ITEMS)
       {
-         var _loc5_ = this.getMovieID();
-         var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuSPCardItem(this.CONTENT.attachMovie(_loc5_,_loc5_ + _loc3_ + "MC",this.CONTENT.getNextHighestDepth()));
+         _loc5_ = this.getMovieID();
+         _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuSPCardItem(this.CONTENT.attachMovie(_loc5_,_loc5_ + _loc3_ + "MC",this.CONTENT.getNextHighestDepth()));
          _loc4_._y = _loc6_ + _loc4_._height * _loc3_;
          _loc4_._visible = false;
          this.menuList[_loc3_] = _loc4_;
@@ -86,19 +88,24 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD extends co
    }
    function SET_DATA_SLOT(_viewIndex, _slotIndex)
    {
+      var _loc6_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
+      var _loc7_;
       if(_viewIndex == 0)
       {
          this.CONTENT.pctTF.text = arguments[2];
-         var _loc6_ = 3;
+         _loc6_ = 3;
          if(arguments[_loc6_])
          {
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < _loc6_ + com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD.NUM_STAT_ITEMS)
             {
-               var _loc4_ = this.CONTENT["stat" + _loc3_ + "TF"];
+               _loc4_ = this.CONTENT["stat" + _loc3_ + "TF"];
                if(_loc4_ != undefined)
                {
-                  var _loc5_ = arguments[_loc6_ + _loc3_];
+                  _loc5_ = arguments[_loc6_ + _loc3_];
                   com.rockstargames.ui.utils.UIText.setSizedText(_loc4_,_loc5_,true);
                }
                _loc3_ = _loc3_ + 1;
@@ -112,7 +119,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD extends co
             this.currAngle = 0;
             this.CONTENT.statWheelMC.wheelMC.clear();
          }
-         var _loc7_ = this.menuList[_viewIndex - 1];
+         _loc7_ = this.menuList[_viewIndex - 1];
          _loc7_.init(arguments);
          _loc7_._visible = true;
          this.updateStatWheel(_viewIndex - 1,arguments[8],arguments[9]);
@@ -120,9 +127,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.SP_PLAYER_CARD extends co
    }
    function updateStatWheel(index, pctComplete, statColourEnum)
    {
+      var _loc2_;
       if(pctComplete > 0)
       {
-         var _loc2_ = this.statsMaxDegrees[index] * pctComplete;
+         _loc2_ = this.statsMaxDegrees[index] * pctComplete;
          this.drawArc(this.currAngle,this.currAngle + _loc2_,statColourEnum);
          this.currAngle += _loc2_;
       }

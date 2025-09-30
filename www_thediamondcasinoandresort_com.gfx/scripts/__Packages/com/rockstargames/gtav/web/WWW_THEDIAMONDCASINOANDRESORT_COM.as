@@ -1,30 +1,30 @@
 class com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var initialised;
-   var PAGE_NAMES;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var isMP;
-   var videoDisabled;
-   var displayConfig;
-   var imageManager;
-   var pageContainer;
-   var CONTENT;
    var CAN_STORE_PAGE;
-   var colourOption;
-   var styleOption;
-   var loungeOption;
+   var CONTENT;
+   var PAGE_NAMES;
    var barOption;
-   var dealerOption;
    var bedroomOption;
-   var mediaRoomOption;
-   var spaOption;
-   var officeOption;
-   var garageOption;
+   var browser;
+   var colourOption;
    var currPage;
-   var dataTextScope;
    var dataProviderUI;
+   var dataTextScope;
+   var dealerOption;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayConfig;
+   var garageOption;
+   var imageManager;
+   var initialised;
+   var isMP;
+   var loungeOption;
+   var mediaRoomOption;
+   var officeOption;
+   var pageContainer;
+   var spaOption;
+   var styleOption;
+   var videoDisabled;
    static var PAGES = {SPLASH_PAGE:{name:"PAGE1",index:1,canStore:true,pageClass:com.rockstargames.gtav.web.casino.pages.SplashPage},CASINO_PAGE:{name:"CASINO",index:2,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.CasinoPage},MEMBERSHIP_PAGE:{name:"MEMBERSHIP",index:3,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.MembershipPage},MEMBERSHIP_PENDING_PAGE:{name:"MEMBERSHIP_D_PENDING",index:4,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.MembershipPendingPage},MEMBERSHIP_FAILED_PAGE:{name:"MEMBERSHIP_D_FAILED",index:5,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.MembershipFailedPage},MEMBERSHIP_SUCCESS_PAGE:{name:"MEMBERSHIP_D_SUCCESS",index:6,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.MembershipSuccessPage},UNUSED_PAGE:{},SUITES_PAGE:{name:"SUITES",index:8,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.SuitesPage},RENOVATE_PAGE:{name:"RENOVATE",index:9,canStore:false,pageClass:com
    .rockstargames.gtav.web.casino.pages.RenovatePage},SUITE_COLOUR_PAGE:{name:"SUITE_D_COLOR",index:10,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.SuiteColourPage},SUITE_STYLE_PAGE:{name:"SUITE_D_STYLE",index:11,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.SuiteStylePage},UNUSED_PAGE:{name:"",index:12,canStore:false,pageClass:null},SUITE_OPTIONS_PAGE:{name:"SUITE_D_OPTIONS",index:13,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.SuiteOptionsPage},SUMMARY_PAGE:{name:"SUMMARY",index:14,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.SummaryPage},PURCHASE_PENDING_PAGE:{name:"PURCHASE_D_PENDING",index:15,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.PurchasePendingPage},PURCHASE_FAILED_PAGE:{name:"PURCHASE_D_FAILED",index:16,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.PurchaseFailedPage},PURCHASE_SUCCESS_PAGE:{name:"PURCHASE_D_SUCCESS",index:17,canStore:false,pageClass:com.rockstargames
    .gtav.web.casino.pages.PurchaseSuccessPage},WAYPOINT_SET:{name:"WAYPOINT_D_SET",index:18,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.WaypointSetPage},UNDER_CONSTRUCTION_PAGE:{name:"UNDER_D_CONSTRUCTION",index:19,canStore:false,pageClass:com.rockstargames.gtav.web.casino.pages.UnderConstructionPage}};
@@ -93,9 +93,10 @@ class com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM extends com.r
    }
    function initPages()
    {
+      var _loc2_;
       for(var _loc3_ in com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES)
       {
-         var _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES[_loc3_].index;
+         _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES[_loc3_].index;
          this.PAGE_NAMES[_loc2_] = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES[_loc3_].name;
          this.CAN_STORE_PAGE[_loc2_] = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.PAGES[_loc3_].canStore;
       }
@@ -339,9 +340,10 @@ class com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM extends com.r
    }
    function getColourCosts(costSums)
    {
+      var _loc2_;
       if(this.colourOption != -1 && this.colourOption != this.purchasedColourOption)
       {
-         var _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.COLOUR_COST_OFFSET + this.colourOption;
+         _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.COLOUR_COST_OFFSET + this.colourOption;
          this.getCost(costSums,_loc2_);
       }
    }
@@ -351,9 +353,10 @@ class com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM extends com.r
    }
    function getStyleCosts(costSums)
    {
+      var _loc2_;
       if(this.styleOption != -1 && this.styleOption != this.purchasedStyleOption)
       {
-         var _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.STYLE_COST_OFFSET + this.styleOption;
+         _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.STYLE_COST_OFFSET + this.styleOption;
          this.getCost(costSums,_loc2_);
       }
    }
@@ -370,9 +373,10 @@ class com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM extends com.r
    }
    function getBarCosts(costSums)
    {
+      var _loc2_;
       if(this.barOption > 0 && this.barOption != this.purchasedBarOption)
       {
-         var _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.BAR_COST_OFFSET + this.barOption - 1;
+         _loc2_ = com.rockstargames.gtav.web.WWW_THEDIAMONDCASINOANDRESORT_COM.BAR_COST_OFFSET + this.barOption - 1;
          this.getCost(costSums,_loc2_);
       }
    }

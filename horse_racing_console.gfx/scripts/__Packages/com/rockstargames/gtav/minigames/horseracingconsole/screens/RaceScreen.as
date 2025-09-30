@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
    var app;
-   var trackingXMin;
-   var trackingXMax;
-   var trackingXRange;
    var cursor;
-   var state;
-   var view;
-   var parallaxLayers;
-   var horseContainer;
    var finishingLine;
-   var raceProgress;
-   var raceDuration;
-   var raceDistance;
+   var horseContainer;
+   var parallaxLayers;
    var postRaceOffset;
+   var raceDistance;
+   var raceDuration;
+   var raceProgress;
    var startTimestamp;
+   var state;
+   var trackingXMax;
+   var trackingXMin;
+   var trackingXRange;
    var updateArgs;
+   var view;
    var HORSE_Y_MIN = 476;
    var HORSE_Y_MAX = 710;
    var HORSE_SCALE_MIN = 90;
@@ -68,9 +68,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
       var _loc4_ = this.HORSE_SCALE_MIN;
       var _loc7_ = (this.HORSE_SCALE_MAX - this.HORSE_SCALE_MIN) / (_loc6_ - 1);
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc6_)
       {
-         var _loc2_ = this.horseContainer.attachMovie("horse","horse" + _loc3_,this.horseContainer.getNextHighestDepth());
+         _loc2_ = this.horseContainer.attachMovie("horse","horse" + _loc3_,this.horseContainer.getNextHighestDepth());
          _loc2_._x = 0;
          _loc2_._y = _loc5_;
          _loc2_._xscale = _loc4_;
@@ -101,10 +102,12 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
       this.app.winOrder.length = 0;
       var _loc8_ = this.raceDistance;
       var _loc4_ = 2;
+      var _loc5_;
+      var _loc6_;
       while(_loc4_ < 8)
       {
-         var _loc5_ = arguments[_loc4_] - 1;
-         var _loc6_ = this.app.horses[_loc5_];
+         _loc5_ = arguments[_loc4_] - 1;
+         _loc6_ = this.app.horses[_loc5_];
          if(_loc6_)
          {
             this.app.winOrder.push(_loc5_);
@@ -121,13 +124,14 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
       }
       this.state = this.STATE_RACING;
       this.postRaceOffset = 0;
+      var _loc3_;
       if(offset > 0)
       {
          if(offset > this.raceDuration)
          {
             offset = this.raceDuration;
          }
-         var _loc3_ = this.OFFSET_INTERVAL;
+         _loc3_ = this.OFFSET_INTERVAL;
          do
          {
             if(_loc3_ > offset)
@@ -181,9 +185,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
       var _loc4_ = false;
       var _loc7_ = this.app.horses.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc7_)
       {
-         var _loc2_ = this.app.horses[_loc3_];
+         _loc2_ = this.app.horses[_loc3_];
          _loc4_ = _loc2_.update(normElapsed,this.postRaceOffset) || _loc4_;
          if(_loc2_.view._x > _loc5_)
          {
@@ -202,11 +207,14 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
          this.grabPhotoFinish();
          this.stopRace();
       }
+      var _loc12_;
+      var _loc10_;
+      var _loc11_;
       if(this.state == this.STATE_RACING)
       {
-         var _loc12_ = normElapsed * this.trackingXRange + this.trackingXMin;
-         var _loc10_ = _loc8_ / _loc7_;
-         var _loc11_ = normElapsed * (_loc5_ - _loc10_) + _loc10_;
+         _loc12_ = normElapsed * this.trackingXRange + this.trackingXMin;
+         _loc10_ = _loc8_ / _loc7_;
+         _loc11_ = normElapsed * (_loc5_ - _loc10_) + _loc10_;
          this.horseContainer._x = _loc12_ - _loc11_;
       }
    }
@@ -234,11 +242,12 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RaceScreen ext
       photoFinish.xScale = element._xscale;
       photoFinish.yScale = element._yscale;
       photoFinish.children = [];
+      var _loc3_;
       for(var _loc5_ in element)
       {
          if(element[_loc5_] instanceof MovieClip)
          {
-            var _loc3_ = {};
+            _loc3_ = {};
             this.grabPhotoFinishElement(_loc3_,element[_loc5_]);
             photoFinish.children.push(_loc3_);
          }

@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.securoserv.InteriorsOverlay
 {
-   var view;
-   var purchaseButtonID;
+   var _controls;
    var cancelButtonID;
-   var interior0ButtonID;
    var interior1ButtonID;
    var interior2ButtonID;
-   var _controls;
+   var interior0ButtonID;
    var prices;
+   var purchaseButtonID;
    var salePrices;
+   var view;
    function InteriorsOverlay(view, interior0ButtonID, interior1ButtonID, interior2ButtonID, purchaseButtonID, cancelButtonID, imageManager)
    {
       this.view = view;

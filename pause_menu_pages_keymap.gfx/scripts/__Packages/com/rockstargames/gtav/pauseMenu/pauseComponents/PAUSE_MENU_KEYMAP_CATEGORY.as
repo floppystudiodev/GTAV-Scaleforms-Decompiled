@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_KEYMAP_CATEGORY extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var TextWithBlips;
-   var model;
-   var dependentColumnMC;
-   var canMouseNav;
    var SEND_COLUMN_PARAMS;
+   var TextWithBlips;
    var blipLayer;
-   var scrollBase;
-   var linkedMC;
+   var canMouseNav;
    var columnIsFocused;
+   var dbgID;
+   var dependentColumnMC;
+   var linkedMC;
+   var model;
+   var scrollBase;
    var hasCustomScrollPos = false;
    var rowOffset = 27;
    var isCharSelect = false;
@@ -109,18 +109,20 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_KEYMAP_CATEGOR
    function INIT_SCROLL_BAR(visible, columns, scrollType, arrowPosition, override, xColOffset)
    {
       super.INIT_SCROLL_BAR(visible,columns,scrollType,arrowPosition,override,xColOffset);
+      var _loc3_;
       if(this.scrollBase != undefined && this.hasCustomScrollPos == true)
       {
-         var _loc3_ = this.getHelpY();
+         _loc3_ = this.getHelpY();
          this.scrollBase._y = _loc3_;
       }
    }
    function SET_SCROLL_BAR(currentPosition, maxPosition, maxVisible, caption)
    {
       super.SET_SCROLL_BAR(currentPosition,maxPosition,maxVisible,caption);
+      var _loc3_;
       if(this.scrollBase != undefined && this.hasCustomScrollPos == true)
       {
-         var _loc3_ = this.getHelpY();
+         _loc3_ = this.getHelpY();
          this.scrollBase._y = _loc3_;
       }
    }
@@ -135,10 +137,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_KEYMAP_CATEGOR
    }
    function setLinkedMCPos(yOrigin)
    {
+      var _loc3_;
+      var _loc2_;
       if(this.linkedMC)
       {
-         var _loc3_ = yOrigin;
-         var _loc2_ = 0;
+         _loc3_ = yOrigin;
+         _loc2_ = 0;
          if(this.CONTENT.helpMC._visible)
          {
             _loc3_ = this.CONTENT.helpMC._y + this.CONTENT.helpMC.bgMC._height;

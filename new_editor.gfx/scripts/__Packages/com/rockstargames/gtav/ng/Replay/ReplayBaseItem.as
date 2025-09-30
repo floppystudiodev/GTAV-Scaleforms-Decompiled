@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.ng.Replay.ReplayBaseItem extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var OPTIONS;
    var APP_DATA;
-   var hudColourWhite;
-   var hudColourBlack;
+   var OPTIONS;
    var _hasItemBeenSetUpGrey;
+   var hudColourBlack;
+   var hudColourWhite;
    var BLACK_ALPHA = 70;
    var _isSelectable = true;
    var _isMouseEnabled = false;

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.arcadeBusinessHub.screens.MainScreen extends com.rockstargames.gtav.levelDesign.arcadeBusinessHub.screens.Screen
 {
+   var _buttons;
    var app;
+   var cursor;
+   var overlay;
    var scroller;
    var view;
-   var _buttons;
-   var overlay;
-   var cursor;
    static var NUM_BUSINESSES = 10;
    static var NIGHTCLUB_ID = 1;
    static var TXD = "ARCADE_BIZ";
@@ -33,9 +33,10 @@ class com.rockstargames.gtav.levelDesign.arcadeBusinessHub.screens.MainScreen ex
       _loc2_.heading.verticalAlign = "center";
       com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB.setSpacedTextField(_loc2_.heading,"ABH_TITLE",6,true,false);
       var _loc3_ = _loc2_.heading.text.split(" ");
+      var _loc5_;
       if(_loc3_.length == 3)
       {
-         var _loc5_ = _loc3_[0] + " <font color=\'#3C986C\'>" + _loc3_[1] + " </font>" + _loc3_[2];
+         _loc5_ = _loc3_[0] + " <font color=\'#3C986C\'>" + _loc3_[1] + " </font>" + _loc3_[2];
          com.rockstargames.gtav.levelDesign.ARCADE_BUSINESS_HUB.setSpacedTextField(_loc2_.heading,_loc5_,6,true,true);
       }
       var _loc4_ = 0.5 * (_loc2_.rightFill._x - _loc2_.heading.textWidth - 20);
@@ -161,13 +162,16 @@ class com.rockstargames.gtav.levelDesign.arcadeBusinessHub.screens.MainScreen ex
    }
    function updateButtons()
    {
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       if(!this.overlay.isShowing)
       {
-         var _loc2_ = 0;
-         var _loc4_ = this._buttons.length;
+         _loc2_ = 0;
+         _loc4_ = this._buttons.length;
          while(_loc2_ < _loc4_)
          {
-            var _loc3_ = this._buttons[_loc2_];
+            _loc3_ = this._buttons[_loc2_];
             _loc3_.updateBounds();
             _loc2_ = _loc2_ + 1;
          }

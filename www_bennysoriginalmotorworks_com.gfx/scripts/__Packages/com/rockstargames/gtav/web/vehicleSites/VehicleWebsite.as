@@ -1,51 +1,52 @@
 class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rockstargames.ui.core.BaseWebsite
 {
-   var CONTENT;
-   var filterDropDown;
-   var browser;
-   var DETAILS_PAGE;
-   var currentPage;
-   var populateTextCount;
-   var currentPageInitialised;
-   var vehicles;
-   var PURCHASE_PAGE;
-   var playerRank;
-   var currentVehicle;
-   var pricesSet;
-   var vehicleMCs;
-   var tabs;
-   var PAGE_NAMES;
-   var isMP;
-   var currentFilter;
-   var FILTER_ALL_LABEL;
-   var textLabelDictionary;
-   var TOOLBAR_LABEL;
-   var currentTab;
-   var categoryOrder;
+   var BUY_NOW_LABEL;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var DESCRIPTION_LABEL_PREFIX;
+   var DETAILS_PAGE;
+   var DETAILS_PAGE_IMAGE_SUFFIX;
+   var FILTER_ALL_LABEL;
+   var HOME_PAGE_BODY_LABEL;
+   var HOME_PAGE_HEADER_LABEL;
+   var LIVERY_HEADER_LABEL;
+   var PAGE_NAMES;
+   var PURCHASE_PAGE;
+   var SORT_PRICE_LABEL;
+   var TOOLBAR_LABEL;
+   var VEHICLE_BUTTON_ROW_HEIGHT;
+   var _name;
+   var browser;
+   var categoryOrder;
+   var currentFilter;
+   var currentPage;
+   var currentPageInitialised;
+   var currentTab;
+   var currentVehicle;
+   var dataProviderUI;
+   var dataTextScope;
+   var dropDownButtonOffColour;
+   var dropDownButtonOnColour;
+   var favourUpperCase;
+   var filterDropDown;
+   var isMP;
+   var playerRank;
+   var populateTextCount;
+   var priceSortDirection;
+   var pricesSet;
+   var purchaseButtonOffColour;
+   var purchaseButtonOnColour;
    var selectedOption;
    var selectedStyle;
-   var DETAILS_PAGE_IMAGE_SUFFIX;
-   var VEHICLE_BUTTON_ROW_HEIGHT;
-   var priceSortDirection;
-   var dataTextScope;
-   var HOME_PAGE_HEADER_LABEL;
-   var HOME_PAGE_BODY_LABEL;
-   var favourUpperCase;
-   var DESCRIPTION_LABEL_PREFIX;
-   var LIVERY_HEADER_LABEL;
-   var purchaseButtonOnColour;
-   var purchaseButtonOffColour;
-   var BUY_NOW_LABEL;
-   var dataProviderUI;
-   var vehicleButtonYOffset;
-   var tabButtons;
-   var sortButtonOnColour;
    var sortButtonOffColour;
+   var sortButtonOnColour;
    var sortTabOffColour;
-   var SORT_PRICE_LABEL;
-   var dropDownButtonOnColour;
-   var dropDownButtonOffColour;
+   var tabButtons;
+   var tabs;
+   var textLabelDictionary;
+   var vehicleButtonYOffset;
+   var vehicleMCs;
+   var vehicles;
    var className = "VehicleWebsite";
    var HOME_PAGE = "PAGE1";
    var FAILED_PAGE = "PURCHASE_D_FAILED";
@@ -76,20 +77,24 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       com.rockstargames.ui.tweenStar.TweenStarLite.removeAllTweens();
       this.filterDropDown.dispose();
       this.browser.SUPRESS_HISTORY(false);
+      var _loc8_;
       if(pageName.indexOf(this.DETAILS_PAGE) == 0)
       {
-         var _loc8_ = pageName;
+         _loc8_ = pageName;
          pageName = this.DETAILS_PAGE;
       }
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.currentPage != pageName)
       {
          this.populateTextCount = 1;
          this.currentPageInitialised = false;
          for(var _loc6_ in this.vehicles)
          {
-            var _loc3_ = this.vehicles[_loc6_];
-            var _loc2_ = 0;
-            var _loc4_ = _loc3_.length;
+            _loc3_ = this.vehicles[_loc6_];
+            _loc2_ = 0;
+            _loc4_ = _loc3_.length;
             while(_loc2_ < _loc4_)
             {
                _loc3_[_loc2_].txdRequested = false;
@@ -120,6 +125,8 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          case this.FAILED_PAGE:
          case this.ERROR_PAGE:
             this.initFailedPage(newPage);
+         default:
+            return;
       }
    }
    function SET_RANKS(id, rank, playerRank)
@@ -150,6 +157,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          award = -1;
       }
       var _loc2_ = this.getVehicleFromId(id);
+      var _loc4_;
       if(_loc2_)
       {
          _loc2_.price = price;
@@ -169,7 +177,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          }
          if(_loc2_ == this.currentVehicle)
          {
-            var _loc4_ = this.CONTENT.details.priceText || this.CONTENT.purchase.priceText;
+            _loc4_ = this.CONTENT.details.priceText || this.CONTENT.purchase.priceText;
             _loc4_.text = !isNaN(this.currentVehicle.price) ? this.formatPrice(this.currentVehicle.price) : this.currentVehicle.price;
          }
       }
@@ -177,10 +185,13 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function TXD_HAS_LOADED(txd, success, id)
    {
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(success)
       {
-         var _loc4_ = parseInt(id.substring(id.lastIndexOf("_") + 1));
-         var _loc2_ = this.getVehicleFromId(_loc4_);
+         _loc4_ = parseInt(id.substring(id.lastIndexOf("_") + 1));
+         _loc2_ = this.getVehicleFromId(_loc4_);
          _loc2_.txdLoaded = true;
          if(this.vehicleMCs[_loc2_.id])
          {
@@ -189,7 +200,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             {
                if(this.vehicleMCs[_loc2_.id]._parent != this.tabs[0])
                {
-                  var _loc3_ = this.tabs[0][this.vehicleMCs[_loc2_.id]._name];
+                  _loc3_ = this.tabs[0][this.vehicleMCs[_loc2_.id]._name];
                   if(_loc3_)
                   {
                      this.displayImage(_loc2_,_loc3_);
@@ -207,14 +218,18 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    {
       com.rockstargames.ui.tweenStar.TweenStarLite.removeAllTweens();
       this.filterDropDown.dispose();
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
+      var _loc2_;
       for(var _loc6_ in this.vehicles)
       {
-         var _loc5_ = this.vehicles[_loc6_];
-         var _loc3_ = 0;
-         var _loc4_ = _loc5_.length;
+         _loc5_ = this.vehicles[_loc6_];
+         _loc3_ = 0;
+         _loc4_ = _loc5_.length;
          while(_loc3_ < _loc4_)
          {
-            var _loc2_ = _loc5_[_loc3_];
+            _loc2_ = _loc5_[_loc3_];
             if(_loc2_.txdRequested)
             {
                com.rockstargames.ui.game.GameInterface.call("REMOVE_TXD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",_loc2_.txd);
@@ -270,13 +285,17 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc8_ = 0;
       var _loc6_ = 0;
       var _loc7_ = this.categoryOrder.length;
+      var _loc4_;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
       while(_loc6_ < _loc7_)
       {
-         var _loc4_ = this.vehicles[this.categoryOrder[_loc6_]];
-         var _loc3_ = 0;
+         _loc4_ = this.vehicles[this.categoryOrder[_loc6_]];
+         _loc3_ = 0;
          while(_loc3_ < _loc4_.length)
          {
-            var _loc2_ = _loc4_[_loc3_];
+            _loc2_ = _loc4_[_loc3_];
             _loc2_.price = -1;
             _loc2_.rank = -1;
             if(_loc2_[this.SORT_NEWNESS] == undefined)
@@ -285,7 +304,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             }
             _loc2_.txdLoaded = false;
             _loc2_.txdRequested = false;
-            var _loc5_ = _loc2_.isGen9 !== true || this.browser.isGen9;
+            _loc5_ = _loc2_.isGen9 !== true || this.browser.isGen9;
             if(_loc5_)
             {
                this.PAGE_NAMES[_loc2_.id] = this.DETAILS_PAGE + _loc2_.id;
@@ -308,11 +327,14 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function getVehicleFromId(id)
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       for(var _loc6_ in this.vehicles)
       {
-         var _loc3_ = this.vehicles[_loc6_];
-         var _loc2_ = 0;
-         var _loc4_ = _loc3_.length;
+         _loc3_ = this.vehicles[_loc6_];
+         _loc2_ = 0;
+         _loc4_ = _loc3_.length;
          while(_loc2_ < _loc4_)
          {
             if(_loc3_[_loc2_].id == id)
@@ -366,13 +388,14 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function addVehicleImage(vehicle, container)
    {
+      var _loc3_;
       if(vehicle.txdLoaded)
       {
          this.displayImage(vehicle,container);
       }
       else if(!vehicle.txdRequested)
       {
-         var _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id;
+         _loc3_ = this.DETAILS_PAGE + "_" + vehicle.id;
          com.rockstargames.ui.game.GameInterface.call("REQUEST_TXD_AND_ADD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"WEB_BROWSER",vehicle.txd,_loc3_,true);
          vehicle.txdRequested = true;
       }
@@ -412,7 +435,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function goToAnchor(link)
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       if(link.indexOf("dropDownItem") == 0)
       {
          _loc4_ = Math.max(0,link.indexOf("_")) || link.length;
@@ -452,6 +475,8 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             break;
          case "tab":
             this.showTab(parseInt(_loc2_));
+         default:
+            return;
       }
    }
    function displayPage(pageName)
@@ -540,6 +565,15 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       {
          _loc2_.reductionLine._visible = false;
       }
+      if(this.currentVehicle.award > 0)
+      {
+         _loc2_.award.gotoAndStop(this.currentVehicle.award);
+         _loc2_.award._visible = true;
+      }
+      else
+      {
+         _loc2_.award._visible = false;
+      }
       this.addVehicleImage(this.currentVehicle,_loc2_);
       if(!this.pricesSet)
       {
@@ -611,13 +645,14 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    function initOptions(page)
    {
       page.optionsHeaderText.autoSize = "left";
-      var _loc7_ = undefined;
+      var _loc7_;
+      var _loc4_;
       if(this.currentVehicle.styles)
       {
          this.setLocalisedText(page.optionsHeaderText,"LGM_STYLES");
          page.options.gotoAndStop("STYLES");
          _loc7_ = this.NUM_COLOUR_OPTIONS;
-         var _loc4_ = this.currentVehicle.styles.length;
+         _loc4_ = this.currentVehicle.styles.length;
          while(_loc4_ < 8)
          {
             page.options["stylesText" + _loc4_]._x = page.options["stylesText" + _loc4_]._y = 0;
@@ -650,17 +685,21 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          page.options._visible = false;
       }
       _loc4_ = 0;
+      var _loc3_;
+      var _loc6_;
+      var _loc8_;
+      var _loc5_;
       while(_loc4_ < _loc7_)
       {
-         var _loc3_ = page.options["optionsButton_" + _loc4_];
+         _loc3_ = page.options["optionsButton_" + _loc4_];
          _loc3_.selected._visible = false;
          if(_loc3_.swatch)
          {
             if(this.currentVehicle.swatches)
             {
-               var _loc6_ = this.currentVehicle.swatches[_loc4_] >> 16 & 0xFF;
-               var _loc8_ = this.currentVehicle.swatches[_loc4_] >> 8 & 0xFF;
-               var _loc5_ = this.currentVehicle.swatches[_loc4_] & 0xFF;
+               _loc6_ = this.currentVehicle.swatches[_loc4_] >> 16 & 0xFF;
+               _loc8_ = this.currentVehicle.swatches[_loc4_] >> 8 & 0xFF;
+               _loc5_ = this.currentVehicle.swatches[_loc4_] & 0xFF;
                com.rockstargames.ui.utils.Colour.Colourise(_loc3_.swatch,_loc6_,_loc8_,_loc5_,100);
             }
             else
@@ -694,7 +733,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function initPurchaseButtons(page, numOptions)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc4_ = page.purchaseButton;
       var _loc3_ = numOptions - 1;
       while(_loc3_ >= 0)
@@ -734,10 +773,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function initFailedPage(newPage)
    {
+      var _loc2_;
+      var _loc3_;
       if(!newPage)
       {
-         var _loc2_ = this.dataProviderUI[1][0];
-         var _loc3_ = this.dataProviderUI[2][0];
+         _loc2_ = this.dataProviderUI[1][0];
+         _loc3_ = this.dataProviderUI[2][0];
          this.initOutcomePage(_loc2_,_loc3_,"WEB_NOT_SOLD");
          this.showOutcomePageMessage();
       }
@@ -749,12 +790,13 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc3_ = this.selectedStyle <= 0 ? this.currentVehicle.price : this.currentVehicle.secondaryPrice;
       _loc2_.nameText.text = this.setLocalisedText(_loc2_.nameText,this.currentVehicle.brand,this.favourUpperCase) + " " + this.setLocalisedText(_loc2_.nameText,this.currentVehicle.name,this.favourUpperCase);
       _loc2_.priceText.text = !isNaN(this.currentVehicle.price) ? this.formatPrice(_loc3_) : this.currentVehicle.price;
+      var _loc4_;
       if(this.currentVehicle.reduction == 3)
       {
          _loc2_.priceText.text = this.formatPrice(_loc3_);
          _loc2_.reductionLine._width = _loc2_.priceText.textWidth + 5;
          _loc2_.reducedPriceText._x = _loc2_.priceText._x - _loc2_.priceText.textWidth - 20;
-         var _loc4_ = this.selectedStyle <= 0 ? this.currentVehicle.salePrice : this.currentVehicle.secondarySalePrice;
+         _loc4_ = this.selectedStyle <= 0 ? this.currentVehicle.salePrice : this.currentVehicle.secondarySalePrice;
          _loc2_.reducedPriceText.text = this.formatPrice(_loc4_);
       }
       else
@@ -792,6 +834,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function initSelectedOption(page)
    {
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       if(this.selectedOption == -1)
       {
          page.selectedOption._visible = false;
@@ -806,13 +852,13 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       }
       else if(this.currentVehicle.colourways)
       {
-         var _loc3_ = page.selectedOption.optionsButton;
+         _loc3_ = page.selectedOption.optionsButton;
          _loc3_.selected._visible = false;
          if(this.currentVehicle.swatches)
          {
-            var _loc5_ = this.currentVehicle.swatches[this.selectedOption] >> 16 & 0xFF;
-            var _loc6_ = this.currentVehicle.swatches[this.selectedOption] >> 8 & 0xFF;
-            var _loc4_ = this.currentVehicle.swatches[this.selectedOption] & 0xFF;
+            _loc5_ = this.currentVehicle.swatches[this.selectedOption] >> 16 & 0xFF;
+            _loc6_ = this.currentVehicle.swatches[this.selectedOption] >> 8 & 0xFF;
+            _loc4_ = this.currentVehicle.swatches[this.selectedOption] & 0xFF;
             com.rockstargames.ui.utils.Colour.Colourise(_loc3_.swatch,_loc5_,_loc6_,_loc4_,100);
          }
          else
@@ -840,16 +886,28 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc21_ = true;
       var _loc8_ = 0;
       var _loc20_ = this.categoryOrder.length;
+      var _loc6_;
+      var _loc16_;
+      var _loc7_;
+      var _loc12_;
+      var _loc2_;
+      var _loc11_;
+      var _loc15_;
+      var _loc9_;
+      var _loc10_;
+      var _loc14_;
+      var _loc13_;
+      var _loc5_;
       while(_loc8_ < _loc20_)
       {
-         var _loc6_ = this.vehicles[this.categoryOrder[_loc8_]];
-         var _loc16_ = true;
-         var _loc7_ = 0;
-         var _loc12_ = _loc6_.length;
+         _loc6_ = this.vehicles[this.categoryOrder[_loc8_]];
+         _loc16_ = true;
+         _loc7_ = 0;
+         _loc12_ = _loc6_.length;
          while(_loc7_ < _loc12_)
          {
-            var _loc2_ = _loc6_[_loc7_];
-            var _loc11_ = this.DETAILS_PAGE + "_" + _loc2_.id;
+            _loc2_ = _loc6_[_loc7_];
+            _loc11_ = this.DETAILS_PAGE + "_" + _loc2_.id;
             if(_loc2_.price != -1 && page[_loc11_] == undefined)
             {
                _loc16_ = false;
@@ -872,7 +930,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             }
             else
             {
-               var _loc15_ = page.attachMovie("subHeader","subHeader" + _loc8_,page.getNextHighestDepth());
+               _loc15_ = page.attachMovie("subHeader","subHeader" + _loc8_,page.getNextHighestDepth());
                this.setLocalisedText(_loc15_.subHeaderText,this.categoryOrder[_loc8_],this.favourUpperCase);
                _loc4_ += (this.NUM_VEHICLE_BUTTON_COLUMNS - _loc4_ % this.NUM_VEHICLE_BUTTON_COLUMNS) % this.NUM_VEHICLE_BUTTON_COLUMNS;
                _loc15_._y = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc4_ / this.NUM_VEHICLE_BUTTON_COLUMNS) + yOffset;
@@ -885,12 +943,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             {
                _loc2_ = _loc6_[_loc7_];
                _loc11_ = this.DETAILS_PAGE + "_" + _loc2_.id;
-               var _loc9_ = false;
+               _loc9_ = false;
                if(_loc2_.hideForCrossLink)
                {
                   if(_loc2_.crossLink[0] != _loc2_.id)
                   {
-                     var _loc10_ = this.getVehicleFromId(_loc2_.crossLink[0]);
+                     _loc10_ = this.getVehicleFromId(_loc2_.crossLink[0]);
                   }
                   else
                   {
@@ -903,9 +961,9 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
                }
                if(_loc2_.price != -1 && page[_loc11_] == undefined && !_loc9_)
                {
-                  var _loc14_ = this.VEHICLE_BUTTON_COLUMNS[_loc4_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
-                  var _loc13_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc4_ / this.NUM_VEHICLE_BUTTON_COLUMNS) + yOffset;
-                  var _loc5_ = this.initVehicleButton(_loc2_,page,_loc14_,_loc13_);
+                  _loc14_ = this.VEHICLE_BUTTON_COLUMNS[_loc4_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
+                  _loc13_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc4_ / this.NUM_VEHICLE_BUTTON_COLUMNS) + yOffset;
+                  _loc5_ = this.initVehicleButton(_loc2_,page,_loc14_,_loc13_);
                   _loc5_._alpha = 0;
                   com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc5_,this.SORT_FADE_IN_DURATION,{_alpha:100,delay:this.SORT_FADE_IN_DELAY * _loc4_});
                   this.vehicleMCs[_loc2_.id] = _loc5_;
@@ -928,32 +986,46 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc20_ = 231;
       var _loc15_ = 0;
       var _loc19_ = this.categoryOrder.length;
+      var _loc18_;
+      var _loc10_;
+      var _loc17_;
+      var _loc11_;
+      var _loc7_;
+      var _loc4_;
+      var _loc13_;
+      var _loc2_;
+      var _loc12_;
+      var _loc5_;
+      var _loc6_;
+      var _loc9_;
+      var _loc8_;
+      var _loc3_;
       while(_loc15_ < _loc19_)
       {
-         var _loc18_ = this.categoryOrder[_loc15_];
-         var _loc10_ = this.vehicles[_loc18_];
+         _loc18_ = this.categoryOrder[_loc15_];
+         _loc10_ = this.vehicles[_loc18_];
          if(_loc10_.length > 0)
          {
-            var _loc17_ = this.initTabButton(page,_loc18_,_loc16_,_loc20_,yOffset - 5);
+            _loc17_ = this.initTabButton(page,_loc18_,_loc16_,_loc20_,yOffset - 5);
             _loc20_ += _loc17_._width;
-            var _loc11_ = page.createEmptyMovieClip("tabContent" + _loc16_,page.getNextHighestDepth());
+            _loc11_ = page.createEmptyMovieClip("tabContent" + _loc16_,page.getNextHighestDepth());
             _loc11_._x = 0;
             _loc11_._y = yOffset + _loc17_._height;
             this.tabs[_loc16_] = _loc11_;
             _loc16_ = _loc16_ + 1;
-            var _loc7_ = 0;
-            var _loc4_ = 0;
-            var _loc13_ = _loc10_.length;
+            _loc7_ = 0;
+            _loc4_ = 0;
+            _loc13_ = _loc10_.length;
             while(_loc4_ < _loc13_)
             {
-               var _loc2_ = _loc10_[_loc4_];
-               var _loc12_ = this.DETAILS_PAGE + "_" + _loc2_.id;
-               var _loc5_ = false;
+               _loc2_ = _loc10_[_loc4_];
+               _loc12_ = this.DETAILS_PAGE + "_" + _loc2_.id;
+               _loc5_ = false;
                if(_loc2_.hideForCrossLink)
                {
                   if(_loc2_.crossLink[0] != _loc2_.id)
                   {
-                     var _loc6_ = this.getVehicleFromId(_loc2_.crossLink[0]);
+                     _loc6_ = this.getVehicleFromId(_loc2_.crossLink[0]);
                   }
                   else
                   {
@@ -974,9 +1046,9 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
                   {
                      _loc2_.sortingPrice = _loc2_.reduction != 3 ? _loc2_.price : _loc2_.salePrice;
                   }
-                  var _loc9_ = this.VEHICLE_BUTTON_COLUMNS[_loc7_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
-                  var _loc8_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc7_ / this.NUM_VEHICLE_BUTTON_COLUMNS);
-                  var _loc3_ = this.initVehicleButton(_loc2_,_loc11_,_loc9_,_loc8_);
+                  _loc9_ = this.VEHICLE_BUTTON_COLUMNS[_loc7_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
+                  _loc8_ = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc7_ / this.NUM_VEHICLE_BUTTON_COLUMNS);
+                  _loc3_ = this.initVehicleButton(_loc2_,_loc11_,_loc9_,_loc8_);
                   _loc3_.originalX = _loc9_;
                   _loc3_.originalY = _loc8_;
                   this.vehicleMCs[_loc2_.id] = _loc3_;
@@ -996,10 +1068,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          sortingAttribute = "sortingPrice";
       }
       var _loc11_ = this.categoryOrder[this.currentTab];
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
-      var _loc7_ = undefined;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
+      var _loc7_;
       var _loc2_ = new Array();
       _loc7_ = this.vehicles[_loc11_].length;
       _loc3_ = 0;
@@ -1013,11 +1085,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          }
          _loc3_ = _loc3_ + 1;
       }
+      var _loc8_;
       if(sortingAttribute == "sortingPrice")
       {
          _loc2_.sortOn(sortingAttribute,direction);
          var len = _loc2_.length;
-         var _loc8_ = 0;
+         _loc8_ = 0;
          if(direction == 16)
          {
             while(typeof _loc2_[len - 1].sortingPrice == "string")
@@ -1059,10 +1132,11 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       }
       _loc3_ = 0;
       var len = _loc2_.length;
+      var _loc6_;
       while(_loc3_ < len)
       {
          _loc4_ = _loc2_[_loc3_];
-         var _loc6_ = this.vehicleMCs[_loc4_.id];
+         _loc6_ = this.vehicleMCs[_loc4_.id];
          _loc5_ = this.tabs[this.currentTab][_loc6_._name];
          _loc5_._x = this.VEHICLE_BUTTON_COLUMNS[_loc3_ % this.NUM_VEHICLE_BUTTON_COLUMNS];
          _loc5_._y = this.VEHICLE_BUTTON_ROW_HEIGHT * int(_loc3_ / this.NUM_VEHICLE_BUTTON_COLUMNS);
@@ -1071,10 +1145,11 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          _loc3_ = _loc3_ + 1;
       }
       var _loc12_ = _loc5_._parent._parent;
+      var _loc14_;
       if(sortingAttribute == "sortingPrice")
       {
          this.priceSortDirection = - this.priceSortDirection;
-         var _loc14_ = this.priceSortDirection != 1 ? "DOWN" : "UP";
+         _loc14_ = this.priceSortDirection != 1 ? "DOWN" : "UP";
          _loc12_.priceSortButton.arrow.gotoAndStop(_loc14_);
       }
       else
@@ -1085,10 +1160,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    function unsortTab()
    {
       var _loc10_ = this.categoryOrder[this.currentTab];
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
-      var _loc7_ = undefined;
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
+      var _loc7_;
       var _loc5_ = new Array();
       _loc7_ = this.vehicles[_loc10_].length;
       _loc4_ = 0;
@@ -1104,10 +1179,11 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       }
       _loc4_ = 0;
       var len = _loc5_.length;
+      var _loc6_;
       while(_loc4_ < len)
       {
          _loc3_ = _loc5_[_loc4_];
-         var _loc6_ = this.vehicleMCs[_loc3_.id];
+         _loc6_ = this.vehicleMCs[_loc3_.id];
          _loc2_ = this.tabs[this.currentTab][_loc6_._name];
          _loc2_._x = _loc2_.originalX;
          _loc2_._y = _loc2_.originalY;
@@ -1134,6 +1210,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    function showTab(index)
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.tabs.length)
       {
          if(_loc3_ == index)
@@ -1157,7 +1234,7 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
             this.tabButtons[_loc3_].disabled = false;
             this.tabButtons[_loc3_].highlight._visible = false;
          }
-         var _loc4_ = this.tabButtons[_loc3_];
+         _loc4_ = this.tabButtons[_loc3_];
          if(_loc4_.hitTest(_root._xmouse,_root._ymouse,true))
          {
             this.tabButtons[_loc3_].btnTxt.textColor = this.sortButtonOnColour;
@@ -1173,9 +1250,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       this.updateTabbedBackground(this.tabs[index],this.tabs[index]._parent);
       this.currentTab = index;
       this.unsortTab();
+      var _loc6_;
       if(this.currentPage.indexOf("DETAILS") > 0)
       {
-         var _loc6_ = this.CONTENT.BOUNDING_BOX._height + this.CONTENT._y - 627;
+         _loc6_ = this.CONTENT.BOUNDING_BOX._height + this.CONTENT._y - 627;
          if(_loc6_ < 0)
          {
             this.browser.SCROLL_WEBPAGE_PIXELS(_loc6_);
@@ -1232,20 +1310,17 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
                   if(vehicle.salePrice == vehicle.secondarySalePrice)
                   {
                      _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B>: " + this.formatPrice(vehicle.salePrice);
+                     break;
                   }
-                  else
-                  {
-                     _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B>: " + this.formatPrice(vehicle.salePrice) + " - " + this.formatPrice(vehicle.secondarySalePrice);
-                  }
+                  _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B>: " + this.formatPrice(vehicle.salePrice) + " - " + this.formatPrice(vehicle.secondarySalePrice);
+                  break;
                }
-               else if(vehicle.salePrice == 0)
+               if(vehicle.salePrice == 0)
                {
                   _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B> - " + this.setLocalisedText(_loc2_.promo.labelText,"CLUB_FREE");
+                  break;
                }
-               else
-               {
-                  _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B> - " + this.formatPrice(vehicle.salePrice);
-               }
+               _loc2_.promo.labelText.htmlText = "<B>" + this.setLocalisedText(_loc2_.promo.labelText,"WEB_VEHICLE_SALE") + "</B> - " + this.formatPrice(vehicle.salePrice);
          }
       }
       else
@@ -1277,6 +1352,8 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          _loc2_.header.dlcText.verticalAlign = "center";
          this.setLocalisedText(_loc2_.header.dlcText,vehicle.dlc,true);
       }
+      var _loc6_;
+      var _loc7_;
       if(_loc2_.priceBG)
       {
          if(vehicle.price == 0)
@@ -1285,8 +1362,8 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          }
          else
          {
-            var _loc6_ = _loc2_.priceBG._x + _loc2_.priceBG._width;
-            var _loc7_ = _loc2_.priceText.textWidth + 10;
+            _loc6_ = _loc2_.priceBG._x + _loc2_.priceBG._width;
+            _loc7_ = _loc2_.priceText.textWidth + 10;
             _loc2_.priceBG.centre._width = _loc7_ - 10;
             _loc2_.priceBG.right._x = _loc2_.priceBG.centre._x + _loc2_.priceBG.centre._width - 5;
             _loc2_.priceBG._x = _loc6_ - _loc2_.priceBG._width;
@@ -1318,13 +1395,15 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       page.priceSortButton._visible = true;
       this.dataTextScope.push(page.priceSortButton.btnTxt);
       this.setLocalisedText(page.priceSortButton.btnTxt,this.SORT_PRICE_LABEL);
+      var _loc2_;
+      var _loc3_;
       if(this.categoryOrder.length > 2 && !this.isMP)
       {
          this.filterDropDown = new com.rockstargames.gtav.web.vehicleSites.DropDown(page.filterDropDown,"dropDownItem","SELECT",this.DROP_DOWN_ITEM_SPACING,this.DROP_DOWN_HEADER_OFFSET,this.dropDownButtonOnColour,this.dropDownButtonOffColour);
          this.dataTextScope.push(page.filterDropDown.dropDownHeader.btnTxt);
          this.dataTextScope.splice(numOptions,0,this.filterDropDown.addItem(this.FILTER_ALL_LABEL).btnTxt);
-         var _loc2_ = 0;
-         var _loc3_ = this.categoryOrder.length;
+         _loc2_ = 0;
+         _loc3_ = this.categoryOrder.length;
          while(_loc2_ < _loc3_)
          {
             this.dataTextScope.splice(numOptions + _loc2_ + 1,0,this.filterDropDown.addItem(this.categoryOrder[_loc2_]).btnTxt);
@@ -1340,20 +1419,28 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    }
    function hideUnusedFilterOptions(page)
    {
+      var _loc6_;
+      var _loc9_;
+      var _loc5_;
+      var _loc7_;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
+      var _loc8_;
       if(this.categoryOrder.length > 2)
       {
-         var _loc6_ = 0;
-         var _loc9_ = this.categoryOrder.length;
+         _loc6_ = 0;
+         _loc9_ = this.categoryOrder.length;
          while(_loc6_ < _loc9_)
          {
-            var _loc5_ = this.vehicles[this.categoryOrder[_loc6_]];
-            var _loc7_ = true;
-            var _loc2_ = 0;
-            var _loc4_ = _loc5_.length;
+            _loc5_ = this.vehicles[this.categoryOrder[_loc6_]];
+            _loc7_ = true;
+            _loc2_ = 0;
+            _loc4_ = _loc5_.length;
             while(_loc2_ < _loc4_)
             {
-               var _loc3_ = _loc5_[_loc2_];
-               var _loc8_ = this.DETAILS_PAGE + "_" + _loc3_.id;
+               _loc3_ = _loc5_[_loc2_];
+               _loc8_ = this.DETAILS_PAGE + "_" + _loc3_.id;
                if(_loc3_.price != -1)
                {
                   _loc7_ = false;
@@ -1374,9 +1461,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc6_ = this.CONTENT.details;
       var _loc7_ = !this.currentVehicle.livery ? this.NUM_COLOUR_OPTIONS : this.currentVehicle.livery.length;
       var _loc2_ = 0;
+      var _loc5_;
       while(_loc2_ < _loc7_)
       {
-         var _loc5_ = _loc6_.options["optionsButton_" + _loc2_];
+         _loc5_ = _loc6_.options["optionsButton_" + _loc2_];
          _loc5_.disabled = _loc2_ == selectedOption;
          _loc5_.selected._visible = _loc2_ == selectedOption;
          _loc2_ = _loc2_ + 1;
@@ -1388,10 +1476,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
          _loc9_ += this.NUM_COLOUR_OPTIONS * Math.max(0,this.selectedStyle);
       }
       _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc7_)
       {
-         var _loc3_ = _loc6_[this.PURCHASE_PAGE + "_" + (_loc2_ + 1)];
-         var _loc4_ = _loc9_ == _loc2_;
+         _loc3_ = _loc6_[this.PURCHASE_PAGE + "_" + (_loc2_ + 1)];
+         _loc4_ = _loc9_ == _loc2_;
          _loc3_.disabled = !_loc4_;
          _loc3_._alpha = !_loc4_ ? 50 : 100;
          _loc3_._visible = _loc4_;
@@ -1408,9 +1498,10 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc6_ = this.CONTENT.details;
       var _loc8_ = this.currentVehicle.styles.length;
       var _loc2_ = 0;
+      var _loc5_;
       while(_loc2_ < _loc8_)
       {
-         var _loc5_ = _loc6_.options["stylesButton_" + _loc2_];
+         _loc5_ = _loc6_.options["stylesButton_" + _loc2_];
          _loc5_.disabled = _loc2_ == selectedStyle;
          _loc5_.selected._visible = _loc2_ == selectedStyle;
          _loc2_ = _loc2_ + 1;
@@ -1418,10 +1509,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       var _loc10_ = _loc8_ * this.NUM_COLOUR_OPTIONS;
       var _loc9_ = this.NUM_COLOUR_OPTIONS * selectedStyle + Math.max(this.selectedOption,0);
       _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc10_)
       {
-         var _loc3_ = _loc6_[this.PURCHASE_PAGE + "_" + (_loc2_ + 1)];
-         var _loc4_ = _loc9_ == _loc2_;
+         _loc3_ = _loc6_[this.PURCHASE_PAGE + "_" + (_loc2_ + 1)];
+         _loc4_ = _loc9_ == _loc2_;
          _loc3_.disabled = !_loc4_;
          _loc3_._alpha = !_loc4_ ? 50 : 100;
          _loc3_._visible = _loc4_;
@@ -1454,19 +1547,26 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
    function sortVehicleButtons(sortingAttribute, direction)
    {
       var _loc3_ = [];
+      var _loc7_;
+      var _loc9_;
+      var _loc8_;
+      var _loc2_;
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       for(var _loc15_ in this.vehicles)
       {
-         var _loc7_ = this.vehicles[_loc15_];
-         var _loc9_ = 0;
-         var _loc8_ = _loc7_.length;
+         _loc7_ = this.vehicles[_loc15_];
+         _loc9_ = 0;
+         _loc8_ = _loc7_.length;
          while(_loc9_ < _loc8_)
          {
-            var _loc2_ = _loc7_[_loc9_];
-            var _loc5_ = this.vehicleMCs[_loc2_.id];
+            _loc2_ = _loc7_[_loc9_];
+            _loc5_ = this.vehicleMCs[_loc2_.id];
             if(_loc5_ && _loc5_._visible)
             {
-               var _loc6_ = false;
-               var _loc4_ = 0;
+               _loc6_ = false;
+               _loc4_ = 0;
                while(_loc4_ < _loc3_.length)
                {
                   if(_loc3_[_loc4_] == _loc2_)
@@ -1489,11 +1589,12 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       {
          sortingAttribute = "sortingPrice";
       }
+      var _loc12_;
       if(sortingAttribute == "sortingPrice")
       {
          _loc3_.sortOn(sortingAttribute,direction);
          _loc8_ = _loc3_.length;
-         var _loc12_ = 0;
+         _loc12_ = 0;
          if(direction == 16)
          {
             while(typeof _loc3_[_loc8_ - 1].sortingPrice == "string")
@@ -1582,15 +1683,20 @@ class com.rockstargames.gtav.web.vehicleSites.VehicleWebsite extends com.rocksta
       this.currentFilter = filter;
       this.filterDropDown.setHeaderText(filter);
       this.filterDropDown.close();
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
+      var _loc6_;
+      var _loc3_;
       for(var _loc8_ in this.vehicles)
       {
-         var _loc5_ = this.vehicles[_loc8_];
-         var _loc2_ = 0;
-         var _loc4_ = _loc5_.length;
+         _loc5_ = this.vehicles[_loc8_];
+         _loc2_ = 0;
+         _loc4_ = _loc5_.length;
          while(_loc2_ < _loc4_)
          {
-            var _loc6_ = _loc5_[_loc2_];
-            var _loc3_ = this.vehicleMCs[_loc6_.id];
+            _loc6_ = _loc5_[_loc2_];
+            _loc3_ = this.vehicleMCs[_loc6_.id];
             _loc3_._visible = false;
             _loc3_.disabled = true;
             _loc2_ = _loc2_ + 1;

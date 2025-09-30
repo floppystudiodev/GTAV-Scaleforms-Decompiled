@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen extends com.rockstargames.gtav.levelDesign.robberyComputer.screens.Screen
 {
+   var app;
    var buttons;
+   var cursor;
    var showingMissionInfo;
    var view;
-   var cursor;
-   var app;
    function MissionScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"missionScreen");
@@ -14,7 +14,7 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen e
    {
       this.buttons = [];
       this.showingMissionInfo = [false,false,false,false];
-      var _loc3_ = undefined;
+      var _loc3_;
       _loc3_ = new com.rockstargames.gtav.levelDesign.robberyComputer.navigation.MissionButton(com.rockstargames.gtav.levelDesign.robberyComputer.navigation.ButtonIDs.MISSION_1,this.view.missionButton0);
       _loc3_.navLeft = com.rockstargames.gtav.levelDesign.robberyComputer.navigation.Cursor.NULL_TARGET_ID;
       _loc3_.navRight = com.rockstargames.gtav.levelDesign.robberyComputer.navigation.ButtonIDs.MISSION_2;
@@ -63,17 +63,20 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen e
    function updateMissions()
    {
       this.resetView();
+      var _loc4_;
+      var _loc3_;
+      var _loc2_;
       if(this.app.activeRobberyIndex >= 0 && this.app.activeRobberyIndex < com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.MAX_ROBBERIES)
       {
-         var _loc4_ = this.app.robberies[this.app.activeRobberyIndex];
+         _loc4_ = this.app.robberies[this.app.activeRobberyIndex];
          if(_loc4_ != null)
          {
             this.view.heading.text = _loc4_.name.toUpperCase();
             this.view.reward.text = "$" + com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.formatNumber(_loc4_.payment);
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < _loc4_.missions.length)
             {
-               var _loc2_ = _loc4_.missions[_loc3_];
+               _loc2_ = _loc4_.missions[_loc3_];
                if(_loc2_ != null)
                {
                   this.buttons[_loc3_].enabled = true;
@@ -111,9 +114,10 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen e
    {
       var _loc4_ = this.cursor.getTargetUnderCursor();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          if(_loc3_.id == _loc4_.id)
          {
             this.showingMissionInfo[_loc2_] = !this.showingMissionInfo[_loc2_];
@@ -144,10 +148,11 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen e
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.ACCEPT:
             this.handleAcceptButton(this.cursor.getTargetUnderCursor());
             break;
-         case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.CANCEL:
-            break;
          case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.Y:
             this.toggleMissionInfo();
+         case com.rockstargames.gtav.levelDesign.ROBBERY_COMPUTER.CANCEL:
+         default:
+            return;
       }
    }
    function handleAcceptButton(target)
@@ -156,9 +161,10 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.screens.MissionScreen e
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          _loc2_ = _loc2_ + 1;
       }

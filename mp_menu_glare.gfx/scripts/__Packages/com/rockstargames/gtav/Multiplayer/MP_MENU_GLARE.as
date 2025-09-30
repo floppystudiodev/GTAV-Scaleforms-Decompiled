@@ -1,14 +1,23 @@
 class com.rockstargames.gtav.Multiplayer.MP_MENU_GLARE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var headerMC;
    var CONTENT;
+   var FILE_WIDTH;
+   var FOUR_THREE_PADDING;
+   var _alpha;
+   var easeInCur;
+   var easeInDuration;
    var glareMC;
    var glareMaskMC;
    var glintMC;
-   var easeInCur;
-   var easeInDuration;
+   var headerMC;
+   var isHiDef;
+   var isWideScreen;
    var onEnterFrame;
    var ref;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
    var gx1 = 230;
    var gr1 = -55;
    var ga1 = 20;
@@ -62,11 +71,13 @@ class com.rockstargames.gtav.Multiplayer.MP_MENU_GLARE extends com.rockstargames
    {
       this.isWideScreen = _isWideScreen;
       this.isHiDef = _isHiDef;
+      var _loc4_;
+      var _loc3_;
       if(!this.isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc4_ = 1.7777777777777777;
-         var _loc3_ = 1.3333333333333333;
+         _loc4_ = 1.7777777777777777;
+         _loc3_ = 1.3333333333333333;
          this.FOUR_THREE_PADDING = (this.FILE_WIDTH - Math.round(this.FILE_WIDTH / _loc4_ * _loc3_)) / 2;
          _screenWidthPixels = this.FILE_WIDTH - this.FOUR_THREE_PADDING * 2;
       }

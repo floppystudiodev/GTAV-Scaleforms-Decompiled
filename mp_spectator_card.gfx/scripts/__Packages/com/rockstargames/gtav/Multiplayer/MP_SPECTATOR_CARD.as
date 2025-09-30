@@ -1,11 +1,12 @@
 class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstargames.gtav.Multiplayer.MP_FREEMODE_PLAYER_LIST
 {
-   var scrollerMC;
    var CONTENT;
-   var scrollContentMC;
+   var dbgID;
    var model;
-   var title;
    var scrollBase;
+   var scrollContentMC;
+   var scrollerMC;
+   var title;
    static var MAX_TITLE_WIDTH = 189;
    static var VERIFIED_CHAR_SHORT = 247;
    static var VERIFIED_CHAR_LONG = 166;
@@ -38,10 +39,11 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       var _loc4_ = _loc7_.itemList;
       var _loc5_ = "Ñ“Ñ“Ñ“Ñ“Ñ“";
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < num)
       {
          this.SET_DATA_SLOT(_loc2_,0,0,2,"",0,_loc5_,false,0);
-         var _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(_loc4_[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(_loc4_[_loc2_]);
          this.setPoolItemActive(_loc3_,false);
          _loc3_.setAltTxdCallback();
          _loc2_ = _loc2_ + 1;
@@ -67,22 +69,26 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
    function removefromList()
    {
       var _loc8_ = 0;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc7_ = "";
+      var _loc5_;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       while(_loc8_ < this.activeList.length)
       {
          _loc6_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(this.activeList[_loc8_]);
          if(_loc6_ != undefined)
          {
             _loc7_ = _loc6_.playerName;
-            var _loc5_ = false;
-            var _loc3_ = 0;
+            _loc5_ = false;
+            _loc3_ = 0;
             while(_loc3_ < this.orderList.length)
             {
-               var _loc2_ = this.orderList[_loc3_];
+               _loc2_ = this.orderList[_loc3_];
                if(_loc2_ != undefined)
                {
-                  var _loc4_ = _loc2_[this.playerNameIndex];
+                  _loc4_ = _loc2_[this.playerNameIndex];
                   if(_loc7_ == _loc4_)
                   {
                      _loc5_ = true;
@@ -101,25 +107,31 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
    }
    function addToList()
    {
-      var _loc5_ = undefined;
+      var _loc5_;
       var _loc12_ = com.rockstargames.gtav.Multiplayer.MPFreemodePlayerListView(this.model.getCurrentView());
       var _loc11_ = [];
       var _loc8_ = 0;
+      var _loc2_;
+      var _loc9_;
+      var _loc7_;
+      var _loc4_;
+      var _loc3_;
+      var _loc6_;
+      var _loc10_;
       while(_loc8_ < this.orderList.length)
       {
-         var _loc2_ = this.orderList[_loc8_];
+         _loc2_ = this.orderList[_loc8_];
          if(_loc2_ != undefined)
          {
-            var _loc9_ = _loc2_[this.playerNameIndex];
-            var _loc7_ = true;
-            var _loc4_ = 0;
-            var _loc3_ = undefined;
+            _loc9_ = _loc2_[this.playerNameIndex];
+            _loc7_ = true;
+            _loc4_ = 0;
             while(_loc4_ < this.activeList.length)
             {
                _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(this.activeList[_loc4_]);
                if(_loc3_ != undefined)
                {
-                  var _loc6_ = _loc3_.playerName;
+                  _loc6_ = _loc3_.playerName;
                   if(_loc6_ == _loc9_)
                   {
                      _loc7_ = false;
@@ -141,7 +153,7 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
                _loc2_[this.txdIndex + 1] = "";
                _loc5_.data = _loc2_;
             }
-            var _loc10_ = _loc8_ * 25;
+            _loc10_ = _loc8_ * 25;
             _loc5_._y = _loc10_;
             _loc11_.push(_loc5_);
          }
@@ -176,9 +188,10 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
          _loc2_ = 16;
       }
       _loc2_ -= 1;
+      var _loc3_;
       if(this.highlightIndex < this.topEdge)
       {
-         var _loc3_ = this.highlightIndex * 25;
+         _loc3_ = this.highlightIndex * 25;
          this.scrollContentMC._y = - _loc3_;
          this.topEdge = this.highlightIndex;
       }
@@ -201,7 +214,7 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
    {
       var _loc5_ = com.rockstargames.gtav.Multiplayer.MPFreemodePlayerListView(this.model.getCurrentView());
       var _loc4_ = _loc5_.itemList;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = _loc4_.length;
       while(_loc3_--)
       {
@@ -231,12 +244,16 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       var _loc8_ = arguments;
       var _loc9_ = this.model.getCurrentView().itemList;
       var _loc4_ = 0;
+      var _loc6_;
+      var _loc7_;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ < 16)
       {
-         var _loc6_ = _loc8_[0] * 16 + _loc4_;
-         var _loc7_ = _loc9_[_loc6_];
-         var _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(_loc7_);
-         var _loc5_ = _loc8_[_loc6_ + 1];
+         _loc6_ = _loc8_[0] * 16 + _loc4_;
+         _loc7_ = _loc9_[_loc6_];
+         _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(_loc7_);
+         _loc5_ = _loc8_[_loc6_ + 1];
          if(_loc5_ != undefined)
          {
             if(_loc3_)
@@ -266,6 +283,8 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       var _loc11_ = this.title.labelMC;
       var _loc3_ = _loc11_.titleTF;
       var _loc5_ = this.title.diffTF;
+      var _loc6_;
+      var _loc12_;
       if(str == undefined || str == "")
       {
          _loc3_.htmlText = "";
@@ -275,8 +294,8 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       }
       else
       {
-         var _loc6_ = 0;
-         var _loc12_ = 4;
+         _loc6_ = 0;
+         _loc12_ = 4;
          if(_loc4_ == undefined || _loc4_ == "" || _loc4_ == false)
          {
             _loc5_.htmlText = "";
@@ -321,6 +340,8 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
    }
    function SET_DESCRIPTION(cashStr, totalBetsStr, betsOnYouStr, helpStr)
    {
+      var _loc2_;
+      var _loc3_;
       if(cashStr == "" || cashStr == undefined)
       {
          this.CONTENT.descriptionMC._visible = false;
@@ -328,9 +349,9 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       else
       {
          this.CONTENT.descriptionMC._visible = true;
-         var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+         _loc2_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLUE,_loc2_);
-         var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+         _loc3_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED,_loc3_);
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.CONTENT.descriptionMC.yourCashTF,"YOUR_CASH");
          this.CONTENT.descriptionMC.cashMC.itemTF.text = cashStr;
@@ -348,6 +369,8 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
          this.CONTENT.descriptionMC.betsOnYouMC.bgMC._x = 145 - this.CONTENT.descriptionMC.betsOnYouMC.bgMC._width;
          com.rockstargames.ui.utils.Colour.Colourise(this.CONTENT.descriptionMC.betsOnYouMC.bgMC,_loc3_.r,_loc3_.g,_loc3_.b,_loc3_.a);
       }
+      var _loc5_;
+      var _loc7_;
       if(helpStr == "" || helpStr == undefined)
       {
          this.CONTENT.helpMC._visible = false;
@@ -356,8 +379,8 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       {
          this.CONTENT.helpMC.helpTF.text = helpStr;
          this.CONTENT.helpMC.helpTF.autoSize = "left";
-         var _loc5_ = this.scrollerMC._y;
-         var _loc7_ = _loc5_ + this.activeList.length * this.rowOffset;
+         _loc5_ = this.scrollerMC._y;
+         _loc7_ = _loc5_ + this.activeList.length * this.rowOffset;
          this.CONTENT.helpMC._y = _loc7_;
          this.CONTENT.helpMC.bgMC._height = this.CONTENT.helpMC.helpTF.textHeight + 12;
          this.CONTENT.helpMC._visible = true;
@@ -398,9 +421,10 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_CARD extends com.rockstarg
       }
       this.highlightIndex = _highlightIndex;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ <= _loc4_)
       {
-         var _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(this.activeList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem(this.activeList[_loc2_]);
          _loc3_.highlighted = _loc2_ == this.highlightIndex;
          _loc2_ = _loc2_ + 1;
       }

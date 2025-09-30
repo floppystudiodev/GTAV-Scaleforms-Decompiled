@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.web.Dynasty8realestateButtonContainer extends MovieClip
 {
-   var textColGrey;
-   var textColBlack;
    var hitAreaMC;
    var onEnterFrame;
+   var textColBlack;
+   var textColGrey;
    var website = undefined;
    var indexCounter = 0;
    var indexSpan = 3;
@@ -28,18 +28,23 @@ class com.rockstargames.gtav.web.Dynasty8realestateButtonContainer extends Movie
    function processPropertyImages()
    {
       var _loc3_ = this.indexCounter;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
+      var _loc7_;
+      var _loc6_;
       while(_loc3_ < this.indexCounter + this.indexSpan)
       {
-         var _loc5_ = this.website.sortedPropertyArray[_loc3_].INDEX;
-         var _loc2_ = this["property_" + _loc5_];
+         _loc5_ = this.website.sortedPropertyArray[_loc3_].INDEX;
+         _loc2_ = this["property_" + _loc5_];
          if(_loc2_._y > 0)
          {
             if(this.hitAreaMC.hitTest(_loc2_) == true)
             {
                if(_loc2_.propertyListTextMC == undefined)
                {
-                  var _loc4_ = _loc2_.attachMovie("propertyListTextMC","propertyListTextMC",_loc2_.getNextHighestDepth());
-                  var _loc7_ = new Array(0,2,6,10,2,6,10,20,0,0,0,0,50);
+                  _loc4_ = _loc2_.attachMovie("propertyListTextMC","propertyListTextMC",_loc2_.getNextHighestDepth());
+                  _loc7_ = new Array(0,2,6,10,2,6,10,20,0,0,0,0,50);
                   _loc4_.propertyTF.htmlText = this.website.propertyArray[_loc5_].PROPERTY + "       " + _loc7_[this.website.propertyArray[_loc5_].SIZE];
                   _loc4_.carIcon._x = _loc4_.propertyTF._x + _loc4_.propertyTF.textWidth + 6;
                   _loc4_.priceTF.htmlText = this.website.formatAmount(this.website.propertyArray[_loc5_].PRICE);
@@ -60,7 +65,7 @@ class com.rockstargames.gtav.web.Dynasty8realestateButtonContainer extends Movie
                if(_loc2_["propertyMC" + this.website.sortedPropertyArray[_loc3_].INDEX].loadedStatus == "")
                {
                   _loc2_["propertyMC" + this.website.sortedPropertyArray[_loc3_].INDEX].updateImage(this.website.sortedPropertyArray[_loc3_].TXD);
-                  var _loc6_ = parseInt(this.website.sortedPropertyArray[_loc3_].TXD.substring(7));
+                  _loc6_ = parseInt(this.website.sortedPropertyArray[_loc3_].TXD.substring(7));
                   this.website.addVisiblePropertyID(_loc6_);
                }
             }

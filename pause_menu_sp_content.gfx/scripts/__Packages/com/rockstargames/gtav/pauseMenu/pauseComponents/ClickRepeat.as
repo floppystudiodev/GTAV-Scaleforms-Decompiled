@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.ClickRepeat extends MovieClip
 {
    var container;
-   var repeatObj;
-   var repeatFunc;
    var repeatArgs;
+   var repeatFunc;
+   var repeatObj;
    var tweenDelay = 0.4;
    function ClickRepeat(_container)
    {

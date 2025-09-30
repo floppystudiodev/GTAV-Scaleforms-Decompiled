@@ -1,27 +1,28 @@
 class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var scriptAccessibleMovieClips;
-   var scriptAccessibleMovieClipsXpos;
-   var arrayOfFunctions;
-   var dataProviderUI;
    var CONTENT;
-   var mcScope;
-   var indexStart;
-   var stockArray;
-   var dataTextScope;
-   var listPositionArray;
-   var stockAnchorCharArray;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
+   var PAGE_NAMES;
+   var _name;
+   var arrayOfFunctions;
+   var browser;
+   var container;
    var currentPage;
-   var listPageURL;
-   var current_value;
    var current_changeNet;
    var current_changePercent;
-   var container;
+   var current_value;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var indexStart;
+   var listPageURL;
+   var listPositionArray;
+   var mcScope;
+   var scriptAccessibleMovieClips;
+   var scriptAccessibleMovieClipsXpos;
+   var stockAnchorCharArray;
+   var stockArray;
    var lineXPos = 220;
    var lineYPos = 271;
    var lineSpacing = 34;
@@ -87,7 +88,7 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       var _loc14_ = "<font color=\'#d95a5b\'>";
       var _loc7_ = "</font>";
       var _loc12_ = "   ";
-      var _loc15_ = undefined;
+      var _loc15_;
       if(arguments[1] == "NEWS" || arguments[1] == 1)
       {
          _loc15_ = "NEWS";
@@ -96,10 +97,15 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       {
          _loc15_ = "STOCK";
       }
+      var _loc3_;
+      var _loc9_;
+      var _loc10_;
+      var _loc5_;
+      var _loc8_;
       switch(_loc15_)
       {
          case "NEWS":
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < this.dataProviderUI.length)
             {
                if(this.dataProviderUI[_loc3_] != undefined)
@@ -116,10 +122,10 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             {
                if(this.dataProviderUI[_loc3_][0] != undefined)
                {
-                  var _loc9_ = this.dataProviderUI[_loc3_][3];
-                  var _loc10_ = this.dataProviderUI[_loc3_][0];
-                  var _loc5_ = this.dataProviderUI[_loc3_][1];
-                  var _loc8_ = this.dataProviderUI[_loc3_][2];
+                  _loc9_ = this.dataProviderUI[_loc3_][3];
+                  _loc10_ = this.dataProviderUI[_loc3_][0];
+                  _loc5_ = this.dataProviderUI[_loc3_][1];
+                  _loc8_ = this.dataProviderUI[_loc3_][2];
                   _loc6_ += _loc12_ + _loc4_ + _loc11_ + _loc9_ + _loc4_ + com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc10_,2) + _loc7_ + _loc4_;
                   if(_loc5_ < 0)
                   {
@@ -133,6 +139,8 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
                _loc3_ = _loc3_ + 1;
             }
             this.CONTENT.TICKER_STOCK.SET_TICKER_TEXT(speed,_loc6_);
+         default:
+            return;
       }
    }
    function SET_MOVIECLIP_VISIBILITY(isVisible, instanceEnum)
@@ -170,24 +178,31 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
    function goToAnchor(AnchorLinkLetter)
    {
       var _loc13_ = AnchorLinkLetter.split("_");
+      var _loc14_;
+      var _loc11_;
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       if(_loc13_[0] == "SORT" || _loc13_[0] == "slot")
       {
          this.updateSortSlotArrow(parseInt(_loc13_[1]),true);
-         var _loc14_ = this.MAKE_STOCK_LIST(this.indexStart,this.stockArray.length);
+         _loc14_ = this.MAKE_STOCK_LIST(this.indexStart,this.stockArray.length);
          this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
       }
       else
       {
-         var _loc11_ = this.listPositionArray.length;
-         var _loc2_ = 0;
+         _loc11_ = this.listPositionArray.length;
+         _loc2_ = 0;
          while(_loc2_ < _loc11_)
          {
-            var _loc6_ = this.listPositionArray[_loc2_][1];
+            _loc6_ = this.listPositionArray[_loc2_][1];
             if(_loc6_.substr(0,1) == AnchorLinkLetter)
             {
-               var _loc5_ = this.listPositionArray[_loc2_][2];
-               var _loc3_ = this.browser.CURSOR._y - _loc5_ - this.browser.TOOLBAR._height + 6;
-               var _loc4_ = - (this.CONTENT.BOUNDING_BOX._height - 627);
+               _loc5_ = this.listPositionArray[_loc2_][2];
+               _loc3_ = this.browser.CURSOR._y - _loc5_ - this.browser.TOOLBAR._height + 6;
+               _loc4_ = - (this.CONTENT.BOUNDING_BOX._height - 627);
                if(_loc3_ < _loc4_)
                {
                   _loc3_ = _loc4_;
@@ -202,9 +217,10 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
    function updateSortSlotArrow(sortId, userTriggered)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.sortSlots.length)
       {
-         var _loc3_ = this.sortSlots[_loc2_];
+         _loc3_ = this.sortSlots[_loc2_];
          this.mcScope["slotsortArrow_" + _loc3_]._alpha = 0;
          _loc2_ = _loc2_ + 1;
       }
@@ -232,12 +248,14 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       var _loc5_ = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
       var _loc4_ = 466;
       var _loc8_ = 235;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc3_ = 0;
+      var _loc7_;
+      var _loc2_;
       while(_loc3_ < 26)
       {
-         var _loc7_ = _loc3_ + arrayIndex + numberOfEntries;
-         var _loc2_ = _loc5_[_loc3_];
+         _loc7_ = _loc3_ + arrayIndex + numberOfEntries;
+         _loc2_ = _loc5_[_loc3_];
          if(numberOfEntries > 10)
          {
             _loc6_ = this.doesInitialExist(_loc2_);
@@ -294,6 +312,17 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       {
          this.browser.GO_TO_WEBPAGE("WWW_LCN_D_EXCHANGE_COM_S_STOCK_PORTFOLIO_EMPTY");
       }
+      var _loc11_;
+      var _loc5_;
+      var _loc3_;
+      var _loc7_;
+      var _loc2_;
+      var _loc6_;
+      var _loc15_;
+      var _loc10_;
+      var _loc9_;
+      var _loc0_;
+      var _loc4_;
       switch(pageName)
       {
          case "PAGE1":
@@ -329,7 +358,7 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             this.mcScope.newsItem3.bg._height = this.mcScope.newsItem3.header._y + this.mcScope.newsItem3.header._height + 10;
             this.UPDATE_FIXED_STOCK_LIST(22,"stockSummary");
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
-            var _loc11_ = new Array("headerNews_bar","newsItem1","newsItem2","newsItem3");
+            _loc11_ = new Array("headerNews_bar","newsItem1","newsItem2","newsItem3");
             com.rockstargames.gtav.web.FORMAT_COLUMN.adjustPosition(_loc11_,this.mcScope,2);
             this.SET_NEW_PAGE_HEIGHT(this.dataTextScope,670);
             com.rockstargames.gtav.web.DynamicGraph.draw(this.dataProviderUI[27],this.dataProviderUI[28],this.mcScope.page1Graph,1525208);
@@ -372,7 +401,7 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             {
                this.dataProviderUI = this.stockArray;
             }
-            var _loc5_ = this.MAKE_STOCK_LIST(this.indexStart,this.dataProviderUI.length,this.dataProviderUI);
+            _loc5_ = this.MAKE_STOCK_LIST(this.indexStart,this.dataProviderUI.length,this.dataProviderUI);
             this.updateSortSlotArrow(this.sortSlot);
             this.SET_NEW_PAGE_HEIGHT(this.dataTextScope);
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
@@ -483,8 +512,8 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             this.ADD_TEXT(this.dataTextScope.length);
             this.setTextWithTranslation(this.mcScope.graphChangePercentLabel,"BS_WB_PERCHA");
             this.mcScope.graphChangePercentValue.text = this.mcScope.changePercentValue.text;
-            var _loc3_ = this.dataProviderUI[10][0];
-            var _loc7_ = " (" + _loc3_ + ")";
+            _loc3_ = this.dataProviderUI[10][0];
+            _loc7_ = " (" + _loc3_ + ")";
             this.dataTextScope[5].text += _loc7_;
             this.setAndPositionLogo(_loc3_);
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
@@ -515,13 +544,12 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             }
             this.CONTENT.BOUNDING_BOX._height = 640;
             com.rockstargames.gtav.web.DynamicGraph.draw(this.dataProviderUI[37],this.dataProviderUI[38],this.mcScope.stockViewGraph,1525208);
-            var _loc2_ = this.mcScope.graphTimeValue;
+            _loc2_ = this.mcScope.graphTimeValue;
             _loc2_.autoSize = "left";
-            var _loc6_ = 90;
-            var _loc15_ = 33;
-            var _loc10_ = 709;
-            var _loc9_ = 548;
-            var _loc0_ = null;
+            _loc6_ = 90;
+            _loc15_ = 33;
+            _loc10_ = 709;
+            _loc9_ = 548;
             _loc2_._yscale = _loc0_ = 100 * Math.min(_loc6_ / _loc2_.textWidth,1);
             _loc2_._xscale = _loc0_;
             _loc2_._x = _loc10_ - 0.5 * _loc2_._width;
@@ -718,7 +746,7 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             this.dataTextScope[22] = this.mcScope.shareValueLabel;
             this.dataTextScope[23] = this.mcScope.shareValueValue;
             this.ADD_TEXT(this.dataTextScope.length);
-            var _loc4_ = "";
+            _loc4_ = "";
             if(!this.isSellingAll)
             {
                _loc4_ += "$";
@@ -914,6 +942,8 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             this.ADD_TEXT(this.dataTextScope.length);
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
             this.CONTENT.BOUNDING_BOX._height = 627;
+         default:
+            return;
       }
    }
    function SET_NEW_PAGE_HEIGHT(data, minHeight)
@@ -925,12 +955,14 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
          _loc5_ = minHeight;
       }
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < _loc6_)
       {
          if(this.dataTextScope[_loc2_]._parent != this.mcScope)
          {
-            var _loc3_ = data[_loc2_]._parent;
-            var _loc4_ = _loc3_._y + _loc3_._height;
+            _loc3_ = data[_loc2_]._parent;
+            _loc4_ = _loc3_._y + _loc3_._height;
             if(_loc4_ > _loc5_)
             {
                _loc5_ = _loc4_;
@@ -1051,9 +1083,10 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       }
       var _loc15_ = new Array();
       _loc7_ = 0;
+      var _loc14_;
       while(_loc7_ < _loc9_.length)
       {
-         var _loc14_ = _loc9_[_loc7_];
+         _loc14_ = _loc9_[_loc7_];
          _loc15_.push(parseInt(_loc14_.split(":")[1]));
          _loc7_ = _loc7_ + 1;
       }
@@ -1065,8 +1098,8 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
       }
       this.container = this.mcScope.createEmptyMovieClip("container",this.mcScope.getNextHighestDepth());
       this.mcScope["slot_" + this.sortSlot]._alpha = 100;
-      var _loc21_ = undefined;
-      var _loc20_ = undefined;
+      var _loc21_;
+      var _loc20_;
       if(this.mcScope == this.CONTENT.LISTINGS)
       {
          _loc21_ = "STOCKLIST_BUTTON";
@@ -1078,12 +1111,20 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
          _loc20_ = 820;
       }
       this.stockAnchorCharArray = new Array();
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc6_ = 0;
       _loc7_ = 0;
+      var _loc3_;
+      var _loc10_;
+      var _loc19_;
+      var _loc13_;
+      var _loc4_;
+      var _loc12_;
+      var _loc5_;
+      var _loc11_;
       while(_loc7_ < dataLength - indexStart)
       {
-         var _loc3_ = _loc15_[_loc7_] + indexStart;
+         _loc3_ = _loc15_[_loc7_] + indexStart;
          if(this.stockArray[_loc3_] != undefined && this.stockArray[_loc3_].length > 1)
          {
             _loc2_ = "LISTitem_" + _loc3_;
@@ -1095,20 +1136,20 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
             this.dataTextScope[_loc3_] = this.container[_loc2_].btnTxt;
             this.container[_loc2_].onColour = 2236962;
             this.container[_loc2_].offColour = 2236962;
-            var _loc10_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][0],2);
-            var _loc19_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][1],2);
-            var _loc13_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][2],2);
-            var _loc4_ = this.stockArray[_loc3_][3];
-            var _loc12_ = this.stockArray[_loc3_][4];
+            _loc10_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][0],2);
+            _loc19_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][1],2);
+            _loc13_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][2],2);
+            _loc4_ = this.stockArray[_loc3_][3];
+            _loc12_ = this.stockArray[_loc3_][4];
             this.stockAnchorCharArray.push(_loc4_.charAt(0));
             this.listPositionArray.push(new Array(_loc3_,_loc4_,this.container[_loc2_]._y));
-            var _loc5_ = "";
+            _loc5_ = "";
             if(this.stockArray[_loc3_][5] != undefined)
             {
                _loc5_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][5],2).toString();
                _loc5_ += "%";
             }
-            var _loc11_ = "";
+            _loc11_ = "";
             if(this.stockArray[_loc3_][6] != undefined)
             {
                _loc11_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.stockArray[_loc3_][6],2).toString();
@@ -1155,20 +1196,25 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
    }
    function UPDATE_FIXED_STOCK_LIST(indexStart, listItem)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc4_ = 0;
+      var _loc3_;
+      var _loc8_;
+      var _loc7_;
+      var _loc5_;
+      var _loc6_;
       while(_loc4_ < 5)
       {
-         var _loc3_ = _loc4_ + indexStart;
+         _loc3_ = _loc4_ + indexStart;
          if(this.dataProviderUI[_loc3_] != undefined)
          {
             _loc2_ = this.mcScope[listItem + (_loc4_ + 1)];
-            var _loc8_ = this.dataProviderUI[_loc3_][0];
-            var _loc7_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.dataProviderUI[_loc3_][1],2);
-            var _loc5_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.dataProviderUI[_loc3_][2],2);
+            _loc8_ = this.dataProviderUI[_loc3_][0];
+            _loc7_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.dataProviderUI[_loc3_][1],2);
+            _loc5_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(this.dataProviderUI[_loc3_][2],2);
             _loc2_.btnTxt.text = _loc8_;
             _loc2_.price.text = _loc7_;
-            var _loc6_ = "";
+            _loc6_ = "";
             if(_loc5_ > 0)
             {
                _loc6_ = "+";
@@ -1211,7 +1257,7 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
    }
    function TINT_AND_ADD_SYMBOLS()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.current_changeNet > 0)
       {
          this.mcScope.upDownArrrow._rotation = 0;
@@ -1243,9 +1289,10 @@ class com.rockstargames.gtav.web.WWW_LCN_D_EXCHANGE_COM extends com.rockstargame
          this.mcScope.companyLogo.gotoAndStop("DEFAULT");
       }
       var _loc2_ = 10;
+      var _loc3_;
       if(this.mcScope.companyLogo._height > this.mcScope.headerBg._height - _loc2_ * 2)
       {
-         var _loc3_ = (this.mcScope.headerBg._height - _loc2_ * 2) / this.mcScope.companyLogo._height * 100;
+         _loc3_ = (this.mcScope.headerBg._height - _loc2_ * 2) / this.mcScope.companyLogo._height * 100;
          this.mcScope.companyLogo._xscale = this.mcScope.companyLogo._yscale = _loc3_;
       }
       this.mcScope.companyLogo._x = this.mcScope.headerBg._x + this.mcScope.headerBg._width - (this.mcScope.companyLogo._width + _loc2_);

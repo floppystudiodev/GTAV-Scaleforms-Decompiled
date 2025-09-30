@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardpieChart extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var percentArray;
    var cashTF;
+   var percentArray;
    var pie5;
-   var totalCashTF;
    var theTakeTF;
+   var totalCashTF;
    function MPHeistBoardpieChart()
    {
       super();
@@ -31,10 +31,12 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardpieChart e
       }
       var _loc5_ = 0;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= 4)
       {
-         var _loc3_ = this._data[_loc2_ + 1] == undefined ? 0 : this._data[_loc2_ + 1];
-         var _loc4_ = this["pie" + (_loc2_ + 1)];
+         _loc3_ = this._data[_loc2_ + 1] == undefined ? 0 : this._data[_loc2_ + 1];
+         _loc4_ = this["pie" + (_loc2_ + 1)];
          this.drawArc(_loc4_,_loc5_,_loc3_,_loc2_ + 1);
          _loc5_ += _loc3_;
          _loc2_ = _loc2_ + 1;
@@ -122,9 +124,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardpieChart e
    function subHighlight(_subItemIndex)
    {
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 4)
       {
-         var _loc3_ = this["pie" + _loc2_];
+         _loc3_ = this["pie" + _loc2_];
          _loc3_.pieSlices._visible = false;
          _loc2_ = _loc2_ + 1;
       }

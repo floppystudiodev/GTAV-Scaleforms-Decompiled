@@ -12,15 +12,16 @@ class com.rockstargames.gtav.Multiplayer.socialclubtv.SocialClubTick extends Mov
    }
    function setLabel(enum, str)
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc5_ = 0;
       var _loc3_ = 0;
+      var _loc6_;
       while(_loc3_ < arguments.length)
       {
          switch(arguments[_loc3_])
          {
             case com.rockstargames.gtav.Multiplayer.socialclubtv.SocialClubTick.TYPE_CREW_TAG:
-               var _loc6_ = com.rockstargames.gtav.Multiplayer.CREW_TAG_MOVIECLIP(this.attachMovie("CREW_TAG_MOVIECLIP","l" + _loc3_ / 2,this.getNextHighestDepth(),{_x:_loc5_ + 8,_y:10.5,_xscale:this.crewTagScale,_yscale:this.crewTagScale}));
+               _loc6_ = com.rockstargames.gtav.Multiplayer.CREW_TAG_MOVIECLIP(this.attachMovie("CREW_TAG_MOVIECLIP","l" + _loc3_ / 2,this.getNextHighestDepth(),{_x:_loc5_ + 8,_y:10.5,_xscale:this.crewTagScale,_yscale:this.crewTagScale}));
                _loc6_.UNPACK_CREW_TAG(arguments[_loc3_ + 1]);
                _loc4_ = _loc6_;
                break;

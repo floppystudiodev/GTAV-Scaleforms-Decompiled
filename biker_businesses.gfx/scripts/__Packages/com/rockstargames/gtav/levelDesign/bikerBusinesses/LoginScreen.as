@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.LoginScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var controls;
-   var keyClickIndex;
-   var view;
-   var cursor;
    var app;
+   var controls;
+   var cursor;
+   var keyClickIndex;
    var loginButton;
+   var view;
    static var LOGIN_BUTTON = 999;
    static var KEY_CLICK_FRAMES = [10,14,18,23,28,33,38,42];
    function LoginScreen(app, viewContainer, cursor)
@@ -73,11 +73,13 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.LoginScreen extends com
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.ACCEPT:
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.LEFT_MOUSE:
             this.handleAcceptInput(inputID);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.app.GET_CURRENT_SELECTION()) === com.rockstargames.gtav.levelDesign.bikerBusinesses.LoginScreen.LOGIN_BUTTON)
       {
          com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Generic");

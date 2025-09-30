@@ -21,10 +21,10 @@ class com.rockstargames.gtav.Multiplayer.celebration.CelebrationBackground
    {
       var _loc3_ = 0;
       var _loc6_ = com.rockstargames.gtav.Multiplayer.celebration.CelebrationSequence.SCREEN_WIDTH;
-      var _loc4_ = undefined;
-      var _loc7_ = undefined;
-      var _loc5_ = undefined;
-      var _loc8_ = undefined;
+      var _loc4_;
+      var _loc7_;
+      var _loc5_;
+      var _loc8_;
       if(com.rockstargames.gtav.Multiplayer.celebration.CelebrationBackground.SLOPE_Y_DELTA > 0)
       {
          _loc4_ = - com.rockstargames.gtav.Multiplayer.celebration.CelebrationBackground.SLOPE_Y_DELTA;

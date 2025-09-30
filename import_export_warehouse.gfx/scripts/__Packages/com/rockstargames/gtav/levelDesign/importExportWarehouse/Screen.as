@@ -2,11 +2,11 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.Screen
 {
    var app;
    var cursor;
-   var view;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var view;
    static var MAP_START_X = -734.7;
    static var MAP_START_Y = -2703.8;
    static var MAP_START_SCALE = 0.5;

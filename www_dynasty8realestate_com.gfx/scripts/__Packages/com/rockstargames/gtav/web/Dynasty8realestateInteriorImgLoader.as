@@ -1,16 +1,23 @@
 class com.rockstargames.gtav.web.Dynasty8realestateInteriorImgLoader extends com.rockstargames.gtav.web.Dynasty8realestateImgLoader
 {
+   var _name;
+   var attachMovie;
+   var getNextHighestDepth;
+   var loadedStatus;
+   var photoMC;
+   var txd;
+   var txn;
    function Dynasty8realestateInteriorImgLoader()
    {
       super();
    }
    function updateImage(_txd)
    {
+      var _loc2_;
       if(_txd != undefined && _txd != "default")
       {
          if(this.photoMC == undefined)
          {
-            var _loc2_ = undefined;
             if(_txd.indexOf("_DYN_MP_INT_") > 0)
             {
                _loc2_ = _txd.toUpperCase().split("_DYN_MP_INT_");

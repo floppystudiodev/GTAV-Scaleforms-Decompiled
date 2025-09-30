@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.IdleScreen extends com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Screen
 {
    var buttons;
-   var view;
    var cursor;
+   var view;
    var buttonWidth = 355;
    function IdleScreen(app, viewContainer, cursor, dataObject)
    {

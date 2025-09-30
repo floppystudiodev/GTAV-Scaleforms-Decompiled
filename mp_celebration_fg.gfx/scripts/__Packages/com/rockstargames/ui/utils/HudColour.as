@@ -1,9 +1,9 @@
 class com.rockstargames.ui.utils.HudColour extends com.rockstargames.ui.utils.HudColourLite
 {
-   var r;
-   var g;
-   var b;
    var a;
+   var b;
+   var g;
+   var r;
    static var HUD_COLOUR_PURE_WHITE = 0;
    static var HUD_COLOUR_WHITE = 1;
    static var HUD_COLOUR_BLACK = 2;
@@ -228,6 +228,17 @@ class com.rockstargames.ui.utils.HudColour extends com.rockstargames.ui.utils.Hu
    static var HUD_COLOUR_TECH_GREEN_DARK = 221;
    static var HUD_COLOUR_TECH_RED = 222;
    static var HUD_COLOUR_TECH_GREEN_VERY_DARK = 223;
+   static var HUD_COLOUR_PLACEHOLDER_01 = 224;
+   static var HUD_COLOUR_PLACEHOLDER_02 = 225;
+   static var HUD_COLOUR_PLACEHOLDER_03 = 226;
+   static var HUD_COLOUR_PLACEHOLDER_04 = 227;
+   static var HUD_COLOUR_PLACEHOLDER_05 = 228;
+   static var HUD_COLOUR_PLACEHOLDER_06 = 229;
+   static var HUD_COLOUR_PLACEHOLDER_07 = 230;
+   static var HUD_COLOUR_PLACEHOLDER_08 = 231;
+   static var HUD_COLOUR_PLACEHOLDER_09 = 232;
+   static var HUD_COLOUR_PLACEHOLDER_10 = 233;
+   static var HUD_COLOUR_JUNK_ENERGY = 234;
    function HudColour()
    {
       super();

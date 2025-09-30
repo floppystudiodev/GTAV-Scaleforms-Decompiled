@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.securoserv.PieChart
 {
-   var view;
    var fillComplete;
    var goalRotation;
+   var view;
    static var BG_IN_DURATION = 0.4;
    static var FILL_RATE = 180;
    function PieChart(view)

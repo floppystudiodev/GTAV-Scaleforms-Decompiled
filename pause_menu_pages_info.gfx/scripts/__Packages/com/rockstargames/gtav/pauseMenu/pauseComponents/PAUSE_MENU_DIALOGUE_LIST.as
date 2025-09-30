@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_DIALOGUE_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
-   var scrollMask;
    var CONTENT;
    var SET_FOCUS;
+   var SET_SCROLL_BAR;
    var containerMC;
+   var dbgID;
    var getNextHighestDepth;
    var model;
+   var scrollMask;
    var titleHeight;
-   var SET_SCROLL_BAR;
    function PAUSE_MENU_DIALOGUE_LIST()
    {
       super();

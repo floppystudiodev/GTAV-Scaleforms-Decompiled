@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
-   var titleMC;
-   var paletteMC;
    var barMC;
+   var paletteMC;
+   var titleMC;
    var colourData = new Array();
    var colourMCs = new Array();
    var highlightIndex = 0;
@@ -45,11 +45,14 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
       this.SET_DATA_SLOT_EMPTY();
       var _loc6_ = 4;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < _loc6_)
       {
-         var _loc4_ = Math.floor(Math.random() * 255);
-         var _loc5_ = Math.floor(Math.random() * 255);
-         var _loc3_ = Math.floor(Math.random() * 255);
+         _loc4_ = Math.floor(Math.random() * 255);
+         _loc5_ = Math.floor(Math.random() * 255);
+         _loc3_ = Math.floor(Math.random() * 255);
          this.SET_DATA_SLOT(_loc2_,_loc4_,_loc5_,_loc3_);
          _loc2_ = _loc2_ + 1;
       }
@@ -111,9 +114,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
    function SET_DATA_SLOT_EMPTY(viewIndex, itemIndex)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.colourMCs.length)
       {
-         var _loc3_ = this.colourMCs[_loc2_];
+         _loc3_ = this.colourMCs[_loc2_];
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
          _loc3_.removeMovieClip();
          _loc2_ = _loc2_ + 1;
@@ -126,10 +130,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
    {
       var _loc5_ = this.colourData.length <= this.visibleItems ? this.colourData.length : this.visibleItems;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < _loc5_)
       {
-         var _loc4_ = this.colourData[_loc2_];
-         var _loc3_ = this.paletteMC.containerMC.attachMovie("swatch","swatch" + _loc2_ + "MC",_loc2_);
+         _loc4_ = this.colourData[_loc2_];
+         _loc3_ = this.paletteMC.containerMC.attachMovie("swatch","swatch" + _loc2_ + "MC",_loc2_);
          _loc3_._x = _loc3_._width * _loc2_;
          this.itemSetData(_loc2_,_loc3_,_loc4_);
          this.colourMCs[_loc2_] = _loc3_;
@@ -165,9 +171,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
          _loc4_ = 30;
       }
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.colourMCs.length)
       {
-         var _loc2_ = this.colourMCs[_loc3_];
+         _loc2_ = this.colourMCs[_loc3_];
          _loc2_.highlightMC.vMC._width = _loc4_;
          _loc2_.highlightMC.maskMC._x = _loc4_ / 2;
          _loc2_.innerMC._width = _loc4_;
@@ -187,9 +194,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
       var _loc10_ = this.colourData.length;
       var _loc4_ = Math.max(0,Math.min(index,this.colourData.length - 1));
       index = _loc4_;
+      var _loc5_;
+      var _loc2_;
+      var _loc6_;
       if(_loc10_ > this.visibleItems)
       {
-         var _loc5_ = 0;
+         _loc5_ = 0;
          if(_loc4_ > this.topEdge + this.visibleItems - 1)
          {
             _loc5_ += _loc4_ - (this.visibleItems - 1);
@@ -210,17 +220,18 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
          i = 0;
          while(i < this.colourMCs.length)
          {
-            var _loc2_ = this.colourMCs[i];
-            var _loc6_ = this.colourData[_loc5_ + i];
+            _loc2_ = this.colourMCs[i];
+            _loc6_ = this.colourData[_loc5_ + i];
             this.itemSetData(_loc5_ + i,_loc2_,_loc6_);
             i++;
          }
       }
       var i = 0;
+      var _loc3_;
       while(i < this.colourMCs.length)
       {
          _loc2_ = this.colourMCs[i];
-         var _loc3_ = i != _loc4_ ? false : true;
+         _loc3_ = i != _loc4_ ? false : true;
          _loc2_.highlightMC._visible = _loc3_;
          if(this.highlightPosIndex != _loc4_)
          {

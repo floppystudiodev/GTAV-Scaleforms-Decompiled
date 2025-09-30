@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen extends com.rockstargames.gtav.levelDesign.trustAndSafety.screens.Screen
 {
-   var buttons;
-   var items;
-   var listScrollStep;
-   var listScrollUpTimestamp;
-   var listScrollDownTimestamp;
-   var view;
    var app;
-   var listItemLinkage;
-   var listContainer;
-   var listScroller;
+   var buttons;
    var contentScroller;
    var cursor;
+   var items;
+   var listContainer;
+   var listItemLinkage;
+   var listScrollDownTimestamp;
+   var listScrollStep;
+   var listScrollUpTimestamp;
+   var listScroller;
+   var view;
    var SCROLL_COOLDOWN = 100;
    function MainScreen(app, viewContainer, cursor)
    {
@@ -79,12 +79,14 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen exten
    }
    function handleButtonInput(inputID)
    {
+      var _loc2_;
+      var _loc3_;
       if(inputID == com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY.DPAD_UP)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          if(_loc2_)
          {
-            var _loc3_ = this.items[_loc2_.id];
+            _loc3_ = this.items[_loc2_.id];
             if(this.listScroller.itemIsAtTop(_loc3_.view))
             {
                this.listScroller.stepBy(this.listScrollStep,false);
@@ -108,11 +110,13 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen exten
    }
    function handleJoystickInput(isLeftStick, x, y, isMouseWheel)
    {
+      var _loc2_;
+      var _loc4_;
       if(isLeftStick)
       {
          if(!isMouseWheel)
          {
-            var _loc2_ = getTimer();
+            _loc2_ = getTimer();
             if(y > 127 && _loc2_ - this.listScrollUpTimestamp > this.SCROLL_COOLDOWN)
             {
                this.listScrollUpTimestamp = _loc2_;
@@ -129,7 +133,7 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen exten
       }
       else if(isMouseWheel)
       {
-         var _loc4_ = this.cursor.getTargetUnderCursor();
+         _loc4_ = this.cursor.getTargetUnderCursor();
          if(_loc4_ != null)
          {
             if(y > 127)
@@ -163,7 +167,7 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen exten
    }
    function updateListButtons()
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.buttons.length)
       {
@@ -177,16 +181,18 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.screens.MainScreen exten
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          _loc2_ = _loc2_ + 1;
       }
       var _loc6_ = this.cursor.getTargetUnderCursor();
+      var _loc5_;
       if(target)
       {
-         var _loc5_ = this.items[target.id];
+         _loc5_ = this.items[target.id];
          this.showItem(_loc5_);
       }
    }

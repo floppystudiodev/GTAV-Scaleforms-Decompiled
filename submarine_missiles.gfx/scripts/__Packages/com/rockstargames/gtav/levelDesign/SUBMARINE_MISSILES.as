@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.SUBMARINE_MISSILES extends com.rockstargames.gtav.levelDesign.TURRET_CAM
 {
    var CONTENT;
-   var updateArgs;
+   var flashOffDuration;
+   var flashOnDuration;
    var flashing;
    var fovMC;
-   var flashOnDuration;
-   var flashOffDuration;
+   var updateArgs;
    static var MAX_FLASH_ON_DURATION = 1;
    static var MIN_FLASH_ON_DURATION = 0.15;
    static var MAX_FLASH_OFF_DURATION = 1;

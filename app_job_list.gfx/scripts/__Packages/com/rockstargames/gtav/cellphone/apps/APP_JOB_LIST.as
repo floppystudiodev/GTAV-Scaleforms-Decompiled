@@ -1,18 +1,19 @@
 class com.rockstargames.gtav.cellphone.apps.APP_JOB_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var scrollBar;
-   var TIMELINE;
    var CONTENT;
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var gfxFileName;
-   var currentStyle;
-   var linkageID;
-   var row;
-   var container;
-   var TextWhiteHex;
-   var offWhiteRGB;
+   var TIMELINE;
    var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var linkageID;
+   var offWhiteRGB;
+   var row;
+   var scrollBar;
+   var scrollBarTimeout;
    var defaultRowHeight = 80;
    var numberOfVisibleRows = 3;
    function APP_JOB_LIST()
@@ -49,22 +50,28 @@ class com.rockstargames.gtav.cellphone.apps.APP_JOB_LIST extends com.rockstargam
    {
       this.dataProviderUI = _level0.TIMELINE.jobListDataProviderUI;
       this.row = 1;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc6_;
+      var _loc7_;
+      var _loc5_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
-            var _loc4_ = _loc3_ + this.arrayStartPoint;
-            var _loc6_ = this.dataProviderUI[_loc4_][0];
+            _loc2_ = "listItem" + this.row;
+            _loc4_ = _loc3_ + this.arrayStartPoint;
+            _loc6_ = this.dataProviderUI[_loc4_][0];
             this.parseForGamerName(this.container[_loc2_].jobLabel,_loc6_);
-            var _loc7_ = new com.rockstargames.ui.utils.Text();
+            _loc7_ = new com.rockstargames.ui.utils.Text();
             if(this.container[_loc2_].blipLayerMC)
             {
                this.container[_loc2_].blipLayerMC.removeMovieClip();
             }
             this.container[_loc2_].createEmptyMovieClip("blipLayerMC",1000);
-            var _loc5_ = this.container[_loc2_].jobDescription.textColor;
+            _loc5_ = this.container[_loc2_].jobDescription.textColor;
             _loc7_.setTextWithIcons(this.dataProviderUI[_loc4_][1],this.container[_loc2_].blipLayerMC,this.container[_loc2_].jobDescription,0,16,1,false);
             this.container[_loc2_].jobDescription.textColor = _loc5_;
             this.container[_loc2_].jobLabel.textColor = _loc5_;
@@ -111,19 +118,25 @@ class com.rockstargames.gtav.cellphone.apps.APP_JOB_LIST extends com.rockstargam
       var _loc5_ = str.indexOf("<C>");
       var _loc6_ = str.indexOf("</C>");
       var _loc7_ = _loc5_ != -1 && _loc6_ != -1;
+      var _loc10_;
+      var _loc3_;
+      var _loc1_;
+      var _loc8_;
+      var _loc9_;
+      var _loc11_;
       if(_loc7_)
       {
-         var _loc10_ = 16;
-         var _loc3_ = str.substring(0,_loc5_);
-         var _loc1_ = str.substring(_loc5_ + 3,_loc6_);
-         var _loc8_ = str.substring(_loc6_ + 4);
+         _loc10_ = 16;
+         _loc3_ = str.substring(0,_loc5_);
+         _loc1_ = str.substring(_loc5_ + 3,_loc6_);
+         _loc8_ = str.substring(_loc6_ + 4);
          if(_loc1_.length > _loc10_)
          {
             _loc1_ = _loc1_.substring(0,_loc10_) + "...";
          }
          str = _loc3_ + _loc1_ + _loc8_;
-         var _loc9_ = new TextFormat("$Font2",18,0);
-         var _loc11_ = new TextFormat("$Font2_cond",24,0);
+         _loc9_ = new TextFormat("$Font2",18,0);
+         _loc11_ = new TextFormat("$Font2_cond",24,0);
          TF.text = str;
          TF.setTextFormat(0,_loc3_.length,_loc9_);
          TF.setTextFormat(_loc3_.length,_loc3_.length + _loc1_.length,_loc11_);

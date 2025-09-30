@@ -928,6 +928,26 @@ class com.rockstargames.gtav.constants.Blips
       _loc1_.push("radar_field_hangar_discount");
       _loc1_.push("radar_garment_factory_discount");
       _loc1_.push("radar_weapon_gusenberg_sweeper");
+      _loc1_.push("radar_weapon_tear_gas");
+      _loc1_.push("radar_dog");
+      _loc1_.push("radar_bobcat_security");
+      _loc1_.push("radar_smoke_shop");
+      _loc1_.push("radar_smoke_shop_for_sale");
+      _loc1_.push("radar_smoke_shop_attention");
+      _loc1_.push("radar_helitours");
+      _loc1_.push("radar_helitours_for_sale");
+      _loc1_.push("radar_helitours_attention");
+      _loc1_.push("radar_car_wash_business");
+      _loc1_.push("radar_car_wash_business_for_sale");
+      _loc1_.push("radar_car_wash_business_attention");
+      _loc1_.push("radar_attention");
+      _loc1_.push("radar_alarm");
+      _loc1_.push("radar_helitours_discount");
+      _loc1_.push("radar_smoke_shop_discount");
+      _loc1_.push("radar_car_wash_business_discount");
+      _loc1_.push("radar_real_estate");
+      _loc1_.push("radar_medical_courier");
+      _loc1_.push("radar_gruppe_sechs");
       return _loc1_;
    }
 }

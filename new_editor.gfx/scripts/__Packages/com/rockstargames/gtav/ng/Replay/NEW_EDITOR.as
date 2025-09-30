@@ -1,44 +1,44 @@
 class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.components.GUIController
 {
-   var columnXPositions;
-   var headerPosition;
-   var config;
-   var isWideScreen;
-   var safeLeft;
-   var safeRight;
-   var safeTop;
-   var safeBottom;
-   var isHiDef;
    var PLAYBACK_PANEL;
    var TIMELINE;
-   var model_editor;
-   var model_playback;
+   var _bigBackground;
+   var _colHasHelpText;
+   var _colHasProjectSizeDisplay;
+   var _currentHighlightedIndex;
+   var _currentSelectedIndex;
+   var _forceClipEditMenuInvisible;
+   var _helpTextItem;
+   var _helpTextItemData;
+   var _loadProjectInfo;
+   var _projectSizeDisplayItem;
+   var _receivedColours;
+   var _scrollBarColId;
+   var _scrollBarItem;
+   var _scrollBarItemAudio;
+   var _scrollBarLabel;
+   var _scrollBarLabelAudio;
+   var clip_edit_header;
+   var columnXPositions;
    var columnY;
+   var config;
+   var curView;
+   var header;
+   var headerPosition;
+   var isHiDef;
+   var isWideScreen;
    var mc_panel_1;
    var mc_panel_2;
    var mc_panel_3;
    var mc_panel_playback_menu;
    var model;
-   var _projectSizeDisplayItem;
+   var model_editor;
+   var model_playback;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
    var stateArray;
-   var header;
-   var clip_edit_header;
-   var _bigBackground;
-   var curView;
-   var _forceClipEditMenuInvisible;
-   var _colHasHelpText;
-   var _colHasProjectSizeDisplay;
-   var _helpTextItem;
-   var _receivedColours;
-   var _helpTextItemData;
-   var _scrollBarItem;
-   var _scrollBarLabel;
-   var _scrollBarItemAudio;
-   var _scrollBarLabelAudio;
-   var _loadProjectInfo;
-   var _scrollBarColId;
-   var _currentHighlightedIndex;
-   var _currentSelectedIndex;
    var _isDebug = false;
    var debug_state = 0;
    static var ID_COL_TYPE_LIST = 0;
@@ -78,8 +78,8 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isHiDef, _isAsian)
    {
       this.isWideScreen = _isWideScreen;
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       _loc2_ = 1280;
       _loc3_ = 720;
       this.safeLeft = Math.round(_loc2_ * _safeLeftPercent);
@@ -236,15 +236,19 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
             }
          }
       }
+      var _loc6_;
+      var _loc3_;
+      var _loc5_;
+      var _loc8_;
       if(this._colHasHelpText || this._colHasProjectSizeDisplay || this._colHasScrollBar || this._colHasScrollBarAudio)
       {
-         var _loc6_ = this.curView.itemList.length - 1;
+         _loc6_ = this.curView.itemList.length - 1;
          if(_loc6_ > this.curView.visibleItems - 1)
          {
             _loc6_ = this.curView.visibleItems;
          }
-         var _loc3_ = com.rockstargames.gtav.ng.Replay.ReplayBaseItem(this.curView.itemList[_loc6_]);
-         var _loc5_ = _loc3_._y + _loc3_._height + 2;
+         _loc3_ = com.rockstargames.gtav.ng.Replay.ReplayBaseItem(this.curView.itemList[_loc6_]);
+         _loc5_ = _loc3_._y + _loc3_._height + 2;
          if(this._colHasHelpText && this._helpTextItem == undefined)
          {
             this._helpTextItem = com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_HELP(_loc3_._parent.attachMovie("COL_TYPE_LIST_HELP","helpTextItem",_loc3_._parent.getNextHighestDepth(),{_x:_loc3_._x,_y:_loc5_}));
@@ -265,7 +269,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
          }
          if(this._colHasScrollBar && this._scrollBarItem == undefined)
          {
-            var _loc8_ = _loc5_ - 2;
+            _loc8_ = _loc5_ - 2;
             this._scrollBarItem = com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_SCROLL(_loc3_._parent.attachMovie("COL_TYPE_LIST_SCROLL","scrollbarItem",_loc3_._parent.getNextHighestDepth(),{_x:_loc3_._x,_y:_loc8_}));
             this._scrollBarItem.initColors(this._receivedColours);
             this._scrollBarItem.label = this._scrollBarLabel;
@@ -278,17 +282,20 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
             this._scrollBarItemAudio.label = this._scrollBarLabelAudio;
          }
       }
+      var _loc0_;
+      var _loc10_;
       if(this.curColTpye == com.rockstargames.gtav.ng.Replay.NEW_EDITOR.ID_COL_TYPE_LOAD_PROJ_INFO)
       {
-         var _loc0_ = null;
-         var _loc10_ = this._loadProjectInfo = com.rockstargames.gtav.ng.Replay.ReplayView(this.model.viewList[this.curColId]).itemList[0];
+         _loc10_ = this._loadProjectInfo = com.rockstargames.gtav.ng.Replay.ReplayView(this.model.viewList[this.curColId]).itemList[0];
          _loc10_.initColors(this._receivedColours);
       }
+      var _loc2_;
+      var _loc4_;
+      var _loc7_;
       if(this.curColTpye == com.rockstargames.gtav.ng.Replay.NEW_EDITOR.ID_COL_TYPE_LIST || this.curColTpye == com.rockstargames.gtav.ng.Replay.NEW_EDITOR.ID_COL_TYPE_LIST_LONG_AUDIO)
       {
-         var _loc2_ = undefined;
-         var _loc4_ = com.rockstargames.gtav.ng.Replay.ReplayView(this.model.viewList[this.curColId]).itemList;
-         var _loc7_ = _loc4_.length;
+         _loc4_ = com.rockstargames.gtav.ng.Replay.ReplayView(this.model.viewList[this.curColId]).itemList;
+         _loc7_ = _loc4_.length;
          _loc2_ = _loc7_;
          while(_loc2_--)
          {
@@ -299,16 +306,18 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
             }
          }
       }
+      var _loc11_;
+      var _loc9_;
       if(this.MOVIE_MODE == this.MOVIE_STATE_CLIP_PLAYBACK)
       {
          _loc4_ = com.rockstargames.gtav.ng.Replay.ReplayView(this.model.viewList[this.curColId]).itemList;
          _loc7_ = _loc4_.length;
          if(!this._bigBackground)
          {
-            var _loc11_ = MovieClip(_loc4_[0]._parent);
+            _loc11_ = MovieClip(_loc4_[0]._parent);
             this._bigBackground = _loc11_.attachMovie("bigBackground","bigBackground",com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST(_loc4_[0]).getDepth() - 1,{_width:288});
          }
-         var _loc9_ = com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST(_loc4_[_loc7_ - 1])._y + 25;
+         _loc9_ = com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST(_loc4_[_loc7_ - 1])._y + 25;
          this._bigBackground._height = _loc9_;
          com.rockstargames.ui.utils.Colour.Colourise(this._bigBackground,this._receivedColours[0][0],this._receivedColours[0][1],this._receivedColours[0][2],70);
       }
@@ -485,10 +494,11 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    }
    function SET_ANIMATED_AUDIO_ICON(itemId, isPlaying)
    {
+      var _loc3_;
+      var _loc2_;
       if(itemId != undefined && this.curColTpye == com.rockstargames.gtav.ng.Replay.NEW_EDITOR.ID_COL_TYPE_LIST_LONG_AUDIO)
       {
-         var _loc3_ = this.model.getCurrentView().itemList;
-         var _loc2_ = undefined;
+         _loc3_ = this.model.getCurrentView().itemList;
          _loc2_ = _loc3_[itemId];
          _loc2_.SetAnimatedAudioPlaying(isPlaying);
          if(isPlaying)
@@ -523,9 +533,10 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    {
       var _loc4_ = this.model.viewList.length;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.model.viewList[_loc3_];
+         _loc2_ = this.model.viewList[_loc3_];
          _loc2_.highlighted = false;
          if(com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_LONG_AUDIO(_loc2_.highlightedItem).SetAnimatedAudioVisibility)
          {
@@ -539,7 +550,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function SET_ITEM_SELECTED(itemId, onlyOneOption)
    {
       var _loc3_ = this.model.getCurrentView().itemList;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc5_ = onlyOneOption == undefined ? false : onlyOneOption;
       if(this._currentSelectedIndex != undefined)
       {
@@ -562,7 +573,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function SET_COL_TYPE_LIST_COLOUR(itemId, stateId)
    {
       var _loc2_ = this.model.getCurrentView().itemList;
-      var _loc3_ = undefined;
+      var _loc3_;
       _loc3_ = _loc2_[itemId];
       _loc3_.SetColourState(stateId);
    }
@@ -647,9 +658,10 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    {
       var _loc4_ = this.model.getCurrentView().itemList;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_];
+         _loc3_ = _loc4_[_loc2_];
          _loc3_.highlighted = false;
          _loc2_ = _loc2_ + 1;
       }
@@ -657,7 +669,8 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function SET_ITEMS_GREYED_OUT(itemID)
    {
       var _loc3_ = this.model.getCurrentView().itemList;
-      var _loc4_ = undefined;
+      var _loc4_;
+      var _loc2_;
       if(itemID != undefined)
       {
          _loc4_ = _loc3_[itemID];
@@ -665,7 +678,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
       }
       else
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < _loc3_.length)
          {
             _loc4_ = _loc3_[_loc2_];
@@ -677,7 +690,8 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function SET_ITEMS_UNGREYED_OUT(itemID)
    {
       var _loc4_ = this.model.getCurrentView().itemList;
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(itemID != undefined)
       {
          _loc3_ = _loc4_[itemID];
@@ -686,7 +700,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
       }
       else
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < _loc4_.length)
          {
             _loc3_ = _loc4_[_loc2_];
@@ -699,7 +713,7 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    function HIGHLIGHT_ITEM(itemID)
    {
       var _loc2_ = this.model.getCurrentView().itemList;
-      var _loc3_ = undefined;
+      var _loc3_;
       if(itemID != undefined)
       {
          _loc3_ = _loc2_[itemID];
@@ -712,9 +726,10 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
       var _loc5_ = this.columnXPositions[columnId];
       this.REMOVE_COLUMN(columnId);
       var _loc3_ = ["COL_TYPE_LIST","COL_TYPE_BASIC_PAGE","COL_TYPE_LOAD_PROJ_INFO","COL_TYPE_IMG_PROJ_INFO","","","COL_TYPE_IMG_TWELVE","COL_TYPE_TEXT_PLACEMENT","COL_TYPE_LIST_LONG_AUDIO"];
+      var _loc6_;
       if(this.MOVIE_MODE == this.MOVIE_STATE_CLIP_PLAYBACK)
       {
-         var _loc6_ = Math.floor(this.safeTop + this.clip_edit_header._height);
+         _loc6_ = Math.floor(this.safeTop + this.clip_edit_header._height);
          this.model.createView(columnId,{id:columnId,x:0,y:_loc6_,rowSpacing:0,columnSpacing:0,container:_loc4_,visibleItems:this._visibleItems,selectstyle:2,linkage:[_loc3_[colTpye]]});
       }
       else
@@ -778,14 +793,16 @@ class com.rockstargames.gtav.ng.Replay.NEW_EDITOR extends com.rockstargames.ui.c
    {
       this._receivedColours = [];
       var _loc5_ = [com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREEN,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_ORANGE,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLUE];
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc6_ = _loc5_.length;
       _loc3_ = _loc6_;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_--)
       {
-         var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+         _loc2_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(_loc5_[_loc3_],_loc2_);
-         var _loc4_ = [_loc2_.r,_loc2_.g,_loc2_.b,_loc2_.a];
+         _loc4_ = [_loc2_.r,_loc2_.g,_loc2_.b,_loc2_.a];
          this._receivedColours[_loc3_] = _loc4_;
       }
    }

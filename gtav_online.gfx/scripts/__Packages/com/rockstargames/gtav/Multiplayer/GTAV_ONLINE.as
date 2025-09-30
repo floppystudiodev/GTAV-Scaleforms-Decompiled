@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.Multiplayer.GTAV_ONLINE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var NEWS_PLACEHOLDER_DESCRIPTION;
-   var alignmentType;
-   var gfxName;
-   var bigFeedFadeInDuration;
-   var bShowingLogo;
-   var CONTENT;
    var BIGFEED_HOLDER;
-   var TIMELINE;
    var BIGFEED_ITEM;
+   var CONTENT;
+   var NEWS_PLACEHOLDER_DESCRIPTION;
+   var TIMELINE;
+   var alignmentType;
+   var bShowingLogo;
+   var bigFeedFadeInDuration;
    var bodyIconsMC;
-   var imgLdr;
    var eContext;
+   var gfxName;
+   var imgLdr;
    var missionDetailsMC;
    var NEWS_CONTEXT_IMG = 0;
    var NEWS_CONTEXT_MODE_STATS = 1;
@@ -289,13 +289,16 @@ class com.rockstargames.gtav.Multiplayer.GTAV_ONLINE extends com.rockstargames.u
    function SET_DATA_SLOT(i)
    {
       com.rockstargames.ui.utils.Debug.log("GTAV_ONLINE.SET_DATA_SLOT(" + arguments + ")");
+      var _loc3_;
+      var _loc6_;
+      var _loc5_;
       if(this.eContext == this.NEWS_CONTEXT_MODE_STATS || this.eContext == this.NEWS_CONTEXT_CONTACT_STATS)
       {
-         var _loc3_ = this.BIGFEED_ITEM["statMC" + i];
+         _loc3_ = this.BIGFEED_ITEM["statMC" + i];
          if(!_loc3_)
          {
-            var _loc6_ = 21 + i % 3 * (this.STAT_ITEM_WIDTH + this.STAT_ITEM_PADDING_X);
-            var _loc5_ = 128 + Math.floor(i / 3) * (this.STAT_ITEM_HEIGHT + this.STAT_ITEM_PADDING_Y);
+            _loc6_ = 21 + i % 3 * (this.STAT_ITEM_WIDTH + this.STAT_ITEM_PADDING_X);
+            _loc5_ = 128 + Math.floor(i / 3) * (this.STAT_ITEM_HEIGHT + this.STAT_ITEM_PADDING_Y);
             _loc3_ = com.rockstargames.gtav.Multiplayer.items.TransitionNewsProgressItem(this.BIGFEED_ITEM.attachMovie("transitionNewsStatItem","statMC" + i,this.BIGFEED_ITEM.getNextHighestDepth(),{_x:_loc6_,_y:_loc5_}));
          }
          _loc3_.setData.apply(_loc3_,arguments);
@@ -308,10 +311,12 @@ class com.rockstargames.gtav.Multiplayer.GTAV_ONLINE extends com.rockstargames.u
    function SET_DATA_SLOT_EMPTY()
    {
       com.rockstargames.ui.utils.Debug.log("GTAV_ONLINE.SET_DATA_SLOT_EMPTY(" + arguments + ")");
+      var _loc4_;
+      var _loc3_;
       if(this.eContext == this.NEWS_CONTEXT_MODE_STATS || this.eContext == this.NEWS_CONTEXT_CONTACT_STATS)
       {
-         var _loc4_ = 0;
-         var _loc3_ = this.BIGFEED_ITEM["statMC" + _loc4_];
+         _loc4_ = 0;
+         _loc3_ = this.BIGFEED_ITEM["statMC" + _loc4_];
          while(_loc3_)
          {
             _loc3_.onCleanup();
@@ -327,10 +332,12 @@ class com.rockstargames.gtav.Multiplayer.GTAV_ONLINE extends com.rockstargames.u
    }
    function DISPLAY_VIEW(viewIndex, itemIndex)
    {
+      var _loc4_;
+      var _loc3_;
       if(this.eContext == this.NEWS_CONTEXT_MISSION_CARD)
       {
-         var _loc4_ = this.missionDetailsMC.model.getCurrentView().dataList.length;
-         var _loc3_ = _loc4_;
+         _loc4_ = this.missionDetailsMC.model.getCurrentView().dataList.length;
+         _loc3_ = _loc4_;
          while(_loc3_ < 10)
          {
             this.SET_DATA_SLOT(_loc3_,0,0,0,0,0," "," ");

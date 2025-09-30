@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.levelDesign.FEED_CREW_RANKUP extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var baseClassStrID;
    var emblemImg;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;

@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.NavigationElement extends com.rockstargames.gtav.minigames.horseracingconsole.Rect
 {
-   var _view;
-   var id;
-   var depth;
    var _enabled;
-   var left;
-   var right;
-   var top;
+   var _view;
    var bottom;
    var cx;
    var cy;
+   var depth;
+   var id;
+   var left;
+   var right;
+   var top;
    function NavigationElement(_view, id, label)
    {
       super();

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SignagePage extends com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var slideshow;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "DYN8_EXEC_DEFAULT";
    static var IMAGES = ["SIGNAGE_EXEC_RICH","SIGNAGE_EXEC_COOL","SIGNAGE_EXEC_CONTRAST","SIGNAGE_OLDSPICE_WARM","SIGNAGE_OLDSPICE_CLASSICAL","SIGNAGE_OLDSPICE_VINTAGE","SIGNAGE_POWER_ICE","SIGNAGE_POWER_CONSERVATIVE","SIGNAGE_POWER_POLISHED"];
    static var FONT_LABELS = ["DYN8_FONT_1","DYN8_FONT_2","DYN8_FONT_3","DYN8_FONT_4","DYN8_FONT_5","DYN8_FONT_6","DYN8_FONT_7","DYN8_FONT_8","DYN8_FONT_9","DYN8_FONT_10","DYN8_FONT_11","DYN8_FONT_12","DYN8_FONT_13"];
@@ -99,10 +99,12 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SignagePage extends com
    {
       this.view.colourButtons._y = this.view.fontSelect._y + this.view.fontSelect._height + 10;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < 8)
       {
-         var _loc4_ = this.view.colourButtons["colourButton_" + _loc2_];
-         var _loc3_ = com.rockstargames.gtav.web.dynasty8ExecutiveRealty.OrganisationNameColour.getColour(this.website.style,_loc2_);
+         _loc4_ = this.view.colourButtons["colourButton_" + _loc2_];
+         _loc3_ = com.rockstargames.gtav.web.dynasty8ExecutiveRealty.OrganisationNameColour.getColour(this.website.style,_loc2_);
          _loc4_.swatch.transform.colorTransform = new flash.geom.ColorTransform(0,0,0,1,_loc3_ >> 16 & 0xFF,_loc3_ >> 8 & 0xFF,_loc3_ & 0xFF,0);
          _loc4_.selected._visible = _loc2_ == this.website.colour;
          this.website.dataTextScope.push(_loc4_.btnTxt);
@@ -132,14 +134,17 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.SignagePage extends com
             this.updateColourSelect();
             this.updateFont();
             this.progressPanel.updateCosts();
+         default:
+            return;
       }
    }
    function updateColourSelect()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 8)
       {
-         var _loc3_ = this.view.colourButtons["colourButton_" + _loc2_];
+         _loc3_ = this.view.colourButtons["colourButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.colour;
          _loc2_ = _loc2_ + 1;
       }

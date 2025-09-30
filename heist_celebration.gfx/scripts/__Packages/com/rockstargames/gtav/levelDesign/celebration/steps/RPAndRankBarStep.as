@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.celebration.steps.RPAndRankBarStep extends com.rockstargames.gtav.levelDesign.celebration.steps.Step
 {
-   var repPointsGained;
-   var startRepPoints;
-   var minRepPointsForRank;
-   var maxRepPointsForRank;
+   var activeDecile;
+   var counterStep;
    var currentRank;
+   var height;
+   var initialised;
+   var maxRepPointsForRank;
+   var minRepPointsForRank;
    var nextRank;
    var rank1Txt;
    var rank2Txt;
-   var initialised;
-   var view;
+   var repPointsGained;
    var sequence;
-   var activeDecile;
+   var startRepPoints;
    var started;
-   var height;
-   var counterStep;
+   var view;
    static var RANKUP_SPIN_DURATION = com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.SPEED_MULTIPLIER * 0.4;
    function RPAndRankBarStep(sequence, repPointsGained, startRepPoints, minRepPointsForRank, maxRepPointsForRank, currentRank, nextRank, rank1Txt, rank2Txt)
    {
@@ -166,10 +166,11 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.RPAndRankBarStep exte
       {
          return undefined;
       }
+      var _loc2_;
       if(this.activeDecile < nextDecile)
       {
          this.view.content.rank.rankBar["sect" + this.activeDecile].gotoAndStop("normal");
-         var _loc2_ = this.activeDecile + 1;
+         _loc2_ = this.activeDecile + 1;
          while(_loc2_ <= nextDecile)
          {
             this.view.content.rank.rankBar["sect" + _loc2_]._alpha = 100;
@@ -184,7 +185,7 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.RPAndRankBarStep exte
    }
    function showRankUp()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.view.content.rankup.rankText;
       if(this.rank1Txt != undefined)
       {
@@ -208,10 +209,12 @@ class com.rockstargames.gtav.levelDesign.celebration.steps.RPAndRankBarStep exte
       {
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(_loc2_,"CELEB_RANK_UP_2",0,false);
       }
+      var _loc7_;
+      var _loc3_;
       if(_loc2_.textWidth > 650)
       {
-         var _loc7_ = !com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.IS_ASIAN ? 650 : 400;
-         var _loc3_ = 100 * _loc7_ / _loc2_.textWidth;
+         _loc7_ = !com.rockstargames.gtav.levelDesign.celebration.CelebrationSequence.IS_ASIAN ? 650 : 400;
+         _loc3_ = 100 * _loc7_ / _loc2_.textWidth;
          _loc2_._xscale = _loc2_._yscale = _loc3_;
          _loc2_._x += 0.1 * (100 - _loc3_);
          _loc2_._y += 0.6 * (100 - _loc3_);

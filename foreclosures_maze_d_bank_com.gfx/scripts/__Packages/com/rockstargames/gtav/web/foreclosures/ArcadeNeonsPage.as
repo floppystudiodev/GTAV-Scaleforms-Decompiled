@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
    var view;
+   var website;
    static var TXD = "FORECLOSURES_ARC";
    static var NUM_NEON_OPTIONS = 9;
    function ArcadeNeonsPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -60,8 +60,8 @@ class com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage extends com.rockst
    }
    function initOptionButtons()
    {
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
+      var _loc4_;
+      var _loc5_;
       if(this.website.arcadeStyle != 2)
       {
          _loc4_ = 1;
@@ -73,9 +73,10 @@ class com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage extends com.rockst
          _loc5_ = 1;
       }
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage.NUM_NEON_OPTIONS)
       {
-         var _loc2_ = this.view.optionButtons["optionButton_" + _loc3_];
+         _loc2_ = this.view.optionButtons["optionButton_" + _loc3_];
          _loc2_.swatch.gotoAndStop(_loc4_);
          _loc2_.selected._visible = false;
          this.website.dataTextScope.push(_loc2_.btnTxt);
@@ -87,24 +88,29 @@ class com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage extends com.rockst
    }
    function handleClick(type, id)
    {
+      var _loc2_;
+      var _loc3_;
       switch(type)
       {
          case "optionButton":
-            var _loc2_ = parseInt(id);
-            var _loc3_ = _loc2_ != this.website.arcadeNeon;
+            _loc2_ = parseInt(id);
+            _loc3_ = _loc2_ != this.website.arcadeNeon;
             this.website.arcadeNeon = _loc2_;
             this.updateSelectedItem(_loc3_);
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem(selectionHasChanged)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.foreclosures.ArcadeNeonsPage.NUM_NEON_OPTIONS)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.arcadeNeon;
          _loc2_ = _loc2_ + 1;
       }

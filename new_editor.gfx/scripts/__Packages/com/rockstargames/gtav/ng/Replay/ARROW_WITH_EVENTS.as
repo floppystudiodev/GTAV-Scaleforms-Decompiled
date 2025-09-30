@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.ng.Replay.ARROW_WITH_EVENTS extends MovieClip
 {
-   var myBtnType;
    var MOUSE_EVT;
+   var myBtnType;
    var SF_BASE_CLASS_MOUSE = 10;
    function ARROW_WITH_EVENTS()
    {

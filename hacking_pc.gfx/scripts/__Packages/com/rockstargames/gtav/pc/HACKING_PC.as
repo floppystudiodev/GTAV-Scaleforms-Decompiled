@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var desktopIconsList;
-   var buttonsList;
    var CONTENT;
-   var mouse;
-   var hackingLoading;
-   var hackingApp;
    var backgroundImage;
    var buttonUnderCursor;
+   var buttonsList;
+   var desktopIconsList;
+   var hackingApp;
+   var hackingLoading;
+   var mouse;
    var wallpaper_loader;
    var mouseSpeed = 15;
    var mouseSnapSpeed = 500;
@@ -158,19 +158,30 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    }
    function ADD_PROGRAM(i, enum, lbl)
    {
+      var _loc5_;
+      var _loc11_;
+      var _loc9_;
+      var _loc6_;
+      var _loc10_;
+      var _loc13_;
+      var _loc8_;
+      var _loc7_;
+      var _loc2_;
+      var _loc12_;
+      var _loc3_;
       if(enum != undefined)
       {
-         var _loc5_ = 6;
-         var _loc11_ = 6;
-         var _loc9_ = 168;
-         var _loc6_ = 200;
-         var _loc10_ = 56;
-         var _loc13_ = 104;
-         var _loc8_ = _loc13_ + _loc6_ * ((i - 1) % _loc11_);
-         var _loc7_ = _loc10_ + _loc9_ * Math.floor((i - 1) / _loc5_);
-         var _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
-         var _loc12_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc8_,_y:_loc7_});
-         var _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
+         _loc5_ = 6;
+         _loc11_ = 6;
+         _loc9_ = 168;
+         _loc6_ = 200;
+         _loc10_ = 56;
+         _loc13_ = 104;
+         _loc8_ = _loc13_ + _loc6_ * ((i - 1) % _loc11_);
+         _loc7_ = _loc10_ + _loc9_ * Math.floor((i - 1) / _loc5_);
+         _loc2_ = this.CONTENT.desktopMC.getNextHighestDepth();
+         _loc12_ = this.CONTENT.desktopMC.attachMovie("desktopicon","desktopicon" + _loc2_,_loc2_,{_x:_loc8_,_y:_loc7_});
+         _loc3_ = new com.rockstargames.gtav.pc.DesktopIcon();
          _loc3_.init(_loc12_,enum,{depth:i},i,lbl);
          this.desktopIconsList.push(_loc3_);
       }
@@ -189,9 +200,10 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    }
    function REMOVE_BUTTONS(m)
    {
+      var _loc2_;
       for(var _loc4_ in this.buttonsList)
       {
-         var _loc2_ = this.buttonsList[_loc4_];
+         _loc2_ = this.buttonsList[_loc4_];
          if(m == _loc2_)
          {
             this.buttonsList.splice(_loc4_,1);
@@ -205,10 +217,12 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    }
    function SET_CURSOR(vx, vy)
    {
+      var _loc3_;
+      var _loc2_;
       if(!this.isCentering)
       {
-         var _loc3_ = this.ratioGutter + this.screenWidthPixels * vx;
-         var _loc2_ = 720 * vy;
+         _loc3_ = this.ratioGutter + this.screenWidthPixels * vx;
+         _loc2_ = 720 * vy;
          this.mx = Math.max(this.ratioGutter,Math.min(_loc3_,this.ratioGutter + this.screenWidthPixels));
          this.my = Math.max(0,Math.min(_loc2_,720));
          this.mouse.moveCursor(this.mx,this.my);
@@ -288,11 +302,12 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    function testList(list)
    {
       var _loc5_ = false;
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc3_ = -1;
+      var _loc2_;
       for(var _loc7_ in list)
       {
-         var _loc2_ = list[_loc7_];
+         _loc2_ = list[_loc7_];
          if(_loc2_.active)
          {
             if(this.mouse.mc.hitMC.hitTest(_loc2_.mc))
@@ -369,8 +384,8 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    }
    function openApp(i)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       switch(i)
       {
          case com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING[0]:
@@ -418,6 +433,8 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
             {
                this.hackingApp.openApp02(true);
             }
+         default:
+            return;
       }
    }
    function closeApp(id)
@@ -426,9 +443,10 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    function setDesktopIconsActive(a)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.desktopIconsList.length)
       {
-         var _loc3_ = this.desktopIconsList[_loc2_];
+         _loc3_ = this.desktopIconsList[_loc2_];
          if(_loc3_.type == com.rockstargames.gtav.constants.PCAppLUT.PC_HACKING[0])
          {
             _loc3_.active = a;
@@ -456,13 +474,15 @@ class com.rockstargames.gtav.pc.HACKING_PC extends com.rockstargames.ui.core.Bas
    }
    function SET_LOADING_PROGRESS(percent, showPercent)
    {
+      var _loc3_;
+      var _loc2_;
       if(showPercent != undefined)
       {
          this.hackingPercentShow = Boolean(showPercent);
          if(this.hackingPercentShow)
          {
-            var _loc3_ = this.hackingLoading.innerMC.percentTF;
-            var _loc2_ = _loc3_.getTextFormat();
+            _loc3_ = this.hackingLoading.innerMC.percentTF;
+            _loc2_ = _loc3_.getTextFormat();
             _loc3_.text = String(percent) + "%";
             _loc3_.setTextFormat(_loc2_);
          }

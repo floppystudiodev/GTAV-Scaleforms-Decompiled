@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.nightclub.BarMeter
 {
+   var tweenArgs;
    var view;
    var xMin;
-   var tweenArgs;
    static var TWEEN_DURATION = 3;
    function BarMeter(view, label, forceLabelUpperCase, delay)
    {

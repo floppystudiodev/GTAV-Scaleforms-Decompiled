@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.securoserv.Button
 {
-   var id;
-   var view;
-   var depth;
+   var bottom;
    var currState;
+   var depth;
+   var id;
    var left;
    var right;
    var top;
-   var bottom;
+   var view;
    function Button(id, view, label, isStringLiteral)
    {
       this.id = id;

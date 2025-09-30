@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_TEXT_LIST_DOUBLE extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
-   var scrollMask;
-   var bgMC;
    var CONTENT;
-   var scrollableContent;
-   var model;
-   var titleHeight;
-   var columnIsFocused;
    var SEND_COLUMN_PARAMS;
+   var bgMC;
+   var columnIsFocused;
+   var dbgID;
+   var model;
+   var scrollMask;
+   var scrollableContent;
+   var titleHeight;
    function PAUSE_MENU_TEXT_LIST_DOUBLE()
    {
       super();

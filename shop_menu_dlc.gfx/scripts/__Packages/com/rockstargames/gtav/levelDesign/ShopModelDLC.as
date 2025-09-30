@@ -1,6 +1,10 @@
 class com.rockstargames.gtav.levelDesign.ShopModelDLC extends com.rockstargames.ui.components.GUIModel
 {
+   var __get__scrollBar;
    var _arrows;
+   var getCurrentView;
+   var viewIndex;
+   var viewList;
    function ShopModelDLC()
    {
       super();
@@ -27,9 +31,10 @@ class com.rockstargames.gtav.levelDesign.ShopModelDLC extends com.rockstargames.
    function setItem(_currentView, _itemIndex)
    {
       _currentView.index = _itemIndex;
+      var _loc3_;
       if(this.scrollBar != undefined)
       {
-         var _loc3_ = 100 * ((_currentView.maxitems - _currentView.visibleItems) / _currentView.maxitems);
+         _loc3_ = 100 * ((_currentView.maxitems - _currentView.visibleItems) / _currentView.maxitems);
          this.scrollBar.scrollpercent = _loc3_ * (_itemIndex / (_currentView.maxitems - 1));
       }
    }

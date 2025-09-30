@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var sizeText;
-   var labelMC;
+   var __get__data;
+   var _data;
+   var attachMovie;
    var bgMC;
    var blipLayer;
-   var itemTextLeft;
-   var _data;
-   var __get__data;
    var charImage;
-   var attachMovie;
    var getNextHighestDepth;
+   var itemTextLeft;
+   var labelMC;
+   var sizeText;
    static var DEFAULT_ITEM_HEIGHT = 52;
    static var IMAGE_X = 8;
    static var IMAGE_Y = 6;
@@ -35,6 +35,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem exte
       _loc6_.setTextWithIcons(this._data[0],this.blipLayer,this.itemTextLeft,0,13,4.5,false);
       var _loc3_ = this.data[1];
       var _loc4_ = this.data[2];
+      var _loc5_;
       if(_loc3_ == undefined && _loc4_ == undefined || _loc3_ == "" && _loc4_ == "")
       {
          if(this.charImage)
@@ -65,7 +66,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem exte
                this.charImage.removeTxdRef();
             }
             this.charImage.init("PAUSE_MENU_SP_CONTENT",_loc3_,_loc4_,com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem.IMAGE_W,com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuDialogueItem.IMAGE_H);
-            var _loc5_ = this.charImage.splitPath(String(this.charImage),5);
+            _loc5_ = this.charImage.splitPath(String(this.charImage),5);
             this.charImage.requestTxdRef(_loc5_,true,this.fadeImgIn,this);
          }
       }

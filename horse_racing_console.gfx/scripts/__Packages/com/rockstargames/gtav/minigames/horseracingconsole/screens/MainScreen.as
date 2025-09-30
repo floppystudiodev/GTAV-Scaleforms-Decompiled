@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.MainScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var currActiveElementID;
    var app;
-   var view;
-   var countdown;
-   var mainButton;
    var buttons;
-   var singleButton;
-   var rulesButton;
+   var countdown;
+   var currActiveElementID;
    var cursor;
+   var mainButton;
+   var rulesButton;
+   var singleButton;
+   var view;
    function MainScreen(app, viewContainer, cursor)
    {
       super(app,viewContainer,"mainScreen",cursor);
@@ -90,9 +90,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.MainScreen ext
       }
       this.currActiveElementID = activeElementID;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.view.gotoAndStop(_loc3_.id != activeElementID ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }

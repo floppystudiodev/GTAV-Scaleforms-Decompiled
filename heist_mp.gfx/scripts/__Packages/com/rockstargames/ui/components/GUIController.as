@@ -59,6 +59,8 @@ class com.rockstargames.ui.components.GUIController extends com.rockstargames.ui
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADLEFT:
             this.model.prevView();
+         default:
+            return;
       }
    }
 }

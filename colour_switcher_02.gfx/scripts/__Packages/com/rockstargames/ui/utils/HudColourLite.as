@@ -1,9 +1,9 @@
 class com.rockstargames.ui.utils.HudColourLite
 {
-   var r;
-   var g;
-   var b;
    var a;
+   var b;
+   var g;
+   var r;
    static var HUD_COLOUR_PURE_WHITE = 0;
    static var HUD_COLOUR_WHITE = 1;
    static var HUD_COLOUR_BLACK = 2;

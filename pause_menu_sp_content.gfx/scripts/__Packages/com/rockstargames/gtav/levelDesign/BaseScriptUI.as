@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.BaseScriptUI extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    function BaseScriptUI()
    {
       super();

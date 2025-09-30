@@ -50,6 +50,8 @@ class com.rockstargames.gtav.web.arena.pages.PropertyPurchasedPage extends com.r
             break;
          case "arenaReadyButton":
             this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES.ARENA_READY_VEHICLES_PAGE.name);
+         default:
+            return;
       }
    }
 }

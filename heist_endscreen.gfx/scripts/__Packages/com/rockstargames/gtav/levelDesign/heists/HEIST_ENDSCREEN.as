@@ -1,7 +1,5 @@
 class com.rockstargames.gtav.levelDesign.heists.HEIST_ENDSCREEN extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var pieColours;
-   var pieChart;
    var CONTENT;
    var percent1;
    var percent2;
@@ -12,6 +10,8 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_ENDSCREEN extends com.rock
    var percent7;
    var percent8;
    var percent9;
+   var pieChart;
+   var pieColours;
    var showNumbers = false;
    function HEIST_ENDSCREEN()
    {
@@ -45,7 +45,7 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_ENDSCREEN extends com.rock
    {
       var _loc3_ = new Array();
       _loc3_ = arguments;
-      var _loc10_ = undefined;
+      var _loc10_;
       var _loc6_ = this.pieChart.playerCutTF.getNewTextFormat();
       if(typeof _loc3_[0] == "number")
       {
@@ -67,11 +67,17 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_ENDSCREEN extends com.rock
          this.pieChart.cashTF.textAutoSize = "shrink";
          this.pieChart.cashTF.text = _loc3_[0];
       }
+      var _loc4_;
+      var _loc12_;
+      var _loc8_;
+      var _loc5_;
+      var _loc11_;
+      var _loc9_;
       if(_loc3_[1] != undefined)
       {
          this.pieChart.playerCutTF.textColor = 16777215;
          this.pieChart.playerCutTF.textAutoSize = "shrink";
-         var _loc4_ = _loc3_[1].toString();
+         _loc4_ = _loc3_[1].toString();
          if(_loc10_ == true)
          {
             this.pieChart.playerCutTF.text = _loc4_ + "%";
@@ -80,11 +86,10 @@ class com.rockstargames.gtav.levelDesign.heists.HEIST_ENDSCREEN extends com.rock
          {
             if(_loc4_.length > 3)
             {
-               var _loc12_ = _loc4_.length;
-               var _loc8_ = "";
-               var _loc5_ = _loc4_.slice(0,-3);
-               var _loc11_ = "," + _loc4_.slice(-3);
-               var _loc9_ = undefined;
+               _loc12_ = _loc4_.length;
+               _loc8_ = "";
+               _loc5_ = _loc4_.slice(0,-3);
+               _loc11_ = "," + _loc4_.slice(-3);
                if(_loc5_.length > 3)
                {
                   _loc8_ = _loc5_.slice(0,-3) + ",";

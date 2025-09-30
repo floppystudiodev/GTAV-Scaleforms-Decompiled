@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.web.TICKERTAPE extends MovieClip
 {
    var TICKER;
+   var onEnterFrame;
    var tickerText;
    var tickerTextDuplicate;
-   var onEnterFrame;
    function TICKERTAPE()
    {
       super();

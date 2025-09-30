@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_CASH extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var fadeState;
-   var isFadingOut;
-   var isFadingIn;
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
+   var _HUD;
+   var _enumID;
+   var bSettingSPCash;
    var defaultX;
    var defaultY;
-   var bSettingSPCash;
+   var fadeState;
+   var isFadingIn;
+   var isFadingOut;
    var stayOnForever;
-   var _enumID;
-   var _HUD;
    function HUD_CASH()
    {
       super();
@@ -128,7 +128,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_CASH extends com.rockstargame
    {
       var _loc3_ = params[0];
       var _loc4_ = params[1];
-      var _loc2_ = undefined;
+      var _loc2_;
       if(_loc4_)
       {
          _loc2_ = "+$";

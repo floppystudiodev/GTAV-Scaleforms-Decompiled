@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardPrep.ApproachGroup
 {
-   var view;
-   var itemLinkage;
-   var numCols;
    var colWidth;
-   var rowHeight;
-   var xOffset;
-   var yOffset;
+   var itemLinkage;
+   var items;
+   var numCols;
+   var numItems;
+   var randomR;
    var randomX;
    var randomY;
-   var randomR;
-   var items;
-   var numItems;
+   var rowHeight;
+   var view;
+   var xOffset;
+   var yOffset;
    static var BLUE = 2516626;
    static var BLACK = 0;
    static var BLUE_TRANSFORM = new flash.geom.ColorTransform(0,0,0,1,38,102,146,0);
@@ -122,12 +122,15 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardPrep.ApproachGroup
    function updateLayout()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       while(_loc2_ < this.numItems)
       {
-         var _loc3_ = this.items[_loc2_];
-         var _loc5_ = _loc2_ % this.numCols * this.colWidth + this.xOffset;
+         _loc3_ = this.items[_loc2_];
+         _loc5_ = _loc2_ % this.numCols * this.colWidth + this.xOffset;
          _loc3_._x = _loc5_;
-         var _loc4_ = Math.floor(_loc2_ / this.numCols) * this.rowHeight + this.yOffset;
+         _loc4_ = Math.floor(_loc2_ / this.numCols) * this.rowHeight + this.yOffset;
          _loc3_._y = _loc4_;
          _loc2_ = _loc2_ + 1;
       }

@@ -1,20 +1,21 @@
 class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
-   var inputReceived;
+   var cursor;
    var deactivated;
-   var launchTimestamp;
    var displayConfig;
    var imageManager;
-   var screenContainer;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
    var overlayOneButton;
-   var cursor;
    var overlayTwoButton;
-   var currScreen;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -66,7 +67,7 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
       com.rockstargames.ui.game.GameInterface.call("SET_DISPLAY_CONFIG",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,this.displayConfig);
       this.imageManager = new com.rockstargames.gtav.levelDesign.fixerApp.ui.ImageManager(this._name);
       this.screenContainer = this.CONTENT.createEmptyMovieClip("screenContainer",this.CONTENT.getNextHighestDepth());
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.CONTENT.attachMovie("overlayOneButton","overlayOneButton",this.CONTENT.getNextHighestDepth());
       this.overlayOneButton = new com.rockstargames.gtav.levelDesign.fixerApp.ui.Overlay(this,_loc2_,this.cursor);
       _loc2_ = this.CONTENT.attachMovie("overlayTwoButton","overlayTwoButton",this.CONTENT.getNextHighestDepth());
@@ -314,9 +315,10 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
    }
    function GET_CURRENT_SELECTION()
    {
+      var _loc2_;
       if(this.inputReceived)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          return !_loc2_ ? -1 : _loc2_.id;
       }
       return this.lastClickedButtonID;
@@ -337,6 +339,7 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
          return undefined;
       }
       this.inputReceived = true;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.fixerApp.ui.Cursor.UP:
@@ -346,7 +349,7 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
             this.cursor.snapInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.FIXER_APP.ACCEPT:
-            var _loc2_ = this.cursor.getTargetUnderCursor();
+            _loc2_ = this.cursor.getTargetUnderCursor();
             this.lastClickedButtonID = !_loc2_ ? -1 : _loc2_.id;
       }
       this.currScreen.handleButtonInput(inputID);
@@ -442,17 +445,20 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth >= tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -491,9 +497,10 @@ class com.rockstargames.gtav.levelDesign.FIXER_APP extends com.rockstargames.ui.
    }
    static function resizeAsianText(tf)
    {
+      var _loc2_;
       if(!tf.hasResizedAsianText)
       {
-         var _loc2_ = tf.getNewTextFormat();
+         _loc2_ = tf.getNewTextFormat();
          _loc2_.size *= 0.8;
          tf.setTextFormat(_loc2_);
          tf.setNewTextFormat(_loc2_);

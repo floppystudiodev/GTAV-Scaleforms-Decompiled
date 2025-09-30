@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.Status
 {
+   var highlight;
    var index;
    var view;
-   var highlight;
    static var FADE_IN_SPEED = 0.3;
    static var FADE_IN_OFFSET = 0.1;
    static var POSITIONS = [];

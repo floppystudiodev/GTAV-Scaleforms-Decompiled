@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.ExpansionFloorB2Page extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var view;
+   var website;
    function ExpansionFloorB2Page(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"expansionFloorPage",pageName,isFirstPage,progressPanel);
@@ -61,9 +61,11 @@ class com.rockstargames.gtav.web.arena.pages.ExpansionFloorB2Page extends com.ro
    }
    function initButtons()
    {
+      var _loc3_;
+      var _loc2_;
       if(this.website.expansionFloorB1Option > 0)
       {
-         var _loc3_ = this.view.buttons.selectionButton;
+         _loc3_ = this.view.buttons.selectionButton;
          _loc3_.onColour = 16777215;
          _loc3_.offColour = 16777215;
          _loc3_.btnTxt.text = com.rockstargames.gtav.web.WWW_ARENAWAR_TV.setLocalisedText(_loc3_.btnTxt,"MBA_FLOOR_B2").toUpperCase();
@@ -72,7 +74,7 @@ class com.rockstargames.gtav.web.arena.pages.ExpansionFloorB2Page extends com.ro
          {
             com.rockstargames.gtav.web.WWW_ARENAWAR_TV.resizeAsianText(_loc3_.btnTxt);
          }
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < com.rockstargames.gtav.web.WWW_ARENAWAR_TV.NUM_EXPANSION_OPTIONS)
          {
             _loc3_ = this.view.buttons["optionButton_" + _loc2_];
@@ -137,13 +139,15 @@ class com.rockstargames.gtav.web.arena.pages.ExpansionFloorB2Page extends com.ro
    }
    function updateView()
    {
+      var _loc3_;
+      var _loc2_;
       if(this.website.expansionFloorB1Option > 0)
       {
-         var _loc3_ = this.view.buttons.selectionButton;
+         _loc3_ = this.view.buttons.selectionButton;
          _loc3_.selected._visible = this.website.expansionFloorB2Option > 0;
          _loc3_.disabled = this.website.purchasedExpansionFloorB2Option > 0;
          this.view.buttons.cross._visible = this.website.expansionFloorB2Option > 0;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < com.rockstargames.gtav.web.WWW_ARENAWAR_TV.NUM_EXPANSION_OPTIONS)
          {
             _loc3_ = this.view.buttons["optionButton_" + _loc2_];

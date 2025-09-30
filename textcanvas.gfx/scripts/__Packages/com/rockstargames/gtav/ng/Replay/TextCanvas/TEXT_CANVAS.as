@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.ng.Replay.TextCanvas.TEXT_CANVAS extends MovieClip
 {
    var TIMELINE;
-   var _movieWidth;
-   var _movieHeight;
    var _currentTemplate;
    var _currentTemplateId;
    var _customTemplate;
+   var _movieHeight;
+   var _movieWidth;
    function TEXT_CANVAS()
    {
       super();
@@ -39,16 +39,17 @@ class com.rockstargames.gtav.ng.Replay.TextCanvas.TEXT_CANVAS extends MovieClip
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.TEXT:
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.FONT:
             this._currentTemplate.updatePropertyWithString(_loc5_,_loc4_,_loc3_[2]);
-            break;
+            return;
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.POSITION_X:
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.POSITION_Y:
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.SCALE:
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.OPACITY:
          case com.rockstargames.gtav.ng.Replay.TextCanvas.types.PropertyTypes.COLOUR:
             this._currentTemplate.updatePropertyWithNumber(_loc5_,_loc4_,_loc3_[2]);
-            break;
+            return;
          default:
             com.rockstargames.ui.utils.Debug.log("~~ ERROR: TextCanvas couldn\'t match Id: " + _loc4_ + " with data: " + _loc3_[2]);
+            return;
       }
    }
    function END_SETUP_TEMPLATE()

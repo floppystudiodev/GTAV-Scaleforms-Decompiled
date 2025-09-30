@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.minigames.horseracingwall.Countdown
 {
-   var view;
    var digits;
    var firstRun;
+   var view;
    static var MIN = 0;
    static var MAX = 3599;
    static var NUM_DIGITS = 4;

@@ -1,16 +1,28 @@
 class com.rockstargames.gtav.web.BrowserKeyboard extends com.rockstargames.ui.core.BrowserUIComponent
 {
-   var keysArray;
+   var HIDE;
+   var __get__numberOfColumns;
+   var __get__offsetX;
+   var __get__offsetY;
+   var __get__primaryColour;
+   var __get__rowSpace;
+   var __get__secondaryColour;
+   var __set__currentSelection;
+   var __set__numberOfColumns;
+   var __set__offsetX;
+   var _columnSpace;
+   var _inputButton;
    var charsArray;
    var col;
-   var row;
-   var key;
-   var dataProviderUI;
    var container;
-   var keySpacing;
    var currentKey;
+   var dataProviderUI;
+   var key;
+   var keySpacing;
+   var keysArray;
+   var offsetX;
    var previousKey;
-   var _inputButton;
+   var row;
    var standardWidth = 48;
    var doubleWidth = 100;
    var _numberOfRows = 5;
@@ -48,11 +60,13 @@ class com.rockstargames.gtav.web.BrowserKeyboard extends com.rockstargames.ui.co
       var _loc5_ = this.offsetX;
       var _loc4_ = 0;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc6_;
       while(_loc3_ < this.dataProviderUI.length)
       {
          if(this.dataProviderUI[_loc3_] != ">")
          {
-            var _loc2_ = this.col + "_" + this.row;
+            _loc2_ = this.col + "_" + this.row;
             if(this.container[_loc2_] != undefined)
             {
                this.container[_loc2_].removeMovieClip();
@@ -73,7 +87,7 @@ class com.rockstargames.gtav.web.BrowserKeyboard extends com.rockstargames.ui.co
             this.setState(this.container[_loc2_],false);
             _loc5_ += _loc4_ + this.columnSpace;
             this.container[_loc2_]._x = _loc5_;
-            var _loc6_ = (this.container[_loc2_]._height + this.rowSpace) * this.row + this.offsetY;
+            _loc6_ = (this.container[_loc2_]._height + this.rowSpace) * this.row + this.offsetY;
             this.container[_loc2_]._y = _loc6_;
             if(this.dataProviderUI[_loc3_] == "BACKSPACE")
             {

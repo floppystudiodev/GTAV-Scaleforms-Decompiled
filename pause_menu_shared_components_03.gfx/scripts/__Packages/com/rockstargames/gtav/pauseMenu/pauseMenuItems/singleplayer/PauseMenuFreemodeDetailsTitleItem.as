@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeDetailsTitleItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextLeft;
    var __get__data;
-   var labelMC;
-   var bgMC;
    var _highlighted;
+   var bgMC;
+   var itemTextLeft;
+   var labelMC;
    var height = 28;
    function PauseMenuFreemodeDetailsTitleItem()
    {

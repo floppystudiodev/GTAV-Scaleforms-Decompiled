@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter
 {
-   var view;
-   var maxWidth;
-   var startValue;
    var currValue;
    var goalValue;
+   var maxWidth;
+   var startValue;
    var tweenStartTimestamp;
+   var view;
    static var MIN_WIDTH = 26;
    static var MAX_WIDTH = 300;
    static var TWEEN_DURATION = 1;
@@ -28,10 +28,11 @@ class com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter
    {
       this.startValue = this.currValue;
       this.goalValue = Math.round(Math.max(0,Math.min(100,value)));
+      var _loc2_;
       if(this.goalValue != this.startValue)
       {
          this.tweenStartTimestamp = getTimer();
-         var _loc2_ = Math.max(com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter.MIN_WIDTH,0.01 * this.goalValue * this.maxWidth);
+         _loc2_ = Math.max(com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter.MIN_WIDTH,0.01 * this.goalValue * this.maxWidth);
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.view.bar,com.rockstargames.gtav.levelDesign.securoserv.CapacityMeter.TWEEN_DURATION,{_width:_loc2_,ease:com.rockstargames.ui.tweenStar.Ease.QUADRATIC_INOUT});
          this.updateLabel();
       }

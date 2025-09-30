@@ -1,11 +1,12 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_BASIC_PAGE extends com.rockstargames.gtav.ng.Replay.ReplayBaseItem
 {
-   var myHeight;
-   var bgMC;
-   var hudColourBlack;
    var APP_DATA;
+   var BLACK_ALPHA;
+   var bgMC;
    var blipLayer;
+   var hudColourBlack;
    var labelMC;
+   var myHeight;
    function COL_TYPE_BASIC_PAGE()
    {
       super();

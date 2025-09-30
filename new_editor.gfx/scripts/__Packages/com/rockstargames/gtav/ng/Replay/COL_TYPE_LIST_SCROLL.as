@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_SCROLL extends MovieClip
 {
-   var myBtnType;
    var MOUSE_EVT;
    var _downMC;
-   var upDownMC;
    var _upMC;
    var bgMC;
+   var myBtnType;
    var scrollPosTextfield;
+   var upDownMC;
    static var DIRECTION_UP = 1;
    static var DIRECTION_DOWN = 0;
    var SF_BASE_CLASS_MOUSE = 10;

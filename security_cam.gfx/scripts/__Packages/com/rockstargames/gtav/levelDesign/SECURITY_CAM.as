@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.SECURITY_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
+   var CONTENT;
+   var camMC;
+   var extraMC;
+   var innerFrameMC;
    var layoutType;
-   var timeMC;
    var locationMC;
    var outerFrameMC;
-   var innerFrameMC;
-   var extraMC;
-   var camMC;
-   var CONTENT;
+   var timeMC;
    static var CAMERA_TYPE_SECURITY = 0;
    static var CAMERA_TYPE_DSLR = 1;
    var szone = 0;
@@ -26,12 +26,16 @@ class com.rockstargames.gtav.levelDesign.SECURITY_CAM extends com.rockstargames.
       var _loc3_ = 0;
       var _loc2_ = 0;
       this.isWideScreen = _isWideScreen;
+      var _loc7_;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
       if(!this.isWideScreen)
       {
-         var _loc7_ = 1.7777777777777777;
-         var _loc6_ = 1.3333333333333333;
-         var _loc4_ = 1280;
-         var _loc5_ = 720;
+         _loc7_ = 1.7777777777777777;
+         _loc6_ = 1.3333333333333333;
+         _loc4_ = 1280;
+         _loc5_ = 720;
          _loc3_ = (_loc4_ - Math.round(_loc4_ / _loc7_ * _loc6_)) / 2;
          _loc2_ = 0;
          this.screenWidthPixels = _loc4_ - _loc3_ * 2;
@@ -63,7 +67,7 @@ class com.rockstargames.gtav.levelDesign.SECURITY_CAM extends com.rockstargames.
             this.innerFrameMC._width = this.outerFrameMC._width / 3;
             this.innerFrameMC._height = this.outerFrameMC._height / 3;
             this.positionToScreenLayout(this.innerFrameMC,"CC",true);
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.SECURITY_CAM.CAMERA_TYPE_SECURITY:
          default:
             this.timeMC._x = this.safeLeft;
@@ -72,6 +76,7 @@ class com.rockstargames.gtav.levelDesign.SECURITY_CAM extends com.rockstargames.
             this.locationMC._y = this.safeTop;
             this.extraMC._x = this.safeRight - this.extraMC._width;
             this.extraMC._y = !this.locationMC._visible ? this.safeTop : this.safeTop + this.locationMC.bgMC._height + 4;
+            return;
       }
    }
    function SET_LAYOUT(type)
@@ -130,11 +135,13 @@ class com.rockstargames.gtav.levelDesign.SECURITY_CAM extends com.rockstargames.
    }
    function SET_TIME(hh, mm, ss, tt)
    {
+      var _loc6_;
+      var _loc5_;
       if(arguments.length > 0)
       {
          this.timeMC._visible = true;
-         var _loc6_ = hh <= 9 ? "0" + hh : String(hh);
-         var _loc5_ = mm <= 9 ? "0" + mm : String(mm);
+         _loc6_ = hh <= 9 ? "0" + hh : String(hh);
+         _loc5_ = mm <= 9 ? "0" + mm : String(mm);
          this.timeMC.hh.htmlText = _loc6_;
          this.timeMC.mm.htmlText = _loc5_;
          if(tt != undefined)

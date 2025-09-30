@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter
 {
-   var view;
-   var value;
    var isCharging;
+   var value;
+   var view;
    static var CHARGING_COLOR_TRANSFORM = new flash.geom.ColorTransform(0,0,0,1,153,0,0,0);
    static var READY_COLOR_TRANSFORM = new flash.geom.ColorTransform(0,0,0,1,0,153,51,0);
    static var TITLE_LETTER_SPACING = 3;
@@ -43,6 +43,7 @@ class com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter
    function set chargePercent(percent)
    {
       var _loc2_ = percent >= 0 ? (percent <= 100 ? Math.round(percent) : 100) : 0;
+      var _loc3_;
       if(_loc2_ != this.value)
       {
          if(_loc2_ == 0)
@@ -55,7 +56,7 @@ class com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter
             if(this.altReady.length > 0)
             {
                this.view.state.text = this.altReady;
-               var _loc3_ = this.view.state.getNewTextFormat();
+               _loc3_ = this.view.state.getNewTextFormat();
                _loc3_.letterSpacing = com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter.STATE_LETTER_SPACING;
                this.view.state.setTextFormat(_loc3_);
             }
@@ -84,12 +85,13 @@ class com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter
    function overrideReadyLabel(altReady)
    {
       this.altReady = altReady;
+      var _loc2_;
       if(this.view.bar._xscale == 100)
       {
          if(altReady.length > 0)
          {
             this.view.state.text = altReady;
-            var _loc2_ = this.view.state.getNewTextFormat();
+            _loc2_ = this.view.state.getNewTextFormat();
             _loc2_.letterSpacing = com.rockstargames.gtav.levelDesign.droneCam.ChargingMeter.STATE_LETTER_SPACING;
             this.view.state.setTextFormat(_loc2_);
          }

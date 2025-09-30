@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewRankItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var itemTextLeft;
-   var labelMC;
-   var itemTextRight;
-   var _data;
    var __get__data;
-   var rpMC;
-   var bgMC;
+   var _data;
    var _highlighted;
+   var bgMC;
+   var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var rpMC;
    var type;
    function PauseMenuCrewRankItem()
    {
@@ -31,9 +31,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrew
    {
       super.highlighted = _h;
       com.rockstargames.ui.utils.Colour.ApplyHudColour(this.rpMC.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE);
+      var _loc3_;
       if(this.bgMC)
       {
-         var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+         _loc3_ = new com.rockstargames.ui.utils.HudColour();
          if(_h)
          {
             com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,_loc3_);

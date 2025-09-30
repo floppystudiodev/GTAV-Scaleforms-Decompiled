@@ -1,9 +1,11 @@
 class com.rockstargames.gtav.levelDesign.FEED_AWARD extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
-   var imgMC;
+   var baseClassStrID;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
+   var imgMC;
+   var returnPathLvl;
    function FEED_AWARD()
    {
       super();

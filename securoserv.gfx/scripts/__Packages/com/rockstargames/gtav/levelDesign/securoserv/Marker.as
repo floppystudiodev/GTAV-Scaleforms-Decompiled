@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.securoserv.Marker extends com.rockstargames.gtav.levelDesign.securoserv.Button
 {
-   var view;
-   var previousMeterScale;
-   var left;
-   var right;
-   var top;
    var bottom;
    var currState;
+   var left;
+   var previousMeterScale;
+   var right;
+   var top;
+   var view;
    function Marker(id, view)
    {
       super(id,view);

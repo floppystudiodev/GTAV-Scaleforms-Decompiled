@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.SHOP_MENU extends com.rockstargames.ui.components.GUIController
 {
-   var model;
    var CONTENT;
+   var model;
    var scrollBar;
    var timerDelay = 0;
    var yOffset = 82;
@@ -115,6 +115,8 @@ class com.rockstargames.gtav.levelDesign.SHOP_MENU extends com.rockstargames.ui.
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADDOWN:
             this.model.nextItem();
+         default:
+            return;
       }
    }
 }

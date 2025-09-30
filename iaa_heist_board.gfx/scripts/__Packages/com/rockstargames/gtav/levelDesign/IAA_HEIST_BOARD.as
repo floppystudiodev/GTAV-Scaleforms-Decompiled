@@ -1,29 +1,30 @@
 class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var navigation;
-   var totalCash;
-   var setupLockedStat;
-   var setupCompleteStat;
-   var navigationEnabled;
-   var state;
-   var map;
-   var textPrintManager;
-   var spyCams;
-   var loading;
-   var setupMissions;
-   var replayMissions;
-   var launchMission;
-   var finalePlayers;
-   var finalePlayerCards;
-   var finaleStatuses;
+   var TIMELINE;
+   var _name;
    var cashDistributionPanel;
-   var planScroller;
    var finaleLaunchButton;
-   static var imageManager;
+   var finalePlayerCards;
+   var finalePlayers;
+   var finaleStatuses;
+   var launchMission;
+   var loading;
+   var map;
+   var navigation;
+   var navigationEnabled;
+   var planScroller;
+   var replayMissions;
+   var setupCompleteStat;
+   var setupLockedStat;
+   var setupMissions;
+   var spyCams;
+   var state;
+   var textPrintManager;
+   var totalCash;
    static var displayConfig;
+   static var imageManager;
    static var STATE_NULL = -1;
    static var STATE_LOADING = 0;
    static var STATE_SETUP = 1;
@@ -147,10 +148,11 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       this.navigation.reset();
       this.CONTENT.gotoAndStop("setup");
       this.setLocalisedText(this.CONTENT.missionTitle,"IAA_MISSION");
+      var _loc4_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
          this.CONTENT.missionTitle._y = this.CONTENT.missionTitleBG._y - 6;
-         var _loc4_ = this.CONTENT.missionTitle.getTextFormat();
+         _loc4_ = this.CONTENT.missionTitle.getTextFormat();
          _loc4_.size = 18;
          this.CONTENT.missionTitle.setTextFormat(_loc4_);
          this.CONTENT.missionTitle.verticalAlign = "bottom";
@@ -218,10 +220,11 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       this.navigation.reset();
       this.CONTENT.gotoAndStop("replay");
       this.setLocalisedText(this.CONTENT.missionTitle,"IAA_MISSION");
+      var _loc3_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
          this.CONTENT.missionTitle._y = this.CONTENT.missionTitleBG._y - 6;
-         var _loc3_ = this.CONTENT.missionTitle.getTextFormat();
+         _loc3_ = this.CONTENT.missionTitle.getTextFormat();
          _loc3_.size = 18;
          this.CONTENT.missionTitle.setTextFormat(_loc3_);
          this.CONTENT.missionTitle.verticalAlign = "bottom";
@@ -279,10 +282,11 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       this.CONTENT.gotoAndStop("launch");
       this.launchMission.init(0,missionName,description,cost,texture,false,txd);
       this.setLocalisedText(this.CONTENT.missionTitle,"IAA_MISSION");
+      var _loc3_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
          this.CONTENT.missionTitle._y = this.CONTENT.missionTitleBG._y - 6;
-         var _loc3_ = this.CONTENT.missionTitle.getTextFormat();
+         _loc3_ = this.CONTENT.missionTitle.getTextFormat();
          _loc3_.size = 18;
          this.CONTENT.missionTitle.setTextFormat(_loc3_);
          this.CONTENT.missionTitle.verticalAlign = "bottom";
@@ -339,10 +343,11 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       this.navigation.reset();
       this.CONTENT.gotoAndStop("finale");
       this.setLocalisedText(this.CONTENT.missionTitle,"IAA_MISSION");
+      var _loc6_;
       if(com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.displayConfig.isAsian)
       {
          this.CONTENT.missionTitle._y = this.CONTENT.missionTitleBG._y - 6;
-         var _loc6_ = this.CONTENT.missionTitle.getTextFormat();
+         _loc6_ = this.CONTENT.missionTitle.getTextFormat();
          _loc6_.size = 18;
          this.CONTENT.missionTitle.setTextFormat(_loc6_);
          this.CONTENT.missionTitle.verticalAlign = "bottom";
@@ -440,14 +445,18 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    function PULSE_ELEMENT(elementID)
    {
       var _loc6_ = 0;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       while(_loc6_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_SETUP_MISSIONS)
       {
-         var _loc5_ = this.setupMissions[_loc6_];
-         var _loc2_ = 0;
-         var _loc4_ = _loc5_.activeNavigationElements.length;
+         _loc5_ = this.setupMissions[_loc6_];
+         _loc2_ = 0;
+         _loc4_ = _loc5_.activeNavigationElements.length;
          while(_loc2_ < _loc4_)
          {
-            var _loc3_ = _loc5_.activeNavigationElements[_loc2_];
+            _loc3_ = _loc5_.activeNavigationElements[_loc2_];
             if(_loc3_.id == elementID)
             {
                _loc3_.view._parent.pulse.gotoAndPlay("pulsing");
@@ -469,9 +478,10 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       var _loc4_ = 0;
       var _loc6_ = 0;
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_SETUP_MISSIONS)
       {
-         var _loc2_ = this.setupMissions[_loc3_];
+         _loc2_ = this.setupMissions[_loc3_];
          _loc2_.updateHighlights(this.navigation.getActiveElementID());
          if(_loc2_.isInUse)
          {
@@ -512,9 +522,10 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    {
       var _loc3_ = this.finalePlayers[index];
       _loc3_.role = role;
+      var _loc2_;
       if(this.state == com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.STATE_FINALE)
       {
-         var _loc2_ = this.finalePlayerCards[index];
+         _loc2_ = this.finalePlayerCards[index];
          _loc2_.updateRole(role);
       }
    }
@@ -522,9 +533,10 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    {
       var _loc3_ = this.finalePlayers[index];
       _loc3_.isReady = isReady;
+      var _loc6_;
       if(this.state == com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.STATE_FINALE)
       {
-         var _loc6_ = this.finaleStatuses[index];
+         _loc6_ = this.finaleStatuses[index];
          _loc6_.updateStatus(isReady);
       }
       var _loc4_ = 0;
@@ -570,14 +582,16 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
       }
       this.totalCash = player0Cash + player1Cash + player2Cash + player3Cash + unassignedCash;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc5_;
       while(_loc3_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_FINALE_PLAYERS)
       {
-         var _loc4_ = this.finalePlayers[_loc3_];
+         _loc4_ = this.finalePlayers[_loc3_];
          _loc4_.cash = arguments[_loc3_];
          _loc4_.percentage = this.totalCash != 0 ? Math.round(100 * arguments[_loc3_] / this.totalCash) : 0;
          if(this.state == com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.STATE_FINALE)
          {
-            var _loc5_ = this.finalePlayerCards[_loc3_];
+            _loc5_ = this.finalePlayerCards[_loc3_];
             _loc5_.updateCashAndPercentage(_loc4_.cash,_loc4_.percentage);
          }
          _loc3_ = _loc3_ + 1;
@@ -598,10 +612,11 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    }
    function UPDATE_FINALE_PLAN()
    {
+      var _loc3_;
       if(this.planScroller)
       {
          this.planScroller.removeAllItems();
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < arguments.length)
          {
             this.planScroller.addItem(arguments[_loc3_]);
@@ -744,16 +759,20 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    {
       var _loc7_ = -1;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_FINALE_PLAYERS)
       {
-         var _loc3_ = this.finalePlayers[_loc2_];
-         var _loc5_ = this.finalePlayerCards[_loc2_];
-         var _loc6_ = this.finaleStatuses[_loc2_];
+         _loc3_ = this.finalePlayers[_loc2_];
+         _loc5_ = this.finalePlayerCards[_loc2_];
+         _loc6_ = this.finaleStatuses[_loc2_];
          if(_loc3_.isEnabled)
          {
             _loc7_ = _loc7_ + 1;
          }
-         var _loc4_ = Math.max(0,_loc7_);
+         _loc4_ = Math.max(0,_loc7_);
          _loc5_.update(_loc3_,_loc4_);
          _loc6_.update(_loc3_,_loc4_);
          _loc2_ = _loc2_ + 1;
@@ -776,11 +795,14 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    {
       var _loc4_ = [];
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_FINALE_PLAYERS)
       {
-         var _loc3_ = this.finalePlayerCards[_loc2_];
-         var _loc5_ = this.finalePlayers[_loc2_];
-         var _loc6_ = this.finaleStatuses[_loc2_];
+         _loc3_ = this.finalePlayerCards[_loc2_];
+         _loc5_ = this.finalePlayers[_loc2_];
+         _loc6_ = this.finaleStatuses[_loc2_];
          if(isLeader)
          {
             _loc4_.push(_loc3_.roleHighlight);
@@ -809,9 +831,10 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
          _loc4_ = 0;
       }
       var _loc3_ = this.navigation.getElementByID(_loc4_);
+      var _loc2_;
       if(_loc3_ == null || !_loc3_.enabled)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < 4)
          {
             _loc4_ = com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_ROLE"];
@@ -829,12 +852,15 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    {
       var _loc7_ = -1;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc6_;
+      var _loc5_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD.MAX_FINALE_PLAYERS)
       {
-         var _loc3_ = activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_ROLE"] || activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_CASH"] || activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_STATUS"];
-         var _loc6_ = this.finalePlayers[_loc2_];
+         _loc3_ = activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_ROLE"] || activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_CASH"] || activeElementID == com.rockstargames.gtav.levelDesign.iaaHeistBoard.NavigationIDs["FINALE_PLAYER_" + _loc2_ + "_STATUS"];
+         _loc6_ = this.finalePlayers[_loc2_];
          _loc6_.isActive = _loc3_;
-         var _loc5_ = this.finalePlayerCards[_loc2_];
+         _loc5_ = this.finalePlayerCards[_loc2_];
          _loc5_.updateActiveState(_loc3_);
          _loc5_.updateSelectHighlights(activeElementID);
          if(_loc3_)
@@ -867,9 +893,10 @@ class com.rockstargames.gtav.levelDesign.IAA_HEIST_BOARD extends com.rockstargam
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

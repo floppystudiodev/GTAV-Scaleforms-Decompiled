@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.cellphone.apps.HOMEMENU_FACADE extends MovieClip
 {
    var CONTENT;
+   var cameraItem;
    var container;
-   var dataProviderUI;
-   var currentStyle;
-   var whiteRGB;
    var currentID;
    var currentKey;
+   var currentStyle;
+   var dataProviderUI;
    var previousKey;
-   var cameraItem;
+   var whiteRGB;
    var numberOfRows = 3;
    var numberOfColumns = 3;
    var currentSelection = -1;
@@ -33,17 +33,19 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_FACADE extends MovieClip
       {
          this.currentID = 4;
       }
-      var _loc6_ = undefined;
-      var _loc10_ = undefined;
+      var _loc6_;
+      var _loc10_;
       var _loc9_ = 0;
-      var _loc5_ = undefined;
+      var _loc5_;
       var _loc4_ = 1;
       var _loc8_ = 1;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc7_;
       while(_loc3_ < 9)
       {
-         var _loc2_ = _loc4_ + "_" + _loc8_;
-         var _loc7_ = "c" + _loc4_ + "_" + _loc8_;
+         _loc2_ = _loc4_ + "_" + _loc8_;
+         _loc7_ = "c" + _loc4_ + "_" + _loc8_;
          if(this.container[_loc7_])
          {
             this.container[_loc7_]._name = _loc2_;
@@ -157,13 +159,14 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_FACADE extends MovieClip
    }
    function setIcon(target, menuIconFrameEnum, iconAlpha)
    {
+      var _loc4_;
       if(target != undefined)
       {
          if(iconAlpha == undefined)
          {
             iconAlpha = 100;
          }
-         var _loc4_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
+         _loc4_ = com.rockstargames.gtav.cellphone.IconLabels.lookUp(menuIconFrameEnum);
          target.homeMenuIcons.gotoAndStop(_loc4_[1]);
          target.homeMenuIcons._alpha = iconAlpha;
          if(menuIconFrameEnum == 1)
@@ -174,9 +177,10 @@ class com.rockstargames.gtav.cellphone.apps.HOMEMENU_FACADE extends MovieClip
    }
    function setState(item, isActive)
    {
+      var _loc3_;
       if(item != undefined)
       {
-         var _loc3_ = item.homeMenuIcons._alpha;
+         _loc3_ = item.homeMenuIcons._alpha;
          if(isActive)
          {
             com.rockstargames.ui.utils.Colour.Colourise(item.background,this.whiteRGB[0],this.whiteRGB[1],this.whiteRGB[1],100);

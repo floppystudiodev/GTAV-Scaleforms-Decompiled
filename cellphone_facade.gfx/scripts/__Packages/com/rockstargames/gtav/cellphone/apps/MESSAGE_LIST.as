@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var headerTextFormat;
-   var gamertagTextFormat;
-   var dataProviderUI;
-   var linkageID;
    var CONTENT;
-   var gfxFileName;
-   var scrollBar;
-   var row;
+   var TextBlackHex;
+   var TextWhiteHex;
    var container;
    var currentStyle;
-   var whiteRGB;
-   var TextWhiteHex;
-   var offWhiteRGB;
    var darkGreyRGB;
-   var TextBlackHex;
+   var dataProviderUI;
+   var gamertagTextFormat;
+   var gfxFileName;
+   var headerTextFormat;
+   var linkageID;
+   var offWhiteRGB;
+   var row;
+   var scrollBar;
+   var whiteRGB;
    function MESSAGE_LIST()
    {
       super();
@@ -48,12 +48,23 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
       this.row = 1;
       var _loc4_ = 0;
       var _loc14_ = 0;
+      var _loc6_;
+      var _loc3_;
+      var _loc8_;
+      var _loc7_;
+      var _loc13_;
+      var _loc10_;
+      var _loc2_;
+      var _loc12_;
+      var _loc5_;
+      var _loc11_;
+      var _loc9_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc6_ = 0;
+         _loc6_ = 0;
          while(_loc6_ < this.numberOfVisibleRows)
          {
-            var _loc3_ = "listItem" + this.row;
+            _loc3_ = "listItem" + this.row;
             if(_loc6_ + this.arrayStartPoint >= this.dataProviderUI.length)
             {
                _loc4_ = _loc14_;
@@ -63,12 +74,9 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
             {
                _loc4_ = _loc6_ + this.arrayStartPoint;
             }
-            var _loc8_ = String(this.dataProviderUI[_loc4_][0]);
-            var _loc7_ = String(this.dataProviderUI[_loc4_][1]);
-            var _loc13_ = undefined;
-            var _loc10_ = undefined;
-            var _loc2_ = undefined;
-            var _loc12_ = false;
+            _loc8_ = String(this.dataProviderUI[_loc4_][0]);
+            _loc7_ = String(this.dataProviderUI[_loc4_][1]);
+            _loc12_ = false;
             if(typeof this.dataProviderUI[_loc4_][2] == "number")
             {
                _loc13_ = this.dataProviderUI[_loc4_][2];
@@ -100,9 +108,6 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
                default:
                   this.container[_loc3_].icon._visible = false;
             }
-            var _loc5_ = undefined;
-            var _loc11_ = undefined;
-            var _loc9_ = undefined;
             _loc5_ = _loc2_.indexOf("<FONT COLOR=");
             if(_loc5_ != -1)
             {
@@ -189,18 +194,23 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
       var _loc11_ = 21;
       var _loc6_ = str.indexOf("<C>");
       var _loc8_ = str.indexOf("</C>");
+      var _loc3_;
+      var _loc4_;
+      var _loc10_;
+      var _loc9_;
+      var _loc12_;
       if(_loc6_ != -1 && _loc8_ != -1)
       {
          if(str.length > _loc11_)
          {
             str = "<C>" + str.substring(3,_loc11_) + "...";
          }
-         var _loc3_ = str.substring(0,_loc6_);
-         var _loc4_ = str.substring(_loc6_ + 3,_loc8_);
-         var _loc10_ = str.substring(_loc8_ + 4);
+         _loc3_ = str.substring(0,_loc6_);
+         _loc4_ = str.substring(_loc6_ + 3,_loc8_);
+         _loc10_ = str.substring(_loc8_ + 4);
          TF.text = _loc3_ + _loc4_ + _loc10_;
-         var _loc9_ = this.headerTextFormat;
-         var _loc12_ = this.gamertagTextFormat;
+         _loc9_ = this.headerTextFormat;
+         _loc12_ = this.gamertagTextFormat;
          TF.setTextFormat(0,_loc3_.length,_loc9_);
          TF.setTextFormat(_loc3_.length,_loc3_.length + _loc4_.length,_loc12_);
          TF.setTextFormat(_loc3_.length + _loc4_.length,_loc3_.length + _loc4_.length + _loc10_.length,_loc9_);

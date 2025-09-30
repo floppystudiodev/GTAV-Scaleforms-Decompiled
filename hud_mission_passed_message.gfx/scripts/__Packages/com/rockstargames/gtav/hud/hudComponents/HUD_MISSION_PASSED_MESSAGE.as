@@ -1,13 +1,15 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_MISSION_PASSED_MESSAGE extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
-   var messageMC;
    var CONTENT;
-   var messageText;
-   var defaultX;
+   var FADE_DURATION;
+   var ON_SCREEN_DURATION;
    var TIMELINE;
-   var defaultY;
-   var _enumID;
    var _HUD;
+   var _enumID;
+   var defaultX;
+   var defaultY;
+   var messageMC;
+   var messageText;
    function HUD_MISSION_PASSED_MESSAGE()
    {
       super();

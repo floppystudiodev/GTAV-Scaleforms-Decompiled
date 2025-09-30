@@ -1,12 +1,13 @@
 class com.rockstargames.gtav.levelDesign.ORBITAL_CANNON_CAM extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var hud;
    var CONTENT;
-   var targets;
-   var state;
+   var camScale;
    var camX;
    var camY;
-   var camScale;
+   var hud;
+   var menu;
+   var state;
+   var targets;
    static var displayConfig;
    static var STATE_NULL = 0;
    static var STATE_MENU = 1;
@@ -97,13 +98,14 @@ class com.rockstargames.gtav.levelDesign.ORBITAL_CANNON_CAM extends com.rockstar
    {
       chargingLevel = this.clamp(chargingLevel,0,1);
       this.hud.chargingMeter.bar._xscale = 100 * chargingLevel;
+      var _loc3_;
       if(chargingLevel == 1)
       {
          this.hud.chargingMeter.transform.colorTransform = com.rockstargames.gtav.levelDesign.ORBITAL_CANNON_CAM.RED_COLOR_TRANSFORM;
          this.hud.message.gotoAndStop("active");
          this.hud.message.label.textAutoSize = "shrink";
          this.setLocalisedText(this.hud.message.label,"CANNON_CAM_ACTIVE");
-         var _loc3_ = this.hud.message.label.getTextFormat();
+         _loc3_ = this.hud.message.label.getTextFormat();
          _loc3_.letterSpacing = 5;
          this.hud.message.label.setTextFormat(_loc3_);
          if(this.state == com.rockstargames.gtav.levelDesign.ORBITAL_CANNON_CAM.STATE_MANUAL)

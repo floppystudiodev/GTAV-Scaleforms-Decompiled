@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.FilterSystem
 {
-   var _view;
-   var _hasFilterBeenSet;
-   var _allFilterButtons;
-   var _buttonsDataStructure;
-   var _allFilterOptionButtons;
-   var _filterOptionsDataStructure;
-   var _filterOptionsBg;
-   var _currentFilterFlag;
    var _activeTab;
-   var _currentSortOrder;
-   var _currentSortIndex;
+   var _allFilterButtons;
+   var _allFilterOptionButtons;
+   var _buttonsDataStructure;
+   var _currentFilterFlag;
    var _currentSortField;
+   var _currentSortIndex;
+   var _currentSortOrder;
+   var _filterOptionsBg;
+   var _filterOptionsDataStructure;
+   var _hasFilterBeenSet;
+   var _view;
    static var INDEX_VALUE = 0;
    static var INDEX_NAME = 1;
    static var INDEX_CLASS = 2;
@@ -54,18 +54,22 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.FilterSystem
    function setTab(index)
    {
       this._view._visible = index != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB;
+      var _loc2_;
+      var _loc6_;
+      var _loc3_;
+      var _loc5_;
       if(index != com.rockstargames.gtav.levelDesign.importExportWarehouse.WarehouseScreen.ID_BUYERS_TAB)
       {
-         var _loc2_ = 0;
-         var _loc6_ = this._allFilterButtons.length;
+         _loc2_ = 0;
+         _loc6_ = this._allFilterButtons.length;
          while(_loc2_ < _loc6_)
          {
             com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this._allFilterButtons[_loc2_]).setId(this._buttonsDataStructure[index][_loc2_].id);
             com.rockstargames.gtav.levelDesign.importExportWarehouse.Button(this._allFilterButtons[_loc2_]).setLabel(this._buttonsDataStructure[index][_loc2_].labelToken);
             _loc2_ = _loc2_ + 1;
          }
-         var _loc3_ = 0;
-         var _loc5_ = this._allFilterOptionButtons.length;
+         _loc3_ = 0;
+         _loc5_ = this._allFilterOptionButtons.length;
          while(_loc3_ < _loc5_)
          {
             if(this._filterOptionsDataStructure[index][_loc3_])

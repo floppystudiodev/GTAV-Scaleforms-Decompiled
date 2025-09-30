@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.NavigationPanel
 {
-   var view;
-   var setupButton;
-   var resupplyButton;
    var researchButton;
+   var restartButton;
+   var resupplyButton;
    var sellButton;
+   var setupButton;
+   var shutDownButton;
    var staffButton;
    var upgradesButton;
-   var shutDownButton;
-   var restartButton;
+   var view;
    static var BUTTON_TOP = 310;
    static var BUTTON_SPACING = 45;
    static var TXD = "UA_GENERIC";

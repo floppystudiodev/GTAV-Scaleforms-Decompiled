@@ -1,13 +1,14 @@
 class com.rockstargames.gtav.levelDesign.NAS_UPLOAD extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
+   var currentProgress;
    var displayConfig;
    var screenContainer;
-   var currentProgress;
-   var currScreen;
    static var STAGE_WIDTH = 2048;
    static var STAGE_HEIGHT = 1152;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.NAS_UPLOAD.STAGE_WIDTH;
@@ -115,17 +116,20 @@ class com.rockstargames.gtav.levelDesign.NAS_UPLOAD extends com.rockstargames.ui
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

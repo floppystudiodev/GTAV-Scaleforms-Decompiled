@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.Multiplayer.BLIMP_TEXT extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var texts;
    var CONTENT;
-   var inverseScrollSpeed;
    var hudColor;
+   var inverseScrollSpeed;
+   var texts;
    static var MESSAGE_SPACING = 100;
    static var DEFAULT_SCROLL_SPEED = 100;
    static var DEFAULT_COLOUR = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PURE_WHITE;
@@ -44,9 +44,10 @@ class com.rockstargames.gtav.Multiplayer.BLIMP_TEXT extends com.rockstargames.ui
       var _loc7_ = _loc4_ * this.inverseScrollSpeed;
       var _loc5_ = Stage.width + _loc4_;
       _loc3_ = 1;
+      var _loc2_;
       do
       {
-         var _loc2_ = this.texts[0].duplicateMovieClip("txt" + _loc3_,_loc3_);
+         _loc2_ = this.texts[0].duplicateMovieClip("txt" + _loc3_,_loc3_);
          _loc2_._x = _loc3_ * _loc4_;
          _loc2_.label.autoSize = "left";
          _loc2_.label.antiAliasType = "normal";

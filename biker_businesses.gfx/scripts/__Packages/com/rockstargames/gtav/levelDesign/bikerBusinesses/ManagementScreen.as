@@ -1,17 +1,17 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var resupplyPanelControls;
-   var upgradePanelControls;
-   var sellPanelControls;
-   var business;
    var app;
-   var view;
+   var business;
+   var ceaseButton;
    var cursor;
    var overlay;
    var resupplyButton;
-   var ceaseButton;
-   var upgradeButton;
+   var resupplyPanelControls;
    var sellButton;
+   var sellPanelControls;
+   var upgradeButton;
+   var upgradePanelControls;
+   var view;
    static var METER_FILL_DURATION = 1;
    static var OVERLAY_ACCEPT_BUTTON = 101;
    static var OVERLAY_CANCEL_BUTTON = 102;
@@ -111,9 +111,10 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
    {
       this.app.imageManager.addImage(this.business.txd,this.business.txd + "_EXT_S",this.view.image);
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 3)
       {
-         var _loc3_ = this.business.getUpgrade(_loc2_);
+         _loc3_ = this.business.getUpgrade(_loc2_);
          if(_loc3_)
          {
             this.app.imageManager.addImage("MP_BWH_GENERIC",_loc3_.txd,this.view.upgradePanel["upgrade" + (_loc2_ + 1) + "Button"].image);
@@ -149,7 +150,7 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
    function initResupplyPanel()
    {
       this.view.resupplyPanel._visible = false;
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.view.resupplyPanel.resupply1Button;
       this.resupplyPanelControls.push(new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.RESUPPLY_1_BUTTON,_loc2_,"BIKEBIZ_BUY_SUPPLIES"));
       if(this.business.resupplySaleCost != -1)
@@ -174,13 +175,16 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
    {
       this.view.upgradePanel._visible = false;
       var _loc2_ = 1;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= 3)
       {
-         var _loc5_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen["UPGRADE_" + _loc2_ + "_BUTTON"];
-         var _loc3_ = this.view.upgradePanel["upgrade" + _loc2_ + "Button"];
+         _loc5_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen["UPGRADE_" + _loc2_ + "_BUTTON"];
+         _loc3_ = this.view.upgradePanel["upgrade" + _loc2_ + "Button"];
          com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.setLocalisedText(_loc3_.tooltip.label,"BIKEBIZ_UPG_" + _loc2_ + "_DESC");
          _loc3_.tooltip._alpha = 0;
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(_loc5_,_loc3_);
+         _loc4_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(_loc5_,_loc3_);
          this.upgradePanelControls.push(_loc4_);
          _loc2_ = _loc2_ + 1;
       }
@@ -189,11 +193,14 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
    {
       this.view.sellPanel._visible = false;
       var _loc2_ = 1;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= 3)
       {
-         var _loc5_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen["SELL_" + _loc2_ + "_BUTTON"];
-         var _loc3_ = this.view.sellPanel["sell" + _loc2_ + "Button"];
-         var _loc4_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(_loc5_,_loc3_);
+         _loc5_ = com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen["SELL_" + _loc2_ + "_BUTTON"];
+         _loc3_ = this.view.sellPanel["sell" + _loc2_ + "Button"];
+         _loc4_ = new com.rockstargames.gtav.levelDesign.bikerBusinesses.Button(_loc5_,_loc3_);
          this.sellPanelControls.push(_loc4_);
          _loc2_ = _loc2_ + 1;
       }
@@ -241,6 +248,8 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.ACCEPT:
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.LEFT_MOUSE:
             this.handleAcceptInput(inputID);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)
@@ -250,28 +259,28 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.SELL_BUTTON:
             this.showSellPanel();
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.RESUPPLY_BUTTON:
             this.showResupplyPanel();
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.UPGRADE_BUTTON:
             if(this.business.status != com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.STATUS_NOT_SET_UP && this.business.status != com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.STATUS_PENDING_RESTART)
             {
                this.showUpgradePanel();
             }
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.OVERLAY_ACCEPT_BUTTON:
             this.hideAllPanels();
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.SETUP_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.CEASE_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.START_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.OVERLAY_CANCEL_BUTTON:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.RESUPPLY_1_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.RESUPPLY_2_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.SELL_1_BUTTON:
@@ -281,13 +290,14 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.UPGRADE_2_BUTTON:
          case com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen.UPGRADE_3_BUTTON:
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Link");
-            break;
+            return;
          default:
             if(!this.overlay.isShowing)
             {
                this.hideAllPanels();
             }
             com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.playSound("Click_Generic");
+            return;
       }
    }
    function showOverlay(message, acceptButton, cancelButton)
@@ -401,10 +411,12 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
          this.sellButton.view._visible = true;
       }
       var _loc12_ = (this.business.getUpgrade(0) || this.business.getUpgrade(1) || this.business.getUpgrade(2)) != undefined;
+      var _loc11_;
+      var _loc10_;
       if(_loc12_)
       {
-         var _loc11_ = this.business.getUpgrade(0).isEnabled || this.business.getUpgrade(1).isEnabled || this.business.getUpgrade(2).isEnabled;
-         var _loc10_ = this.business.status == com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.STATUS_PENDING_RESTART;
+         _loc11_ = this.business.getUpgrade(0).isEnabled || this.business.getUpgrade(1).isEnabled || this.business.getUpgrade(2).isEnabled;
+         _loc10_ = this.business.status == com.rockstargames.gtav.levelDesign.bikerBusinesses.Business.STATUS_PENDING_RESTART;
          this.upgradeButton.view.gotoAndStop(!(_loc11_ && !_loc10_) ? "disabled" : "enabled");
          com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.setLocalisedText(this.upgradeButton.view.label,"BIKEBIZ_UPGRADE");
          this.upgradeButton.view._visible = true;
@@ -419,14 +431,18 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
          _loc5_.push(this.resupplyPanelControls[0]);
          _loc5_.push(this.resupplyPanelControls[1]);
       }
+      var _loc8_;
+      var _loc6_;
+      var _loc2_;
+      var _loc3_;
       if(this.view.upgradePanel._visible)
       {
-         var _loc8_ = 10;
-         var _loc6_ = 0;
+         _loc8_ = 10;
+         _loc6_ = 0;
          while(_loc6_ < 3)
          {
-            var _loc2_ = this.business.getUpgrade(_loc6_);
-            var _loc3_ = this.upgradePanelControls[_loc6_].view;
+            _loc2_ = this.business.getUpgrade(_loc6_);
+            _loc3_ = this.upgradePanelControls[_loc6_].view;
             if(_loc2_)
             {
                if(_loc2_.isEnabled)
@@ -466,13 +482,15 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.ManagementScreen extend
             _loc6_ = _loc6_ + 1;
          }
       }
+      var _loc7_;
+      var _loc4_;
       if(this.view.sellPanel._visible)
       {
-         var _loc7_ = 0;
+         _loc7_ = 0;
          _loc6_ = 0;
          while(_loc6_ < 3)
          {
-            var _loc4_ = this.business.getBuyer(_loc6_);
+            _loc4_ = this.business.getBuyer(_loc6_);
             _loc3_ = this.sellPanelControls[_loc6_].view;
             if(_loc4_)
             {

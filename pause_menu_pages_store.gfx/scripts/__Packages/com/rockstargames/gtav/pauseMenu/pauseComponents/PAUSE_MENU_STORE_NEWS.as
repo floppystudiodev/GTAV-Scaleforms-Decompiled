@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_STORE_NEWS extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
+   var dbgID;
    function PAUSE_MENU_STORE_NEWS()
    {
       super();

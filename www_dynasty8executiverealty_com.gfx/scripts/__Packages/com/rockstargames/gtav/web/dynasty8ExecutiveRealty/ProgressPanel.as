@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
 {
-   var view;
-   var website;
-   var office;
    var agency;
-   var displayConfig;
-   var left;
-   var right;
-   var top;
    var bottom;
    var currImageId;
+   var displayConfig;
+   var left;
+   var office;
+   var right;
+   var top;
+   var view;
+   var website;
    function ProgressPanel(view, website)
    {
       this.view = view;
@@ -54,9 +54,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
       this.truncate(this.view.officeName,office.name,this.view.officeName._width - 5);
       var _loc11_ = !office.isOwned ? "DYN8_EXEC_BUY_FROM" : "DYN8_EXEC_RENOVATE";
       com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc11_,false);
+      var _loc8_;
       if(!office.isOwned)
       {
-         var _loc8_ = office.getBaseBestCost();
+         _loc8_ = office.getBaseBestCost();
          if(_loc8_ == 0)
          {
             com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.nextButton.btnTxt,"DYN8_EXEC_FREE");
@@ -67,14 +68,18 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
          }
       }
       var _loc10_ = 0;
+      var _loc6_;
+      var _loc3_;
+      var _loc2_;
+      var _loc5_;
       if(office.isOwned)
       {
-         var _loc6_ = com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_ORGANIZATION_NAME");
-         var _loc3_ = "<font color=\'#000000\'>" + _loc6_ + ":</font> <font color=\'#333333\'>" + this.website.purchasedSignage + "</font>";
+         _loc6_ = com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_ORGANIZATION_NAME");
+         _loc3_ = "<font color=\'#000000\'>" + _loc6_ + ":</font> <font color=\'#333333\'>" + this.website.purchasedSignage + "</font>";
          this.view.description.htmlText = _loc3_;
          if(this.view.description.bottomScroll > 1)
          {
-            var _loc2_ = this.website.purchasedSignage.length;
+            _loc2_ = this.website.purchasedSignage.length;
             while(_loc2_ >= 0)
             {
                _loc3_ = "<font color=\'#000000\'>" + _loc6_ + ":</font> <font color=\'#333333\'>" + this.website.purchasedSignage.substring(0,_loc2_) + "...</font>";
@@ -86,7 +91,7 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
                _loc2_ = _loc2_ - 1;
             }
          }
-         var _loc5_ = "";
+         _loc5_ = "";
          _loc5_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_STYLE") + ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_STYLE_" + this.website.purchasedStyle) + "</font><br>";
          _loc5_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_PERSONNEL") + ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_PERSONNEL_" + this.website.purchasedPersonnel) + "</font><br>";
          _loc5_ += _loc3_ + "<br>";
@@ -145,18 +150,21 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
       this.showImage("");
       this.agency = null;
       this.view.starterPack._visible = false;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       if(office.isOwned)
       {
-         var _loc5_ = !office.garageIsOwned ? "DYN8_EXEC_BUY_FROM" : "DYN8_EXEC_RENOVATE";
+         _loc5_ = !office.garageIsOwned ? "DYN8_EXEC_BUY_FROM" : "DYN8_EXEC_RENOVATE";
          com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc5_,false);
          com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.description,office.garageDescription,true);
          this.view.nextButton._visible = true;
          this.view.nextButton.disabled = false;
-         var _loc3_ = this.view.description._y + this.view.description.textHeight + 10;
+         _loc3_ = this.view.description._y + this.view.description.textHeight + 10;
          if(office.getBaseGarageCost() != office.getBaseGarageBestCost())
          {
             this.view.originalCost.autoSize = "left";
-            var _loc4_ = office.getBaseGarageCost();
+            _loc4_ = office.getBaseGarageCost();
             if(_loc4_ == 0)
             {
                com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.originalCost,"DYN8_EXEC_FREE");
@@ -401,9 +409,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
       com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(tf,text,true);
       var _loc4_ = tf.getTextFormat();
       tf.letterSpacing = 1;
+      var _loc1_;
       if(tf.textWidth > availableWidth)
       {
-         var _loc1_ = text.length;
+         _loc1_ = text.length;
          while(_loc1_ > 0)
          {
             tf.text = text.substring(0,_loc1_) + "...";
@@ -419,9 +428,9 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
    function updateCosts()
    {
       var _loc3_ = !this.office.isOwned ? this.office.getBaseBestCost() : 0;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
-      var _loc2_ = undefined;
+      var _loc4_;
+      var _loc5_;
+      var _loc2_;
       if(this.website.style == -1)
       {
          this.clearCostStep(0);
@@ -533,19 +542,19 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
    function updateGarageCosts()
    {
       var _loc3_ = 0;
-      var _loc11_ = undefined;
-      var _loc4_ = undefined;
-      var _loc2_ = undefined;
-      var _loc18_ = undefined;
-      var _loc12_ = undefined;
-      var _loc13_ = undefined;
-      var _loc14_ = undefined;
-      var _loc9_ = undefined;
-      var _loc5_ = undefined;
-      var _loc8_ = undefined;
-      var _loc10_ = undefined;
-      var _loc6_ = undefined;
-      var _loc7_ = undefined;
+      var _loc11_;
+      var _loc4_;
+      var _loc2_;
+      var _loc18_;
+      var _loc12_;
+      var _loc13_;
+      var _loc14_;
+      var _loc9_;
+      var _loc5_;
+      var _loc8_;
+      var _loc10_;
+      var _loc6_;
+      var _loc7_;
       if(this.website.garage1Equipped)
       {
          _loc12_ = this.office.getGarage1StyleBestCost(this.website.garage1Style,this.website.purchasedGarage1Style);
@@ -749,9 +758,9 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
          this.view["originalCost" + step].text = "";
          this.view["strikethrough" + step]._visible = false;
       }
+      var _loc3_;
       if(this.displayConfig.isAsian)
       {
-         var _loc3_ = undefined;
          _loc3_ = this.view["saleCost" + step].getNewTextFormat();
          _loc3_.size = 14;
          this.view["saleCost" + step].setNewTextFormat(_loc3_);
@@ -763,8 +772,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
    }
    function showImage(suffix)
    {
-      var _loc2_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc3_;
       if(this.office != null)
       {
          _loc2_ = this.office.txd + suffix;
@@ -795,9 +804,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
       this.truncate(this.view.officeName,agency.name,this.view.officeName._width - 5);
       var _loc8_ = !agency.isOwned ? "DYN8_EXEC_BUY_FROM" : "DYN8_EXEC_RENOVATE";
       com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.nextButton.btnTxt,_loc8_,false);
+      var _loc5_;
       if(!agency.isOwned)
       {
-         var _loc5_ = agency.getBaseBestCost();
+         _loc5_ = agency.getBaseBestCost();
          if(_loc5_ == 0)
          {
             com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setSpacedTextField(this.view.nextButton.btnTxt,"DYN8_EXEC_FREE");
@@ -808,9 +818,10 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
          }
       }
       var _loc7_ = 0;
+      var _loc3_;
       if(agency.isOwned)
       {
-         var _loc3_ = "";
+         _loc3_ = "";
          _loc3_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_ART") + ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_ART_" + this.website.purchasedAgencyArt) + "</font><br>";
          _loc3_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_WP") + ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_WP_" + this.website.purchasedAgencyWallpaper) + "</font><br>";
          _loc3_ += "<font color=\'#000000\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_HI") + ":</font> <font color=\'#333333\'>" + com.rockstargames.gtav.web.WWW_DYNASTY8EXECUTIVEREALTY_COM.setLocalisedText(this.view.description,"DYN8_EXEC_AG_HI_" + this.website.purchasedAgencyHighlight) + "</font><br>";
@@ -935,9 +946,9 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.ProgressPanel
    function updateAgencyCosts()
    {
       var _loc5_ = !this.agency.isOwned ? this.agency.getBaseBestCost() : 0;
-      var _loc2_ = undefined;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
+      var _loc2_;
+      var _loc4_;
+      var _loc3_;
       _loc2_ = this.agency.getArtBestCost(this.website.agencyArt,this.website.purchasedAgencyArt);
       _loc4_ = this.agency.getArtCost(this.website.agencyArt,this.website.purchasedAgencyArt);
       _loc3_ = this.agency.getArtSaleCost(this.website.agencyArt,this.website.purchasedAgencyArt);

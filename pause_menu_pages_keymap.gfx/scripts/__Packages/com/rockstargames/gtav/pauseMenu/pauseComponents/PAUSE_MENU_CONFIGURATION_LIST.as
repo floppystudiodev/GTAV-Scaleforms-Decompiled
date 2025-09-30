@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CONFIGURATION_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
-   var canMouseNav;
    var SEND_COLUMN_PARAMS;
+   var canMouseNav;
    var columnIsFocused;
+   var dbgID;
+   var model;
    var scrollBase;
    function PAUSE_MENU_CONFIGURATION_LIST()
    {
@@ -60,9 +60,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CONFIGURATION_
       }
       var _loc5_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationView(this.model.getCurrentView());
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < _loc5_.itemList.length)
       {
-         var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationItem(_loc5_.itemList[_loc3_]);
+         _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationItem(_loc5_.itemList[_loc3_]);
          _loc4_.configListRef = this;
          _loc3_ = _loc3_ + 1;
       }
@@ -90,9 +91,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_CONFIGURATION_
    {
       var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationView(this.model.getCurrentView());
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.itemList.length)
       {
-         var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationItem(_loc4_.itemList[_loc2_]);
+         _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuConfigurationItem(_loc4_.itemList[_loc2_]);
          _loc3_.focusColumn(colIndex);
          _loc2_ = _loc2_ + 1;
       }

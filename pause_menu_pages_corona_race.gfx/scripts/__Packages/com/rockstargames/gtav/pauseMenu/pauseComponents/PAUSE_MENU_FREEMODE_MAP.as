@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_FREEMODE_MAP extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    function PAUSE_MENU_FREEMODE_MAP()
    {
       super();

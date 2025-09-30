@@ -1,9 +1,9 @@
 class com.rockstargames.ui.controls.ScrollBar extends MovieClip
 {
+   var gutter;
    var originX;
    var originY;
    var scrollBarContainer;
-   var gutter;
    var scrubber;
    var fadeOutDuration = 2.5;
    function ScrollBar()

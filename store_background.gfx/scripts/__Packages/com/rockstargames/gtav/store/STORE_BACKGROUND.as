@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.store.STORE_BACKGROUND extends com.rockstargames.ui.core.BaseScriptUI
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
+   var CONTENT;
+   var TIMELINE;
    var fadeInTime = 1;
    function STORE_BACKGROUND()
    {

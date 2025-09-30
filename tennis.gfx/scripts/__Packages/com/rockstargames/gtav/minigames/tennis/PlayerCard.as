@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
 {
-   var tennisColor;
-   var whiteColor;
-   var blackColor;
    var blackBGColor;
-   var titleCellsMC;
+   var blackColor;
    var p0;
    var p1;
+   var tennisColor;
+   var titleCellsMC;
+   var whiteColor;
    var maxCellCount = 0;
    var maxPlayerCardNameWidth = 0;
    function PlayerCard()
@@ -20,7 +20,7 @@ class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
       com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,this.whiteColor);
       com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK,this.blackColor);
       com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_INGAME_BG,this.blackBGColor);
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc3_ = 0;
       while(_loc3_ < 2)
       {
@@ -42,9 +42,9 @@ class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
          this.titleCellsMC = this.createEmptyMovieClip("titleCellsMC",this.getNextHighestDepth());
       }
       this.titleCellsMC._y = 54;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc6_ = arguments.length;
-      var _loc5_ = undefined;
+      var _loc5_;
       var _loc4_ = this.maxCellCount <= _loc6_ ? _loc6_ : this.maxCellCount;
       while(_loc4_ >= 0)
       {
@@ -141,9 +141,10 @@ class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
          _loc7_ = _loc5_.createEmptyMovieClip("cellContainer",_loc5_.getNextHighestDepth());
       }
       _loc7_._x = 288;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc8_ = arguments.length - 7;
       var _loc4_ = this.maxCellCount <= _loc8_ ? _loc8_ : this.maxCellCount;
+      var _loc6_;
       while(_loc4_ >= 0)
       {
          _loc3_ = _loc7_["c" + _loc4_];
@@ -166,7 +167,7 @@ class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
                _loc3_.bgMC._alpha = 50;
                _loc3_.blackBGMC._visible = true;
             }
-            var _loc6_ = arguments[_loc4_ + 7];
+            _loc6_ = arguments[_loc4_ + 7];
             _loc3_.labelMC.labelTF.text = _loc6_ == undefined ? "" : _loc6_;
          }
          else if(_loc3_ != undefined)
@@ -184,7 +185,7 @@ class com.rockstargames.gtav.minigames.tennis.PlayerCard extends MovieClip
    }
    function updatePlayerCardDisplay()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.p0.nameMC.nameTF._visible || this.p0.nameMC.nameTF._visible)
       {
          this.maxPlayerCardNameWidth = Math.ceil(this.p0.nameMC._width <= this.p1.nameMC._width ? this.p1.nameMC._width : this.p0.nameMC._width);

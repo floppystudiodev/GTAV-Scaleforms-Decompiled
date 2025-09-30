@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.Slideshow
 {
-   var imageManager;
-   var view;
-   var txds;
    var imageIDs;
+   var imageManager;
    var index;
    var labels;
    var stopIndex;
    var stopped;
+   var txds;
+   var view;
    static var CROSSFADE_TIME = 0.5;
    static var PAUSE_TIME = 2;
    function Slideshow(imageManager, view)

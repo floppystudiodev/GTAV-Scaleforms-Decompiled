@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.socialclubtv.SOCIAL_CLUB_TV extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var lowerThirdMC;
    var CONTENT;
-   var ticker;
-   var livePanelMC;
    var imgLdr;
+   var livePanelMC;
+   var lowerThirdMC;
+   var ticker;
    function SOCIAL_CLUB_TV()
    {
       super();
@@ -33,11 +33,13 @@ class com.rockstargames.gtav.Multiplayer.socialclubtv.SOCIAL_CLUB_TV extends com
    {
       this.isWideScreen = _isWideScreen;
       this.isHiDef = _isHiDef;
+      var _loc4_;
+      var _loc3_;
       if(!this.isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc4_ = 1.7777777777777777;
-         var _loc3_ = 1.3333333333333333;
+         _loc4_ = 1.7777777777777777;
+         _loc3_ = 1.3333333333333333;
          this.FOUR_THREE_PADDING = (this.FILE_WIDTH - Math.round(this.FILE_WIDTH / _loc4_ * _loc3_)) / 2;
          _screenWidthPixels = this.FILE_WIDTH - this.FOUR_THREE_PADDING * 2;
       }
@@ -101,7 +103,7 @@ class com.rockstargames.gtav.Multiplayer.socialclubtv.SOCIAL_CLUB_TV extends com
          else if(_loc2_ != undefined)
          {
             _loc2_.removeMovieClip();
-            _loc2_ = undefined;
+            _loc2_;
          }
          this.livePanelMC.descTF._visible = true;
          this.livePanelMC.playerTF._visible = true;
@@ -115,7 +117,7 @@ class com.rockstargames.gtav.Multiplayer.socialclubtv.SOCIAL_CLUB_TV extends com
          this.livePanelMC.playerTF._visible = false;
          this.livePanelMC.bg._visible = false;
          _loc2_.removeMovieClip();
-         _loc2_ = undefined;
+         _loc2_;
       }
       var _loc3_ = 142;
       var _loc9_ = 11;

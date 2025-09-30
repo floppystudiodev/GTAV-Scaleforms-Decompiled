@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pc.applications.App_Sub extends com.rockstargames.gtav.pc.applications.App_Base
 {
-   var accessSwitchesMC;
    var _subRef;
-   var securityLayoutMC;
+   var accessSwitchesMC;
    var onEnterFrame;
+   var securityLayoutMC;
    var sluiceGateMC;
    var warningMC;
    var warningBlips = new Array();

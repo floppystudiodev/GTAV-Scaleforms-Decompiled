@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.securoserv.WarehouseImageManager
 {
-   var txdRefs;
    var imageQueue;
+   var txdRefs;
    static var USE_REFERENCE_COUNTING = false;
    function WarehouseImageManager()
    {
@@ -28,14 +28,18 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehouseImageManager
    {
       this.txdRefs[txd] = "loaded";
       var _loc6_ = this.imageQueue.length - 1;
+      var _loc7_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc6_ >= 0)
       {
-         var _loc7_ = this.imageQueue[_loc6_];
+         _loc7_ = this.imageQueue[_loc6_];
          if(_loc7_.txd == txd)
          {
-            var _loc5_ = _loc7_.path.split(".");
-            var _loc4_ = _root;
-            var _loc3_ = 1;
+            _loc5_ = _loc7_.path.split(".");
+            _loc4_ = _root;
+            _loc3_ = 1;
             while(_loc3_ < _loc5_.length)
             {
                _loc4_ = _loc4_[_loc5_[_loc3_]];

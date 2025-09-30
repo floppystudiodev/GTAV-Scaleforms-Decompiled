@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.WorkshopColourPage extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var view;
+   var website;
    function WorkshopColourPage(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"workshopColourPage",pageName,isFirstPage,progressPanel);
@@ -50,9 +50,10 @@ class com.rockstargames.gtav.web.arena.pages.WorkshopColourPage extends com.rock
    function initButtons()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.WWW_ARENAWAR_TV.NUM_COLOUR_OPTIONS)
       {
-         var _loc3_ = this.view.buttons["optionButton_" + _loc2_];
+         _loc3_ = this.view.buttons["optionButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + 1);
          this.website.dataTextScope.push(_loc3_.btnTxt);
          _loc2_ = _loc2_ + 1;
@@ -90,9 +91,10 @@ class com.rockstargames.gtav.web.arena.pages.WorkshopColourPage extends com.rock
    function updateView()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.WWW_ARENAWAR_TV.NUM_COLOUR_OPTIONS)
       {
-         var _loc3_ = this.view.buttons["optionButton_" + _loc2_];
+         _loc3_ = this.view.buttons["optionButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.colourOption;
          _loc2_ = _loc2_ + 1;
       }

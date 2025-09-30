@@ -1,14 +1,15 @@
 class com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
+   var cursor;
    var deactivated;
    var displayConfig;
    var screenContainer;
-   var cursor;
-   var currScreen;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -80,6 +81,7 @@ class com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY extends com.rockstarga
       {
          return undefined;
       }
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.trustAndSafety.navigation.Cursor.UP:
@@ -89,7 +91,7 @@ class com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY extends com.rockstarga
             this.cursor.moveInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY.ACCEPT:
-            var _loc3_ = this.cursor.getTargetUnderCursor();
+            _loc3_ = this.cursor.getTargetUnderCursor();
             break;
          case com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY.CANCEL:
       }
@@ -130,15 +132,18 @@ class com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY extends com.rockstarga
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc5_;
       if(!isNaN(letterSpacing))
       {
-         var _loc5_ = tf.getTextFormat();
+         _loc5_ = tf.getTextFormat();
          _loc5_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc5_);
       }
+      var _loc2_;
+      var _loc6_;
       if(tf.multiline && tf.maxscroll > 1)
       {
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -155,9 +160,9 @@ class com.rockstargames.gtav.levelDesign.TRUST_AND_SAFETY extends com.rockstarga
             _loc2_ = _loc2_ - 1;
          }
       }
-      else if(!tf.multiline && tf.textWidth > tf._width)
+      else if(!tf.multiline && tf.textWidth > tf._width - 4)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
          _loc2_ = txt.length;
          while(_loc2_ > 0)

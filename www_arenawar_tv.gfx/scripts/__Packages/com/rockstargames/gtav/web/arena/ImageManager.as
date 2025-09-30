@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.web.arena.ImageManager
 {
    var gfxName;
-   var txdRefs;
    var imageQueue;
+   var txdRefs;
    static var FADE_IN_DURATION = 0.15;
    static var TXD_LOADING = 1;
    static var TXD_LOADED = 2;
@@ -33,14 +33,18 @@ class com.rockstargames.gtav.web.arena.ImageManager
    {
       this.txdRefs[txd] = com.rockstargames.gtav.web.arena.ImageManager.TXD_LOADED;
       var _loc7_ = this.imageQueue.length - 1;
+      var _loc6_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc7_ >= 0)
       {
-         var _loc6_ = this.imageQueue[_loc7_];
+         _loc6_ = this.imageQueue[_loc7_];
          if(_loc6_.txd == txd)
          {
-            var _loc5_ = _loc6_.path.split(".");
-            var _loc4_ = _root;
-            var _loc3_ = 1;
+            _loc5_ = _loc6_.path.split(".");
+            _loc4_ = _root;
+            _loc3_ = 1;
             while(_loc3_ < _loc5_.length)
             {
                _loc4_ = _loc4_[_loc5_[_loc3_]];

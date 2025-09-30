@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.PlayerSwitchChar extends MovieClip
 {
    var characterImageMC;
-   var mc;
-   var stateMC;
    var counterMC;
    var damageMC;
    var hintedMC;
+   var mc;
+   var stateMC;
    var charID = -1;
    var bHighlighted = false;
    var bHinted = false;

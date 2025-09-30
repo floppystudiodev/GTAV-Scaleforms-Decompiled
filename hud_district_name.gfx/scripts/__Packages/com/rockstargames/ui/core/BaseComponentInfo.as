@@ -1,17 +1,17 @@
 class com.rockstargames.ui.core.BaseComponentInfo
 {
-   var _enumId;
-   var _status;
-   var _listener;
-   var _functionCache;
-   var _intendedVisibleState;
+   var _colour;
    var _displayList;
    var _displayListPriority;
-   var _mc;
+   var _enumId;
+   var _functionCache;
    var _hasGfx;
+   var _intendedVisibleState;
+   var _listener;
+   var _mc;
    var _position;
    var _size;
-   var _colour;
+   var _status;
    function BaseComponentInfo(newID)
    {
       this._enumId = newID;

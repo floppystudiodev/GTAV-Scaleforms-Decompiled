@@ -1,9 +1,17 @@
 class com.rockstargames.gtav.levelDesign.DIGITAL_CAMERA extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var ui;
    var CONTENT;
+   var FILE_WIDTH;
+   var FOUR_THREE_PADDING;
+   var isHiDef;
+   var isWideScreen;
    var photoFrame;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
    var shutter;
+   var ui;
    var shutterSpeed = 500;
    var overlap = 2;
    function DIGITAL_CAMERA()
@@ -33,11 +41,13 @@ class com.rockstargames.gtav.levelDesign.DIGITAL_CAMERA extends com.rockstargame
    {
       this.isWideScreen = _isWideScreen;
       this.isHiDef = _isHiDef;
+      var _loc4_;
+      var _loc3_;
       if(!this.isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc4_ = 1.7777777777777777;
-         var _loc3_ = 1.3333333333333333;
+         _loc4_ = 1.7777777777777777;
+         _loc3_ = 1.3333333333333333;
          this.FOUR_THREE_PADDING = (this.FILE_WIDTH - Math.round(this.FILE_WIDTH / _loc4_ * _loc3_)) / 2;
          _screenWidthPixels = this.FILE_WIDTH - this.FOUR_THREE_PADDING * 2;
       }
@@ -57,13 +67,14 @@ class com.rockstargames.gtav.levelDesign.DIGITAL_CAMERA extends com.rockstargame
    }
    function SET_REMAINING_PHOTOS(photosTaken, photosLeft)
    {
+      var _loc2_;
       if(photosLeft == 1)
       {
          this.SHOW_REMAINING_PHOTOS(false);
       }
       else
       {
-         var _loc2_ = photosTaken + "/" + photosLeft;
+         _loc2_ = photosTaken + "/" + photosLeft;
          this.ui.savedPhotos.photosLeftTF.text = _loc2_;
          this.SHOW_REMAINING_PHOTOS(true);
       }

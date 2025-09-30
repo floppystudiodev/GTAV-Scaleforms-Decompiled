@@ -1,6 +1,14 @@
 class com.rockstargames.gtav.Multiplayer.MPFreemodePlayerListView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
+   var dataList;
+   var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
    var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;

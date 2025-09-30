@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.securoserv.Screensaver
 {
-   var view;
    var activeStripes;
    var inactiveStripes;
+   var view;
    static var MAX_STRIPES = 5;
    static var STATE = [];
    function Screensaver(view)
@@ -15,10 +15,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.Screensaver
       this.activeStripes = [];
       this.inactiveStripes = [];
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.securoserv.Screensaver.MAX_STRIPES)
       {
-         var _loc4_ = this.view.attachMovie("screensaverStripe","stripe" + _loc2_,_loc2_,{_visible:false});
-         var _loc3_ = new com.rockstargames.gtav.levelDesign.securoserv.ScreensaverStripe(_loc4_);
+         _loc4_ = this.view.attachMovie("screensaverStripe","stripe" + _loc2_,_loc2_,{_visible:false});
+         _loc3_ = new com.rockstargames.gtav.levelDesign.securoserv.ScreensaverStripe(_loc4_);
          _loc3_.init();
          this.activeStripes.push(_loc3_);
          _loc2_ = _loc2_ + 1;
@@ -28,16 +30,18 @@ class com.rockstargames.gtav.levelDesign.securoserv.Screensaver
    }
    function update()
    {
+      var _loc4_;
       if(this.inactiveStripes.length > 0 && (Math.random() < 0.025 || this.activeStripes.length == 0))
       {
-         var _loc4_ = com.rockstargames.gtav.levelDesign.securoserv.ScreensaverStripe(this.inactiveStripes.pop());
+         _loc4_ = com.rockstargames.gtav.levelDesign.securoserv.ScreensaverStripe(this.inactiveStripes.pop());
          _loc4_.init();
          this.activeStripes.push(_loc4_);
       }
       var _loc2_ = this.activeStripes.length - 1;
+      var _loc3_;
       while(_loc2_ >= 0)
       {
-         var _loc3_ = this.activeStripes[_loc2_].update();
+         _loc3_ = this.activeStripes[_loc2_].update();
          if(_loc3_)
          {
             this.inactiveStripes.push(this.activeStripes.splice(_loc2_,1)[0]);
@@ -58,9 +62,10 @@ class com.rockstargames.gtav.levelDesign.securoserv.Screensaver
    function restoreState()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.securoserv.Screensaver.STATE.length)
       {
-         var _loc3_ = this.activeStripes[_loc2_];
+         _loc3_ = this.activeStripes[_loc2_];
          if(_loc3_)
          {
             _loc3_.setState(com.rockstargames.gtav.levelDesign.securoserv.Screensaver.STATE[_loc2_]);

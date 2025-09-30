@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen extends com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.Screen
 {
-   var view;
-   var todoLists;
-   var pieChart;
-   var crewButtons;
-   var launchButton;
    var _buttons;
    var app;
+   var crewButtons;
    var cursor;
+   var launchButton;
+   var pieChart;
+   var todoLists;
+   var view;
    static var TODO_LIST_INDEX = 0;
    static var OPTIONAL_LIST_INDEX = 1;
    static var NUM_CREW_MEMBERS = 4;
@@ -121,9 +121,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    function setCrewPanelVisible(isVisible)
    {
       this.view.crewPanel._visible = isVisible;
+      var _loc4_;
       if(!isVisible)
       {
-         var _loc4_ = this.cursor.getTargetIDUnderCursor();
+         _loc4_ = this.cursor.getTargetIDUnderCursor();
          if(_loc4_ == com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.ButtonIDs.CREW_1 || _loc4_ == com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.ButtonIDs.CREW_2 || _loc4_ == com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.ButtonIDs.CREW_3 || _loc4_ == com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.ButtonIDs.CREW_4)
          {
             this.app.SET_INPUT_EVENT(com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.Cursor.UP);
@@ -157,9 +158,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.padlock._visible = isLocked;
@@ -172,9 +174,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.tick._visible = isTicked;
@@ -197,9 +200,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc3_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this._buttons[_loc3_];
+         _loc2_ = this._buttons[_loc3_];
          if(_loc2_.id == buttonID)
          {
             _loc2_.view._visible = isVisible;
@@ -214,9 +218,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.enabled = isEnabled;
@@ -230,9 +235,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.image.gotoAndStop(imageID);
@@ -250,9 +256,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
       }
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.selectedIsGreyedOut = isGreyedOut;
@@ -264,12 +271,14 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    function setCrewMember(buttonID, name, image)
    {
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.NUM_CREW_MEMBERS)
       {
-         var _loc4_ = this.crewButtons[_loc2_];
+         _loc4_ = this.crewButtons[_loc2_];
          if(_loc4_.id == buttonID)
          {
-            var _loc3_ = _loc4_.view;
+            _loc3_ = _loc4_.view;
             com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_FINALE.truncate(_loc3_.crewName,name);
             this.app.imageManager.addImage(image,image,_loc3_.image);
             break;
@@ -280,36 +289,41 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    function setCrewMemberState(buttonID, isReady, headsetState)
    {
       var _loc3_ = 0;
-      while(_loc3_ < com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.NUM_CREW_MEMBERS)
+      var _loc4_;
+      var _loc2_;
+      for(; _loc3_ < com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.NUM_CREW_MEMBERS; _loc3_ = _loc3_ + 1)
       {
-         var _loc4_ = this.crewButtons[_loc3_];
-         if(_loc4_.id == buttonID)
+         _loc4_ = this.crewButtons[_loc3_];
+         if(_loc4_.id != buttonID)
          {
-            var _loc2_ = _loc4_.view;
-            _loc2_.ready._visible = isReady;
-            _loc2_.notReady._visible = !isReady;
-            switch(headsetState)
-            {
-               case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_ACTIVE:
-                  _loc2_.headset.gotoAndStop(3);
-                  break;
-               case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_INACTIVE:
-                  _loc2_.headset.gotoAndStop(1);
-                  break;
-               case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_MUTED:
-                  _loc2_.headset.gotoAndStop(2);
-            }
-            break;
+            continue;
          }
-         _loc3_ = _loc3_ + 1;
+         _loc2_ = _loc4_.view;
+         _loc2_.ready._visible = isReady;
+         _loc2_.notReady._visible = !isReady;
+         switch(headsetState)
+         {
+            case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_ACTIVE:
+               _loc2_.headset.gotoAndStop(3);
+               return;
+            case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_INACTIVE:
+               _loc2_.headset.gotoAndStop(1);
+               return;
+            case com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.HEADSET_MUTED:
+               _loc2_.headset.gotoAndStop(2);
+               return;
+            default:
+               return;
+         }
       }
    }
    function setCrewCut(buttonID, cut)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.NUM_CREW_MEMBERS)
       {
-         var _loc3_ = this.crewButtons[_loc2_];
+         _loc3_ = this.crewButtons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.cut.text = cut + "%";
@@ -324,9 +338,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.arrows._visible = visibleState != 2;
@@ -334,9 +349,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
          this.setArrowsStyle(_loc3_.view.arrows.arrows,_loc3_.id == buttonID && visibleState == 1);
          _loc2_ = _loc2_ + 1;
       }
+      var _loc7_;
       if(visibleState == 1)
       {
-         var _loc7_ = false;
+         _loc7_ = false;
          _loc2_ = 0;
          while(_loc2_ < com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScreen.NUM_CREW_MEMBERS)
          {
@@ -374,9 +390,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.notSelected._visible = isVisible;
@@ -389,9 +406,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.screens.MainScre
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.star._visible = isVisible;

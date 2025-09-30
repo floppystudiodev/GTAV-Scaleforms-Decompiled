@@ -1,23 +1,23 @@
 class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
+   var answers;
+   var availableQuestionCount;
    var browser;
+   var correctAnswers;
+   var dataTextScope;
    var drivingTips;
+   var failDescription;
+   var failTitle;
    var mcScope;
+   var optionCount;
+   var passDescription;
+   var passScore;
+   var passTitle;
    var proceedButton;
    var proceedButtonIndex;
-   var availableQuestionCount;
-   var answers;
-   var correctAnswers;
-   var passTitle;
-   var passDescription;
-   var failTitle;
-   var failDescription;
-   var optionCount;
-   var passScore;
-   var dataTextScope;
-   var CONTENT;
    function WWW_SANANDREASDMV_COM()
    {
       super();
@@ -40,11 +40,14 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
    }
    function showDrivingTip()
    {
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
       if(!this.drivingTips)
       {
-         var _loc2_ = "If you see a celebrity behind the wheel of a car, exercise extreme caution - they are most likely intoxicated.";
-         var _loc5_ = "Play your car stereo as loudly as possible to drown out distractions.";
-         var _loc4_ = "Text only when driving slowly.";
+         _loc2_ = "If you see a celebrity behind the wheel of a car, exercise extreme caution - they are most likely intoxicated.";
+         _loc5_ = "Play your car stereo as loudly as possible to drown out distractions.";
+         _loc4_ = "Text only when driving slowly.";
          this.drivingTips = [_loc2_,_loc5_,_loc4_];
       }
       var _loc3_ = Math.floor(Math.random() * this.drivingTips.length);
@@ -55,6 +58,7 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
       this.proceedButton = pb;
       this.proceedButtonIndex = pbi;
       this.availableQuestionCount = aqc;
+      var _loc2_;
       if(!this.answers)
       {
          this.answers = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
@@ -79,7 +83,7 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
       }
       else
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.answers.length)
          {
             if(this.mcScope["tick_" + _loc2_ + "_0"])
@@ -134,10 +138,12 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
    {
       var _loc5_ = 0;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.answers.length)
       {
-         var _loc4_ = false;
-         var _loc2_ = 0;
+         _loc4_ = false;
+         _loc2_ = 0;
          while(_loc2_ < this.correctAnswers[_loc3_].length)
          {
             if(this.answers[_loc3_] == this.correctAnswers[_loc3_][_loc2_])
@@ -170,6 +176,7 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
    {
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -177,7 +184,7 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }
@@ -189,7 +196,7 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
    {
       var _loc2_ = new Array();
       _loc2_ = AnchorLink.split("_");
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = _loc2_[0]) === "q")
       {
          this.updateQuestion(_loc2_[1],_loc2_[2]);
@@ -220,6 +227,8 @@ class com.rockstargames.gtav.web.WWW_SANANDREASDMV_COM extends com.rockstargames
             this.mcScope = this.CONTENT.RESULT;
             this.setupButtons();
             this.checkAnswers();
+         default:
+            return;
       }
    }
 }

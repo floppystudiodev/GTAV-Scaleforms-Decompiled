@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
 {
-   var view;
-   var heistData;
    var colourScheme;
-   var iconRevealOrder;
    var currentView;
+   var heistData;
+   var iconRevealOrder;
+   var view;
    static var MAIN_MAP = 0;
    static var COMPOUND_MAP = 1;
    static var ICON_LINKAGES = ["entryPointIcon","exitPointIcon","itemOfInterestIcon","weedIcon","cashIcon","goldIcon","cocaineIcon","paintingsIcon","compoundIcon","coastlineIcon"];
@@ -34,9 +34,11 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
       var _loc7_ = [];
       var _loc6_ = [];
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < icons.length)
       {
-         var _loc2_ = icons[_loc3_];
+         _loc2_ = icons[_loc3_];
          if(_loc2_.mapID == com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map.MAIN_MAP)
          {
             _loc2_.view = this.initIconView(this.view.main,mainMapWidth,mainMapHeight,_loc2_);
@@ -48,7 +50,7 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
          }
          else
          {
-            var _loc4_ = !_loc2_.isWorldCoordinates ? this.view.compound : this.view.compound.iconContainer;
+            _loc4_ = !_loc2_.isWorldCoordinates ? this.view.compound : this.view.compound.iconContainer;
             _loc2_.view = this.initIconView(_loc4_,compoundMapWidth,compoundMapHeight,_loc2_);
             this.iconRevealOrder[com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map.COMPOUND_MAP].push(_loc3_);
             if(com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map.ICON_COLLISION[_loc2_.iconID])
@@ -63,14 +65,15 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
    }
    function initIconView(mapView, mapWidth, mapHeight, icon)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
+      var _loc5_;
       if(icon.iconID == 9)
       {
          _loc2_ = mapView.highlight;
       }
       else
       {
-         var _loc5_ = mapView.getNextHighestDepth();
+         _loc5_ = mapView.getNextHighestDepth();
          _loc2_ = mapView.attachMovie(com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map.ICON_LINKAGES[icon.iconID],"icon" + _loc5_,_loc5_);
          if(icon.iconID == 8)
          {
@@ -119,25 +122,33 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
       var _loc12_ = icons.length;
       var _loc13_ = 0;
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
+      var _loc10_;
       while(_loc3_ < _loc12_ - 1)
       {
-         var _loc2_ = _loc3_ + 1;
+         _loc2_ = _loc3_ + 1;
          while(_loc2_ < _loc12_)
          {
-            var _loc5_ = icons[_loc2_]._x - icons[_loc3_]._x;
-            var _loc4_ = icons[_loc2_]._y - icons[_loc3_]._y;
-            var _loc6_ = _loc5_ * _loc5_ + _loc4_ * _loc4_;
+            _loc5_ = icons[_loc2_]._x - icons[_loc3_]._x;
+            _loc4_ = icons[_loc2_]._y - icons[_loc3_]._y;
+            _loc6_ = _loc5_ * _loc5_ + _loc4_ * _loc4_;
             if(_loc6_ < _loc14_)
             {
                if(_loc6_ == 0)
                {
-                  var _loc7_ = 0.5 * _loc11_;
-                  var _loc8_ = 0;
+                  _loc7_ = 0.5 * _loc11_;
+                  _loc8_ = 0;
                }
                else
                {
-                  var _loc9_ = Math.sqrt(_loc6_);
-                  var _loc10_ = 0.5 * (_loc11_ - _loc9_) / _loc9_;
+                  _loc9_ = Math.sqrt(_loc6_);
+                  _loc10_ = 0.5 * (_loc11_ - _loc9_) / _loc9_;
                   _loc7_ = _loc5_ * _loc10_;
                   _loc8_ = _loc4_ * _loc10_;
                }
@@ -169,9 +180,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
          _loc3_ = _loc3_ + 1;
       }
       _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.heistData.icons.length)
       {
-         var _loc2_ = this.heistData.icons[_loc3_];
+         _loc2_ = this.heistData.icons[_loc3_];
          if(_loc2_.setupItemID == activeItem.id || _loc2_.finaleItemID == activeItem.id)
          {
             if(_loc2_.view.foreground)
@@ -228,6 +240,8 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
    }
    function showMapView(mainView, prevView, iconRevealOrder)
    {
+      var _loc2_;
+      var _loc3_;
       if(this.currentView != mainView)
       {
          if(this.currentView == undefined)
@@ -246,10 +260,10 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
             mainView.reveal.gotoAndPlay("show");
          }
          this.shuffleArray(iconRevealOrder);
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < iconRevealOrder.length)
          {
-            var _loc3_ = this.heistData.icons[iconRevealOrder[_loc2_]].view;
+            _loc3_ = this.heistData.icons[iconRevealOrder[_loc2_]].view;
             _loc3_._visible = false;
             com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(_loc3_,(_loc2_ + 25) / 30,{onCompleteScope:this,onComplete:this.showIcon,onCompleteArgs:[_loc3_]});
             _loc2_ = _loc2_ + 1;
@@ -265,10 +279,12 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.Map
    {
       var _loc4_ = a.length - 1;
       var _loc1_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc1_ < _loc4_)
       {
-         var _loc3_ = Math.random() * (_loc4_ - _loc1_) + _loc1_ + 1;
-         var _loc2_ = a.splice(_loc3_,1)[0];
+         _loc3_ = Math.random() * (_loc4_ - _loc1_) + _loc1_ + 1;
+         _loc2_ = a.splice(_loc3_,1)[0];
          a.splice(_loc1_,0,_loc2_);
          _loc1_ = _loc1_ + 1;
       }

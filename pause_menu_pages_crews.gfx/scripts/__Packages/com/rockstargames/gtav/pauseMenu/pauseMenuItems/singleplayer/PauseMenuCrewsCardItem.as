@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuCrewsCardItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__data;
+   var colourIconMC;
    var itemTextRight;
    var labelMC;
-   var colourIconMC;
    var rankIconMC;
-   var __get__data;
    var type;
    var TYPE_WORLD_RANKING = 1;
    function PauseMenuCrewsCardItem()

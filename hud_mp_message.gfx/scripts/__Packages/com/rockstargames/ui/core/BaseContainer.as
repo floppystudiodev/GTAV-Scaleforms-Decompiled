@@ -1,15 +1,15 @@
 class com.rockstargames.ui.core.BaseContainer extends MovieClip
 {
    var COMPONENT_ARRAY;
-   var mcPrefix;
-   var loadedCompPrefix;
    var MAX_HUD_COMPONENTS;
-   var isWeaponWheelActive;
+   var SCRIPT_HUD_COMPONENTS_START;
    var TIMELINE;
    var WEAPON_HUD_COMPONENTS_START;
-   var SCRIPT_HUD_COMPONENTS_START;
-   var thisObj;
    var componentID;
+   var isWeaponWheelActive;
+   var loadedCompPrefix;
+   var mcPrefix;
+   var thisObj;
    var NEEDS_BIGGER_HELP_AND_SUBTITLES = false;
    var screenWidth = 1280;
    var screenHeight = 720;
@@ -59,13 +59,16 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
          _loc3_.sanitise();
          _loc5_ = _loc3_._status;
       }
+      var _loc7_;
+      var _loc9_;
+      var _loc8_;
       switch(_loc5_)
       {
          case com.rockstargames.ui.core.BaseContainer.NOT_LOADED:
-            var _loc7_ = _loc4_[1];
+            _loc7_ = _loc4_[1];
             if(_loc7_ != "HIDE")
             {
-               var _loc9_ = _loc7_.split("CLEAR_").length;
+               _loc9_ = _loc7_.split("CLEAR_").length;
                if(_loc9_ <= 1)
                {
                   _loc3_._status = com.rockstargames.ui.core.BaseContainer.STREAMING;
@@ -77,7 +80,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
          case com.rockstargames.ui.core.BaseContainer.LOADED:
          case com.rockstargames.ui.core.BaseContainer.ONSCREEN:
          case com.rockstargames.ui.core.BaseContainer.HIDDEN:
-            var _loc8_ = _loc4_[1];
+            _loc8_ = _loc4_[1];
             _loc3_._mc.TIMELINE[_loc8_](_loc4_.slice(2));
             break;
          case com.rockstargames.ui.core.BaseContainer.STREAMING:
@@ -100,6 +103,8 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
             _loc3_._mc.TIMELINE[_loc8_](_loc4_.slice(2));
             com.rockstargames.ui.game.GameInterface.call("SET_ACTIVE_STATE",com.rockstargames.ui.game.GameInterface.HUD_TYPE,_loc3_._enumId,true);
             this.reorderList(_loc3_._displayList);
+         default:
+            return;
       }
    }
    function ACTIVATE_COMPONENT(componentID)
@@ -171,8 +176,8 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    }
    function SET_COMPONENT_RELATIVE_TO_TARGET(isInFront, componentID, componentTargetID)
    {
-      var _loc3_ = undefined;
-      var _loc9_ = undefined;
+      var _loc3_;
+      var _loc9_;
       var _loc5_ = this.COMPONENT_ARRAY[componentID];
       var _loc8_ = this.COMPONENT_ARRAY[componentTargetID];
       var _loc4_ = _loc5_._mc;
@@ -201,7 +206,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    function SET_COMPONENT_TO_FRONT(componentID)
    {
       var _loc8_ = this.HIGHEST_DEPTH_IN_XML;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc5_ = this.COMPONENT_ARRAY[componentID];
       var _loc4_ = _loc5_._mc;
       var _loc6_ = this.TIMELINE.getNextHighestDepth();
@@ -222,7 +227,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    function SET_COMPONENT_TO_BACK(componentID)
    {
       var _loc2_ = 10;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc6_ = this.COMPONENT_ARRAY[componentID];
       var _loc5_ = _loc6_._mc;
       _loc2_ = _loc2_ - 1;
@@ -240,7 +245,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    }
    function GET_COMPONENT_STATUS(componentID)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = this.COMPONENT_ARRAY[componentID];
       if(_loc3_ != undefined)
       {
@@ -319,9 +324,10 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
       {
          _loc3_ = false;
       }
+      var _loc7_;
       if(_loc2_._status == com.rockstargames.ui.core.BaseContainer.ONSCREEN || _loc2_._status == com.rockstargames.ui.core.BaseContainer.HIDDEN)
       {
-         var _loc7_ = _loc2_._mc;
+         _loc7_ = _loc2_._mc;
          _loc2_._colour[0] = r;
          _loc2_._colour[1] = g;
          _loc2_._colour[2] = b;
@@ -364,9 +370,10 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
          case "I":
             _loc3_ = 0;
       }
+      var _loc8_;
       if(offsetX != undefined)
       {
-         var _loc8_ = offsetX * this.screenWidth;
+         _loc8_ = offsetX * this.screenWidth;
          _loc3_ += _loc8_;
       }
       switch(alignY)
@@ -383,9 +390,10 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
          case "I":
             _loc2_ = 0;
       }
+      var _loc9_;
       if(offsetY != undefined)
       {
-         var _loc9_ = offsetY * this.screenHeight;
+         _loc9_ = offsetY * this.screenHeight;
          _loc2_ += _loc9_;
       }
       if(_loc6_._displayList == -2)
@@ -394,20 +402,20 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
       }
       switch(componentID)
       {
-         case com.rockstargames.gtav.constants.HudComponentConstants.HUD_FLOATING_HELP_TEXT_1:
-         case com.rockstargames.gtav.constants.HudComponentConstants.HUD_FLOATING_HELP_TEXT_2:
+         default:
+            _loc4_._width = Math.round(_loc7_);
+            _loc4_._height = Math.round(_loc5_);
+            _loc4_._x = Math.round(_loc3_);
+            _loc4_._y = Math.round(_loc2_);
             break;
          case com.rockstargames.gtav.constants.HudComponentConstants.HUD_HELP_TEXT:
          case com.rockstargames.gtav.constants.HudComponentConstants.HUD_WEAPON_ICON:
          case com.rockstargames.gtav.constants.HudComponentConstants.HUD_RETICLE:
             _loc4_._x = Math.round(_loc3_);
             _loc4_._y = Math.round(_loc2_);
-            break;
-         default:
-            _loc4_._width = Math.round(_loc7_);
-            _loc4_._height = Math.round(_loc5_);
-            _loc4_._x = Math.round(_loc3_);
-            _loc4_._y = Math.round(_loc2_);
+         case com.rockstargames.gtav.constants.HudComponentConstants.HUD_FLOATING_HELP_TEXT_1:
+         case com.rockstargames.gtav.constants.HudComponentConstants.HUD_FLOATING_HELP_TEXT_2:
+            return;
       }
    }
    function SET_HUD_COMPONENT_RANGE(weaponStart, scriptedHudCompStart)
@@ -475,7 +483,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
       var _loc5_ = this.COMPONENT_ARRAY[componentID];
       var _loc2_ = 0;
       var _loc6_ = _loc5_._functionCache.length;
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc3_ = [];
       _loc3_ = _loc5_._functionCache;
       _loc2_ = 0;
@@ -492,7 +500,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    }
    function checkForCompInfo(componentID)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.COMPONENT_ARRAY[componentID] != undefined)
       {
          _loc2_ = this.COMPONENT_ARRAY[componentID];
@@ -513,12 +521,12 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    }
    function REPOSITION_HUD_FOR_CONFIG_CHANGE()
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
-      var _loc5_ = undefined;
-      var _loc7_ = undefined;
-      var _loc6_ = undefined;
-      var _loc4_ = undefined;
+      var _loc5_;
+      var _loc7_;
+      var _loc6_;
+      var _loc4_;
       _loc2_ = 0;
       while(_loc2_ < com.rockstargames.gtav.constants.HudComponentConstants.MAX_SCRIPTED_HUD_COMPONENTS)
       {
@@ -541,7 +549,7 @@ class com.rockstargames.ui.core.BaseContainer extends MovieClip
    function SHOW_BOUNDING_BOX(componentID)
    {
       var _loc3_ = 0;
-      var _loc4_ = undefined;
+      var _loc4_;
       _loc3_ = 0;
       while(_loc3_ < this.MAX_HUD_COMPONENTS)
       {

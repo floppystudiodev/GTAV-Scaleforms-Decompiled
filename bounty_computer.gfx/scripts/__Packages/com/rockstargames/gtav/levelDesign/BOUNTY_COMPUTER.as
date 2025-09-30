@@ -1,21 +1,22 @@
 class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var currScreenID;
-   var inputReceived;
-   var deactivated;
-   var launchTimestamp;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var cursor;
-   var overlay;
+   var TIMELINE;
+   var _name;
    var bountyTargets;
-   var gamerName;
    var currScreen;
+   var currScreenID;
+   var cursor;
+   var deactivated;
+   var displayConfig;
+   var gamerName;
+   var imageManager;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
+   var overlay;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -79,9 +80,10 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
    }
    function ADD_BOUNTY_TARGET(index, name, reward, textureName, textureDictionary, isHighValue, completionState, available, isMale)
    {
+      var _loc2_;
       if(index >= 0 && index < com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER.MAX_BOUNTY_TARGETS)
       {
-         var _loc2_ = this.bountyTargets[index] || new com.rockstargames.gtav.levelDesign.bountyComputer.data.BountyTarget();
+         _loc2_ = this.bountyTargets[index] || new com.rockstargames.gtav.levelDesign.bountyComputer.data.BountyTarget();
          _loc2_.textureChanged = _loc2_.textureDictionary != textureDictionary || _loc2_.textureName != textureName;
          _loc2_.index = index;
          _loc2_.isHighValue = isHighValue;
@@ -138,9 +140,10 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
    }
    function GET_CURRENT_SELECTION()
    {
+      var _loc2_;
       if(this.inputReceived)
       {
-         var _loc2_ = this.cursor.getTargetUnderCursor();
+         _loc2_ = this.cursor.getTargetUnderCursor();
          return !_loc2_ ? -1 : _loc2_.id;
       }
       return this.lastClickedButtonID;
@@ -161,6 +164,7 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
          return undefined;
       }
       this.inputReceived = true;
+      var _loc2_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.bountyComputer.navigation.Cursor.UP:
@@ -170,15 +174,16 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
             this.cursor.snapInDirection(inputID);
             break;
          case com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER.ACCEPT:
-            var _loc2_ = this.cursor.getTargetUnderCursor();
+            _loc2_ = this.cursor.getTargetUnderCursor();
             this.lastClickedButtonID = !_loc2_ ? -1 : _loc2_.id;
             break;
          case com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER.CANCEL:
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.currScreen.customCancelResponse())
+            if(!this.currScreen.customCancelResponse())
             {
             }
       }
@@ -260,15 +265,18 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc5_;
       if(!isNaN(letterSpacing))
       {
-         var _loc5_ = tf.getTextFormat();
+         _loc5_ = tf.getTextFormat();
          _loc5_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc5_);
       }
+      var _loc2_;
+      var _loc6_;
       if(tf.multiline && tf.maxscroll > 1)
       {
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -287,7 +295,7 @@ class com.rockstargames.gtav.levelDesign.BOUNTY_COMPUTER extends com.rockstargam
       }
       else if(!tf.multiline && tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
          _loc2_ = txt.length;
          while(_loc2_ > 0)

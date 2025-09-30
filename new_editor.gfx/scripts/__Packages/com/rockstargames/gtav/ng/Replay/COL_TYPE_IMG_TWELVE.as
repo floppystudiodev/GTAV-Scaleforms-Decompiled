@@ -1,11 +1,14 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_IMG_TWELVE extends com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG
 {
-   var row;
-   var imgContainer;
-   var pictureFrame;
    var APP_DATA;
-   var labelMC;
+   var __get__highlighted;
+   var _name;
    var bgMC;
+   var clearIfUndefinied;
+   var imgContainer;
+   var labelMC;
+   var pictureFrame;
+   var row;
    var position = -1;
    var textureLoaded = "";
    var txdLoaded = "";

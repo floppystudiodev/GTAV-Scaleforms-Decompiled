@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
 {
+   var _buttons;
    var app;
    var cursor;
-   var persistentContent;
    var overlay;
-   var view;
-   var _buttons;
+   var persistentContent;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var view;
    static var STAGE_WIDTH = 1280;
    static var STAGE_HEIGHT = 720;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.nightclub.screens.Screen.STAGE_WIDTH;
@@ -118,17 +118,20 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.Screen
    }
    function onTargetChange(targetID)
    {
+      var _loc3_;
+      var _loc4_;
+      var _loc2_;
       if(this.overlay.isShowing)
       {
          this.overlay.updateSelectedButton(targetID);
       }
       else
       {
-         var _loc3_ = 0;
-         var _loc4_ = this._buttons.length;
+         _loc3_ = 0;
+         _loc4_ = this._buttons.length;
          while(_loc3_ < _loc4_)
          {
-            var _loc2_ = this._buttons[_loc3_];
+            _loc2_ = this._buttons[_loc3_];
             if(_loc2_.enabled)
             {
                _loc2_.view.gotoAndStop(_loc2_.id != targetID ? "off" : "on");

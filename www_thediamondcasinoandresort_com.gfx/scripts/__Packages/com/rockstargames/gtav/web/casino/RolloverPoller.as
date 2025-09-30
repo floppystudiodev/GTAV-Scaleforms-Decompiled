@@ -2,10 +2,10 @@ class com.rockstargames.gtav.web.casino.RolloverPoller
 {
    var browser;
    var changeListener;
-   var tickMC;
-   var tickArgs;
    var currRolloverIndex;
    var targets;
+   var tickArgs;
+   var tickMC;
    static var TICK_DURATION = 0.03333333333333333;
    function RolloverPoller(view, browser, changeListener)
    {
@@ -28,10 +28,12 @@ class com.rockstargames.gtav.web.casino.RolloverPoller
       this.browser.CURSOR.localToGlobal(_loc5_);
       var _loc3_ = 0;
       var _loc6_ = this.targets.length;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < _loc6_)
       {
-         var _loc4_ = this.targets[_loc3_];
-         var _loc2_ = {x:0,y:0};
+         _loc4_ = this.targets[_loc3_];
+         _loc2_ = {x:0,y:0};
          _loc4_.localToGlobal(_loc2_);
          if(_loc5_.x > _loc2_.x && _loc5_.y > _loc2_.y && _loc5_.x < _loc2_.x + _loc4_._width && _loc5_.y < _loc2_.y + _loc4_._height)
          {

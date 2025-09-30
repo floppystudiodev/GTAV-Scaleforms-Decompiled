@@ -1,12 +1,15 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstargames.gtav.Multiplayer.POWER_PLAY
 {
-   var iconTypeList;
-   var icCurVals;
    var CONTENT;
+   var descenders;
    var displayConfig;
+   var icCurVals;
+   var iconList;
+   var iconTypeList;
    var myHudColourT1;
    var myHudColourT2;
-   var iconList;
+   var safeLeft;
+   var safeRight;
    function POWER_PLAY_VEHICLE()
    {
       super();
@@ -69,10 +72,13 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
       var _loc13_ = _loc11_ * 2 != _loc10_ ? 104 : _loc12_ + _loc6_;
       var _loc7_ = 0;
       var _loc3_ = 0;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < _loc10_)
       {
-         var _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIcon();
-         var _loc2_ = this.CONTENT.createEmptyMovieClip("icon" + _loc3_,this.CONTENT.getNextHighestDepth());
+         _loc5_ = new com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIcon();
+         _loc2_ = this.CONTENT.createEmptyMovieClip("icon" + _loc3_,this.CONTENT.getNextHighestDepth());
          if(_loc3_ < _loc11_)
          {
             _loc2_._x = _loc8_;
@@ -88,7 +94,7 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
          _loc5_.init(_loc2_,this.iconTypeList[_loc3_],teamOneColourHex,teamTwoColourHex);
          _loc2_._y += 0.5 * _loc2_._height;
          this.iconList[_loc3_] = _loc5_;
-         var _loc4_ = _loc2_._y + 0.5 * _loc2_._height;
+         _loc4_ = _loc2_._y + 0.5 * _loc2_._height;
          if(_loc4_ > _loc7_)
          {
             _loc7_ = _loc4_;
@@ -100,10 +106,10 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
    function ACTIVATE_ICON(iconID, titleText, strapText, greyOtherIcons, teamColourID)
    {
       super.ACTIVATE_ICON(iconID,titleText,strapText,greyOtherIcons,teamColourID);
-      var _loc10_ = undefined;
-      var _loc12_ = undefined;
-      var _loc11_ = undefined;
-      var _loc14_ = undefined;
+      var _loc10_;
+      var _loc12_;
+      var _loc11_;
+      var _loc14_;
       this.icCurVals[iconID] = 1;
       if(teamColourID == 0)
       {
@@ -123,10 +129,12 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
       var _loc9_ = -10;
       var _loc5_ = 0;
       var _loc8_ = titleText.length;
+      var _loc3_;
+      var _loc4_;
       while(_loc5_ < _loc8_)
       {
-         var _loc3_ = 0;
-         var _loc4_ = this.descenders.length;
+         _loc3_ = 0;
+         _loc4_ = this.descenders.length;
          while(_loc3_ < _loc4_)
          {
             if(titleText.charCodeAt(_loc5_) == this.descenders[_loc3_])
@@ -155,9 +163,10 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
    {
       var _loc2_ = 0;
       var _loc4_ = this.iconList.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.iconList[_loc2_].background;
+         _loc3_ = this.iconList[_loc2_].background;
          _loc3_.transform.colorTransform = new flash.geom.ColorTransform();
          _loc3_._alpha = 50;
          _loc2_ = _loc2_ + 1;
@@ -218,6 +227,8 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstar
             break;
          case 1:
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc3_,0.2,{_xscale:100,_yscale:100,onComplete:this.animateIcon,onCompleteScope:this,onCompleteArgs:[iconID,2]});
+         default:
+            return;
       }
    }
 }

@@ -1,13 +1,14 @@
 class com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG extends com.rockstargames.gtav.ng.Replay.ReplayBaseItem
 {
-   var loaderObject;
    var SPINNER;
-   var imgContainer;
    var VIDEO_CLIP_MASK;
-   var imgContainer_dupe;
-   var thisObj;
-   var loadedObject;
+   var attachMovie;
    var dynamic_mask;
+   var imgContainer;
+   var imgContainer_dupe;
+   var loadedObject;
+   var loaderObject;
+   var thisObj;
    var isImageLoaded = false;
    var gfxFileName = "NEW_EDITOR";
    var storedTexture = "";
@@ -23,13 +24,15 @@ class com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG extends com.rockstargam
       this.storedTexture = texture;
       var thisObj = this;
       this.loaderObject._depth = 100;
+      var _loc4_;
+      var _loc2_;
+      var _loc6_;
       if(this.isImageNameValid(txd) && this.isImageNameValid(texture))
       {
          if(typeof this.imgContainer == "movieclip")
          {
-            var _loc4_ = undefined;
-            var _loc2_ = this.imgContainer;
-            var _loc6_ = this.VIDEO_CLIP_MASK;
+            _loc2_ = this.imgContainer;
+            _loc6_ = this.VIDEO_CLIP_MASK;
             _loc2_._visible = false;
             _loc6_._visible = false;
             if(typeof this.imgContainer_dupe == "movieclip")

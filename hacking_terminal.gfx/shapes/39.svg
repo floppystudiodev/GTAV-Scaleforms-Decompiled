@@ -3,12 +3,12 @@
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, -103.0, -179.0)">
     <path d="M697.0 300.0 L103.0 300.0 103.0 179.0 697.0 179.0 697.0 300.0" fill="#ecd651" fill-rule="evenodd" stroke="none"/>
     <path d="M568.0 345.0 L232.0 345.0 232.0 309.0 568.0 309.0 568.0 345.0" fill="#ecd651" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="false" height="50" id="PatternID_39_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 132.5, 214.5)" patternUnits="userSpaceOnUse" viewBox="0 0 535 50" width="535">
-      <image height="50" width="535" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAhcAAAAyCAYAAADvJ/nkAAAA8ElEQVR4Xu3WoQEAIADDsP3/NHgslRExvaA72wEAqOwNAAA/zAUAkDIXAEDKXAAAKXMBAKTMBQCQMhcAQMpcAAApcwEApMwFAJAyFwBAylwAAClzAQCkzAUAkDIXAEDKXAAAKXMBAKTMBQCQMhcAQMpcAAApcwEApMwFAJAyFwBAylwAAClzAQCkzAUAkDIXAEDKXAAAKXMBAKTMBQCQMhcAQMpcAAApcwEApMwFAJAyFwBAylwAAClzAQCkzAUAkDIXAEDKXAAAKXMBAKTMBQCQMhcAQMpcAAApcwEApMwFAJAyFwBAylwAAClzAQCkLkH0NzWVW7qCAAAAAElFTkSuQmCC"/>
+    <pattern height="50" id="PatternID_39_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 132.5, 214.5)" patternUnits="userSpaceOnUse" viewBox="0 0 535 50" width="535">
+      <image height="50" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="535" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAhcAAAAyCAYAAADvJ/nkAAAAyUlEQVR42u3WIQEAAAjAsPcvDSUQiIkVuHpTAwBwJREAAHMBAJgLAMBcAACYCwDAXAAA5gIAwFwAAOYCADAXAIC5AAAwFwCAuQAAzAUAgLkAAMwFAGAuAADMBQBgLgAAcwEAmAsAAHMBAJgLAMBcAACYCwDAXAAA5gIAwFwAAOYCADAXAIC5AAAwFwCAuQAAzAUAgLkAAMwFAGAuAADMBQBgLgAAcwEAmAsAAHMBAJgLAMBcAACYCwDAXAAA5gIAwFwAAOYCAPhuAUH0NzWDUdfAAAAAAElFTkSuQmCC"/>
     </pattern>
     <path d="M667.5 264.5 L132.5 264.5 132.5 214.5 667.5 214.5 667.5 264.5" ffdec:fill-bitmapId="4" style="fill:url(#PatternID_39_1)"/>
-    <pattern ffdec:smoothed="false" height="19" id="PatternID_39_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 243.0, 317.0)" patternUnits="userSpaceOnUse" viewBox="0 0 314 19" width="314">
-      <image height="19" width="314" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAATCAYAAAAAlsEWAAAAWklEQVR4Xu3UMREAMBDDsPAn/d0LwadBiwF4tx1A2f4AUGN0QJ7RAXlGB+QZHZBndECe0QF5RgfkGR2QZ3RAntEBeUYH5BkdkGd0QJ7RAXlGB+QZHZBndEDeA/nncBfuQ545AAAAAElFTkSuQmCC"/>
+    <pattern height="19" id="PatternID_39_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 243.0, 317.0)" patternUnits="userSpaceOnUse" viewBox="0 0 314 19" width="314">
+      <image height="19" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="314" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAATCAYAAAAAlsEWAAAAS0lEQVR42u3UMQ0AAAjAsPk3DTogPWpgx5oagM8SATA6AKMDMDoAowMwOgCjAzA6wOgAjA7A6ACMDsDoAIwOwOgAjA4wOgCjAzhoAfnncBdVVJ7EAAAAAElFTkSuQmCC"/>
     </pattern>
     <path d="M557.0 336.0 L243.0 336.0 243.0 317.0 557.0 317.0 557.0 336.0" ffdec:fill-bitmapId="10" style="fill:url(#PatternID_39_2)"/>
   </g>

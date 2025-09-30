@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.items.TransitionNewsProgressItem extends MovieClip
 {
-   var progressBarMC;
-   var nameTF;
    var iconMC;
-   var valTF;
    var imgMC;
+   var nameTF;
+   var progressBarMC;
+   var valTF;
    static var TEXTURE_LENGTH = 32;
    static var PROGRESS_BAR_W = 210;
    static var PROGRESS_BAR_H = 10;

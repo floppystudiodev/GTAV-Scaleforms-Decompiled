@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_CORONA_PLAYER_INFO extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
+   var dbgID;
    var dependentColumnMC;
+   var model;
    function MP_CORONA_PLAYER_INFO()
    {
       super();

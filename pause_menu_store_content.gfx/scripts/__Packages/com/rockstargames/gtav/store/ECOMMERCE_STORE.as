@@ -1,26 +1,26 @@
 class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gtav.store.EcommerceStoreBaseClass
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var HEADER;
-   var detailsMC;
-   var charMC;
-   var crewMC;
-   var bgCol;
-   var textCol;
-   var headerCol;
-   var menuBgCol;
-   var blackCol;
-   var whiteCol;
-   var currentMenu;
+   var CONTENT;
    var ERRORMESSAGE;
+   var HEADER;
+   var TIMELINE;
+   var bgCol;
+   var blackCol;
+   var charImgLoaderMC;
+   var charMC;
    var column0;
    var column1;
    var column2;
    var crewImgLoaderMC;
-   var charImgLoaderMC;
+   var crewMC;
+   var currentMenu;
    var currentSelection;
+   var detailsMC;
+   var headerCol;
+   var menuBgCol;
+   var textCol;
+   var whiteCol;
    var STORE_TYPE = 7;
    var maxCol = 2;
    var columnYpos = 121;
@@ -249,9 +249,13 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
       }
       _loc2_.details1TF._x = - _loc2_.details1TF._width;
       _loc2_.details1condTF._x = - _loc2_.details1condTF._width;
+      var _loc7_;
+      var _loc3_;
+      var _loc5_;
+      var _loc6_;
       if(str2 != undefined)
       {
-         var _loc7_ = str2.split(":").length > 1;
+         _loc7_ = str2.split(":").length > 1;
          if(!_loc7_)
          {
             _loc2_.details2TF.text = str2;
@@ -263,10 +267,10 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
          }
          else
          {
-            var _loc3_ = str2.split(" ");
-            var _loc5_ = _loc3_[_loc3_.length - 1];
+            _loc3_ = str2.split(" ");
+            _loc5_ = _loc3_[_loc3_.length - 1];
             _loc3_.pop();
-            var _loc6_ = _loc3_.join(" ");
+            _loc6_ = _loc3_.join(" ");
             _loc2_.timeTF.text = _loc5_;
             _loc2_.timeTF.autoSize = "left";
             _loc2_.timeTF.wordWrap = false;
@@ -291,6 +295,9 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    function SET_CREW_IMG(txd, crewTexturePath, show)
    {
       this.showCrew = show;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.showCrew)
       {
          if(txd != "")
@@ -304,9 +311,9 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
                this.crewImgLoaderMC.removeTxdRef();
             }
             this.crewImgLoaderMC.init(this.gfxFileName,txd,crewTexturePath,this.imgSize,this.imgSize);
-            var _loc3_ = 3;
-            var _loc2_ = String(this.crewImgLoaderMC).split(".");
-            var _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
+            _loc3_ = 3;
+            _loc2_ = String(this.crewImgLoaderMC).split(".");
+            _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
             this.crewImgLoaderMC.addTxdRef(_loc4_,this.loadedCrewImg,this);
             this.crewImgLoaderMC._alpha = 0;
          }
@@ -326,6 +333,9 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    function SET_CHAR_IMG(txd, charTexturePath, show)
    {
       this.showChar = show;
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.showChar)
       {
          if(txd != "")
@@ -339,9 +349,9 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
                this.charImgLoaderMC.removeTxdRef();
             }
             this.charImgLoaderMC.init(this.gfxFileName,txd,charTexturePath,this.imgSize,this.imgSize);
-            var _loc3_ = 3;
-            var _loc2_ = String(this.charImgLoaderMC).split(".");
-            var _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
+            _loc3_ = 3;
+            _loc2_ = String(this.charImgLoaderMC).split(".");
+            _loc4_ = _loc2_.slice(_loc2_.length - _loc3_).join(".");
             this.charImgLoaderMC.addTxdRef(_loc4_,this.loadedCharImg,this);
             this.charImgLoaderMC._alpha = 0;
          }
@@ -388,9 +398,10 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function SET_SHOP_LOGO(_logo)
    {
+      var _loc2_;
       if(_logo > 0)
       {
-         var _loc2_ = "logo" + _logo.toString();
+         _loc2_ = "logo" + _logo.toString();
          this.HEADER.shopLogosMC.gotoAndStop(_loc2_);
          this.SHOW_SHOP_LOGO(true);
       }
@@ -417,10 +428,11 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function HIGHLIGHT_COLUMN(_column)
    {
+      var _loc3_;
+      var _loc2_;
       if(_column != undefined)
       {
-         var _loc3_ = undefined;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < 2)
          {
             _loc3_ = "column" + _loc2_;
@@ -461,7 +473,7 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function GET_CURRENT_SELECTION(_column)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       if(_column == undefined)
       {
          _loc3_ = this.GET_CURRENT_COLUMN();
@@ -480,7 +492,7 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function GET_CURRENT_START_INDEX(_column)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       if(_column == undefined)
       {
          _loc3_ = 1;
@@ -499,7 +511,7 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function GET_CURRENT_END_INDEX(_column)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       if(_column == undefined)
       {
          _loc3_ = 1;
@@ -555,9 +567,11 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
          com.rockstargames.ui.utils.Colour.Colourise(this.HEADER.headerItem3.labelMC,0,0,0,100);
       }
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc3_;
       while(_loc4_ < 3)
       {
-         var _loc2_ = this.HEADER["headerItem" + _loc4_];
+         _loc2_ = this.HEADER["headerItem" + _loc4_];
          if(_loc2_.tabMC != undefined)
          {
             com.rockstargames.ui.utils.Colour.Colourise(_loc2_.tabMC,_loc6_,_loc7_,_loc5_,100);
@@ -589,7 +603,7 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
          else
          {
             _loc2_.tabMC._visible = false;
-            var _loc3_ = new com.rockstargames.ui.utils.HudColour();
+            _loc3_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG,_loc3_);
             if(_loc2_.bgMC != undefined)
             {
@@ -661,6 +675,8 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
                this.HIGHLIGHT_COLUMN(this.currentColumn);
                com.rockstargames.ui.game.GameInterface.call("PLAY_SOUND",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"BACK","HUD_FRONTEND_DEFAULT_SOUNDSET");
             }
+         default:
+            return;
       }
    }
    function SET_INPUT_EVENT_CIRCLE()
@@ -686,13 +702,14 @@ class com.rockstargames.gtav.store.ECOMMERCE_STORE extends com.rockstargames.gta
    }
    function SET_ANALOG_STICK_INPUT(isLeftStick, inputX, inputY)
    {
+      var _loc2_;
       if(this.currentMenu == 1)
       {
          if(isLeftStick == false)
          {
             if(Math.abs(inputY) > 40)
             {
-               var _loc2_ = com.rockstargames.ui.game.GamePadConstants.DPADUP;
+               _loc2_ = com.rockstargames.ui.game.GamePadConstants.DPADUP;
                if(inputY > 0)
                {
                   _loc2_ = com.rockstargames.ui.game.GamePadConstants.DPADDOWN;

@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_MATCHMAKING_VEHICLE_INFO extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
+   var dbg;
+   var dbgID;
    var manufLoader;
    var isStandaloneGfx = false;
    var firstload = false;
@@ -57,6 +59,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_MATCHMAKING_VEHICLE_IN
          this.manufLoader = this.CONTENT.innerMC.attachMovie("GenericImageLoader","manuLoader",this.CONTENT.innerMC.getNextHighestDepth(),{_x:14,_y:7});
       }
       var _loc5_ = !this.isStandaloneGfx ? "PAUSE_MENU_SP_CONTENT" : "MP_VEHICLE_INFO";
+      var _loc6_;
       if(this.manufLoader.textureDict == _loc3_)
       {
          this.manufLoader.init(_loc5_,_loc3_,_loc4_,54,54);
@@ -68,7 +71,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.MP_MATCHMAKING_VEHICLE_IN
          {
             this.manufLoader.removeTxdRef();
          }
-         var _loc6_ = this.manufLoader.splitPath(String(this.manufLoader),3);
+         _loc6_ = this.manufLoader.splitPath(String(this.manufLoader),3);
          this.manufLoader.init(_loc5_,_loc3_,_loc4_,54,54);
          this.manufLoader.requestTxdRef(_loc6_,this.firstload,this.imageLoaded,this);
       }

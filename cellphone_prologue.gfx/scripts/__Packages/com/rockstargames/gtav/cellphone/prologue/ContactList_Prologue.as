@@ -1,14 +1,15 @@
 class com.rockstargames.gtav.cellphone.prologue.ContactList_Prologue extends com.rockstargames.ui.controls.ScrollingList
 {
-   var scrollBar;
-   var scrollBarTimeout;
-   var row;
+   var TextBlackHex;
+   var TextWhiteHex;
+   var arrayStartPoint;
    var container;
-   var offsetY;
    var dataProviderUI;
    var numberOfVisibleRows;
-   var TextWhiteHex;
-   var TextBlackHex;
+   var offsetY;
+   var row;
+   var scrollBar;
+   var scrollBarTimeout;
    var defaultRowHeight = 40;
    function ContactList_Prologue()
    {
@@ -30,13 +31,16 @@ class com.rockstargames.gtav.cellphone.prologue.ContactList_Prologue extends com
    function populateContent()
    {
       this.row = 1;
+      var _loc2_;
+      var _loc3_;
+      var _loc4_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.numberOfVisibleRows)
          {
-            var _loc3_ = "listItem" + this.row;
-            var _loc4_ = _loc2_ + this.arrayStartPoint;
+            _loc3_ = "listItem" + this.row;
+            _loc4_ = _loc2_ + this.arrayStartPoint;
             this.container[_loc3_].contactNameMC.textAutoSize = "shrink";
             this.container[_loc3_].contactNameMC.text = this.dataProviderUI[_loc4_][1];
             this.row = this.row + 1;

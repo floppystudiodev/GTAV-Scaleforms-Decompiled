@@ -1,19 +1,19 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.BottomSpyCam
 {
-   var view;
-   var scanLineses;
+   var imageHeight;
+   var imageWidth;
    var imageX;
    var imageY;
-   var imageWidth;
-   var imageHeight;
    var matrix;
    var noise;
    var noiseStep;
-   var sequenceStep;
-   var zoomEnd;
-   var zoomStart;
+   var scanLineses;
    var sequenceCurr;
    var sequenceDuration;
+   var sequenceStep;
+   var view;
+   var zoomEnd;
+   var zoomStart;
    static var ZOOM_SEQUENCE = [1,1.44,1.44,1,1,0.86,0.86,1];
    static var DURATION_SEQUENCE_MIN = [90,210,90,210,90,210,90,210];
    static var DURATION_SEQUENCE_MAX = [240,420,240,420,240,420,240,420];
@@ -26,9 +26,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.BottomSpyCam
    {
       this.scanLineses = [];
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view.createEmptyMovieClip("scanLineView",this.view.getNextHighestDepth());
+         _loc3_ = this.view.createEmptyMovieClip("scanLineView",this.view.getNextHighestDepth());
          _loc3_._x = !(_loc2_ % 2) ? 0 : 333;
          _loc3_._y = _loc2_ <= 1 ? 0 : 180;
          this.scanLineses.push(new com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLines(_loc3_));

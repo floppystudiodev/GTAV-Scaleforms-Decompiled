@@ -1,23 +1,23 @@
 class com.rockstargames.gtav.levelDesign.salvagePlanning.screens.MainScreen extends com.rockstargames.gtav.levelDesign.salvagePlanning.screens.Screen
 {
    var app;
-   var cursor;
-   var view;
-   var cursorListenerID;
-   var safeZoneLeft;
-   var safeZoneRight;
-   var safeZoneTop;
-   var safeZoneBottom;
-   var taskButton;
-   var startButton;
-   var prepButtons;
    var buttons;
-   var todoButtons;
-   var todoListItems;
-   var todoListItemsY0;
+   var cursor;
+   var cursorListenerID;
    var optionalButtons;
    var optionalListItems;
    var optionalListItemsY0;
+   var prepButtons;
+   var safeZoneBottom;
+   var safeZoneLeft;
+   var safeZoneRight;
+   var safeZoneTop;
+   var startButton;
+   var taskButton;
+   var todoButtons;
+   var todoListItems;
+   var todoListItemsY0;
+   var view;
    static var STATE_INVALID = -1;
    static var STATE_INCOMPLETE = 0;
    static var STATE_COMPLETE = 1;
@@ -328,6 +328,8 @@ class com.rockstargames.gtav.levelDesign.salvagePlanning.screens.MainScreen exte
          case com.rockstargames.gtav.levelDesign.salvagePlanning.screens.MainScreen.STATE_COMPLETE:
             this.view.startButton._alpha = 100;
             this.cursor.addTarget(this.startButton);
+         default:
+            return;
       }
    }
    function setViewVisible(isVisible)
@@ -350,9 +352,10 @@ class com.rockstargames.gtav.levelDesign.salvagePlanning.screens.MainScreen exte
    function onTargetChange(target)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.buttons.length)
       {
-         var _loc3_ = this.buttons[_loc2_];
+         _loc3_ = this.buttons[_loc2_];
          _loc3_.setState(_loc3_ == target);
          _loc2_ = _loc2_ + 1;
       }

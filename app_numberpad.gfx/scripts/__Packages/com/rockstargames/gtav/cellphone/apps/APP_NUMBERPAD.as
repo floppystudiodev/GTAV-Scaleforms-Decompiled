@@ -1,22 +1,22 @@
 class com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD extends MovieClip
 {
-   var TIMELINE;
    var CONTENT;
-   var dataProviderUI;
-   var container;
-   var col;
-   var row;
-   var linkageID;
-   var gfxFileName;
-   var numberOfRows;
-   var currentKey;
-   var previousKey;
-   var currentStyle;
-   var whiteRGB;
-   var TextWhiteHex;
-   var darkGreyRGB;
-   var greyRGB;
+   var TIMELINE;
    var TextGreyHex;
+   var TextWhiteHex;
+   var col;
+   var container;
+   var currentKey;
+   var currentStyle;
+   var darkGreyRGB;
+   var dataProviderUI;
+   var gfxFileName;
+   var greyRGB;
+   var linkageID;
+   var numberOfRows;
+   var previousKey;
+   var row;
+   var whiteRGB;
    var numberOfColumns = 3;
    var columnSpace = 1;
    var rowSpace = 1;
@@ -51,9 +51,12 @@ class com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD extends MovieClip
    function renderContainers()
    {
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
       while(_loc3_ < 12)
       {
-         var _loc2_ = this.col + "_" + this.row;
+         _loc2_ = this.col + "_" + this.row;
          if(this.container[_loc2_] != undefined)
          {
             this.container[_loc2_].removeMovieClip();
@@ -63,9 +66,9 @@ class com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD extends MovieClip
          this.container[_loc2_]._id = _loc3_;
          this.container[_loc2_].asterisk._visible = false;
          this.setState(this.container[_loc2_],false);
-         var _loc4_ = (this.container[_loc2_]._width + this.columnSpace) * (this.col - 1) + this.offsetX;
+         _loc4_ = (this.container[_loc2_]._width + this.columnSpace) * (this.col - 1) + this.offsetX;
          this.container[_loc2_]._x = _loc4_;
-         var _loc5_ = (this.container[_loc2_]._height + this.rowSpace) * (this.row - 1) + this.offsetY;
+         _loc5_ = (this.container[_loc2_]._height + this.rowSpace) * (this.row - 1) + this.offsetY;
          this.container[_loc2_]._y = _loc5_;
          this.col = this.col + 1;
          if(this.col > this.numberOfColumns)
@@ -88,10 +91,13 @@ class com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD extends MovieClip
       this.col = 1;
       this.row = 1;
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < 12)
       {
-         var _loc4_ = this.col + "_" + this.row;
-         var _loc5_ = this.dataProviderUI[_loc2_];
+         _loc4_ = this.col + "_" + this.row;
+         _loc5_ = this.dataProviderUI[_loc2_];
          if(_loc5_ == "*")
          {
             this.container[_loc4_].asterisk._visible = true;
@@ -100,7 +106,7 @@ class com.rockstargames.gtav.cellphone.apps.APP_NUMBERPAD extends MovieClip
          {
             this.container[_loc4_].char.text = _loc5_;
          }
-         var _loc3_ = this.dataProviderUI[_loc2_ + 12];
+         _loc3_ = this.dataProviderUI[_loc2_ + 12];
          if(_loc3_ == undefined)
          {
             _loc3_ = _loc6_[_loc2_];

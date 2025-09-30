@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var currentVehicle;
    static var LIST_LENGTH = 10;
    function DAILY_VEHICLE_CHECKLIST()
@@ -19,10 +20,12 @@ class com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST extends com.roc
       this.CONTENT = this.TIMELINE.attachMovie("CONTENT","CONTENT",this.TIMELINE.getNextHighestDepth());
       com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST.setLocalisedText(this.CONTENT.header.textField,"DVC_HEADER");
       var _loc2_ = 0;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST.LIST_LENGTH)
       {
-         var _loc4_ = this.CONTENT["vehicleText_" + _loc2_].textField;
-         var _loc3_ = this.CONTENT["vehicleText_" + _loc2_].crossoutLines;
+         _loc4_ = this.CONTENT["vehicleText_" + _loc2_].textField;
+         _loc3_ = this.CONTENT["vehicleText_" + _loc2_].crossoutLines;
          _loc4_._visible = false;
          _loc3_.line1._visible = false;
          _loc3_.line2._visible = false;
@@ -45,13 +48,16 @@ class com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST extends com.roc
    }
    function initStrikethrough(crossoutLines, textField, isVisible)
    {
+      var _loc3_;
+      var _loc1_;
+      var _loc2_;
       if(isVisible && textField.length > 0)
       {
-         var _loc3_ = textField.bottomScroll;
-         var _loc1_ = 1;
+         _loc3_ = textField.bottomScroll;
+         _loc1_ = 1;
          while(_loc1_ <= 2)
          {
-            var _loc2_ = crossoutLines["line" + _loc1_];
+            _loc2_ = crossoutLines["line" + _loc1_];
             _loc2_._visible = _loc1_ <= _loc3_;
             _loc1_ = _loc1_ + 1;
          }
@@ -65,10 +71,12 @@ class com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST extends com.roc
    function CLEAR_ALL_VEHICLES()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.DAILY_VEHICLE_CHECKLIST.LIST_LENGTH)
       {
-         var _loc3_ = this.CONTENT["vehicleText_" + _loc2_].textField;
-         var _loc4_ = this.CONTENT["vehicleText_" + _loc2_].crossoutLines;
+         _loc3_ = this.CONTENT["vehicleText_" + _loc2_].textField;
+         _loc4_ = this.CONTENT["vehicleText_" + _loc2_].crossoutLines;
          _loc3_.text = "";
          _loc3_._visible = false;
          _loc4_.line1._visible = false;

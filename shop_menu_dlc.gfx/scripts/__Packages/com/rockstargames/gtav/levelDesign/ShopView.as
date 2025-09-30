@@ -1,6 +1,15 @@
 class com.rockstargames.gtav.levelDesign.ShopView extends com.rockstargames.ui.components.GUIView
 {
+   var __get__index;
+   var _highlighted;
+   var dataList;
+   var direction;
+   var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
    var viewContainer;
+   var viewLinkageList;
    var selectableList = new Array();
    function ShopView()
    {
@@ -9,15 +18,17 @@ class com.rockstargames.gtav.levelDesign.ShopView extends com.rockstargames.ui.c
    function reorderHighlightStyle(targetIndex)
    {
       var _loc5_ = this.direction(targetIndex);
+      var _loc3_;
+      var _loc2_;
       if(_loc5_ != 0)
       {
-         var _loc3_ = targetIndex;
+         _loc3_ = targetIndex;
          if(_loc3_ > this.dataList.length - this.itemList.length)
          {
             targetIndex = this.dataList.length - this.itemList.length;
          }
          _loc3_ -= targetIndex;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          _loc2_ = 0;
          while(_loc2_ < this.itemList.length)
          {

@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.MapMarker
 {
    var id;
+   var label;
    var view;
    var x;
    var y;
-   var label;
    function MapMarker(id)
    {
       this.id = id;

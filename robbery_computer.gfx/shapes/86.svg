@@ -2,12 +2,12 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="49.0px" width="1920.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
     <path d="M1920.0 49.0 L0.0 49.0 0.0 0.0 1920.0 0.0 1920.0 49.0" fill="#02162a" fill-rule="evenodd" stroke="none"/>
-    <pattern ffdec:smoothed="false" height="42" id="PatternID_86_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 1753.0, 7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 146 42" width="146">
-      <image height="42" width="146" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAAAqCAYAAABY4gKWAAAAhUlEQVR4Xu3SoQEAIAzAsP3/9PBIqIyIqe7szMKvuQO8MBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTASCSORMBIJI5EwEgkjkTjs57ras9o+KQAAAABJRU5ErkJggg=="/>
+    <pattern height="42" id="PatternID_86_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 1753.0, 7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 146 42" width="146">
+      <image height="42" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="146" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAAAqCAYAAABY4gKWAAAAY0lEQVR42u3SMQ0AAAjAsPk3DSI46VEDy5oauEoEjISRMBIYCSNhJIwERsJIGAkjgZEwEkYCI2EkjISRwEgYCSNhJDASRsJIGAmMhJEwEhgJI2EkjARGwkgYCSOBkTASRuKrBeznutrDKD09AAAAAElFTkSuQmCC"/>
     </pattern>
     <path d="M1899.0 49.0 L1753.0 49.0 1753.0 7.0 1899.0 7.0 1899.0 49.0" ffdec:fill-bitmapId="1" style="fill:url(#PatternID_86_1)"/>
-    <pattern ffdec:smoothed="false" height="42" id="PatternID_86_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 7.0, 7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 880 42" width="880">
-      <image height="42" width="880" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAA3AAAAAqCAYAAADyF7nbAAABCklEQVR4Xu3XMQ0AMAzAsPIn3f1D0Eg+/IRBZmcWAACA++YPAAAA3GTgAAAAIgwcAABAhIEDAACIMHAAAAARBg4AACDCwAEAAEQYOAAAgAgDBwAAEGHgAAAAIgwcAABAhIEDAACIMHAAAAARBg4AACDCwAEAAEQYOAAAgAgDBwAAEGHgAAAAIgwcAABAhIEDAACIMHAAAAARBg4AACDCwAEAAEQYOAAAgAgDBwAAEGHgAAAAIgwcAABAhIEDAACIMHAAAAARBg4AACDCwAEAAEQYOAAAgAgDBwAAEGHgAAAAIgwcAABAhIEDAACIMHAAAAARBg4AACDCwAEAAEQYOAAAgAgDBwAAEPEAhEywEt3uPGgAAAAASUVORK5CYII="/>
+    <pattern height="42" id="PatternID_86_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 7.0, 7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 880 42" width="880">
+      <image height="42" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="880" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAA3AAAAAqCAYAAADyF7nbAAAA5ElEQVR42u3XMQEAAAyDMPyb3mz0yBEDfHR1AAAA7EsEAAAAAwcAAICBAwAAMHAAAAAYOAAAAAwcAACAgQMAAMDAAQAAYOAAAAAMHAAAAAYOAAAAAwcAAGDgAAAAMHAAAAAYOAAAAAMHAACAgQMAAMDAAQAAGDgAAAAMHAAAgIEDAADAwAEAAGDgAAAADBwAAAAGDgAAAAMHAABg4AAAADBwAAAAGDgAAAADBwAAgIEDAADAwAEAABg4AAAADBwAAAAGDgAAwMABAABg4AAAAAwcAAAABg4AAAADBwAAYOAAAADY8YRMsBKUMkdCAAAAAElFTkSuQmCC"/>
     </pattern>
     <path d="M301.0 7.0 L301.05 49.0 7.0 49.0 7.0 7.0 301.0 7.0" ffdec:fill-bitmapId="2" style="fill:url(#PatternID_86_2)"/>
   </g>

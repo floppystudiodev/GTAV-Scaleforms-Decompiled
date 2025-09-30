@@ -1,18 +1,19 @@
 class com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var lastClickedButtonID;
-   var inputReceived;
+   var TIMELINE;
+   var _name;
+   var cursor;
    var deactivated;
-   var launchTimestamp;
    var displayConfig;
    var imageManager;
-   var screenContainer;
+   var inputReceived;
+   var lastClickedButtonID;
+   var launchTimestamp;
    var overlay;
-   var cursor;
    var screen;
+   var screenContainer;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -162,13 +163,16 @@ class com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP extends com.ro
    {
       var _loc3_ = 0;
       var _loc4_ = this.screen.buttons.length;
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.screen.buttons[_loc3_];
+         _loc2_ = this.screen.buttons[_loc3_];
          if(_loc2_.id == buttonID)
          {
-            var _loc6_ = 0.5 * (_loc2_.left + _loc2_.right);
-            var _loc5_ = 0.5 * (_loc2_.top + _loc2_.bottom);
+            _loc6_ = 0.5 * (_loc2_.left + _loc2_.right);
+            _loc5_ = 0.5 * (_loc2_.top + _loc2_.bottom);
             this.cursor.moveTo(_loc6_,_loc5_,true,true);
             break;
          }
@@ -186,13 +190,14 @@ class com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP extends com.ro
          return undefined;
       }
       this.inputReceived = true;
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP.playSound("Mouse_Move_Cursor");
@@ -205,8 +210,9 @@ class com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP extends com.ro
             if(this.overlay.isShowing)
             {
                this.HIDE_OVERLAY();
+               break;
             }
-            else if(!this.screen.customCancelResponse())
+            if(!this.screen.customCancelResponse())
             {
             }
       }
@@ -280,17 +286,20 @@ class com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP extends com.ro
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

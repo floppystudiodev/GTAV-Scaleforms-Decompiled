@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.foreclosures.SalvageYardTintPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
-   var nextPageName;
-   var summaryPageName;
-   var progressPanel;
    var currentSelection;
+   var nextPageName;
+   var prevPageName;
+   var progressPanel;
    var slideshow;
+   var summaryPageName;
    var view;
+   var website;
    static var TXD = "FORECLOSURES_SALVAGE";
    static var NUM_TINT_OPTIONS = 9;
    function SalvageYardTintPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -47,9 +47,10 @@ class com.rockstargames.gtav.web.foreclosures.SalvageYardTintPage extends com.ro
    function initOptionButtons()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.foreclosures.SalvageYardTintPage.NUM_TINT_OPTIONS)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + 1);
          _loc3_.selected._visible = false;
          this.website.dataTextScope.push(_loc3_.btnTxt);
@@ -59,24 +60,29 @@ class com.rockstargames.gtav.web.foreclosures.SalvageYardTintPage extends com.ro
    }
    function handleClick(type, id)
    {
+      var _loc2_;
+      var _loc3_;
       switch(type)
       {
          case "optionButton":
-            var _loc2_ = parseInt(id);
-            var _loc3_ = _loc2_ != this.website.salvageYardTint;
+            _loc2_ = parseInt(id);
+            _loc3_ = _loc2_ != this.website.salvageYardTint;
             this.website.salvageYardTint = _loc2_;
             this.updateSelectedItem(_loc3_);
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem(selectionHasChanged)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.web.foreclosures.SalvageYardTintPage.NUM_TINT_OPTIONS)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.salvageYardTint;
          _loc2_ = _loc2_ + 1;
       }

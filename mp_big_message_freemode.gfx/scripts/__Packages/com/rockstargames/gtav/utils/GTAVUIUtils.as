@@ -86,16 +86,21 @@ class com.rockstargames.gtav.utils.GTAVUIUtils
    static function trimTextToFitNumLines(str, tf, numLines, isHTMLText)
    {
       var _loc5_ = str;
+      var _loc6_;
+      var _loc7_;
+      var _loc4_;
+      var _loc3_;
+      var _loc1_;
       if(tf.autoSize != "none")
       {
          com.rockstargames.gtav.utils.GTAVUIUtils.setText(tf,_loc5_,isHTMLText);
          if(tf.bottomScroll - tf.scroll + 1 > numLines)
          {
-            var _loc6_ = "...";
-            var _loc7_ = _loc6_.length;
-            var _loc4_ = 0;
-            var _loc3_ = _loc5_.length - 1;
-            var _loc1_ = Math.floor((_loc4_ + _loc3_) / 2);
+            _loc6_ = "...";
+            _loc7_ = _loc6_.length;
+            _loc4_ = 0;
+            _loc3_ = _loc5_.length - 1;
+            _loc1_ = Math.floor((_loc4_ + _loc3_) / 2);
             while(_loc4_ <= _loc3_)
             {
                _loc5_ = str.substring(0,_loc1_ - _loc7_) + _loc6_;

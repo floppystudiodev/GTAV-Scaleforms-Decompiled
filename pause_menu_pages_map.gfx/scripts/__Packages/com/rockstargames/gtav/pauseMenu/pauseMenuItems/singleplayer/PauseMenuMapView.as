@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
-   var dataList;
-   var itemSelectStyle;
-   var visibleItems;
    var _index;
-   var topEdge;
+   var dataList;
    var highlightedItem;
+   var itemList;
+   var itemSelectStyle;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
+   var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    function PauseMenuMapView()
    {
       super();
@@ -48,8 +48,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapV
    function jumpTo(targetIndex)
    {
       this._index = targetIndex;
-      var _loc4_ = undefined;
-      var _loc3_ = undefined;
+      var _loc4_;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
       {
@@ -84,8 +84,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapV
          _loc6_ = this.topEdge;
          targetIndex -= this.topEdge;
       }
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       _loc2_ = 0;
       while(_loc2_ < this.itemList.length)
       {

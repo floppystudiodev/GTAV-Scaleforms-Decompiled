@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.SLOT_MACHINE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var displayConfig;
    function SLOT_MACHINE()
    {
@@ -73,26 +74,27 @@ class com.rockstargames.gtav.levelDesign.SLOT_MACHINE extends com.rockstargames.
          case 2:
             this.colorSlotText(16635454);
             this.colorSlotNumbers(14630274);
-            break;
+            return;
          case 5:
             this.colorSlotText(14487821);
             this.colorSlotNumbers(16777215);
-            break;
+            return;
          case 6:
             this.colorSlotText(16280554);
             this.colorSlotNumbers(16777215);
-            break;
+            return;
          case 7:
             this.colorSlotText(16635454);
             this.colorSlotNumbers(16777215);
-            break;
+            return;
          case 8:
             this.colorSlotText(16777215);
             this.colorSlotNumbers(16674560);
-            break;
+            return;
          default:
             this.colorSlotText(16765200);
             this.colorSlotNumbers(16777215);
+            return;
       }
    }
    function colorSlotText(colorValue)
@@ -149,17 +151,20 @@ class com.rockstargames.gtav.levelDesign.SLOT_MACHINE extends com.rockstargames.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var content;
    var CONTENT;
-   var contextMenu;
-   var mListener;
-   var currentPage;
+   var content;
    var context;
+   var contextMenu;
+   var currentPage;
+   var mListener;
    var thisObj;
    var inContext = false;
    var isReadyToRender = false;
@@ -43,9 +43,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    }
    function dbg(dbgStr)
    {
+      var _loc2_;
       if(this.dbgOn)
       {
-         var _loc2_ = "  " + dbgStr;
+         _loc2_ = "  " + dbgStr;
          com.rockstargames.ui.utils.Debug.log(_loc2_);
          if(this.localdebug)
          {
@@ -172,22 +173,29 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    function FOCUS_CONTENT(f)
    {
       com.rockstargames.ui.utils.Debug.log("===FOCUS_CONTENT " + f);
+      var _loc5_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
+      var _loc9_;
+      var _loc3_;
+      var _loc2_;
       if(this.isDimmable)
       {
-         var _loc5_ = 1;
-         var _loc7_ = 1;
+         _loc5_ = 1;
+         _loc7_ = 1;
          if(!f)
          {
-            var _loc6_ = new com.rockstargames.ui.utils.HudColour();
+            _loc6_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_DESELECT,_loc6_);
             _loc5_ = _loc6_.r / 100;
             _loc7_ = Math.round(_loc6_.a) / 100;
          }
-         var _loc8_ = new flash.geom.Transform(this.CONTENT);
-         var _loc9_ = new flash.geom.ColorTransform(_loc5_,_loc5_,_loc5_,_loc7_,0,0,0,0);
+         _loc8_ = new flash.geom.Transform(this.CONTENT);
+         _loc9_ = new flash.geom.ColorTransform(_loc5_,_loc5_,_loc5_,_loc7_,0,0,0,0);
          _loc8_.colorTransform = _loc9_;
-         var _loc3_ = this.currentPage.columnList.length;
-         var _loc2_ = 0;
+         _loc3_ = this.currentPage.columnList.length;
+         _loc2_ = 0;
          while(_loc2_ < _loc3_)
          {
             com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase(this.currentPage.columnList[_loc2_]).ON_FOCUS_PAGE_CONTENT(f);
@@ -236,6 +244,21 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    function MENU_SHIFT_DEPTH(dir, DontFallOff, SkipChecks)
    {
       com.rockstargames.ui.game.GameInterface.call("MENU_SHIFT_DEPTH_PROCESSED",com.rockstargames.ui.game.GameInterface.PAUSE_TYPE);
+      var _loc14_;
+      var _loc10_;
+      var _loc7_;
+      var _loc12_;
+      var _loc18_;
+      var _loc9_;
+      var _loc16_;
+      var _loc6_;
+      var _loc5_;
+      var _loc8_;
+      var _loc2_;
+      var _loc3_;
+      var _loc11_;
+      var _loc15_;
+      var _loc17_;
       if(this.menuInteractState(dir) == this.interact_idle || SkipChecks)
       {
          if(dir < 0 && (this.menuLevel == 0 || this.menuLevel == 1 && this.menuceptionDepth > 0))
@@ -253,17 +276,17 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
             }
             return undefined;
          }
-         var _loc14_ = this.MENU_KEY_PRESS_ACTIONS(dir);
+         _loc14_ = this.MENU_KEY_PRESS_ACTIONS(dir);
          if(_loc14_)
          {
-            var _loc10_ = this.menuState;
+            _loc10_ = this.menuState;
             this.dbg("MENU_SHIFT_DEPTH | direction=(1/-1): " + dir);
             if(dir > 0 && !SkipChecks)
             {
                this.TRIGGER_PAUSE_MENU_EVENT();
             }
-            var _loc7_ = this.menuLevel + dir;
-            var _loc12_ = this.currentPage.getMaxColumns();
+            _loc7_ = this.menuLevel + dir;
+            _loc12_ = this.currentPage.getMaxColumns();
             if(_loc7_ < 0)
             {
                _loc7_ = 0;
@@ -273,9 +296,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
                _loc7_ = _loc12_;
             }
             this.dbg("MENU_SHIFT_DEPTH | targetLevel: " + _loc7_);
-            var _loc18_ = undefined;
-            var _loc9_ = undefined;
-            var _loc16_ = this.menuState != com.rockstargames.gtav.constants.PauseMenuLUT.MAP && (SkipChecks == undefined || SkipChecks == false);
+            _loc16_ = this.menuState != com.rockstargames.gtav.constants.PauseMenuLUT.MAP && (SkipChecks == undefined || SkipChecks == false);
             if(dir < 0)
             {
                this.dbg("MENU_SHIFT_DEPTH | focus going back");
@@ -295,23 +316,23 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
                   this.dbg("Column isn\'t visible; assuming there\'s a warning up or something!");
                   return undefined;
                }
-               var _loc6_ = _loc9_.model.getCurrentView().itemList;
+               _loc6_ = _loc9_.model.getCurrentView().itemList;
                if(_loc6_ == undefined)
                {
                   this.dbg("Couldn\'t get a model/view/itemlist out of it, so bailing!");
                   return undefined;
                }
-               var _loc5_ = _loc6_.length;
+               _loc5_ = _loc6_.length;
                if(_loc5_ == undefined || _loc5_ <= 0)
                {
                   this.dbg("No viewlist/length/insufficient items (" + _loc5_ + "), bailing!");
                   return undefined;
                }
-               var _loc8_ = false;
-               var _loc2_ = 0;
+               _loc8_ = false;
+               _loc2_ = 0;
                while(_loc2_ < _loc5_)
                {
-                  var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem(_loc6_[_loc2_]);
+                  _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem(_loc6_[_loc2_]);
                   if(_loc3_ != undefined && _loc3_.isSelectable >= 1)
                   {
                      _loc8_ = true;
@@ -329,10 +350,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
             this.menuLevel = _loc7_;
             this.dbg("MENU_SHIFT_DEPTH | focus going forwards " + this.menuLevel);
             this.MENU_SET_FOCUS(true);
-            var _loc11_ = -1;
+            _loc11_ = -1;
             if(this.menuLevel == 0)
             {
-               var _loc15_ = this.menuList[this.menuIndex];
+               _loc15_ = this.menuList[this.menuIndex];
                this.menuState = _loc15_;
                this.setIsNavigatingContent(false);
                this.FOCUS_CONTENT(false);
@@ -345,7 +366,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
             }
             if(_loc9_ != undefined)
             {
-               var _loc17_ = this.getSelectedMenuItem(_loc9_);
+               _loc17_ = this.getSelectedMenuItem(_loc9_);
                _loc11_ = _loc17_.uniqueID;
             }
             if(_loc11_ != undefined)
@@ -397,13 +418,15 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    {
       var _loc5_ = com.rockstargames.ui.components.GUIView(columnMC.model.getCurrentView());
       this.dbg("MENU_ROLLOVER_HIGHLIGHT " + arguments + " || currView: " + _loc5_);
+      var _loc3_;
+      var _loc4_;
       if(_loc5_)
       {
          this.dbg("  currView.itemList.length " + _loc5_.itemList.length);
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < _loc5_.itemList.length)
          {
-            var _loc4_ = _loc5_.itemList[_loc3_];
+            _loc4_ = _loc5_.itemList[_loc3_];
             if(isHighlighting)
             {
                _loc4_.mouseOver(index != _loc3_ ? false : true);
@@ -419,9 +442,21 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    function MENU_INTERACTION(inputID, mPress, pressID, bIgnoreStateChange)
    {
       var _loc4_ = inputID == com.rockstargames.ui.game.GamePadConstants.NO_BUTTON_PRESSED;
+      var _loc3_;
+      var _loc9_;
+      var _loc15_;
+      var _loc14_;
+      var _loc16_;
+      var _loc2_;
+      var _loc11_;
+      var _loc6_;
+      var _loc12_;
+      var _loc13_;
+      var _loc7_;
+      var _loc8_;
+      var _loc10_;
       if(this.menuInteractState(inputID) == this.interact_idle || _loc4_)
       {
-         var _loc3_ = undefined;
          if(inputID == com.rockstargames.ui.game.GamePadConstants.NO_BUTTON_PRESSED)
          {
             _loc3_ = this.GET_COLUMN(0);
@@ -434,10 +469,10 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
          {
             _loc3_ = this.GET_COLUMN(this.menuLevel - 1);
          }
-         var _loc9_ = this.getSelectedMenuItem(_loc3_);
-         var _loc15_ = _loc9_.menuID;
-         var _loc14_ = _loc9_.uniqueID;
-         var _loc16_ = _loc9_.index;
+         _loc9_ = this.getSelectedMenuItem(_loc3_);
+         _loc15_ = _loc9_.menuID;
+         _loc14_ = _loc9_.uniqueID;
+         _loc16_ = _loc9_.index;
          if(mPress == false || mPress == undefined)
          {
             _loc3_.SET_INPUT_EVENT.apply(_loc3_,[inputID]);
@@ -452,7 +487,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
             this.dbg("");
             this.dbg("MENU_INTERACTION");
             this.dbg("columnMC " + _loc3_);
-            var _loc2_ = this.getSelectedMenuItem(_loc3_);
+            _loc2_ = this.getSelectedMenuItem(_loc3_);
             this.dbg("currMenuItem:: " + _loc2_);
             this.dbg("currMenuItem:index: " + _loc2_.index);
             this.dbg("currMenuItem:type: " + _loc2_.type);
@@ -474,7 +509,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
                this.dbg("---------------------- ");
                if(_loc2_.menuID != this.menuState || _loc2_.uniqueID != this.menuUniqueID)
                {
-                  var _loc11_ = 0;
+                  _loc11_ = 0;
                   this.dbg("In Context menu:" + this.inContext);
                   if(this.inContext)
                   {
@@ -488,11 +523,11 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
                      return undefined;
                   }
                   this.dbg("Try to clear layout based on this ID ! " + _loc2_.menuID);
-                  var _loc6_ = com.rockstargames.gtav.constants.PauseMenuLookup.lookUp(_loc2_.menuID);
-                  var _loc12_ = _loc6_.menuChanged;
-                  var _loc13_ = _loc6_.clearRootColumns;
-                  var _loc7_ = _loc6_.callImmediately;
-                  var _loc8_ = !_loc7_ && !bIgnoreStateChange;
+                  _loc6_ = com.rockstargames.gtav.constants.PauseMenuLookup.lookUp(_loc2_.menuID);
+                  _loc12_ = _loc6_.menuChanged;
+                  _loc13_ = _loc6_.clearRootColumns;
+                  _loc7_ = _loc6_.callImmediately;
+                  _loc8_ = !_loc7_ && !bIgnoreStateChange;
                   this.dbg("LIST MOVE: clearRootColumns: " + _loc13_ + " menuChanged: " + _loc12_ + " callImmediately: " + _loc7_ + " wantsMenuStateChange: " + _loc8_);
                   if(!_loc4_ && _loc13_)
                   {
@@ -503,7 +538,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
                   {
                      this.dbg("DIDN\'T call remove root columns!");
                   }
-                  var _loc10_ = this.menuUniqueID;
+                  _loc10_ = this.menuUniqueID;
                   this.dbg("old menuUniqueID " + _loc10_);
                   this.menuUniqueID = _loc2_.uniqueID;
                   this.dbg(" ");
@@ -578,10 +613,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
       this.dbg("TRIGGER_PAUSE_MENU_EVENT menuLevel: " + this.menuLevel);
       var _loc3_ = -1;
       var _loc7_ = -1;
-      var _loc2_ = undefined;
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
+      var _loc5_;
       if(this.menuLevel > 0)
       {
-         var _loc6_ = undefined;
          if(this.inContext)
          {
             _loc6_ = this.context;
@@ -593,7 +630,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
          this.dbg("TRIGGER_PAUSE_MENU_EVENT columnMC: " + _loc6_ + " len: " + this.columnList.length);
          if(_loc6_ != undefined)
          {
-            var _loc4_ = this.getSelectedMenuItem(_loc6_);
+            _loc4_ = this.getSelectedMenuItem(_loc6_);
             _loc2_ = this.getSelectedMenuItem(this.GET_COLUMN(this.menuLevel));
             if(_loc2_.menuID != undefined || _loc2_.menuID != null)
             {
@@ -612,7 +649,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
       }
       else
       {
-         var _loc5_ = this.menuList[this.menuIndex];
+         _loc5_ = this.menuList[this.menuIndex];
          this.dbg("TRIGGER_PAUSE_MENU_EVENT | from top: menuEnum" + _loc5_ + " menuIndex " + this.menuIndex);
          _loc2_ = this.getSelectedMenuItem(this.GET_COLUMN(this.menuLevel));
          if(_loc2_.menuID != undefined || _loc2_.menuID != null)
@@ -650,7 +687,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuContentBase exten
    function GET_PAGE(menuEnum)
    {
       var _loc4_ = false;
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.menuList.length)
       {

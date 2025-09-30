@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.web.buttons.WebBrowserFavourites extends com.rockstargames.gtav.web.buttons.WebButton
 {
    var browser;
+   var buttonType;
+   var isBrowserButton;
    function WebBrowserFavourites()
    {
       super();

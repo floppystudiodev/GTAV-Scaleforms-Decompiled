@@ -24,9 +24,10 @@ class gfx.events.EventDispatcher
    {
       var _loc3_ = listeners.length;
       var _loc2_ = -1;
+      var _loc1_;
       while((_loc2_ = _loc2_ + 1) < _loc3_)
       {
-         var _loc1_ = listeners[_loc2_];
+         _loc1_ = listeners[_loc2_];
          if(_loc1_.listenerObject == scope && _loc1_.listenerFunction == callBack)
          {
             return _loc2_;
@@ -108,11 +109,14 @@ class gfx.events.EventDispatcher
    {
       var _loc7_ = listeners.length;
       var _loc3_ = 0;
+      var _loc1_;
+      var _loc5_;
+      var _loc2_;
       while(_loc3_ < _loc7_)
       {
-         var _loc1_ = listeners[_loc3_].listenerObject;
-         var _loc5_ = typeof _loc1_;
-         var _loc2_ = listeners[_loc3_].listenerFunction;
+         _loc1_ = listeners[_loc3_].listenerObject;
+         _loc5_ = typeof _loc1_;
+         _loc2_ = listeners[_loc3_].listenerFunction;
          if(_loc2_ == undefined)
          {
             _loc2_ = event.type;

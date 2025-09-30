@@ -1,6 +1,14 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVerticalView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
+   var dataList;
+   var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
    var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    function PauseMenuVerticalView()
    {
       super();

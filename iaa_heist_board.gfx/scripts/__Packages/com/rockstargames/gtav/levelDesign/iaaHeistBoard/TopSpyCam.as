@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TopSpyCam
 {
-   var view;
-   var scanLineses;
-   var noise;
-   var noiseStep;
    var imageX;
    var imageY;
+   var noise;
+   var noiseStep;
+   var scanLineses;
+   var view;
    function TopSpyCam(view)
    {
       this.view = view;
@@ -15,9 +15,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.TopSpyCam
    {
       this.scanLineses = [];
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 4)
       {
-         var _loc3_ = this.view.createEmptyMovieClip("scanLineView",this.view.getNextHighestDepth());
+         _loc3_ = this.view.createEmptyMovieClip("scanLineView",this.view.getNextHighestDepth());
          _loc3_._x = !(_loc2_ % 2) ? 0 : 333;
          _loc3_._y = _loc2_ <= 1 ? 0 : 180;
          this.scanLineses.push(new com.rockstargames.gtav.levelDesign.iaaHeistBoard.ScanLines(_loc3_));

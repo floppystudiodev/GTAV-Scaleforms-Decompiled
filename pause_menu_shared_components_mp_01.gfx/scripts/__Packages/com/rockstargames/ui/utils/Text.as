@@ -107,20 +107,23 @@ class com.rockstargames.ui.utils.Text
       var _loc15_ = arguments[4];
       var _loc8_ = false;
       var _loc5_ = 0;
+      var _loc4_;
+      var _loc3_;
+      var _loc6_;
       while(_loc5_ < 3)
       {
-         var _loc4_ = _loc2_.indexOf("<");
+         _loc4_ = _loc2_.indexOf("<");
          if(_loc4_ == -1)
          {
             break;
          }
-         var _loc3_ = _loc2_.indexOf(">");
+         _loc3_ = _loc2_.indexOf(">");
          if(_loc3_ == -1)
          {
             break;
          }
          _loc8_ = true;
-         var _loc6_ = _loc2_.substr(0,_loc4_) + _loc2_.substr(_loc3_ + 1);
+         _loc6_ = _loc2_.substr(0,_loc4_) + _loc2_.substr(_loc3_ + 1);
          _loc2_ = _loc6_;
          _loc5_ = _loc5_ + 1;
       }

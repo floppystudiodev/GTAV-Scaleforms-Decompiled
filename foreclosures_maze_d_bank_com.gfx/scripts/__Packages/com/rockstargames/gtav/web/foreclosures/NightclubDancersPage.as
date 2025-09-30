@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
-   var nextPageName;
-   var summaryPageName;
-   var dancerStyle;
-   var dancerGender;
-   var progressPanel;
-   var view;
-   var slideshow;
-   var buttonOnColorTransform;
    var buttonOffColorTransform;
+   var buttonOnColorTransform;
+   var dancerGender;
+   var dancerStyle;
+   var nextPageName;
+   var prevPageName;
+   var progressPanel;
+   var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_CLUB";
    function NightclubDancersPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -90,9 +90,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
    function initOptionButtons()
    {
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 3)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_);
          com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.setLocalisedText(_loc3_.swatch.label,"FCCLUB_DNC_STY_" + _loc2_);
          _loc3_.swatch.label.textAutoSize = "shrink";
@@ -121,6 +122,7 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
    }
    function handleClick(type, id)
    {
+      var _loc2_;
       switch(type)
       {
          case "dancersButton":
@@ -130,7 +132,7 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
             this.updateSelectedItem();
             break;
          case "optionButton":
-            var _loc2_ = parseInt(id);
+            _loc2_ = parseInt(id);
             if(_loc2_ <= 3)
             {
                this.dancerStyle = _loc2_ - 1;
@@ -144,22 +146,26 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       this.view.dancersButton.tick._visible = this.website.nightclubDancers != 0;
       var _loc2_ = 1;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ <= 6)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          if(_loc2_ <= 3)
          {
             _loc3_.selected._visible = _loc2_ == this.dancerStyle + 1;
          }
          else
          {
-            var _loc4_ = _loc3_.label.getTextFormat();
+            _loc4_ = _loc3_.label.getTextFormat();
             _loc4_.color = _loc2_ != this.dancerGender + 4 ? 0 : com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
             _loc3_.label.setTextFormat(_loc4_);
             _loc3_.gender.transform.colorTransform = _loc2_ != this.dancerGender + 4 ? this.buttonOffColorTransform : this.buttonOnColorTransform;
@@ -175,8 +181,8 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
    }
    function setDisabledButtons()
    {
-      var _loc5_ = undefined;
-      var _loc4_ = undefined;
+      var _loc5_;
+      var _loc4_;
       if(this.website.nightclubDancers == 0)
       {
          _loc5_ = 0;
@@ -188,9 +194,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubDancersPage extends com.r
          _loc4_ = false;
       }
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 6)
       {
-         var _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
+         _loc3_ = this.view.optionButtons["optionButton_" + _loc2_];
          _loc3_._alpha = _loc5_;
          _loc3_.disabled = _loc4_;
          _loc2_ = _loc2_ + 1;

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.partyBus.Swirls extends com.rockstargames.gtav.levelDesign.partyBus.Animation
 {
-   var maxYOffset;
+   var beatStep;
    var height;
-   var skew;
+   var maxYOffset;
    var position;
+   var skew;
    var swirls;
    var view;
-   var beatStep;
    static var BEAT_SCALES = [1.5,0.5];
    static var FALL_SPEED = 0.01;
    static var SKEW_SPEED = 0.03;
@@ -42,12 +42,16 @@ class com.rockstargames.gtav.levelDesign.partyBus.Swirls extends com.rockstargam
       var _loc7_ = Math.abs(this.skew % com.rockstargames.gtav.levelDesign.partyBus.Swirls.SKEW_AMOUNT_X4 - com.rockstargames.gtav.levelDesign.partyBus.Swirls.SKEW_AMOUNT_X2) - com.rockstargames.gtav.levelDesign.partyBus.Swirls.SKEW_AMOUNT;
       this.skew += com.rockstargames.gtav.levelDesign.partyBus.Swirls.SKEW_SPEED;
       var _loc3_ = 0;
+      var _loc6_;
+      var _loc5_;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < com.rockstargames.gtav.levelDesign.partyBus.Swirls.NUM_SWIRLS)
       {
-         var _loc6_ = this.swirls[_loc3_];
-         var _loc5_ = this.swirls[_loc3_ + 1];
-         var _loc2_ = _loc6_.transform.matrix;
-         var _loc4_ = _loc5_.transform.matrix;
+         _loc6_ = this.swirls[_loc3_];
+         _loc5_ = this.swirls[_loc3_ + 1];
+         _loc2_ = _loc6_.transform.matrix;
+         _loc4_ = _loc5_.transform.matrix;
          _loc2_.a += 0.2 * (1 - _loc2_.a);
          _loc2_.b = _loc7_;
          _loc4_.a = _loc2_.a - 2;
@@ -62,12 +66,16 @@ class com.rockstargames.gtav.levelDesign.partyBus.Swirls extends com.rockstargam
    {
       var _loc7_ = com.rockstargames.gtav.levelDesign.partyBus.Swirls.BEAT_SCALES[this.beatStep % com.rockstargames.gtav.levelDesign.partyBus.Swirls.BEAT_SCALES.length];
       var _loc2_ = 0;
+      var _loc6_;
+      var _loc5_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.levelDesign.partyBus.Swirls.NUM_SWIRLS)
       {
-         var _loc6_ = this.swirls[_loc2_];
-         var _loc5_ = this.swirls[_loc2_ + 1];
-         var _loc3_ = _loc6_.transform.matrix;
-         var _loc4_ = _loc5_.transform.matrix;
+         _loc6_ = this.swirls[_loc2_];
+         _loc5_ = this.swirls[_loc2_ + 1];
+         _loc3_ = _loc6_.transform.matrix;
+         _loc4_ = _loc5_.transform.matrix;
          _loc3_.a = _loc7_;
          _loc4_.a = _loc7_ - 2;
          _loc4_.tx = _loc3_.tx + com.rockstargames.gtav.levelDesign.partyBus.Swirls.DOUBLE_SWIRL_SIZE;

@@ -1,17 +1,17 @@
 class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
+   var DispConf;
    var PAGES;
    var PAGES_CACHE;
    var TEXT_CHECK;
+   var TIMELINE;
    var WELCOME_TABS;
+   var boldTextFormat;
+   var imgLdr;
+   var imgLdrQR;
+   var imgLdrQRTxd;
    var pageHistory;
    var regTextFormat;
-   var boldTextFormat;
-   var DispConf;
-   var imgLdr;
-   var imgLdrQRTxd;
-   var imgLdrQR;
    static var SCROLL_TYPE_UP = 0;
    static var SCROLL_TYPE_DOWN = 1;
    static var SCROLL_TYPE_END = 2;
@@ -196,10 +196,11 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
    }
    function SET_SOCIAL_CLUB_PRESENCE_ACTIVE(scPresence)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(scPresence)
       {
-         var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+         _loc2_ = new com.rockstargames.ui.utils.HudColour();
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_SOCIAL_CLUB,_loc2_);
          _loc3_ = _loc2_.r * 65536 + _loc2_.g * 256 + _loc2_.b;
          MovieClip(this.TIMELINE.icon_sc).gotoAndStop("SC YES");
@@ -296,15 +297,19 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
    function SETUP_WELCOME_TABS(count)
    {
       var _loc7_ = 8;
+      var _loc3_;
+      var _loc5_;
+      var _loc2_;
+      var _loc6_;
       if(this.WELCOME_TABS.length < 1)
       {
          _loc7_ = 8;
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < count)
          {
-            var _loc5_ = "tab_" + _loc3_;
-            var _loc2_ = this.TIMELINE.PAGES_WELCOME.attachMovie("page_indicator",_loc5_,this.TIMELINE.PAGES_WELCOME.getNextHighestDepth());
-            var _loc6_ = MovieClip(this.TIMELINE.PAGES_WELCOME.welcomeImage)._width / 2 - (_loc2_._width * count - _loc7_ * (count - 1) / 2);
+            _loc5_ = "tab_" + _loc3_;
+            _loc2_ = this.TIMELINE.PAGES_WELCOME.attachMovie("page_indicator",_loc5_,this.TIMELINE.PAGES_WELCOME.getNextHighestDepth());
+            _loc6_ = MovieClip(this.TIMELINE.PAGES_WELCOME.welcomeImage)._width / 2 - (_loc2_._width * count - _loc7_ * (count - 1) / 2);
             _loc2_._y = MovieClip(this.TIMELINE.PAGES_WELCOME.welcomeImage)._y + MovieClip(this.TIMELINE.PAGES_WELCOME.welcomeImage)._height + 16;
             _loc2_._x = MovieClip(this.TIMELINE.PAGES_WELCOME.welcomeImage)._x + _loc3_ * 16 + _loc6_;
             _loc2_._alpha = 30;
@@ -508,6 +513,7 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
             MovieClip(this.TIMELINE.PAGES_TERMS_OF_SERVICE.scrollArrowUp)._alpha = com.rockstargames.social_club.sign_in.SOCIAL_CLUB2.SCROLL_ARROW_DISABLE_ALPHA;
             return true;
          default:
+            return;
       }
    }
    function INIT_DOWNLOADED_POLICY()
@@ -1166,16 +1172,21 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
    {
       this.TIMELINE.PAGES_ERROR.submitButton._visible = show;
    }
-   function DISPLAY_ERROR_PAGE()
+   function DISPLAY_ERROR_PAGE(redAlert)
    {
       this.SHOW_PAGE_BY_ID(this.INDEX_ERROR);
       if(!this.TEXT_CHECK[this.INDEX_ERROR])
       {
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_ERROR.errorTitle,"SC_ERROR_TITLE");
          this.TIMELINE.PAGES_ERROR.errorTitle.setTextFormat(this.boldTextFormat);
-         this.SET_TEXT_HUDCOLOUR(this.TIMELINE.PAGES_ERROR.errorTitle,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED);
+         if(redAlert == undefined)
+         {
+            redAlert = true;
+         }
+         this.SET_TEXT_HUDCOLOUR(this.TIMELINE.PAGES_ERROR.errorTitle,!redAlert ? com.rockstargames.ui.utils.HudColour.HUD_COLOUR_SOCIAL_CLUB : com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED);
          this.SET_TEXT_HUDCOLOUR(this.TIMELINE.PAGES_ERROR.errorText,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE);
          this.SET_MC_HUDCOLOUR(this.TIMELINE.PAGES_ERROR.icon,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_RED);
+         this.TIMELINE.PAGES_ERROR.icon._visible = redAlert;
          this.SET_SUBMIT_BUTTON(this.TIMELINE.PAGES_ERROR.submitButton,"SC_BACK_BUTTON");
          this.TEXT_CHECK[this.INDEX_ERROR] = true;
          if(!this.DispConf.isWideScreen)
@@ -1255,12 +1266,41 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
       this.TIMELINE.PAGES_QR_CODE.imageSpinner._visible = true;
       this.TIMELINE.PAGES_QR_CODE.pinLabel._visible = false;
    }
+   function DISPLAY_AGE_QR_CODE_PAGE()
+   {
+      delete this.imgLdrQR;
+      this.SHOW_PAGE_BY_ID(this.INDEX_QR_CODE);
+      if(!this.TEXT_CHECK[this.INDEX_QR_CODE])
+      {
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.titleText,"AGE_ASSURANCE_QR_HEADING");
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.descriptionText,"AGE_ASSURANCE_QR_DESC");
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.pinLabel,"SC_QR_PIN");
+         this.TEXT_CHECK[this.INDEX_QR_CODE] = true;
+      }
+      this.TIMELINE.PAGES_QR_CODE.imageSpinner._visible = true;
+      this.TIMELINE.PAGES_QR_CODE.pinLabel._visible = false;
+   }
+   function DISPLAY_AGE_QR_CODE_EXPIRED_PAGE()
+   {
+      this.SHOW_PAGE_BY_ID(this.INDEX_QR_CODE);
+      if(!this.TEXT_CHECK[this.INDEX_QR_CODE])
+      {
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.titleText,"AGE_ASSURANCE_QR_HEADING");
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.descriptionText,"AGE_ASSURANCE_QR_DESC");
+         com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.TIMELINE.PAGES_QR_CODE.pinLabel,"SC_QR_PIN");
+         this.TEXT_CHECK[this.INDEX_QR_CODE] = true;
+      }
+      this.TIMELINE.PAGES_QR_CODE.imageSpinner._visible = true;
+      this.TIMELINE.PAGES_QR_CODE.pinLabel._visible = false;
+   }
    function SHOW_PAGE_BY_ID(pageID)
    {
+      var _loc3_;
+      var _loc6_;
       if(this.pageHistory[this.pageHistory.length - 1] >= 0)
       {
-         var _loc3_ = this.pageHistory[this.pageHistory.length - 1];
-         var _loc6_ = this.PAGES[_loc3_];
+         _loc3_ = this.pageHistory[this.pageHistory.length - 1];
+         _loc6_ = this.PAGES[_loc3_];
          if(!_loc6_.store && this.PAGES_CACHE[_loc3_])
          {
             MovieClip(this.PAGES_CACHE[_loc3_]).removeMovieClip();
@@ -1274,13 +1314,14 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
       }
       this.pageHistory.push(pageID);
       var _loc5_ = this.PAGES[pageID];
+      var _loc4_;
       if(this.PAGES_CACHE[pageID])
       {
          MovieClip(this.PAGES_CACHE[pageID])._visible = true;
       }
       else
       {
-         var _loc4_ = this.TIMELINE.attachMovie(_loc5_.linkageId,_loc5_.pageName,this.TIMELINE.getNextHighestDepth());
+         _loc4_ = this.TIMELINE.attachMovie(_loc5_.linkageId,_loc5_.pageName,this.TIMELINE.getNextHighestDepth());
          _loc4_._x = this.TIMELINE.scLogo._x + 5;
          _loc4_._y = this.TIMELINE.scLogo._y + 100;
          this.PAGES_CACHE[pageID] = _loc4_;
@@ -1288,13 +1329,14 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
       }
       switch(pageID)
       {
-         case this.INDEX_ONLINE_POLICY:
-            break;
          case this.INDEX_TOS:
             this.TIMELINE.PAGES_TERMS_OF_SERVICE.submitButton.onLoad = mx.utils.Delegate.create(this,this.INIT_TOS_BUTTONS);
             break;
          case this.INDEX_SIGN_IN_DONE:
             this.TIMELINE.PAGES_SIGN_IN_DONE.submitButton.onLoad = mx.utils.Delegate.create(this,this.INIT_SID_BUTTONS);
+         case this.INDEX_ONLINE_POLICY:
+         default:
+            return;
       }
    }
    function INIT_ONLINE_POLICY_BUTTONS()
@@ -1351,6 +1393,8 @@ class com.rockstargames.social_club.sign_in.SOCIAL_CLUB2 extends com.rockstargam
             break;
          case com.rockstargames.ui.mouse.MOUSE_EVENTS.MOUSE_ROLL_OVER:
             targetMC.glow._visible = false;
+         default:
+            return;
       }
    }
    function DISPOSE_BUTTONS()

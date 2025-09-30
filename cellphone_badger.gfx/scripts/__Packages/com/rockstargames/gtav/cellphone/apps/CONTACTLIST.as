@@ -1,21 +1,21 @@
 class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
 {
-   var scrollBar;
-   var numberOfVisibleRows;
    var CONTENT;
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var linkageID;
-   var container;
-   var gfxFileName;
-   var whiteRGB;
-   var currentStyle;
-   var currentID;
-   var currentItem;
+   var TextBlackHex;
    var TextWhiteHex;
    var blackRGB;
+   var container;
+   var currentID;
+   var currentItem;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var linkageID;
+   var numberOfVisibleRows;
    var offWhiteRGB;
-   var TextBlackHex;
+   var scrollBar;
+   var scrollBarTimeout;
+   var whiteRGB;
    var defaultRowHeight = 48;
    var rowSpace = 0;
    var columnSpace = 0;
@@ -95,9 +95,10 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
       }
       var _loc4_ = this.arrayStartPoint;
       var _loc3_ = this.arrayStartPoint + (this.numberOfVisibleRows - 1);
+      var _loc2_;
       if(this.currentID > _loc3_ || this.currentID < _loc4_)
       {
-         var _loc2_ = this.currentID - (this.numberOfVisibleRows - 1);
+         _loc2_ = this.currentID - (this.numberOfVisibleRows - 1);
          if(_loc2_ < 0)
          {
             _loc2_ = 0;
@@ -112,22 +113,27 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
       this.dataProviderUI = _level0.TIMELINE.contactsDataProviderUI;
       this.CONTENT.messageTF.autoSize = "center";
       this.CONTENT.messageTF.text = "";
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc6_;
+      var _loc5_;
       if(this.numberOfVisibleRows > 0)
       {
          if(this.arrayStartPoint - 1 >= 0)
          {
             this.createContact(this.arrayStartPoint - 1);
          }
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = _loc3_ + this.arrayStartPoint;
-            var _loc4_ = "listItem" + _loc2_;
+            _loc2_ = _loc3_ + this.arrayStartPoint;
+            _loc4_ = "listItem" + _loc2_;
             if(this.container[_loc4_] == undefined)
             {
                this.createContact(_loc2_);
             }
-            var _loc6_ = Boolean(this.dataProviderUI[_loc2_][0]);
+            _loc6_ = Boolean(this.dataProviderUI[_loc2_][0]);
             this.container[_loc4_].missed_call_icon._visible = _loc6_;
             if(this.dataProviderUI[_loc2_][1] != undefined)
             {
@@ -136,7 +142,7 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
                   this.container[_loc4_].contactNameMCcond._x = 2;
                   this.container[_loc4_].contactNameMCcond._width = 251;
                }
-               var _loc5_ = this.dataProviderUI[_loc2_][1].split("<FONT COLOR=\'#F0F0F0\'>").join("");
+               _loc5_ = this.dataProviderUI[_loc2_][1].split("<FONT COLOR=\'#F0F0F0\'>").join("");
                this.container[_loc4_].contactNameMC.multiline = true;
                this.container[_loc4_].contactNameMC.autoSize = "left";
                this.container[_loc4_].contactNameMC._height = 27;
@@ -197,13 +203,14 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
    function createContact(index)
    {
       var _loc2_ = "listItem" + index;
+      var _loc3_;
       if(this.container[_loc2_].txd == undefined)
       {
          this.container[_loc2_] = this.container.attachMovie(this.linkageID,_loc2_,index + 1);
          this.container[_loc2_].missed_call_icon._visible = false;
          this.container[_loc2_].gfxFileName = this.gfxFileName;
          this.container[_loc2_]._y = this.offsetY + index * (this.defaultRowHeight + this.rowSpace);
-         var _loc3_ = this.dataProviderUI[index][3];
+         _loc3_ = this.dataProviderUI[index][3];
          if(_loc3_ != "" && _loc3_ != undefined)
          {
             this.container[_loc2_].DISPLAY_CONTACT(_loc3_,_loc2_);
@@ -213,9 +220,10 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
    function removeAllContacts()
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.dataProviderUI.length)
       {
-         var _loc2_ = "listItem" + _loc3_;
+         _loc2_ = "listItem" + _loc3_;
          if(this.container[_loc2_] != undefined)
          {
             this.container[_loc2_].REMOVE_CONTACT();
@@ -344,7 +352,7 @@ class com.rockstargames.gtav.cellphone.apps.CONTACTLIST extends MovieClip
    }
    function getRowAsPercentage(rowNumber)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = rowNumber / (this.dataProviderUI.length - 1) * 100;
       return _loc2_;
    }

@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScreen extends com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.Screen
 {
-   var view;
-   var photoGroups;
-   var todoLists;
-   var accessPointButtons;
-   var accessPointButtonLocations;
    var _buttons;
+   var accessPointButtonLocations;
+   var accessPointButtons;
    var app;
    var cursor;
+   var photoGroups;
+   var todoLists;
+   var view;
    static var POI_PHOTO_GROUP_INDEX = 0;
    static var TODO_LIST_INDEX = 0;
    static var OPTIONAL_LIST_INDEX = 1;
@@ -87,6 +87,8 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
          _loc4_ = _loc4_ + 1;
       }
       _loc4_ = 1;
+      var _loc3_;
+      var _loc5_;
       while(_loc4_ <= 6)
       {
          buttonView = this.view["accessPointButton" + _loc4_];
@@ -96,14 +98,14 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
          buttonView.yellowMagnet._visible = false;
          buttonView.backImage._visible = false;
          this.setArrowsStyle(buttonView.arrows,false);
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < 4)
          {
             buttonView["tick" + _loc3_]._visible = false;
             buttonView["box" + _loc3_]._visible = false;
             _loc3_ = _loc3_ + 1;
          }
-         var _loc5_ = new com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Button(com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.ButtonIDs["ACCESS_POINT_" + _loc4_],buttonView,"CHB_ACCESS_PT_" + _loc4_,false);
+         _loc5_ = new com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.Button(com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.ButtonIDs["ACCESS_POINT_" + _loc4_],buttonView,"CHB_ACCESS_PT_" + _loc4_,false);
          this._buttons.push(_loc5_);
          this.accessPointButtons.push(_loc5_);
          this.accessPointButtonLocations.push(new flash.geom.Point(buttonView._x,buttonView._y));
@@ -133,9 +135,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.padlock._visible = isLocked;
@@ -148,9 +151,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.extreme._visible = isExtreme;
@@ -163,9 +167,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.tick._visible = isTicked;
@@ -193,9 +198,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.star._visible = isVisible;
@@ -209,9 +215,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
       var _loc7_ = false;
       var _loc4_ = 0;
       var _loc5_ = this._buttons.length;
+      var _loc2_;
       while(_loc4_ < _loc5_)
       {
-         var _loc2_ = this._buttons[_loc4_];
+         _loc2_ = this._buttons[_loc4_];
          if(_loc2_.id == buttonID)
          {
             if(_loc2_.enabled != isVisible)
@@ -252,9 +259,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc3_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this._buttons[_loc3_];
+         _loc2_ = this._buttons[_loc3_];
          if(_loc2_.id == buttonID)
          {
             if(_loc2_.enabled == isEnabled)
@@ -272,9 +280,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.selectedIsGreyedOut = isGreyedOut;
@@ -288,9 +297,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
       var _loc3_ = 0;
       var _loc6_ = 0;
       var _loc5_ = this.accessPointButtons.length;
+      var _loc2_;
       while(_loc3_ < _loc5_)
       {
-         var _loc2_ = this.accessPointButtons[_loc3_];
+         _loc2_ = this.accessPointButtons[_loc3_];
          if(_loc2_.id == buttonID)
          {
             _loc2_.view.arrows._visible = visibleState != 2;
@@ -318,9 +328,10 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
    {
       var _loc2_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this._buttons[_loc2_];
+         _loc3_ = this._buttons[_loc2_];
          if(_loc3_.id == buttonID)
          {
             _loc3_.view.image.gotoAndStop(imageID);
@@ -350,19 +361,26 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.screens.MainScree
       var _loc7_ = 0;
       var _loc17_ = 0;
       var _loc15_ = this.accessPointButtons.length;
+      var _loc11_;
+      var _loc4_;
+      var _loc13_;
+      var _loc10_;
+      var _loc2_;
+      var _loc3_;
+      var _loc5_;
       while(_loc7_ < _loc15_)
       {
-         var _loc11_ = this.accessPointButtons[_loc7_];
+         _loc11_ = this.accessPointButtons[_loc7_];
          if(_loc11_.id == buttonID)
          {
-            var _loc4_ = _loc11_.view;
-            var _loc13_ = _loc4_.label._x + 0.5 * _loc4_.label._width;
-            var _loc10_ = _loc13_ - 0.5 * numAvailable * _loc12_;
-            var _loc2_ = 0;
+            _loc4_ = _loc11_.view;
+            _loc13_ = _loc4_.label._x + 0.5 * _loc4_.label._width;
+            _loc10_ = _loc13_ - 0.5 * numAvailable * _loc12_;
+            _loc2_ = 0;
             while(_loc2_ < 4)
             {
-               var _loc3_ = _loc4_["tick" + _loc2_];
-               var _loc5_ = _loc4_["box" + _loc2_];
+               _loc3_ = _loc4_["tick" + _loc2_];
+               _loc5_ = _loc4_["box" + _loc2_];
                _loc3_._visible = _loc2_ < numComplete;
                _loc3_.transform.colorTransform = !isOptional ? _loc8_ : _loc9_;
                _loc3_._x = _loc10_ + _loc2_ * _loc12_ + _loc16_;

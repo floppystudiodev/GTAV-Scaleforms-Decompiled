@@ -21,9 +21,10 @@ class com.rockstargames.gtav.loadingScreens.LANGUAGE_SELECT extends com.rockstar
    }
    function SET_DISPLAY_CONFIG(_screenWidthPixels, _screenHeightPixels, _safeTopPercent, _safeBottomPercent, _safeLeftPercent, _safeRightPercent, _isWideScreen, _isCircleAccept, _isAsian)
    {
+      var _loc2_;
       if(_isCircleAccept != undefined)
       {
-         var _loc2_ = _isCircleAccept != true ? 1 : 2;
+         _loc2_ = _isCircleAccept != true ? 1 : 2;
          this.CONTENT.highlightMC.acceptMC.gotoAndStop(_loc2_);
       }
    }
@@ -58,9 +59,10 @@ class com.rockstargames.gtav.loadingScreens.LANGUAGE_SELECT extends com.rockstar
       var _loc4_ = ["LANGUAGE_UNDEFINED","LANGUAGE_ENGLISH","LANGUAGE_FRENCH","LANGUAGE_GERMAN","LANGUAGE_ITALIAN","LANGUAGE_SPANISH","LANGUAGE_PORTUGUESE","LANGUAGE_POLISH","LANGUAGE_RUSSIAN","LANGUAGE_KOREAN","LANGUAGE_CHINESE","LANGUAGE_JAPANESE","LANGUAGE_MEXICAN"];
       var _loc5_ = this.CONTENT.languagesMC;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc5_[_loc4_[_loc2_]];
+         _loc3_ = _loc5_[_loc4_[_loc2_]];
          _loc3_._visible = false;
          _loc3_._y = 0;
          _loc2_ = _loc2_ + 1;
@@ -75,12 +77,14 @@ class com.rockstargames.gtav.loadingScreens.LANGUAGE_SELECT extends com.rockstar
       var _loc6_ = this.CONTENT.languagesMC;
       this.languageCount = 0;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc5_;
       while(_loc3_ < this.languageList.length)
       {
-         var _loc4_ = this.languageList[_loc3_];
+         _loc4_ = this.languageList[_loc3_];
          if(_loc4_ != 0 && _loc4_ != undefined)
          {
-            var _loc5_ = _loc6_[_loc7_[_loc4_]];
+            _loc5_ = _loc6_[_loc7_[_loc4_]];
             _loc5_._y = this.languageCount * this.rowSpace;
             _loc5_._visible = true;
             this.languageCount = this.languageCount + 1;

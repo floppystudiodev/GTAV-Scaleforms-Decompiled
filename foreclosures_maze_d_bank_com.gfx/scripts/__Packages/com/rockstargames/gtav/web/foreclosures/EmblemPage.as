@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.EmblemPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
-   var nextPageName;
    var emblems;
-   var view;
+   var nextPageName;
+   var prevPageName;
    var progressPanel;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_SIGNAGE";
    static var IMAGES = ["EMBLEM_0","EMBLEM_1","EMBLEM_2","EMBLEM_3","EMBLEM_4","EMBLEM_5","EMBLEM_6","EMBLEM_7","EMBLEM_8"];
    function EmblemPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
@@ -65,9 +65,10 @@ class com.rockstargames.gtav.web.foreclosures.EmblemPage extends com.rockstargam
    function initEmblemSelect()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 10)
       {
-         var _loc3_ = this.view.emblemButtons["emblemButton_" + _loc2_];
+         _loc3_ = this.view.emblemButtons["emblemButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + 1);
          this.website.dataTextScope.push(_loc3_.btnTxt);
          _loc2_ = _loc2_ + 1;
@@ -84,14 +85,18 @@ class com.rockstargames.gtav.web.foreclosures.EmblemPage extends com.rockstargam
          case "emblemButton":
             this.updateEmblem(parseInt(id));
             this.progressPanel.updateCosts();
+         default:
+            return;
       }
    }
    function updateEmblem(emblemID)
    {
+      var _loc6_;
+      var _loc5_;
       if(emblemID == 0 && this.emblems[emblemID] == "")
       {
-         var _loc6_ = this.view.emblemButtons.emblemButton_0.message;
-         var _loc5_ = _loc6_.txt;
+         _loc6_ = this.view.emblemButtons.emblemButton_0.message;
+         _loc5_ = _loc6_.txt;
          if(_loc5_)
          {
             _loc5_.verticalAlign = "center";
@@ -123,9 +128,10 @@ class com.rockstargames.gtav.web.foreclosures.EmblemPage extends com.rockstargam
       }
       this.view.emblemBackground._visible = true;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 10)
       {
-         var _loc3_ = this.view.emblemButtons["emblemButton_" + _loc2_];
+         _loc3_ = this.view.emblemButtons["emblemButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.emblem;
          _loc2_ = _loc2_ + 1;
       }

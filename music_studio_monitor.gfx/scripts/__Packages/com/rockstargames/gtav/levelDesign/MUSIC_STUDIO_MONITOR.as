@@ -1,17 +1,18 @@
 class com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var faderStep;
+   var faderStepTimestamp;
+   var faders;
+   var meters;
+   var noise;
+   var playTimestamp;
    var state;
    var updateArgs;
-   var noise;
-   var meters;
-   var faders;
    var waveform;
-   var faderStepTimestamp;
-   var faderStep;
-   var playTimestamp;
    static var STATE_NULL = -1;
    static var STATE_OFF = 0;
    static var STATE_EDIT = 1;
@@ -83,6 +84,8 @@ class com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR extends com.rockst
                this.waveform.stopEdit();
                this.shuffleArray(this.meters);
                this.shuffleArray(this.faders);
+            default:
+               return;
          }
       }
    }
@@ -134,10 +137,12 @@ class com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR extends com.rockst
    }
    function updateLEDs(rate)
    {
+      var _loc2_;
+      var _loc3_;
       if(Math.random() < rate)
       {
-         var _loc2_ = Math.floor(Math.random() * com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR.NUM_LEDS);
-         var _loc3_ = Math.floor(Math.random() * 3);
+         _loc2_ = Math.floor(Math.random() * com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR.NUM_LEDS);
+         _loc3_ = Math.floor(Math.random() * 3);
          this.CONTENT["led" + _loc2_].gotoAndStop(_loc3_ + 1);
       }
    }
@@ -190,10 +195,12 @@ class com.rockstargames.gtav.levelDesign.MUSIC_STUDIO_MONITOR extends com.rockst
    {
       var _loc4_ = a.length - 1;
       var _loc1_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc1_ < _loc4_)
       {
-         var _loc3_ = Math.random() * (_loc4_ - _loc1_) + _loc1_ + 1;
-         var _loc2_ = a.splice(_loc3_,1)[0];
+         _loc3_ = Math.random() * (_loc4_ - _loc1_) + _loc1_ + 1;
+         _loc2_ = a.splice(_loc3_,1)[0];
          a.splice(_loc1_,0,_loc2_);
          _loc1_ = _loc1_ + 1;
       }

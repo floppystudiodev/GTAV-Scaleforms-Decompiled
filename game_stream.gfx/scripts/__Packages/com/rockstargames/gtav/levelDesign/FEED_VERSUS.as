@@ -1,8 +1,10 @@
 class com.rockstargames.gtav.levelDesign.FEED_VERSUS extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var baseClassStrID;
    var img1MC;
    var img2MC;
+   var returnPathLvl;
    function FEED_VERSUS()
    {
       super();

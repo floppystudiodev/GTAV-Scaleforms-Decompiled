@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
+   var coursePar;
+   var displayBM;
    var holeDisplay;
+   var playerCard;
+   var playerCardSlots;
+   var ref;
+   var scoreboard;
+   var scoreboardSlots;
    var swingDisplay;
    var swingMeter;
-   var playerCardSlots;
-   var playerCard;
-   var coursePar;
-   var scoreboardSlots;
-   var scoreboard;
-   var displayBM;
-   var ref;
    var SHOW_HOLE_DISPLAY = 0;
    var SHOW_SWING_DISPLAY = 1;
    var SHOW_SWING_METER = 2;
@@ -107,13 +107,17 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
       this.isHiDef = _isHiDef;
       var _loc3_ = 0;
       var _loc2_ = 0;
+      var _loc10_;
+      var _loc9_;
+      var _loc4_;
+      var _loc7_;
       if(!_isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc10_ = 1.7777777777777777;
-         var _loc9_ = 1.3333333333333333;
-         var _loc4_ = 1280;
-         var _loc7_ = 720;
+         _loc10_ = 1.7777777777777777;
+         _loc9_ = 1.3333333333333333;
+         _loc4_ = 1280;
+         _loc7_ = 720;
          _loc2_ = 0;
          _screenWidthPixels = _loc4_ - _loc3_ * 2;
          _screenHeightPixels = _loc7_ - _loc2_ * 2;
@@ -258,9 +262,10 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
    {
       var _loc2_ = this.swingDisplay.spinMC;
       var _loc4_ = this.swingDisplay.spinGradMC;
+      var _loc3_;
       if(this._spinning)
       {
-         var _loc3_ = this._spinDirection + 180 - _loc2_._rotation;
+         _loc3_ = this._spinDirection + 180 - _loc2_._rotation;
          _loc3_ += (_loc3_ >= 0 ? (_loc3_ <= 360 ? 0 : -360) : 360) - 180;
          _loc2_._rotation += _loc3_ / 10;
          if(_loc2_._rotation < this._spinDirection + 1 && _loc2_._rotation > this._spinDirection - 1)
@@ -280,9 +285,10 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
          _loc2_._xscale = _loc2_._yscale = this._spinScaleTarget;
          this._spinning = true;
       }
+      var _loc5_;
       if(this._spinPower > 0)
       {
-         var _loc5_ = Math.round(this._spinPower / 250 * _loc2_._totalframes);
+         _loc5_ = Math.round(this._spinPower / 250 * _loc2_._totalframes);
          _loc2_.gotoAndStop((_loc2_._currentframe + _loc5_) % _loc2_._totalframes + 1);
          _loc4_._alpha = _loc2_._xscale;
       }
@@ -400,7 +406,7 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
    function updatePlayerCardDisplay()
    {
       var _loc2_ = this.playerCardSlots[0];
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc3_ = 0;
       this.maxPlayerCardNameWidth = 179 - _loc2_.cellMC._width;
       _loc3_;
@@ -545,7 +551,7 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
          _loc3_.ballMC._visible = true;
       }
       var _loc8_ = arguments.slice(8);
-      var _loc6_ = undefined;
+      var _loc6_;
       var _loc4_ = 0;
       while(_loc4_ < 9)
       {
@@ -560,8 +566,8 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
       var _loc10_ = _loc9_.getTextFormat();
       _loc10_.size = 12;
       _loc9_.setTextFormat(_loc9_.text.indexOf(" "),_loc9_.text.length,_loc10_);
-      var _loc21_ = undefined;
-      var _loc24_ = undefined;
+      var _loc21_;
+      var _loc24_;
       var _loc15_ = new com.rockstargames.ui.utils.HudColour();
       var _loc14_ = new com.rockstargames.ui.utils.HudColour();
       com.rockstargames.ui.utils.Colour.setHudColour(ballColor,_loc15_);
@@ -600,7 +606,7 @@ class com.rockstargames.gtav.minigames.golf.GOLF extends com.rockstargames.ui.co
    }
    function updateScoreboardDisplay()
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       while(_loc2_ < this.scoreboardSlots.length)
       {

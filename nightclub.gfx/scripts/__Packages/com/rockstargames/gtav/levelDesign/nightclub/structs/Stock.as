@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.nightclub.structs.Stock
 {
-   var sellPrice;
    var currLevel;
    var maxLevel;
+   var sellPrice;
    function Stock()
    {
       this.sellPrice = 0;

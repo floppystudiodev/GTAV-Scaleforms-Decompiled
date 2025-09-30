@@ -1,26 +1,28 @@
 class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var beatB;
+   var beatColourTransform;
+   var beatFadeCounter;
+   var beatG;
+   var beatR;
+   var controlIsAlt;
+   var controlIsLT;
+   var controlIsMouse;
+   var currLevel;
+   var displayConfig;
+   var flashB;
+   var flashColourTransform;
+   var flashFadeCounter;
+   var flashG;
+   var flashR;
    var meter;
    var musicBeat;
    var playerBeat;
-   var currLevel;
-   var beatFadeCounter;
-   var beatColourTransform;
-   var flashFadeCounter;
-   var flashColourTransform;
    var pulseFadeCounter;
-   var displayConfig;
-   var controlIsMouse;
-   var controlIsLT;
-   var beatR;
-   var beatG;
-   var beatB;
-   var flashR;
-   var flashG;
-   var flashB;
    static var WIDTH = 1280;
    static var HEIGHT = 720;
    static var MUSIC_BEAT_MAX = 130;
@@ -74,6 +76,7 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
       this.SET_SCREEN_POSITION(1,1);
       this.SET_LEVEL(this.currLevel);
       this.SET_IS_LT_CONTROL(false);
+      this.SET_GAMEPAD_TYPE_IS_ALT(false);
       this.CONTENT.onEnterFrame = this.delegate(this,this.update);
    }
    function SET_SCREEN_POSITION(xNorm, yNorm)
@@ -95,6 +98,11 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
    function SET_IS_LT_CONTROL(isLT)
    {
       this.controlIsLT = isLT;
+      this.setIcon();
+   }
+   function SET_GAMEPAD_TYPE_IS_ALT(isAlt)
+   {
+      this.controlIsAlt = isAlt;
       this.setIcon();
    }
    function SET_LEVEL(level)
@@ -157,11 +165,12 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
       this.musicBeat += com.rockstargames.gtav.minigames.dancing.DANCER.MUSIC_BEAT_SHRINK_SCALAR * (com.rockstargames.gtav.minigames.dancing.DANCER.MUSIC_BEAT_MIN - this.musicBeat);
       this.CONTENT.icon.rings._xscale = this.CONTENT.icon.rings._yscale = this.musicBeat;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < com.rockstargames.gtav.minigames.dancing.DANCER.NUM_LEVELS)
       {
          if(this.playerBeat[_loc2_] >= 0)
          {
-            var _loc3_ = Math.min(com.rockstargames.gtav.minigames.dancing.DANCER.MAX_GLOW_ALPHA,com.rockstargames.gtav.minigames.dancing.DANCER.MAX_GLOW_ALPHA * this.playerBeat[_loc2_] / com.rockstargames.gtav.minigames.dancing.DANCER.PLAYER_BEAT_FADE_DURATION);
+            _loc3_ = Math.min(com.rockstargames.gtav.minigames.dancing.DANCER.MAX_GLOW_ALPHA,com.rockstargames.gtav.minigames.dancing.DANCER.MAX_GLOW_ALPHA * this.playerBeat[_loc2_] / com.rockstargames.gtav.minigames.dancing.DANCER.PLAYER_BEAT_FADE_DURATION);
             this.CONTENT.icon.rings["glow" + _loc2_]._alpha = _loc3_;
             this.playerBeat[_loc2_]--;
          }
@@ -204,10 +213,12 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
    }
    function fadeFlash()
    {
+      var _loc2_;
+      var _loc3_;
       if(this.flashFadeCounter > 0)
       {
-         var _loc2_ = com.rockstargames.gtav.minigames.dancing.DANCER.FLASH_ALPHA * this.flashFadeCounter / com.rockstargames.gtav.minigames.dancing.DANCER.FLASH_COLOUR_FADE_DURATION;
-         var _loc3_ = 1 - _loc2_;
+         _loc2_ = com.rockstargames.gtav.minigames.dancing.DANCER.FLASH_ALPHA * this.flashFadeCounter / com.rockstargames.gtav.minigames.dancing.DANCER.FLASH_COLOUR_FADE_DURATION;
+         _loc3_ = 1 - _loc2_;
          this.flashColourTransform.redMultiplier = _loc3_;
          this.flashColourTransform.greenMultiplier = _loc3_;
          this.flashColourTransform.blueMultiplier = _loc3_;
@@ -224,10 +235,12 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
    }
    function fadePulse()
    {
+      var _loc3_;
+      var _loc2_;
       if(this.pulseFadeCounter > 0)
       {
-         var _loc3_ = this.pulseFadeCounter / com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_FADE_DURATION;
-         var _loc2_ = _loc3_ * (com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MIN_SCALE - com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MAX_SCALE) + com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MAX_SCALE;
+         _loc3_ = this.pulseFadeCounter / com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_FADE_DURATION;
+         _loc2_ = _loc3_ * (com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MIN_SCALE - com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MAX_SCALE) + com.rockstargames.gtav.minigames.dancing.DANCER.PULSE_MAX_SCALE;
          this.CONTENT.icon.centre._xscale = _loc2_;
          this.CONTENT.icon.centre._yscale = _loc2_;
          this.pulseFadeCounter = this.pulseFadeCounter - 1;
@@ -237,7 +250,9 @@ class com.rockstargames.gtav.minigames.dancing.DANCER extends com.rockstargames.
    {
       this.CONTENT.icon.centre.leftMouseButton._visible = this.controlIsMouse && !this.controlIsLT;
       this.CONTENT.icon.centre.rightMouseButton._visible = this.controlIsMouse && this.controlIsLT;
-      this.CONTENT.icon.centre.controllerButtonA._visible = !this.controlIsMouse && !this.controlIsLT;
-      this.CONTENT.icon.centre.controllerButtonLT._visible = !this.controlIsMouse && this.controlIsLT;
+      this.CONTENT.icon.centre.controllerButtonA._visible = !this.controlIsMouse && !this.controlIsLT && !this.controlIsAlt;
+      this.CONTENT.icon.centre.controllerButtonLT._visible = !this.controlIsMouse && this.controlIsLT && !this.controlIsAlt;
+      this.CONTENT.icon.centre.controllerButtonAltA._visible = !this.controlIsMouse && !this.controlIsLT && this.controlIsAlt;
+      this.CONTENT.icon.centre.controllerButtonAltLT._visible = !this.controlIsMouse && this.controlIsLT && this.controlIsAlt;
    }
 }

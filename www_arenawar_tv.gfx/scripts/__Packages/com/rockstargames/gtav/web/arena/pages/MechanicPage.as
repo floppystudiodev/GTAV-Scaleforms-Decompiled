@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.MechanicPage extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var view;
+   var website;
    function MechanicPage(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"mechanicPage",pageName,isFirstPage,progressPanel);
@@ -96,10 +96,12 @@ class com.rockstargames.gtav.web.arena.pages.MechanicPage extends com.rockstarga
    }
    function handleClick(type, id)
    {
+      var _loc3_;
+      var _loc2_;
       if(type == "optionButton")
       {
-         var _loc3_ = [null,"mechanicA","mechanicB"];
-         var _loc2_ = parseInt(id);
+         _loc3_ = [null,"mechanicA","mechanicB"];
+         _loc2_ = parseInt(id);
          this.website[_loc3_[_loc2_]] = this.website[_loc3_[_loc2_]] != 1 ? 1 : 0;
          this.updateView();
       }

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_KEYMAP extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var itemList;
    var addColumn;
    var bindingList;
-   var setupColumns;
-   var setupColScroll;
-   var setupColMouseNav;
    var columnList;
+   var itemList;
+   var setupColMouseNav;
+   var setupColScroll;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_KEYMAP()
    {

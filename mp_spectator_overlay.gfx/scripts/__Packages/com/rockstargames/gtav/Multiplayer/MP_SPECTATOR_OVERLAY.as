@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var playerPostionMC;
-   var lowerThirdMC;
    var CONTENT;
    var feedTicker;
    var jobTicker;
+   var lowerThirdMC;
+   var playerPostionMC;
    var ref;
    var titleIndex = 0;
    var titleAr = new Array();
@@ -99,11 +99,13 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockst
    {
       this.isWideScreen = _isWideScreen;
       this.isHiDef = _isHiDef;
+      var _loc4_;
+      var _loc3_;
       if(!this.isWideScreen)
       {
          Stage.scaleMode = "noBorder";
-         var _loc4_ = 1.7777777777777777;
-         var _loc3_ = 1.3333333333333333;
+         _loc4_ = 1.7777777777777777;
+         _loc3_ = 1.3333333333333333;
          this.FOUR_THREE_PADDING = (this.FILE_WIDTH - Math.round(this.FILE_WIDTH / _loc4_ * _loc3_)) / 2;
          _screenWidthPixels = this.FILE_WIDTH - this.FOUR_THREE_PADDING * 2;
       }
@@ -159,9 +161,10 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockst
       var _loc5_ = this.lowerThirdMC.titleMC;
       var _loc4_ = 5;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.titleAr.length)
       {
-         var _loc3_ = this.titleAr[_loc2_];
+         _loc3_ = this.titleAr[_loc2_];
          _loc4_ = _loc3_._x * 2 + 5;
          _loc3_._visible = _loc2_ == this.titleIndex;
          if(_loc2_ == this.titleIndex)
@@ -205,9 +208,10 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockst
    {
       var _loc4_ = this.CONTENT.attachMovie("PlayerPostion","PlayerPostionMC",this.CONTENT.getNextHighestDepth());
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 2)
       {
-         var _loc3_ = _loc4_["rank" + _loc2_ + "MC"];
+         _loc3_ = _loc4_["rank" + _loc2_ + "MC"];
          com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc3_.bgMC,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG);
          _loc2_ = _loc2_ + 1;
       }
@@ -234,9 +238,10 @@ class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockst
       this.playerPostionMC._y = this.safeTop;
       var _loc4_ = 0;
       var _loc3_ = 1;
+      var _loc2_;
       while(_loc3_ <= 2)
       {
-         var _loc2_ = this.playerPostionMC["rank" + _loc3_ + "MC"];
+         _loc2_ = this.playerPostionMC["rank" + _loc3_ + "MC"];
          if(_loc2_._visible)
          {
             _loc4_ = _loc2_._x + _loc2_.bgMC._width;

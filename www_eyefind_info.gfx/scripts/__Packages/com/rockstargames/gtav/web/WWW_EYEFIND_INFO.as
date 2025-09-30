@@ -1,31 +1,32 @@
 class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.core.BaseWebsite
 {
-   var browser;
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var weatherUpdated;
+   var CONTENT;
+   var PAGE_NAMES;
+   var TXDarray;
+   var _name;
+   var browser;
+   var composeBodyStr;
+   var composeSubjectStr;
+   var dataProviderUI;
+   var dataTextScope;
    var dontUpdateSearch;
+   var excludeMPwebsites;
+   var intervalID;
+   var mcScope;
+   var mpRandomWebsites;
+   var newsOrgArray;
+   var offerMPWebsites;
+   var pageName;
    var prevPage;
    var prevSearchArgs;
-   var TXDarray;
-   var searchResults;
-   var weatherDataArray;
-   var newsOrgArray;
-   var excludeMPwebsites;
-   var offerMPWebsites;
    var randomWebsites;
-   var mpRandomWebsites;
-   var mcScope;
-   var womURL;
-   var sponsoredAdNum;
-   var dataProviderUI;
-   var CONTENT;
-   var pageName;
-   var composeSubjectStr;
-   var composeBodyStr;
-   var dataTextScope;
    var resultsContainer;
-   var intervalID;
+   var searchResults;
+   var sponsoredAdNum;
+   var weatherDataArray;
+   var weatherUpdated;
+   var womURL;
    var maxNumberOfResults = 6;
    var wantedLevel = 0;
    var isMP = false;
@@ -113,12 +114,12 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    function generateRandomWebsites()
    {
       var _loc7_ = [];
-      var _loc6_ = undefined;
-      var _loc5_ = undefined;
-      var _loc3_ = undefined;
-      var _loc8_ = undefined;
-      var _loc2_ = undefined;
-      var _loc4_ = undefined;
+      var _loc6_;
+      var _loc5_;
+      var _loc3_;
+      var _loc8_;
+      var _loc2_;
+      var _loc4_;
       _loc3_ = 0;
       _loc8_ = com.rockstargames.gtav.web.allWebsites.websitesArray.length;
       while(_loc3_ < _loc8_)
@@ -180,16 +181,27 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    {
       var _loc13_ = new Array();
       _loc13_ = AnchorLinkString.split("_");
-      var _loc16_ = undefined;
-      var _loc12_ = undefined;
+      var _loc16_;
+      var _loc12_;
+      var _loc11_;
+      var _loc14_;
+      var _loc8_;
+      var _loc4_;
+      var _loc10_;
+      var _loc2_;
+      var _loc5_;
+      var _loc9_;
+      var _loc6_;
+      var _loc7_;
+      var _loc3_;
       if(_loc13_[0] == "contact")
       {
-         var _loc11_ = parseInt(_loc13_[1]);
-         var _loc14_ = _loc11_ + 10;
-         var _loc8_ = 0;
+         _loc11_ = parseInt(_loc13_[1]);
+         _loc14_ = _loc11_ + 10;
+         _loc8_ = 0;
          while(_loc8_ < this.dataProviderUI.length - 10)
          {
-            var _loc4_ = this.mcScope.contactsContainer["contact_" + _loc8_];
+            _loc4_ = this.mcScope.contactsContainer["contact_" + _loc8_];
             if(_loc8_ != _loc11_)
             {
                _loc4_.highlight._visible = false;
@@ -207,9 +219,9 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
       }
       else if(_loc13_[0] == "email")
       {
-         var _loc10_ = parseInt(_loc13_[1]);
+         _loc10_ = parseInt(_loc13_[1]);
          _loc14_ = _loc10_ + 10;
-         var _loc2_ = this.mcScope.emailContainer["email_" + _loc10_];
+         _loc2_ = this.mcScope.emailContainer["email_" + _loc10_];
          com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.mcScope.playerNameTF,"EF_SENDER",0,true);
          this.mcScope.playerNameTF.htmlText += " " + this.dataProviderUI[_loc14_][0];
          this.mcScope.playerNameTF.textAutoSize = "shrink";
@@ -290,15 +302,15 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
          {
             case "search_random":
                _loc12_ = "EF_RANDOM";
-               var _loc5_ = new Array();
+               _loc5_ = new Array();
                _loc5_[0] = this.getRandomWebsite();
                _loc8_ = 1;
-               var _loc9_ = 0;
+               _loc9_ = 0;
                while(_loc8_ < this.maxNumberOfResults)
                {
-                  var _loc6_ = this.getRandomWebsite();
-                  var _loc7_ = false;
-                  var _loc3_ = 0;
+                  _loc6_ = this.getRandomWebsite();
+                  _loc7_ = false;
+                  _loc3_ = 0;
                   while(_loc3_ < _loc8_)
                   {
                      if(_loc5_[_loc3_] == _loc6_)
@@ -338,11 +350,9 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                if(this.isMP == true)
                {
                   this.searchResults = ["THEDIAMONDCASINOANDRESORT_COM","FORECLOSURES_MAZE_D_BANK_COM","DYNASTY8EXECUTIVEREALTY_COM","BAWSAQ_COM","DYNASTY8REALESTATE_COM","MAZE_D_BANK_COM"];
+                  break;
                }
-               else
-               {
-                  this.searchResults = ["LCN_D_EXCHANGE_COM","BAWSAQ_COM","DYNASTY8REALESTATE_COM","MAZE_D_BANK_COM","FLEECA_COM","THEBANKOFLIBERTY_COM"];
-               }
+               this.searchResults = ["LCN_D_EXCHANGE_COM","BAWSAQ_COM","DYNASTY8REALESTATE_COM","MAZE_D_BANK_COM","FLEECA_COM","THEBANKOFLIBERTY_COM"];
                break;
             case "search_travel":
                _loc12_ = "EF_TRAVELANDTRANS";
@@ -374,6 +384,36 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
          this.composeSubjectStr = undefined;
          this.composeBodyStr = undefined;
       }
+      var _loc5_;
+      var _loc18_;
+      var _loc14_;
+      var _loc12_;
+      var _loc8_;
+      var _loc4_;
+      var _loc16_;
+      var _loc27_;
+      var _loc23_;
+      var _loc26_;
+      var _loc11_;
+      var _loc13_;
+      var _loc7_;
+      var _loc10_;
+      var _loc33_;
+      var _loc21_;
+      var _loc28_;
+      var _loc35_;
+      var _loc9_;
+      var _loc34_;
+      var _loc30_;
+      var _loc36_;
+      var _loc15_;
+      var _loc22_;
+      var _loc20_;
+      var _loc3_;
+      var _loc6_;
+      var _loc19_;
+      var _loc17_;
+      var _loc32_;
       switch(this.pageName)
       {
          case "PAGE1":
@@ -384,7 +424,7 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
             com.rockstargames.ui.utils.Debug.log("WWW_EYEFIND_INFO::POPULATE_TEXT mcScope [" + this.mcScope + "]");
             com.rockstargames.ui.utils.Debug.log("WWW_EYEFIND_INFO::POPULATE_TEXT CONTENT._currentframe [" + this.CONTENT._currentframe + "]");
             com.rockstargames.ui.utils.Debug.log("WWW_EYEFIND_INFO::POPULATE_TEXT isMP [" + this.isMP + "]");
-            var _loc5_ = 0;
+            _loc5_ = 0;
             while(_loc5_ < this.dataProviderUI.length)
             {
                com.rockstargames.ui.utils.Debug.log("WWW_EYEFIND_INFO::POPULATE_TEXT dataProviderUI[" + _loc5_ + "] [" + this.dataProviderUI[_loc5_] + "]");
@@ -397,14 +437,14 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                _loc5_ = 0;
                while(_loc5_ < 3)
                {
-                  var _loc18_ = this.mcScope["offer_" + _loc5_].btn;
+                  _loc18_ = this.mcScope["offer_" + _loc5_].btn;
                   if(this.dataProviderUI[9] == undefined || this.dataProviderUI[9].length == 0 || isNaN(this.dataProviderUI[9][_loc5_ * 2]))
                   {
                      _loc18_._visible = false;
                   }
                   else
                   {
-                     var _loc14_ = this.offerMPWebsites[this.dataProviderUI[9][_loc5_ << 1]];
+                     _loc14_ = this.offerMPWebsites[this.dataProviderUI[9][_loc5_ << 1]];
                      if(_loc18_ == undefined)
                      {
                         _loc18_ = this.mcScope["offer_" + _loc5_][_loc14_];
@@ -423,13 +463,13 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                _loc5_ = this.mpRandomWebsites.length - 1;
                while(_loc5_ >= 0)
                {
-                  var _loc12_ = false;
-                  var _loc8_ = com.rockstargames.gtav.web.allWebsites.websitesArray[this.mpRandomWebsites[_loc5_]][0];
+                  _loc12_ = false;
+                  _loc8_ = com.rockstargames.gtav.web.allWebsites.websitesArray[this.mpRandomWebsites[_loc5_]][0];
                   if(!this.urlHasSubdomain(_loc8_))
                   {
                      _loc8_ = "WWW_" + _loc8_;
                   }
-                  var _loc4_ = 0;
+                  _loc4_ = 0;
                   while(_loc4_ <= 4)
                   {
                      if(_loc8_ == this.offerMPWebsites[this.dataProviderUI[9][_loc4_]])
@@ -455,27 +495,27 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                   }
                   _loc5_ = _loc5_ - 1;
                }
-               var _loc16_ = [228,393.5,559,724.5,890];
-               var _loc27_ = 86;
-               var _loc23_ = 388;
-               var _loc26_ = this.dataProviderUI[9].length;
+               _loc16_ = [228,393.5,559,724.5,890];
+               _loc27_ = 86;
+               _loc23_ = 388;
+               _loc26_ = this.dataProviderUI[9].length;
                _loc5_ = 6;
                while(_loc5_ < _loc26_)
                {
-                  var _loc11_ = this.dataProviderUI[9][_loc5_];
+                  _loc11_ = this.dataProviderUI[9][_loc5_];
                   if(_loc11_ == -1)
                   {
                      _loc11_ = this.mpRandomWebsites[_loc5_ % this.mpRandomWebsites.length];
                   }
-                  var _loc13_ = (_loc5_ - 6) % _loc16_.length;
-                  var _loc7_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc11_][0];
+                  _loc13_ = (_loc5_ - 6) % _loc16_.length;
+                  _loc7_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc11_][0];
                   if(!this.urlHasSubdomain(_loc7_))
                   {
                      _loc7_ = "WWW_" + _loc7_;
                   }
                   if(this.mcScope["featured_button_" + _loc5_] == undefined)
                   {
-                     var _loc10_ = this.mcScope.createEmptyMovieClip("featured_button_" + _loc5_,this.mcScope.getNextHighestDepth());
+                     _loc10_ = this.mcScope.createEmptyMovieClip("featured_button_" + _loc5_,this.mcScope.getNextHighestDepth());
                      _loc10_._x = _loc16_[_loc13_];
                      _loc10_._y = _loc23_;
                      _loc18_ = _loc10_.attachMovie("thumbnailMC",_loc7_,0);
@@ -488,7 +528,7 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                   this.dataTextScope[_loc5_ + 16] = this.mcScope["featured_button_" + _loc5_][_loc7_].btnTxt;
                   _loc5_ = _loc5_ + 1;
                }
-               var _loc33_ = Math.ceil((_loc26_ - 6) / 5) * _loc27_ + 388 + 50;
+               _loc33_ = Math.ceil((_loc26_ - 6) / 5) * _loc27_ + 388 + 50;
                pageHeight = Math.max(627,_loc33_);
                this.mcScope.BACKGROUND._height = pageHeight;
                this.CONTENT.BOUNDING_BOX._height = pageHeight;
@@ -510,9 +550,9 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                if(!newPage)
                {
                   this.set_localised_text(-1,this.mcScope.EF_WEBSITEOFTHEMINUTE,"EF_WEBSITEOFTHEMINUTE");
-                  var _loc21_ = this.randomWebsites[0];
-                  var _loc28_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc21_][0];
-                  var _loc35_ = "DESC_" + _loc28_;
+                  _loc21_ = this.randomWebsites[0];
+                  _loc28_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc21_][0];
+                  _loc35_ = "DESC_" + _loc28_;
                   if(!this.urlHasSubdomain(_loc28_))
                   {
                      _loc28_ = "WWW_" + _loc28_;
@@ -536,7 +576,7 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                while(_loc5_ < 5)
                {
                   _loc21_ = this.randomWebsites[_loc5_ + 1];
-                  var _loc9_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc21_][0];
+                  _loc9_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc21_][0];
                   if(!this.urlHasSubdomain(_loc9_))
                   {
                      _loc9_ = "WWW_" + _loc9_;
@@ -621,13 +661,11 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
             this.lastEmailClicked = 0;
             com.rockstargames.ui.utils.Debug.log("WWW_EYEFIND_INFO::POPULATE_TEXT ***************************************************************************** END");
             break;
-         case "PAGE2":
-            break;
          case "ERROR":
             this.mcScope = this.CONTENT.ERROR;
             if(newPage == true)
             {
-               var _loc34_ = this.randRange(2,20);
+               _loc34_ = this.randRange(2,20);
                this.mcScope.errorPicMC.gotoAndStop(_loc34_);
                this.mcScope.gotoAndPlay(2);
                this.dataTextScope = new Array();
@@ -656,13 +694,13 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                this.weatherDataArray[3] = this.dataProviderUI[3];
             }
             this.updateWeatherWidget();
-            var _loc30_ = false;
+            _loc30_ = false;
             if(newPage == true)
             {
                if(searchArgs != "" && searchArgs != undefined)
                {
                   this.searchResults = searchArgs.split("&");
-                  var _loc36_ = this.searchResults.shift();
+                  _loc36_ = this.searchResults.shift();
                   this.browser.userTextEntry = _loc36_.toString();
                   _loc30_ = true;
                }
@@ -695,8 +733,8 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                {
                   this.searchResults = this.doSearch(this.browser.userTextEntry);
                }
-               var _loc15_ = 284;
-               var _loc22_ = 10;
+               _loc15_ = 284;
+               _loc22_ = 10;
                com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"EF_CLOSESTMATCH",this.CONTENT.localisationTF);
                this.mcScope.searchKeywordsTF.text = this.CONTENT.localisationTF.text + " " + this.browser.userTextEntry.toUpperCase();
                this.mcScope.searchResultsBG._height = 72;
@@ -711,21 +749,21 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                   _loc5_ = 0;
                   while(_loc5_ < this.searchResults.length)
                   {
-                     var _loc20_ = "thumbnail_" + this.searchResults[_loc5_];
+                     _loc20_ = "thumbnail_" + this.searchResults[_loc5_];
                      if(this.urlHasSubdomain(this.searchResults[_loc5_]))
                      {
-                        var _loc3_ = this.searchResults[_loc5_];
+                        _loc3_ = this.searchResults[_loc5_];
                      }
                      else
                      {
                         _loc3_ = "WWW_" + this.searchResults[_loc5_];
                      }
-                     var _loc6_ = this.resultsContainer.attachMovie("button_searchResultMC",_loc3_,this.resultsContainer.getNextHighestDepth(),{_x:228,_y:_loc15_});
+                     _loc6_ = this.resultsContainer.attachMovie("button_searchResultMC",_loc3_,this.resultsContainer.getNextHighestDepth(),{_x:228,_y:_loc15_});
                      _loc6_.btnTxt.text = this.browser.PARSE_FILENAME_TO_TEXT(_loc3_);
-                     var _loc19_ = this.mcScope.attachMovie("thumbnailMC","result_" + _loc3_,this.mcScope.getNextHighestDepth(),{_x:_loc6_._x,_y:_loc6_._y});
+                     _loc19_ = this.mcScope.attachMovie("thumbnailMC","result_" + _loc3_,this.mcScope.getNextHighestDepth(),{_x:_loc6_._x,_y:_loc6_._y});
                      _loc19_.DISPLAY_THUMBNAIL(_loc20_,"result_" + _loc3_);
                      this.dataTextScope[_loc5_ + 9] = _loc6_.btnTxt;
-                     var _loc17_ = "DESC_" + this.searchResults[_loc5_];
+                     _loc17_ = "DESC_" + this.searchResults[_loc5_];
                      this.mcScope.resultsContainer[_loc3_].descriptionTF.autoSize = "left";
                      this.set_localised_text(-1,this.mcScope.resultsContainer[_loc3_].descriptionTF,_loc17_);
                      if(this.mcScope.resultsContainer[_loc3_].descriptionTF._height > 54)
@@ -741,7 +779,7 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                }
                if(_loc30_ == false)
                {
-                  var _loc32_ = this.searchResults;
+                  _loc32_ = this.searchResults;
                   _loc32_.unshift(this.browser.userTextEntry.toUpperCase());
                   this.browser.ADD_URL_ARGS_TO_HISTORY(_loc32_);
                }
@@ -823,6 +861,8 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
             }
             this.CONTENT.BOUNDING_BOX._height += 40;
             this.lastEmailClicked = 0;
+            break;
+         case "PAGE2":
       }
       this.prevPage = this.pageName;
       this.prevSearchArgs = searchArgs;
@@ -869,62 +909,73 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
       var _loc16_ = userSearchKeywords.split("www.").join("").split(".com").join("").split(".org").join("").split(".info").join("").split(".net").join("").split(".biz").join("").split(".us").join("");
       userSearchKeywords = _loc16_;
       var _loc11_ = new Array();
-      if(userSearchKeywords.length == 0)
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc10_;
+      var _loc9_;
+      var _loc8_;
+      var _loc2_;
+      var _loc5_;
+      var _loc6_;
+      var _loc14_;
+      if(userSearchKeywords.length != 0)
       {
-         this.browser.GO_TO_WEBPAGE("PAGE1");
-      }
-      var _loc3_ = userSearchKeywords.toLowerCase().split(" ");
-      var _loc7_ = 0;
-      while(_loc7_ < com.rockstargames.gtav.web.allWebsites.websitesArray.length)
-      {
-         var _loc4_ = 0;
-         var _loc10_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc7_][0];
-         var _loc9_ = undefined;
-         _loc9_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc7_][1].toLowerCase();
-         _loc9_.split(", ").join(" ");
-         var _loc8_ = this.browser.PARSE_FILENAME_TO_TEXT(_loc10_.substr(0,_loc10_.lastIndexOf("_")));
-         var _loc2_ = 0;
-         while(_loc2_ < _loc3_.length)
+         _loc3_ = userSearchKeywords.toLowerCase().split(" ");
+         _loc7_ = 0;
+         while(_loc7_ < com.rockstargames.gtav.web.allWebsites.websitesArray.length)
          {
-            var _loc5_ = _loc9_.split(_loc3_[_loc2_]);
-            if(_loc5_.length > 1)
+            _loc4_ = 0;
+            _loc10_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc7_][0];
+            _loc9_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc7_][1].toLowerCase();
+            _loc9_.split(", ").join(" ");
+            _loc8_ = this.browser.PARSE_FILENAME_TO_TEXT(_loc10_.substr(0,_loc10_.lastIndexOf("_")));
+            _loc2_ = 0;
+            while(_loc2_ < _loc3_.length)
             {
-               _loc4_ = _loc4_ + 1;
-               if(_loc5_.indexOf(_loc3_[_loc2_] + " ") > -1)
+               _loc5_ = _loc9_.split(_loc3_[_loc2_]);
+               if(_loc5_.length > 1)
                {
-                  _loc4_ += _loc3_[_loc2_].length;
-                  _loc4_ += _loc3_.length - _loc2_;
+                  _loc4_ = _loc4_ + 1;
+                  if(_loc5_.indexOf(_loc3_[_loc2_] + " ") > -1)
+                  {
+                     _loc4_ += _loc3_[_loc2_].length;
+                     _loc4_ += _loc3_.length - _loc2_;
+                  }
                }
+               _loc6_ = _loc8_.indexOf(_loc3_[_loc2_]);
+               if(_loc6_ > -1)
+               {
+                  _loc4_ += _loc8_.length - _loc6_;
+               }
+               _loc2_ = _loc2_ + 1;
             }
-            var _loc6_ = _loc8_.indexOf(_loc3_[_loc2_]);
-            if(_loc6_ > -1)
-            {
-               _loc4_ += _loc8_.length - _loc6_;
-            }
-            _loc2_ = _loc2_ + 1;
+            _loc11_.push({RELEVANCE:_loc4_,WEBSITE:_loc10_});
+            _loc7_ = _loc7_ + 1;
          }
-         _loc11_.push({RELEVANCE:_loc4_,WEBSITE:_loc10_});
-         _loc7_ = _loc7_ + 1;
-      }
-      _loc11_.sortOn("RELEVANCE",Array.DESCENDING | Array.NUMERIC);
-      var _loc14_ = new Array();
-      _loc7_ = 0;
-      while(_loc7_ < this.maxNumberOfResults)
-      {
-         if(_loc11_[_loc7_].RELEVANCE > 0)
+         _loc11_.sortOn("RELEVANCE",Array.DESCENDING | Array.NUMERIC);
+         _loc14_ = new Array();
+         _loc7_ = 0;
+         while(_loc7_ < this.maxNumberOfResults)
          {
-            _loc14_.push(_loc11_[_loc7_].WEBSITE);
+            if(_loc11_[_loc7_].RELEVANCE > 0)
+            {
+               _loc14_.push(_loc11_[_loc7_].WEBSITE);
+            }
+            _loc7_ = _loc7_ + 1;
          }
-         _loc7_ = _loc7_ + 1;
+         return _loc14_;
       }
-      return _loc14_;
+      this.browser.GO_TO_WEBPAGE("PAGE1");
    }
    function loadButtonThumbnail(urlName, placeholder, textScopeSlot)
    {
+      var _loc3_;
+      var _loc4_;
       if(this.mcScope[urlName] == undefined)
       {
-         var _loc3_ = this.mcScope.attachMovie("thumbnailMC",urlName,this.mcScope.getNextHighestDepth(),{_x:placeholder._x,_y:placeholder._y});
-         var _loc4_ = urlName.indexOf("WWW_") != 0 ? urlName : urlName.slice(4);
+         _loc3_ = this.mcScope.attachMovie("thumbnailMC",urlName,this.mcScope.getNextHighestDepth(),{_x:placeholder._x,_y:placeholder._y});
+         _loc4_ = urlName.indexOf("WWW_") != 0 ? urlName : urlName.slice(4);
          _loc3_.DISPLAY_THUMBNAIL("thumbnail_" + _loc4_,urlName);
       }
       this.dataTextScope[textScopeSlot] = this.mcScope[urlName].btnTxt;
@@ -954,9 +1005,10 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
       {
          _loc3_ = this.randRange(0,com.rockstargames.gtav.web.allWebsites.websitesArray.length - 1);
       }
+      var _loc2_;
       if(this.mcScope == this.CONTENT.PAGE1 && this.isMP == true)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.excludeMPwebsites.length)
          {
             if(com.rockstargames.gtav.web.allWebsites.websitesArray[_loc3_][0] == this.excludeMPwebsites[_loc2_])
@@ -978,25 +1030,30 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    {
       var _loc4_ = source.length;
       var _loc1_ = 0;
+      var _loc3_;
+      var _loc2_;
       while(_loc1_ < _loc4_ - 1)
       {
-         var _loc3_ = Math.random() * (_loc4_ - _loc1_ - 1) + _loc1_ + 1;
-         var _loc2_ = source.splice(_loc3_,1)[0];
+         _loc3_ = Math.random() * (_loc4_ - _loc1_ - 1) + _loc1_ + 1;
+         _loc2_ = source.splice(_loc3_,1)[0];
          source.splice(_loc1_,0,_loc2_);
          _loc1_ = _loc1_ + 1;
       }
    }
    function TXD_HAS_LOADED(textureDict, success, uniqueID)
    {
+      var _loc5_;
+      var _loc2_;
+      var _loc3_;
       if(success == true)
       {
          if(this.mcScope[uniqueID].txd == undefined)
          {
-            var _loc5_ = this.dataProviderUI[9].length;
-            var _loc2_ = 6;
+            _loc5_ = this.dataProviderUI[9].length;
+            _loc2_ = 6;
             while(_loc2_ < _loc5_)
             {
-               var _loc3_ = this.mcScope["featured_button_" + _loc2_][uniqueID];
+               _loc3_ = this.mcScope["featured_button_" + _loc2_][uniqueID];
                if(_loc3_ != undefined)
                {
                   _loc3_.TXD_HAS_LOADED(textureDict,success,uniqueID);
@@ -1011,24 +1068,32 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    }
    function updateBleets()
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc9_;
+      var _loc6_;
+      var _loc5_;
+      var _loc7_;
+      var _loc8_;
       if(this.isMP == false)
       {
-         var _loc3_ = 7;
+         _loc3_ = 7;
          while(_loc3_ < 9)
          {
             if(this.dataProviderUI[_loc3_] != undefined)
             {
-               var _loc2_ = "";
-               var _loc4_ = "";
-               var _loc9_ = "bleet" + (_loc3_ - 6) + "NameTF";
-               var _loc6_ = "bleet" + (_loc3_ - 6) + "TF";
+               _loc2_ = "";
+               _loc4_ = "";
+               _loc9_ = "bleet" + (_loc3_ - 6) + "NameTF";
+               _loc6_ = "bleet" + (_loc3_ - 6) + "TF";
                this.CONTENT.localisationTF.text = this.dataProviderUI[_loc3_];
                _loc2_ = this.CONTENT.localisationTF.text;
-               var _loc5_ = _loc2_.indexOf("*");
+               _loc5_ = _loc2_.indexOf("*");
                if(_loc5_ != -1)
                {
-                  var _loc7_ = _loc2_.substr(_loc5_ + 1).indexOf(" ");
-                  var _loc8_ = _loc2_.substr(_loc7_ + 2,_loc2_.length);
+                  _loc7_ = _loc2_.substr(_loc5_ + 1).indexOf(" ");
+                  _loc8_ = _loc2_.substr(_loc7_ + 2,_loc2_.length);
                   _loc2_ = _loc8_;
                }
                _loc5_ = _loc2_.indexOf("@");
@@ -1060,16 +1125,24 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    }
    function moveFeaturedWebsites()
    {
+      var _loc9_;
+      var _loc8_;
+      var _loc4_;
+      var _loc6_;
+      var _loc3_;
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
       switch(this.mcScope)
       {
          case this.CONTENT.PAGE1:
             if(!this.isMP)
             {
-               var _loc9_ = this.mcScope.BLEETER._y + this.mcScope.BLEETER._height + 9;
-               var _loc8_ = this.mcScope.websiteOfTheMinuteBG._y + this.mcScope.websiteOfTheMinuteBG._height + 9;
-               var _loc4_ = Math.max(_loc9_,_loc8_);
+               _loc9_ = this.mcScope.BLEETER._y + this.mcScope.BLEETER._height + 9;
+               _loc8_ = this.mcScope.websiteOfTheMinuteBG._y + this.mcScope.websiteOfTheMinuteBG._height + 9;
+               _loc4_ = Math.max(_loc9_,_loc8_);
                this.mcScope.FeaturedWebsitesBG._y = _loc4_;
-               var _loc6_ = 37;
+               _loc6_ = 37;
                if(this.isMP == true)
                {
                   _loc6_ = 110;
@@ -1079,11 +1152,11 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                   this.mcScope.WWW_DOCKTEASE_COM._y = _loc4_ + 37;
                   this.mcScope.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM._y = _loc4_ + 37;
                }
-               var _loc3_ = 0;
+               _loc3_ = 0;
                while(_loc3_ < 5)
                {
-                  var _loc5_ = this.randomWebsites[_loc3_ + 1];
-                  var _loc2_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc5_][0];
+                  _loc5_ = this.randomWebsites[_loc3_ + 1];
+                  _loc2_ = com.rockstargames.gtav.web.allWebsites.websitesArray[_loc5_][0];
                   if(!this.urlHasSubdomain(_loc2_))
                   {
                      _loc2_ = "WWW_" + _loc2_;
@@ -1095,7 +1168,7 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
                   }
                   _loc3_ = _loc3_ + 1;
                }
-               var _loc7_ = _loc4_ + this.mcScope.FeaturedWebsitesBG._height + 40;
+               _loc7_ = _loc4_ + this.mcScope.FeaturedWebsitesBG._height + 40;
                if(isNaN(_loc7_))
                {
                   _loc7_ = 646;
@@ -1122,6 +1195,8 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
             {
                this.CONTENT.BOUNDING_BOX._height = 627;
             }
+         default:
+            return;
       }
    }
    function UPDATE_TICKERTAPE(speed)
@@ -1134,14 +1209,18 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
       var _loc7_ = "<\font>";
       var _loc13_ = "   ";
       var _loc2_ = 0;
+      var _loc8_;
+      var _loc9_;
+      var _loc4_;
+      var _loc5_;
       while(_loc2_ < this.dataProviderUI.length)
       {
          if(this.dataProviderUI[_loc2_][0] != undefined)
          {
-            var _loc8_ = this.dataProviderUI[_loc2_][3];
-            var _loc9_ = this.dataProviderUI[_loc2_][0];
-            var _loc4_ = this.dataProviderUI[_loc2_][1];
-            var _loc5_ = this.dataProviderUI[_loc2_][2];
+            _loc8_ = this.dataProviderUI[_loc2_][3];
+            _loc9_ = this.dataProviderUI[_loc2_][0];
+            _loc4_ = this.dataProviderUI[_loc2_][1];
+            _loc5_ = this.dataProviderUI[_loc2_][2];
             _loc6_ += _loc13_ + _loc3_ + _loc12_ + _loc8_ + _loc3_ + com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc9_,2) + _loc7_ + _loc3_;
             if(_loc4_ < 0)
             {
@@ -1158,14 +1237,16 @@ class com.rockstargames.gtav.web.WWW_EYEFIND_INFO extends com.rockstargames.ui.c
    }
    function CLEANUP()
    {
+      var _loc2_;
+      var _loc3_;
       if(this.TXDarray.length > 0)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.TXDarray.length)
          {
             if(this.TXDarray[_loc2_] != undefined)
             {
-               var _loc3_ = this.mcScope[this.TXDarray[_loc2_][1]];
+               _loc3_ = this.mcScope[this.TXDarray[_loc2_][1]];
                if(_loc3_ != undefined)
                {
                   _loc3_.REMOVE_THUMBNAIL();

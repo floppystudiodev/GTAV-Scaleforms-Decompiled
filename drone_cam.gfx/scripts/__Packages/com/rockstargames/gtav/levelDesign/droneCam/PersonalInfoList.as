@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.droneCam.PersonalInfoList
 {
-   var view;
    var line;
+   var view;
    function PersonalInfoList(view, visible, line)
    {
       this.view = view;
@@ -25,9 +25,10 @@ class com.rockstargames.gtav.levelDesign.droneCam.PersonalInfoList
       com.rockstargames.gtav.levelDesign.DRONE_CAM.setLocalisedText(this.view.item11.label,"DRONE_INFO_10");
       var _loc4_ = this.view.item1.value._x + this.view.item1.value._width;
       var _loc3_ = 1;
+      var _loc2_;
       while(_loc3_ <= 10)
       {
-         var _loc2_ = this.view["item" + _loc3_];
+         _loc2_ = this.view["item" + _loc3_];
          _loc2_.value._x = _loc2_.label._x + _loc2_.label.textWidth + 10;
          _loc2_.value._width = _loc4_ - _loc2_.value._x;
          _loc3_ = _loc3_ + 1;
@@ -76,9 +77,10 @@ class com.rockstargames.gtav.levelDesign.droneCam.PersonalInfoList
    function addEllipsis(tf)
    {
       var _loc3_ = tf.text;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = _loc3_.length;
+         _loc1_ = _loc3_.length;
          while(_loc1_ > 0)
          {
             tf.text = _loc3_.substring(0,_loc1_) + "...";

@@ -2,8 +2,8 @@ class com.rockstargames.gtav.levelDesign.YOGA_BUTTONS extends com.rockstargames.
 {
    var BOUNDING_BOX;
    var CONTENT;
-   var myColour;
    var container;
+   var myColour;
    var buttonWidth = 64;
    var buttonSpacing = 360;
    var maxButtons = 8;
@@ -54,10 +54,12 @@ class com.rockstargames.gtav.levelDesign.YOGA_BUTTONS extends com.rockstargames.
       this.container = this.CONTENT.createEmptyMovieClip("container",this.CONTENT.getNextHighestDepth());
       this.containerFlag = true;
       var _loc3_ = 0;
+      var _loc4_;
+      var _loc2_;
       while(_loc3_ < this.buttonList.length)
       {
-         var _loc4_ = "BUTTON_" + this.buttonList[_loc3_];
-         var _loc2_ = this.container.attachMovie(_loc4_,_loc4_,this.container.getNextHighestDepth(),{_x:this.buttonSpacing * _loc3_});
+         _loc4_ = "BUTTON_" + this.buttonList[_loc3_];
+         _loc2_ = this.container.attachMovie(_loc4_,_loc4_,this.container.getNextHighestDepth(),{_x:this.buttonSpacing * _loc3_});
          _loc2_.targetMC.target1._alpha = 0;
          _loc2_.targetMC.target2._alpha = 0;
          _loc2_.stateMC._xscale = _loc2_.stateMC._yscale = this.scaleMin;
@@ -88,10 +90,11 @@ class com.rockstargames.gtav.levelDesign.YOGA_BUTTONS extends com.rockstargames.
    function SET_HOLD_TIMER(timePercent)
    {
       var _loc3_ = Math.max(0,Math.min(timePercent,100));
+      var _loc4_;
+      var _loc2_;
       if(this.buttonList.length > 0)
       {
-         var _loc4_ = 0;
-         var _loc2_ = undefined;
+         _loc4_ = 0;
          for(_loc4_ in this.buttonList)
          {
             _loc2_ = this.buttonList[_loc4_];
@@ -183,6 +186,8 @@ class com.rockstargames.gtav.levelDesign.YOGA_BUTTONS extends com.rockstargames.
             this.ButtonReset(_loc2_);
             com.rockstargames.ui.utils.Colour.Colourise(_loc2_.stateMC,this.colBlue[0],this.colBlue[1],this.colBlue[2]);
             com.rockstargames.ui.tweenStar.TweenStarLite.to(_loc2_.stateMC,this.fadeSpeed,{delay:1,_xscale:this.scaleMax,_yscale:this.scaleMax,_alpha:0,ease:com.rockstargames.ui.tweenStar.Ease.CUBIC_IN});
+         default:
+            return;
       }
    }
    function ButtonReset(button)

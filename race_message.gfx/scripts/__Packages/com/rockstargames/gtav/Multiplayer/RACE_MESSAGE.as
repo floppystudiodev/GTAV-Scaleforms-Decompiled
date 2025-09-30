@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.Multiplayer.RACE_MESSAGE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var DispConf;
    var CONTENT;
+   var DispConf;
    var TIMELINE;
+   var getDisplayConfig;
    var currentPct = 1;
    var count = 0;
    var DURATION = 2;

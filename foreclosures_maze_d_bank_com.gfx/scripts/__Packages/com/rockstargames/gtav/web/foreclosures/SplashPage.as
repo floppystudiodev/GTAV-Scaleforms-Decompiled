@@ -21,7 +21,7 @@ class com.rockstargames.gtav.web.foreclosures.SplashPage extends com.rockstargam
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "enterButton")
       {
          this.website.browser.GO_TO_WEBPAGE(com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.MAP_PAGE.name);

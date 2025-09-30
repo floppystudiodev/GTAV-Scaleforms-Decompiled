@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CORONA_PLAYERS extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
+   var addColumn;
    var column1;
    var column2;
    var column3;

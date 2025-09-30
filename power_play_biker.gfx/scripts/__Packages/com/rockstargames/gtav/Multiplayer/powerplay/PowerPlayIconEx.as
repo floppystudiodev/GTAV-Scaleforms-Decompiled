@@ -2,16 +2,16 @@ class com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx extends com.r
 {
    var CONTAINER;
    var background;
-   var teamOne;
-   var teamTwo;
-   var teamThree;
-   var teamFour;
-   var pickup;
-   var teamOneActive;
-   var teamTwoActive;
-   var teamThreeActive;
-   var teamFourActive;
    var currentState;
+   var pickup;
+   var teamFour;
+   var teamFourActive;
+   var teamOne;
+   var teamOneActive;
+   var teamThree;
+   var teamThreeActive;
+   var teamTwo;
+   var teamTwoActive;
    var _teamOneColourHex = 15306063;
    var _teamTwoColourHex = 10521793;
    var _teamThreeColourHex = 10521793;
@@ -135,9 +135,8 @@ class com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx extends com.r
             this.teamTwo._visible = false;
             this.teamThree._visible = false;
             this.teamFour._visible = false;
-            break;
          default:
-            break;
+            return;
          case com.rockstargames.gtav.Multiplayer.powerplay.IconStates.SURPRESSED_STATE:
             this.pickup._alpha = 25;
             this.teamOne._visible = false;

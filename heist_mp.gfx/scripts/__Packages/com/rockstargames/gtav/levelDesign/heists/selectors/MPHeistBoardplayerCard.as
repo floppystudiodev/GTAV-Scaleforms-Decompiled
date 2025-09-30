@@ -1,10 +1,11 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var statStrings;
-   var statLabels;
+   var attachMovie;
+   var card;
    var cardPos;
    var playerSlot;
-   var card;
+   var statLabels;
+   var statStrings;
    var numItems = 0;
    var vehString = "";
    var rankString = "";
@@ -23,6 +24,15 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
       this.playerSlot = this._data[0];
       var _loc10_ = "card" + this.playerSlot;
       this.card = this[_loc10_];
+      var _loc6_;
+      var _loc9_;
+      var _loc7_;
+      var _loc8_;
+      var _loc11_;
+      var _loc2_;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       if(this._data[1] == undefined)
       {
          if(this.card != undefined)
@@ -50,10 +60,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
          this.card.details.rankTF.textAutoSize = "shrink";
          this.card.details.roleTF.htmlText = this._data[3];
          this.card.details.roleTF.textAutoSize = "shrink";
-         var _loc6_ = this._data[4];
+         _loc6_ = this._data[4];
          if(typeof _loc6_ != "string")
          {
-            _loc6_ = undefined;
+            _loc6_;
          }
          if(_loc6_ != undefined && _loc6_ != "" && _loc6_ != null)
          {
@@ -70,10 +80,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
          }
          this.card.details.vehiclesTF.htmlText = this.vehString;
          this.card.details.vehiclesTF.textAutoSize = "shrink";
-         var _loc9_ = this._data[9];
+         _loc9_ = this._data[9];
          if(_loc9_ != undefined)
          {
-            var _loc7_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc9_,2).toString();
+            _loc7_ = com.rockstargames.gtav.utils.ROUND_DECIMAL_PLACES.roundDecimals(_loc9_,2).toString();
             if(_loc7_.length == 1)
             {
                _loc7_ += ".00";
@@ -90,26 +100,26 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
          {
             this.card.details.kdratioTF.text = "";
          }
-         var _loc8_ = this._data[10];
+         _loc8_ = this._data[10];
          if(_loc8_ != undefined)
          {
             this.card.details.titleTF.htmlText = _loc8_;
             this.card.details.titleTF.textAutoSize = "shrink";
          }
-         var _loc11_ = this._data[11];
+         _loc11_ = this._data[11];
          if(_loc11_ != undefined)
          {
             this.card.details.statusTF.htmlText = _loc11_;
             this.card.details.statusTF.textAutoSize = "shrink";
          }
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < 7)
          {
-            var _loc5_ = _loc2_ + 12;
-            var _loc4_ = this._data[_loc5_];
+            _loc5_ = _loc2_ + 12;
+            _loc4_ = this._data[_loc5_];
             if(_loc4_ != undefined)
             {
-               var _loc3_ = "stat" + _loc2_;
+               _loc3_ = "stat" + _loc2_;
                if(this.statStrings[_loc2_] == "")
                {
                   com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.card.details[_loc3_].statTF,this.statLabels[_loc2_],com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,true);
@@ -136,19 +146,31 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
       var _loc11_ = arguments.slice(1,arguments.length);
       var _loc18_ = "card" + _playerSlot;
       var _loc15_ = this[_loc18_];
+      var _loc10_;
+      var _loc13_;
+      var _loc12_;
+      var _loc8_;
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc6_;
+      var _loc9_;
+      var _loc16_;
+      var _loc20_;
+      var _loc19_;
       if(_loc15_ != undefined)
       {
-         var _loc10_ = _loc15_.details.medalsWrapperMC;
-         var _loc13_ = 0;
-         var _loc12_ = 1;
-         var _loc8_ = 0;
+         _loc10_ = _loc15_.details.medalsWrapperMC;
+         _loc13_ = 0;
+         _loc12_ = 1;
+         _loc8_ = 0;
          while(_loc8_ < _loc11_.length)
          {
-            var _loc3_ = _loc11_[_loc8_];
-            var _loc7_ = _loc12_;
-            var _loc4_ = _loc10_["medalOutline" + _loc7_];
-            var _loc6_ = _loc10_["medal" + _loc7_];
-            var _loc9_ = _loc10_["noMedal" + _loc7_];
+            _loc3_ = _loc11_[_loc8_];
+            _loc7_ = _loc12_;
+            _loc4_ = _loc10_["medalOutline" + _loc7_];
+            _loc6_ = _loc10_["medal" + _loc7_];
+            _loc9_ = _loc10_["noMedal" + _loc7_];
             if(_loc6_ != undefined)
             {
                if(_loc3_ != undefined && _loc3_ != -1)
@@ -176,21 +198,23 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPHeistBoardplayerCard
             }
             _loc8_ = _loc8_ + 1;
          }
-         var _loc16_ = _loc10_._width;
-         var _loc20_ = 24.6;
-         var _loc19_ = 11;
+         _loc16_ = _loc10_._width;
+         _loc20_ = 24.6;
+         _loc19_ = 11;
          _loc16_ = (_loc13_ - 1) * 24.6 + _loc19_;
          _loc10_._x = 70 - _loc16_ / 2;
       }
    }
    function showPlayerCard(_playerSlot)
    {
+      var _loc2_;
+      var _loc3_;
       if(this["card" + _playerSlot] != undefined)
       {
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < 8)
          {
-            var _loc3_ = "card" + _loc2_;
+            _loc3_ = "card" + _loc2_;
             if(this[_loc3_] != undefined)
             {
                if(_loc2_ == _playerSlot)

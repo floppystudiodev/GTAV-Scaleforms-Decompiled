@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.minigames.spinthewheel.Wheel
 {
-   var view;
    var segments;
+   var view;
    function Wheel(container, numSegments, x, y, viewLinkage)
    {
       this.view = container.attachMovie(viewLinkage,"wheel",container.getNextHighestDepth());

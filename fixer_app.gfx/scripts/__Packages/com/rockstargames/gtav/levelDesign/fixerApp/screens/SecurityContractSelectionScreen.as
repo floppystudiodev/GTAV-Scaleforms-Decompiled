@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.SecurityContractSelectionScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
-   var dataObject;
+   var app;
    var buttons;
    var cursor;
-   var app;
-   var updateDataObject;
+   var dataObject;
    var tabsDataObject;
+   var updateDataObject;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    static var NORMAL = 1;
    function SecurityContractSelectionScreen(app, viewContainer, cursor, dataObject)
@@ -190,11 +190,13 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.SecurityContractSelect
             break;
          case 3:
             this.setUpLabel(this.view.difficultyText,"FAPP_VERSUS");
+         default:
+            return;
       }
    }
    function onTargetChange(activeTarget)
    {
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc2_ = 1;
       while(_loc2_ <= 4)
       {

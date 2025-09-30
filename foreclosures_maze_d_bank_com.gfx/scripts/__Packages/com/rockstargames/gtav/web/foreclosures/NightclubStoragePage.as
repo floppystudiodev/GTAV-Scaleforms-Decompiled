@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.NightclubStoragePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
+   var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_CLUB";
    function NightclubStoragePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -60,9 +60,10 @@ class com.rockstargames.gtav.web.foreclosures.NightclubStoragePage extends com.r
       this.view.storageButtons.icon.gotoAndStop("storage");
       var _loc7_ = [0,33,36,36,57];
       var _loc3_ = 1;
+      var _loc2_;
       while(_loc3_ <= 4)
       {
-         var _loc2_ = this.view.storageButtons["storageButton_" + _loc3_];
+         _loc2_ = this.view.storageButtons["storageButton_" + _loc3_];
          _loc2_.onColour = 16777215;
          _loc2_.offColour = 16777215;
          _loc2_.btnTxt.text = _loc3_ + 1;
@@ -109,10 +110,11 @@ class com.rockstargames.gtav.web.foreclosures.NightclubStoragePage extends com.r
    }
    function handleClick(type, id)
    {
+      var _loc2_;
       switch(type)
       {
          case "storageButton":
-            var _loc2_ = parseInt(id);
+            _loc2_ = parseInt(id);
             this.website.nightclubStorage = _loc2_ != this.website.nightclubStorage ? _loc2_ : _loc2_ - 1;
             this.slideshow.show([com.rockstargames.gtav.web.foreclosures.NightclubStoragePage.TXD],["storage"]);
             this.updateSelectedItem();
@@ -125,14 +127,17 @@ class com.rockstargames.gtav.web.foreclosures.NightclubStoragePage extends com.r
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       var _loc2_ = 1;
+      var _loc3_;
       while(_loc2_ <= 4)
       {
-         var _loc3_ = this.view.storageButtons["storageButton_" + _loc2_];
+         _loc3_ = this.view.storageButtons["storageButton_" + _loc2_];
          _loc3_.state.gotoAndStop(_loc2_ > this.website.nightclubStorage ? "off" : "on");
          _loc2_ = _loc2_ + 1;
       }

@@ -1,12 +1,13 @@
 class com.rockstargames.gtav.levelDesign.RADAR_CONTROL_PANEL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
    var displayConfig;
    var screenContainer;
-   var currScreen;
    static var STAGE_WIDTH = 2048;
    static var STAGE_HEIGHT = 1152;
    static var STAGE_CENTRE_X = 0.5 * com.rockstargames.gtav.levelDesign.RADAR_CONTROL_PANEL.STAGE_WIDTH;

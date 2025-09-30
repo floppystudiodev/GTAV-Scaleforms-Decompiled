@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen extends com.rockstargames.gtav.minigames.horseracingwall.Screen
 {
-   var countdown;
-   var view;
    var app;
-   var players;
-   var playerDisplayOffset;
+   var countdown;
    var horse;
+   var playerDisplayOffset;
+   var players;
+   var view;
    static var MAX_PLAYERS_IN_LIST = 12;
    static var LIST_UPDATE_INTERVAL = 1;
    static var currHorseIndex = 0;
@@ -44,9 +44,10 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen ext
       var _loc3_ = com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen.currHorseIndex % this.app.horses.length;
       this.players = [];
       this.playerDisplayOffset = 0;
+      var _loc2_;
       for(var _loc4_ in this.app.players)
       {
-         var _loc2_ = this.app.players[_loc4_];
+         _loc2_ = this.app.players[_loc4_];
          if(_loc2_.horse - 1 == _loc3_)
          {
             this.players.push(_loc2_);
@@ -72,9 +73,10 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen ext
          this.app.resizeAsianText(this.view.horseCard.num);
       }
       com.rockstargames.gtav.minigames.horseracingwall.HORSE_RACING_WALL.setSpacedText(this.view.horseCard.nameWrapper.label,this.horse.name,3,true,true);
+      var _loc3_;
       if(this.app.displayConfig.isAsian)
       {
-         var _loc3_ = 386;
+         _loc3_ = 386;
          this.view.horseCard.nameWrapper.label.autoSize = "left";
          this.view.horseCard.nameWrapper._xscale = this.view.horseCard.nameWrapper._yscale = Math.min(100,this.view.horseCard.nameWrapper._xscale * _loc3_ / this.view.horseCard.nameWrapper._width);
          this.view.horseCard.nameWrapper._x = 0.5 * (_loc3_ - this.view.horseCard.nameWrapper._width);
@@ -90,12 +92,14 @@ class com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen ext
    function updatePlayerList()
    {
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < com.rockstargames.gtav.minigames.horseracingwall.screens.DetailsScreen.MAX_PLAYERS_IN_LIST)
       {
-         var _loc3_ = this.view["player" + _loc2_];
+         _loc3_ = this.view["player" + _loc2_];
          if(_loc2_ < this.players.length)
          {
-            var _loc4_ = this.players[(_loc2_ + this.playerDisplayOffset) % this.players.length];
+            _loc4_ = this.players[(_loc2_ + this.playerDisplayOffset) % this.players.length];
             _loc3_.gamertag.text = _loc4_.gamertag;
             _loc3_.value.text = _loc4_.bet;
          }

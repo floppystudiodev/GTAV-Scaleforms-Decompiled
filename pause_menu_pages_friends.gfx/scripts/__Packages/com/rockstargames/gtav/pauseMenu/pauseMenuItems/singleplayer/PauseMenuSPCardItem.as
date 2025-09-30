@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuSPCardItem extends MovieClip
 {
-   var progBarMC;
    var bgMC;
    var nameTF;
+   var progBarMC;
    var valueTF;
    function PauseMenuSPCardItem()
    {

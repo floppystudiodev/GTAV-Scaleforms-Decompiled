@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_FRIENDS_MP extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
+   var column1;
    var column2;
    var column3;
    var column4;
    var column5;
-   var setupColumns;
    var columnList;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_FRIENDS_MP()
    {

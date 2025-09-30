@@ -1,8 +1,8 @@
-2;MEMORY_CARD_CLOUD
-14;CONTENT
-16;BOUNDING_BOX
-20;shutterSlideMC
-21;__Packages.com.rockstargames.ui.core.BaseScriptUI
-22;__Packages.com.rockstargames.gtav.cellphone.CAMERA_GALLERY
-23;__Packages.com.rockstargames.ui.utils.DisplayConfig
-24;__Packages.com.rockstargames.ui.game.GameInterface
+2;"MEMORY_CARD_CLOUD"
+14;"CONTENT"
+16;"BOUNDING_BOX"
+20;"shutterSlideMC"
+21;"__Packages.com.rockstargames.ui.core.BaseScriptUI"
+22;"__Packages.com.rockstargames.gtav.cellphone.CAMERA_GALLERY"
+23;"__Packages.com.rockstargames.ui.utils.DisplayConfig"
+24;"__Packages.com.rockstargames.ui.game.GameInterface"

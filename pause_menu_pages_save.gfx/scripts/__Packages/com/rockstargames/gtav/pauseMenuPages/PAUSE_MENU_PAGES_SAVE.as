@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SAVE extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
-   var setupColumns;
+   var column1;
    var columnList;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_SAVE()
    {

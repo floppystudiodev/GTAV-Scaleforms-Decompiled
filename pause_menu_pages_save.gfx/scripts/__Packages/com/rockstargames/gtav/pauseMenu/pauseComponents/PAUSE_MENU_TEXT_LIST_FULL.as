@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_TEXT_LIST_FULL extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var scrollableContent;
-   var model;
-   var titleHeight;
-   var columnIsFocused;
    var SEND_COLUMN_PARAMS;
+   var columnIsFocused;
+   var dbgID;
+   var model;
+   var scrollableContent;
+   var titleHeight;
    function PAUSE_MENU_TEXT_LIST_FULL()
    {
       super();

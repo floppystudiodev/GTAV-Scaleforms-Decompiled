@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.FiringRangePage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_BUNKER";
    function FiringRangePage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -85,11 +85,12 @@ class com.rockstargames.gtav.web.foreclosures.FiringRangePage extends com.rockst
    }
    function handleClick(type, id)
    {
+      var _loc2_;
       switch(type)
       {
          case "optionButton":
             this.website.firingRange = this.website.firingRange != 0 ? 0 : 1;
-            var _loc2_ = this.website.firingRange != 0 ? this.website.firingRange : 1;
+            _loc2_ = this.website.firingRange != 0 ? this.website.firingRange : 1;
             this.slideshow.show([com.rockstargames.gtav.web.foreclosures.FiringRangePage.TXD],["SHOOTINGB_" + _loc2_]);
             this.updateSelectedItem();
             break;
@@ -101,6 +102,8 @@ class com.rockstargames.gtav.web.foreclosures.FiringRangePage extends com.rockst
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()

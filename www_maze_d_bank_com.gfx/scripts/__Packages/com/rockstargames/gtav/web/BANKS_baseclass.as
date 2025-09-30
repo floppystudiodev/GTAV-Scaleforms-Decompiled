@@ -1,17 +1,18 @@
 class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var thisWebsite;
-   var currPage;
-   var mcScope;
    var CONTENT;
-   var dataTextScope;
-   var dataProviderUI;
+   var PAGE_NAMES;
+   var _name;
+   var browser;
    var container;
+   var currPage;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
+   var thisWebsite;
    var containerDepth = 40;
    var lineXPos = 237;
    var lineYPos = 222;
@@ -61,12 +62,27 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
       {
          this.currPage = pageName;
       }
+      var _loc13_;
+      var _loc11_;
+      var _loc16_;
+      var _loc12_;
+      var _loc3_;
+      var _loc7_;
+      var _loc5_;
+      var _loc6_;
+      var _loc14_;
+      var _loc10_;
+      var _loc8_;
+      var _loc4_;
+      var _loc17_;
+      var _loc15_;
+      var _loc19_;
+      var _loc2_;
       switch(pageName)
       {
          case "PAGE1":
             this.mcScope = this.CONTENT.PAGE1;
             this.dataTextScope = new Array();
-            var _loc13_ = undefined;
             switch(this.browser.player)
             {
                case 0:
@@ -81,7 +97,7 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                case 1:
                case 4:
             }
-            var _loc11_ = false;
+            _loc11_ = false;
             switch(this.thisWebsite)
             {
                case "WWW_MAZE_D_BANK_COM":
@@ -207,8 +223,8 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                {
                   this.mcScope.headerTF.text = this.dataProviderUI[2];
                }
-               var _loc16_ = this.dataProviderUI[3][1];
-               var _loc12_ = this.dataProviderUI[3][0];
+               _loc16_ = this.dataProviderUI[3][1];
+               _loc12_ = this.dataProviderUI[3][0];
                if(_loc12_ == undefined)
                {
                   _loc12_ = 0;
@@ -218,14 +234,8 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                   this.container.removeMovieClip();
                }
                this.container = this.mcScope.createEmptyMovieClip("container",this.containerDepth);
-               var _loc3_ = undefined;
-               var _loc7_ = undefined;
-               var _loc5_ = undefined;
-               var _loc6_ = undefined;
-               var _loc14_ = undefined;
-               var _loc10_ = undefined;
-               var _loc8_ = 0;
-               var _loc4_ = 0;
+               _loc8_ = 0;
+               _loc4_ = 0;
                while(_loc4_ < this.dataProviderUI.length - 4)
                {
                   if(this.dataProviderUI[_loc4_ + 4] != undefined)
@@ -252,12 +262,12 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                   }
                   _loc4_ = _loc4_ + 1;
                }
-               var _loc17_ = this.container.attachMovie("balanceLine","balanceLine",this.container.getNextHighestDepth(),{_x:this.lineXPos,_y:this.container._y + this.container._height + this.lineYPos + 36});
+               _loc17_ = this.container.attachMovie("balanceLine","balanceLine",this.container.getNextHighestDepth(),{_x:this.lineXPos,_y:this.container._y + this.container._height + this.lineYPos + 36});
                if(_loc16_ != undefined)
                {
                   _loc17_.TFtext.text = _loc16_;
                }
-               var _loc15_ = "";
+               _loc15_ = "";
                if(_loc12_ < 0)
                {
                   _loc15_ = "-";
@@ -267,7 +277,7 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                {
                   this.mcScope.latestTransactionsTF._visible = false;
                   com.rockstargames.ui.utils.Localisation.setTextWithTranslation(this.mcScope.latestTransactionsTF,"BNK_LASTTRANSACTIONS",0,false);
-                  var _loc19_ = _loc8_.toString();
+                  _loc19_ = _loc8_.toString();
                   this.mcScope.latestTransactionsTF.text = this.mcScope.latestTransactionsTF.text.split("<X>").join(_loc19_);
                   this.mcScope.latestTransactionsTF._visible = true;
                }
@@ -301,7 +311,7 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                _loc4_ = 0;
                while(_loc4_ < 6)
                {
-                  var _loc2_ = _loc4_ + 3;
+                  _loc2_ = _loc4_ + 3;
                   if(this.dataProviderUI[_loc2_] != undefined && this.dataProviderUI[_loc2_] != "" && this.dataProviderUI[_loc2_] != null)
                   {
                      this.mcScope["menu_" + _loc4_].btnTxt.text = this.dataProviderUI[_loc2_];
@@ -439,6 +449,8 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
                this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
             }
             this.CONTENT.BOUNDING_BOX._height = 627;
+         default:
+            return;
       }
    }
    function formatAmount(value)
@@ -460,10 +472,13 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
    }
    function updateBalance(balance)
    {
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       if(balance != undefined)
       {
          balance = balance.toString();
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < 2)
          {
             if(balance.charAt(0) == "-")
@@ -477,8 +492,8 @@ class com.rockstargames.gtav.web.BANKS_baseclass extends com.rockstargames.ui.co
             _loc3_ = _loc3_ + 1;
          }
          this.mcScope.balanceTF.autoSize = "right";
-         var _loc5_ = "";
-         var _loc4_ = Math.floor(parseFloat(balance));
+         _loc5_ = "";
+         _loc4_ = Math.floor(parseFloat(balance));
          if(_loc4_ < 0)
          {
             _loc5_ = "-";

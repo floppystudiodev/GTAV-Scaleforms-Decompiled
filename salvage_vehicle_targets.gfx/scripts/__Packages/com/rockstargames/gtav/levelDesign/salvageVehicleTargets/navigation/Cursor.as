@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
 {
-   var view;
-   var bounds;
-   var targets;
-   var listeners;
    var activeTarget;
-   var tweenArgs;
+   var bounds;
+   var debugColour;
+   var debugView;
    var joystickTimestamp;
+   var listeners;
+   var targets;
+   var tweenArgs;
+   var view;
    var x;
    var y;
-   var debugView;
-   var debugColour;
    static var DOWN = 187;
    static var UP = 188;
    static var LEFT = 189;
@@ -33,9 +33,10 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
    }
    function setBounds(left, right, top, bottom, addViewCompensation)
    {
+      var _loc4_;
       if(addViewCompensation)
       {
-         var _loc4_ = this.view.getBounds(this.view);
+         _loc4_ = this.view.getBounds(this.view);
          left -= _loc4_.xMin;
          right -= _loc4_.xMax;
          top -= _loc4_.yMin;
@@ -81,9 +82,10 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
    {
       var _loc3_ = 0;
       var _loc4_ = this.targets.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this.targets[_loc3_];
+         _loc2_ = this.targets[_loc3_];
          if(_loc2_.enabled && this.x > _loc2_.l && this.x < _loc2_.r && this.y > _loc2_.t && this.y < _loc2_.b)
          {
             return _loc2_;
@@ -155,10 +157,12 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
    function moveInDirection(direction)
    {
       var _loc2_ = this.findTargetInDirection(direction);
+      var _loc4_;
+      var _loc3_;
       if(_loc2_)
       {
-         var _loc4_ = _loc2_.cx;
-         var _loc3_ = _loc2_.cy;
+         _loc4_ = _loc2_.cx;
+         _loc3_ = _loc2_.cy;
          this.tweenTo(_loc4_,_loc3_);
       }
    }
@@ -308,18 +312,19 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
          }
       }
       var _loc13_ = direction == com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor.LEFT || direction == com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor.RIGHT;
-      var _loc6_ = undefined;
-      var _loc9_ = undefined;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
+      var _loc6_;
+      var _loc9_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
       var _loc8_ = 1.7976931348623157e+308;
       var _loc12_ = null;
       var _loc7_ = 0;
       var _loc10_ = this.targets.length;
+      var _loc2_;
       while(_loc7_ < _loc10_)
       {
-         var _loc2_ = this.targets[_loc7_];
+         _loc2_ = this.targets[_loc7_];
          if(!(!_loc2_.enabled || _loc2_ == this.activeTarget))
          {
             if(_loc13_)
@@ -369,9 +374,10 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
    {
       var _loc2_ = 0;
       var _loc4_ = this.targets.length;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc3_ = this.targets[_loc2_];
+         _loc3_ = this.targets[_loc2_];
          if(_loc3_.id == id)
          {
             trace("found matching button with id " + id);
@@ -384,6 +390,12 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
    }
    function debugDraw()
    {
+      var _loc5_;
+      var _loc7_;
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
+      var _loc3_;
       if(this.debugView)
       {
          for(var _loc8_ in this.debugView)
@@ -392,14 +404,14 @@ class com.rockstargames.gtav.levelDesign.salvageVehicleTargets.navigation.Cursor
          }
          this.debugView.clear();
          this.debugView.lineStyle(1,this.debugColour,80);
-         var _loc5_ = 0;
-         var _loc7_ = this.targets.length;
+         _loc5_ = 0;
+         _loc7_ = this.targets.length;
          while(_loc5_ < _loc7_)
          {
-            var _loc2_ = this.targets[_loc5_];
-            var _loc6_ = this.debugView.getNextHighestDepth();
-            var _loc4_ = this.debugView.createTextField("t" + _loc6_,_loc6_,_loc2_.l,_loc2_.t,_loc2_.r - _loc2_.l,_loc2_.b - _loc2_.t);
-            var _loc3_ = new TextFormat();
+            _loc2_ = this.targets[_loc5_];
+            _loc6_ = this.debugView.getNextHighestDepth();
+            _loc4_ = this.debugView.createTextField("t" + _loc6_,_loc6_,_loc2_.l,_loc2_.t,_loc2_.r - _loc2_.l,_loc2_.b - _loc2_.t);
+            _loc3_ = new TextFormat();
             _loc3_.font = "$Font2";
             _loc3_.size = 12;
             _loc3_.color = this.debugColour;

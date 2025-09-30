@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStatsView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
-   var itemList;
-   var rowSpacing;
-   var direction;
    var dataList;
+   var direction;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var viewContainer;
+   var viewLinkageList;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;
@@ -36,11 +36,12 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStat
    function lockedHighlightStyle(targetIndex)
    {
       var _loc6_ = this.direction(targetIndex);
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(_loc6_ != 0)
       {
-         var _loc3_ = undefined;
-         var _loc2_ = undefined;
-         var _loc4_ = Math.min(targetIndex,this.dataList.length - this.itemList.length);
+         _loc4_ = Math.min(targetIndex,this.dataList.length - this.itemList.length);
          _loc2_ = 0;
          while(_loc2_ < targetIndex + this.itemList.length)
          {

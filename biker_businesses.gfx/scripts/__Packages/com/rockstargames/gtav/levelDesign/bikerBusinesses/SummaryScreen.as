@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.bikerBusinesses.SummaryScreen extends com.rockstargames.gtav.levelDesign.bikerBusinesses.Screen
 {
-   var controls;
    var app;
-   var view;
+   var controls;
    var cursor;
+   var view;
    static var BACK_BUTTON = 4001;
    static var METER_FILL_DURATION = 1;
    function SummaryScreen(app, viewContainer, cursor)
@@ -101,6 +101,8 @@ class com.rockstargames.gtav.levelDesign.bikerBusinesses.SummaryScreen extends c
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.CANCEL:
          case com.rockstargames.gtav.levelDesign.BIKER_BUSINESSES.RIGHT_MOUSE:
             this.app.showScreen(this.app.BUSINESSES_SCREEN);
+         default:
+            return;
       }
    }
    function handleAcceptInput(inputID)

@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_PEYOTE extends com.rockstargames.gtav.levelDesign.DashboardDials.BaseVehicleDashboard
 {
-   var SPEED_MIN_ROT;
-   var SPEED_MAX_ROT;
-   var FUEL_MIN_ROT;
-   var FUEL_MAX_ROT;
-   var TEMP_MIN_ROT;
-   var TEMP_MAX_ROT;
    var FUEL_IS_CLOCKWISE;
+   var FUEL_MAX_ROT;
+   var FUEL_MIN_ROT;
+   var SPEED_MAX_ROT;
+   var SPEED_MIN_ROT;
    var TEMP_IS_CLOCKWISE;
+   var TEMP_MAX_ROT;
+   var TEMP_MIN_ROT;
    var TOP_SPEED;
    var _mcName = "PEYOTE";
    function DIAL_PEYOTE(mc)

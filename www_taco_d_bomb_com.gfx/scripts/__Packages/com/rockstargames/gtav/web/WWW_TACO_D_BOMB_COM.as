@@ -1,23 +1,23 @@
 class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
-   var OnColour;
-   var OffColour;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var products;
-   var productMcs;
-   var productsImagesHolder;
-   var currentProduct;
-   var mcScope;
-   var phrases;
-   var phraseMcs;
-   var phrasesHolder;
-   var currentPhrase;
    var CONTENT;
+   var OffColour;
+   var OnColour;
+   var PAGE_NAMES;
+   var browser;
+   var currentPhrase;
+   var currentProduct;
    var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var mcScope;
+   var phraseMcs;
+   var phrases;
+   var phrasesHolder;
+   var productMcs;
+   var products;
+   var productsImagesHolder;
    function WWW_TACO_D_BOMB_COM()
    {
       super();
@@ -78,7 +78,7 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
          }
       }
       var _loc4_ = this.createProduct(this.products[this.currentProduct]);
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 480;
       _loc4_._x = _loc2_ * this.currentProduct;
       _loc3_ = this.currentProduct * _loc2_ * -1 + 82;
@@ -103,9 +103,10 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
    }
    function cleanUpProduct()
    {
+      var _loc2_;
       while(this.productMcs.length > 1)
       {
-         var _loc2_ = this.productMcs.shift();
+         _loc2_ = this.productMcs.shift();
          MovieClip(_loc2_).removeMovieClip();
       }
    }
@@ -150,7 +151,7 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
          }
       }
       var _loc4_ = this.createPhrase(this.phrases[this.currentPhrase]);
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 480;
       _loc4_._x = _loc2_ * this.currentPhrase;
       _loc3_ = this.currentPhrase * _loc2_ * -1 + 278;
@@ -170,10 +171,12 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
       _loc4_.english.htmlText = phraseObject.english;
       _loc4_.spanish.htmlText = phraseObject.spanish;
       var _loc2_ = 0;
+      var _loc3_;
+      var _loc5_;
       while(_loc2_ < this.phrases.length)
       {
-         var _loc3_ = this.phrases[_loc2_];
-         var _loc5_ = this.mcScope[_loc3_.buttonId];
+         _loc3_ = this.phrases[_loc2_];
+         _loc5_ = this.mcScope[_loc3_.buttonId];
          _loc5_._y = -200;
          this.browser.DISABLE_BUTTON(_loc2_,true);
          _loc2_ = _loc2_ + 1;
@@ -189,9 +192,10 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
    }
    function cleanUpPhrase()
    {
+      var _loc2_;
       while(this.phraseMcs.length > 1)
       {
-         var _loc2_ = this.phraseMcs.shift();
+         _loc2_ = this.phraseMcs.shift();
          MovieClip(_loc2_).removeMovieClip();
       }
    }
@@ -209,6 +213,8 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
             break;
          case "TACO":
             this.playPhrase();
+         default:
+            return;
       }
    }
    function POPULATE_TEXT(pageName)
@@ -241,6 +247,8 @@ class com.rockstargames.gtav.web.WWW_TACO_D_BOMB_COM extends com.rockstargames.u
             this.browser.SET_PAGE_BUTTONS(this.dataTextScope);
             this.setupProducts();
             this.setupPhrases();
+         default:
+            return;
       }
    }
 }

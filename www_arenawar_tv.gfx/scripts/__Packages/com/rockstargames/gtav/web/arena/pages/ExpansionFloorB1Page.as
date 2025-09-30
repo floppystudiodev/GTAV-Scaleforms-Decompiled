@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.arena.pages.ExpansionFloorB1Page extends com.rockstargames.gtav.web.arena.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
+   var view;
+   var website;
    function ExpansionFloorB1Page(website, viewContainer, pageName, isFirstPage, progressPanel)
    {
       super(website,viewContainer,"expansionFloorPage",pageName,isFirstPage,progressPanel);

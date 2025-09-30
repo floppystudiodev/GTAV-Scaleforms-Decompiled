@@ -1,8 +1,9 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.navigation.MissionButton extends com.rockstargames.gtav.levelDesign.robberyComputer.navigation.Target
 {
-   var view;
-   var available;
    var _enabled;
+   var available;
+   var init;
+   var view;
    function MissionButton(id, view)
    {
       super();

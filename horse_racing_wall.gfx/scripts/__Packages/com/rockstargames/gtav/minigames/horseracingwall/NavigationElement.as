@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.minigames.horseracingwall.NavigationElement
 {
-   var _view;
-   var _id;
    var _enabled;
-   var left;
-   var right;
-   var top;
+   var _id;
+   var _view;
    var bottom;
    var cx;
    var cy;
+   var left;
+   var right;
+   var top;
    function NavigationElement(_view, _id, label)
    {
       this._view = _view;

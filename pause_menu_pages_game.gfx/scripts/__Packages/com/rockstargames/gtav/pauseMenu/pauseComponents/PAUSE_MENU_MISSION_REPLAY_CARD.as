@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MISSION_REPLAY_CARD extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var headingHeight;
-   var yOffset;
-   var model;
-   var canMouseNav;
    var SEND_COLUMN_PARAMS;
+   var canMouseNav;
+   var dbgID;
+   var headingHeight;
+   var model;
+   var yOffset;
    var spacing = 2;
    function PAUSE_MENU_MISSION_REPLAY_CARD()
    {

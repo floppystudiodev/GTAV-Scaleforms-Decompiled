@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.arcadeManagement.PersistentContent
 {
-   var app;
-   var view;
    var _buttons;
+   var app;
    var currBackgroundImage;
+   var view;
    static var TXD = "ARCADE_MGMT";
    function PersistentContent(app, view)
    {

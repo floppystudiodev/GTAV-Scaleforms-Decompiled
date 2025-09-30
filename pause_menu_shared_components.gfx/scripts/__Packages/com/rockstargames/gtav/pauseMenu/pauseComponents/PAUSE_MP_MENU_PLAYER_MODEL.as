@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_PLAYER_MODEL extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
-   var model;
    var crewImage;
+   var dbgID;
+   var model;
    function PAUSE_MP_MENU_PLAYER_MODEL()
    {
       super();
@@ -113,6 +113,8 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MP_MENU_PLAYER_MODE
             break;
          case com.rockstargames.ui.game.GamePadConstants.DPADDOWN:
             this.model.nextItem();
+         default:
+            return;
       }
    }
 }

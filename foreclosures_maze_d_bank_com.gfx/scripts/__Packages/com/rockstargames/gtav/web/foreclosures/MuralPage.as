@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.MuralPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var view;
+   var prevPageName;
    var progressPanel;
    var slideshow;
    var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_MURAL";
    function MuralPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -33,9 +33,10 @@ class com.rockstargames.gtav.web.foreclosures.MuralPage extends com.rockstargame
    {
       var _loc4_ = this.website.getSelectedClubhouseType() * 9 + 1;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 9)
       {
-         var _loc3_ = this.view.muralButtons["muralButton_" + _loc2_];
+         _loc3_ = this.view.muralButtons["muralButton_" + _loc2_];
          _loc3_.swatch.gotoAndStop(_loc2_ + _loc4_);
          _loc3_.selected._visible = false;
          this.website.dataTextScope.push(_loc3_.btnTxt);
@@ -54,15 +55,18 @@ class com.rockstargames.gtav.web.foreclosures.MuralPage extends com.rockstargame
          case "purchaseButton":
             this.website.dispatchPlayerSelections();
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem()
    {
       this.progressPanel.updateCosts();
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < 9)
       {
-         var _loc3_ = this.view.muralButtons["muralButton_" + _loc2_];
+         _loc3_ = this.view.muralButtons["muralButton_" + _loc2_];
          _loc3_.selected._visible = _loc2_ == this.website.mural;
          _loc2_ = _loc2_ + 1;
       }

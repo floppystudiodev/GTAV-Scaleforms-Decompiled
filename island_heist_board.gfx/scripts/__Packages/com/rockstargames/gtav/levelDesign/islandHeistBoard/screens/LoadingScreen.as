@@ -1,7 +1,8 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.LoadingScreen extends com.rockstargames.gtav.levelDesign.islandHeistBoard.screens.Screen
 {
-   var view;
    var app;
+   var init;
+   var view;
    var ANIMATION_DURATION = 3.8333333333333335;
    function LoadingScreen(app, viewContainer, cursor, overlay, heistData, colourScheme)
    {

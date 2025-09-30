@@ -1,9 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.MIDSIZED_MESSAGE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var CONTENT;
    var BOUNDING_BOX;
-   var TIMELINE;
    var BigMessageMaster;
+   var CONTENT;
+   var TIMELINE;
+   var _width;
    function MIDSIZED_MESSAGE()
    {
       super();
@@ -49,10 +50,11 @@ class com.rockstargames.gtav.Multiplayer.MIDSIZED_MESSAGE extends com.rockstarga
          this.BigMessageMaster.removeMovieClip();
       }
       var _loc8_ = 100;
+      var _loc12_;
       switch(true)
       {
          case useCondensedShard && useDarkerShard:
-            var _loc12_ = "SHARD_MESSAGE_DARK_FONT2COND";
+            _loc12_ = "SHARD_MESSAGE_DARK_FONT2COND";
             break;
          case !useCondensedShard && useDarkerShard:
             _loc12_ = "SHARD_MESSAGE_DARK";
@@ -109,6 +111,7 @@ class com.rockstargames.gtav.Multiplayer.MIDSIZED_MESSAGE extends com.rockstarga
    {
       var _loc2_ = this.BigMessageMaster.textHolderMC.titleMC.BIG_TEXT;
       var _loc3_ = this.BigMessageMaster.textHolderMC.MESSAGE_TEXT;
+      var _loc4_;
       if(bigText == "")
       {
          _loc2_._visible = false;
@@ -117,7 +120,7 @@ class com.rockstargames.gtav.Multiplayer.MIDSIZED_MESSAGE extends com.rockstarga
       {
          if(useCondensedShard)
          {
-            var _loc4_ = _loc2_._width;
+            _loc4_ = _loc2_._width;
             _loc2_.autoSize = "center";
             _loc2_.htmlText = "<font color=\'#FFFFFF\'>" + bigText.toUpperCase() + "</font>";
          }
@@ -181,15 +184,20 @@ class com.rockstargames.gtav.Multiplayer.MIDSIZED_MESSAGE extends com.rockstarga
    function parseForGamerTagTitleFonts(tf, str, stdPtSize)
    {
       var _loc4_ = str.indexOf("<C>");
+      var _loc3_;
+      var _loc5_;
+      var _loc8_;
+      var _loc6_;
+      var _loc7_;
       if(_loc4_ != -1)
       {
-         var _loc3_ = str.indexOf("</C>");
+         _loc3_ = str.indexOf("</C>");
          if(_loc3_ != -1)
          {
-            var _loc5_ = str.substring(_loc4_ + 3,_loc3_);
-            var _loc8_ = this.getFontSizeFit(_loc5_,stdPtSize + 3,tf._width);
-            var _loc6_ = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc8_ + "\'>";
-            var _loc7_ = "<FONT FACE=\'$Font2\' SIZE=\'" + stdPtSize + "\'>";
+            _loc5_ = str.substring(_loc4_ + 3,_loc3_);
+            _loc8_ = this.getFontSizeFit(_loc5_,stdPtSize + 3,tf._width);
+            _loc6_ = "<FONT FACE=\'$Font2_cond\' SIZE=\'" + _loc8_ + "\'>";
+            _loc7_ = "<FONT FACE=\'$Font2\' SIZE=\'" + stdPtSize + "\'>";
             str = str.split("<C>").join(_loc6_).split("</C>").join(_loc7_);
          }
       }

@@ -1,35 +1,35 @@
 class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var markerDataSet;
-   var bunkerDataSet;
-   var hangarDataSet;
-   var baseDataSet;
-   var nightclubDataSet;
    var arcadeDataSet;
    var autoShopDataSet;
-   var salvageYardDataSet;
    var bailOfficeDataSet;
-   var markers;
-   var mapMoveX;
-   var mapMoveY;
-   var mapScaleStep;
+   var baseDataSet;
+   var bunkerDataSet;
+   var cursorDragX0;
+   var cursorDragY0;
+   var hangarDataSet;
+   var mapDragX0;
+   var mapDragY0;
    var mapIsBeingDragged;
    var mapIsZoomingIn;
    var mapIsZoomingOut;
+   var mapMoveX;
+   var mapMoveY;
+   var mapScaleStep;
+   var markerData;
+   var markerDataSet;
+   var markers;
+   var nextPageName;
+   var nightclubDataSet;
+   var progressPanel;
+   var safeZoneBottom;
    var safeZoneLeft;
    var safeZoneRight;
    var safeZoneTop;
-   var safeZoneBottom;
+   var salvageYardDataSet;
    var scrollWheelValue;
    var view;
    var website;
-   var markerData;
-   var progressPanel;
-   var nextPageName;
-   var mapDragX0;
-   var mapDragY0;
-   var cursorDragX0;
-   var cursorDragY0;
    static var MAP_SCALE_STEP = 0.1;
    static var MAP_SCALE_MIN = 0.2;
    static var MAP_SCALE_MAX = 1.25;
@@ -45,6 +45,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
    static var FILTER_BAIL_OFFICES = 256;
    static var FILTER_GARMENT_FACTORY = 512;
    static var FILTER_MCKENZIE_HANGAR = 1024;
+   static var FILTER_CAR_WASH = 2048;
+   static var FILTER_HELITOURS = 4096;
+   static var FILTER_WEED_SHOP = 8192;
    function MapPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"mapPage",pageName,isFirstPage,progressPanel,header);
@@ -131,6 +134,21 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.showMcKenzieHangarDetails(true);
          progressPanel.restartSlideshow();
       }
+      else if(website.selectedCarWashID != -1)
+      {
+         this.showCarWashDetails(true);
+         progressPanel.restartSlideshow();
+      }
+      else if(website.selectedHelitoursID != -1)
+      {
+         this.showHelitoursDetails(true);
+         progressPanel.restartSlideshow();
+      }
+      else if(website.selectedWeedShopID != -1)
+      {
+         this.showWeedShopDetails(true);
+         progressPanel.restartSlideshow();
+      }
       this.initFilterButtons();
    }
    function initFilterButtons()
@@ -146,6 +164,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       this.initFilterButton(this.view.filter_bailOffices,"FCBAILOFFICE_TAB",2);
       this.initFilterButton(this.view.filter_garmentFactory,"FCGARMENT_TAB",3);
       this.initFilterButton(this.view.filter_mcKenzieHangar,"FCMCKENZIE_TAB",3);
+      this.initFilterButton(this.view.filter_carWash,"FCCARWASH_TAB",4);
+      this.initFilterButton(this.view.filter_helitours,"FCHELITOURS_TAB",4);
+      this.initFilterButton(this.view.filter_weedShop,"FCWEEDSHOP_TAB",4);
    }
    function initFilterButton(buttonView, label, row)
    {
@@ -160,10 +181,44 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       buttonView._y = _loc4_ + (buttonView.bg._height + _loc3_) * row;
       this.website.dataTextScope.push(buttonView.btnTxt);
    }
-   function arrangeFilterButtons(hasClubhouses, hasBunkers, hasHangars, hasBases, hasNighclubs, hasArcades, hasAutoShops, hasSalvageYards, hasBailOffices, hasGarmentFactory, hasMcKenzieHangar)
+   function arrangeFilterButtons(hasClubhouses, hasBunkers, hasHangars, hasBases, hasNighclubs, hasArcades, hasAutoShops, hasSalvageYards, hasBailOffices, hasGarmentFactory, hasMcKenzieHangar, hasCarWash, hasHelitours, hasWeedShop)
    {
       var _loc3_ = 10;
-      var _loc2_ = undefined;
+      var _loc2_;
+      _loc2_ = this.safeZoneRight - _loc3_;
+      if(hasWeedShop)
+      {
+         this.view.filter_weedShop._x = _loc2_ - this.view.filter_weedShop._width;
+         _loc2_ -= this.view.filter_weedShop._width + _loc3_;
+      }
+      else
+      {
+         this.view.filter_weedShop.enabled = false;
+         this.view.filter_weedShop._visible = false;
+         this.view.filter_weedShop._y = -100;
+      }
+      if(hasHelitours)
+      {
+         this.view.filter_helitours._x = _loc2_ - this.view.filter_helitours._width;
+         _loc2_ -= this.view.filter_helitours._width + _loc3_;
+      }
+      else
+      {
+         this.view.filter_helitours.enabled = false;
+         this.view.filter_helitours._visible = false;
+         this.view.filter_helitours._y = -100;
+      }
+      if(hasCarWash)
+      {
+         this.view.filter_carWash._x = _loc2_ - this.view.filter_carWash._width;
+         _loc2_ -= this.view.filter_carWash._width + _loc3_;
+      }
+      else
+      {
+         this.view.filter_carWash.enabled = false;
+         this.view.filter_carWash._visible = false;
+         this.view.filter_carWash._y = -100;
+      }
       _loc2_ = this.safeZoneRight - _loc3_;
       if(hasGarmentFactory)
       {
@@ -289,23 +344,26 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.view.filter_clubhouses._y = -100;
       }
    }
-   function setMarkerData(clubhouseData, bunkerData, hangarData, baseData, nightclubData, arcadeData, autoShopData, salvageYardData, bailOfficesData, garmentFactory, mcKenzieHangar)
+   function setMarkerData(clubhouseData, bunkerData, hangarData, baseData, nightclubData, arcadeData, autoShopData, salvageYardData, bailOfficesData, garmentFactory, mcKenzieHangar, carWash, helitours, weedShop)
    {
       if(this.markerDataSet)
       {
          return undefined;
       }
-      var _loc26_ = false;
-      var _loc32_ = false;
-      var _loc23_ = false;
-      var _loc25_ = false;
-      var _loc27_ = false;
-      var _loc28_ = false;
       var _loc30_ = false;
+      var _loc37_ = false;
+      var _loc26_ = false;
       var _loc29_ = false;
-      var _loc24_ = false;
       var _loc31_ = false;
+      var _loc32_ = false;
+      var _loc34_ = false;
       var _loc33_ = false;
+      var _loc28_ = false;
+      var _loc35_ = false;
+      var _loc38_ = false;
+      var _loc27_ = false;
+      var _loc36_ = false;
+      var _loc39_ = false;
       this.markerData = [].concat(clubhouseData).concat(bunkerData).concat(hangarData).concat(baseData).concat(nightclubData).concat(arcadeData).concat(autoShopData).concat(salvageYardData).concat(bailOfficesData);
       if(garmentFactory != null)
       {
@@ -315,90 +373,141 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       {
          this.markerData.push(mcKenzieHangar);
       }
+      if(carWash != null)
+      {
+         this.markerData.push(carWash);
+      }
+      if(helitours != null)
+      {
+         this.markerData.push(helitours);
+      }
+      if(weedShop != null)
+      {
+         this.markerData.push(weedShop);
+      }
       var _loc3_ = 0;
       var _loc5_ = this.markerData.length;
+      var _loc9_;
+      var _loc10_;
+      var _loc7_;
+      var _loc11_;
+      var _loc21_;
+      var _loc14_;
+      var _loc12_;
+      var _loc17_;
+      var _loc19_;
+      var _loc8_;
+      var _loc15_;
+      var _loc18_;
+      var _loc16_;
+      var _loc13_;
+      var _loc20_;
+      var _loc2_;
+      var _loc6_;
+      var _loc4_;
       while(_loc3_ < _loc5_)
       {
-         var _loc9_ = this.markerData[_loc3_].id;
-         var _loc10_ = this.markerData[_loc3_].type < 2;
-         var _loc7_ = this.markerData[_loc3_].type == 2;
-         var _loc11_ = this.markerData[_loc3_].type == 3;
-         var _loc18_ = this.markerData[_loc3_].type == 4;
-         var _loc13_ = this.markerData[_loc3_].type == 5;
-         var _loc12_ = this.markerData[_loc3_].type == 6;
-         var _loc15_ = this.markerData[_loc3_].type == 7;
-         var _loc17_ = this.markerData[_loc3_].type == 8;
-         var _loc8_ = this.markerData[_loc3_].type == 9;
-         var _loc14_ = this.markerData[_loc3_].type == 10;
-         var _loc16_ = this.markerData[_loc3_].type == 11;
-         var _loc2_ = this.view.markers.getNextHighestDepth();
+         _loc9_ = this.markerData[_loc3_].id;
+         _loc10_ = this.markerData[_loc3_].type < 2;
+         _loc7_ = this.markerData[_loc3_].type == 2;
+         _loc11_ = this.markerData[_loc3_].type == 3;
+         _loc21_ = this.markerData[_loc3_].type == 4;
+         _loc14_ = this.markerData[_loc3_].type == 5;
+         _loc12_ = this.markerData[_loc3_].type == 6;
+         _loc17_ = this.markerData[_loc3_].type == 7;
+         _loc19_ = this.markerData[_loc3_].type == 8;
+         _loc8_ = this.markerData[_loc3_].type == 9;
+         _loc15_ = this.markerData[_loc3_].type == 10;
+         _loc18_ = this.markerData[_loc3_].type == 11;
+         _loc16_ = this.markerData[_loc3_].type == 12;
+         _loc13_ = this.markerData[_loc3_].type == 13;
+         _loc20_ = this.markerData[_loc3_].type == 14;
+         _loc2_ = this.view.markers.getNextHighestDepth();
          if(_loc10_)
          {
-            _loc26_ = true;
-            var _loc6_ = "clubhouseMarker_" + _loc9_;
-            var _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerClubhouse.duplicateMovieClip(_loc6_,_loc2_);
+            _loc30_ = true;
+            _loc6_ = "clubhouseMarker_" + _loc9_;
+            _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerClubhouse.duplicateMovieClip(_loc6_,_loc2_);
          }
          else if(_loc7_)
          {
-            _loc32_ = true;
+            _loc37_ = true;
             _loc6_ = "bunkerMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerBunker.duplicateMovieClip(_loc6_,_loc2_);
          }
          else if(_loc11_)
          {
-            _loc23_ = true;
+            _loc26_ = true;
             _loc6_ = "hangarMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerHangar.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc18_)
+         else if(_loc21_)
          {
-            _loc25_ = true;
+            _loc29_ = true;
             _loc6_ = "baseMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerBase.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc13_)
+         else if(_loc14_)
          {
-            _loc27_ = true;
+            _loc31_ = true;
             _loc6_ = "nightclubMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerNightclub.duplicateMovieClip(_loc6_,_loc2_);
          }
          else if(_loc12_)
          {
-            _loc28_ = true;
+            _loc32_ = true;
             _loc6_ = "arcadeMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerArcade.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc15_)
+         else if(_loc17_)
          {
-            _loc30_ = true;
+            _loc34_ = true;
             _loc6_ = "autoShopMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerAutoShop.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc17_)
+         else if(_loc19_)
          {
-            _loc29_ = true;
+            _loc33_ = true;
             _loc6_ = "salvageYardMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerSalvageYard.duplicateMovieClip(_loc6_,_loc2_);
          }
          else if(_loc8_)
          {
-            _loc24_ = true;
+            _loc28_ = true;
             _loc6_ = "bailOfficeMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerBailOffice.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc14_)
+         else if(_loc15_)
          {
-            _loc31_ = true;
+            _loc35_ = true;
             _loc6_ = "garmentFactoryMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerGarmentFactory.duplicateMovieClip(_loc6_,_loc2_);
          }
-         else if(_loc16_)
+         else if(_loc18_)
          {
-            _loc33_ = true;
+            _loc38_ = true;
             _loc6_ = "mcKenzieHangarMarker_" + _loc9_;
             _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerMcKenzieHangar.duplicateMovieClip(_loc6_,_loc2_);
          }
-         if(_loc9_ == this.website.selectedClubhouseID || _loc9_ == this.website.selectedBunkerID || _loc9_ == this.website.selectedHangarID || _loc9_ == this.website.selectedBaseID || _loc9_ == this.website.selectedNightclubID || _loc9_ == this.website.selectedArcadeID || _loc9_ == this.website.selectedAutoShopID || _loc9_ == this.website.selectedSalvageYardID || _loc9_ == this.website.selectedBailOfficeID || _loc9_ == this.website.selectedGarmentFactoryID || _loc9_ == this.website.selectedMcKenzieHangarID)
+         else if(_loc16_)
+         {
+            _loc27_ = true;
+            _loc6_ = "carWashMarker_" + _loc9_;
+            _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerCarWash.duplicateMovieClip(_loc6_,_loc2_);
+         }
+         else if(_loc13_)
+         {
+            _loc36_ = true;
+            _loc6_ = "helitoursMarker_" + _loc9_;
+            _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerHelitours.duplicateMovieClip(_loc6_,_loc2_);
+         }
+         else if(_loc20_)
+         {
+            _loc39_ = true;
+            _loc6_ = "weedShopMarker_" + _loc9_;
+            _loc4_ = this.view.markers[_loc6_] || this.view.markers.markerWeedShop.duplicateMovieClip(_loc6_,_loc2_);
+         }
+         if(_loc9_ == this.website.selectedClubhouseID || _loc9_ == this.website.selectedBunkerID || _loc9_ == this.website.selectedHangarID || _loc9_ == this.website.selectedBaseID || _loc9_ == this.website.selectedNightclubID || _loc9_ == this.website.selectedArcadeID || _loc9_ == this.website.selectedAutoShopID || _loc9_ == this.website.selectedSalvageYardID || _loc9_ == this.website.selectedBailOfficeID || _loc9_ == this.website.selectedGarmentFactoryID || _loc9_ == this.website.selectedMcKenzieHangarID || _loc9_ == this.website.selectedCarWashID || _loc9_ == this.website.selectedHelitoursID || _loc9_ == this.website.selectedWeedShopID)
          {
             _loc4_.gotoAndStop(!this.markerData[_loc3_].isOwned ? "unownedActive" : "ownedActive");
          }
@@ -430,43 +539,75 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       }
       this.website.browser.SET_PAGE_BUTTONS(this.website.dataTextScope);
       this.markerDataSet = true;
-      var _loc36_ = this.website.getSelectedClubhouse();
-      var _loc37_ = this.website.getSelectedBunker();
-      var _loc41_ = this.website.getSelectedHangar();
-      var _loc39_ = this.website.getSelectedBase();
-      var _loc42_ = this.website.getSelectedNightclub();
-      var _loc38_ = this.website.getSelectedArcade();
-      var _loc34_ = this.website.getSelectedAutoShop();
-      var _loc44_ = this.website.getSelectedSalvageYard();
-      var _loc35_ = this.website.getSelectedBailOffice();
+      var _loc43_ = this.website.getSelectedClubhouse();
+      var _loc44_ = this.website.getSelectedBunker();
+      var _loc50_ = this.website.getSelectedHangar();
+      var _loc48_ = this.website.getSelectedBase();
+      var _loc51_ = this.website.getSelectedNightclub();
+      var _loc45_ = this.website.getSelectedArcade();
+      var _loc41_ = this.website.getSelectedAutoShop();
+      var _loc53_ = this.website.getSelectedSalvageYard();
+      var _loc42_ = this.website.getSelectedBailOffice();
       garmentFactory = this.website.getSelectedGarmentFactory();
-      var _loc40_ = this.website.getSelectedMcKenzieHangar();
-      this.setNextPage(_loc36_,_loc37_,_loc41_,_loc39_,_loc42_,_loc38_,_loc34_,_loc44_,_loc35_,garmentFactory,_loc40_);
-      this.arrangeFilterButtons(_loc26_,_loc32_,_loc23_,_loc25_,_loc27_,_loc28_,_loc30_,_loc29_,_loc24_,_loc31_,_loc33_);
+      var _loc49_ = this.website.getSelectedMcKenzieHangar();
+      carWash = this.website.getSelectedCarWash();
+      helitours = this.website.getSelectedHelitours();
+      weedShop = this.website.getSelectedWeedShop();
+      this.setNextPage(_loc43_,_loc44_,_loc50_,_loc48_,_loc51_,_loc45_,_loc41_,_loc53_,_loc42_,garmentFactory,_loc49_,carWash,helitours,weedShop);
+      this.arrangeFilterButtons(_loc30_,_loc37_,_loc26_,_loc29_,_loc31_,_loc32_,_loc34_,_loc33_,_loc28_,_loc35_,_loc38_,_loc27_,_loc36_,_loc39_);
    }
    function handleClick(type, id)
    {
       this.resetMarkers();
+      var _loc16_;
+      var _loc22_;
+      var _loc4_;
+      var _loc8_;
+      var _loc23_;
+      var _loc13_;
+      var _loc28_;
+      var _loc11_;
+      var _loc25_;
+      var _loc6_;
+      var _loc29_;
+      var _loc15_;
+      var _loc24_;
+      var _loc14_;
+      var _loc20_;
+      var _loc9_;
+      var _loc32_;
+      var _loc10_;
+      var _loc21_;
+      var _loc17_;
+      var _loc30_;
+      var _loc12_;
+      var _loc31_;
+      var _loc18_;
+      var _loc26_;
+      var _loc5_;
+      var _loc19_;
+      var _loc7_;
+      var _loc27_;
       if(type == "clubhouseMarker")
       {
-         var _loc14_ = parseInt(id);
-         if(_loc14_ != this.website.selectedClubhouseID)
+         _loc16_ = parseInt(id);
+         if(_loc16_ != this.website.selectedClubhouseID)
          {
-            this.website.setSelectedClubhouse(_loc14_);
+            this.website.setSelectedClubhouse(_loc16_);
             this.showClubhouseDetails(false);
          }
-         var _loc18_ = this.website.getClubhouseByID(_loc14_);
-         if(_loc18_)
+         _loc22_ = this.website.getClubhouseByID(_loc16_);
+         if(_loc22_)
          {
-            var _loc4_ = this.markers[_loc14_];
+            _loc4_ = this.markers[_loc16_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc18_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc18_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc22_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc22_.isInStarterPack;
             }
          }
-         this.setNextPage(_loc18_,null,null,null,null,null,null,null,null,null,null);
+         this.setNextPage(_loc22_,null,null,null,null,null,null,null,null,null,null,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = false;
@@ -477,6 +618,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedBunker(-1);
          this.website.setSelectedHangar(-1);
          this.website.setSelectedBase(-1);
@@ -487,27 +631,30 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "bunkerMarker")
       {
-         var _loc6_ = parseInt(id);
-         if(_loc6_ != this.website.selectedBunkerID)
+         _loc8_ = parseInt(id);
+         if(_loc8_ != this.website.selectedBunkerID)
          {
-            this.website.setSelectedBunker(_loc6_);
+            this.website.setSelectedBunker(_loc8_);
             this.showBunkerDetails(false);
          }
-         var _loc19_ = this.website.getBunkerByID(_loc6_);
-         if(_loc19_)
+         _loc23_ = this.website.getBunkerByID(_loc8_);
+         if(_loc23_)
          {
-            _loc4_ = this.markers[_loc6_];
+            _loc4_ = this.markers[_loc8_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc19_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc19_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc23_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc23_.isInStarterPack;
             }
          }
-         this.setNextPage(null,_loc19_,null,null,null,null,null,null,null,null,null);
+         this.setNextPage(null,_loc23_,null,null,null,null,null,null,null,null,null,null,null,null);
          this.website.isInBunkerFlow = true;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = false;
@@ -518,6 +665,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedHangar(-1);
          this.website.setSelectedBase(-1);
@@ -528,27 +678,30 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "hangarMarker")
       {
-         var _loc11_ = parseInt(id);
-         if(_loc11_ != this.website.selectedHangarID)
+         _loc13_ = parseInt(id);
+         if(_loc13_ != this.website.selectedHangarID)
          {
-            this.website.setSelectedHangar(_loc11_);
+            this.website.setSelectedHangar(_loc13_);
             this.showHangarDetails(false);
          }
-         var _loc22_ = this.website.getHangarByID(_loc11_);
-         if(_loc22_)
+         _loc28_ = this.website.getHangarByID(_loc13_);
+         if(_loc28_)
          {
-            _loc4_ = this.markers[_loc11_];
+            _loc4_ = this.markers[_loc13_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc22_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc22_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc28_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc28_.isInStarterPack;
             }
          }
-         this.setNextPage(null,null,_loc22_,null,null,null,null,null,null,null,null);
+         this.setNextPage(null,null,_loc28_,null,null,null,null,null,null,null,null,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = true;
          this.website.isInBaseFlow = false;
@@ -559,6 +712,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedBunker(-1);
          this.website.setSelectedBase(-1);
@@ -569,27 +725,30 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "baseMarker")
       {
-         var _loc9_ = parseInt(id);
-         if(_loc9_ != this.website.selectedBaseID)
+         _loc11_ = parseInt(id);
+         if(_loc11_ != this.website.selectedBaseID)
          {
-            this.website.setSelectedBase(_loc9_);
+            this.website.setSelectedBase(_loc11_);
             this.showBaseDetails(false);
          }
-         var _loc21_ = this.website.getBaseByID(_loc9_);
-         if(_loc21_)
+         _loc25_ = this.website.getBaseByID(_loc11_);
+         if(_loc25_)
          {
-            _loc4_ = this.markers[_loc9_];
+            _loc4_ = this.markers[_loc11_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc21_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc21_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc25_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc25_.isInStarterPack;
             }
          }
-         this.setNextPage(null,null,null,_loc21_,null,null,null,null,null,null,null);
+         this.setNextPage(null,null,null,_loc25_,null,null,null,null,null,null,null,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = true;
@@ -600,6 +759,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedBunker(-1);
          this.website.setSelectedHangar(-1);
@@ -610,27 +772,30 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "nightclubMarker")
       {
-         var _loc5_ = parseInt(id);
-         if(_loc5_ != this.website.selectedNightclubID)
+         _loc6_ = parseInt(id);
+         if(_loc6_ != this.website.selectedNightclubID)
          {
-            this.website.setSelectedNightclub(_loc5_);
+            this.website.setSelectedNightclub(_loc6_);
             this.showNightclubDetails(false);
          }
-         var _loc23_ = this.website.getNightclubByID(_loc5_);
-         if(_loc23_)
+         _loc29_ = this.website.getNightclubByID(_loc6_);
+         if(_loc29_)
          {
-            _loc4_ = this.markers[_loc5_];
+            _loc4_ = this.markers[_loc6_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc23_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc23_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc29_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc29_.isInStarterPack;
             }
          }
-         this.setNextPage(null,null,null,null,_loc23_,null,null,null,null,null,null);
+         this.setNextPage(null,null,null,null,_loc29_,null,null,null,null,null,null,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = false;
@@ -641,6 +806,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedBunker(-1);
          this.website.setSelectedHangar(-1);
@@ -651,180 +819,19 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "arcadeMarker")
       {
-         var _loc13_ = parseInt(id);
-         if(_loc13_ != this.website.selectedArcadeID)
+         _loc15_ = parseInt(id);
+         if(_loc15_ != this.website.selectedArcadeID)
          {
-            this.website.setSelectedArcade(_loc13_);
+            this.website.setSelectedArcade(_loc15_);
             this.showArcadeDetails(false);
          }
-         var _loc20_ = this.website.getArcadeByID(_loc13_);
-         if(_loc20_)
-         {
-            _loc4_ = this.markers[_loc13_];
-            if(_loc4_)
-            {
-               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc20_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc20_.isInStarterPack;
-            }
-         }
-         this.setNextPage(null,null,null,null,null,_loc20_,null,null,null,null,null);
-         this.website.isInBunkerFlow = false;
-         this.website.isInHangarFlow = false;
-         this.website.isInBaseFlow = false;
-         this.website.isInNightclubFlow = false;
-         this.website.isInArcadeFlow = true;
-         this.website.isInAutoShopFlow = false;
-         this.website.isInSalvageYardFlow = false;
-         this.website.isInBailOfficeFlow = false;
-         this.website.isInGarmentFactoryFlow = false;
-         this.website.isInMcKenzieHangarFlow = false;
-         this.website.setSelectedClubhouse(-1);
-         this.website.setSelectedBunker(-1);
-         this.website.setSelectedHangar(-1);
-         this.website.setSelectedBase(-1);
-         this.website.setSelectedNightclub(-1);
-         this.website.setSelectedAutoShop(-1);
-         this.website.setSelectedSalvageYard(-1);
-         this.website.setSelectedBailOffice(-1);
-         this.website.setSelectedGarmentFactory(-1);
-         this.website.setSelectedMcKenzieHangar(-1);
-      }
-      else if(type == "autoShopMarker")
-      {
-         var _loc12_ = parseInt(id);
-         if(_loc12_ != this.website.selectedAutoShopID)
-         {
-            this.website.setSelectedAutoShop(_loc12_);
-            this.showAutoShopDetails(false);
-         }
-         var _loc16_ = this.website.getAutoShopByID(_loc12_);
-         if(_loc16_)
-         {
-            _loc4_ = this.markers[_loc12_];
-            if(_loc4_)
-            {
-               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc16_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc16_.isInStarterPack;
-            }
-         }
-         this.setNextPage(null,null,null,null,null,null,_loc16_,null,null,null,null);
-         this.website.isInBunkerFlow = false;
-         this.website.isInHangarFlow = false;
-         this.website.isInBaseFlow = false;
-         this.website.isInNightclubFlow = false;
-         this.website.isInArcadeFlow = false;
-         this.website.isInAutoShopFlow = true;
-         this.website.isInSalvageYardFlow = false;
-         this.website.isInBailOfficeFlow = false;
-         this.website.isInGarmentFactoryFlow = false;
-         this.website.isInMcKenzieHangarFlow = false;
-         this.website.setSelectedClubhouse(-1);
-         this.website.setSelectedBunker(-1);
-         this.website.setSelectedHangar(-1);
-         this.website.setSelectedBase(-1);
-         this.website.setSelectedNightclub(-1);
-         this.website.setSelectedArcade(-1);
-         this.website.setSelectedSalvageYard(-1);
-         this.website.setSelectedBailOffice(-1);
-         this.website.setSelectedGarmentFactory(-1);
-         this.website.setSelectedMcKenzieHangar(-1);
-      }
-      else if(type == "salvageYardMarker")
-      {
-         var _loc7_ = parseInt(id);
-         if(_loc7_ != this.website.selectedSalvageYardID)
-         {
-            this.website.setSelectedSalvageYard(_loc7_);
-            this.showSalvageYardDetails(false);
-         }
-         var _loc26_ = this.website.getSalvageYardByID(_loc7_);
-         if(_loc26_)
-         {
-            _loc4_ = this.markers[_loc7_];
-            if(_loc4_)
-            {
-               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc26_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc26_.isInStarterPack;
-            }
-         }
-         this.setNextPage(null,null,null,null,null,null,null,_loc26_,null,null,null);
-         this.website.isInBunkerFlow = false;
-         this.website.isInHangarFlow = false;
-         this.website.isInBaseFlow = false;
-         this.website.isInNightclubFlow = false;
-         this.website.isInArcadeFlow = false;
-         this.website.isInAutoShopFlow = false;
-         this.website.isInSalvageYardFlow = true;
-         this.website.isInBailOfficeFlow = false;
-         this.website.isInGarmentFactoryFlow = false;
-         this.website.isInMcKenzieHangarFlow = false;
-         this.website.setSelectedClubhouse(-1);
-         this.website.setSelectedBunker(-1);
-         this.website.setSelectedHangar(-1);
-         this.website.setSelectedBase(-1);
-         this.website.setSelectedNightclub(-1);
-         this.website.setSelectedArcade(-1);
-         this.website.setSelectedAutoShop(-1);
-         this.website.setSelectedBailOffice(-1);
-         this.website.setSelectedGarmentFactory(-1);
-         this.website.setSelectedMcKenzieHangar(-1);
-      }
-      else if(type == "bailOfficeMarker")
-      {
-         var _loc8_ = parseInt(id);
-         if(_loc8_ != this.website.selectedBailOfficeID)
-         {
-            this.website.setSelectedBailOffice(_loc8_);
-            this.showBailOfficeDetails(false);
-         }
-         var _loc17_ = this.website.getBailOfficeByID(_loc8_);
-         if(_loc17_)
-         {
-            _loc4_ = this.markers[_loc8_];
-            if(_loc4_)
-            {
-               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc17_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc17_.isInStarterPack;
-            }
-         }
-         this.setNextPage(null,null,null,null,null,null,null,null,_loc17_,null,null);
-         this.website.isInBunkerFlow = false;
-         this.website.isInHangarFlow = false;
-         this.website.isInBaseFlow = false;
-         this.website.isInNightclubFlow = false;
-         this.website.isInArcadeFlow = false;
-         this.website.isInAutoShopFlow = false;
-         this.website.isInSalvageYardFlow = false;
-         this.website.isInBailOfficeFlow = true;
-         this.website.isInGarmentFactoryFlow = false;
-         this.website.isInMcKenzieHangarFlow = false;
-         this.website.setSelectedClubhouse(-1);
-         this.website.setSelectedBunker(-1);
-         this.website.setSelectedHangar(-1);
-         this.website.setSelectedBase(-1);
-         this.website.setSelectedNightclub(-1);
-         this.website.setSelectedArcade(-1);
-         this.website.setSelectedAutoShop(-1);
-         this.website.setSelectedSalvageYard(-1);
-         this.website.setSelectedGarmentFactory(-1);
-         this.website.setSelectedMcKenzieHangar(-1);
-      }
-      else if(type == "garmentFactoryMarker")
-      {
-         var _loc15_ = parseInt(id);
-         if(_loc15_ != this.website.selectedGarmentFactoryID)
-         {
-            this.website.setSelectedGarmentFactory(_loc15_);
-            this.showGarmentFactoryDetails(false);
-         }
-         var _loc24_ = this.website.getGarmentFactoryByID(_loc15_);
+         _loc24_ = this.website.getArcadeByID(_loc15_);
          if(_loc24_)
          {
             _loc4_ = this.markers[_loc15_];
@@ -835,7 +842,195 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
                _loc4_.starterPackIcon._visible = _loc24_.isInStarterPack;
             }
          }
-         this.setNextPage(null,null,null,null,null,null,null,null,null,_loc24_,null);
+         this.setNextPage(null,null,null,null,null,_loc24_,null,null,null,null,null,null,null,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = true;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "autoShopMarker")
+      {
+         _loc14_ = parseInt(id);
+         if(_loc14_ != this.website.selectedAutoShopID)
+         {
+            this.website.setSelectedAutoShop(_loc14_);
+            this.showAutoShopDetails(false);
+         }
+         _loc20_ = this.website.getAutoShopByID(_loc14_);
+         if(_loc20_)
+         {
+            _loc4_ = this.markers[_loc14_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc20_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc20_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,_loc20_,null,null,null,null,null,null,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = true;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "salvageYardMarker")
+      {
+         _loc9_ = parseInt(id);
+         if(_loc9_ != this.website.selectedSalvageYardID)
+         {
+            this.website.setSelectedSalvageYard(_loc9_);
+            this.showSalvageYardDetails(false);
+         }
+         _loc32_ = this.website.getSalvageYardByID(_loc9_);
+         if(_loc32_)
+         {
+            _loc4_ = this.markers[_loc9_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc32_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc32_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,_loc32_,null,null,null,null,null,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = true;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "bailOfficeMarker")
+      {
+         _loc10_ = parseInt(id);
+         if(_loc10_ != this.website.selectedBailOfficeID)
+         {
+            this.website.setSelectedBailOffice(_loc10_);
+            this.showBailOfficeDetails(false);
+         }
+         _loc21_ = this.website.getBailOfficeByID(_loc10_);
+         if(_loc21_)
+         {
+            _loc4_ = this.markers[_loc10_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc21_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc21_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,null,_loc21_,null,null,null,null,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = true;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "garmentFactoryMarker")
+      {
+         _loc17_ = parseInt(id);
+         if(_loc17_ != this.website.selectedGarmentFactoryID)
+         {
+            this.website.setSelectedGarmentFactory(_loc17_);
+            this.showGarmentFactoryDetails(false);
+         }
+         _loc30_ = this.website.getGarmentFactoryByID(_loc17_);
+         if(_loc30_)
+         {
+            _loc4_ = this.markers[_loc17_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc30_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc30_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,null,null,_loc30_,null,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = false;
@@ -846,6 +1041,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = true;
          this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedBunker(-1);
          this.website.setSelectedHangar(-1);
@@ -853,29 +1051,33 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedNightclub(-1);
          this.website.setSelectedArcade(-1);
          this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
          this.website.setSelectedSalvageYard(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
       }
       else if(type == "mcKenzieHangarMarker")
       {
-         var _loc10_ = parseInt(id);
-         if(_loc10_ != this.website.selectedMcKenzieHangarID)
+         _loc12_ = parseInt(id);
+         if(_loc12_ != this.website.selectedMcKenzieHangarID)
          {
-            this.website.setSelectedMcKenzieHangar(_loc10_);
+            this.website.setSelectedMcKenzieHangar(_loc12_);
             this.showMcKenzieHangarDetails(false);
          }
-         var _loc25_ = this.website.getMcKenzieHangarByID(_loc10_);
-         if(_loc25_)
+         _loc31_ = this.website.getMcKenzieHangarByID(_loc12_);
+         if(_loc31_)
          {
-            _loc4_ = this.markers[_loc10_];
+            _loc4_ = this.markers[_loc12_];
             if(_loc4_)
             {
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc25_.isOwned ? "unownedActive" : "ownedActive");
-               _loc4_.starterPackIcon._visible = _loc25_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc31_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc31_.isInStarterPack;
             }
          }
-         this.setNextPage(null,null,null,null,null,null,null,null,null,null,_loc25_);
+         this.setNextPage(null,null,null,null,null,null,null,null,null,null,_loc31_,null,null,null);
          this.website.isInBunkerFlow = false;
          this.website.isInHangarFlow = false;
          this.website.isInBaseFlow = false;
@@ -886,6 +1088,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.isInBailOfficeFlow = false;
          this.website.isInGarmentFactoryFlow = false;
          this.website.isInMcKenzieHangarFlow = true;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
          this.website.setSelectedClubhouse(-1);
          this.website.setSelectedBunker(-1);
          this.website.setSelectedHangar(-1);
@@ -893,8 +1098,153 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedNightclub(-1);
          this.website.setSelectedArcade(-1);
          this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
          this.website.setSelectedSalvageYard(-1);
          this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "carWashMarker")
+      {
+         _loc18_ = parseInt(id);
+         if(_loc18_ != this.website.selectedCarWashID)
+         {
+            this.website.setSelectedCarWash(_loc18_);
+            this.showCarWashDetails(false);
+         }
+         _loc26_ = this.website.getCarWashByID(_loc18_);
+         if(_loc26_)
+         {
+            _loc4_ = this.markers[_loc18_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc26_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc26_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,null,null,null,null,_loc26_,null,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = true;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "helitoursMarker")
+      {
+         _loc5_ = parseInt(id);
+         if(_loc5_ != this.website.selectedHelitoursID)
+         {
+            this.website.setSelectedHelitours(_loc5_);
+            this.showHelitoursDetails(false);
+         }
+         _loc19_ = this.website.getHelitoursByID(_loc5_);
+         if(_loc19_)
+         {
+            _loc4_ = this.markers[_loc5_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc19_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc19_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,null,null,null,null,null,_loc19_,null);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = true;
+         this.website.isInWeedShopFlow = false;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedWeedShop(-1);
+      }
+      else if(type == "weedShopMarker")
+      {
+         _loc7_ = parseInt(id);
+         if(_loc7_ != this.website.selectedWeedShopID)
+         {
+            this.website.setSelectedWeedShop(_loc7_);
+            this.showWeedShopDetails(false);
+         }
+         _loc27_ = this.website.getWeedShopByID(_loc7_);
+         if(_loc27_)
+         {
+            _loc4_ = this.markers[_loc7_];
+            if(_loc4_)
+            {
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc27_.isOwned ? "unownedActive" : "ownedActive");
+               _loc4_.starterPackIcon._visible = _loc27_.isInStarterPack;
+            }
+         }
+         this.setNextPage(null,null,null,null,null,null,null,null,null,null,null,null,null,_loc27_);
+         this.website.isInBunkerFlow = false;
+         this.website.isInHangarFlow = false;
+         this.website.isInBaseFlow = false;
+         this.website.isInNightclubFlow = false;
+         this.website.isInArcadeFlow = false;
+         this.website.isInAutoShopFlow = false;
+         this.website.isInSalvageYardFlow = false;
+         this.website.isInBailOfficeFlow = false;
+         this.website.isInGarmentFactoryFlow = false;
+         this.website.isInMcKenzieHangarFlow = false;
+         this.website.isInCarWashFlow = false;
+         this.website.isInHelitoursFlow = false;
+         this.website.isInWeedShopFlow = true;
+         this.website.setSelectedClubhouse(-1);
+         this.website.setSelectedBunker(-1);
+         this.website.setSelectedHangar(-1);
+         this.website.setSelectedBase(-1);
+         this.website.setSelectedNightclub(-1);
+         this.website.setSelectedArcade(-1);
+         this.website.setSelectedAutoShop(-1);
+         this.website.setSelectedBailOffice(-1);
+         this.website.setSelectedSalvageYard(-1);
+         this.website.setSelectedGarmentFactory(-1);
+         this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
       }
       else if(type == "nextButton")
       {
@@ -947,6 +1297,18 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          {
             this.website.mapFilters ^= com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_MCKENZIE_HANGAR;
          }
+         else if(id == "carWash")
+         {
+            this.website.mapFilters ^= com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CAR_WASH;
+         }
+         else if(id == "helitours")
+         {
+            this.website.mapFilters ^= com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HELITOURS;
+         }
+         else if(id == "weedShop")
+         {
+            this.website.mapFilters ^= com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_WEED_SHOP;
+         }
          if(!this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CLUBHOUSES)
          {
             this.website.setSelectedClubhouse(-1);
@@ -990,6 +1352,18 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          if(!this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_MCKENZIE_HANGAR)
          {
             this.website.setSelectedMcKenzieHangar(-1);
+         }
+         if(!this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CAR_WASH)
+         {
+            this.website.setSelectedCarWash(-1);
+         }
+         if(!this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HELITOURS)
+         {
+            this.website.setSelectedHelitours(-1);
+         }
+         if(!this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_WEED_SHOP)
+         {
+            this.website.setSelectedWeedShop(-1);
          }
          if(this.website.selectedClubhouseID != -1)
          {
@@ -1035,6 +1409,18 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          {
             this.showMcKenzieHangarDetails(true);
          }
+         else if(this.website.selectedCarWashID != -1)
+         {
+            this.showCarWashDetails(true);
+         }
+         else if(this.website.selectedHelitoursID != -1)
+         {
+            this.showHelitoursDetails(true);
+         }
+         else if(this.website.selectedWeedShopID != -1)
+         {
+            this.showWeedShopDetails(true);
+         }
          else
          {
             this.progressPanel.hide();
@@ -1044,10 +1430,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedBunkerID];
             if(_loc4_)
             {
-               _loc19_ = this.website.getBunkerByID(this.website.selectedBunkerID);
+               _loc23_ = this.website.getBunkerByID(this.website.selectedBunkerID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc19_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc19_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc23_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc23_.isInStarterPack;
             }
          }
          else if(this.website.selectedClubhouseID != -1)
@@ -1055,10 +1441,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedClubhouseID];
             if(_loc4_)
             {
-               _loc18_ = this.website.getClubhouseByID(this.website.selectedClubhouseID);
+               _loc22_ = this.website.getClubhouseByID(this.website.selectedClubhouseID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc18_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc18_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc22_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc22_.isInStarterPack;
             }
          }
          else if(this.website.selectedHangarID != -1)
@@ -1066,10 +1452,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedHangarID];
             if(_loc4_)
             {
-               _loc22_ = this.website.getHangarByID(this.website.selectedHangarID);
+               _loc28_ = this.website.getHangarByID(this.website.selectedHangarID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc22_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc22_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc28_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc28_.isInStarterPack;
             }
          }
          else if(this.website.selectedBaseID != -1)
@@ -1077,10 +1463,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedBaseID];
             if(_loc4_)
             {
-               _loc21_ = this.website.getBaseByID(this.website.selectedBaseID);
+               _loc25_ = this.website.getBaseByID(this.website.selectedBaseID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc21_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc21_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc25_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc25_.isInStarterPack;
             }
          }
          else if(this.website.selectedNightclubID != -1)
@@ -1088,10 +1474,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedNightclubID];
             if(_loc4_)
             {
-               _loc23_ = this.website.getNightclubByID(this.website.selectedNightclubID);
+               _loc29_ = this.website.getNightclubByID(this.website.selectedNightclubID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc23_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc23_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc29_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc29_.isInStarterPack;
             }
          }
          else if(this.website.selectedArcadeID != -1)
@@ -1099,10 +1485,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedArcadeID];
             if(_loc4_)
             {
-               _loc20_ = this.website.getArcadeByID(this.website.selectedArcadeID);
+               _loc24_ = this.website.getArcadeByID(this.website.selectedArcadeID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc20_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc20_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc24_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc24_.isInStarterPack;
             }
          }
          else if(this.website.selectedAutoShopID != -1)
@@ -1110,10 +1496,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedAutoShopID];
             if(_loc4_)
             {
-               _loc16_ = this.website.getAutoShopByID(this.website.selectedAutoShopID);
+               _loc20_ = this.website.getAutoShopByID(this.website.selectedAutoShopID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc16_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc16_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc20_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc20_.isInStarterPack;
             }
          }
          else if(this.website.selectedSalvageYardID != -1)
@@ -1121,10 +1507,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedSalvageYardID];
             if(_loc4_)
             {
-               _loc26_ = this.website.getSalvageYardByID(this.website.selectedSalvageYardID);
+               _loc32_ = this.website.getSalvageYardByID(this.website.selectedSalvageYardID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc26_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc26_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc32_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc32_.isInStarterPack;
             }
          }
          else if(this.website.selectedBailOfficeID != -1)
@@ -1132,10 +1518,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedBailOfficeID];
             if(_loc4_)
             {
-               _loc17_ = this.website.getBailOfficeByID(this.website.selectedBailOfficeID);
+               _loc21_ = this.website.getBailOfficeByID(this.website.selectedBailOfficeID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc17_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc17_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc21_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc21_.isInStarterPack;
             }
          }
          else if(this.website.selectedGarmentFactoryID != -1)
@@ -1143,10 +1529,10 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedGarmentFactoryID];
             if(_loc4_)
             {
-               _loc24_ = this.website.getGarmentFactoryByID(this.website.selectedGarmentFactoryID);
+               _loc30_ = this.website.getGarmentFactoryByID(this.website.selectedGarmentFactoryID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc24_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc24_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc30_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc30_.isInStarterPack;
             }
          }
          else if(this.website.selectedMcKenzieHangarID != -1)
@@ -1154,16 +1540,49 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             _loc4_ = this.markers[this.website.selectedMcKenzieHangarID];
             if(_loc4_)
             {
-               _loc25_ = this.website.getMcKenzieHangarByID(this.website.selectedMcKenzieHangarID);
+               _loc31_ = this.website.getMcKenzieHangarByID(this.website.selectedMcKenzieHangarID);
                _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
-               _loc4_.gotoAndStop(!_loc25_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
-               _loc4_.starterPackIcon._visible = _loc25_.isInStarterPack;
+               _loc4_.gotoAndStop(!_loc31_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc31_.isInStarterPack;
+            }
+         }
+         else if(this.website.selectedCarWashID != -1)
+         {
+            _loc4_ = this.markers[this.website.selectedCarWashID];
+            if(_loc4_)
+            {
+               _loc26_ = this.website.getCarWashByID(this.website.selectedCarWashID);
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc26_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc26_.isInStarterPack;
+            }
+         }
+         else if(this.website.selectedHelitoursID != -1)
+         {
+            _loc4_ = this.markers[this.website.selectedHelitoursID];
+            if(_loc4_)
+            {
+               _loc19_ = this.website.getHelitoursByID(this.website.selectedHelitoursID);
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc19_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc19_.isInStarterPack;
+            }
+         }
+         else if(this.website.selectedWeedShopID != -1)
+         {
+            _loc4_ = this.markers[this.website.selectedWeedShopID];
+            if(_loc4_)
+            {
+               _loc27_ = this.website.getWeedShopByID(this.website.selectedWeedShopID);
+               _loc4_.swapDepths(_loc4_._parent.getNextHighestDepth());
+               _loc4_.gotoAndStop(!_loc27_.isOwned ? "unownedActiveNoAnim" : "ownedActiveNoAnim");
+               _loc4_.starterPackIcon._visible = _loc27_.isInStarterPack;
             }
          }
          this.updateMarkers();
       }
    }
-   function setNextPage(clubhouse, bunker, hangar, base, nightclub, arcade, autoShop, salvageYard, bailOffice, garmentFactory, mcKenzieHangar)
+   function setNextPage(clubhouse, bunker, hangar, base, nightclub, arcade, autoShop, salvageYard, bailOffice, garmentFactory, mcKenzieHangar, carWash, helitours, weedShop)
    {
       if(clubhouse != null)
       {
@@ -1209,6 +1628,18 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       {
          this.nextPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.MCKENZIE_HANGAR_PAGE.name;
       }
+      else if(carWash != null)
+      {
+         this.nextPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.CAR_WASH_TINT_PAGE.name;
+      }
+      else if(helitours != null)
+      {
+         this.nextPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.HELITOURS_TINT_PAGE.name;
+      }
+      else if(weedShop != null)
+      {
+         this.nextPageName = com.rockstargames.gtav.web.FORECLOSURES_MAZE_D_BANK_COM.PAGES.WEED_SHOP_TINT_PAGE.name;
+      }
    }
    function handleLT()
    {
@@ -1246,6 +1677,8 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
    }
    function handleRB()
    {
+      var _loc2_;
+      var _loc3_;
       if(this.website.selectedClubhouseID != -1)
       {
          this.progressPanel.stopSlideshow();
@@ -1293,10 +1726,33 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       }
       else if(this.website.selectedGarmentFactoryID != -1)
       {
+         _loc2_ = this.website.getGarmentFactoryByID(this.website.selectedGarmentFactoryID);
+         if(!_loc2_.isOwned)
+         {
+            this.progressPanel.stopSlideshow();
+            this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
+         }
+      }
+      else if(this.website.selectedMcKenzieHangarID != -1)
+      {
+         _loc3_ = this.website.getMcKenzieHangarByID(this.website.selectedMcKenzieHangarID);
+         if(!_loc3_.isOwned)
+         {
+            this.progressPanel.stopSlideshow();
+            this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
+         }
+      }
+      else if(this.website.selectedCarWashID != -1)
+      {
          this.progressPanel.stopSlideshow();
          this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
       }
-      else if(this.website.selectedMcKenzieHangarID != -1)
+      else if(this.website.selectedHelitoursID != -1)
+      {
+         this.progressPanel.stopSlideshow();
+         this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
+      }
+      else if(this.website.selectedWeedShopID != -1)
       {
          this.progressPanel.stopSlideshow();
          this.website.browser.GO_TO_WEBPAGE(this.nextPageName);
@@ -1352,6 +1808,9 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
          this.website.setSelectedBailOffice(-1);
          this.website.setSelectedGarmentFactory(-1);
          this.website.setSelectedMcKenzieHangar(-1);
+         this.website.setSelectedCarWash(-1);
+         this.website.setSelectedHelitours(-1);
+         this.website.setSelectedWeedShop(-1);
          if(inputIsMouseClick)
          {
             this.mapIsBeingDragged = true;
@@ -1477,14 +1936,19 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       var _loc9_ = this.view.map.transform.matrix.a;
       var _loc2_ = 0;
       var _loc5_ = this.markerData.length;
+      var _loc6_;
+      var _loc3_;
+      var _loc8_;
+      var _loc7_;
+      var _loc4_;
       while(_loc2_ < _loc5_)
       {
-         var _loc6_ = this.markerData[_loc2_].id;
-         var _loc3_ = this.markers[_loc6_];
+         _loc6_ = this.markerData[_loc2_].id;
+         _loc3_ = this.markers[_loc6_];
          if(_loc3_)
          {
-            var _loc8_ = _loc9_ * this.markerData[_loc2_].x + _loc11_;
-            var _loc7_ = _loc9_ * this.markerData[_loc2_].y + _loc10_;
+            _loc8_ = _loc9_ * this.markerData[_loc2_].x + _loc11_;
+            _loc7_ = _loc9_ * this.markerData[_loc2_].y + _loc10_;
             _loc3_._x = _loc8_;
             _loc3_._y = _loc7_;
             if(_loc3_._xscale == 100 && (this.isHiddenByProgressPanel(_loc3_) || this.isOffScreen(_loc3_)))
@@ -1494,8 +1958,8 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
             }
             else
             {
-               var _loc4_ = this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CLUBHOUSES && this.markerData[_loc2_].type < 2 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BUNKERS && this.markerData[_loc2_].type == 2 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HANGARS && this.markerData[_loc2_].type == 3 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BASES && this.markerData[_loc2_].type == 4 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_NIGHTCLUBS && this.markerData[_loc2_].type == 5 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_ARCADES && this.markerData[_loc2_].type == 6 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_AUTO_SHOPS && this.markerData[_loc2_].type == 7 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_SALVAGE_YARDS && this
-               .markerData[_loc2_].type == 8 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BAIL_OFFICES && this.markerData[_loc2_].type == 9 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_GARMENT_FACTORY && this.markerData[_loc2_].type == 10 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_MCKENZIE_HANGAR && this.markerData[_loc2_].type == 11;
+               _loc4_ = this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CLUBHOUSES && this.markerData[_loc2_].type < 2 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BUNKERS && this.markerData[_loc2_].type == 2 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HANGARS && this.markerData[_loc2_].type == 3 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BASES && this.markerData[_loc2_].type == 4 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_NIGHTCLUBS && this.markerData[_loc2_].type == 5 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_ARCADES && this.markerData[_loc2_].type == 6 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_AUTO_SHOPS && this.markerData[_loc2_].type == 7 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_SALVAGE_YARDS && this
+               .markerData[_loc2_].type == 8 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BAIL_OFFICES && this.markerData[_loc2_].type == 9 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_GARMENT_FACTORY && this.markerData[_loc2_].type == 10 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_MCKENZIE_HANGAR && this.markerData[_loc2_].type == 11 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CAR_WASH && this.markerData[_loc2_].type == 12 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HELITOURS && this.markerData[_loc2_].type == 13 || this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_WEED_SHOP && this.markerData[_loc2_].type == 14;
                _loc3_.disabled = !_loc4_;
                _loc3_._visible = _loc4_;
             }
@@ -1513,15 +1977,20 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
       this.view.filter_bailOffices._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_BAIL_OFFICES) ? 80 : 100;
       this.view.filter_garmentFactory._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_GARMENT_FACTORY) ? 80 : 100;
       this.view.filter_mcKenzieHangar._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_MCKENZIE_HANGAR) ? 80 : 100;
+      this.view.filter_carWash._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_CAR_WASH) ? 80 : 100;
+      this.view.filter_helitours._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_HELITOURS) ? 80 : 100;
+      this.view.filter_weedShop._alpha = !(this.website.mapFilters & com.rockstargames.gtav.web.foreclosures.MapPage.FILTER_WEED_SHOP) ? 80 : 100;
    }
    function resetMarkers()
    {
       var _loc2_ = 0;
       var _loc4_ = this.markerData.length;
+      var _loc5_;
+      var _loc3_;
       while(_loc2_ < _loc4_)
       {
-         var _loc5_ = this.markerData[_loc2_].id;
-         var _loc3_ = this.markers[_loc5_];
+         _loc5_ = this.markerData[_loc2_].id;
+         _loc3_ = this.markers[_loc5_];
          if(_loc3_)
          {
             _loc3_.gotoAndStop(!this.markerData[_loc2_].isOwned ? "unownedInactive" : "ownedInactive");
@@ -1598,5 +2067,20 @@ class com.rockstargames.gtav.web.foreclosures.MapPage extends com.rockstargames.
    {
       var _loc2_ = this.website.getSelectedMcKenzieHangar();
       this.progressPanel.showBasicPropertyOverview(_loc2_,showImmediately);
+   }
+   function showCarWashDetails(showImmediately)
+   {
+      var _loc2_ = this.website.getSelectedCarWash();
+      this.progressPanel.showCarWashOverview(_loc2_,showImmediately);
+   }
+   function showHelitoursDetails(showImmediately)
+   {
+      var _loc2_ = this.website.getSelectedHelitours();
+      this.progressPanel.showHelitoursOverview(_loc2_,showImmediately);
+   }
+   function showWeedShopDetails(showImmediately)
+   {
+      var _loc2_ = this.website.getSelectedWeedShop();
+      this.progressPanel.showWeedShopOverview(_loc2_,showImmediately);
    }
 }

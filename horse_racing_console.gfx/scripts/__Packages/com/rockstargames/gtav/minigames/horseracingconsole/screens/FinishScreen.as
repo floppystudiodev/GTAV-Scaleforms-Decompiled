@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.FinishScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var view;
-   var initTimestamp;
-   var cursor;
    var app;
+   var cursor;
+   var initTimestamp;
+   var view;
    static var DURATION = 2500;
    function FinishScreen(app, viewContainer, cursor)
    {
@@ -25,9 +25,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.FinishScreen e
       var _loc4_ = this.view.createEmptyMovieClip("horseContainer",this.view.getNextHighestDepth());
       _loc4_.attachMovie("finishingLine","finishingLine",_loc4_.getNextHighestDepth());
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.app.horses.length)
       {
-         var _loc3_ = _loc4_.attachMovie("horse","horse" + _loc2_,_loc4_.getNextHighestDepth());
+         _loc3_ = _loc4_.attachMovie("horse","horse" + _loc2_,_loc4_.getNextHighestDepth());
          this.app.horses[_loc2_].init(_loc3_,false);
          _loc2_ = _loc2_ + 1;
       }
@@ -47,9 +48,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.FinishScreen e
       element._yscale = data.yScale;
       element.gotoAndStop(data.frame);
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < data.children.length)
       {
-         var _loc3_ = data.children[_loc2_];
+         _loc3_ = data.children[_loc2_];
          this.setPhotoFinishElement(element[_loc3_.name],_loc3_);
          _loc2_ = _loc2_ + 1;
       }

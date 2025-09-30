@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.importExportWarehouse.Scrollbar
 {
-   var _view;
-   var _parentOfAll;
    var _contentContainer;
    var _contentMask;
-   var _updateControlsCallback;
+   var _parentOfAll;
    var _safeZoneBottom;
    var _scrollTimeDelta;
+   var _updateControlsCallback;
+   var _view;
    static var SCROLL_SPEED = 20;
    function Scrollbar(view, contentContainer, contentMask, updateControlsCallback, safeZoneBottom)
    {
@@ -40,12 +40,15 @@ class com.rockstargames.gtav.levelDesign.importExportWarehouse.Scrollbar
       {
          _loc4_ *= 2;
       }
+      var _loc5_;
+      var _loc3_;
+      var _loc6_;
       if(!isLeftStick)
       {
-         var _loc5_ = getTimer();
-         var _loc3_ = _loc5_ - this._scrollTimeDelta;
+         _loc5_ = getTimer();
+         _loc3_ = _loc5_ - this._scrollTimeDelta;
          _loc3_ = Math.max(16,Math.min(40,_loc3_));
-         var _loc6_ = com.rockstargames.gtav.levelDesign.importExportWarehouse.Scrollbar.SCROLL_SPEED * _loc3_ / 32;
+         _loc6_ = com.rockstargames.gtav.levelDesign.importExportWarehouse.Scrollbar.SCROLL_SPEED * _loc3_ / 32;
          this._scrollTimeDelta = _loc5_;
          this.scrollList((- _loc6_) * _loc4_);
          if(isMouseWheel)

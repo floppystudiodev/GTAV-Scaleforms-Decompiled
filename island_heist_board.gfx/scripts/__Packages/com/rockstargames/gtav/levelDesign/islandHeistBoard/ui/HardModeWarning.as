@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.HardModeWarning
 {
-   var view;
-   var upperYPosition;
    var lowerYPosition;
+   var upperYPosition;
+   var view;
    static var ICON_SPACING = 8;
    function HardModeWarning(view, isHardMode, upperYPosition, lowerYPosition, colourScheme)
    {

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_WEAPONS extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuGalleryBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var model;
    var scrollBase;
    function PAUSE_MENU_WEAPONS()
@@ -58,9 +58,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_WEAPONS extend
       var _loc6_ = this.CONTENT.progStatsMC;
       var _loc4_ = ["damageTF","fireRateTF","accuracyTF","rangeTF","clipSizeTF","killsTF","deathsTF","headshotsTF","kdRatioTF","accuracyTF"];
       var _loc2_ = _loc4_[id];
+      var _loc3_;
       if(_loc2_ != undefined)
       {
-         var _loc3_ = _loc6_[_loc2_];
+         _loc3_ = _loc6_[_loc2_];
          if(id > 4)
          {
             _loc3_ = _loc5_[_loc2_];

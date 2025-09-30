@@ -1,43 +1,43 @@
 class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
 {
-   var TIMELINE;
-   var CONTENT;
    var BOUNDING_BOX;
-   var dataProviderUI;
-   var homemenuDataProviderUI;
-   var contactsDataProviderUI;
+   var CONTENT;
+   var TIMELINE;
+   var app_loader;
+   var applayer;
+   var backgroundImageArray;
+   var bossJobListProvider;
+   var bossJobViewProvider;
    var callscreenDataProviderUI;
+   var cellphoneApp;
+   var cellphoneButtons;
+   var componentArray;
+   var contactsDataProviderUI;
+   var currentStyle;
+   var currentlyLoadedApp;
+   var dataProviderUI;
    var emailListDataProviderUI;
-   var emailViewDataProviderUI;
    var emailResponseDataProviderUI;
+   var emailViewDataProviderUI;
+   var gamertagTextFormat;
+   var headerTextFormat;
+   var homemenuDataProviderUI;
+   var infoBar;
+   var jobListDataProviderUI;
+   var lastCurrentID;
+   var lastViewID;
+   var loadingApp;
    var messageListDataProviderUI;
    var messageViewDataProviderUI;
-   var jobListDataProviderUI;
+   var missionRepeatDataProviderUI;
+   var missionStatsDataProviderUI;
+   var previousViewID;
+   var securoServHackingViewProvider;
    var settingsDataProviderUI;
    var toDoListDataProviderUI;
    var toDoViewDataProviderUI;
-   var missionRepeatDataProviderUI;
-   var missionStatsDataProviderUI;
-   var xyzDataProvider;
-   var bossJobListProvider;
-   var bossJobViewProvider;
-   var securoServHackingViewProvider;
-   var applayer;
-   var infoBar;
-   var cellphoneButtons;
-   var componentArray;
-   var backgroundImageArray;
-   var currentStyle;
-   var headerTextFormat;
-   var gamertagTextFormat;
-   var loadingApp;
    var wallpaper_loader;
-   var lastViewID;
-   var lastCurrentID;
-   var previousViewID;
-   var currentlyLoadedApp;
-   var cellphoneApp;
-   var app_loader;
+   var xyzDataProvider;
    var currentHour = 0;
    var currentMinute = 0;
    var currentDay = "";
@@ -119,7 +119,7 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
    }
    function GET_CURRENT_SELECTION()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.loadingApp != undefined)
       {
          _loc2_ = 0;
@@ -275,10 +275,11 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
    function SET_BACKGROUND_IMAGE(image_enum, removeOnly)
    {
       var _loc2_ = this.CONTENT.phoneBackground.bgMC;
+      var _loc3_;
       if(_loc2_ != undefined)
       {
          _loc2_.removeMovieClip();
-         var _loc3_ = this.backgroundImageArray[this.backgroundImage];
+         _loc3_ = this.backgroundImageArray[this.backgroundImage];
          com.rockstargames.ui.game.GameInterface.call("REMOVE_TXD_REF",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,this.gfxFileName,_loc3_);
       }
       if(this.CONTENT.phoneBackground.bgColourMC != undefined)
@@ -348,59 +349,60 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
       {
          case 2:
             this.contactsDataProviderUI = [];
-            break;
+            return;
          case 4:
             this.callscreenDataProviderUI = [];
-            break;
+            return;
          case 6:
             this.messageListDataProviderUI = [];
-            break;
+            return;
          case 7:
             this.messageViewDataProviderUI = [];
-            break;
+            return;
          case 8:
             this.emailListDataProviderUI = [];
-            break;
+            return;
          case 9:
             this.emailViewDataProviderUI = [];
-            break;
+            return;
          case 13:
          case 22:
             this.settingsDataProviderUI = [];
-            break;
+            return;
          case 14:
          case 17:
             this.toDoListDataProviderUI = [];
-            break;
+            return;
          case 15:
             this.toDoViewDataProviderUI = [];
-            break;
+            return;
          case 18:
             this.missionRepeatDataProviderUI = [];
-            break;
+            return;
          case 19:
             this.missionStatsDataProviderUI = [];
-            break;
+            return;
          case 20:
             this.jobListDataProviderUI = [];
-            break;
+            return;
          case 21:
             this.emailResponseDataProviderUI = [];
-            break;
+            return;
          case 24:
             this.xyzDataProvider = [];
-            break;
+            return;
          case 25:
             this.bossJobListProvider = [];
-            break;
+            return;
          case 26:
             this.bossJobViewProvider = [];
-            break;
+            return;
          case 27:
             this.securoServHackingViewProvider = [];
-            break;
+            return;
          default:
             this.dataProviderUI = [];
+            return;
       }
    }
    function SET_DATA_SLOT(viewID, slotID)
@@ -409,62 +411,63 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
       {
          case 1:
             this.homemenuDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 2:
             this.contactsDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 4:
             this.callscreenDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 6:
             this.messageListDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 7:
             this.messageViewDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 8:
             this.emailListDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 9:
             this.emailViewDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 13:
          case 22:
             this.settingsDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 14:
          case 17:
             this.toDoListDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 15:
             this.toDoViewDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 18:
             this.missionRepeatDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 19:
             this.missionStatsDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 20:
             this.jobListDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 21:
             this.emailResponseDataProviderUI[slotID] = arguments.slice(2);
-            break;
+            return;
          case 24:
             this.xyzDataProvider[slotID] = arguments.slice(2);
-            break;
+            return;
          case 25:
             this.bossJobListProvider[slotID] = arguments.slice(2);
-            break;
+            return;
          case 26:
             this.bossJobViewProvider[slotID] = arguments.slice(2);
-            break;
+            return;
          case 27:
             this.securoServHackingViewProvider[slotID] = arguments.slice(2);
-            break;
+            return;
          default:
             this.dataProviderUI[slotID] = arguments.slice(2);
+            return;
       }
    }
    function DISPLAY_VIEW(_viewID, _currentID)
@@ -568,6 +571,8 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
    {
       com.rockstargames.ui.game.GameInterface.call("SET_GLOBAL_ACTIONSCRIPT_FLAG",com.rockstargames.ui.game.GameInterface.SCRIPT_TYPE,9,0);
       this.loadingApp = fileToLoad;
+      var _loc3_;
+      var _loc4_;
       if(fileToLoad.substr(0,4) == "APP_")
       {
          com.rockstargames.ui.game.GameInterface.call("REQUEST_GFX_STREAM",com.rockstargames.ui.game.GameInterface.WEB_TYPE,this.uid,fileToLoad,this.gfxFileName);
@@ -577,8 +582,8 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
       {
          if(this.applayer[fileToLoad] == undefined)
          {
-            var _loc3_ = 20000 + this.lastViewID;
-            var _loc4_ = this.applayer.attachMovie(fileToLoad,fileToLoad,_loc3_);
+            _loc3_ = 20000 + this.lastViewID;
+            _loc4_ = this.applayer.attachMovie(fileToLoad,fileToLoad,_loc3_);
          }
          this.currentlyLoadedApp = fileToLoad;
          this.loadingApp = undefined;
@@ -729,6 +734,8 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
                break;
             case 4:
                this.currentInterface.navigate("LEFT");
+            default:
+               return;
          }
       }
    }
@@ -774,14 +781,19 @@ class com.rockstargames.gtav.cellphone.ifruit.CELLPHONE_IFRUIT extends MovieClip
    {
       var _loc5_ = str.indexOf("<C>");
       var _loc7_ = str.indexOf("</C>");
+      var _loc2_;
+      var _loc4_;
+      var _loc9_;
+      var _loc8_;
+      var _loc10_;
       if(_loc5_ != -1 && _loc7_ != -1)
       {
-         var _loc2_ = str.substring(0,_loc5_);
-         var _loc4_ = str.substring(_loc5_ + 3,_loc7_);
-         var _loc9_ = str.substring(_loc7_ + 4);
+         _loc2_ = str.substring(0,_loc5_);
+         _loc4_ = str.substring(_loc5_ + 3,_loc7_);
+         _loc9_ = str.substring(_loc7_ + 4);
          TF.text = _loc2_ + _loc4_ + _loc9_;
-         var _loc8_ = this.headerTextFormat;
-         var _loc10_ = this.gamertagTextFormat;
+         _loc8_ = this.headerTextFormat;
+         _loc10_ = this.gamertagTextFormat;
          TF.setTextFormat(0,_loc2_.length,_loc8_);
          TF.setTextFormat(_loc2_.length,_loc2_.length + _loc4_.length,_loc10_);
          TF.setTextFormat(_loc2_.length + _loc4_.length,_loc2_.length + _loc4_.length + _loc9_.length,_loc8_);

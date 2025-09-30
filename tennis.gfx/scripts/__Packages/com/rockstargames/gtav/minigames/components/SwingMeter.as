@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.minigames.components.SwingMeter extends MovieClip
 {
-   var parentClass;
-   var mc_hBar;
-   var mc_vBar;
-   var mc_bg;
    var mc_apexHBar;
    var mc_apexVBar;
-   var mc_target;
+   var mc_bg;
    var mc_fill;
+   var mc_hBar;
+   var mc_target;
+   var mc_vBar;
+   var parentClass;
    var _hBarPosition = 0;
    var _vBarPosition = 0;
    var _apexhBarPosition = 0;

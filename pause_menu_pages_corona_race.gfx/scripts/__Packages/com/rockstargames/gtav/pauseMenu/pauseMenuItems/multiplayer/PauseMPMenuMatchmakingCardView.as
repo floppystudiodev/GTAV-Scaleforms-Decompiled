@@ -1,15 +1,15 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuMatchmakingCardView extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuViewBase
 {
-   var viewLinkageList;
-   var viewContainer;
-   var itemY;
    var __get__params;
-   var itemList;
-   var rowSpacing;
    var dataList;
-   var topEdge;
-   var visibleItems;
    var highlightedItem;
+   var itemList;
+   var itemY;
+   var rowSpacing;
+   var topEdge;
+   var viewContainer;
+   var viewLinkageList;
+   var visibleItems;
    var titleHeight = 25;
    var scrollJumpVal = 25;
    var scrollYPos = 0;

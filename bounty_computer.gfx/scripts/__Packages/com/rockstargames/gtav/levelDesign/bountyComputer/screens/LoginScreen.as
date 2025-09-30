@@ -1,11 +1,12 @@
 class com.rockstargames.gtav.levelDesign.bountyComputer.screens.LoginScreen extends com.rockstargames.gtav.levelDesign.bountyComputer.screens.Screen
 {
-   var loginButton;
-   var view;
-   var cursor;
    var animationCounter;
-   var password;
    var app;
+   var cursor;
+   var loginButton;
+   var onTargetChange;
+   var password;
+   var view;
    function LoginScreen(app, viewContainer, cursor, overlay)
    {
       super(app,viewContainer,cursor,overlay,"loginScreen");

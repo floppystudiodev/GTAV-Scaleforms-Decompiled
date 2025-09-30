@@ -1,19 +1,20 @@
 class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var imageManager;
-   var displayConfig;
-   var items;
-   var showPurchaseButtons;
-   var prevScreenID;
-   var currScreenID;
-   var screenContainer;
-   var cursor;
-   var currScreen;
-   var activeItem;
+   var TIMELINE;
+   var _name;
    var activeCategory;
+   var activeItem;
+   var currScreen;
+   var currScreenID;
+   var cursor;
+   var displayConfig;
+   var imageManager;
+   var items;
+   var prevScreenID;
+   var screenContainer;
+   var showPurchaseButtons;
    var HOME_SCREEN = 0;
    var CATEGORY_SCREEN = 1;
    var ITEM_SCREEN = 2;
@@ -83,13 +84,14 @@ class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockst
    function SET_INPUT_EVENT(inputID)
    {
       var _loc2_ = this.cursor.getTargetIDUnderCursor();
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.starterPackBrowser.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.starterPackBrowser.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.starterPackBrowser.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.starterPackBrowser.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                this.playSound("NAV_LEFT_RIGHT");
@@ -108,6 +110,8 @@ class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockst
                this.playSound("BACK");
             }
             this.currScreen.handleCancel();
+         default:
+            return;
       }
    }
    function SET_ANALOG_STICK_INPUT(isLeftStick, x, y, isMouseWheel)
@@ -151,7 +155,7 @@ class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockst
    }
    function ADD_ITEM(id, category, title, description, textureDictionary, texture, link, equipped, subCategory, thumbTextureDictionary, thumbTexture)
    {
-      var _loc3_ = undefined;
+      var _loc3_;
       var _loc2_ = 0;
       var _loc4_ = this.items.length;
       while(_loc2_ < _loc4_)
@@ -202,17 +206,20 @@ class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockst
    function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";
@@ -235,9 +242,10 @@ class com.rockstargames.gtav.levelDesign.STARTER_PACK_BROWSER extends com.rockst
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

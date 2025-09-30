@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var currentDash;
    var CONTENT;
+   var currentDash;
    var VDT_DEFAULT = -1;
    var VDT_BANSHEE = 0;
    var VDT_BOBCAT = 1;
@@ -129,12 +129,15 @@ class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.ro
       {
          this.SET_VEHICLE_TYPE(this.VDT_TAILGATER);
       }
+      var _loc5_;
+      var _loc12_;
+      var _loc11_;
       if(this.currentDash.IS_DIAL)
       {
-         var _loc5_ = _loc2_ / this.currentDash.TOP_SPEED;
+         _loc5_ = _loc2_ / this.currentDash.TOP_SPEED;
          if(this.dashType == this.VDT_PEYOTE)
          {
-            var _loc12_ = Math.floor(this.getDialAngle(this.currentDash.SPEED_MIN_ROT,this.currentDash.SPEED_MAX_ROT,_loc5_,this.currentDash.SPEED_IS_CLOCKWISE));
+            _loc12_ = Math.floor(this.getDialAngle(this.currentDash.SPEED_MIN_ROT,this.currentDash.SPEED_MAX_ROT,_loc5_,this.currentDash.SPEED_IS_CLOCKWISE));
             this.CONTENT.DIALS.speedo_dialMC.gotoAndStop(_loc12_);
          }
          else
@@ -151,7 +154,7 @@ class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.ro
          this.CONTENT.DIALS.watertemp_dialMC._rotation = this.getDialAngle(this.currentDash.WATER_TEMP_MIN_ROT,this.currentDash.WATER_TEMP_MAX_ROT,waterTemp,this.currentDash.WATER_TEMP_IS_CLOCKWISE);
          if(this.dashType == this.VDT_RACE)
          {
-            var _loc11_ = Math.floor(RPM * 100);
+            _loc11_ = Math.floor(RPM * 100);
             this.CONTENT.DIALS.rpm_dialMCDigital.gotoAndStop(_loc11_);
             this.CONTENT.DIALS.speedoTXT.text = Math.floor(_loc2_);
             this.CONTENT.DIALS.tempTXT.text = Math.floor(temp * 100);
@@ -190,78 +193,79 @@ class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.ro
       {
          case this.VDT_BANSHEE:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_BANSHEE(this.CONTENT);
-            break;
+            return;
          case this.VDT_BOBCAT:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_BOBCAT(this.CONTENT);
-            break;
+            return;
          case this.VDT_CAVALCADE:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_CAVALCADE(this.CONTENT);
-            break;
+            return;
          case this.VDT_COMET:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_COMET(this.CONTENT);
-            break;
+            return;
          case this.VDT_DUKES:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_DUKES(this.CONTENT);
-            break;
+            return;
          case this.VDT_FACTION:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_FACTION(this.CONTENT);
-            break;
+            return;
          case this.VDT_FELTZER:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_FELTZER(this.CONTENT);
-            break;
+            return;
          case this.VDT_FEROCI:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_FEROCI(this.CONTENT);
-            break;
+            return;
          case this.VDT_FUTO:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_FUTO(this.CONTENT);
-            break;
+            return;
          case this.VDT_GENTAXI:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_GENTAXI(this.CONTENT);
-            break;
+            return;
          case this.VDT_MAVERICK:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_MAVERICK(this.CONTENT);
-            break;
+            return;
          case this.VDT_PEYOTE:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_PEYOTE(this.CONTENT);
-            break;
+            return;
          case this.VDT_RUINER:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_RUINER(this.CONTENT);
-            break;
+            return;
          case this.VDT_SPEEDO:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_SPEEDO(this.CONTENT);
-            break;
+            return;
          case this.VDT_SULTAN:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_SULTAN(this.CONTENT);
-            break;
+            return;
          case this.VDT_SUPERGT:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_SUPERGT(this.CONTENT);
-            break;
+            return;
          case this.VDT_TAILGATER:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_TAILGATER(this.CONTENT);
-            break;
+            return;
          case this.VDT_TRUCK:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_TRUCK(this.CONTENT);
-            break;
+            return;
          case this.VDT_TRUCKDIGI:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_TRUCKDIGI(this.CONTENT);
-            break;
+            return;
          case this.VDT_INFERNUS:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_INFERNUS(this.CONTENT);
-            break;
+            return;
          case this.VDT_ZTYPE:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_ZTYPE(this.CONTENT);
-            break;
+            return;
          case this.VDT_DEFAULT:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_TAILGATER(this.CONTENT);
-            break;
+            return;
          case this.VDT_SPORTBK:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_MOTORBIKE(this.CONTENT);
-            break;
+            return;
          case this.VDT_RACE:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_RACE(this.CONTENT);
-            break;
+            return;
          default:
             this.currentDash = new com.rockstargames.gtav.levelDesign.DashboardDials.DIAL_TAILGATER(this.CONTENT);
+            return;
       }
    }
    function SET_RADIO(tuning, station, artist, song)
@@ -286,15 +290,19 @@ class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.ro
    function initStationText(tf, text)
    {
       var _loc7_ = tf.getNewTextFormat().font;
+      var _loc5_;
+      var _loc4_;
+      var _loc1_;
+      var _loc2_;
       if(_loc7_ == "Digital")
       {
          text = text.toUpperCase();
-         var _loc5_ = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ: ";
-         var _loc4_ = "";
-         var _loc1_ = 0;
+         _loc5_ = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ: ";
+         _loc4_ = "";
+         _loc1_ = 0;
          while(_loc1_ < text.length)
          {
-            var _loc2_ = text.charAt(_loc1_);
+            _loc2_ = text.charAt(_loc1_);
             _loc4_ += _loc5_.indexOf(_loc2_) == -1 ? ":" : _loc2_;
             _loc1_ = _loc1_ + 1;
          }
@@ -316,12 +324,13 @@ class com.rockstargames.gtav.levelDesign.DashboardDials.DASHBOARD extends com.ro
          _loc1_[_loc2_].removeMovieClip();
       }
       tf.text = text;
+      var _loc5_;
       if(tf.maxhscroll > 0)
       {
          tf.text = text + _loc4_;
          var max = tf.textWidth;
          tf.text = text + _loc4_ + text;
-         var _loc5_ = _loc1_.createEmptyMovieClip(_loc2_,_loc1_.getNextHighestDepth());
+         _loc5_ = _loc1_.createEmptyMovieClip(_loc2_,_loc1_.getNextHighestDepth());
          _loc5_.onEnterFrame = function()
          {
             tf.hscroll += speed;

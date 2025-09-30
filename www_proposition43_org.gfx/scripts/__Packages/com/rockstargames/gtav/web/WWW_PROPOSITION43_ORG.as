@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var PAGE_NAMES;
    var browser;
-   var selectedItems;
-   var selections;
+   var dataTextScope;
    var maxSelectedItems;
+   var mcScope;
    var resultButtonIndex;
    var results;
-   var mcScope;
-   var dataTextScope;
-   var CONTENT;
+   var selectedItems;
+   var selections;
    function WWW_PROPOSITION43_ORG()
    {
       super();
@@ -82,11 +82,14 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
          _loc2_ = _loc2_ + 1;
       }
       _loc2_ = 0;
+      var _loc5_;
+      var _loc4_;
+      var _loc3_;
       while(_loc2_ < this.selectedItems.length)
       {
-         var _loc5_ = "sel_" + this.selectedItems[_loc2_];
-         var _loc4_ = this.mcScope[this.selectedItems[_loc2_]];
-         var _loc3_ = this.mcScope.attachMovie("selected",_loc5_,this.mcScope.getNextHighestDepth());
+         _loc5_ = "sel_" + this.selectedItems[_loc2_];
+         _loc4_ = this.mcScope[this.selectedItems[_loc2_]];
+         _loc3_ = this.mcScope.attachMovie("selected",_loc5_,this.mcScope.getNextHighestDepth());
          _loc3_._x = _loc4_._x - 10;
          _loc3_._y = _loc4_._y - 10;
          this.selections.push(_loc3_);
@@ -111,9 +114,10 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
    function showResult()
    {
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.selectedItems.length)
       {
-         var _loc4_ = this.mcScope.attachMovie(this.selectedItems[_loc3_],"res_" + this.selectedItems[_loc3_],this.mcScope.getNextHighestDepth());
+         _loc4_ = this.mcScope.attachMovie(this.selectedItems[_loc3_],"res_" + this.selectedItems[_loc3_],this.mcScope.getNextHighestDepth());
          _loc4_._x = 161 * _loc3_ + 415;
          _loc4_._y = 228;
          _loc3_ = _loc3_ + 1;
@@ -130,9 +134,10 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
       var _loc10_ = 0;
       var _loc12_ = 0;
       _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.selectedItems.length)
       {
-         var _loc2_ = this.selectedItems[_loc3_];
+         _loc2_ = this.selectedItems[_loc3_];
          if(_loc2_ == "imageDad01" || _loc2_ == "imageDad02" || _loc2_ == "imageDad03")
          {
             _loc11_ = _loc11_ + 1;
@@ -191,6 +196,7 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
    {
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -198,7 +204,7 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                this.mcScope[_loc4_]._alpha = 1;
                _loc3_ = _loc3_ + 1;
@@ -211,7 +217,7 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
    {
       var _loc2_ = new Array();
       _loc2_ = AnchorLink.split("_");
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = _loc2_[0]) === "add")
       {
          this.selectItem(_loc2_[1]);
@@ -239,6 +245,8 @@ class com.rockstargames.gtav.web.WWW_PROPOSITION43_ORG extends com.rockstargames
             this.mcScope = this.CONTENT.RESULT;
             this.setupButtons();
             this.showResult();
+         default:
+            return;
       }
    }
 }

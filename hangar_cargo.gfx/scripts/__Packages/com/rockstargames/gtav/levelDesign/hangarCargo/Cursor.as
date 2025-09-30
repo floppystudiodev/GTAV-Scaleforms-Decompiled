@@ -1,26 +1,26 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
 {
-   var view;
-   var debugView;
-   var xMin;
-   var xMax;
-   var yMin;
-   var yMax;
    var _x;
-   var goalX;
    var _y;
+   var activeRect;
+   var changeListener;
+   var debugView;
+   var goalX;
    var goalY;
    var moveByTimestamp;
-   var state;
+   var rectPool;
+   var rects;
    var speed;
-   var changeListener;
+   var state;
    var tweenDuration;
    var tweenStartTimetamp;
    var tweenX0;
    var tweenY0;
-   var rects;
-   var activeRect;
-   var rectPool;
+   var view;
+   var xMax;
+   var xMin;
+   var yMax;
+   var yMin;
    static var DOWN = 187;
    static var UP = 188;
    static var LEFT = 189;
@@ -104,6 +104,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
       }
       this.goalX = Math.min(this.xMax,Math.max(this.xMin,x));
       this.goalY = Math.min(this.yMax,Math.max(this.yMin,y));
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc9_;
       if(instant !== false)
       {
          this.view._x = this._x = this.goalX;
@@ -112,14 +116,14 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
       }
       else
       {
-         var _loc3_ = this.goalX - this._x;
-         var _loc2_ = this.goalY - this._y;
-         var _loc4_ = Math.sqrt(_loc3_ * _loc3_ + _loc2_ * _loc2_);
+         _loc3_ = this.goalX - this._x;
+         _loc2_ = this.goalY - this._y;
+         _loc4_ = Math.sqrt(_loc3_ * _loc3_ + _loc2_ * _loc2_);
          this.tweenDuration = 15 * _loc4_ / this.speed;
          this.tweenStartTimetamp = getTimer();
          this.tweenX0 = this._x;
          this.tweenY0 = this._y;
-         var _loc9_ = this;
+         _loc9_ = this;
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this.view,0.03,{onCompleteScope:this,onComplete:this.updatePosition});
       }
    }
@@ -146,9 +150,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
       rects.sortOn("depth",Array.NUMERIC);
       var _loc3_ = 0;
       var _loc4_ = rects.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = rects[_loc3_];
+         _loc2_ = rects[_loc3_];
          this.addRect(_loc2_.left,_loc2_.right,_loc2_.top,_loc2_.bottom,_loc2_.depth,_loc2_.id);
          _loc3_ = _loc3_ + 1;
       }
@@ -168,9 +173,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    function updatePosition()
    {
       var _loc2_ = getTimer() - this.tweenStartTimetamp;
+      var _loc3_;
       if(_loc2_ < this.tweenDuration)
       {
-         var _loc3_ = Math.sin(_loc2_ / this.tweenDuration * 3.141592653589793 * 0.5);
+         _loc3_ = Math.sin(_loc2_ / this.tweenDuration * 3.141592653589793 * 0.5);
          this._x = (this.goalX - this.tweenX0) * _loc3_ + this.tweenX0;
          this._y = (this.goalY - this.tweenY0) * _loc3_ + this.tweenY0;
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(this.view,0.03,{onCompleteScope:this,onComplete:this.updatePosition});
@@ -187,9 +193,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    }
    function updateState()
    {
+      var _loc2_;
       if(this.state != com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.STATE_BUSY)
       {
-         var _loc2_ = this.getRectUnderPoint(this._x,this._y);
+         _loc2_ = this.getRectUnderPoint(this._x,this._y);
          this.setState(!_loc2_ ? com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.STATE_ARROW : com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.STATE_HAND);
       }
    }
@@ -225,13 +232,13 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    function setTarget(direction)
    {
       var _loc11_ = direction == com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.LEFT || direction == com.rockstargames.gtav.levelDesign.hangarCargo.Cursor.RIGHT;
-      var _loc6_ = undefined;
-      var _loc8_ = undefined;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
-      var _loc5_ = undefined;
+      var _loc6_;
+      var _loc8_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
       var _loc7_ = 1.7976931348623157e+308;
-      var _loc9_ = undefined;
+      var _loc9_;
       var _loc2_ = this.rects;
       while(_loc2_)
       {
@@ -292,8 +299,8 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    function decomposeRects()
    {
       var _loc2_ = this.rects;
-      var _loc3_ = undefined;
-      var _loc4_ = undefined;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_)
       {
          _loc3_ = _loc2_.next;
@@ -333,7 +340,7 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    }
    function insertRectAfter(rect, left, right, top, bottom)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.rects;
       while(_loc2_)
       {
@@ -392,9 +399,10 @@ class com.rockstargames.gtav.levelDesign.hangarCargo.Cursor
    }
    function resetRects()
    {
+      var _loc2_;
       if(this.rectPool)
       {
-         var _loc2_ = this.rectPool;
+         _loc2_ = this.rectPool;
          while(_loc2_)
          {
             if(!_loc2_.next)

@@ -1,22 +1,30 @@
 class com.rockstargames.gtav.cellphone.apps.EMAIL_LIST extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingList
 {
-   var unreadIcon;
+   var CONTENT;
+   var TextBlackHex;
+   var TextWhiteHex;
+   var additionalIcon;
+   var arrayStartPoint;
+   var container;
+   var currentStyle;
+   var dataProviderUI;
+   var defaultRowHeight;
+   var getRowAsPercentage;
+   var gfxFileName;
+   var gutterHeight;
+   var isLandscape;
+   var linkageID;
+   var numberOfVisibleRows;
+   var offWhiteRGB;
+   var offsetX;
+   var offsetY;
    var readIcon;
    var replyIcon;
-   var additionalIcon;
-   var CONTENT;
-   var dataProviderUI;
-   var linkageID;
-   var isLandscape;
-   var gfxFileName;
-   var scrollBar;
-   var container;
    var row;
-   var currentStyle;
+   var scrollBar;
+   var scrollerX;
+   var unreadIcon;
    var whiteRGB;
-   var TextWhiteHex;
-   var offWhiteRGB;
-   var TextBlackHex;
    function EMAIL_LIST()
    {
       super();
@@ -55,12 +63,19 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_LIST extends com.rockstargames
       var _loc4_ = 0;
       var _loc9_ = 0;
       var _loc11_ = "";
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
+      var _loc3_;
+      var _loc10_;
       if(this.numberOfVisibleRows > 0)
       {
-         var _loc5_ = 0;
+         _loc5_ = 0;
          while(_loc5_ < this.numberOfVisibleRows)
          {
-            var _loc2_ = "listItem" + this.row;
+            _loc2_ = "listItem" + this.row;
             if(_loc5_ + this.arrayStartPoint >= this.dataProviderUI.length)
             {
                _loc4_ = _loc9_;
@@ -70,10 +85,10 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_LIST extends com.rockstargames
             {
                _loc4_ = _loc5_ + this.arrayStartPoint;
             }
-            var _loc7_ = this.dataProviderUI[_loc4_][0];
-            var _loc6_ = this.dataProviderUI[_loc4_][1];
-            var _loc8_ = this.dataProviderUI[_loc4_][2];
-            var _loc3_ = this.dataProviderUI[_loc4_][3];
+            _loc7_ = this.dataProviderUI[_loc4_][0];
+            _loc6_ = this.dataProviderUI[_loc4_][1];
+            _loc8_ = this.dataProviderUI[_loc4_][2];
+            _loc3_ = this.dataProviderUI[_loc4_][3];
             if(_loc6_ == true)
             {
                this.container[_loc2_].attachmentIcon._visible = true;
@@ -94,7 +109,7 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_LIST extends com.rockstargames
             this.row = this.row + 1;
             _loc5_ = _loc5_ + 1;
          }
-         var _loc10_ = this.getRowAsPercentage(this.arrayStartPoint + 1);
+         _loc10_ = this.getRowAsPercentage(this.arrayStartPoint + 1);
          this.scrollBar.scrollToPercentage(_loc10_);
       }
       else

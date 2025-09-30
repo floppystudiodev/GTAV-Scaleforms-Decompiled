@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.PhotoGroup
 {
-   var view;
-   var photoLinkage;
-   var numCols;
    var colWidth;
-   var rowHeight;
-   var xOffset;
-   var yOffset;
+   var numCols;
+   var numPhotos;
+   var photoLinkage;
+   var randomR;
    var randomX;
    var randomY;
-   var randomR;
-   var numPhotos;
+   var rowHeight;
+   var view;
+   var xOffset;
+   var yOffset;
    static var MAX_TITLE_WIDTH = 100;
    function PhotoGroup(view, titleLabel, photoLinkage, numCols, colWidth, rowHeight, xOffset, yOffset, randomX, randomY, randomR)
    {
@@ -27,12 +27,14 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.PhotoGroup
       this.numPhotos = 0;
       view.title.label.autoSize = "left";
       com.rockstargames.gtav.levelDesign.CASINO_HEIST_BOARD_SETUP.setLocalisedText(view.title.label,titleLabel);
+      var _loc3_;
+      var _loc4_;
       if(view.title.label._width > com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.PhotoGroup.MAX_TITLE_WIDTH)
       {
-         var _loc3_ = view.title.label.getTextFormat();
+         _loc3_ = view.title.label.getTextFormat();
          _loc3_.align = "center";
          view.title.label.setTextFormat(_loc3_);
-         var _loc4_ = view.title.label._y + view.title.label._height;
+         _loc4_ = view.title.label._y + view.title.label._height;
          view.title.label._width = com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.PhotoGroup.MAX_TITLE_WIDTH;
          view.title.label.wordWrap = true;
          view.title.label.multiline = true;
@@ -45,12 +47,16 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardSetup.PhotoGroup
    {
       var _loc3_ = 0;
       var _loc7_ = frames.length;
+      var _loc4_;
+      var _loc2_;
+      var _loc6_;
+      var _loc5_;
       while(_loc3_ < _loc7_)
       {
-         var _loc4_ = this.view.getNextHighestDepth();
-         var _loc2_ = this.view.attachMovie(this.photoLinkage,"photo" + _loc4_,_loc4_);
-         var _loc6_ = this.numPhotos % this.numCols * this.colWidth + this.xOffset;
-         var _loc5_ = Math.floor(this.numPhotos / this.numCols) * this.rowHeight + this.yOffset;
+         _loc4_ = this.view.getNextHighestDepth();
+         _loc2_ = this.view.attachMovie(this.photoLinkage,"photo" + _loc4_,_loc4_);
+         _loc6_ = this.numPhotos % this.numCols * this.colWidth + this.xOffset;
+         _loc5_ = Math.floor(this.numPhotos / this.numCols) * this.rowHeight + this.yOffset;
          _loc6_ += Math.random() * 2 * this.randomX - this.randomX;
          _loc5_ += Math.random() * 2 * this.randomY - this.randomY;
          _loc2_.gotoAndStop(frames[_loc3_]);

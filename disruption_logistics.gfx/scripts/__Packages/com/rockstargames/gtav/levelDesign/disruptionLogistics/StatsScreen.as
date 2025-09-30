@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.disruptionLogistics.StatsScreen extends com.rockstargames.gtav.levelDesign.disruptionLogistics.Screen
 {
-   var view;
    var _buttons;
    var app;
+   var view;
    static var METER_BAR_ANIMATION_DURATION = 0.5;
    static var isFirstRun = true;
    function StatsScreen(app, viewContainer, cursor)

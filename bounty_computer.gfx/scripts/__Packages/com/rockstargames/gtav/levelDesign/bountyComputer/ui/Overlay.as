@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.bountyComputer.ui.Overlay
 {
-   var app;
-   var view;
-   var cursor;
    var acceptButton;
+   var app;
    var cancelButton;
+   var cursor;
+   var view;
    var CENTRE = 960;
    function Overlay(app, view, cursor)
    {
@@ -53,7 +53,7 @@ class com.rockstargames.gtav.levelDesign.bountyComputer.ui.Overlay
          this.view.cancelButton.label.text = rightButtonText;
       }
       this.view.cancelButton.background._width = this.view.cancelButton.label._width + 50;
-      var _loc3_ = undefined;
+      var _loc3_;
       if(showCancelButton)
       {
          _loc3_ = this.view.acceptButton._width + this.view.cancelButton._width + 25;

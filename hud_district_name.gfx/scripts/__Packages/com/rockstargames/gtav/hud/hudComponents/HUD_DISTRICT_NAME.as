@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_DISTRICT_NAME extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
    var CONTENT;
-   var _enumID;
    var _HUD;
+   var _enumID;
    var forceShow = false;
    function HUD_DISTRICT_NAME()
    {

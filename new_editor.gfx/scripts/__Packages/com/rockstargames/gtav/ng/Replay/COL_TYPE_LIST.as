@@ -1,30 +1,34 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.gtav.ng.Replay.ReplayBaseItem
 {
-   var myBtnType;
-   var MOUSE_EVT;
-   var myHeight;
-   var labelMC;
+   var APP_DATA;
    var ICONS;
-   var helpTop;
-   var hoverBg;
-   var colourBg;
+   var MOUSE_EVT;
+   var __get__data;
+   var _bgMcColour;
+   var _blackHudColour;
+   var _blueColour;
+   var _colourColour;
    var _colourState;
-   var _isSelected;
    var _hasItemBeenSetUpGrey;
    var _isBackgroundHidden;
-   var _blackHudColour;
-   var hudColourBlack;
-   var _whiteHudColour;
-   var hudColourWhite;
-   var _uncolouredColour;
-   var _redColour;
-   var _blueColour;
-   var APP_DATA;
-   var bgMC;
+   var _isSelected;
    var _itemIsHighlighted;
    var _labelColour;
-   var _bgMcColour;
-   var _colourColour;
+   var _name;
+   var _redColour;
+   var _uncolouredColour;
+   var _whiteHudColour;
+   var _xmouse;
+   var _ymouse;
+   var bgMC;
+   var colourBg;
+   var helpTop;
+   var hoverBg;
+   var hudColourBlack;
+   var hudColourWhite;
+   var labelMC;
+   var myBtnType;
+   var myHeight;
    var HUD_COLOUR_WHITE = 1;
    var HUD_COLOUR_BLACK = 2;
    var HUD_COLOUR_GREY = 3;
@@ -86,6 +90,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.g
       this.APP_DATA = _d[0];
       this.labelMC.titleTF._y = 1;
       this.labelMC.optionTF._y = 1;
+      var _loc4_;
       if(_d[2] != undefined)
       {
          if(this.APP_DATA.hasIcon)
@@ -112,7 +117,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.g
          }
          else
          {
-            var _loc4_ = this.labelMC.optionTF;
+            _loc4_ = this.labelMC.optionTF;
             this.shortenAndSetStr(_d[2],_loc4_,this.MAX_CHARS_OPTIONS,false);
             if(this.APP_DATA.hasOptions)
             {
@@ -253,6 +258,8 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.g
             break;
          case 2:
             this.colourThisToBlue();
+         default:
+            return;
       }
    }
    function shortenAndSetStr(str, tf, maxChars, isItemTitle)
@@ -261,7 +268,7 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.g
       {
          return undefined;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       if(isItemTitle)
       {
          if(str.length > maxChars)
@@ -328,13 +335,18 @@ class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST extends com.rockstargames.g
    function onPress()
    {
       var _loc2_ = -1;
+      var _loc3_;
+      var _loc7_;
+      var _loc4_;
+      var _loc5_;
+      var _loc6_;
       if(this._isSelected && this.APP_DATA.hasOptions == true)
       {
-         var _loc3_ = this._xmouse;
-         var _loc7_ = this._ymouse;
-         var _loc4_ = 20;
-         var _loc5_ = this.bgMC._width - _loc4_;
-         var _loc6_ = this.bgMC._width - _loc4_;
+         _loc3_ = this._xmouse;
+         _loc7_ = this._ymouse;
+         _loc4_ = 20;
+         _loc5_ = this.bgMC._width - _loc4_;
+         _loc6_ = this.bgMC._width - _loc4_;
          if(_loc3_ > _loc6_)
          {
             _loc2_ = 1;

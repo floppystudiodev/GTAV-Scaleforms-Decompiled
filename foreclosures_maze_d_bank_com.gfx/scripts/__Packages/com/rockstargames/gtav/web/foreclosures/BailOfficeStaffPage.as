@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.web.foreclosures.BailOfficeStaffPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
-   var prevPageName;
    var nextPageName;
-   var summaryPageName;
+   var prevPageName;
    var progressPanel;
-   var view;
    var slideshow;
+   var summaryPageName;
+   var view;
+   var website;
    static var TXD = "FORECLOSURES_BAIL";
    function BailOfficeStaffPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
@@ -61,7 +61,7 @@ class com.rockstargames.gtav.web.foreclosures.BailOfficeStaffPage extends com.ro
    function initOptionButtons()
    {
       var _loc3_ = this.website.getSelectedBailOffice();
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = this.view.staff1Button;
       _loc2_.onColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
       _loc2_.offColour = com.rockstargames.gtav.web.foreclosures.Page.BUTTON_COLOUR;
@@ -95,6 +95,8 @@ class com.rockstargames.gtav.web.foreclosures.BailOfficeStaffPage extends com.ro
             break;
          case "purchaseButton":
             this.website.browser.GO_TO_WEBPAGE(this.summaryPageName);
+         default:
+            return;
       }
    }
    function updateSelectedItem(selectionHasChanged)

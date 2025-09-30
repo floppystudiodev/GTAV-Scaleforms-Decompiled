@@ -11,12 +11,14 @@ class com.rockstargames.gtav.web.FORMAT_COLUMN
       }
       var _loc7_ = data.length;
       var _loc2_ = 1;
+      var _loc4_;
+      var _loc1_;
+      var _loc3_;
       while(_loc2_ < _loc7_)
       {
-         var _loc4_ = scope[data[_loc2_ - 1]];
-         var _loc1_ = scope[data[_loc2_]];
+         _loc4_ = scope[data[_loc2_ - 1]];
+         _loc1_ = scope[data[_loc2_]];
          _loc1_._y = _loc4_._y + _loc4_._height + padding;
-         var _loc3_ = undefined;
          if(_loc1_.header != undefined)
          {
             _loc3_ = _loc1_.header.text;

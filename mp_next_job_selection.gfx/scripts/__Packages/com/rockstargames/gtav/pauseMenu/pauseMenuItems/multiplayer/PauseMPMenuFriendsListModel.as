@@ -1,5 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListModel extends com.rockstargames.ui.components.GUIModel
 {
+   var viewIndex;
+   var viewList;
    function PauseMPMenuFriendsListModel()
    {
       super();

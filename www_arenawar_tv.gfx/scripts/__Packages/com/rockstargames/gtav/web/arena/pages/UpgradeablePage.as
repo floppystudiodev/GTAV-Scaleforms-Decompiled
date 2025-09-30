@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.web.arena.pages.UpgradeablePage extends com.rockstargames.gtav.web.arena.Page
 {
    var progressPanel;
-   var website;
    var view;
+   var website;
    static var NUM_COLS = 3;
    static var COL_OFFSET = 217;
    static var COL_WIDTH = 285;
@@ -29,7 +29,7 @@ class com.rockstargames.gtav.web.arena.pages.UpgradeablePage extends com.rocksta
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "vehicleButton")
       {
          this.website.selectedVehicleId = parseInt(id);
@@ -68,16 +68,20 @@ class com.rockstargames.gtav.web.arena.pages.UpgradeablePage extends com.rocksta
       }
       var _loc5_ = 0;
       var _loc4_ = 0;
+      var _loc2_;
+      var _loc6_;
+      var _loc8_;
+      var _loc7_;
       while(_loc5_ < this.website.vehicles.length)
       {
-         var _loc2_ = this.website.vehicles[_loc5_];
-         var _loc6_ = _loc2_.theme;
+         _loc2_ = this.website.vehicles[_loc5_];
+         _loc6_ = _loc2_.theme;
          if(_loc6_ == -1)
          {
             if(_loc2_.buyItNowPrice >= 0 || _loc2_.tradePrice >= 0)
             {
-               var _loc8_ = _loc4_ % com.rockstargames.gtav.web.arena.pages.UpgradeablePage.NUM_COLS * com.rockstargames.gtav.web.arena.pages.UpgradeablePage.COL_WIDTH;
-               var _loc7_ = Math.floor(_loc4_ / com.rockstargames.gtav.web.arena.pages.UpgradeablePage.NUM_COLS) * com.rockstargames.gtav.web.arena.pages.UpgradeablePage.ROW_HEIGHT + _loc9_;
+               _loc8_ = _loc4_ % com.rockstargames.gtav.web.arena.pages.UpgradeablePage.NUM_COLS * com.rockstargames.gtav.web.arena.pages.UpgradeablePage.COL_WIDTH;
+               _loc7_ = Math.floor(_loc4_ / com.rockstargames.gtav.web.arena.pages.UpgradeablePage.NUM_COLS) * com.rockstargames.gtav.web.arena.pages.UpgradeablePage.ROW_HEIGHT + _loc9_;
                this.initVehicleButton(_loc3_,_loc8_,_loc7_,_loc2_.id,_loc2_.nameLabel,_loc2_.thumbnailTexture,_loc2_.textureDictionary,_loc2_.buyItNowPrice,_loc2_.buyItNowSalePrice,_loc2_.buyItNowPriceAvailable,_loc2_.tradePrice,_loc2_.tradeSalePrice,_loc2_.tradePriceAvailable,_loc2_.numSeats,_loc2_.award);
                _loc4_ = _loc4_ + 1;
             }

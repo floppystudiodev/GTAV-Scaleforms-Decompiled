@@ -1,11 +1,11 @@
 class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core.BaseScriptUI
 {
    var canvasMC;
-   var screenRect;
-   var safeRect;
    var gridRect;
-   var subGridRect;
    var newsafeRect;
+   var safeRect;
+   var screenRect;
+   var subGridRect;
    static var instance = null;
    var canvasItems = new Array();
    var grids = new Array();
@@ -32,9 +32,10 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
       this.grids = [];
       var _loc5_ = 9;
       var _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < _loc5_)
       {
-         var _loc4_ = this.gridRect;
+         _loc4_ = this.gridRect;
          this.grids.push(this.gridRect);
          _loc3_ = _loc3_ + 1;
       }
@@ -93,11 +94,14 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
       var _loc8_ = this.gridRect.width * this.screenScale;
       var _loc7_ = this.gridRect.height * this.screenScale;
       var _loc2_ = 0;
+      var _loc9_;
+      var _loc3_;
+      var _loc4_;
       while(_loc2_ < this.grids.length)
       {
-         var _loc9_ = this.grids[_loc2_];
-         var _loc3_ = Math.floor(_loc2_ / 3);
-         var _loc4_ = Math.floor(_loc2_ % 3);
+         _loc9_ = this.grids[_loc2_];
+         _loc3_ = Math.floor(_loc2_ / 3);
+         _loc4_ = Math.floor(_loc2_ % 3);
          if(_loc3_ == 0)
          {
             _loc5_ = this.safeRect.top;
@@ -133,9 +137,10 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
    function drawGrid()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.grids.length)
       {
-         var _loc3_ = this.debugList[_loc2_];
+         _loc3_ = this.debugList[_loc2_];
          if(_loc3_ != null)
          {
             _loc3_.removeMovieClip();
@@ -179,12 +184,14 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
    }
    function rePositionCanvasItems()
    {
+      var _loc3_;
+      var _loc2_;
       if(this.canvasItems.length > 0)
       {
-         var _loc3_ = 0;
+         _loc3_ = 0;
          while(_loc3_ < this.canvasItems.length)
          {
-            var _loc2_ = this.canvasItems[_loc3_];
+            _loc2_ = this.canvasItems[_loc3_];
             if(_loc2_ != undefined)
             {
                if(this.scaleItems)
@@ -203,9 +210,10 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
       {
          _offset = new flash.geom.Point(0,0);
       }
+      var _loc2_;
       if(_mc != undefined)
       {
-         var _loc2_ = new com.rockstargames.ui.core.UICanvasItem();
+         _loc2_ = new com.rockstargames.ui.core.UICanvasItem();
          _loc2_.init(_mc,_gridItem,_anchor,_offset);
          this.canvasItems.push(_loc2_);
       }
@@ -213,9 +221,10 @@ class com.rockstargames.ui.core.UICanvasBounds extends com.rockstargames.ui.core
    function removeCanvasItem(_mc)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.canvasItems.length)
       {
-         var _loc3_ = this.canvasItems[_loc2_];
+         _loc3_ = this.canvasItems[_loc2_];
          if(_loc3_.mc == _mc)
          {
             this.canvasItems.splice(_loc2_,1);

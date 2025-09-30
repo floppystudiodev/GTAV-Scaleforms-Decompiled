@@ -13,7 +13,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoardItem ex
       var _loc2_ = _txd;
       if(typeof _loc2_ != "string")
       {
-         _loc2_ = undefined;
+         _loc2_;
       }
       var _loc3_ = _texture;
       var _loc13_ = 150;
@@ -21,7 +21,7 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoardItem ex
       var _loc12_ = 0;
       var _loc10_ = 0;
       var _loc9_ = false;
-      var _loc5_ = undefined;
+      var _loc5_;
       var _loc7_ = _loc3_.substr(0,8);
       if(_loc7_ == "MPHEIST_")
       {
@@ -32,6 +32,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoardItem ex
          _loc5_ = 0;
          _loc2_ = _loc3_;
       }
+      var _loc11_;
+      var _loc8_;
+      var _loc4_;
+      var _loc6_;
       if(_loc2_ != undefined && _loc2_ != "" && _loc2_ != null)
       {
          if(this.prevTxn != _loc3_)
@@ -48,11 +52,11 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoardItem ex
                this.imgLdr = com.rockstargames.ui.media.ImageLoaderMC(this.picMC.attachMovie("GenericImageLoader","imgLdr",this.picMC.getNextHighestDepth()));
             }
             this.imgLdr._alpha = 0;
-            var _loc11_ = "HEIST_MP";
+            _loc11_ = "HEIST_MP";
             this.imgLdr.init(_loc11_,_loc2_,_loc3_,_loc13_,_loc14_,_loc12_,_loc10_);
-            var _loc8_ = 5;
-            var _loc4_ = String(this.imgLdr).split(".");
-            var _loc6_ = _loc4_.slice(_loc4_.length - _loc8_).join(".");
+            _loc8_ = 5;
+            _loc4_ = String(this.imgLdr).split(".");
+            _loc6_ = _loc4_.slice(_loc4_.length - _loc8_).join(".");
             if(_loc5_ == 0)
             {
                this.imgLdr.addTxdRef(_loc6_,this.showImage,this);

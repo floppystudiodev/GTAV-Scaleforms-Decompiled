@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextListFullItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
-   var mInit;
-   var itemTextLeft;
-   var labelMC;
-   var itemTextRight;
-   var solidMC;
+   var __get__data;
+   var _highlighted;
    var bgMC;
    var gradMC;
-   var __get__data;
-   var type;
    var isSelectable;
-   var _highlighted;
+   var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var mInit;
+   var solidMC;
+   var type;
    function PauseMenuTextListFullItem()
    {
       super();
@@ -44,8 +44,8 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuText
    }
    function set highlighted(_h)
    {
-      var _loc3_ = undefined;
-      var _loc2_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(_h)
       {
          _loc3_ = com.rockstargames.gtav.constants.PauseMenuColoursLUT.WHITE;

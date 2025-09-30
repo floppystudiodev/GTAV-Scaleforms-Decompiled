@@ -1,7 +1,8 @@
 class com.rockstargames.gtav.web.WWW_THEBANKOFLIBERTY_COM extends com.rockstargames.gtav.web.BANKS_baseclass
 {
-   var defaultButtonOnColour;
+   var _name;
    var defaultButtonOffColour;
+   var defaultButtonOnColour;
    function WWW_THEBANKOFLIBERTY_COM()
    {
       super();

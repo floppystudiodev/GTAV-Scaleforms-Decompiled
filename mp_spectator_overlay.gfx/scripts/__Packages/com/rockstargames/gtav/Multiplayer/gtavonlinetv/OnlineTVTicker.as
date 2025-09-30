@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTicker extends MovieClip
 {
-   var ticks;
+   var bg;
    var container;
    var mask;
    var onEnterFrame;
-   var bg;
+   var ticks;
    var tickCount = 0;
    var speedDefault = 3;
    var speedCur = com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTicker.prototype.speedDefault;
@@ -49,13 +49,15 @@ class com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTicker extends Mov
    function updateDisplay()
    {
       this.container._x = Math.round(this.container._x - this.speedCur);
-      var _loc2_ = undefined;
+      var _loc2_;
       if(this.ticks.length == 0)
       {
          this.container._x = this.mask._width;
          this.onEnterFrame = undefined;
          return undefined;
       }
+      var _loc5_;
+      var _loc4_;
       if(this.container._x < - this.ticks[0]._x - this.ticks[0]._width)
       {
          _loc2_ = com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTick(this.ticks.shift());
@@ -65,9 +67,9 @@ class com.rockstargames.gtav.Multiplayer.gtavonlinetv.OnlineTVTicker extends Mov
             this.container._x = this.mask._width;
             return undefined;
          }
-         var _loc5_ = this.ticks[0]._x;
+         _loc5_ = this.ticks[0]._x;
          this.container._x += _loc5_;
-         var _loc4_ = 0;
+         _loc4_ = 0;
          while(_loc4_ < this.ticks.length)
          {
             _loc2_ = this.ticks[_loc4_];

@@ -1,11 +1,11 @@
 class com.rockstargames.ui.utils.MultiLoader
 {
-   var _scope;
-   var _gfxName;
    var _clips;
-   var _loaders;
    var _falseTotal;
+   var _gfxName;
    var _id;
+   var _loaders;
+   var _scope;
    var dispatchEvent;
    function MultiLoader(scope, gfxName)
    {
@@ -29,9 +29,10 @@ class com.rockstargames.ui.utils.MultiLoader
       var _loc2_ = 0;
       var _loc3_ = "";
       _loc2_ = 0;
+      var _loc4_;
       while(_loc2_ < this._clips.length)
       {
-         var _loc4_ = new Object();
+         _loc4_ = new Object();
          this._loaders[_loc2_] = new MovieClipLoader();
          for(_loc3_ in this._clips[_loc2_].handlers)
          {

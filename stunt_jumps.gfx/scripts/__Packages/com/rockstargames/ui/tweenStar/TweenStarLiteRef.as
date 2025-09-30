@@ -1,7 +1,7 @@
 class com.rockstargames.ui.tweenStar.TweenStarLiteRef
 {
-   var updateMC;
    var props;
+   var updateMC;
    var vars;
    function TweenStarLiteRef(_updateMC, _props, _vars)
    {

@@ -1,12 +1,16 @@
 class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST_VIEW extends com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW
 {
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var linkageID;
    var CONTENT;
-   var messageBody;
+   var TXDStr;
+   var TXD_HAS_LOADED;
    var content;
+   var dataProviderUI;
    var gfxFileName;
+   var linkageID;
+   var messageBody;
+   var messageStyle;
+   var prevTXDStr;
+   var scrollBarTimeout;
    function BOSS_JOB_LIST_VIEW()
    {
       super();
@@ -36,17 +40,24 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST_VIEW extends com.rocks
       }
       this.content.fromAddress.htmlText = "";
       this.content.fromAddressCond.htmlText = "";
+      var _loc4_;
+      var _loc6_;
+      var _loc8_;
+      var _loc11_;
+      var _loc10_;
+      var _loc9_;
+      var _loc7_;
       if(_loc2_ != undefined)
       {
-         var _loc4_ = _loc2_.indexOf("<C>");
-         var _loc6_ = _loc2_.indexOf("</C>");
-         var _loc8_ = _loc4_ != -1 && _loc6_ != -1;
+         _loc4_ = _loc2_.indexOf("<C>");
+         _loc6_ = _loc2_.indexOf("</C>");
+         _loc8_ = _loc4_ != -1 && _loc6_ != -1;
          if(_loc8_)
          {
-            var _loc11_ = _loc2_.substring(0,_loc4_);
-            var _loc10_ = _loc2_.substring(_loc4_ + 3,_loc6_);
-            var _loc9_ = _loc2_.substring(_loc6_ + 4);
-            var _loc7_ = _loc11_ + _loc10_ + _loc9_;
+            _loc11_ = _loc2_.substring(0,_loc4_);
+            _loc10_ = _loc2_.substring(_loc4_ + 3,_loc6_);
+            _loc9_ = _loc2_.substring(_loc6_ + 4);
+            _loc7_ = _loc11_ + _loc10_ + _loc9_;
             this.content.fromAddressCond.textAutoSize = "shrink";
             this.content.fromAddressCond.htmlText = _loc7_;
          }
@@ -77,9 +88,10 @@ class com.rockstargames.gtav.cellphone.apps.BOSS_JOB_LIST_VIEW extends com.rocks
          }
       }
       var _loc5_ = this.messageBody.indexOf("<img src=\'img://");
+      var _loc12_;
       if(_loc5_ != -1)
       {
-         var _loc12_ = this.messageBody.substr(_loc5_ + 16).indexOf("/");
+         _loc12_ = this.messageBody.substr(_loc5_ + 16).indexOf("/");
          this.TXDStr = this.messageBody.substr(_loc5_ + 16,_loc12_);
       }
       if(this.TXDStr != undefined && this.TXDStr != "" && this.prevTXDStr != this.TXDStr)

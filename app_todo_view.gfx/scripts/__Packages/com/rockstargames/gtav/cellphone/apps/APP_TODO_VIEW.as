@@ -1,18 +1,21 @@
 class com.rockstargames.gtav.cellphone.apps.APP_TODO_VIEW extends com.rockstargames.gtav.cellphone.apps.APP_ScrollingView
 {
-   var scrollBar;
-   var gutterHeight;
-   var scrollerX;
-   var TIMELINE;
    var CONTENT;
-   var dataProviderUI;
-   var scrollBarTimeout;
-   var gfxFileName;
-   var currentStyle;
-   var linkageID;
-   var content;
-   var greyRGB;
+   var TIMELINE;
    var container;
+   var content;
+   var contentOriginX;
+   var currentStyle;
+   var dataProviderUI;
+   var gfxFileName;
+   var greyRGB;
+   var gutterHeight;
+   var isLandscape;
+   var linkageID;
+   var needsScrollbars;
+   var scrollBar;
+   var scrollBarTimeout;
+   var scrollerX;
    var offsetY = 64;
    var offsetX = 0;
    var contentOriginY = 64;
@@ -54,7 +57,7 @@ class com.rockstargames.gtav.cellphone.apps.APP_TODO_VIEW extends com.rockstarga
    function populateContent()
    {
       this.dataProviderUI = _level0.TIMELINE.contactsDataProviderUI;
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.gfxFileName) !== "CELLPHONE_IFRUIT")
       {
          com.rockstargames.ui.utils.Colour.Colourise(this.content.icon,this.greyRGB[0],this.greyRGB[1],this.greyRGB[1],100);

@@ -1,33 +1,33 @@
 class com.rockstargames.gtav.web.WWW_ARENAWAR_TV extends com.rockstargames.ui.core.BaseWebsite
 {
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var videoDisabled;
-   var initialised;
-   var forceReinitialisation;
+   var CAN_STORE_PAGE;
+   var CONTENT;
    var PAGE_NAMES;
    var browser;
-   var isMP;
-   var displayConfig;
-   var imageManager;
-   var pageContainer;
-   var CONTENT;
-   var progressPanel;
-   var CAN_STORE_PAGE;
-   var vehicles;
-   var styleOption;
-   var graphicsOption;
    var colourOption;
+   var currPage;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var displayConfig;
    var expansionFloorB1Option;
    var expansionFloorB2Option;
+   var forceReinitialisation;
+   var graphicsOption;
+   var imageManager;
+   var initialPropertyIsOwned;
+   var initialised;
+   var isMP;
    var mechanicA;
    var mechanicB;
+   var pageContainer;
    var personalQuarters;
+   var progressPanel;
    var selectedVehicleId;
-   var currPage;
-   var dataTextScope;
-   var initialPropertyIsOwned;
-   var dataProviderUI;
+   var styleOption;
+   var vehicles;
+   var videoDisabled;
    static var PAGES = {SPLASH_PAGE:{name:"PAGE1",pageClass:com.rockstargames.gtav.web.arena.pages.SplashPage},UNDER_CONSTRUCTION_PAGE:{name:"UNDER_D_CONSTRUCTION",pageClass:com.rockstargames.gtav.web.arena.pages.UnderConstructionPage},WORKSHOP_STYLE_PAGE:{name:"OFFICE_D_STYLE",pageClass:com.rockstargames.gtav.web.arena.pages.WorkshopStylePage},WORKSHOP_GRAPHICS_PAGE:{name:"WORKSHOP_D_GRAPHICS",pageClass:com.rockstargames.gtav.web.arena.pages.WorkshopGraphicsPage},WORKSHOP_COLOUR_PAGE:{name:"WORKSHOP_D_COLOR",pageClass:com.rockstargames.gtav.web.arena.pages.WorkshopColourPage},EXPANSION_FLOOR_B1_PAGE:{name:"EXPANSION_D_FLOOR_D_B1",pageClass:com.rockstargames.gtav.web.arena.pages.ExpansionFloorB1Page},EXPANSION_FLOOR_B2_PAGE:{name:"EXPANSION_D_FLOOR_D_B2",pageClass:com.rockstargames.gtav.web.arena.pages.ExpansionFloorB2Page},MECHANIC_PAGE:{name:"MECHANIC",pageClass:com.rockstargames.gtav.web.arena.pages.MechanicPage},PERSONAL_QUARTERS_PAGE:{name:"PERSONAL_D_QUARTERS",pageClass:com.rockstargames
    .gtav.web.arena.pages.PersonalQuartersPage},SUMMARY_PAGE:{name:"SUMMARY",pageClass:com.rockstargames.gtav.web.arena.pages.SummaryPage},PROPERTY_PURCHASE_PROCESSING_PAGE:{name:"PURCHASE_D_PROCESSING",pageClass:com.rockstargames.gtav.web.arena.pages.PurchaseProcessingPage},PURCHASE_FAILED_PAGE:{name:"PURCHASE_D_FAILED",pageClass:com.rockstargames.gtav.web.arena.pages.PurchaseFailedPage},PROPERTY_PURCHASE_COMPLETE_PAGE:{name:"PROPERTY_D_PURCHASED",pageClass:com.rockstargames.gtav.web.arena.pages.PropertyPurchasedPage},VEHICLE_PURCHASE_COMPLETE_PAGE:{name:"VEHICLE_D_PURCHASED",pageClass:com.rockstargames.gtav.web.arena.pages.VehiclePurchasedPage},WAYPOINT_SET:{name:"WAYPOINT_D_SET",pageClass:com.rockstargames.gtav.web.arena.pages.WaypointSetPage},ARENA_READY_VEHICLES_PAGE:{name:"ARENA_D_READY_D_VEHICLES",pageClass:com.rockstargames.gtav.web.arena.pages.ArenaReadyPage},UPGRADEABLE_VEHICLES_PAGE:{name:"UPGRADEABLE_D_VEHICLES",pageClass:com.rockstargames.gtav.web.arena.pages.UpgradeablePage},VEHICLE_DETAILS_PAGE:{name:"VEHICLE_D_DETAILS",pageClass:com
    .rockstargames.gtav.web.arena.pages.VehicleDetailsPage},VEHICLE_PURCHASE_PROCESSING_PAGE:{name:"PURCHASE_D_PENDING",pageClass:com.rockstargames.gtav.web.arena.pages.PurchaseProcessingPage}};
@@ -104,10 +104,12 @@ class com.rockstargames.gtav.web.WWW_ARENAWAR_TV extends com.rockstargames.ui.co
       this.CAN_STORE_PAGE[11] = true;
       this.CAN_STORE_PAGE[18] = true;
       _loc5_ = 0;
+      var _loc3_;
+      var _loc4_;
       while(_loc5_ < this.vehicles.length)
       {
-         var _loc3_ = this.vehicles[_loc5_].id;
-         var _loc4_ = com.rockstargames.gtav.web.WWW_ARENAWAR_TV.VEHICLE_DETAILS_PAGE_PREFIX + _loc3_;
+         _loc3_ = this.vehicles[_loc5_].id;
+         _loc4_ = com.rockstargames.gtav.web.WWW_ARENAWAR_TV.VEHICLE_DETAILS_PAGE_PREFIX + _loc3_;
          this.PAGE_NAMES[_loc3_] = _loc4_;
          this.CAN_STORE_PAGE[_loc3_] = false;
          com.rockstargames.gtav.web.WWW_ARENAWAR_TV.PAGES[_loc4_] = {name:_loc4_,pageClass:com.rockstargames.gtav.web.arena.pages.VehicleDetailsPage};
@@ -126,7 +128,7 @@ class com.rockstargames.gtav.web.WWW_ARENAWAR_TV extends com.rockstargames.ui.co
    function initVehicles()
    {
       this.vehicles = [];
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = new com.rockstargames.gtav.web.arena.Vehicle();
       _loc2_.id = 21;
       _loc2_.nameLabel = "CERBERUS";
@@ -451,9 +453,10 @@ class com.rockstargames.gtav.web.WWW_ARENAWAR_TV extends com.rockstargames.ui.co
          award = -1;
       }
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < this.vehicles.length)
       {
-         var _loc2_ = this.vehicles[_loc3_];
+         _loc2_ = this.vehicles[_loc3_];
          if(_loc2_.id == id)
          {
             _loc2_.tradePrice = tradePrice;

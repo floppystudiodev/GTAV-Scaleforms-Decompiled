@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.web.foreclosures.SummaryPage extends com.rockstargames.gtav.web.foreclosures.Page
 {
-   var website;
    var prevPageName;
    var progressPanel;
    var slideshow;
    var view;
+   var website;
    function SummaryPage(website, viewContainer, pageName, isFirstPage, progressPanel, header)
    {
       super(website,viewContainer,"summaryPage",pageName,isFirstPage,progressPanel,header);
@@ -105,13 +105,16 @@ class com.rockstargames.gtav.web.foreclosures.SummaryPage extends com.rockstarga
       }
       _loc4_.push(_loc9_);
       _loc3_.push(undefined);
+      var _loc12_;
+      var _loc13_;
+      var _loc6_;
       if(this.website.hideSignage == 0)
       {
          _loc2_.push("FORECLOSURES_SIGNAGE");
          _loc4_.push("SIGNAGE_BG_" + _loc5_ + "_" + this.website.mural);
-         var _loc12_ = !this.website.fontsSupported ? "$Font2" : com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.FONTS[this.website.font];
-         var _loc13_ = "#" + com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.COLOURS[this.website.fontColour];
-         var _loc6_ = this.website.signage;
+         _loc12_ = !this.website.fontsSupported ? "$Font2" : com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.FONTS[this.website.font];
+         _loc13_ = "#" + com.rockstargames.gtav.levelDesign.CLUBHOUSE_NAME.COLOURS[this.website.fontColour];
+         _loc6_ = this.website.signage;
          if(_loc6_ == "")
          {
             _loc6_ = this.website.purchasedSignage;
@@ -148,7 +151,7 @@ class com.rockstargames.gtav.web.foreclosures.SummaryPage extends com.rockstarga
    function initSummary()
    {
       var _loc2_ = "";
-      var _loc3_ = undefined;
+      var _loc3_;
       if(this.website.signage != "")
       {
          _loc3_ = this.website.signage;
@@ -214,7 +217,7 @@ class com.rockstargames.gtav.web.foreclosures.SummaryPage extends com.rockstarga
    }
    function handleClick(type, id)
    {
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = type) === "purchaseButton")
       {
          this.website.dispatchPlayerSelections();

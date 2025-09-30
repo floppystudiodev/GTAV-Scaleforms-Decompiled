@@ -1,8 +1,10 @@
 class com.rockstargames.gtav.ng.Replay.Marker extends com.rockstargames.gtav.ng.Replay.PlaybackPanelButton
 {
-   var myBtnType;
-   var filterIndicator;
    var MOUSE_EVT;
+   var _name;
+   var _xmouse;
+   var filterIndicator;
+   var myBtnType;
    function Marker()
    {
       super();

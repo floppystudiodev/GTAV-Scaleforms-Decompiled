@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.fixerApp.screens.HomeScreen extends com.rockstargames.gtav.levelDesign.fixerApp.screens.Screen
 {
-   var view;
-   var dataObject;
+   var app;
    var buttons;
    var cursor;
-   var app;
+   var dataObject;
+   var view;
    static var TXD = "FIXER_APP_IMG";
    static var STATE_LOCKED = 0;
    static var STATE_AVAILABLE = 1;
@@ -80,11 +80,12 @@ class com.rockstargames.gtav.levelDesign.fixerApp.screens.HomeScreen extends com
    {
       this.view.highlight1._visible = activeTarget.id == com.rockstargames.gtav.levelDesign.fixerApp.ui.ButtonIDs.HOME_1;
       this.view.highlight2._visible = activeTarget.id == com.rockstargames.gtav.levelDesign.fixerApp.ui.ButtonIDs.HOME_2 && !this.dataObject.vipContractLocked;
+      var _loc2_;
       if(activeTarget.id == com.rockstargames.gtav.levelDesign.fixerApp.ui.ButtonIDs.HOME_2 && this.dataObject.lockedMessage != undefined)
       {
          this.view.lockedMessage.verticalAlign = "bottom";
          this.view.lockedMessage.text = this.dataObject.lockedMessage;
-         var _loc2_ = this.view.lockedMessage.getTextFormat();
+         _loc2_ = this.view.lockedMessage.getTextFormat();
          _loc2_.letterSpacing = 2;
          this.view.lockedMessage.setTextFormat(_loc2_);
       }

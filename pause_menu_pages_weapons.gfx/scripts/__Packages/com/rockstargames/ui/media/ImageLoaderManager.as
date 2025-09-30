@@ -21,15 +21,21 @@ class com.rockstargames.ui.media.ImageLoaderManager
    function filterBatch()
    {
       var _loc7_ = 0;
+      var _loc9_;
+      var _loc2_;
+      var _loc8_;
+      var _loc6_;
+      var _loc4_;
+      var _loc3_;
+      var _loc5_;
       while(_loc7_ < this.loaderList.length)
       {
-         var _loc9_ = this.loaderList[_loc7_];
-         var _loc2_ = _loc9_.textureDict;
+         _loc9_ = this.loaderList[_loc7_];
+         _loc2_ = _loc9_.textureDict;
          if(_loc2_ != "" && _loc2_ != undefined)
          {
-            var _loc8_ = false;
-            var _loc6_ = undefined;
-            var _loc4_ = 0;
+            _loc8_ = false;
+            _loc4_ = 0;
             while(_loc4_ < this.txdList.length)
             {
                _loc6_ = this.txdList[_loc4_];
@@ -44,10 +50,10 @@ class com.rockstargames.ui.media.ImageLoaderManager
             {
                this.txdList.push(_loc2_);
             }
-            var _loc3_ = 0;
+            _loc3_ = 0;
             while(_loc3_ < this.loaderList.length)
             {
-               var _loc5_ = this.loaderList[_loc3_];
+               _loc5_ = this.loaderList[_loc3_];
                if(_loc2_ == _loc5_.textureDict)
                {
                   if(this.batchList[_loc2_] == undefined)
@@ -82,9 +88,10 @@ class com.rockstargames.ui.media.ImageLoaderManager
    function processBatch(list)
    {
       var _loc2_ = 0;
+      var _loc1_;
       while(_loc2_ < list.length)
       {
-         var _loc1_ = list[_loc2_];
+         _loc1_ = list[_loc2_];
          switch(_loc1_.textureMethod)
          {
             case com.rockstargames.ui.media.ImageLoaderManager.GET_TXD:
@@ -117,9 +124,10 @@ class com.rockstargames.ui.media.ImageLoaderManager
    function flushBatchOn(i)
    {
       var _loc2_ = this.getBatch(i);
+      var _loc3_;
       if(_loc2_.length > 0)
       {
-         var _loc3_ = _loc2_[0];
+         _loc3_ = _loc2_[0];
          com.rockstargames.ui.utils.Debug.log("remove " + _loc3_.textureDict);
          _loc3_.deleteImage();
       }

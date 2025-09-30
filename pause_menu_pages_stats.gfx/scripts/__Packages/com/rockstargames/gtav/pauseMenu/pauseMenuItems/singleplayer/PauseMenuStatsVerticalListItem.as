@@ -1,16 +1,18 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStatsVerticalListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVerticalListItem
 {
-   var type;
-   var labelMC;
    var __get__data;
-   var itemTextLeft;
    var _data;
-   var initialIndex;
-   var itemTextRight;
    var _highlighted;
+   var bgMC;
+   var initialIndex;
+   var itemTextLeft;
+   var itemTextRight;
+   var labelMC;
+   var multiListIndex;
+   var multiListItems;
    var selectedIndex;
    var selectedValue;
-   var bgMC;
+   var type;
    function PauseMenuStatsVerticalListItem()
    {
       super();
@@ -18,7 +20,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuStat
    function set data(_d)
    {
       super.data = _d;
-      var _loc0_ = null;
+      var _loc0_;
       if((_loc0_ = this.type) !== 1)
       {
          this.labelMC.lMC._visible = _loc0_ = false;

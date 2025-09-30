@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.store.STORE_DETAILS_LIST extends com.rockstargames.gtav.store.EcommerceStoreBaseClass
 {
-   var data;
    var COLUMN;
-   var menuBgCol;
-   var blackCol;
-   var whiteCol;
-   var textTF;
-   var statusMC;
    var PriceItemMC;
    var PriceItemMCbgMC;
-   var blankImage;
    var bg;
+   var bgCol;
+   var blackCol;
+   var blankImage;
+   var data;
+   var menuBgCol;
    var scrollIndicator;
    var scrollIndicatorbgMC;
-   var bgCol;
+   var statusMC;
    var textCol;
+   var textTF;
+   var whiteCol;
    var scrollPos = 0;
    var currentSelection = 0;
    function STORE_DETAILS_LIST()
@@ -272,7 +272,7 @@ class com.rockstargames.gtav.store.STORE_DETAILS_LIST extends com.rockstargames.
    }
    function SET_FOCUS(isFocused)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(isFocused)
       {
          _loc2_ = 1;

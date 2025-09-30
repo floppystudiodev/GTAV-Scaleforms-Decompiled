@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment
 {
-   var view;
-   var radius;
-   var colour;
    var arcPoints;
-   var isHighlighted;
    var centreAngle;
+   var colour;
+   var isHighlighted;
+   var radius;
+   var view;
    static var DEG_2_RAD = 0.017453292519943295;
    static var RAD_2_DEG = 57.29577951308232;
    static var OCTANT = 0.7853981633974483;
@@ -27,8 +27,8 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment
    function highlight(isHighlighted)
    {
       this.isHighlighted = isHighlighted;
-      var _loc3_ = undefined;
-      var _loc2_ = undefined;
+      var _loc3_;
+      var _loc2_;
       if(isHighlighted)
       {
          _loc3_ = com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment.HIGHLIGHT_OFFSET * Math.cos(this.centreAngle);
@@ -94,16 +94,21 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment
       var _loc3_ = 0;
       this.arcPoints[0] = this.radius;
       this.arcPoints[1] = 0;
+      var _loc9_;
+      var _loc7_;
+      var _loc4_;
+      var _loc8_;
+      var _loc6_;
       while(_loc3_ < endAngle)
       {
          _loc3_ = _loc5_ * com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment.OCTANT;
          if(_loc3_ > endAngle)
          {
-            var _loc9_ = Math.cos(endAngle);
-            var _loc7_ = Math.sin(endAngle);
-            var _loc4_ = 0.5 * (_loc11_ + endAngle);
-            var _loc8_ = Math.cos(_loc4_);
-            var _loc6_ = Math.sin(_loc4_);
+            _loc9_ = Math.cos(endAngle);
+            _loc7_ = Math.sin(endAngle);
+            _loc4_ = 0.5 * (_loc11_ + endAngle);
+            _loc8_ = Math.cos(_loc4_);
+            _loc6_ = Math.sin(_loc4_);
             this.calculateArcEndSegment(this.arcPoints,this.radius,_loc9_,_loc7_,_loc8_,_loc6_);
          }
          else
@@ -116,15 +121,15 @@ class com.rockstargames.gtav.levelDesign.casinoHeistBoardFinale.PieChartSegment
    }
    function calculateArcEndSegment(points, r, cosAngle, sinAngle, cosTheta, sinTheta)
    {
-      var _loc9_ = undefined;
-      var _loc8_ = undefined;
-      var _loc2_ = undefined;
-      var _loc6_ = undefined;
-      var _loc7_ = undefined;
-      var _loc5_ = undefined;
-      var _loc12_ = undefined;
-      var _loc11_ = undefined;
-      var _loc4_ = undefined;
+      var _loc9_;
+      var _loc8_;
+      var _loc2_;
+      var _loc6_;
+      var _loc7_;
+      var _loc5_;
+      var _loc12_;
+      var _loc11_;
+      var _loc4_;
       var _loc3_ = points.length;
       _loc9_ = points[_loc3_ - 2];
       _loc8_ = points[_loc3_ - 1];

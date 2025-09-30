@@ -3,6 +3,7 @@ class com.rockstargames.gtav.web.buttons.WebButtonTextBox extends com.rockstarga
    var CARET;
    var browser;
    var btnTxt;
+   var buttonType;
    function WebButtonTextBox()
    {
       super();

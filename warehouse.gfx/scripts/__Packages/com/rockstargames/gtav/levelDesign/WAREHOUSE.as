@@ -1,22 +1,23 @@
 class com.rockstargames.gtav.levelDesign.WAREHOUSE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
    var activeUsers;
-   var displayConfig;
-   var imageManager;
-   var screenContainer;
-   var cursor;
-   var screen;
-   var gamerTag;
-   var organizationName;
-   var sellerRating;
-   var numSales;
-   var totalEarnings;
-   var buyerOrganizations;
    var buyerAmounts;
+   var buyerOrganizations;
+   var cursor;
+   var displayConfig;
+   var gamerTag;
+   var imageManager;
+   var numSales;
    var offerPrices;
+   var organizationName;
+   var screen;
+   var screenContainer;
+   var sellerRating;
+   var totalEarnings;
    static var DPAD_DOWN = 187;
    static var DPAD_UP = 188;
    static var DPAD_LEFT = 189;
@@ -106,13 +107,14 @@ class com.rockstargames.gtav.levelDesign.WAREHOUSE extends com.rockstargames.ui.
    }
    function SET_INPUT_EVENT(inputID)
    {
+      var _loc3_;
       switch(inputID)
       {
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.UP:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.RIGHT:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.DOWN:
          case com.rockstargames.gtav.levelDesign.securoserv.Cursor.LEFT:
-            var _loc3_ = this.cursor.setTarget(inputID);
+            _loc3_ = this.cursor.setTarget(inputID);
             if(_loc3_)
             {
                com.rockstargames.gtav.levelDesign.WAREHOUSE.playSound("Mouse_Move_Cursor");
@@ -174,17 +176,20 @@ class com.rockstargames.gtav.levelDesign.WAREHOUSE extends com.rockstargames.ui.
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

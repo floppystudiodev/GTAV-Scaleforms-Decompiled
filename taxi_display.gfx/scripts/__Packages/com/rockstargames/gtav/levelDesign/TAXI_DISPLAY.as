@@ -1,9 +1,9 @@
 class com.rockstargames.gtav.levelDesign.TAXI_DISPLAY extends com.rockstargames.ui.components.GUIController
 {
-   var pricePanel;
    var CONTENT;
    var destinationPanel;
    var model;
+   var pricePanel;
    var cashCharLimit = 4;
    function TAXI_DISPLAY()
    {

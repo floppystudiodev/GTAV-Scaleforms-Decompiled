@@ -1,7 +1,9 @@
 class com.rockstargames.gtav.ng.Replay.VIDEO_CLIP extends com.rockstargames.gtav.ng.Replay.ReplayBaseItemIMG
 {
-   var myBtnType;
    var MOUSE_EVT;
+   var _isMouseEnabled;
+   var _name;
+   var myBtnType;
    var SF_BASE_CLASS_MOUSE = 10;
    function VIDEO_CLIP()
    {

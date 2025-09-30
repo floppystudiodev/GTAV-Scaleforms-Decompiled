@@ -1,42 +1,78 @@
 class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.WEB_BROWSER_PARENT
 {
-   var currentlyLoaded;
-   var TIMELINE;
-   var CONTENT;
-   var multiplayer;
-   var buttonManager;
    var BOUNDING_BOX;
-   var CURSOR;
-   var SCROLLBAR;
-   var GUTTER;
-   var TOOLBAR;
-   var SCRUBBER;
-   var historyExpiredMessage;
-   var movieClipName;
-   var fullURL;
-   var objType;
-   var pageName;
-   var player;
-   var searchArgs;
-   var _currentSelectedButton;
-   var doesPageExist;
-   var currentWebsite;
-   var keyboardField;
-   var currentUID;
-   var loadingTimoutID;
-   var web_loader;
-   var userTextEntry;
-   var HIGHLIGHT;
-   var keyboardContainer;
-   var cursorInterval;
+   var BROWSER_KEYBOARD_SET;
    var BrowserKeyBoard;
-   var currentInterface;
+   var CONTENT;
+   var CURSOR;
+   var CanStoreThisPage;
+   var DebugTextContent;
+   var GUTTER;
+   var HIGHLIGHT;
+   var MOUSE_MODE;
+   var SCROLLBAR;
+   var SCRUBBER;
+   var TIMELINE;
+   var TOOLBAR;
+   var WEB_BROWSER_FILENAME;
+   var _currentSelectedButton;
    var _currentSelectedTarget;
+   var _currentSelection;
+   var _isGen9;
+   var _isWideScreen;
+   var analogSpeedDivisor;
+   var browserHistory;
+   var browserHistoryCanStore;
+   var browserHistoryIndex;
+   var browserHistorySearchArgs;
+   var browserHistoryStatus;
+   var buttonManager;
+   var buttonMaskMC;
+   var buttonState;
+   var contentX;
+   var contentY;
+   var currentInterface;
+   var currentUID;
+   var currentWebsite;
+   var currentlyLoaded;
+   var cursorInterval;
+   var cursorSpeedMultiplier;
+   var cursorState;
+   var defaultBrowserOffColour;
+   var defaultBrowserOnColour;
+   var doesPageExist;
+   var enterKeyConsumed;
+   var fullURL;
+   var historyExpiredMessage;
+   var isJapanese;
+   var isLastWebsite;
+   var keyboardContainer;
+   var keyboardField;
    var keyboardFieldOriginalColour;
-   var prevContentY;
+   var keyboardFocus;
+   var keyboardYposition;
+   var loadingTimoutID;
+   var loadingWebPage;
+   var movieClipName;
+   var multiplayer;
+   var nextID;
+   var objType;
    var oldMouseX;
    var oldMouseY;
-   var buttonMaskMC;
+   var pageHeight;
+   var pageName;
+   var player;
+   var prevContentY;
+   var removeMovieClip;
+   var resetScroll;
+   var resetToPrevContentY;
+   var safeFrameY;
+   var searchArgs;
+   var shutdown;
+   var suppressBackButton;
+   var userTextEntry;
+   var usingLeftAnalog;
+   var web_loader;
    function WEB_BROWSER()
    {
       super();
@@ -211,6 +247,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function GO_FORWARD()
    {
       this.REMOVE_LIST();
+      var _loc2_;
       if(this.keyboardFocus != "")
       {
          this.HIDE_KEYBOARD();
@@ -218,7 +255,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       else if(this.browserHistoryIndex < this.browserHistory.length - 1)
       {
          this.browserHistoryIndex = this.browserHistoryIndex + 1;
-         var _loc2_ = this.browserHistory[this.browserHistoryIndex];
+         _loc2_ = this.browserHistory[this.browserHistoryIndex];
          this.browserHistoryStatus = "old";
          if(this.browserHistoryCanStore[this.browserHistoryIndex] == true)
          {
@@ -239,6 +276,9 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function GO_BACK()
    {
       this.REMOVE_LIST();
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
       if(this.suppressBackButton != true)
       {
          if(this.keyboardFocus != "")
@@ -255,8 +295,8 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
          else if(this.browserHistoryIndex > 0)
          {
-            var _loc3_ = ["WWW_BAWSAQ_COM_S_STOCK_PORTFOLIO_EMPTY","WWW_LCN_D_EXCHANGE_COM_S_STOCK_PORTFOLIO_EMPTY","WWW_BAWSAQ_COM_S_ERROR","WWW_LCN_D_EXCHANGE_COM_S_ERROR","WWW_EPSILONPROGRAM_COM_S_TRANSACTION_D_FAILED"];
-            var _loc2_ = 0;
+            _loc3_ = ["WWW_BAWSAQ_COM_S_STOCK_PORTFOLIO_EMPTY","WWW_LCN_D_EXCHANGE_COM_S_STOCK_PORTFOLIO_EMPTY","WWW_BAWSAQ_COM_S_ERROR","WWW_LCN_D_EXCHANGE_COM_S_ERROR","WWW_EPSILONPROGRAM_COM_S_TRANSACTION_D_FAILED"];
+            _loc2_ = 0;
             while(_loc2_ < _loc3_.length)
             {
                if(this.browserHistory[this.browserHistoryIndex] == _loc3_[_loc2_])
@@ -267,7 +307,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                _loc2_ = _loc2_ + 1;
             }
             this.browserHistoryIndex = this.browserHistoryIndex - 1;
-            var _loc4_ = this.browserHistory[this.browserHistoryIndex];
+            _loc4_ = this.browserHistory[this.browserHistoryIndex];
             this.browserHistoryStatus = "old";
             if(this.browserHistoryCanStore[this.browserHistoryIndex] == true)
             {
@@ -325,11 +365,12 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function buttonActionSetBrowserList(buttonIndex)
    {
+      var _loc2_;
       if(this.objType == 15)
       {
          this.browserHistoryIndex = buttonIndex;
          this.REMOVE_LIST();
-         var _loc2_ = this.browserHistory[this.browserHistoryIndex];
+         _loc2_ = this.browserHistory[this.browserHistoryIndex];
          this.browserHistoryStatus = "old";
          if(this.browserHistoryIndex > 0)
          {
@@ -371,12 +412,13 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       this.setScrollBarVisibility(false);
       this.CLEAR_HIGHLIGHTS();
       this.CONTENT.expired._visible = false;
-      var _loc4_ = undefined;
+      var _loc4_;
       var _loc5_ = false;
+      var _loc2_;
       if(this.player == 1)
       {
          _loc4_ = ["WWW_BLEETER_BIZ","WWW_FLEECA_COM","WWW_HUSHSMUSH_COM","WWW_IWILLSURVIVEITALL_COM","WWW_LCN_D_EXCHANGE_COM","WWW_THEBANKOFLIBERTY_COM","WWW_THEREALITYMILL_COM"];
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < _loc4_.length)
          {
             if(_loc4_[_loc2_] == websiteString)
@@ -394,6 +436,9 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             _loc5_ = true;
          }
       }
+      var _loc8_;
+      var _loc6_;
+      var _loc7_;
       if(websiteString != undefined && websiteString != "" && _loc5_ == false)
       {
          if(this.browserHistorySearchArgs[this.browserHistoryIndex] != undefined)
@@ -402,10 +447,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
          if(!this.URL_HAS_SUBDOMAIN(websiteString))
          {
-            var _loc8_ = this.movieClipName + "_S_" + websiteString;
+            _loc8_ = this.movieClipName + "_S_" + websiteString;
             websiteString = _loc8_;
          }
-         var _loc6_ = websiteString.split("_S_",2);
+         _loc6_ = websiteString.split("_S_",2);
          this.movieClipName = _loc6_[0];
          this.pageName = _loc6_[1];
          if(this.pageName == undefined)
@@ -427,7 +472,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             }
             this.resetScroll = true;
             this.CURSOR.CursorMove(0,0);
-            var _loc7_ = this.nextID++;
+            _loc7_ = this.nextID++;
             com.rockstargames.gtav.web.WEB_BROWSER_PARENT.streamResponseHash["RH" + _loc7_] = this.movieClipName;
             this.SET_CURRENT_SELECTION(-1);
             this.REQUEST_STREAM(_loc7_,this.movieClipName);
@@ -522,9 +567,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function updateAddressBarText(url)
    {
       var _loc2_ = url;
+      var _loc3_;
       if(this.browserHistorySearchArgs[this.browserHistoryIndex] != undefined && this.browserHistorySearchArgs[this.browserHistoryIndex] != "")
       {
-         var _loc3_ = this.browserHistorySearchArgs[this.browserHistoryIndex].split("&");
+         _loc3_ = this.browserHistorySearchArgs[this.browserHistoryIndex].split("&");
          _loc2_ += "+" + _loc3_[0];
       }
       if(this.keyboardFocus != "address_box")
@@ -549,9 +595,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       this.hitTestButtons(0,0);
       this.hitTestButtons(this.CURSOR._x,this.CURSOR._y);
       this.resetScroll = this.TIMELINE[this.movieClipName].TIMELINE.resetScroll;
+      var _loc2_;
       if(this.TIMELINE[this.movieClipName].CONTENT._y < 0)
       {
-         var _loc2_ = this.TIMELINE[this.movieClipName].CONTENT._y + this.TIMELINE[this.movieClipName].CONTENT.BOUNDING_BOX._height;
+         _loc2_ = this.TIMELINE[this.movieClipName].CONTENT._y + this.TIMELINE[this.movieClipName].CONTENT.BOUNDING_BOX._height;
          if(this.resetScroll == true)
          {
             if(_loc2_ < 627)
@@ -711,9 +758,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(this.keyboardContainer);
       }
       this.HIDE_KEYBOARD();
+      var _loc2_;
       if(this.loadingWebPage == true)
       {
-         var _loc2_ = 300;
+         _loc2_ = 300;
          while(this.loadingWebPage == true)
          {
             _loc2_ = _loc2_ - 1;
@@ -871,7 +919,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       {
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.keyboardContainer,0.25,{_y:this.keyboardYposition,ease:com.rockstargames.ui.tweenStar.Ease.SINE_OUT,onComplete:this.remove_tween,onCompleteScope:this,onCompleteArgs:[this.keyboardContainer]});
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       if(this.keyboardFocus == "address_box")
       {
          this.keyboardField = this.TOOLBAR.address_box.addressText;
@@ -894,10 +942,12 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          this.keyboardField.textColor = 0;
       }
       this.prevContentY = this.TIMELINE[this.movieClipName].CONTENT._y;
+      var _loc4_;
+      var _loc7_;
       if(_loc3_ > this.keyboardYposition - this.safeFrameY)
       {
-         var _loc4_ = this.keyboardYposition - _loc3_ - (this.safeFrameY + 26);
-         var _loc7_ = this.TIMELINE[this.movieClipName].CONTENT._y + _loc4_;
+         _loc4_ = this.keyboardYposition - _loc3_ - (this.safeFrameY + 26);
+         _loc7_ = this.TIMELINE[this.movieClipName].CONTENT._y + _loc4_;
          this.setScrollBarVisibility(false);
          if(this.TIMELINE[this.movieClipName].CONTENT != undefined)
          {
@@ -943,9 +993,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function SET_PC_KEY(_key)
    {
+      var _loc2_;
       if(this.keyboardFocus != "")
       {
-         var _loc2_ = this.BrowserKeyBoard.set_pc_key(_key.toUpperCase());
+         _loc2_ = this.BrowserKeyBoard.set_pc_key(_key.toUpperCase());
       }
       if(_loc2_)
       {
@@ -954,9 +1005,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function ENTER_BROWSER_TEXT(_key)
    {
+      var _loc2_;
       if(this.keyboardFocus != "")
       {
-         var _loc2_ = this.BrowserKeyBoard.set_pc_key(_key.toUpperCase());
+         _loc2_ = this.BrowserKeyBoard.set_pc_key(_key.toUpperCase());
       }
       if(_loc2_)
       {
@@ -965,7 +1017,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function ENTER_TEXT(inputString, doNotEcho)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(inputString != undefined)
       {
          switch(inputString)
@@ -988,7 +1040,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                   if(this.userTextEntry == "")
                   {
                      this.HIDE_KEYBOARD();
-                     break;
+                     return;
                   }
                   _loc2_ = this.currentWebsite._name + "_S_SEARCH";
                   this.enterKeyConsumed = true;
@@ -1008,11 +1060,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                if(_loc2_.length > 0)
                {
                   this.GO_TO_WEBPAGE(_loc2_);
+                  return;
                }
-               else
-               {
-                  this.HIDE_KEYBOARD();
-               }
+               this.HIDE_KEYBOARD();
+               return;
                break;
             case "BACKSPACE":
                if(this.keyboardField.text.length > 0)
@@ -1024,7 +1075,9 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                {
                   com.rockstargames.ui.game.GameInterface.call("BROWSER_TEXT_ENTERED",com.rockstargames.ui.game.GameInterface.WEB_TYPE,inputString);
                   com.rockstargames.ui.game.GameInterface.call("SMARTGLASS_ENTER_TEXT",com.rockstargames.ui.game.GameInterface.WEB_TYPE,this.keyboardField.text);
+                  return;
                }
+               return;
                break;
             default:
                if(this._currentSelectedTarget.numberBox && isNaN(Number(inputString)))
@@ -1048,16 +1101,18 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                {
                   com.rockstargames.ui.game.GameInterface.call("BROWSER_TEXT_ENTERED",com.rockstargames.ui.game.GameInterface.WEB_TYPE,inputString);
                   com.rockstargames.ui.game.GameInterface.call("SMARTGLASS_ENTER_TEXT",com.rockstargames.ui.game.GameInterface.WEB_TYPE,this.keyboardField.text);
+                  return;
                }
-               break;
+               return;
          }
       }
    }
    function ALIGN_TEXTFIELD(targetTextfield)
    {
+      var _loc3_;
       if(targetTextfield.textWidth > targetTextfield._width - 8)
       {
-         var _loc3_ = targetTextfield.text;
+         _loc3_ = targetTextfield.text;
          targetTextfield.text += " ";
          targetTextfield.hscroll = targetTextfield.maxhscroll;
          targetTextfield.text = _loc3_;
@@ -1073,40 +1128,49 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function MAKE_LIST(listArray)
    {
+      var _loc7_;
+      var _loc13_;
+      var _loc11_;
+      var _loc14_;
+      var _loc4_;
+      var _loc16_;
+      var _loc15_;
+      var _loc3_;
+      var _loc2_;
+      var _loc8_;
+      var _loc5_;
+      var _loc9_;
       if(listArray.length > 0)
       {
          if(this.TOOLBAR.listContainer != undefined)
          {
             this.TOOLBAR.listContainer.removeMovieClip();
          }
-         var _loc7_ = this.TOOLBAR.createEmptyMovieClip("listContainer",56);
-         var _loc13_ = undefined;
-         var _loc11_ = undefined;
-         var _loc14_ = 25;
+         _loc7_ = this.TOOLBAR.createEmptyMovieClip("listContainer",56);
+         _loc14_ = 25;
          _loc13_ = this.TOOLBAR.button_history._x;
          _loc11_ = this.TOOLBAR.button_history._y + 32;
          _loc7_._name = "listContainer";
          this.buttonManager.clearBrowserList();
-         var _loc4_ = undefined;
-         var _loc16_ = _loc7_.attachMovie("shadowMC","shadowMC",_loc7_.getNextHighestDepth(),{_alpha:0,_x:_loc13_,_y:_loc11_});
-         var _loc15_ = _loc7_.attachMovie("generic_square","outline",_loc7_.getNextHighestDepth(),{_alpha:0,_x:_loc13_,_y:_loc11_});
-         var _loc3_ = 0;
+         _loc16_ = _loc7_.attachMovie("shadowMC","shadowMC",_loc7_.getNextHighestDepth(),{_alpha:0,_x:_loc13_,_y:_loc11_});
+         _loc15_ = _loc7_.attachMovie("generic_square","outline",_loc7_.getNextHighestDepth(),{_alpha:0,_x:_loc13_,_y:_loc11_});
+         _loc3_ = 0;
          while(_loc3_ < listArray.length)
          {
-            var _loc2_ = listArray.length - 1 - _loc3_;
+            _loc2_ = listArray.length - 1 - _loc3_;
             if(listArray[_loc2_] != undefined)
             {
                _loc4_ = _loc7_.attachMovie("btn_list","BROWSER_LIST_ITEM_" + _loc3_,_loc7_.getNextHighestDepth(),{_x:_loc13_,_y:_loc14_ * _loc3_ + _loc11_});
                _loc4_.highlight._alpha = 0;
-               var _loc8_ = com.rockstargames.gtav.web.buttons.WebBrowserListItem(_loc4_);
-               var _loc5_ = listArray[_loc2_];
+               _loc8_ = com.rockstargames.gtav.web.buttons.WebBrowserListItem(_loc4_);
+               _loc5_ = listArray[_loc2_];
                if(this.browserHistoryCanStore[_loc2_] == false)
                {
                   _loc5_ += " " + this.historyExpiredMessage;
                }
                else if(this.browserHistorySearchArgs[_loc2_] != undefined)
                {
-                  var _loc9_ = this.browserHistorySearchArgs[_loc2_].split("&");
+                  _loc9_ = this.browserHistorySearchArgs[_loc2_].split("&");
                   _loc5_ += "+" + _loc9_[0];
                }
                _loc8_.initButton(this.PARSE_FILENAME_TO_TEXT(_loc5_),_loc2_);
@@ -1231,22 +1295,18 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             if(this.enterKeyConsumed)
             {
                this.enterKeyConsumed = false;
+               break;
             }
-            else
-            {
-               this.SET_INPUT_SELECT();
-            }
+            this.SET_INPUT_SELECT();
             break;
          case 1001:
             this.MOUSE_MODE = true;
             if(this.enterKeyConsumed)
             {
                this.enterKeyConsumed = false;
+               break;
             }
-            else
-            {
-               this.SET_INPUT_SELECT(true);
-            }
+            this.SET_INPUT_SELECT(true);
       }
       if(this.keyboardFocus == "")
       {
@@ -1277,6 +1337,8 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             {
                this.currentWebsite.handleMouseRelease();
             }
+         default:
+            return;
       }
    }
    function SET_INPUT_SELECT(inputIsMouseClick)
@@ -1363,11 +1425,11 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       {
          _loc25_ = _loc25_.concat(this.buttonManager.toolbarMCList);
       }
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc9_ = this.CURSOR._x;
       var _loc8_ = this.CURSOR._y - this.safeFrameY;
-      var _loc7_ = undefined;
-      var _loc5_ = undefined;
+      var _loc7_;
+      var _loc5_;
       var _loc26_ = [];
       if(direction == 10 || direction == 11)
       {
@@ -1378,13 +1440,26 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
       }
       var _loc18_ = 0;
+      var _loc12_;
+      var _loc14_;
+      var _loc15_;
+      var _loc10_;
+      var _loc17_;
+      var _loc21_;
+      var _loc27_;
+      var _loc3_;
+      var _loc28_;
+      var _loc13_;
+      var _loc16_;
+      var _loc11_;
+      var _loc4_;
       while(_loc18_ < _loc25_.length)
       {
          _loc2_ = _loc25_[_loc18_];
-         var _loc12_ = _loc2_._width;
-         var _loc14_ = _loc2_._height;
-         var _loc15_ = _loc12_ / 2;
-         var _loc10_ = _loc14_ / 2;
+         _loc12_ = _loc2_._width;
+         _loc14_ = _loc2_._height;
+         _loc15_ = _loc12_ / 2;
+         _loc10_ = _loc14_ / 2;
          if(_loc2_._parent == this.TOOLBAR)
          {
             _loc7_ = _loc2_._x;
@@ -1392,8 +1467,8 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
          else
          {
-            var _loc17_ = this.getMinBounds(_loc2_);
-            var _loc21_ = this.getMaxBounds(_loc2_);
+            _loc17_ = this.getMinBounds(_loc2_);
+            _loc21_ = this.getMaxBounds(_loc2_);
             _loc7_ = _loc17_.x;
             _loc5_ = _loc17_.y - this.safeFrameY;
             _loc12_ = _loc21_.x - _loc17_.x;
@@ -1401,7 +1476,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             _loc15_ = _loc12_ / 2;
             _loc10_ = _loc14_ / 2;
          }
-         var _loc27_ = false;
+         _loc27_ = false;
          if(this.buttonMaskMC != undefined)
          {
             if(_loc2_._parent != this.TOOLBAR.listContainer && _loc2_.getDepth() >= 0)
@@ -1414,13 +1489,13 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
          if(_loc2_ != this._currentSelectedTarget && _loc2_.disabled == false && _loc2_._alpha != 0 && _loc5_ > 0)
          {
-            var _loc3_ = [];
+            _loc3_ = [];
             _loc3_.push({DISTANCE:this.getDistance(_loc9_,_loc8_,_loc7_ + _loc15_,_loc5_ + _loc10_),BX:_loc7_ + _loc15_,BY:_loc5_ + _loc10_});
             if(direction == 8 || direction == 9)
             {
                if(_loc9_ > _loc7_ && _loc9_ < _loc7_ + _loc12_)
                {
-                  var _loc28_ = this.getDistance(_loc9_,_loc8_,_loc9_,_loc5_ + _loc10_);
+                  _loc28_ = this.getDistance(_loc9_,_loc8_,_loc9_,_loc5_ + _loc10_);
                   _loc3_ = [];
                   _loc3_.push({DISTANCE:_loc28_,BX:_loc9_,BY:_loc5_ + _loc10_});
                }
@@ -1435,14 +1510,14 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
                }
             }
             _loc3_.sortOn("DISTANCE",Array.NUMERIC);
-            var _loc13_ = Math.round(this.getDistance(_loc9_,_loc8_,_loc3_[0].BX,_loc3_[0].BY));
-            var _loc16_ = this.getRelativeAngle(_loc9_,_loc8_,_loc3_[0].BX,_loc3_[0].BY,direction);
-            var _loc11_ = 20;
+            _loc13_ = Math.round(this.getDistance(_loc9_,_loc8_,_loc3_[0].BX,_loc3_[0].BY));
+            _loc16_ = this.getRelativeAngle(_loc9_,_loc8_,_loc3_[0].BX,_loc3_[0].BY,direction);
+            _loc11_ = 20;
             while(_loc11_ < 65)
             {
                if(_loc16_ < _loc11_)
                {
-                  var _loc4_ = false;
+                  _loc4_ = false;
                   if(_loc13_ < 25 && this._currentSelectedTarget.buttonType == 15)
                   {
                      if(_loc2_.buttonType != 15)
@@ -1489,21 +1564,24 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          _loc18_ = _loc18_ + 1;
       }
       _loc25_ = [];
-      _loc2_ = undefined;
+      _loc2_;
       _loc26_.sortOn("DISTANCE",Array.NUMERIC);
       _loc2_ = _loc26_[0].BUTTON;
       _loc7_ = _loc26_[0].BX;
       _loc5_ = _loc26_[0].BY;
       var _loc30_ = _loc26_[0].DISTANCE;
+      var _loc29_;
+      var _loc32_;
+      var _loc31_;
       if(_loc2_ != undefined)
       {
-         var _loc29_ = _loc30_ / 627;
+         _loc29_ = _loc30_ / 627;
          if(_loc29_ > 0.75)
          {
             _loc29_ = 0.75;
          }
-         var _loc32_ = _loc7_;
-         var _loc31_ = _loc5_ + this.safeFrameY;
+         _loc32_ = _loc7_;
+         _loc31_ = _loc5_ + this.safeFrameY;
          com.rockstargames.ui.tweenStar.TweenStarLite.to(this.CURSOR,_loc29_,{_x:_loc32_,_y:_loc31_,ease:com.rockstargames.ui.tweenStar.Ease.SINE_OUT,onComplete:this.endCursorSnap,onCompleteScope:this,onCompleteArgs:[_loc2_]});
       }
       _loc25_ = [];
@@ -1567,8 +1645,8 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function getRelativeAngle(x1, y1, x2, y2, dir)
    {
       var _loc3_ = this.getAngle(x1,y1,x2,y2);
-      var _loc4_ = undefined;
-      var _loc2_ = undefined;
+      var _loc4_;
+      var _loc2_;
       switch(dir)
       {
          case 8:
@@ -1581,11 +1659,9 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
             if(_loc3_ <= 90)
             {
                _loc2_ = 0;
+               break;
             }
-            else
-            {
-               _loc2_ = 360;
-            }
+            _loc2_ = 360;
             break;
          case 10:
             _loc2_ = 90;
@@ -1630,10 +1706,11 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function hitTestKeyboardButtons(x, y)
    {
       var _loc3_ = false;
+      var _loc4_;
+      var _loc2_;
       if(this.keyboardContainer != undefined)
       {
-         var _loc4_ = undefined;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.BrowserKeyBoard.keysArray.length)
          {
             _loc4_ = this.BrowserKeyBoard.container[this.BrowserKeyBoard.keysArray[_loc2_]];
@@ -1654,7 +1731,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function checkButtonsTest(buttonlist, x, y)
    {
       var _loc5_ = false;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = 0;
       while(_loc3_ < buttonlist.length)
       {
@@ -1683,7 +1760,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          }
       }
       var _loc4_ = false;
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = 0;
       while(_loc3_ < buttonlist.length)
       {
@@ -1737,13 +1814,14 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function setButtonsInitialState()
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       var _loc3_ = 0;
       _loc3_ = 0;
+      var _loc4_;
       while(_loc3_ < this.buttonManager.buttonMCList.length)
       {
          _loc2_ = this.buttonManager.buttonMCList[_loc3_];
-         var _loc4_ = _loc2_.buttonType;
+         _loc4_ = _loc2_.buttonType;
          this.getTextLinkOffColour(_loc2_);
          _loc2_.btnTxt.textColor = this.getTextLinkOffColour(_loc2_);
          _loc3_ = _loc3_ + 1;
@@ -1784,11 +1862,13 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function setButtonState(target, state)
    {
+      var _loc3_;
+      var _loc5_;
+      var _loc4_;
       if(target != undefined)
       {
-         var _loc3_ = undefined;
-         var _loc5_ = com.rockstargames.gtav.web.buttons.WebButton(target);
-         var _loc4_ = _loc5_.buttonType;
+         _loc5_ = com.rockstargames.gtav.web.buttons.WebButton(target);
+         _loc4_ = _loc5_.buttonType;
          switch(state)
          {
             case true:
@@ -1817,7 +1897,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function getTextLinkOnColour(target)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = target.onColour;
       if(_loc2_ == undefined)
       {
@@ -1834,7 +1914,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function getTextLinkOffColour(target)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       _loc2_ = target.offColour;
       if(_loc2_ == undefined)
       {
@@ -2078,12 +2158,14 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
       _loc8_.globalToLocal(_loc5_);
       var _loc4_ = 0;
       var _loc6_ = _loc7_.length;
+      var _loc3_;
+      var _loc2_;
       while(_loc4_ < _loc6_)
       {
-         var _loc3_ = _loc7_[_loc4_];
+         _loc3_ = _loc7_[_loc4_];
          if(!_loc3_.disabled && _loc3_._alpha > 0)
          {
-            var _loc2_ = _loc3_.getBounds(_loc8_);
+            _loc2_ = _loc3_.getBounds(_loc8_);
             if(_loc5_.x > _loc2_.xMin && _loc5_.x < _loc2_.xMax && _loc5_.y > _loc2_.yMin && _loc5_.y < _loc2_.yMax)
             {
                return _loc3_.slot;
@@ -2104,13 +2186,18 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function CREATE_HIGHLIGHT(targetSlot, colR, colG, colB, colA)
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc7_;
+      var _loc8_;
+      var _loc10_;
       if(this.TIMELINE[this.movieClipName].CONTENT.HIGHLIGHT == undefined)
       {
          this.HIGHLIGHT = this.TIMELINE[this.movieClipName].CONTENT.createEmptyMovieClip("HIGHLIGHT",this.TIMELINE[this.movieClipName].CONTENT.getNextHighestDepth());
-         var _loc3_ = 0;
-         var _loc2_ = 0;
-         var _loc7_ = 1280;
-         var _loc8_ = this.TIMELINE[this.movieClipName].CONTENT._height;
+         _loc3_ = 0;
+         _loc2_ = 0;
+         _loc7_ = 1280;
+         _loc8_ = this.TIMELINE[this.movieClipName].CONTENT._height;
          if(colR == undefined && colG == undefined && colB == undefined)
          {
             colR = 255;
@@ -2121,7 +2208,7 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
          {
             colA = 80;
          }
-         var _loc10_ = com.rockstargames.ui.utils.Colour.RGBToHex(colR,colG,colB);
+         _loc10_ = com.rockstargames.ui.utils.Colour.RGBToHex(colR,colG,colB);
          if(this.TOOLBAR.toolbarWhiteOutMC != undefined)
          {
             com.rockstargames.ui.utils.Colour.Colourise(this.TOOLBAR.toolbarWhiteOutMC,colR,colG,colB,0);
@@ -2153,11 +2240,12 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function CLEAR_HIGHLIGHTS()
    {
+      var _loc2_;
       if(this.TIMELINE[this.movieClipName].CONTENT.HIGHLIGHT != undefined)
       {
          this.TIMELINE[this.movieClipName].CONTENT.HIGHLIGHT.removeMovieClip();
          this.TOOLBAR.toolbarWhiteOutMC._alpha = 0;
-         var _loc2_ = 0;
+         _loc2_ = 0;
          while(_loc2_ < this.currentWebsite.dataTextScope.length)
          {
             this.DISABLE_BUTTON(_loc2_,false);
@@ -2171,9 +2259,10 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    }
    function DISABLE_BUTTON(targetSlot, isDisabled)
    {
+      var _loc2_;
       if(this.currentWebsite.dataTextScope[targetSlot])
       {
-         var _loc2_ = this.currentWebsite.dataTextScope[targetSlot];
+         _loc2_ = this.currentWebsite.dataTextScope[targetSlot];
          if(_loc2_._name == "btnTxt")
          {
             _loc2_ = _loc2_._parent;
@@ -2192,12 +2281,13 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function DISABLE_ALL_BUTTONS(hideButtons, supressHistory)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.currentWebsite.dataTextScope.length)
       {
          this.DISABLE_BUTTON(_loc2_,true);
          if(hideButtons == true)
          {
-            var _loc3_ = this.currentWebsite.dataTextScope[_loc2_];
+            _loc3_ = this.currentWebsite.dataTextScope[_loc2_];
             _loc3_._visible = false;
          }
          _loc2_ = _loc2_ + 1;
@@ -2206,10 +2296,11 @@ class com.rockstargames.gtav.web.WEB_BROWSER extends com.rockstargames.gtav.web.
    function ENABLE_ALL_BUTTONS()
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.currentWebsite.dataTextScope.length)
       {
          this.DISABLE_BUTTON(_loc2_,false);
-         var _loc3_ = this.currentWebsite.dataTextScope[_loc2_];
+         _loc3_ = this.currentWebsite.dataTextScope[_loc2_];
          _loc3_._visible = true;
          _loc2_ = _loc2_ + 1;
       }

@@ -1,16 +1,16 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuMissionHelpListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuTextListItem
 {
-   var index;
-   var menuID;
    var __set__uniqueID;
-   var type;
-   var initialIndex;
-   var isSelectable;
    var _data;
-   var labelMC;
    var bgMC;
    var blipLayer;
+   var index;
+   var initialIndex;
+   var isSelectable;
    var itemTextLeft;
+   var labelMC;
+   var menuID;
+   var type;
    function PauseMenuMissionHelpListItem()
    {
       super();

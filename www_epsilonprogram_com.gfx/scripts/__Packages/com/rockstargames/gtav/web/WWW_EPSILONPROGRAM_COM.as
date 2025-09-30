@@ -1,18 +1,18 @@
 class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
+   var CONTENT;
+   var EvalQuestionArray;
+   var PAGE_NAMES;
    var browser;
+   var dataProviderUI;
+   var dataTextScope;
+   var defaultButtonOffColour;
+   var defaultButtonOnColour;
+   var intervalId;
+   var mcScope;
    var scriptAccessibleMovieClips;
    var scriptAccessibleMovieClipsXpos;
-   var EvalQuestionArray;
-   var mcScope;
-   var CONTENT;
-   var defaultButtonOnColour;
-   var defaultButtonOffColour;
-   var dataTextScope;
-   var intervalId;
-   var dataProviderUI;
    var currentEvalQuestion = 1;
    function WWW_EPSILONPROGRAM_COM()
    {
@@ -105,6 +105,8 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
                {
                   this.set_localised_text(1,this.mcScope.slideshow.messageTF,"EPS_PRESENTATION");
                }
+            default:
+               return;
          }
       }
    }
@@ -113,10 +115,12 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
       var _loc3_ = new Array();
       _loc3_ = AnchorLink.split("_");
       var _loc2_ = parseInt(_loc3_[1]);
+      var _loc5_;
+      var _loc4_;
       if(this.mcScope == this.CONTENT.BELIEFS)
       {
-         var _loc5_ = "EPS_BELIEFS_Q" + _loc2_;
-         var _loc4_ = "EPS_BELIEFS_A" + _loc2_;
+         _loc5_ = "EPS_BELIEFS_Q" + _loc2_;
+         _loc4_ = "EPS_BELIEFS_A" + _loc2_;
          this.mcScope.questionTF.autoSize = true;
          this.mcScope.answerTF.autoSize = true;
          this.set_localised_text(2,this.mcScope.questionTF,_loc5_);
@@ -160,6 +164,16 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
          pageName = "ERROR";
          this.CONTENT.gotoAndStop(pageName);
       }
+      var _loc2_;
+      var _loc4_;
+      var _loc9_;
+      var _loc11_;
+      var _loc3_;
+      var _loc10_;
+      var _loc8_;
+      var _loc6_;
+      var _loc5_;
+      var _loc7_;
       switch(pageName)
       {
          case "PAGE1":
@@ -200,10 +214,10 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
          case "BELIEFS":
             this.mcScope = this.CONTENT.BELIEFS;
             this.set_localised_text(1,this.mcScope.TENETS.btnTxt,"EPS_CLICK",true);
-            var _loc2_ = 1;
+            _loc2_ = 1;
             while(_loc2_ < 11)
             {
-               var _loc4_ = "Q_" + _loc2_;
+               _loc4_ = "Q_" + _loc2_;
                this.dataTextScope[9 + _loc2_] = this.mcScope[_loc4_].btnTxt;
                this.mcScope[_loc4_].btnTxt.text = "Q" + _loc2_;
                this.mcScope[_loc4_].offColour = 6721717;
@@ -216,14 +230,14 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
             break;
          case "TENETS":
             this.mcScope = this.CONTENT.TENETS;
-            var _loc9_ = 350;
-            var _loc11_ = 22;
+            _loc9_ = 350;
+            _loc11_ = 22;
             _loc2_ = 1;
             while(_loc2_ < 13)
             {
-               var _loc3_ = "TENETS" + _loc2_;
-               var _loc10_ = "EPS_TENETS" + _loc2_;
-               var _loc8_ = "number" + _loc2_;
+               _loc3_ = "TENETS" + _loc2_;
+               _loc10_ = "EPS_TENETS" + _loc2_;
+               _loc8_ = "number" + _loc2_;
                this.mcScope[_loc3_].autoSize = true;
                this.set_localised_text(_loc2_ + 9,this.mcScope[_loc3_],_loc10_);
                this.mcScope[_loc8_].text = _loc2_;
@@ -266,23 +280,21 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
             if(this.EvalQuestionArray.length > 9)
             {
                this.browser.DISABLE_BUTTON(10,false);
+               break;
             }
-            else
+            this.browser.DISABLE_BUTTON(10,true);
+            _loc2_ = 2;
+            while(_loc2_ < 11)
             {
-               this.browser.DISABLE_BUTTON(10,true);
-               _loc2_ = 2;
-               while(_loc2_ < 11)
+               if(this.EvalQuestionArray[_loc2_ - 1] == undefined)
                {
-                  if(this.EvalQuestionArray[_loc2_ - 1] == undefined)
-                  {
-                     this.browser.DISABLE_BUTTON(13 + _loc2_,true);
-                  }
-                  else
-                  {
-                     this.browser.DISABLE_BUTTON(13 + _loc2_,false);
-                  }
-                  _loc2_ = _loc2_ + 1;
+                  this.browser.DISABLE_BUTTON(13 + _loc2_,true);
                }
+               else
+               {
+                  this.browser.DISABLE_BUTTON(13 + _loc2_,false);
+               }
+               _loc2_ = _loc2_ + 1;
             }
             break;
          case "RESULTS":
@@ -361,14 +373,14 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
             break;
          case "TRACT":
             this.mcScope = this.CONTENT.TRACT;
-            var _loc6_ = ["TRACT1_1","TRACT1_2","TRACT1_3","TRACT2_1","TRACT2_2","TRACT2_3","TRACT2_4","TRACT3_1","TRACT3_2","TRACT3_3","TRACT3_4","TRACT3_5","TRACT3_6","TRACT3_7","TRACT4_1","TRACT4_2","TRACT4_3","TRACT4_4","TRACT4_5","TRACT4_6","TRACT5_1","TRACT5_2","TRACT5_3","TRACT5_4","TRACT5_5","TRACT5_6"];
+            _loc6_ = ["TRACT1_1","TRACT1_2","TRACT1_3","TRACT2_1","TRACT2_2","TRACT2_3","TRACT2_4","TRACT3_1","TRACT3_2","TRACT3_3","TRACT3_4","TRACT3_5","TRACT3_6","TRACT3_7","TRACT4_1","TRACT4_2","TRACT4_3","TRACT4_4","TRACT4_5","TRACT4_6","TRACT5_1","TRACT5_2","TRACT5_3","TRACT5_4","TRACT5_5","TRACT5_6"];
             this.mcScope.TRACT1_1.autoSize = true;
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"EPS_TRACT1_1",this.mcScope.TRACT1_1,true);
             _loc2_ = 1;
             while(_loc2_ < _loc6_.length)
             {
-               var _loc5_ = this.mcScope[_loc6_[_loc2_]];
-               var _loc7_ = this.mcScope[_loc6_[_loc2_ - 1]];
+               _loc5_ = this.mcScope[_loc6_[_loc2_]];
+               _loc7_ = this.mcScope[_loc6_[_loc2_ - 1]];
                _loc5_._y = _loc7_._y + _loc7_._height + 8;
                _loc5_.autoSize = true;
                com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"EPS_" + _loc6_[_loc2_],_loc5_,true);
@@ -405,12 +417,14 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
    }
    function scan_and_set_localised_text(scope)
    {
+      var _loc2_;
+      var _loc1_;
       for(var _loc4_ in scope)
       {
-         var _loc2_ = scope[_loc4_]._name;
+         _loc2_ = scope[_loc4_]._name;
          if(_loc2_.substr(0,4) == "EPS_")
          {
-            var _loc1_ = scope[_loc4_];
+            _loc1_ = scope[_loc4_];
             _loc1_.html = true;
             _loc1_.multiline = true;
             com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,_loc2_,_loc1_,true);
@@ -426,9 +440,10 @@ class com.rockstargames.gtav.web.WWW_EPSILONPROGRAM_COM extends com.rockstargame
       }
       com.rockstargames.ui.game.GameInterface.call("SET_TEXT_WITH_TRANSLATION",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,TextLabel,TF,isHtml);
       TF.multiline = true;
+      var _loc3_;
       if(setDataSlot == true)
       {
-         var _loc3_ = this.CONTENT.TF.htmlText;
+         _loc3_ = this.CONTENT.TF.htmlText;
          this.browser.SET_DATA_SLOT(slotID,_loc3_);
       }
    }

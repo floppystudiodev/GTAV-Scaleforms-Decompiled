@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.HeistBoardTodoItem extends com.rockstargames.ui.components.GUIMenuItem
 {
+   var highlightMC;
    var tickMC;
    var todoItemTF;
-   var highlightMC;
    function HeistBoardTodoItem()
    {
       super();

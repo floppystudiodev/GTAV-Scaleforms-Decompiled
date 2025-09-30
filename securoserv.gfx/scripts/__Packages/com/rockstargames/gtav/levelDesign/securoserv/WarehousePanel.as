@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.securoserv.WarehousePanel
 {
-   var view;
-   var isAsian;
+   var _bottom;
    var _controls;
-   var currWarehouseID;
-   var capacityMeter;
-   var buyButton;
-   var sellButton;
-   var smallShipmentButton;
-   var mediumShipmentButton;
-   var largeShipmentButton;
-   var showingOwnedView;
    var _left;
    var _right;
    var _top;
-   var _bottom;
+   var buyButton;
+   var capacityMeter;
+   var currWarehouseID;
+   var isAsian;
+   var largeShipmentButton;
+   var mediumShipmentButton;
+   var sellButton;
+   var showingOwnedView;
+   var smallShipmentButton;
+   var view;
    function WarehousePanel(view, displayConfig)
    {
       this.view = view;
@@ -173,20 +173,22 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehousePanel
    function initShipmentPanel(panel, size, cost, saleCost, buyCooldown, isSpecialItem, buttonID, description)
    {
       panel.size.textAutoSize = "shrink";
+      var _loc7_;
       if(isSpecialItem)
       {
          com.rockstargames.gtav.levelDesign.SECUROSERV.setLocalisedText(panel.size,"SECUROSERV_SPECIAL_ITEM");
       }
       else
       {
-         var _loc7_ = size != 1 ? "SECUROSERV_UNITS" : "SECUROSERV_UNIT";
+         _loc7_ = size != 1 ? "SECUROSERV_UNITS" : "SECUROSERV_UNIT";
          panel.size.text = com.rockstargames.gtav.levelDesign.SECUROSERV.formatNumber(size) + " " + com.rockstargames.gtav.levelDesign.SECUROSERV.setLocalisedText(panel.size,_loc7_) + ": " + description;
       }
+      var _loc4_;
       if(saleCost != undefined && saleCost >= 0)
       {
          if(this.isAsian)
          {
-            var _loc4_ = panel.cost.getNewTextFormat();
+            _loc4_ = panel.cost.getNewTextFormat();
             _loc4_.size = 26;
             panel.cost.setNewTextFormat(_loc4_);
          }
@@ -266,11 +268,14 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehousePanel
       var _loc4_ = rightTF._x + rightTF._width;
       var _loc7_ = leftTF._width;
       var _loc8_ = rightTF._width;
+      var _loc5_;
+      var _loc3_;
+      var _loc1_;
       if(_loc7_ + _loc8_ > _loc4_ - _loc6_)
       {
-         var _loc5_ = _loc4_ - _loc6_ - _loc7_;
-         var _loc3_ = rightTF.text;
-         var _loc1_ = _loc3_.length;
+         _loc5_ = _loc4_ - _loc6_ - _loc7_;
+         _loc3_ = rightTF.text;
+         _loc1_ = _loc3_.length;
          while(_loc1_ > 0)
          {
             rightTF.text = _loc3_.substring(0,_loc1_) + "...";
@@ -286,6 +291,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehousePanel
    function updateCooldown(button, cooldown, finalLabel)
    {
       var _loc3_ = Math.ceil(0.001 * (cooldown - getTimer()));
+      var _loc4_;
+      var _loc5_;
+      var _loc9_;
+      var _loc7_;
+      var _loc6_;
+      var _loc8_;
       if(_loc3_ <= 0)
       {
          button._alpha = 100;
@@ -293,12 +304,12 @@ class com.rockstargames.gtav.levelDesign.securoserv.WarehousePanel
       }
       else
       {
-         var _loc4_ = _loc3_ % 60;
-         var _loc5_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
-         var _loc9_ = Math.floor((_loc3_ - _loc4_ - _loc5_ * 60) / 3600);
-         var _loc7_ = ("0" + _loc9_).substr(-2);
-         var _loc6_ = ("0" + _loc5_).substr(-2);
-         var _loc8_ = ("0" + _loc4_).substr(-2);
+         _loc4_ = _loc3_ % 60;
+         _loc5_ = Math.floor((_loc3_ - _loc4_) / 60) % 60;
+         _loc9_ = Math.floor((_loc3_ - _loc4_ - _loc5_ * 60) / 3600);
+         _loc7_ = ("0" + _loc9_).substr(-2);
+         _loc6_ = ("0" + _loc5_).substr(-2);
+         _loc8_ = ("0" + _loc4_).substr(-2);
          button.label.text = _loc7_ + ":" + _loc6_ + ":" + _loc8_;
          com.rockstargames.ui.tweenStar.TweenStarLite.delayCall(button,0.25,{onCompleteScope:this,onComplete:this.updateCooldown,onCompleteArgs:[button,cooldown,finalLabel]});
       }

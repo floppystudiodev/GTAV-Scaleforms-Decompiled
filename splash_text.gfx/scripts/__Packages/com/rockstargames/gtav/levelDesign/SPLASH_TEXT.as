@@ -1,11 +1,11 @@
 class com.rockstargames.gtav.levelDesign.SPLASH_TEXT extends com.rockstargames.ui.core.ScreenLayoutUI
 {
-   var txt_label;
    var CONTENT;
-   var screenManager;
+   var _delayDuration;
    var _managedTween;
    var _splashDuration;
-   var _delayDuration;
+   var screenManager;
+   var txt_label;
    var _startingScale = 90;
    var _defaultTransitionDuration = 300;
    function SPLASH_TEXT()

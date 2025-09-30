@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.screens.RulesScreen extends com.rockstargames.gtav.minigames.horseracingconsole.Screen
 {
-   var currActiveElementID;
-   var view;
-   var buttons;
-   var cursor;
    var app;
+   var buttons;
+   var currActiveElementID;
+   var cursor;
+   var view;
    function RulesScreen(app, viewContainer, cursor)
    {
       super(app,viewContainer,"rulesScreen",cursor);
@@ -18,9 +18,10 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RulesScreen ex
       com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE.setSpacedText(this.view.heading,"HORSEGAME_RULES",4,true,false);
       var _loc5_ = this.view.heading1._y;
       var _loc4_ = 1;
+      var _loc3_;
       while(_loc4_ <= 5)
       {
-         var _loc3_ = this.view["heading" + _loc4_];
+         _loc3_ = this.view["heading" + _loc4_];
          _loc3_.textAutoSize = "shrink";
          com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE.setSpacedText(_loc3_,"HORSEGAME_RULES_H" + _loc4_,2,true,false);
          _loc3_._y = _loc5_;

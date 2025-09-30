@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.iaaHeistBoard.PlayerCard
 {
-   var index;
-   var view;
-   var currentHeadshotTexture;
-   var roleHighlight;
    var cashHighlight;
+   var currentHeadshotTexture;
+   var index;
+   var roleHighlight;
+   var view;
    static var FADE_IN_SPEED = 0.3;
    static var FADE_IN_OFFSET = 0.1;
    static var POSITIONS = [];
@@ -62,9 +62,10 @@ class com.rockstargames.gtav.levelDesign.iaaHeistBoard.PlayerCard
    function setEllipsis(label, tf)
    {
       tf.text = label;
+      var _loc1_;
       if(tf.textWidth > tf._width - 4)
       {
-         var _loc1_ = label.length;
+         _loc1_ = label.length;
          while(_loc1_ > 0)
          {
             tf.text = label.substring(0,_loc1_) + "...";

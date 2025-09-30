@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.UpgradesScreen extends com.rockstargames.gtav.levelDesign.arcadeManagement.screens.Screen
 {
-   var upgradeViews;
-   var numUpgrades;
-   var app;
-   var view;
    var _buttons;
+   var app;
    var cursor;
+   var numUpgrades;
    var scrollContent;
+   var upgradeViews;
+   var view;
    static var NAV_BUTTON_LEFT = 480;
    static var NUM_UPGRADE_COLS = 2;
    static var UPGRADE_COL_WIDTH = 436;
@@ -85,12 +85,14 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.UpgradesScreen
    {
       var _loc3_ = 0;
       var _loc5_ = this.app.upgrades.length;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < _loc5_)
       {
-         var _loc2_ = this.app.upgrades[_loc3_];
+         _loc2_ = this.app.upgrades[_loc3_];
          if(forceRender || _loc2_.isDirty)
          {
-            var _loc4_ = this.getUpgradeView(_loc2_.id);
+            _loc4_ = this.getUpgradeView(_loc2_.id);
             _loc2_.render(_loc4_,this.app.imageManager,forceRender,this.app.displayConfig.isAsian);
          }
          _loc3_ = _loc3_ + 1;
@@ -126,9 +128,10 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.UpgradesScreen
    {
       var _loc3_ = 0;
       var _loc4_ = this._buttons.length;
+      var _loc2_;
       while(_loc3_ < _loc4_)
       {
-         var _loc2_ = this._buttons[_loc3_];
+         _loc2_ = this._buttons[_loc3_];
          _loc2_.enabled = _loc2_.view._visible;
          _loc2_.updateBounds();
          _loc3_ = _loc3_ + 1;

@@ -1,14 +1,14 @@
 class com.rockstargames.gtav.levelDesign.partyBus.GradientBackground
 {
-   var view;
-   var t;
-   var rDelta;
-   var gDelta;
-   var bDelta;
-   var r0;
-   var g0;
    var b0;
+   var bDelta;
    var ct;
+   var g0;
+   var gDelta;
+   var r0;
+   var rDelta;
+   var t;
+   var view;
    static var TWEEN_DURATION = 60;
    function GradientBackground(container)
    {

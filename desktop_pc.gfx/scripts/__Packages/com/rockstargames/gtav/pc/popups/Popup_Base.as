@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pc.popups.Popup_Base extends MovieClip
 {
-   var picMC;
-   var centerMC;
    var bgMC;
+   var centerMC;
    var closeMC;
    var keylineMC;
+   var picMC;
    var titleTF;
    var margin = 6;
    function Popup_Base()

@@ -38,15 +38,22 @@ class com.rockstargames.gtav.cellphone.apps.XYZ extends MovieClip
       com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.CONTENT.You_X_TF,_loc11_);
       com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.CONTENT.You_Y_TF,_loc9_);
       com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(this.CONTENT.You_Z_TF,_loc7_);
+      var _loc6_;
+      var _loc4_;
+      var _loc10_;
+      var _loc5_;
+      var _loc8_;
+      var _loc3_;
+      var _loc12_;
       if(!_loc2_)
       {
-         var _loc6_ = this.dataProviderUI[0][8];
-         var _loc4_ = this.dataProviderUI[0][9];
-         var _loc10_ = this.dataProviderUI[0][10];
-         var _loc5_ = this.dataProviderUI[0][11];
-         var _loc8_ = this.dataProviderUI[0][12];
-         var _loc3_ = this.dataProviderUI[0][13];
-         var _loc12_ = this.dataProviderUI[0][14];
+         _loc6_ = this.dataProviderUI[0][8];
+         _loc4_ = this.dataProviderUI[0][9];
+         _loc10_ = this.dataProviderUI[0][10];
+         _loc5_ = this.dataProviderUI[0][11];
+         _loc8_ = this.dataProviderUI[0][12];
+         _loc3_ = this.dataProviderUI[0][13];
+         _loc12_ = this.dataProviderUI[0][14];
          this.CONTENT.TargetHeader_TF.text = _loc6_;
          this.CONTENT.Target_X_TF.text = _loc10_;
          this.CONTENT.Target_Y_TF.text = _loc8_;

@@ -1,7 +1,7 @@
 class com.rockstargames.gtav.levelDesign.droneCam.Reticle
 {
-   var view;
    var cornersAreFlashing;
+   var view;
    static var STATE_NORMAL = 0;
    static var STATE_FIRE = 1;
    static var STATE_CHARGING = 2;

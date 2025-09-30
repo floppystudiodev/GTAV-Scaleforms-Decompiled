@@ -1,20 +1,20 @@
 class com.rockstargames.gtav.levelDesign.PARTY_BUS extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
-   var lightBar;
-   var isManual;
-   var currAnimationStep;
    var CONTENT;
-   var background;
-   var width;
-   var height;
-   var animations;
+   var activeAnimation;
    var animationBeatCounter;
-   var strobeRate;
-   var strobeTimestamp;
+   var animations;
+   var background;
+   var beatTimestamp;
+   var currAnimationStep;
+   var height;
+   var isManual;
+   var lightBar;
    var strobeBeatCounter;
    var strobeBeatDuration;
-   var beatTimestamp;
-   var activeAnimation;
+   var strobeRate;
+   var strobeTimestamp;
+   var width;
    static var MIN_STROBE_RATE = 10;
    static var MAX_STROBE_RATE = 100;
    static var TEMPO_BPM = 120;

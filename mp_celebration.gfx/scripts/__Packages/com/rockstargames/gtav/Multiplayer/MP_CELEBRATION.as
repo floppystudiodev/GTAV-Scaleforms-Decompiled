@@ -1,20 +1,21 @@
 class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
-   var celebrationGfxType;
-   var numberCountMC;
-   var dispConf;
-   var pricedownTextFormat;
-   var condensedTextFormat;
-   var scriptTextFormat;
    var ascendersPricedown;
+   var celebrationGfxType;
+   var condensedTextFormat;
    var descendersPricedown;
-   var syncedMovies;
+   var dispConf;
    var moneyMeshMask;
-   var verticalFlagTextureId;
+   var numberCountMC;
+   var pricedownTextFormat;
+   var removeMovieClip;
+   var scriptTextFormat;
+   var syncClearCallback;
+   var syncedMovies;
    var verticalFlagLeftY;
    var verticalFlagRightY;
-   var syncClearCallback;
+   var verticalFlagTextureId;
    var statWallArray = [];
    var positionId = "position";
    var rankBarId = "rank";
@@ -183,10 +184,14 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          case 9:
             this.numberCountSound = sound;
             this.numberCountSoundSet = soundSet;
+            break;
          case 10:
-            this.numberCountStopSound = sound;
-            this.numberCountStopSoundSet = soundSet;
+            break;
+         default:
+            return;
       }
+      this.numberCountStopSound = sound;
+      this.numberCountStopSoundSet = soundSet;
    }
    function CREATE_STAT_WALL(id, colourName, fgAlpha)
    {
@@ -238,9 +243,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    {
       var _loc4_ = this.getObjectFromMcName(wallId);
       var _loc2_ = _loc4_.tweens;
+      var _loc3_;
       if(_loc2_.length > 0)
       {
-         var _loc3_ = _loc2_.pop();
+         _loc3_ = _loc2_.pop();
          if(!duration)
          {
             _loc3_.pauseBefore = true;
@@ -278,9 +284,23 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc9_ = this.getMovieClipFromName(wallId);
       var _loc11_ = _loc13_.tweens;
       var _loc10_ = _loc13_.tweensToRemove;
+      var _loc5_;
+      var _loc12_;
+      var _loc6_;
+      var _loc7_;
+      var _loc17_;
+      var _loc19_;
+      var _loc14_;
+      var _loc16_;
+      var _loc15_;
+      var _loc18_;
+      var _loc8_;
+      var _loc4_;
+      var _loc2_;
+      var _loc3_;
       if(_loc11_.length > 0)
       {
-         var _loc5_ = _loc11_.shift();
+         _loc5_ = _loc11_.shift();
          if(_loc5_ == "breakpoint")
          {
             _loc5_ = _loc11_[0];
@@ -297,15 +317,15 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
             _loc11_.unshift(_loc5_);
             return undefined;
          }
-         var _loc12_ = _loc5_.duration;
-         var _loc6_ = _loc5_.delay + _loc5_.pauseNextDuration;
-         var _loc7_ = _loc5_.pauseNextDuration;
-         var _loc17_ = _loc5_.offsetY;
-         var _loc19_ = _loc5_.targetY;
-         var _loc14_ = _loc5_.soundName;
-         var _loc16_ = _loc5_.soundSet || "CELEBRATION_SOUNDSET";
-         var _loc15_ = Math.abs(_loc19_ + _loc17_);
-         var _loc18_ = _loc9_._y + _loc15_;
+         _loc12_ = _loc5_.duration;
+         _loc6_ = _loc5_.delay + _loc5_.pauseNextDuration;
+         _loc7_ = _loc5_.pauseNextDuration;
+         _loc17_ = _loc5_.offsetY;
+         _loc19_ = _loc5_.targetY;
+         _loc14_ = _loc5_.soundName;
+         _loc16_ = _loc5_.soundSet || "CELEBRATION_SOUNDSET";
+         _loc15_ = Math.abs(_loc19_ + _loc17_);
+         _loc18_ = _loc9_._y + _loc15_;
          if(firstRun)
          {
             _loc6_ = 0;
@@ -348,12 +368,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          }
          if(_loc5_.childAnims && this.celebrationGfxType != this.TYPE_BG)
          {
-            var _loc8_ = _loc5_.childAnims;
-            var _loc4_ = 0;
+            _loc8_ = _loc5_.childAnims;
+            _loc4_ = 0;
             while(_loc4_ < _loc8_.length)
             {
-               var _loc2_ = _loc8_[_loc4_];
-               var _loc3_ = _loc2_.tweenerObject;
+               _loc2_ = _loc8_[_loc4_];
+               _loc3_ = _loc2_.tweenerObject;
                _loc10_.push(_loc2_.mc);
                switch(_loc2_.method)
                {
@@ -400,9 +420,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       this.CONTENT.flagTexture.removeMovieClip();
       var _loc2_ = bg.createEmptyMovieClip("flagTexture",bg.getNextHighestDepth());
       _loc2_._y = _loc7_.y;
+      var _loc3_;
       if(this.verticalFlagTextureId == 4)
       {
-         var _loc3_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
+         _loc3_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
       }
       else if(this.verticalFlagTextureId == 5)
       {
@@ -504,9 +525,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          _loc2_._x = 160;
       }
+      var _loc5_;
       if(this.verticalFlagTextureId == 4)
       {
-         var _loc5_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
+         _loc5_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
       }
       else if(this.verticalFlagTextureId == 5)
       {
@@ -631,9 +653,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc6_ = this.getMovieClipFromName(wallId);
       var _loc4_ = _loc5_.tweensToRemove;
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < _loc4_.length)
       {
-         var _loc3_ = _loc4_[_loc2_];
+         _loc3_ = _loc4_[_loc2_];
          if(_loc3_ != null)
          {
             com.rockstargames.ui.tweenStar.TweenStarLite.removeTweenOf(_loc3_);
@@ -669,12 +692,29 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       this.CONTENT.moneyMesh.removeMovieClip();
       this.moneyMeshMask.removeMovieClip();
       this.verticalFlagTextureId = -1;
+      var _loc5_;
+      var _loc19_;
+      var _loc11_;
+      var _loc15_;
+      var _loc7_;
+      var _loc13_;
+      var _loc14_;
+      var _loc17_;
+      var _loc9_;
+      var _loc8_;
+      var _loc23_;
+      var _loc22_;
+      var _loc16_;
+      var _loc12_;
+      var _loc21_;
+      var _loc20_;
+      var _loc10_;
       if(textureId == 1 || textureId == 3 || textureId == 6 || textureId == 8 || textureId == 10 || textureId == 12 || textureId == 14 || textureId == 16 || textureId == 18 || textureId == 20)
       {
-         var _loc5_ = _loc4_.createEmptyMovieClip("shardTextureMC",_loc4_.getNextHighestDepth());
+         _loc5_ = _loc4_.createEmptyMovieClip("shardTextureMC",_loc4_.getNextHighestDepth());
          if(textureId == 1)
          {
-            var _loc19_ = "shard_texture";
+            _loc19_ = "shard_texture";
          }
          else if(textureId == 3)
          {
@@ -712,24 +752,24 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          {
             _loc19_ = "SHARD_ARENA_WARS";
          }
-         var _loc11_ = flash.display.BitmapData.loadBitmap(_loc19_);
-         var _loc15_ = new flash.geom.Matrix();
-         var _loc7_ = this.dispConf.screenWidth;
-         var _loc13_ = - (this.bgTopHeight + this.bgBottomHeight);
-         var _loc14_ = _loc3_.currentHeight + this.bgBottomHeight;
-         var _loc17_ = _loc3_.currentHeight;
-         var _loc9_ = _loc7_ - _loc11_.width;
-         var _loc8_ = _loc9_ * _loc13_ / _loc7_;
-         var _loc23_ = _loc7_;
-         var _loc22_ = _loc13_;
-         var _loc16_ = _loc9_;
-         var _loc12_ = _loc14_ - _loc16_ * (_loc14_ - _loc17_) / _loc7_;
+         _loc11_ = flash.display.BitmapData.loadBitmap(_loc19_);
+         _loc15_ = new flash.geom.Matrix();
+         _loc7_ = this.dispConf.screenWidth;
+         _loc13_ = - (this.bgTopHeight + this.bgBottomHeight);
+         _loc14_ = _loc3_.currentHeight + this.bgBottomHeight;
+         _loc17_ = _loc3_.currentHeight;
+         _loc9_ = _loc7_ - _loc11_.width;
+         _loc8_ = _loc9_ * _loc13_ / _loc7_;
+         _loc23_ = _loc7_;
+         _loc22_ = _loc13_;
+         _loc16_ = _loc9_;
+         _loc12_ = _loc14_ - _loc16_ * (_loc14_ - _loc17_) / _loc7_;
          if(_loc12_ - _loc8_ > _loc11_.height)
          {
             _loc12_ = _loc8_ + _loc11_.height;
          }
-         var _loc21_ = _loc7_;
-         var _loc20_ = _loc17_;
+         _loc21_ = _loc7_;
+         _loc20_ = _loc17_;
          _loc15_.translate(_loc9_,_loc8_);
          _loc5_.beginBitmapFill(_loc11_,_loc15_,false);
          _loc5_.moveTo(_loc9_,_loc8_);
@@ -741,7 +781,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       }
       else if(textureId == 2)
       {
-         var _loc10_ = this.CONTENT.attachMovie("vertical_money_mesh","moneyMesh",this.CONTENT.getNextHighestDepth());
+         _loc10_ = this.CONTENT.attachMovie("vertical_money_mesh","moneyMesh",this.CONTENT.getNextHighestDepth());
          com.rockstargames.ui.utils.Colour.ApplyHudColour(_loc10_,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREENLIGHT);
          _loc10_._alpha = 40;
          _loc10_.right._x = this.dispConf.screenWidth;
@@ -776,9 +816,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    function drawStartingVerticalFlag(mc, wallObject)
    {
       var _loc2_ = mc.createEmptyMovieClip("flagTexture",mc.getNextHighestDepth());
+      var _loc3_;
       if(this.verticalFlagTextureId == 4)
       {
-         var _loc3_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
+         _loc3_ = flash.display.BitmapData.loadBitmap("VERTICAL_RACE_FLAG");
       }
       else if(this.verticalFlagTextureId == 5)
       {
@@ -1126,9 +1167,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       _loc2_.rankBarFg._y = _loc2_.rankBarBg._y;
       var _loc17_ = 60;
       var _loc25_ = 200;
+      var _loc15_;
       if(_loc20_)
       {
-         var _loc15_ = 270;
+         _loc15_ = 270;
          _loc17_ = 100 + _loc15_;
          _loc25_ = 230;
          if(rank1Txt != undefined)
@@ -1176,13 +1218,17 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc8_ = _loc21_ / Math.ceil(_loc4_ / 10);
       var _loc11_ = 0;
       var _loc5_ = 0;
+      var _loc6_;
+      var _loc7_;
+      var _loc12_;
+      var _loc9_;
       while(_loc5_ < 10)
       {
-         var _loc6_ = _loc2_.rankBarFg["sect" + _loc5_];
+         _loc6_ = _loc2_.rankBarFg["sect" + _loc5_];
          _loc6_._xscale = 0;
          if(_loc3_ <= 0)
          {
-            var _loc7_ = {method:"to",mc:_loc6_,duration:_loc8_};
+            _loc7_ = {method:"to",mc:_loc6_,duration:_loc8_};
             if(_loc4_ >= 10)
             {
                _loc7_.tweenerObject = {_width:26,delay:(_loc5_ - _loc11_) * _loc8_};
@@ -1206,8 +1252,8 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          else if(_loc3_ > 0)
          {
             _loc6_._width = 2.6 * _loc3_;
-            var _loc12_ = _loc4_ + _loc3_ <= 10 ? _loc4_ + _loc3_ : 10;
-            var _loc9_ = _loc12_ - _loc3_;
+            _loc12_ = _loc4_ + _loc3_ <= 10 ? _loc4_ + _loc3_ : 10;
+            _loc9_ = _loc12_ - _loc3_;
             _loc4_ -= _loc9_;
             _loc11_ = _loc5_ - 1;
             _loc10_.push({method:"to",mc:_loc6_,duration:_loc8_,tweenerObject:{_width:2.6 * (_loc9_ + _loc3_)}});
@@ -1216,11 +1262,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          _loc5_ = _loc5_ + 1;
       }
       this.addMcToWall(wallId,_loc2_,_loc17_,_loc25_,this.ALIGN_CENTER,0);
+      var _loc28_;
       if(_loc20_)
       {
          _loc10_.push({method:"delayCall",mc:_loc13_.rankBarBg,duration:0,tweenerObject:{delay:_loc21_,onComplete:this.showRankUp,onCompleteScope:this,onCompleteArgs:[_loc2_,currentRank,nextRank]}});
          this.addAnimationsToWall(wallId,0,_loc17_ - 35,_loc10_,0);
-         var _loc28_ = [{method:"delayCall",mc:_loc13_.finishedText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[this.rankUpSound,this.rankUpSoundSet]}}];
+         _loc28_ = [{method:"delayCall",mc:_loc13_.finishedText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[this.rankUpSound,this.rankUpSoundSet]}}];
          this.addAnimationsToWall(wallId,670,0,_loc28_,this.pauseDuration * 0.5,this.slamDuration * 1.5);
       }
       else
@@ -1231,7 +1278,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          case this.TYPE_BG:
             this.processMcsForGfxType([_loc2_]);
-            break;
+            return;
          case this.TYPE_FG:
             _loc2_.currentRankIcon._visible = false;
             _loc2_.nextRankIcon._visible = false;
@@ -1239,10 +1286,11 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
             _loc2_.rankBarFg._visible = false;
             _loc2_.rankup.glow._visible = false;
             this.processMcsForGfxType([_loc2_.rankup.rankText,_loc2_.rankup.upText]);
-            break;
+            return;
          default:
             _loc2_.rankBarBg._alpha = 30;
             this.processMcsForGfxType([_loc2_.rankup.rankText,_loc2_.rankup.upText]);
+            return;
       }
    }
    function ADD_ARENA_POINTS_AND_RANK_BAR_TO_WALL(wallId, repPointsGained, startRepPoints, minRepPointsForRank, maxRepPointsForRank, currentRank, nextRank, rank1Txt, rank2Txt)
@@ -1309,9 +1357,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       _loc2_.rankBarFg._y = _loc2_.rankBarBg._y;
       var _loc23_ = 60;
       var _loc28_ = 200;
+      var _loc18_;
       if(_loc22_)
       {
-         var _loc18_ = 270;
+         _loc18_ = 270;
          _loc23_ = 100 + _loc18_;
          _loc28_ = 230;
          if(rank1Txt != undefined)
@@ -1361,9 +1410,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc4_ = 0;
       var _loc3_ = 0;
       var _loc6_ = _loc8_;
+      var _loc5_;
+      var _loc11_;
+      var _loc10_;
       while(_loc4_ < _loc7_)
       {
-         var _loc5_ = _loc2_.rankBarFg["sect" + _loc4_];
+         _loc5_ = _loc2_.rankBarFg["sect" + _loc4_];
          if(_loc3_ > _loc9_)
          {
             _loc5_._xscale = 0;
@@ -1371,8 +1423,8 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          else if(_loc6_ > _loc12_)
          {
             _loc5_._xscale = 100 * Math.max(0,_loc7_ * (_loc12_ - _loc3_));
-            var _loc11_ = 100 * Math.min(1,_loc7_ * (_loc9_ - _loc3_));
-            var _loc10_ = {method:"to",mc:_loc5_,duration:_loc14_,tweenerObject:{_xscale:_loc11_,delay:_loc15_}};
+            _loc11_ = 100 * Math.min(1,_loc7_ * (_loc9_ - _loc3_));
+            _loc10_ = {method:"to",mc:_loc5_,duration:_loc14_,tweenerObject:{_xscale:_loc11_,delay:_loc15_}};
             _loc15_ += _loc14_;
             _loc13_.push(_loc10_);
          }
@@ -1381,11 +1433,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          _loc6_ += _loc8_;
       }
       this.addMcToWall(wallId,_loc2_,_loc23_,_loc28_,this.ALIGN_CENTER,0);
+      var _loc30_;
       if(_loc22_)
       {
          _loc13_.push({method:"delayCall",mc:_loc16_.rankBarBg,duration:0,tweenerObject:{delay:_loc24_,onComplete:this.showRankUp,onCompleteScope:this,onCompleteArgs:[_loc2_,currentRank,nextRank]}});
          this.addAnimationsToWall(wallId,0,_loc23_ - 35,_loc13_,0);
-         var _loc30_ = [{method:"delayCall",mc:_loc16_.finishedText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[this.rankUpSound,this.rankUpSoundSet]}}];
+         _loc30_ = [{method:"delayCall",mc:_loc16_.finishedText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[this.rankUpSound,this.rankUpSoundSet]}}];
          this.addAnimationsToWall(wallId,670,0,_loc30_,this.pauseDuration * 0.5,this.slamDuration * 1.5);
       }
       else
@@ -1396,7 +1449,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          case this.TYPE_BG:
             this.processMcsForGfxType([_loc2_]);
-            break;
+            return;
          case this.TYPE_FG:
             _loc2_.currentRankIcon._visible = false;
             _loc2_.nextRankIcon._visible = false;
@@ -1404,10 +1457,11 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
             _loc2_.rankBarFg._visible = false;
             _loc2_.rankup.glow._visible = false;
             this.processMcsForGfxType([_loc2_.rankup.rankText,_loc2_.rankup.upText]);
-            break;
+            return;
          default:
             _loc2_.rankBarBg._alpha = 30;
             this.processMcsForGfxType([_loc2_.rankup.rankText,_loc2_.rankup.upText]);
+            return;
       }
    }
    function showRankUp(layoutMc, currentRank, nextRank)
@@ -1461,9 +1515,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    }
    function ADD_WINNER_TO_WALL(wallId, winLoseTextLabel, gamerName, crewName, betAmount, isInFlow, teamName, gamerNameIsLabel)
    {
+      var _loc3_;
       if(gamerNameIsLabel)
       {
-         var _loc3_ = this.ADD_CHALLENGE_WINNER_TO_WALL(wallId,gamerName,winLoseTextLabel,crewName,null,betAmount,isInFlow,false,null,null,teamName);
+         _loc3_ = this.ADD_CHALLENGE_WINNER_TO_WALL(wallId,gamerName,winLoseTextLabel,crewName,null,betAmount,isInFlow,false,null,null,teamName);
       }
       else
       {
@@ -1558,13 +1613,15 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
             _loc3_._alpha = forcedAlpha;
          }
       }
+      var _loc2_;
+      var _loc6_;
       if(!isNaN(hudColourId))
       {
          if(this.celebrationGfxType == this.TYPE_OVERLAY)
          {
-            var _loc2_ = new com.rockstargames.ui.utils.HudColour();
+            _loc2_ = new com.rockstargames.ui.utils.HudColour();
             com.rockstargames.ui.utils.Colour.setHudColour(hudColourId,_loc2_);
-            var _loc6_ = !isNaN(forcedAlpha) ? forcedAlpha : 40;
+            _loc6_ = !isNaN(forcedAlpha) ? forcedAlpha : 40;
             com.rockstargames.ui.utils.Colour.Colourise(_loc3_,_loc2_.r,_loc2_.g,_loc2_.b,_loc6_);
          }
          if(this.celebrationGfxType == this.TYPE_FG)
@@ -1713,7 +1770,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       this.processMcsForGfxType([_loc2_]);
       _loc2_.bottomLine._visible = false;
    }
-   function ADD_INCREMENTAL_CASH_WON_STEP(wallId, animationId, startingValue, finishingValue, topText, bottomText, rightHandStat, rightHandIcon)
+   function ADD_INCREMENTAL_CASH_WON_STEP(wallId, animationId, startingValue, finishingValue, topText, bottomText, rightHandStat, rightHandIcon, hideDollarSymbol)
    {
       var _loc3_ = this.getMovieClipFromName(wallId);
       var _loc2_ = _loc3_[animationId];
@@ -1722,7 +1779,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          _loc2_.steps = [];
       }
-      _loc2_.steps.push({startingValue:startingValue,finishingValue:finishingValue,topText:topText,bottomText:bottomText,rightHandStat:rightHandStat,rightHandIcon:rightHandIcon});
+      _loc2_.steps.push({startingValue:startingValue,finishingValue:finishingValue,topText:topText,bottomText:bottomText,rightHandStat:rightHandStat,rightHandIcon:rightHandIcon,hideDollarSymbol:hideDollarSymbol === true});
       if(_loc2_.moneyText.text == "")
       {
          _loc2_.moneyText.text = startingValue.toString();
@@ -1733,15 +1790,28 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc20_ = this.getMovieClipFromName(wallId);
       var _loc4_ = _loc20_[animationId];
       var _loc19_ = [];
-      var _loc8_ = undefined;
+      var _loc8_;
       var _loc3_ = 0;
       var _loc6_ = _loc4_.steps.length;
+      var _loc5_;
+      var _loc2_;
+      var _loc7_;
       while(_loc3_ < _loc6_)
       {
-         var _loc5_ = _loc4_.getNextHighestDepth();
-         var _loc2_ = _loc4_.attachMovie("incremental_cash_cash","cash" + _loc5_,_loc5_,{_visible:false});
+         _loc5_ = _loc4_.getNextHighestDepth();
+         _loc2_ = _loc4_.attachMovie("incremental_cash_cash","cash" + _loc5_,_loc5_,{_visible:false});
+         if(_loc4_.steps[_loc3_].hideDollarSymbol)
+         {
+            _loc2_.moneyText._x = 2;
+            _loc2_.dollarText._visible = false;
+         }
+         else
+         {
+            _loc2_.moneyText._x = 112;
+            _loc2_.dollarText._visible = true;
+         }
          this.processTextField(_loc2_.moneyText,this.pricedownTextFormat,{autoSize:"left"});
-         var _loc7_ = {method:"delayCall",mc:_loc2_,duration:0.1,tweenerObject:{delay:_loc3_ * (this.pauseDuration + 1),onComplete:this.incrementCashAnimation,onCompleteScope:this,onCompleteArgs:[_loc4_.steps[_loc3_],_loc4_,_loc2_,_loc8_]}};
+         _loc7_ = {method:"delayCall",mc:_loc2_,duration:0.1,tweenerObject:{delay:_loc3_ * (this.pauseDuration + 1),onComplete:this.incrementCashAnimation,onCompleteScope:this,onCompleteArgs:[_loc4_.steps[_loc3_],_loc4_,_loc2_,_loc8_]}};
          _loc19_.push(_loc7_);
          _loc8_ = _loc2_;
          _loc3_ = _loc3_ + 1;
@@ -1887,12 +1957,13 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          case this.TYPE_BG:
             this.processMcsForGfxType([_loc2_]);
-            break;
+            return;
          case this.TYPE_FG:
             this.processMcsForGfxType([_loc2_.qualificationText,_loc2_.resultText,_loc2_.resultValueText]);
-            break;
+            return;
          default:
             this.processMcsForGfxType([_loc2_.qualificationText,_loc2_.resultText,_loc2_.resultValueText]);
+            return;
       }
    }
    function ADD_INTRO_TO_WALL(wallId, modeLabel, jobName, challengeTextLabel, challengePartsText, targetTypeTextLabel, targetValue, delay, targetValuePrefix, modeLabelIsStringLiteral, textColourName)
@@ -1902,10 +1973,11 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          delay = this.pauseDuration * 2.5;
       }
       var _loc2_ = this.createLayoutMc(wallId,this.introId);
+      var _loc5_;
+      var _loc3_;
       if(textColourName != undefined)
       {
-         var _loc5_ = this.getColour(textColourName);
-         var _loc3_ = undefined;
+         _loc5_ = this.getColour(textColourName);
          _loc3_ = _loc2_.modeText.getNewTextFormat();
          _loc3_.color = _loc5_;
          _loc2_.modeText.setNewTextFormat(_loc3_);
@@ -1935,11 +2007,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          }
       }
       _loc2_.jobNameText.text = jobName;
+      var _loc7_;
       if(textColourName == undefined || this.celebrationGfxType != this.TYPE_FG)
       {
          if(challengeTextLabel)
          {
-            var _loc7_ = TextField(_loc2_.targetTypeText);
+            _loc7_ = TextField(_loc2_.targetTypeText);
             if(targetTypeTextLabel && !isNaN(targetValue))
             {
                _loc7_ = TextField(_loc2_.challengeText);
@@ -2040,9 +2113,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          case this.TYPE_FG:
             _loc2_.readyText._visible = false;
             this.processMcsForGfxType([_loc2_.jobNameText,_loc2_.challengeText,_loc2_.targetTypeText,_loc2_.challengePartText,_loc2_.targetText]);
-            break;
+            return;
          default:
             this.processMcsForGfxType([_loc2_.jobNameText,_loc2_.challengeText,_loc2_.targetTypeText,_loc2_.challengePartText,_loc2_.targetText]);
+            return;
       }
    }
    function ADD_CASH_TO_WALL(wallId, cashAmount, xAlign)
@@ -2178,10 +2252,12 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          }
          _loc2_.statValueText.text = statValue;
       }
+      var _loc3_;
+      var _loc7_;
       if(colour)
       {
-         var _loc3_ = new com.rockstargames.ui.utils.HudColour();
-         var _loc7_ = com.rockstargames.ui.utils.HudColour[colour];
+         _loc3_ = new com.rockstargames.ui.utils.HudColour();
+         _loc7_ = com.rockstargames.ui.utils.HudColour[colour];
          if(isNaN(_loc7_))
          {
             _loc7_ = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_FREEMODE;
@@ -2211,12 +2287,17 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    {
       var _loc19_ = this.getMovieClipFromName(wallId);
       var _loc2_ = _loc19_[tableId];
+      var _loc18_;
+      var _loc3_;
+      var _loc4_;
+      var _loc5_;
+      var _loc17_;
       if(_loc2_)
       {
-         var _loc18_ = 720;
-         var _loc3_ = [];
-         var _loc4_ = 0;
-         var _loc5_ = 0;
+         _loc18_ = 720;
+         _loc3_ = [];
+         _loc4_ = 0;
+         _loc5_ = 0;
          for(var _loc16_ in _loc2_)
          {
             if(typeof _loc2_[_loc16_] == "movieclip")
@@ -2246,7 +2327,7 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
                _loc4_ = _loc4_ + 1;
             }
          }
-         var _loc17_ = 120;
+         _loc17_ = 120;
          if(_loc4_ > 6)
          {
             _loc17_ = 70;
@@ -2390,9 +2471,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
          _loc3_.push({method:"to",mc:_loc2_.winLoseText,duration:this.slamDuration,tweenerObject:{_y:_loc2_.winLoseText._y + 200,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_IN}});
          _loc3_.push({method:"to",mc:_loc21_,duration:this.slamDuration,tweenerObject:{_y:(_loc16_ + 120) * -1,ease:com.rockstargames.ui.tweenStar.Ease.CIRCULAR_IN,onCompleteScope:this,onComplete:this.backgroundTweenOutComplete}});
       }
+      var _loc23_;
       if(!isInFlow)
       {
-         var _loc23_ = [{method:"delayCall",mc:_loc2_.crewNameText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[_loc12_,_loc9_]}}];
+         _loc23_ = [{method:"delayCall",mc:_loc2_.crewNameText,duration:0,tweenerObject:{onComplete:this.playSound,onCompleteScope:this,onCompleteArgs:[_loc12_,_loc9_]}}];
          this.addAnimationsToWall(wallId,0,_loc7_,_loc23_);
          if(cashAmount)
          {
@@ -2428,22 +2510,21 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
             if(_loc4_ + 1 >= mcs.length)
             {
                _loc5_ = 0;
+               break;
             }
-            else
-            {
-               _loc5_ = _loc4_ + 1;
-            }
+            _loc5_ = _loc4_ + 1;
             break;
          }
          _loc3_ = _loc3_ + 1;
       }
       _loc3_ = 0;
+      var _loc6_;
       while(_loc3_ < mcs.length)
       {
          if(_loc3_ == _loc5_)
          {
             mcs[_loc3_]._visible = true;
-            var _loc6_ = {x:mcs[_loc3_]._x,y:mcs[_loc3_]._y};
+            _loc6_ = {x:mcs[_loc3_]._x,y:mcs[_loc3_]._y};
             mcs[_loc3_].localToGlobal(_loc6_);
             if(parentMc._y < 720)
             {
@@ -2467,11 +2548,14 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       {
          tf.setTextFormat(format);
       }
+      var _loc5_;
+      var _loc6_;
+      var _loc7_;
       if(this.dispConf.isAsian)
       {
-         var _loc5_ = tf.getTextFormat();
-         var _loc6_ = _loc5_.size;
-         var _loc7_ = tf.textHeight - _loc6_;
+         _loc5_ = tf.getTextFormat();
+         _loc6_ = _loc5_.size;
+         _loc7_ = tf.textHeight - _loc6_;
          tf._y -= _loc7_;
       }
    }
@@ -2501,9 +2585,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       var _loc27_ = this.getAvailableTextWidth(centralTf,true,true);
       var _loc30_ = TextField(centralTf).getTextFormat();
       var _loc9_ = 0;
+      var _loc15_;
       while(_loc9_ < topLeftTfs.length)
       {
-         var _loc15_ = TextField(topLeftTfs[_loc9_]).getTextFormat();
+         _loc15_ = TextField(topLeftTfs[_loc9_]).getTextFormat();
          if(TextField(topLeftTfs[_loc9_])._height > _loc10_)
          {
             _loc10_ = TextField(topLeftTfs[_loc9_])._height;
@@ -2570,9 +2655,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
       }
       var _loc2_ = _loc21_;
       _loc9_ = 0;
+      var _loc8_;
       while(_loc9_ < topLeftTfs.length)
       {
-         var _loc8_ = topLeftTfs[_loc9_];
+         _loc8_ = topLeftTfs[_loc9_];
          _loc8_._x = _loc2_;
          _loc2_ += _loc8_._width;
          _loc9_ = _loc9_ + 1;
@@ -2693,9 +2779,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    function processMcsForGfxType(mcs)
    {
       var _loc3_ = 0;
+      var _loc2_;
       while(_loc3_ < mcs.length)
       {
-         var _loc2_ = mcs[_loc3_];
+         _loc2_ = mcs[_loc3_];
          switch(this.celebrationGfxType)
          {
             case this.TYPE_BG:
@@ -2717,9 +2804,10 @@ class com.rockstargames.gtav.Multiplayer.MP_CELEBRATION extends com.rockstargame
    function getObjectFromMcName(mcName)
    {
       var _loc2_ = 0;
+      var _loc3_;
       while(_loc2_ < this.wallList.length)
       {
-         var _loc3_ = this.wallList[_loc2_];
+         _loc3_ = this.wallList[_loc2_];
          if(_loc3_.mcName == mcName)
          {
             return _loc3_;

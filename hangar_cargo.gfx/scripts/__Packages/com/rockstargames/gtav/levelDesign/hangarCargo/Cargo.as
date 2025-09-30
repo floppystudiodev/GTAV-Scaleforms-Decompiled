@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.hangarCargo.Cargo
 {
-   var _type;
-   var _currentStockLevel;
-   var _totalStockLevel;
    var _bonusPercent;
+   var _currentStockLevel;
    var _sellPrice;
+   var _totalStockLevel;
+   var _type;
    function Cargo(_type, _currentStockLevel, _totalStockLevel, _bonusPercent, _sellPrice)
    {
       this._type = _type;

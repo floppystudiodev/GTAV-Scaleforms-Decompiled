@@ -1,16 +1,16 @@
 class com.rockstargames.ui.core.PhoneUIComponent extends MovieClip
 {
-   var dataProviderUI;
-   var linkageKey;
    var container;
+   var dataProviderUI;
    var header;
    var headerTextfield;
+   var levelDepth;
+   var linkageKey;
+   var needsScrollbars;
    var numberOfColumns;
    var numberOfVisibleRows;
    var offsetX;
    var offsetY;
-   var levelDepth;
-   var needsScrollbars;
    var rowSpace = 0;
    var currentSelection = -1;
    var _UIColours = new Array();

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MAP extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
-   var dbgID;
    var CONTENT;
+   var dbgID;
    var details;
-   var zoom;
    var location;
    var model;
    var scrollBase;
+   var zoom;
    var viewableItems = 19;
    function PAUSE_MENU_MAP()
    {
@@ -73,9 +73,10 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MAP extends co
       this.model.displayView(viewIndex,itemIndex);
       var _loc4_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapView(this.model.getCurrentView());
       var _loc3_ = _loc4_.highlightedItem;
+      var _loc2_;
       if(_loc3_ >= _loc4_.itemList.length)
       {
-         var _loc2_ = _loc4_.itemList.length - 1;
+         _loc2_ = _loc4_.itemList.length - 1;
          while(_loc2_ >= 0)
          {
             if(_loc2_ < _loc3_)
@@ -131,6 +132,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MAP extends co
    {
       var _loc3_ = com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuMapView(this.model.getCurrentView());
       var _loc2_ = _loc3_.viewContainer;
+      var _loc4_;
       if(_loc3_.dataList.length > this.viewableItems && _loc2_._visible == true)
       {
          this.scrollBase._visible = this.scrollBase.forceInvisible = false;
@@ -138,7 +140,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_MAP extends co
          this.scrollBase.scrollPosTXT._width = 10;
          this.scrollBase.scrollPosTXT.autoSize = true;
          this.scrollBase.scrollPosTXT.multiline = false;
-         var _loc4_ = this.scrollBase.scrollPosTXT.getTextFormat();
+         _loc4_ = this.scrollBase.scrollPosTXT.getTextFormat();
          _loc4_.font = "$FixedWidthNumbers";
          this.scrollBase.scrollPosTXT.setNewTextFormat(_loc4_);
          this.scrollBase.updateScroll();

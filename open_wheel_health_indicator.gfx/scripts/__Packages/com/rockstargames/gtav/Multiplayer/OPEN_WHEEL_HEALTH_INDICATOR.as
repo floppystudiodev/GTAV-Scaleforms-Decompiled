@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.Multiplayer.OPEN_WHEEL_HEALTH_INDICATOR extends com.rockstargames.gtav.levelDesign.BaseScriptUI
 {
    var CONTENT;
+   var _name;
    var VEHICLE_FRONT = 0;
    var VEHICLE_BODY = 1;
    var VEHICLE_SPOILER = 2;
@@ -46,7 +47,7 @@ class com.rockstargames.gtav.Multiplayer.OPEN_WHEEL_HEALTH_INDICATOR extends com
    }
    function SET_PART_TO_DESTROYED(part, isDestroyed)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(part)
       {
          case this.VEHICLE_FRONT:
@@ -63,7 +64,7 @@ class com.rockstargames.gtav.Multiplayer.OPEN_WHEEL_HEALTH_INDICATOR extends com
    }
    function SET_WHEEL_DAMAGE(setWheel, setDmg)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       switch(setWheel)
       {
          case this.VEHICLE_WHEEL_FRONTLEFT:

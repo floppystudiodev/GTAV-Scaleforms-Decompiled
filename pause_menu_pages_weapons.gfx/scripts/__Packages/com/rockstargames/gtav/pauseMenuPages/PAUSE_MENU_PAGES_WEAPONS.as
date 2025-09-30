@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_WEAPONS extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
-   var column1;
    var addColumn;
-   var setupColumns;
-   var setupColMouseNav;
+   var column1;
    var columnList;
+   var setupColMouseNav;
+   var setupColumns;
    var showColumns;
    function PAUSE_MENU_PAGES_WEAPONS()
    {

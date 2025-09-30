@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.web.buttons.WebButtonPlus extends com.rockstargames.gtav.web.buttons.WebButton
 {
+   var buttonType;
    function WebButtonPlus()
    {
       super();

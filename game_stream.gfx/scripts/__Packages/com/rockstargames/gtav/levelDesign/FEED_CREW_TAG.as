@@ -1,10 +1,14 @@
 class com.rockstargames.gtav.levelDesign.FEED_CREW_TAG extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
+   var baseClassStrID;
    var crewTagMC;
    var emblemImg;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
+   var important;
+   var parseForFonts;
+   var returnPathLvl;
    function FEED_CREW_TAG()
    {
       super();
@@ -30,7 +34,7 @@ class com.rockstargames.gtav.levelDesign.FEED_CREW_TAG extends com.rockstargames
          this.CONTENT.imageMC.imageTF._visible = false;
          this.crewTagMC._x = 11;
       }
-      var _loc3_ = undefined;
+      var _loc3_;
       if(gamerStr == undefined || gamerStr == "")
       {
          gamerStr = "";

@@ -1,12 +1,12 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.CountdownDigit
 {
-   var view;
-   var isAnimating;
-   var currValue;
-   var nextValue;
-   var topFlipArgs;
    var bottomFlipArgs;
+   var currValue;
+   var isAnimating;
+   var nextValue;
    var shadowFlipArgs;
+   var topFlipArgs;
+   var view;
    static var TOP_FLIP_DURATION = 0.12;
    static var BOTTOM_FLIP_DURATION = 0.5 * com.rockstargames.gtav.minigames.horseracingconsole.CountdownDigit.TOP_FLIP_DURATION;
    static var SHADOW_FLIP_DELAY = 0.5 * com.rockstargames.gtav.minigames.horseracingconsole.CountdownDigit.TOP_FLIP_DURATION;

@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.levelDesign.nightclub.structs.DJ
 {
-   var state;
-   var name;
    var cost;
-   var saleCost;
-   var textureDictionary;
-   var texture;
    var isMale;
    var isSolo;
+   var name;
+   var saleCost;
+   var state;
+   var texture;
+   var textureDictionary;
    static var STATE_UNAVAILABLE = 0;
    static var STATE_BOOK = 1;
    static var STATE_COLLECT = 2;

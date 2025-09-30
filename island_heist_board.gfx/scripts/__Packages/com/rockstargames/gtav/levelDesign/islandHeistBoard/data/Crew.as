@@ -1,10 +1,10 @@
 class com.rockstargames.gtav.levelDesign.islandHeistBoard.data.Crew
 {
-   var id;
    var gamertag;
+   var headsetState;
+   var id;
    var isReady;
    var percentage;
-   var headsetState;
    function Crew()
    {
       this.id = -1;

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.heists.HEISTMAP_MP extends com.rockstargames.ui.core.BaseScriptUI
 {
    var CONTENT;
-   var zoomedOutMap;
    var zoomedInMap;
+   var zoomedOutMap;
    function HEISTMAP_MP()
    {
       super();

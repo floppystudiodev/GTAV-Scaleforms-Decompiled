@@ -1,16 +1,17 @@
 class com.rockstargames.gtav.levelDesign.ARENA_CAREER_WALL extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
+   var TIMELINE;
+   var _name;
+   var currScreen;
    var currScreenID;
-   var prevScreenID;
-   var navHistory;
-   var unlocks;
    var displayConfig;
    var imageManager;
+   var navHistory;
+   var prevScreenID;
    var screenContainer;
-   var currScreen;
+   var unlocks;
    var MAIN_SCREEN = 0;
    var SCREEN_CLASSES = [com.rockstargames.gtav.levelDesign.arenaCareerWall.screens.MainScreen];
    var gamername = "";
@@ -167,17 +168,20 @@ class com.rockstargames.gtav.levelDesign.ARENA_CAREER_WALL extends com.rockstarg
    static function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

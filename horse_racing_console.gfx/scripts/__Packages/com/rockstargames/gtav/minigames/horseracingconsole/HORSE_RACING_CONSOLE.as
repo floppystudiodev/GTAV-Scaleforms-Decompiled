@@ -1,34 +1,35 @@
 class com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE extends com.rockstargames.ui.core.BaseScreenLayout
 {
-   var TIMELINE;
    var BOUNDING_BOX;
    var CONTENT;
-   var imageManager;
-   var displayConfig;
-   var horses;
-   var players;
-   var winOrder;
-   var mainEventInProgress;
+   var TIMELINE;
+   var _name;
    var bettingEnabled;
-   var isSingleRace;
-   var mainSelectedHorseIndex;
-   var singleSelectedHorseIndex;
-   var mainBetAmount;
-   var singleBetAmount;
-   var mainPayout;
-   var singlePayout;
    var chips;
-   var navigationEnabled;
-   var lastClickedButtonID;
-   var inputReceived;
-   var screenContainer;
-   var cursor;
+   var countdownSecondsRemaining;
    var currScreen;
    var currScreenID;
-   var countdownSecondsRemaining;
-   var singleWinningHorseIndex;
-   var errorTitle;
+   var cursor;
+   var displayConfig;
    var errorMessage;
+   var errorTitle;
+   var horses;
+   var imageManager;
+   var inputReceived;
+   var isSingleRace;
+   var lastClickedButtonID;
+   var mainBetAmount;
+   var mainEventInProgress;
+   var mainPayout;
+   var mainSelectedHorseIndex;
+   var navigationEnabled;
+   var players;
+   var screenContainer;
+   var singleBetAmount;
+   var singlePayout;
+   var singleSelectedHorseIndex;
+   var singleWinningHorseIndex;
+   var winOrder;
    static var randomSeed = getTimer();
    var ACCEPT = 201;
    var CANCEL = 202;
@@ -346,17 +347,20 @@ class com.rockstargames.gtav.minigames.horseracingconsole.HORSE_RACING_CONSOLE e
    function truncate(tf, txt, autoSize, letterSpacing)
    {
       tf.text = txt;
+      var _loc3_;
       if(!isNaN(letterSpacing))
       {
-         var _loc3_ = tf.getTextFormat();
+         _loc3_ = tf.getTextFormat();
          _loc3_.letterSpacing = letterSpacing;
          tf.setTextFormat(_loc3_);
       }
+      var _loc6_;
+      var _loc2_;
       if(tf.textWidth > tf._width)
       {
-         var _loc6_ = tf._width;
+         _loc6_ = tf._width;
          tf.autoSize = autoSize;
-         var _loc2_ = txt.length;
+         _loc2_ = txt.length;
          while(_loc2_ > 0)
          {
             tf.text = txt.substring(0,_loc2_) + "...";

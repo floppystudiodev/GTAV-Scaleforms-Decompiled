@@ -1,16 +1,16 @@
 class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.core.PhoneUIComponent
 {
-   var listItem;
-   var row;
-   var dataProviderUI;
-   var numberOfVisibleRows;
    var container;
-   var offsetY;
-   var scrollBar;
    var currentID;
-   var offsetX;
    var currentItem;
+   var dataProviderUI;
+   var listItem;
+   var numberOfVisibleRows;
+   var offsetX;
+   var offsetY;
    var previousItem;
+   var row;
+   var scrollBar;
    var scrollBarTimeout;
    var _numberOfVisibleRows = 0;
    var defaultRowHeight = 45;
@@ -65,8 +65,8 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
       {
          this.currentID = this.dataProviderUI.length - 1;
       }
-      var _loc5_ = undefined;
-      var _loc6_ = undefined;
+      var _loc5_;
+      var _loc6_;
       _loc5_ = this.offsetY;
       if(this.arrayStartPoint == undefined)
       {
@@ -74,9 +74,10 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
       }
       var _loc9_ = this.arrayStartPoint;
       var _loc8_ = this.numberOfVisibleRows - 1 + this.arrayStartPoint;
+      var _loc7_;
       if(this.currentID > _loc8_ || this.currentID < _loc9_)
       {
-         var _loc7_ = this.currentID - (this.numberOfVisibleRows - 1);
+         _loc7_ = this.currentID - (this.numberOfVisibleRows - 1);
          if(_loc7_ < 0)
          {
             _loc7_ = 0;
@@ -84,9 +85,11 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
          this.arrayStartPoint = _loc7_;
       }
       var _loc3_ = 0;
+      var _loc2_;
+      var _loc4_;
       while(_loc3_ < this.numberOfVisibleRows)
       {
-         var _loc2_ = "listItem" + this.row;
+         _loc2_ = "listItem" + this.row;
          if(this.container[_loc2_] != undefined)
          {
             this.container[_loc2_].removeMovieClip();
@@ -94,7 +97,7 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
          this.container[_loc2_] = this.container.attachMovie(this.listItem,_loc2_,this.container.getNextHighestDepth());
          this.container[_loc2_]._name = _loc2_;
          this.container[_loc2_]._x = this.container._x + this.offsetX;
-         var _loc4_ = _loc3_ + this.arrayStartPoint;
+         _loc4_ = _loc3_ + this.arrayStartPoint;
          if(_loc4_ == this.currentID)
          {
             this.currentItem = this.container[_loc2_];
@@ -116,13 +119,18 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
    }
    function navigate(direction)
    {
+      var _loc3_;
+      var _loc2_;
+      var _loc4_;
+      var _loc5_;
+      var _loc6_;
       if(this.inputDelay == 0)
       {
          this.setState(this.currentItem,false);
          this.previousItem = this.currentItem;
-         var _loc3_ = this.currentItem._name.split("listItem");
-         var _loc2_ = Number(_loc3_[1]);
-         var _loc4_ = _loc2_;
+         _loc3_ = this.currentItem._name.split("listItem");
+         _loc2_ = Number(_loc3_[1]);
+         _loc4_ = _loc2_;
          switch(direction)
          {
             case "UP":
@@ -135,13 +143,11 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
                      _loc2_ = this.numberOfVisibleRows;
                      this.arrayStartPoint = this.dataProviderUI.length - this.numberOfVisibleRows;
                      this.populateContent();
+                     break;
                   }
-                  else
-                  {
-                     this.arrayStartPoint = this.arrayStartPoint - 1;
-                     _loc2_ = _loc2_ + 1;
-                     this.populateContent();
-                  }
+                  this.arrayStartPoint = this.arrayStartPoint - 1;
+                  _loc2_ = _loc2_ + 1;
+                  this.populateContent();
                }
                break;
             case "DOWN":
@@ -154,20 +160,18 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
                      _loc2_ = 1;
                      this.arrayStartPoint = 0;
                      this.populateContent();
+                     break;
                   }
-                  else
-                  {
-                     this.arrayStartPoint = this.arrayStartPoint + 1;
-                     _loc2_ = _loc2_ - 1;
-                     this.populateContent();
-                  }
+                  this.arrayStartPoint = this.arrayStartPoint + 1;
+                  _loc2_ = _loc2_ - 1;
+                  this.populateContent();
                }
          }
          this.currentItem = this.container["listItem" + _loc2_];
          _loc3_ = this.currentItem._name.split("listItem");
-         var _loc5_ = Number(_loc3_[1]) + this.arrayStartPoint;
+         _loc5_ = Number(_loc3_[1]) + this.arrayStartPoint;
          this.currentSelection = _loc5_ - 1;
-         var _loc6_ = this.getRowAsPercentage(_loc5_);
+         _loc6_ = this.getRowAsPercentage(_loc5_);
          this.scrollBar.scrollToPercentage(_loc6_);
          this.setState(this.currentItem,true);
          this.inputDelay = 1;
@@ -180,7 +184,7 @@ class com.rockstargames.ui.controls.ScrollingList extends com.rockstargames.ui.c
    }
    function getRowAsPercentage(rowNumber)
    {
-      var _loc2_ = undefined;
+      var _loc2_;
       if(rowNumber > 1)
       {
          _loc2_ = rowNumber / this.dataProviderUI.length * 100;

@@ -1,13 +1,13 @@
 class com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT extends com.rockstargames.ui.core.BaseWebsite
 {
-   var PAGE_NAMES;
    var CAN_STORE_PAGE;
-   var browser;
    var CONTENT;
    var OnColour;
-   var mcScope;
+   var PAGE_NAMES;
+   var browser;
    var dataTextScope;
    var defaultButtonOnColour;
+   var mcScope;
    function GENERIC_WEBSITE_SCRIPT()
    {
       super();
@@ -73,6 +73,7 @@ class com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT extends com.rockstargame
       }
       this.dataTextScope = new Array();
       var _loc3_ = 0;
+      var _loc2_;
       for(var _loc4_ in this.mcScope)
       {
          if(typeof this.mcScope[_loc4_] == "movieclip")
@@ -80,7 +81,7 @@ class com.rockstargames.gtav.web.GENERIC_WEBSITE_SCRIPT extends com.rockstargame
             if(this.mcScope[_loc4_].btnTxt != undefined)
             {
                this.mcScope[_loc4_].offColour = this.mcScope[_loc4_].btnTxt.textColor;
-               var _loc2_ = this.mcScope[_loc4_].btnTxt;
+               _loc2_ = this.mcScope[_loc4_].btnTxt;
                this.dataTextScope[_loc3_] = _loc2_;
                _loc3_ = _loc3_ + 1;
             }

@@ -1,8 +1,8 @@
 class com.rockstargames.gtav.levelDesign.musicStudioMonitor.Fader
 {
-   var view;
-   var value;
    var noiseSamplePoint;
+   var value;
+   var view;
    static var NOISE_SAMPLE_STEP = 0.001;
    static var NOISE_SCALAR = 3;
    static var DAMPING = 0.3;
