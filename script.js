@@ -13,15 +13,18 @@ async function loadScaleforms() {
             isHome: true,
             content: {
                 title: "DECOMPILED SCALEFORMS",
-                lastUpdated: "30-09-2025",
+                lastUpdated: "15-07-2026",
                 description: [
                     "This WIKI format is based from: https://vespura.com/fivem/scaleform/",
                     "THIS ONE ITS JUST UPDATED",
+                    "Decompiled from GTA V build 1.0.3889.0 (DLC mp2026_01).",
+                    "Each scaleform is tagged Vanilla (shipped in the base game files), with the DLC that introduced it, or Post-launch when it came after release but the DLC can't be pinned down. The date next to it is the last time Rockstar modified that .gfx, which is NOT when it was introduced: cellphone_ifruit ships with the base game but was last touched in 2024.",
+                    "The game never records which DLC brought a scaleform in, since they all live in update.rpf, a cumulative blob with no per-file origin. The DLC tags here are recovered from three indirect traces: the minimap interior movies (int<hash>.gfx) are named after the joaat of an MLO archetype, and that interior's .ytyp does live inside a specific dlc.rpf; scaleforms calling SET_TEXT_WITH_TRANSLATION carry GXT keys that only one DLC's .gxt2 defines; and scaleformpreallocation.xml turns out to be hand-edited in insertion order, so it doubles as a timeline. That covers 645 of the 817 .gfx files. The rest stay Post-launch rather than being guessed.",
                     "Here is a list of all decompiled scaleforms and all of their functions (duplicate entries removed). Note this is all auto generated so not all of these functions may work in-game. In most cases, only the UPPERCASE function names are the ones that work in-game. I've not removed the lowercase functions however, because sometimes lowercase functions DO work.",
                     "Note that most pausemenu / frontend menu scaleforms can NOT be manually drawn on the screen. You will need to use global scaleform natives to call those functions using frontend menus. This is a LOT harder because almost nothing is documented.",
                     "If you want to acces all the decompiled scaleforms you can check it here: https://github.com/floppystudiodev/GTAV-Scaleforms-Decompiled"
                 ],
-                codeExample: ` 
+                codeExample: `
                 int    RequestScaleformMovie(scalename)
                 bool   HasScaleformMovieLoaded(scale)
                 bool   HasScaleformMovieFilenameLoaded(scalename)
@@ -51,57 +54,51 @@ async function loadScaleforms() {
     }
 }
 
+// Indice de busqueda: se construye una vez al arrancar. Cada entrada guarda el
+// nombre y todas sus funciones ya en minusculas para no recalcularlo en cada tecla.
+const searchIndex = []
+
 // Function to render scaleforms list in sidebar
 function renderScaleformList(scaleforms) {
     const scaleformList = document.getElementById("scaleform-list")
-    const homeButton = document.getElementById("home-button")
     scaleformList.innerHTML = "" // Clear current content
 
-    // Set up HOME button
-    homeButton.addEventListener("click", () => {
-        // Remove active class from all elements
-        document.querySelectorAll(".scaleform-item, .home-button").forEach((item) => {
-            item.classList.remove("active")
-        })
-
-        // Add active class to HOME button
-        homeButton.classList.add("active")
-
-        // Display HOME details
-        renderScaleformDetails(scaleforms["HOME"])
-    })
-
-    // Create elements for each scaleform (excluding HOME)
-    Object.keys(scaleforms)
+    const keys = Object.keys(scaleforms)
         .filter((key) => key !== "HOME")
         .sort()
-        .forEach((key) => {
-            const scaleformItem = document.createElement("div")
-            scaleformItem.className = "scaleform-item"
-            scaleformItem.textContent = key
-            scaleformItem.dataset.key = key
-            
-            scaleformItem.addEventListener("click", () => {
-                // Remove active class from all elements
-                document.querySelectorAll(".scaleform-item").forEach((item) => {
-                    item.classList.remove("active")
-                })
-            
-                // Add active class to selected element
-                scaleformItem.classList.add("active")
-            
-                // Display selected scaleform details
-                renderScaleformDetails(scaleforms[key])
-            })
-        
-            scaleformList.appendChild(scaleformItem)
-            })
 
-    homeButton.click()
+    const fragment = document.createDocumentFragment()
+
+    keys.forEach((key) => {
+        const scaleformItem = document.createElement("div")
+        scaleformItem.className = "scaleform-item"
+        scaleformItem.textContent = key
+        scaleformItem.dataset.key = key
+        fragment.appendChild(scaleformItem)
+
+        const functions = scaleforms[key].functions || []
+        searchIndex.push({
+            key: key,
+            haystack: key.toLowerCase(),
+            functions: functions.map((f) => f.name).join(" ").toLowerCase(),
+            el: scaleformItem,
+        })
+    })
+
+    scaleformList.appendChild(fragment)
+    document.getElementById("sidebar-count").textContent = keys.length
+
+    // Un solo listener delegado para los 506 items (antes eran 1012)
+    scaleformList.addEventListener("click", (e) => {
+        const item = e.target.closest(".scaleform-item")
+        if (item) window.location.hash = item.dataset.key
+    })
 }
 
-// Function to render scaleform details
-function renderScaleformDetails(scaleform) {
+// `key` es el nombre del .gfx (el que va en RequestScaleformMovie y en el ancla).
+// `scaleform.file` es solo el .as del que se sacaron las funciones, que en 219 de
+// 506 entradas NO coincide: BUSY_SPINNER comparte ActionScript con INSTRUCTIONAL_BUTTONS.
+function renderScaleformDetails(scaleform, key) {
     const scaleformDetails = document.getElementById("scaleform-details")
     scaleformDetails.innerHTML = "" // Clear current content
 
@@ -148,7 +145,7 @@ function renderScaleformDetails(scaleform) {
         const pre = document.createElement("pre")
         const code = document.createElement("code");
         code.className = "manual-format";
-        code.innerHTML = formatCode(scaleform.content.codeExample);
+        code.innerHTML = formatCode(dedent(scaleform.content.codeExample));
         pre.appendChild(code)
         codeBlock.appendChild(pre)
 
@@ -161,17 +158,38 @@ function renderScaleformDetails(scaleform) {
         // Create title
         const title = document.createElement("h2")
         title.className = "scaleform-title"
-        title.textContent = scaleform.file
+        title.textContent = key
         scaleformDetails.appendChild(title)
+
+        const meta = renderOriginMeta(scaleform, key)
+        if (meta) scaleformDetails.appendChild(meta)
+
+        const functions = scaleform.functions || []
+
+        if (functions.length === 0) {
+            const empty = document.createElement("div")
+            empty.className = "empty-functions"
+            empty.textContent = "No functions were found in this .gfx. It's either pure artwork (fonts, textures) or its ActionScript didn't survive decompilation."
+            scaleformDetails.appendChild(empty)
+            return
+        }
+
+        // Filtro solo cuando la lista es larga: la mediana son 6 funciones, pero
+        // SOCIAL_CLUB2 tiene 142 y ahi buscar a ojo no es viable.
+        if (functions.length > 12) {
+            scaleformDetails.appendChild(renderFunctionFilter(functions.length))
+        }
 
         // Create functions list
         const functionList = document.createElement("div")
         functionList.className = "function-list"
+        functionList.id = "function-list"
 
         // Add each function to list
-        scaleform.functions.forEach((func) => {
+        functions.forEach((func) => {
             const functionItem = document.createElement("div")
             functionItem.className = "function-item"
+            functionItem.dataset.name = func.name.toLowerCase()
 
             const functionCode = document.createElement("code")
             functionCode.className = "function-code"
@@ -181,17 +199,24 @@ function renderScaleformDetails(scaleform) {
             functionName.className = "function-name"
             functionName.textContent = func.name
 
+            // Las minusculas normalmente no funcionan in-game (lo dice el HOME),
+            // asi que pesan menos visualmente en vez de mentir por omision.
+            if (func.name !== func.name.toUpperCase()) {
+                functionName.classList.add("is-lowercase")
+                functionName.title = "Not uppercase: usually these don't work in-game, but sometimes they do"
+            }
+
             functionCode.appendChild(functionName)
             functionCode.appendChild(document.createTextNode("("))
 
-            // Highlight each argument in blue
+            // Highlight each argument
             func.args.forEach((arg, index) => {
                 const argElement = document.createElement("span");
                 argElement.className = "function-arg";
                 argElement.textContent = arg;
-                
+
                 functionCode.appendChild(argElement);
-            
+
                 // Add comma if not last argument
                 if (index < func.args.length - 1) {
                     functionCode.appendChild(document.createTextNode(", "));
@@ -200,6 +225,15 @@ function renderScaleformDetails(scaleform) {
 
             functionCode.appendChild(document.createTextNode(")"))
             functionItem.appendChild(functionCode)
+
+            const copyButton = document.createElement("button")
+            copyButton.type = "button"
+            copyButton.className = "fn-copy"
+            copyButton.textContent = "COPY"
+            copyButton.dataset.copy = func.name
+            copyButton.title = `Copy "${func.name}" to the clipboard`
+            functionItem.appendChild(copyButton)
+
             functionList.appendChild(functionItem)
         })
 
@@ -207,90 +241,361 @@ function renderScaleformDetails(scaleform) {
     }
 }
 
+function renderFunctionFilter(total) {
+    const row = document.createElement("div")
+    row.className = "fn-filter-row"
+
+    const input = document.createElement("input")
+    input.type = "text"
+    input.id = "fn-filter"
+    input.className = "fn-filter"
+    input.placeholder = "Filter functions..."
+    input.autocomplete = "off"
+    input.spellcheck = false
+
+    const count = document.createElement("span")
+    count.className = "fn-filter-count"
+    count.id = "fn-filter-count"
+    count.textContent = `${total} functions`
+
+    row.appendChild(input)
+    row.appendChild(count)
+    return row
+}
+
+function filterFunctions(query) {
+    const list = document.getElementById("function-list")
+    if (!list) return
+
+    const q = query.trim().toLowerCase()
+    const items = list.querySelectorAll(".function-item")
+    let visible = 0
+
+    items.forEach((item) => {
+        const hit = !q || item.dataset.name.includes(q)
+        item.classList.toggle("hidden", !hit)
+        if (hit) visible++
+    })
+
+    const count = document.getElementById("fn-filter-count")
+    if (count) {
+        count.textContent = q
+            ? `${visible} of ${items.length} functions`
+            : `${items.length} functions`
+    }
+}
+
+// Procedencia: "vanilla" = venia en el disco base, "dlc" = lo trajo el pack que dice `dlc`,
+// "post-launch" = llego despues del lanzamiento pero no hay dato que diga con que DLC.
+// lastModified es la ultima vez que Rockstar toco el archivo, NO cuando aparecio:
+// cellphone_ifruit es vanilla de 2013 y su fecha es de 2024.
+function originTag(text, cls, hint) {
+    const el = document.createElement("span")
+    el.className = `origin-tag ${cls}`
+    el.textContent = text
+    el.title = hint
+    return el
+}
+
+function metaFact(text, hint) {
+    const el = document.createElement("span")
+    el.className = "meta-fact"
+    if (text) el.textContent = text
+    if (hint) el.title = hint
+    return el
+}
+
+function metaStrong(text) {
+    const el = document.createElement("span")
+    el.className = "meta-strong"
+    el.textContent = text
+    return el
+}
+
+function renderOriginMeta(scaleform, key) {
+    const { origin, dlc, dlcDate, dlcRange, lastModified, file } = scaleform
+
+    const meta = document.createElement("div")
+    meta.className = "scaleform-meta"
+
+    // El tag dice siempre la categoria; el texto de al lado, el detalle concreto.
+    const facts = []
+
+    if (origin === "dlc" && dlc) {
+        meta.appendChild(originTag("DLC", "origin-dlc", "Traced back to the DLC that introduced it"))
+        const f = metaFact(null)
+        f.appendChild(document.createTextNode("added by "))
+        f.appendChild(metaStrong(dlc))
+        if (dlcDate) f.appendChild(document.createTextNode(` (${dlcDate})`))
+        facts.push(f)
+    } else if (origin === "vanilla") {
+        // El tag ya lo dice todo, no hace falta repetirlo en texto.
+        meta.appendChild(originTag("VANILLA", "origin-vanilla", "Shipped with the base game"))
+    } else if (origin === "post-launch") {
+        meta.appendChild(originTag("POST-LAUNCH", "origin-post-launch",
+            "Added after release. The game never records which DLC a scaleform came with, so this one can't be pinned to one"))
+        if (dlcRange) {
+            const f = metaFact(null, "Narrowed down by its slot in scaleformpreallocation.xml, which is hand-edited in insertion order. Not pinned to a single DLC")
+            f.appendChild(document.createTextNode("added between "))
+            f.appendChild(metaStrong(dlcRange[0]))
+            f.appendChild(document.createTextNode(" and "))
+            f.appendChild(metaStrong(dlcRange[1]))
+            facts.push(f)
+        } else {
+            facts.push(metaFact("DLC not recoverable",
+                "Everything lives in update.rpf, a cumulative blob with no per-file origin, and this one leaves no GXT or preallocation trace"))
+        }
+    }
+
+    if (lastModified) {
+        facts.push(metaFact(`.gfx last modified ${lastModified.slice(0, 10)}`,
+            "When Rockstar last touched the .gfx file itself. NOT when the scaleform was introduced"))
+    }
+
+    const count = (scaleform.functions || []).length
+    facts.push(metaFact(count === 1 ? "1 function" : `${count} functions`))
+
+    // Si las funciones salen de otro .as, decirlo: explica por que aparecen
+    // funciones "ajenas" y avisa de los matches flojos (FIB_PC -> mousecursor).
+    if (file && key && file.toUpperCase() !== key.toUpperCase()) {
+        const f = metaFact(null, `The functions listed here were read from ${file}.as inside this .gfx. Its name doesn't match the scaleform, so the list may belong to a shared or wrongly matched class. Request the movie by its own name: ${key}`)
+        f.appendChild(document.createTextNode("functions read from "))
+        f.appendChild(metaStrong(`${file}.as`))
+        facts.push(f)
+    }
+
+    facts.forEach((fact, i) => {
+        if (i > 0) {
+            const sep = document.createElement("span")
+            sep.className = "meta-sep"
+            sep.textContent = "·"
+            meta.appendChild(sep)
+        }
+        meta.appendChild(fact)
+    })
+
+    return meta
+}
+
 function convertLinksToHTML(text) {
     return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="external-link">$1</a>');
 }
 
+// El ejemplo de natives viene indentado con la sangria del fuente
+function dedent(code) {
+    const lines = code.replace(/^[ \t]*\n/, "").replace(/\s+$/, "").split("\n")
+    const indents = lines.filter((l) => l.trim()).map((l) => l.match(/^ */)[0].length)
+    const pad = Math.min.apply(null, indents)
+    return lines.map((l) => l.slice(pad)).join("\n")
+}
+
 function formatCode(code) {
     return code
-        .replace(/(int|bool|void|string|float)/g, '<span class="type">$1</span>') // Data types in red
-        .replace(/([A-Za-z_]+)\(/g, '<span class="function">$1</span>(') // Functions in blue
-        .replace(/\/\/(.*)/g, '<span class="comment">//$1</span>'); // Comments in gray
+        .replace(/(int|bool|void|string|float)/g, '<span class="type">$1</span>') // Data types
+        .replace(/([A-Za-z_]+)\(/g, '<span class="function">$1</span>(') // Functions
+        .replace(/\/\/(.*)/g, '<span class="comment">//$1</span>'); // Comments
 }
 
 // Function to filter scaleforms based on search text
 function filterScaleforms(searchText) {
-    const scaleformItems = document.querySelectorAll(".scaleform-item")
+    const query = searchText.trim().toLowerCase()
     let visibleCount = 0
 
-    scaleformItems.forEach((item) => {
-        const scaleformName = item.textContent.toLowerCase()
-        if (scaleformName.includes(searchText.toLowerCase())) {
-            item.classList.remove("hidden")
-            visibleCount++
-        } else {
-            item.classList.add("hidden")
-        }
-    })
+    for (const entry of searchIndex) {
+        const hit = !query || entry.haystack.includes(query)
+        entry.el.classList.toggle("hidden", !hit)
+        if (hit) visibleCount++
+    }
 
-    // Show message if no results
-    const noResultsElement = document.getElementById("no-results")
-    if (visibleCount === 0) {
-        if (!noResultsElement) {
-            const noResults = document.createElement("div")
-            noResults.id = "no-results"
-            noResults.className = "no-results"
-            noResults.textContent = "No se encontraron resultados"
-            document.getElementById("scaleform-list").appendChild(noResults)
+    // Si ningun nombre encaja, probamos por nombre de funcion antes de rendirnos:
+    // "SET_TICK" es una busqueda legitima y hasta ahora devolvia "no results".
+    let byFunction = 0
+    if (query && visibleCount === 0) {
+        for (const entry of searchIndex) {
+            const hit = entry.functions.includes(query)
+            entry.el.classList.toggle("hidden", !hit)
+            if (hit) byFunction++
         }
-    } else if (noResultsElement) {
-        noResultsElement.remove()
+    }
+
+    setSearchNote(byFunction > 0 ? `No scaleform is called <b>${escapeHTML(searchText.trim())}</b>. These ${byFunction} have a function that matches:` : null)
+    setNoResults(visibleCount === 0 && byFunction === 0)
+}
+
+function escapeHTML(text) {
+    const div = document.createElement("div")
+    div.textContent = text
+    return div.innerHTML
+}
+
+function setSearchNote(html) {
+    const list = document.getElementById("scaleform-list")
+    let note = document.getElementById("search-note")
+    if (!html) {
+        if (note) note.remove()
+        return
+    }
+    if (!note) {
+        note = document.createElement("div")
+        note.id = "search-note"
+        note.className = "search-note"
+        list.insertBefore(note, list.firstChild)
+    }
+    note.innerHTML = html
+}
+
+function setNoResults(show) {
+    const existing = document.getElementById("no-results")
+    if (!show) {
+        if (existing) existing.remove()
+        return
+    }
+    if (existing) return
+    const noResults = document.createElement("div")
+    noResults.id = "no-results"
+    noResults.className = "no-results"
+    noResults.textContent = "No scaleform name or function matches that."
+    document.getElementById("scaleform-list").appendChild(noResults)
+}
+
+// Copia el NOMBRE, que es lo que acaba dentro de BeginScaleformMovieMethod(sf, "...")
+async function copyToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text)
+        return true
+    } catch (err) {
+        const ta = document.createElement("textarea")
+        ta.value = text
+        ta.style.position = "fixed"
+        ta.style.opacity = "0"
+        document.body.appendChild(ta)
+        ta.select()
+        const ok = document.execCommand("copy")
+        ta.remove()
+        return ok
     }
 }
+
+let copyResetTimer = null
 
 // Initialize app when DOM is loaded
 document.addEventListener("DOMContentLoaded", async () => {
     const scaleforms = await loadScaleforms();
     renderScaleformList(scaleforms);
 
-    // Set up search bar
     const searchInput = document.getElementById("search-input");
+    const homeButton = document.getElementById("home-button");
+    const sidebar = document.getElementById("sidebar");
+    const indexToggle = document.getElementById("index-toggle");
+    const mobileCurrent = document.getElementById("mobile-current");
+    const scaleformList = document.getElementById("scaleform-list");
+
     searchInput.addEventListener("input", (e) => {
         filterScaleforms(e.target.value);
     });
 
-    // Function to handle URL hash
-    function handleHashChange() {
-        const hash = window.location.hash.substring(1); // Remove "#"
-        if (hash && scaleforms[hash]) {
-            renderScaleformDetails(scaleforms[hash]);
+    // Enter abre el primer resultado visible: buscar -> encontrar sin tocar el raton
+    searchInput.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return
+        const first = searchIndex.find((entry) => !entry.el.classList.contains("hidden"))
+        if (first) window.location.hash = first.key
+    });
 
-            // Highlight scaleform in list
-            document.querySelectorAll(".scaleform-item").forEach(item => {
-                item.classList.remove("active");
-            });
+    document.addEventListener("keydown", (e) => {
+        if (e.key !== "/" || e.metaKey || e.ctrlKey) return
+        const tag = document.activeElement && document.activeElement.tagName
+        if (tag === "INPUT" || tag === "TEXTAREA") return
+        e.preventDefault()
+        searchInput.focus()
+        searchInput.select()
+    });
 
-            const activeItem = document.querySelector(`.scaleform-item[data-key="${hash}"]`);
-            if (activeItem) {
-                activeItem.classList.add("active");
-            }
+    // Filtro y copia dentro del detalle: delegados, para no meter 142 listeners por ficha
+    const details = document.getElementById("scaleform-details");
+
+    details.addEventListener("input", (e) => {
+        if (e.target.id === "fn-filter") filterFunctions(e.target.value)
+    });
+
+    details.addEventListener("click", async (e) => {
+        const button = e.target.closest(".fn-copy")
+        if (!button) return
+        const ok = await copyToClipboard(button.dataset.copy)
+        clearTimeout(copyResetTimer)
+        document.querySelectorAll(".fn-copy.copied").forEach((b) => {
+            b.classList.remove("copied")
+            b.textContent = "COPY"
+        })
+        button.textContent = ok ? "COPIED" : "FAILED"
+        button.classList.add("copied")
+        copyResetTimer = setTimeout(() => {
+            button.classList.remove("copied")
+            button.textContent = "COPY"
+        }, 1200)
+    });
+
+    if (indexToggle) {
+        indexToggle.addEventListener("click", () => {
+            const open = sidebar.classList.toggle("open")
+            indexToggle.textContent = open ? "CLOSE" : "INDEX"
+            indexToggle.setAttribute("aria-expanded", String(open))
+            if (open) ensureActiveVisible()
+        })
+    }
+
+    function ensureActiveVisible() {
+        const active = scaleformList.querySelector(".scaleform-item.active")
+        if (!active) return
+        const top = active.offsetTop - scaleformList.scrollTop
+        if (top < 0 || top > scaleformList.clientHeight - active.offsetHeight) {
+            scaleformList.scrollTop = active.offsetTop - scaleformList.clientHeight / 2
         }
     }
 
-    // Call function when page loads with hash
-    handleHashChange();
+    // Function to handle URL hash
+    function handleHashChange() {
+        const hash = decodeURIComponent(window.location.hash.substring(1)); // Remove "#"
+        const key = hash && scaleforms[hash] ? hash : "HOME"
+        const scaleform = scaleforms[key]
+        if (!scaleform) return
 
-    // Listen for URL hash changes
-    window.addEventListener("hashchange", handleHashChange);
+        renderScaleformDetails(scaleform, key);
 
-    // Modify button events to update hash on click
-    document.querySelectorAll(".scaleform-item").forEach(item => {
-        item.addEventListener("click", () => {
-            window.location.hash = item.dataset.key;
+        document.title = key === "HOME" ? "GTA V Scaleforms" : `${key} - GTA V Scaleforms`
+        if (mobileCurrent) mobileCurrent.textContent = key
+
+        // Highlight in list
+        document.querySelectorAll(".scaleform-item.active, .home-button.active").forEach(item => {
+            item.classList.remove("active");
         });
-    });
 
-    document.getElementById("home-button").addEventListener("click", () => {
+        if (key === "HOME") {
+            homeButton.classList.add("active")
+        } else {
+            const activeItem = scaleformList.querySelector(`.scaleform-item[data-key="${CSS.escape(key)}"]`);
+            if (activeItem) {
+                activeItem.classList.add("active");
+                // Al entrar por un enlace directo el item activo puede estar a 3000px
+                // de scroll: sin esto no sabes donde estas en la lista.
+                ensureActiveVisible()
+            }
+        }
+
+        // En movil el indice tapa la pantalla; al elegir algo, sobra
+        sidebar.classList.remove("open")
+        if (indexToggle) {
+            indexToggle.textContent = "INDEX"
+            indexToggle.setAttribute("aria-expanded", "false")
+        }
+
+        document.querySelector(".main-content").scrollTop = 0
+    }
+
+    homeButton.addEventListener("click", () => {
         window.location.hash = "HOME";
     });
+
+    // Unico punto de entrada: el hash manda y renderiza una sola vez
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
 });
