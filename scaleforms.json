@@ -1,6 +1,10 @@
 {
     "AIRCRAFT_DIALS": {
         "file": "AIRCRAFT_DIALS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "AIRCRAFT_DIALS",
@@ -69,6 +73,10 @@
     },
     "APP_JOB_LIST": {
         "file": "APP_JOB_LIST",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-02-17T17:38:09Z",
         "functions": [
             {
                 "name": "APP_JOB_LIST",
@@ -106,6 +114,10 @@
     },
     "APP_MISSION_STATS_VIEW": {
         "file": "APP_MISSION_STATS_VIEW",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:27:09+01:00",
         "functions": [
             {
                 "name": "APP_MISSION_STATS_VIEW",
@@ -133,6 +145,10 @@
     },
     "APP_NUMBERPAD": {
         "file": "APP_NUMBERPAD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:27:08+01:00",
         "functions": [
             {
                 "name": "APP_NUMBERPAD",
@@ -181,6 +197,10 @@
     },
     "APP_SECUROSERV_HACKING": {
         "file": "APP_SECUROSERV_HACKING",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-10-27T12:03:40+01:00",
         "functions": [
             {
                 "name": "APP_SECUROSERV_HACKING",
@@ -249,6 +269,10 @@
     },
     "APP_TODO_LIST": {
         "file": "APP_TODO_LIST",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:27:07+01:00",
         "functions": [
             {
                 "name": "APP_TODO_LIST",
@@ -279,6 +303,10 @@
     },
     "APP_TODO_VIEW": {
         "file": "APP_TODO_VIEW",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:27:06+01:00",
         "functions": [
             {
                 "name": "APP_TODO_VIEW",
@@ -306,6 +334,10 @@
     },
     "APP_TRACKIFY": {
         "file": "APP_TRACKIFY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-06-23T14:19:54+01:00",
         "functions": [
             {
                 "name": "APP_TRACKIFY",
@@ -430,6 +462,10 @@
     },
     "ARCADE_BUSINESS_HUB": {
         "file": "ARCADE_BUSINESS_HUB",
+        "origin": "dlc",
+        "dlc": "mpheist3",
+        "dlcDate": "2019-12-12",
+        "lastModified": "2020-01-06T11:56:24Z",
         "functions": [
             {
                 "name": "ARCADE_BUSINESS_HUB",
@@ -618,6 +654,10 @@
     },
     "ARCADE_MANAGEMENT": {
         "file": "ARCADE_MANAGEMENT",
+        "origin": "dlc",
+        "dlc": "mpheist3",
+        "dlcDate": "2019-12-12",
+        "lastModified": "2020-05-25T16:32:18+01:00",
         "functions": [
             {
                 "name": "ARCADE_MANAGEMENT",
@@ -841,6 +881,10 @@
     },
     "ARENA_CAREER_WALL": {
         "file": "ARENA_CAREER_WALL",
+        "origin": "dlc",
+        "dlc": "mpchristmas2018",
+        "dlcDate": "2018-12-11",
+        "lastModified": "2018-11-29T14:56:11Z",
         "functions": [
             {
                 "name": "ARENA_CAREER_WALL",
@@ -966,6 +1010,10 @@
     },
     "ARENA_GUN_CAM_APOCALYPSE": {
         "file": "ARENA_GUN_CAM",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-11-22T16:42:55Z",
         "functions": [
             {
                 "name": "ARENA_GUN_CAM",
@@ -1001,6 +1049,10 @@
     },
     "ARENA_GUN_CAM_CONSUMER": {
         "file": "ARENA_GUN_CAM",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-11-22T16:42:46Z",
         "functions": [
             {
                 "name": "ARENA_GUN_CAM",
@@ -1036,6 +1088,10 @@
     },
     "ARENA_GUN_CAM_SCIFI": {
         "file": "ARENA_GUN_CAM",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-11-22T16:42:51Z",
         "functions": [
             {
                 "name": "ARENA_GUN_CAM",
@@ -1071,6 +1127,10 @@
     },
     "ARM1_CONNECTED_BABY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-21T17:48:19+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1092,6 +1152,10 @@
     },
     "ARM3_CONNECTED_LARA": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T15:23:01+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1113,6 +1177,10 @@
     },
     "ATM": {
         "file": "ATM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-02-18T16:50:39Z",
         "functions": [
             {
                 "name": "ATM",
@@ -1276,6 +1344,10 @@
     },
     "AUTO_SHOP_BOARD": {
         "file": "AUTO_SHOP_BOARD",
+        "origin": "dlc",
+        "dlc": "mptuner",
+        "dlcDate": "2021-07-20",
+        "lastModified": "2021-07-09T16:34:10+01:00",
         "functions": [
             {
                 "name": "AUTO_SHOP_BOARD",
@@ -1444,6 +1516,10 @@
     },
     "AUTO_SHOP_CREW_NAME": {
         "file": "AUTO_SHOP_CREW_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-06-29T11:21:54+01:00",
         "functions": [
             {
                 "name": "AUTO_SHOP_CREW_NAME",
@@ -1471,6 +1547,10 @@
     },
     "AVENGER_OPERATIONS_TERMINAL": {
         "file": "AVENGER_OPERATIONS_TERMINAL",
+        "origin": "dlc",
+        "dlc": "mp2023_01",
+        "dlcDate": "2023-06-06",
+        "lastModified": "2023-05-24T16:19:03-07:00",
         "functions": [
             {
                 "name": "AVENGER_OPERATIONS_TERMINAL",
@@ -1633,6 +1713,10 @@
     },
     "AXE_OF_FURY": {
         "file": "AXE_OF_FURY",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-07-18T09:53:36-07:00",
         "functions": [
             {
                 "name": "AXE_OF_FURY",
@@ -1717,6 +1801,10 @@
     },
     "BADGER_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:35:17+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1738,6 +1826,10 @@
     },
     "BADGER_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T15:26:20+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1759,6 +1851,10 @@
     },
     "BADGER_BLANK_LAMAR": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-22T16:34:56+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1780,6 +1876,10 @@
     },
     "BADGER_BLANK_LESTER": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-03T16:14+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1801,6 +1901,10 @@
     },
     "BADGER_BLANK_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T00:20:13+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1822,6 +1926,10 @@
     },
     "BADGER_DIALING_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T00:18:51+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -1843,6 +1951,10 @@
     },
     "BANK_JOB_LOGIN": {
         "file": "BANK_JOB_LOGIN",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-06-18T19:50:50+01:00",
         "functions": [
             {
                 "name": "BANK_JOB_LOGIN",
@@ -1858,6 +1970,10 @@
     },
     "BIKER_BUSINESSES": {
         "file": "BIKER_BUSINESSES",
+        "origin": "dlc",
+        "dlc": "mpbiker",
+        "dlcDate": "2016-10-04",
+        "lastModified": "2017-11-20T17:51:15Z",
         "functions": [
             {
                 "name": "BIKER_BUSINESSES",
@@ -2099,6 +2215,10 @@
     },
     "BIKER_MISSION_WALL": {
         "file": "BIKER_MISSION_WALL",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-09-22T17:30:29+01:00",
         "functions": [
             {
                 "name": "BIKER_MISSION_WALL",
@@ -2198,6 +2318,10 @@
     },
     "BINOCULARS": {
         "file": "BINOCULARS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-03-29T16:57:55Z",
         "functions": [
             {
                 "name": "BINOCULARS",
@@ -2217,6 +2341,10 @@
     },
     "BLIMP_TEXT": {
         "file": "BLIMP_TEXT",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "BLIMP_TEXT",
@@ -2253,10 +2381,18 @@
                     "duration"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpspecialraces",
+            "mpgunrunning"
         ]
     },
     "BOMB_COUNTDOWN": {
         "file": "BOMB_COUNTDOWN",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-04-16T13:52:57+01:00",
         "functions": [
             {
                 "name": "BOMB_COUNTDOWN",
@@ -2300,6 +2436,10 @@
     },
     "BOUNTY_COMPUTER": {
         "file": "BOUNTY_COMPUTER",
+        "origin": "dlc",
+        "dlc": "mp2024_01",
+        "dlcDate": "2023-03-08",
+        "lastModified": "2024-05-13T15:00:37+01:00",
         "functions": [
             {
                 "name": "BOUNTY_COMPUTER",
@@ -2469,6 +2609,10 @@
     },
     "BREAKING_NEWS": {
         "file": "BREAKING_NEWS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "BREAKING_NEWS",
@@ -2543,6 +2687,10 @@
     },
     "BUSY_SPINNER": {
         "file": "INSTRUCTIONAL_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-01-28T11:22:32Z",
         "functions": [
             {
                 "name": "INSTRUCTIONAL_BUTTONS",
@@ -2824,95 +2972,12 @@
             }
         ]
     },
-    "CALIBRATION": {
-        "file": "CALIBRATION",
-        "functions": [
-            {
-                "name": "CALIBRATION",
-                "args": []
-            },
-            {
-                "name": "INITIALISE",
-                "args": [
-                    "mc"
-                ]
-            },
-            {
-                "name": "initColor",
-                "args": []
-            },
-            {
-                "name": "SET_HDR_VALUES",
-                "args": [
-                    "rowId",
-                    "textLabel",
-                    "minValue",
-                    "maxValue",
-                    "currentValue"
-                ]
-            },
-            {
-                "name": "SET_FOOTER_TEXT",
-                "args": [
-                    "textLabel"
-                ]
-            },
-            {
-                "name": "SET_SELECTED",
-                "args": [
-                    "rowId"
-                ]
-            },
-            {
-                "name": "setSliderFill",
-                "args": [
-                    "mc",
-                    "fillPercent"
-                ]
-            },
-            {
-                "name": "setHighlight",
-                "args": [
-                    "mc",
-                    "isHighlighted"
-                ]
-            },
-            {
-                "name": "setLocalisedText",
-                "args": [
-                    "tf",
-                    "label"
-                ]
-            },
-            {
-                "name": "SET_BUTTONS",
-                "args": []
-            },
-            {
-                "name": "SET_ARROW_ALPHA",
-                "args": [
-                    "arrowID",
-                    "a"
-                ]
-            },
-            {
-                "name": "onMouseEvent",
-                "args": [
-                    "evtType",
-                    "targetMC",
-                    "args"
-                ]
-            },
-            {
-                "name": "resizeAsianText",
-                "args": [
-                    "tf"
-                ]
-            }
-        ]
-    },
     "CAMERA_GALLERY": {
         "file": "CAMERA_GALLERY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-23T18:00:46+01:00",
         "functions": [
             {
                 "name": "CAMERA_GALLERY",
@@ -2987,6 +3052,10 @@
     },
     "CAMERA_SHUTTER": {
         "file": "CAMERA_SHUTTER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2012-10-25T17:21:54+01:00",
         "functions": [
             {
                 "name": "CAMERA_SHUTTER",
@@ -3016,6 +3085,10 @@
     },
     "CASINO_HEIST_BOARD_FINALE": {
         "file": "CASINO_HEIST_BOARD_FINALE",
+        "origin": "dlc",
+        "dlc": "mpheist3",
+        "dlcDate": "2019-12-12",
+        "lastModified": "2019-12-06T15:03:04Z",
         "functions": [
             {
                 "name": "CASINO_HEIST_BOARD_FINALE",
@@ -3268,6 +3341,10 @@
     },
     "CASINO_HEIST_BOARD_PREP": {
         "file": "CASINO_HEIST_BOARD_PREP",
+        "origin": "dlc",
+        "dlc": "mpheist3",
+        "dlcDate": "2019-12-12",
+        "lastModified": "2019-12-06T15:08:21Z",
         "functions": [
             {
                 "name": "CASINO_HEIST_BOARD_PREP",
@@ -3545,6 +3622,10 @@
     },
     "CASINO_HEIST_BOARD_SETUP": {
         "file": "CASINO_HEIST_BOARD_SETUP",
+        "origin": "dlc",
+        "dlc": "mpheist3",
+        "dlcDate": "2019-12-12",
+        "lastModified": "2019-12-06T12:37:23Z",
         "functions": [
             {
                 "name": "CASINO_HEIST_BOARD_SETUP",
@@ -3772,6 +3853,10 @@
     },
     "CELLPHONE_ALERT_POPUP": {
         "file": "CELLPHONE_ALERT_POPUP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-05-11T14:33:12+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_ALERT_POPUP",
@@ -3800,6 +3885,10 @@
     },
     "CELLPHONE_BADGER": {
         "file": "CELLPHONE_BADGER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-02-17T16:55:38Z",
         "functions": [
             {
                 "name": "CELLPHONE_BADGER",
@@ -4036,6 +4125,10 @@
     },
     "CELLPHONE_CUTSCENE": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:33:07+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -4057,6 +4150,10 @@
     },
     "CELLPHONE_FACADE": {
         "file": "CELLPHONE_FACADE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-02-17T16:55:49Z",
         "functions": [
             {
                 "name": "CELLPHONE_FACADE",
@@ -4279,6 +4376,10 @@
     },
     "CELLPHONE_IFRUIT": {
         "file": "CELLPHONE_IFRUIT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-10-30T09:15:33Z",
         "functions": [
             {
                 "name": "CELLPHONE_IFRUIT",
@@ -4522,6 +4623,10 @@
     },
     "CELLPHONE_PROLOGUE": {
         "file": "CELLPHONE_PROLOGUE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-08T16:56:18+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_PROLOGUE",
@@ -4696,6 +4801,10 @@
     },
     "CLUBHOUSE_NAME": {
         "file": "CLUBHOUSE_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "CLUBHOUSE_NAME",
@@ -4719,6 +4828,10 @@
     },
     "COLOUR_SWITCHER_01": {
         "file": "COLOUR_SWITCHER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "COLOUR_SWITCHER",
@@ -4761,10 +4874,18 @@
                     "cData"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "COLOUR_SWITCHER_02": {
         "file": "COLOUR_SWITCHER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "COLOUR_SWITCHER",
@@ -4807,10 +4928,18 @@
                     "cData"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "CONTROLLER_TEST": {
         "file": "CONTROLLER_TEST",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-10-29T11:29:37Z",
         "functions": [
             {
                 "name": "CONTROLLER_TEST",
@@ -4921,6 +5050,10 @@
     },
     "COUNTDOWN": {
         "file": "COUNTDOWN",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-06-09T09:40:27+01:00",
         "functions": [
             {
                 "name": "COUNTDOWN",
@@ -4999,6 +5132,10 @@
     },
     "COVERT_OPS": {
         "file": "COVERT_OPS",
+        "origin": "dlc",
+        "dlc": "mpgunrunning",
+        "dlcDate": "2017-06-06",
+        "lastModified": "2017-05-18T16:11:02+01:00",
         "functions": [
             {
                 "name": "COVERT_OPS",
@@ -5153,6 +5290,10 @@
     },
     "CUSTOM_WARNING_SCREEN": {
         "file": "CUSTOM_WARNING_SCREEN",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-12-17T10:44:11Z",
         "functions": [
             {
                 "name": "CUSTOM_WARNING_SCREEN",
@@ -5186,6 +5327,10 @@
     },
     "DAILY_VEHICLE_CHECKLIST": {
         "file": "DAILY_VEHICLE_CHECKLIST",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-06-24T16:44:21-07:00",
         "functions": [
             {
                 "name": "DAILY_VEHICLE_CHECKLIST",
@@ -5227,6 +5372,10 @@
     },
     "DANCER": {
         "file": "DANCER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-01-28T18:00:49Z",
         "functions": [
             {
                 "name": "DANCER",
@@ -5346,6 +5495,10 @@
     },
     "DARNELL_INC_1": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-08T11:22:52Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -5367,6 +5520,10 @@
     },
     "DARTS_SCOREBOARD": {
         "file": "DARTS_SCOREBOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-16T23:29:09-07:00",
         "functions": [
             {
                 "name": "DARTS_SCOREBOARD",
@@ -5439,6 +5596,10 @@
     },
     "DARTS_SCOREBOARD_BIKER": {
         "file": "DARTS_SCOREBOARD_BIKER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-08-29T15:11:58+01:00",
         "functions": [
             {
                 "name": "DARTS_SCOREBOARD_BIKER",
@@ -5511,6 +5672,10 @@
     },
     "DASHBOARD": {
         "file": "DASHBOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "DASHBOARD",
@@ -5609,6 +5774,10 @@
     },
     "DESKTOP_PC": {
         "file": "DESKTOP_PC",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-03-09T14:08:06-04:00",
         "functions": [
             {
                 "name": "DESKTOP_PC",
@@ -5800,6 +5969,10 @@
     },
     "DIALS_LAZER": {
         "file": "AIRCRAFT_DIALS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "AIRCRAFT_DIALS",
@@ -5868,6 +6041,10 @@
     },
     "DIALS_LAZER_VINTAGE": {
         "file": "AIRCRAFT_DIALS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "AIRCRAFT_DIALS",
@@ -5936,6 +6113,10 @@
     },
     "DIGISCANNER": {
         "file": "DIGISCANNER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2012-10-25T17:25:37+01:00",
         "functions": [
             {
                 "name": "DIGISCANNER",
@@ -5979,6 +6160,10 @@
     },
     "DIGITAL_CAMERA": {
         "file": "DIGITAL_CAMERA",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-30T16:31:13Z",
         "functions": [
             {
                 "name": "DIGITAL_CAMERA",
@@ -6071,6 +6256,10 @@
     },
     "DIGITAL_SAFE_DISPLAY": {
         "file": "DIGITAL_SAFE_DISPLAY",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-08-18T16:29:15+01:00",
         "functions": [
             {
                 "name": "DIGITAL_SAFE_DISPLAY",
@@ -6141,6 +6330,10 @@
     },
     "DISRUPTION_LOGISTICS": {
         "file": "DISRUPTION_LOGISTICS",
+        "origin": "dlc",
+        "dlc": "mpgunrunning",
+        "dlcDate": "2017-06-06",
+        "lastModified": "2017-07-21T16:34:18+01:00",
         "functions": [
             {
                 "name": "DISRUPTION_LOGISTICS",
@@ -6383,6 +6576,10 @@
     },
     "DLC_ARENA_INT2": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-11-21T13:55:32Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -6404,6 +6601,10 @@
     },
     "DLC_SOL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-07-09T23:43:08+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -6425,6 +6626,10 @@
     },
     "DOCUMENT_TABLET43": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-12-09T12:13:44Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -6446,6 +6651,10 @@
     },
     "DONT_CROSS_THE_LINE": {
         "file": "DONT_CROSS_THE_LINE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-05-23T14:20:26+01:00",
         "functions": [
             {
                 "name": "DONT_CROSS_THE_LINE",
@@ -6613,10 +6822,18 @@
                     "iconEnum"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpstunt",
+            "mpbiker"
         ]
     },
     "DRAG_RACE": {
         "file": "DRAG_RACE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-04-05T15:27:46+01:00",
         "functions": [
             {
                 "name": "DRAG_RACE",
@@ -6756,6 +6973,10 @@
     },
     "DRE1_BADGER_LJ": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T15:28:28+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -6777,6 +6998,10 @@
     },
     "DRILLING": {
         "file": "DRILLING",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-11-17T14:21:34Z",
         "functions": [
             {
                 "name": "DRILLING",
@@ -6816,6 +7041,10 @@
     },
     "DRONE_CAM": {
         "file": "DRONE_CAM",
+        "origin": "dlc",
+        "dlc": "mp2024_02",
+        "dlcDate": "2024-06-26",
+        "lastModified": "2024-11-13T13:04:35Z",
         "functions": [
             {
                 "name": "DRONE_CAM",
@@ -7077,6 +7306,10 @@
     },
     "ECG_MONITOR": {
         "file": "ECG_MONITOR",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:16+01:00",
         "functions": [
             {
                 "name": "ECG_MONITOR",
@@ -7130,6 +7363,10 @@
     },
     "EPSILON_TRACT": {
         "file": "LETTER_SCRAPS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:14+01:00",
         "functions": [
             {
                 "name": "LETTER_SCRAPS",
@@ -7163,6 +7400,10 @@
     },
     "EXL2_BLANK_JIMMY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:41:04+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7184,6 +7425,10 @@
     },
     "EXL2_CONNECTED_JIMMY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:40:51+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7205,6 +7450,10 @@
     },
     "FACADE_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:26:46+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7226,6 +7475,10 @@
     },
     "FACADE_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:26:15+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7247,6 +7500,10 @@
     },
     "FACADE_BLANK_MICHAEL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:25:26+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7268,6 +7525,10 @@
     },
     "FACADE_COMPUTER_DESKTOPWIDE": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:25:36+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7289,6 +7550,10 @@
     },
     "FAM2_PLAYMUSIC": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-21T13:38:59+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7310,6 +7575,10 @@
     },
     "FAM3_01_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:23:55+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7331,6 +7600,10 @@
     },
     "FAM3_02_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:23:21+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7352,6 +7625,10 @@
     },
     "FAM3_03_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:22:13+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7373,6 +7650,10 @@
     },
     "FAM3_04_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:56:02+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7394,6 +7675,10 @@
     },
     "FAM3_05_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:56:41+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7415,6 +7700,10 @@
     },
     "FAM3_ALL_NCALLINGMARTIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:21:12+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7436,6 +7725,10 @@
     },
     "FIB3_DAVEN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:39+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7457,6 +7750,10 @@
     },
     "FIB3_STEVEH": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:39:23+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7478,6 +7775,10 @@
     },
     "FIB4_EYEFINDMAP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-20T11:05:18+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7499,6 +7800,10 @@
     },
     "FIB5_LESTERTEXT": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:18:23+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7518,8 +7823,20 @@
             }
         ]
     },
+    "FIB_PC": {
+        "file": "mousecursor",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
+        "functions": []
+    },
     "FINB_CONNECTED_AMANDA": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:41:20+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7541,6 +7858,10 @@
     },
     "FINC1_EYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-17T15:43:08+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7562,6 +7883,10 @@
     },
     "FINC1_MERRYSITE": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-17T15:43:02+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7583,6 +7908,10 @@
     },
     "FINMCS2DREPHONE": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-08T13:57:38Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7604,6 +7933,10 @@
     },
     "FIX_AGYINT3_SNAP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-01T14:33:44Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7625,6 +7958,10 @@
     },
     "FIX_WRMS_FOOD": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-22T16:31:56Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -7646,6 +7983,10 @@
     },
     "FIXER_APP": {
         "file": "FIXER_APP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-03-07T16:55:03-08:00",
         "functions": [
             {
                 "name": "FIXER_APP",
@@ -7956,26 +8297,50 @@
     },
     "FONT_LIB_CHINESE_PC": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-11-04T09:17:56Z",
         "functions": []
     },
     "FONT_LIB_CHINESESIMP_PC": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-08-02T19:06:32+01:00",
         "functions": []
     },
     "FONT_LIB_EFIGS_PC": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-07-27T10:12:07+01:00",
         "functions": []
     },
     "FONT_LIB_JAPANESE_PC": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-03-09T12:19:25Z",
         "functions": []
     },
     "FONT_LIB_KOREAN_PC": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-03-09T12:19:20Z",
         "functions": []
     },
     "FORECLOSURES_MAZE_D_BANK_COM": {
         "file": "FORECLOSURES_MAZE_D_BANK_COM",
+        "origin": "dlc",
+        "dlc": "mpbiker",
+        "dlcDate": "2016-10-04",
+        "lastModified": "2025-11-18T15:18:53Z",
         "functions": [
             {
                 "name": "FORECLOSURES_MAZE_D_BANK_COM",
@@ -8046,140 +8411,12 @@
             }
         ]
     },
-    "FRONTEND_LANDING": {
-        "file": "FRONTEND_LANDING",
-        "functions": [
-            {
-                "name": "FRONTEND_LANDING",
-                "args": []
-            },
-            {
-                "name": "INITIALISE",
-                "args": [
-                    "mc"
-                ]
-            },
-            {
-                "name": "ADD_TXD_REF_RESPONSE",
-                "args": [
-                    "textureDict",
-                    "success"
-                ]
-            },
-            {
-                "name": "test",
-                "args": []
-            },
-            {
-                "name": "TXD_HAS_LOADED",
-                "args": []
-            },
-            {
-                "name": "TXD_ALREADY_LOADED",
-                "args": []
-            },
-            {
-                "name": "debug",
-                "args": []
-            },
-            {
-                "name": "SHOW_MEMBER_STICKER",
-                "args": [
-                    "id",
-                    "str"
-                ]
-            },
-            {
-                "name": "SET_GRIDITEM_STATE",
-                "args": [
-                    "whichItem",
-                    "state"
-                ]
-            },
-            {
-                "name": "SET_CAREERITEM_STATE",
-                "args": [
-                    "whichItem",
-                    "state"
-                ]
-            },
-            {
-                "name": "UNHIGHLIGHT_ALL_TABS",
-                "args": []
-            },
-            {
-                "name": "SET_TAB_STATE",
-                "args": [
-                    "whichTab",
-                    "state",
-                    "enabled"
-                ]
-            },
-            {
-                "name": "UNHIGHLIGHT_ALL_CAROUSEL_ITEMS",
-                "args": []
-            },
-            {
-                "name": "SET_CAROUSEL_ITEM_STATE",
-                "args": [
-                    "whichItem",
-                    "state",
-                    "enabled"
-                ]
-            },
-            {
-                "name": "NAV_RIGHT",
-                "args": []
-            },
-            {
-                "name": "NAV_LEFT",
-                "args": []
-            },
-            {
-                "name": "CLEAR_STATS",
-                "args": []
-            },
-            {
-                "name": "UPDATE_ITEM_TEXTURE",
-                "args": []
-            },
-            {
-                "name": "CLEAR_ALL_ITEMS",
-                "args": []
-            },
-            {
-                "name": "DISPLAY_MEMBERSHIP",
-                "args": []
-            },
-            {
-                "name": "SET_INPUT_EVENT",
-                "args": [
-                    "padID"
-                ]
-            },
-            {
-                "name": "SET_MOUSE_INPUT",
-                "args": [
-                    "x",
-                    "y"
-                ]
-            },
-            {
-                "name": "SET_IS_MEMBERSHIP_ACTIVE",
-                "args": [
-                    "isActive"
-                ]
-            },
-            {
-                "name": "SET_IS_PC",
-                "args": [
-                    "isPC"
-                ]
-            }
-        ]
-    },
     "GAME_STREAM": {
         "file": "GAME_STREAM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "GAME_STREAM",
@@ -8390,6 +8627,10 @@
     },
     "GAMEPAD_CALIBRATION": {
         "file": "GAMEPAD_CALIBRATION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-12-19T14:25:14Z",
         "functions": [
             {
                 "name": "GAMEPAD_CALIBRATION",
@@ -8447,6 +8688,10 @@
     },
     "GENERIC_INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-13T10:07:45Z",
         "functions": [
             {
                 "name": "INSTRUCTIONAL_BUTTONS",
@@ -8730,6 +8975,10 @@
     },
     "GOLF": {
         "file": "GOLF",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "GOLF",
@@ -8961,6 +9210,10 @@
     },
     "GOLF_COURSES": {
         "file": "GOLF_COURSE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:28:37+01:00",
         "functions": [
             {
                 "name": "GOLF_COURSE",
@@ -8972,6 +9225,10 @@
     },
     "GOLF_FLOATING_UI": {
         "file": "GOLF_FLOATING_UI",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "GOLF_FLOATING_UI",
@@ -9044,6 +9301,10 @@
     },
     "GRID_LAYOUT": {
         "file": "GRID_LAYOUT",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-06-17T14:35:34+01:00",
         "functions": [
             {
                 "name": "GRID_LAYOUT",
@@ -9075,10 +9336,18 @@
                     "i"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpstunt",
+            "mpbiker"
         ]
     },
     "GTAV_ONLINE": {
         "file": "GTAV_ONLINE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "GTAV_ONLINE",
@@ -9264,6 +9533,10 @@
     },
     "HACKER_TRUCK_DESKTOP": {
         "file": "HACKER_TRUCK_DESKTOP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-08-23T09:09:01+01:00",
         "functions": [
             {
                 "name": "HACKER_TRUCK_DESKTOP",
@@ -9434,10 +9707,18 @@
                     "letterSpacing"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "HACKING_MESSAGE": {
         "file": "HACKING_MESSAGE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2015-01-15T11:20:02Z",
         "functions": [
             {
                 "name": "HACKING_MESSAGE",
@@ -9483,6 +9764,10 @@
     },
     "HACKING_PC": {
         "file": "HACKING_PC",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-05-24T10:58:12-07:00",
         "functions": [
             {
                 "name": "HACKING_PC",
@@ -9810,6 +10095,10 @@
     },
     "HACKING_TERMINAL": {
         "file": "HACKING_TERMINAL",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-04-26T12:04:21+01:00",
         "functions": [
             {
                 "name": "HACKING_TERMINAL",
@@ -9868,6 +10157,10 @@
     },
     "HAIR_COLOUR_CARD": {
         "file": "PAUSE_MENU_HAIR_COLOUR_LIST",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_HAIR_COLOUR_LIST",
@@ -9945,10 +10238,18 @@
                     "index"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "HANGAR_CARGO": {
         "file": "HANGAR_CARGO",
+        "origin": "dlc",
+        "dlc": "mpsmuggler",
+        "dlcDate": "2017-08-22",
+        "lastModified": "2023-01-18T16:45:48-08:00",
         "functions": [
             {
                 "name": "HANGAR_CARGO",
@@ -10140,6 +10441,10 @@
     },
     "HEIST2_CELEBRATION": {
         "file": "HEIST2_CELEBRATION",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST2_CELEBRATION",
@@ -10355,10 +10660,18 @@
                     "id"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "HEIST2_CELEBRATION_BG": {
         "file": "HEIST2_CELEBRATION",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST2_CELEBRATION",
@@ -10574,10 +10887,18 @@
                     "id"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "HEIST2_CELEBRATION_FG": {
         "file": "HEIST2_CELEBRATION",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST2_CELEBRATION",
@@ -10793,10 +11114,18 @@
                     "id"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "HEIST_AGENCY": {
         "file": "HEIST_AGENCY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-01T11:54:34+01:00",
         "functions": [
             {
                 "name": "HEIST_AGENCY",
@@ -10884,6 +11213,10 @@
     },
     "HEIST_CELEBRATION": {
         "file": "HEIST_CELEBRATION",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST_CELEBRATION",
@@ -11103,6 +11436,10 @@
     },
     "HEIST_CELEBRATION_BG": {
         "file": "HEIST_CELEBRATION",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST_CELEBRATION",
@@ -11322,6 +11659,10 @@
     },
     "HEIST_CELEBRATION_FG": {
         "file": "HEIST_CELEBRATION",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": null,
         "functions": [
             {
                 "name": "HEIST_CELEBRATION",
@@ -11541,6 +11882,10 @@
     },
     "HEIST_DOCKS": {
         "file": "HEIST_DOCKS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-01T11:54:17+01:00",
         "functions": [
             {
                 "name": "HEIST_DOCKS",
@@ -11621,6 +11966,10 @@
     },
     "HEIST_ENDSCREEN": {
         "file": "HEIST_ENDSCREEN",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:26:04+01:00",
         "functions": [
             {
                 "name": "HEIST_ENDSCREEN",
@@ -11667,6 +12016,10 @@
     },
     "HEIST_FINALE": {
         "file": "HEIST_FINALE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-01T11:53:58+01:00",
         "functions": [
             {
                 "name": "HEIST_FINALE",
@@ -11747,6 +12100,10 @@
     },
     "HEIST_JEWELLERY": {
         "file": "HEIST_JEWELLERY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-01T11:53:22+01:00",
         "functions": [
             {
                 "name": "HEIST_JEWELLERY",
@@ -11827,6 +12184,10 @@
     },
     "HEIST_MP": {
         "file": "HEIST_MP",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2015-02-26T12:27:30Z",
         "functions": [
             {
                 "name": "HEIST_MP",
@@ -12328,6 +12689,10 @@
     },
     "HEIST_PALETO": {
         "file": "HEIST_PALETO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-12-15T18:43:36Z",
         "functions": [
             {
                 "name": "HEIST_PALETO",
@@ -12408,6 +12773,10 @@
     },
     "HEIST_PRE": {
         "file": "HEIST_PRE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-11-06T11:13:17Z",
         "functions": [
             {
                 "name": "HEIST_PRE",
@@ -12423,6 +12792,10 @@
     },
     "HEISTMAP_MP": {
         "file": "HEISTMAP_MP",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2015-02-16T12:10:41Z",
         "functions": [
             {
                 "name": "HEISTMAP_MP",
@@ -12706,6 +13079,10 @@
     },
     "HELI_CAM": {
         "file": "HELI_CAM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-10-08T16:53:44-04:00",
         "functions": [
             {
                 "name": "HELI_CAM",
@@ -12773,6 +13150,10 @@
     },
     "HORSE_RACING_CONSOLE": {
         "file": "HORSE_RACING_CONSOLE",
+        "origin": "dlc",
+        "dlc": "mpvinewood",
+        "dlcDate": "2019-07-23",
+        "lastModified": "2019-08-05T11:45:23+01:00",
         "functions": [
             {
                 "name": "HORSE_RACING_CONSOLE",
@@ -13005,6 +13386,10 @@
     },
     "HORSE_RACING_WALL": {
         "file": "HORSE_RACING_WALL",
+        "origin": "dlc",
+        "dlc": "mpvinewood",
+        "dlcDate": "2019-07-23",
+        "lastModified": "2019-07-16T10:27+01:00",
         "functions": [
             {
                 "name": "HORSE_RACING_WALL",
@@ -13207,6 +13592,10 @@
     },
     "HS3F_DIR_COUPLE1": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2019-11-20T17:03:37Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -13228,6 +13617,10 @@
     },
     "HS3F_DIR_COUPLE2": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2019-11-20T17:03:35Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -13249,6 +13642,10 @@
     },
     "HS4_CASINT_ELRUBIO": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-10-30T10:58:16Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -13270,6 +13667,10 @@
     },
     "HS4_CASINT_GIRL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-10-30T10:58:20Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -13291,10 +13692,18 @@
     },
     "HUD": {
         "file": "HUD_AREA_VEHICLE_STREET_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": []
     },
     "HUD_AREA_NAME": {
         "file": "HUD_AREA_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:50+01:00",
         "functions": [
             {
                 "name": "HUD_AREA_NAME",
@@ -13338,6 +13747,10 @@
     },
     "HUD_CASH": {
         "file": "HUD_CASH",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:48+01:00",
         "functions": [
             {
                 "name": "HUD_CASH",
@@ -13407,6 +13820,10 @@
     },
     "HUD_CASH_CHANGE": {
         "file": "HUD_CASH_CHANGE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:47+01:00",
         "functions": [
             {
                 "name": "HUD_CASH_CHANGE",
@@ -13450,6 +13867,10 @@
     },
     "HUD_DISTRICT_NAME": {
         "file": "HUD_DISTRICT_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:46+01:00",
         "functions": [
             {
                 "name": "HUD_DISTRICT_NAME",
@@ -13493,6 +13914,10 @@
     },
     "HUD_DRUGS_PURSE_01": {
         "file": "HUD_DRUGS_PURSE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:45+01:00",
         "functions": [
             {
                 "name": "HUD_DRUGS_PURSE",
@@ -13512,6 +13937,10 @@
     },
     "HUD_DRUGS_PURSE_02": {
         "file": "HUD_DRUGS_PURSE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:43+01:00",
         "functions": [
             {
                 "name": "HUD_DRUGS_PURSE",
@@ -13531,6 +13960,10 @@
     },
     "HUD_DRUGS_PURSE_03": {
         "file": "HUD_DRUGS_PURSE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2012-04-18T15:45:24+01:00",
         "functions": [
             {
                 "name": "HUD_DRUGS_PURSE",
@@ -13562,6 +13995,10 @@
     },
     "HUD_DRUGS_PURSE_04": {
         "file": "HUD_DRUGS_PURSE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:41+01:00",
         "functions": [
             {
                 "name": "HUD_DRUGS_PURSE",
@@ -13581,6 +14018,10 @@
     },
     "HUD_MISSION_PASSED_MESSAGE": {
         "file": "HUD_MISSION_PASSED_MESSAGE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:40+01:00",
         "functions": [
             {
                 "name": "HUD_MISSION_PASSED_MESSAGE",
@@ -13618,6 +14059,10 @@
     },
     "HUD_MP_CASH": {
         "file": "HUD_MP_CASH",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:39+01:00",
         "functions": [
             {
                 "name": "HUD_MP_CASH",
@@ -13665,6 +14110,10 @@
     },
     "HUD_MP_MESSAGE": {
         "file": "HUD_MP_MESSAGE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-08-14T13:48:18+01:00",
         "functions": [
             {
                 "name": "HUD_MP_MESSAGE",
@@ -13702,6 +14151,10 @@
     },
     "HUD_MULTIPLAYER_CHAT": {
         "file": "HUD_MULTIPLAYER_CHAT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-03-22T12:58:12-04:00",
         "functions": [
             {
                 "name": "HUD_MULTIPLAYER_CHAT",
@@ -13776,6 +14229,10 @@
     },
     "HUD_PLAYER_SWITCH_ALERT": {
         "file": "HUD_PLAYER_SWITCH_ALERT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:36+01:00",
         "functions": [
             {
                 "name": "HUD_PLAYER_SWITCH_ALERT",
@@ -13845,6 +14302,10 @@
     },
     "HUD_RETICLE": {
         "file": "HUD_RETICLE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "HUD_RETICLE",
@@ -14138,6 +14599,10 @@
     },
     "HUD_SAVING": {
         "file": "HUD_SAVING",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:31+01:00",
         "functions": [
             {
                 "name": "HUD_SAVING",
@@ -14188,6 +14653,10 @@
     },
     "HUD_STREET_NAME": {
         "file": "HUD_STREET_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:29+01:00",
         "functions": [
             {
                 "name": "HUD_STREET_NAME",
@@ -14231,6 +14700,10 @@
     },
     "HUD_VEHICLE_NAME": {
         "file": "HUD_VEHICLE_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:27+01:00",
         "functions": [
             {
                 "name": "HUD_VEHICLE_NAME",
@@ -14274,6 +14747,10 @@
     },
     "HUM_MCS1_DESKTOPCOPY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-11-02T20:17:18Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14295,6 +14772,10 @@
     },
     "HUM_MCS1_DESKTOPCOPYHOLD": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-09-10T07:56:22+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14316,6 +14797,10 @@
     },
     "HUM_PAC_DESKTOPBANK": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-11-03T18:46:12Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14337,6 +14822,10 @@
     },
     "IAA_HACK": {
         "file": "IAA_HACK",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2023-03-23T09:45:54-07:00",
         "functions": [
             {
                 "name": "IAA_HACK",
@@ -14375,6 +14864,10 @@
     },
     "IAA_HEIST_BOARD": {
         "file": "IAA_HEIST_BOARD",
+        "origin": "dlc",
+        "dlc": "mpchristmas2017",
+        "dlcDate": "2017-12-12",
+        "lastModified": "2018-02-01T16:49:01Z",
         "functions": [
             {
                 "name": "IAA_HEIST_BOARD",
@@ -14687,6 +15180,10 @@
     },
     "IFRUIT_BLANK_EMAIL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-19T14:35:47+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14708,6 +15205,10 @@
     },
     "IFRUIT_BLANK_FRANKLIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-25T18:38:58+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14729,6 +15230,10 @@
     },
     "IFRUIT_BLANK_HAO": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-09-01T16:40:49+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14750,6 +15255,10 @@
     },
     "IFRUIT_BLANK_HOME": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-15T08:14:18+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14771,6 +15280,10 @@
     },
     "IFRUIT_BLANK_HOMEHI": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-10-30T10:58:13Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14792,6 +15305,10 @@
     },
     "IFRUIT_BLANK_INPROGRESS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T15:55:13+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14813,6 +15330,10 @@
     },
     "IFRUIT_BLANK_JGUNS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-17T15:37:48Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14834,6 +15355,10 @@
     },
     "IFRUIT_COMPUTER_DESKTOPWIDE": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:25:25+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14855,6 +15380,35 @@
     },
     "IFRUIT_CONNECTED_FRANKLIN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-25T18:39:13+01:00",
+        "functions": [
+            {
+                "name": "CELLPHONE_CUTSCENE",
+                "args": []
+            },
+            {
+                "name": "INITIALISE",
+                "args": [
+                    "mc"
+                ]
+            },
+            {
+                "name": "DISPLAY_VIEW",
+                "args": [
+                    "viewID"
+                ]
+            }
+        ]
+    },
+    "IFRUIT_DIAL_AMANDA25": {
+        "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-11-19T16:04:09Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -14876,6 +15430,10 @@
     },
     "IMPORT_EXPORT_WAREHOUSE": {
         "file": "IMPORT_EXPORT_WAREHOUSE",
+        "origin": "dlc",
+        "dlc": "mpimportexport",
+        "dlcDate": "2016-12-13",
+        "lastModified": "2017-04-11T13:35:40+01:00",
         "functions": [
             {
                 "name": "IMPORT_EXPORT_WAREHOUSE",
@@ -15053,6 +15611,10 @@
     },
     "INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-13T10:07:11Z",
         "functions": [
             {
                 "name": "INSTRUCTIONAL_BUTTONS",
@@ -15334,19 +15896,12 @@
             }
         ]
     },
-    "INT": {
-        "file": "INTERIORS",
-        "functions": [
-            {
-                "name": "INTERIORS",
-                "args": [
-                    "TIMELINE"
-                ]
-            }
-        ]
-    },
     "ISLAND_HEIST_BOARD": {
         "file": "ISLAND_HEIST_BOARD",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2023-04-07T09:33:04-07:00",
         "functions": [
             {
                 "name": "ISLAND_HEIST_BOARD",
@@ -15646,6 +16201,10 @@
     },
     "JHPB_01_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-15T17:06:53+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15667,6 +16226,10 @@
     },
     "JHPB_02_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-16T15:34:42+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15688,6 +16251,10 @@
     },
     "JHPB_03_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-15T17:06:31+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15709,6 +16276,10 @@
     },
     "JOS2_01_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:03:16+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15730,6 +16301,10 @@
     },
     "JOS2_02_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:04:25+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15751,6 +16326,10 @@
     },
     "JOS2_ALL_PHOTOGALLERY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:06:40+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15770,8 +16349,276 @@
             }
         ]
     },
+    "KORTZ_HEIST_BOARD": {
+        "file": "KORTZ_HEIST_BOARD",
+        "origin": "dlc",
+        "dlc": "mp2026_01",
+        "dlcDate": "2026-01-16",
+        "lastModified": "2026-06-17T11:05:57+01:00",
+        "functions": [
+            {
+                "name": "KORTZ_HEIST_BOARD",
+                "args": []
+            },
+            {
+                "name": "initialise",
+                "args": [
+                    "mc"
+                ]
+            },
+            {
+                "name": "ADD_TODO_LIST_ITEM",
+                "args": [
+                    "itemText",
+                    "isComplete"
+                ]
+            },
+            {
+                "name": "CLEAR_TODO_LIST",
+                "args": []
+            },
+            {
+                "name": "ADD_OPTIONAL_LIST_ITEM",
+                "args": [
+                    "itemText",
+                    "isComplete"
+                ]
+            },
+            {
+                "name": "CLEAR_OPTIONAL_LIST",
+                "args": []
+            },
+            {
+                "name": "SET_PADLOCK",
+                "args": [
+                    "buttonID",
+                    "isLocked"
+                ]
+            },
+            {
+                "name": "SET_TICK",
+                "args": [
+                    "buttonID",
+                    "isTicked"
+                ]
+            },
+            {
+                "name": "SET_STAR",
+                "args": [
+                    "buttonID",
+                    "isVisible"
+                ]
+            },
+            {
+                "name": "SET_PURCHASED",
+                "args": [
+                    "buttonID",
+                    "isPurchased"
+                ]
+            },
+            {
+                "name": "SET_SELECTION_ARROWS_VISIBLE",
+                "args": [
+                    "buttonID",
+                    "visibleState"
+                ]
+            },
+            {
+                "name": "SET_BUTTON_VISIBLE",
+                "args": [
+                    "buttonID",
+                    "isVisible"
+                ]
+            },
+            {
+                "name": "SET_BUTTON_ENABLED",
+                "args": [
+                    "buttonID",
+                    "isEnabled"
+                ]
+            },
+            {
+                "name": "SET_BUTTON_IMAGE",
+                "args": [
+                    "buttonID",
+                    "imageID"
+                ]
+            },
+            {
+                "name": "SET_BUTTON_GREYED_OUT",
+                "args": [
+                    "buttonID",
+                    "isGreyedOut"
+                ]
+            },
+            {
+                "name": "SET_MISSION",
+                "args": [
+                    "buttonID",
+                    "image",
+                    "title"
+                ]
+            },
+            {
+                "name": "SET_CONTENTS_VISIBLE",
+                "args": [
+                    "topVisible",
+                    "bottomVisible"
+                ]
+            },
+            {
+                "name": "SET_VISUAL_STATE",
+                "args": [
+                    "state"
+                ]
+            },
+            {
+                "name": "SET_TARGET_VALUE",
+                "args": [
+                    "value"
+                ]
+            },
+            {
+                "name": "SET_ENTRY_POINT_VISIBLE",
+                "args": [
+                    "index",
+                    "isVisible"
+                ]
+            },
+            {
+                "name": "SET_SECONDARY_TARGET_VISIBLE",
+                "args": [
+                    "isVisible"
+                ]
+            },
+            {
+                "name": "SET_ENTRY_POINT_TITLE",
+                "args": [
+                    "index",
+                    "title"
+                ]
+            },
+            {
+                "name": "SET_IS_HARD_MODE",
+                "args": [
+                    "isHardMode"
+                ]
+            },
+            {
+                "name": "SET_TARGET_LABEL",
+                "args": [
+                    "label"
+                ]
+            },
+            {
+                "name": "SET_SECONDARY_LABEL",
+                "args": [
+                    "label"
+                ]
+            },
+            {
+                "name": "SET_SECONDARY_VALUE",
+                "args": [
+                    "value"
+                ]
+            },
+            {
+                "name": "SET_SECONDARY_VALUE_VISIBLE",
+                "args": [
+                    "isVisible"
+                ]
+            },
+            {
+                "name": "GET_CURRENT_SELECTION",
+                "args": []
+            },
+            {
+                "name": "SET_CURRENT_SELECTION",
+                "args": [
+                    "buttonID"
+                ]
+            },
+            {
+                "name": "GET_CURRENT_ROLLOVER",
+                "args": []
+            },
+            {
+                "name": "SET_INPUT_EVENT",
+                "args": [
+                    "inputID"
+                ]
+            },
+            {
+                "name": "SET_INPUT_RELEASE_EVENT",
+                "args": [
+                    "inputID"
+                ]
+            },
+            {
+                "name": "showScreen",
+                "args": []
+            },
+            {
+                "name": "updateButtons",
+                "args": []
+            },
+            {
+                "name": "TXD_HAS_LOADED",
+                "args": [
+                    "txd",
+                    "success",
+                    "id"
+                ]
+            },
+            {
+                "name": "setLocalisedText",
+                "args": [
+                    "tf",
+                    "label"
+                ]
+            },
+            {
+                "name": "formatPercentage",
+                "args": [
+                    "value"
+                ]
+            },
+            {
+                "name": "formatNumber",
+                "args": [
+                    "value"
+                ]
+            },
+            {
+                "name": "formatTime",
+                "args": [
+                    "seconds"
+                ]
+            },
+            {
+                "name": "truncate",
+                "args": [
+                    "tf",
+                    "txt",
+                    "autoSize",
+                    "letterSpacing"
+                ]
+            },
+            {
+                "name": "playSound",
+                "args": [
+                    "soundName",
+                    "soundSet"
+                ]
+            }
+        ]
+    },
     "LANDING_PAGE": {
         "file": "LANDING_PAGE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-03-02T12:45:05-05:00",
         "functions": [
             {
                 "name": "LANDING_PAGE",
@@ -15821,10 +16668,18 @@
                 "name": "alignElements",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "LANGUAGE_SELECT_PC": {
         "file": "LANGUAGE_SELECT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-08-28T10:53:46+01:00",
         "functions": [
             {
                 "name": "LANGUAGE_SELECT",
@@ -15874,8 +16729,37 @@
             }
         ]
     },
+    "LCN_CHART_DOWN": {
+        "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-11-27T11:25:29Z",
+        "functions": [
+            {
+                "name": "CELLPHONE_CUTSCENE",
+                "args": []
+            },
+            {
+                "name": "INITIALISE",
+                "args": [
+                    "mc"
+                ]
+            },
+            {
+                "name": "DISPLAY_VIEW",
+                "args": [
+                    "viewID"
+                ]
+            }
+        ]
+    },
     "LESTER_HACK_PC": {
         "file": "LESTER_HACK_PC",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:07+01:00",
         "functions": [
             {
                 "name": "LESTER_HACK_PC",
@@ -15899,6 +16783,10 @@
     },
     "LETTER_SCRAPS": {
         "file": "LETTER_SCRAPS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-17T14:12:58-07:00",
         "functions": [
             {
                 "name": "LETTER_SCRAPS",
@@ -15939,6 +16827,10 @@
     },
     "LIFEINVADER_TABLET43": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-30T11:25:25+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -15960,6 +16852,10 @@
     },
     "LOADINGSCREEN_NEWGAME": {
         "file": "LOADINGSCREEN_NEWGAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-03-25T13:55:41Z",
         "functions": [
             {
                 "name": "LOADINGSCREEN_NEWGAME",
@@ -16003,6 +16899,10 @@
     },
     "LOADINGSCREEN_STARTUP": {
         "file": "LOADINGSCREEN_STARTUP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-01-13T12:25:44Z",
         "functions": [
             {
                 "name": "LOADINGSCREEN_STARTUP",
@@ -16376,6 +17276,10 @@
     },
     "LS1_LESTER_EYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T21:11:47+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16397,6 +17301,10 @@
     },
     "LS1_LESTER_PREEYEFIND": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T21:24:05+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16418,6 +17326,10 @@
     },
     "LS1_LIFEINVADER_CALL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-20T10:03:35+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16439,6 +17351,10 @@
     },
     "LS1_LIFEINVADER_HOME": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-20T10:03:32+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16460,6 +17376,10 @@
     },
     "LS1_LIFEINVADER_UPDATES": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-20T10:03:38+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16481,6 +17401,10 @@
     },
     "MAR1_TABLET_HAVIER": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:18:29+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16502,6 +17426,10 @@
     },
     "MAR1_TABLET_HAVIERHORI": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-19T16:31:50+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16523,6 +17451,10 @@
     },
     "MIC3_LESTER": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-17T00:42:48+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16544,6 +17476,10 @@
     },
     "MIC4_BREAKINGNEWS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-01T12:53:58+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -16565,6 +17501,10 @@
     },
     "MIDSIZED_MESSAGE": {
         "file": "MIDSIZED_MESSAGE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MIDSIZED_MESSAGE",
@@ -16647,6 +17587,10 @@
     },
     "MINIMAP": {
         "file": "MINIMAP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2026-06-18T13:25:26+01:00",
         "functions": [
             {
                 "name": "MINIMAP",
@@ -17069,6 +18013,10 @@
     },
     "MINIMAP_MAIN_MAP": {
         "file": "MINIMAP_MAIN_MAP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2026-06-09T11:24:42+01:00",
         "functions": [
             {
                 "name": "MINIMAP_MAIN_MAP",
@@ -17132,6 +18080,10 @@
     },
     "MISSION_COMPLETE": {
         "file": "MISSION_COMPLETE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:05+01:00",
         "functions": [
             {
                 "name": "MISSION_COMPLETE",
@@ -17235,6 +18187,10 @@
     },
     "MISSION_QUIT": {
         "file": "MISSION_QUIT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:04+01:00",
         "functions": [
             {
                 "name": "MISSION_QUIT",
@@ -17273,6 +18229,10 @@
     },
     "MISSION_TARGET_COMPLETE": {
         "file": "MISSION_TARGET_COMPLETE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:25:02+01:00",
         "functions": [
             {
                 "name": "MISSION_TARGET_COMPLETE",
@@ -17316,6 +18276,10 @@
     },
     "MORGUE_LAPTOP": {
         "file": "MORGUE_LAPTOP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-10-20T10:32:19+01:00",
         "functions": [
             {
                 "name": "MORGUE_LAPTOP",
@@ -17333,10 +18297,18 @@
                     "percent"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "MOUSE_POINTER": {
         "file": "MOUSE_POINTER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-03-03T11:56:12-05:00",
         "functions": [
             {
                 "name": "MOUSE_POINTER",
@@ -17347,11 +18319,22 @@
                 "args": [
                     "mc"
                 ]
+            },
+            {
+                "name": "SET_SCREEN_ASPECT",
+                "args": [
+                    "fPhysicalDifference",
+                    "fLogicalDifference"
+                ]
             }
         ]
     },
     "MP_AWARD_FREEMODE": {
         "file": "MP_AWARD_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:22+01:00",
         "functions": [
             {
                 "name": "MP_AWARD_FREEMODE",
@@ -17403,6 +18386,10 @@
     },
     "MP_BIG_MESSAGE_FREEMODE": {
         "file": "MP_BIG_MESSAGE_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-11-11T09:18:52Z",
         "functions": [
             {
                 "name": "MP_BIG_MESSAGE_FREEMODE",
@@ -17746,6 +18733,10 @@
     },
     "MP_BOUNTY_BOARD": {
         "file": "MP_BOUNTY_BOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:19+01:00",
         "functions": [
             {
                 "name": "MP_BOUNTY_BOARD",
@@ -17784,6 +18775,10 @@
     },
     "MP_CAR_STATS": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-12-08T16:18:23Z",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -17842,6 +18837,10 @@
     },
     "MP_CAR_STATS_01": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:20-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -17925,6 +18924,10 @@
     },
     "MP_CAR_STATS_02": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:16-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18008,6 +19011,10 @@
     },
     "MP_CAR_STATS_03": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:14-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18091,6 +19098,10 @@
     },
     "MP_CAR_STATS_04": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:12-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18174,6 +19185,10 @@
     },
     "MP_CAR_STATS_05": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:11-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18257,6 +19272,10 @@
     },
     "MP_CAR_STATS_06": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:09-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18340,6 +19359,10 @@
     },
     "MP_CAR_STATS_07": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:08-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18423,6 +19446,10 @@
     },
     "MP_CAR_STATS_08": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:06-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18506,6 +19533,10 @@
     },
     "MP_CAR_STATS_09": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:05-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18589,6 +19620,10 @@
     },
     "MP_CAR_STATS_10": {
         "file": "MP_CAR_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:04-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18672,6 +19707,10 @@
     },
     "MP_CAR_STATS_11": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:02-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18755,6 +19794,10 @@
     },
     "MP_CAR_STATS_12": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:01-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18838,6 +19881,10 @@
     },
     "MP_CAR_STATS_13": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:27:59-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -18921,6 +19968,10 @@
     },
     "MP_CAR_STATS_14": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:27:57-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19004,6 +20055,10 @@
     },
     "MP_CAR_STATS_15": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:27:55-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19087,6 +20142,10 @@
     },
     "MP_CAR_STATS_16": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:28-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19170,6 +20229,10 @@
     },
     "MP_CAR_STATS_17": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:26-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19253,6 +20316,10 @@
     },
     "MP_CAR_STATS_18": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:25-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19336,6 +20403,10 @@
     },
     "MP_CAR_STATS_19": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:23-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19419,6 +20490,10 @@
     },
     "MP_CAR_STATS_20": {
         "file": "MP_CAR_STATS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-08-13T11:28:22-07:00",
         "functions": [
             {
                 "name": "MP_CAR_STATS",
@@ -19502,6 +20577,10 @@
     },
     "MP_CELEBRATION": {
         "file": "MP_CELEBRATION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_CELEBRATION",
@@ -20214,6 +21293,10 @@
     },
     "MP_CELEBRATION_BG": {
         "file": "MP_CELEBRATION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_CELEBRATION",
@@ -20926,6 +22009,10 @@
     },
     "MP_CELEBRATION_FG": {
         "file": "MP_CELEBRATION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_CELEBRATION",
@@ -21638,6 +22725,10 @@
     },
     "MP_CREW_TAG": {
         "file": "MP_CREW_TAG",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:18+01:00",
         "functions": [
             {
                 "name": "MP_CREW_TAG",
@@ -21666,6 +22757,10 @@
     },
     "MP_FREEMODE_CHECKPOINT": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2012-12-17T15:13:13Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21687,6 +22782,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_1": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:48:54Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21708,6 +22807,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_10": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:46:37Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21729,6 +22832,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_2": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:41:53Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21750,6 +22857,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_3": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:43:39Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21771,6 +22882,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_4": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:44:23Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21792,6 +22907,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_5": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:49:37Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21813,6 +22932,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_6": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:45:12Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21834,6 +22957,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_7": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:45:33Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21855,6 +22982,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_8": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:45:57Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21876,6 +23007,10 @@
     },
     "MP_FREEMODE_CHECKPOINT_9": {
         "file": "MP_FREEMODE_CHECKPOINT_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-11-14T13:46:16Z",
         "functions": [
             {
                 "name": "MP_FREEMODE_CHECKPOINT_BASE",
@@ -21897,10 +23032,18 @@
     },
     "MP_GAMER_INFO": {
         "file": "MP_GAMER_INFO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": []
     },
     "MP_MATCHMAKING_CARD": {
         "file": "MP_FREEMODE_PLAYER_LIST",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_FREEMODE_PLAYER_LIST",
@@ -22043,6 +23186,10 @@
     },
     "MP_MATCHMAKING_SELECTOR": {
         "file": "MP_MATCHMAKING_SELECTOR",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:01+01:00",
         "functions": [
             {
                 "name": "MP_MATCHMAKING_SELECTOR",
@@ -22177,6 +23324,10 @@
     },
     "MP_MATCHMAKING_VEHICLE_INFO": {
         "file": "MP_MATCHMAKING_VEHICLE_INFO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_MATCHMAKING_VEHICLE_INFO",
@@ -22228,6 +23379,10 @@
     },
     "MP_MEDAL_FREEMODE": {
         "file": "MP_AWARD_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:23:59+01:00",
         "functions": [
             {
                 "name": "MP_AWARD_BASE",
@@ -22303,6 +23458,10 @@
     },
     "MP_MENU_GLARE": {
         "file": "MP_MENU_GLARE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_MENU_GLARE",
@@ -22347,10 +23506,18 @@
     },
     "MP_MISSION_DETAILS_CARD": {
         "file": "CREW_TAG_MOVIECLIP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-11-19T11:40:06Z",
         "functions": []
     },
     "MP_MISSION_NAME_FREEMODE": {
         "file": "MP_MISSION_NAME_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-07-19T16:51:23+01:00",
         "functions": [
             {
                 "name": "MP_MISSION_NAME_FREEMODE",
@@ -22405,6 +23572,10 @@
     },
     "MP_MISSION_NAME_FREEMODE_1": {
         "file": "MP_MISSION_NAME_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-07-19T16:48:34+01:00",
         "functions": [
             {
                 "name": "MP_MISSION_NAME_FREEMODE",
@@ -22459,6 +23630,10 @@
     },
     "MP_MISSION_NAME_FREEMODE_2": {
         "file": "MP_MISSION_NAME_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-07-19T16:51:03+01:00",
         "functions": [
             {
                 "name": "MP_MISSION_NAME_FREEMODE",
@@ -22513,6 +23688,10 @@
     },
     "MP_MM_CARD_FREEMODE": {
         "file": "MP_MM_CARD_FREEMODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_MM_CARD_FREEMODE",
@@ -22610,6 +23789,10 @@
     },
     "MP_NEXT_JOB_SELECTION": {
         "file": "MP_NEXT_JOB_SELECTION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_NEXT_JOB_SELECTION",
@@ -22760,6 +23943,10 @@
     },
     "MP_ONLINE_LIST_CARD": {
         "file": "PAUSE_MENU_FREE_MODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_FREE_MODE",
@@ -22812,6 +23999,10 @@
     },
     "MP_PLAYER_CARD": {
         "file": "MP_PLAYER_CARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:23:49+01:00",
         "functions": [
             {
                 "name": "MP_PLAYER_CARD",
@@ -22857,6 +24048,10 @@
     },
     "MP_RESULTS_PANEL": {
         "file": "MP_RESULTS_PANEL",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_RESULTS_PANEL",
@@ -22936,6 +24131,10 @@
     },
     "MP_SPECTATOR_CARD": {
         "file": "MP_SPECTATOR_CARD",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_SPECTATOR_CARD",
@@ -23080,10 +24279,18 @@
                     "time"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "MP_SPECTATOR_OVERLAY": {
         "file": "MP_SPECTATOR_OVERLAY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_SPECTATOR_OVERLAY",
@@ -23201,6 +24408,10 @@
     },
     "MP_UNLOCK_FREEMODE": {
         "file": "MP_AWARD_BASE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_AWARD_BASE",
@@ -23276,6 +24487,10 @@
     },
     "MP_VEHICLE_INFO": {
         "file": "MP_MATCHMAKING_VEHICLE_INFO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_MATCHMAKING_VEHICLE_INFO",
@@ -23327,6 +24542,10 @@
     },
     "MPH_BRUTEFORCE_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "dlc",
+        "dlc": "mpheist",
+        "dlcDate": "2014-11-20",
+        "lastModified": "2014-12-11T18:21:50Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -23348,6 +24567,10 @@
     },
     "MUGSHOT_BOARD_01": {
         "file": "MUGSHOT_BOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-11-17T17:21:12Z",
         "functions": [
             {
                 "name": "MUGSHOT_BOARD",
@@ -23375,6 +24598,10 @@
     },
     "MUGSHOT_BOARD_02": {
         "file": "MUGSHOT_BOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-11-17T17:21:15Z",
         "functions": [
             {
                 "name": "MUGSHOT_BOARD",
@@ -23402,6 +24629,10 @@
     },
     "MULTIPLAYER_CHAT": {
         "file": "MULTIPLAYER_CHAT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-04-22T10:15:50+01:00",
         "functions": [
             {
                 "name": "MULTIPLAYER_CHAT",
@@ -23527,6 +24758,10 @@
     },
     "MUSIC_STUDIO_MONITOR": {
         "file": "MUSIC_STUDIO_MONITOR",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-05T09:16:41Z",
         "functions": [
             {
                 "name": "MUSIC_STUDIO_MONITOR",
@@ -23601,6 +24836,10 @@
     },
     "MUSIC_STUDIO_MONITOR_CS": {
         "file": "MUSIC_STUDIO_MONITOR_CS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-17T11:14:29Z",
         "functions": [
             {
                 "name": "MUSIC_STUDIO_MONITOR_CS",
@@ -23676,6 +24915,10 @@
     },
     "MUSIC_STUDIO_MONITOR_CS2": {
         "file": "MUSIC_STUDIO_MONITOR_CS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-17T11:14:20Z",
         "functions": [
             {
                 "name": "MUSIC_STUDIO_MONITOR_CS",
@@ -23751,6 +24994,10 @@
     },
     "NAS_UPLOAD": {
         "file": "NAS_UPLOAD",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-06-21T08:38:24-07:00",
         "functions": [
             {
                 "name": "NAS_UPLOAD",
@@ -23851,6 +25098,10 @@
     },
     "NEW_EDITOR": {
         "file": "NEW_EDITOR",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-10-01T14:21:07+01:00",
         "functions": [
             {
                 "name": "NEW_EDITOR",
@@ -24183,10 +25434,18 @@
                 "name": "initColourGrabbing",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "NIGHTCLUB": {
         "file": "NIGHTCLUB",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-07-05T11:20:33+01:00",
         "functions": [
             {
                 "name": "NIGHTCLUB",
@@ -24473,10 +25732,18 @@
                     "soundSet"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "OBSERVATORY_SCOPE": {
         "file": "OBSERVATORY_SCOPE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-10T20:49:20+01:00",
         "functions": [
             {
                 "name": "OBSERVATORY_SCOPE",
@@ -24510,6 +25777,10 @@
     },
     "OME1_POWERCELL": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-13T16:10:37+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -24531,6 +25802,10 @@
     },
     "ONLINE_POLICIES": {
         "file": "ONLINE_POLICIES",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-07-08T08:55:58+01:00",
         "functions": [
             {
                 "name": "ONLINE_POLICIES",
@@ -24822,6 +26097,10 @@
     },
     "OPEN_WHEEL_HEALTH_INDICATOR": {
         "file": "OPEN_WHEEL_HEALTH_INDICATOR",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-02-25T15:47:12Z",
         "functions": [
             {
                 "name": "OPEN_WHEEL_HEALTH_INDICATOR",
@@ -24859,6 +26138,10 @@
     },
     "OPENING_CREDITS": {
         "file": "OPENING_CREDITS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-06T13:53:47Z",
         "functions": [
             {
                 "name": "OPENING_CREDITS",
@@ -25082,6 +26365,10 @@
     },
     "ORBITAL_CANNON_CAM": {
         "file": "ORBITAL_CANNON_CAM",
+        "origin": "dlc",
+        "dlc": "mpchristmas2017",
+        "dlcDate": "2017-12-12",
+        "lastModified": "2018-02-01T16:39:40Z",
         "functions": [
             {
                 "name": "ORBITAL_CANNON_CAM",
@@ -25211,6 +26498,10 @@
     },
     "ORBITAL_CANNON_MAP": {
         "file": "ORBITAL_CANNON_MAP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-10-04T20:26:33+01:00",
         "functions": [
             {
                 "name": "ORBITAL_CANNON_MAP",
@@ -25259,6 +26550,10 @@
     },
     "ORGANISATION_NAME": {
         "file": "ORGANISATION_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "ORGANISATION_NAME",
@@ -25287,6 +26582,10 @@
     },
     "PARTY_BUS": {
         "file": "PARTY_BUS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PARTY_BUS",
@@ -25364,6 +26663,10 @@
     },
     "PAUSE_MENU_CALIBRATION": {
         "file": "PAUSE_MENU_CALIBRATION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-12-15T18:29:25-05:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_CALIBRATION",
@@ -25398,6 +26701,10 @@
     },
     "PAUSE_MENU_HEADER": {
         "file": "PAUSE_MENU_HEADER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_HEADER",
@@ -25630,6 +26937,10 @@
     },
     "PAUSE_MENU_INSTRUCTIONAL_BUTTONS": {
         "file": "PAUSE_MENU_INSTRUCTIONAL_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-13T10:07:33Z",
         "functions": [
             {
                 "name": "PAUSE_MENU_INSTRUCTIONAL_BUTTONS",
@@ -25651,6 +26962,10 @@
     },
     "PAUSE_MENU_PAGES_AWARDS": {
         "file": "PAUSE_MENU_PAGES_AWARDS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_AWARDS",
@@ -25674,6 +26989,10 @@
     },
     "PAUSE_MENU_PAGES_CHAR_MOM_DAD": {
         "file": "PAUSE_MENU_PAGES_CHAR_MOM_DAD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CHAR_MOM_DAD",
@@ -25697,6 +27016,10 @@
     },
     "PAUSE_MENU_PAGES_CHAR_SELECT": {
         "file": "PAUSE_MENU_PAGES_CHAR_SELECT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-06-04T18:32:37+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CHAR_SELECT",
@@ -25722,6 +27045,10 @@
     },
     "PAUSE_MENU_PAGES_CORONA": {
         "file": "PAUSE_MENU_PAGES_CORONA",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-11T14:15:16-04:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CORONA",
@@ -25745,6 +27072,10 @@
     },
     "PAUSE_MENU_PAGES_CORONA_LOBBY": {
         "file": "PAUSE_MENU_PAGES_CORONA_LOBBY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-11T14:15:05-04:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CORONA_LOBBY",
@@ -25764,6 +27095,10 @@
     },
     "PAUSE_MENU_PAGES_CORONA_PLAYERS": {
         "file": "PAUSE_MENU_PAGES_CORONA_PLAYERS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-22T11:44:45+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CORONA_PLAYERS",
@@ -25787,6 +27122,10 @@
     },
     "PAUSE_MENU_PAGES_CORONA_RACE": {
         "file": "PAUSE_MENU_PAGES_CORONA_RACE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CORONA_RACE",
@@ -25806,6 +27145,10 @@
     },
     "PAUSE_MENU_PAGES_CREWS": {
         "file": "PAUSE_MENU_PAGES_CREWS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_CREWS",
@@ -25829,6 +27172,10 @@
     },
     "PAUSE_MENU_PAGES_FRIENDS": {
         "file": "PAUSE_MENU_PAGES_FRIENDS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_FRIENDS",
@@ -25852,6 +27199,10 @@
     },
     "PAUSE_MENU_PAGES_FRIENDS_MP": {
         "file": "PAUSE_MENU_PAGES_FRIENDS_MP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_FRIENDS_MP",
@@ -25871,6 +27222,10 @@
     },
     "PAUSE_MENU_PAGES_GALLERY": {
         "file": "PAUSE_MENU_PAGES_GALLERY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_GALLERY",
@@ -25900,6 +27255,10 @@
     },
     "PAUSE_MENU_PAGES_GAME": {
         "file": "PAUSE_MENU_PAGES_GAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_GAME",
@@ -25919,6 +27278,10 @@
     },
     "PAUSE_MENU_PAGES_INFO": {
         "file": "PAUSE_MENU_PAGES_INFO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_INFO",
@@ -25938,6 +27301,10 @@
     },
     "PAUSE_MENU_PAGES_KEYMAP": {
         "file": "PAUSE_MENU_PAGES_KEYMAP",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_KEYMAP",
@@ -25957,6 +27324,10 @@
     },
     "PAUSE_MENU_PAGES_MAP": {
         "file": "PAUSE_MENU_PAGES_MAP",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-22T11:43:12+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_MAP",
@@ -25992,6 +27363,10 @@
     },
     "PAUSE_MENU_PAGES_MISSIONCREATOR": {
         "file": "PAUSE_MENU_PAGES_MISSIONCREATOR",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-22T11:46:29+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_MISSIONCREATOR",
@@ -26011,6 +27386,10 @@
     },
     "PAUSE_MENU_PAGES_SAVE": {
         "file": "PAUSE_MENU_PAGES_SAVE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-22T11:46:12+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_SAVE",
@@ -26030,6 +27409,10 @@
     },
     "PAUSE_MENU_PAGES_SETTINGS": {
         "file": "PAUSE_MENU_PAGES_SETTINGS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-22T11:41:49+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_SETTINGS",
@@ -26049,6 +27432,10 @@
     },
     "PAUSE_MENU_PAGES_STATS": {
         "file": "PAUSE_MENU_PAGES_STATS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_STATS",
@@ -26068,6 +27455,10 @@
     },
     "PAUSE_MENU_PAGES_STORE": {
         "file": "PAUSE_MENU_PAGES_STORE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_STORE",
@@ -26087,6 +27478,10 @@
     },
     "PAUSE_MENU_PAGES_WEAPONS": {
         "file": "PAUSE_MENU_PAGES_WEAPONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_PAGES_WEAPONS",
@@ -26106,6 +27501,10 @@
     },
     "PAUSE_MENU_SHARED_COMPONENTS": {
         "file": "PAUSE_MENU_SP_CONTENT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_SP_CONTENT",
@@ -26577,6 +27976,10 @@
     },
     "PAUSE_MENU_SHARED_COMPONENTS_02": {
         "file": "PAUSE_MENU_FREE_MODE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_FREE_MODE",
@@ -26710,6 +28113,10 @@
     },
     "PAUSE_MENU_SHARED_COMPONENTS_03": {
         "file": "ROCKSTAR_VERIFIED",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "ROCKSTAR_VERIFIED",
@@ -26726,6 +28133,10 @@
     },
     "PAUSE_MENU_SHARED_COMPONENTS_MP_01": {
         "file": "MP_PLAYER_CARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "MP_PLAYER_CARD",
@@ -26794,6 +28205,10 @@
     },
     "PAUSE_MENU_SP_CONTENT": {
         "file": "PAUSE_MENU_SP_CONTENT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PAUSE_MENU_SP_CONTENT",
@@ -27265,6 +28680,10 @@
     },
     "PAUSE_MENU_SPCHAR_OVERLAYS": {
         "file": "PAUSE_MENU_SPCHAR_OVERLAYS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-06-16T16:06:37+01:00",
         "functions": [
             {
                 "name": "PAUSE_MENU_SPCHAR_OVERLAYS",
@@ -27327,6 +28746,10 @@
     },
     "PAUSE_MENU_STORE_CONTENT": {
         "file": "ECOMMERCE_STORE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-06-27T10:38:29+01:00",
         "functions": [
             {
                 "name": "ECOMMERCE_STORE",
@@ -27584,6 +29007,10 @@
     },
     "PHI_MAXIM": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-15T17:27:27+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -27605,6 +29032,10 @@
     },
     "PHONE_BLANK_SCREEN": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-11-04T16:17:11Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -27626,6 +29057,10 @@
     },
     "PLAYER_NAME_01": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:23:19+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27657,6 +29092,10 @@
     },
     "PLAYER_NAME_02": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:23:07+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27688,6 +29127,10 @@
     },
     "PLAYER_NAME_03": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:22:55+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27719,6 +29162,10 @@
     },
     "PLAYER_NAME_04": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:22:45+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27750,6 +29197,10 @@
     },
     "PLAYER_NAME_05": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:22:27+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27781,6 +29232,10 @@
     },
     "PLAYER_NAME_06": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:22:09+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27799,6 +29254,12 @@
                 ]
             },
             {
+                "name": "SET_SPEAKER_STATE",
+                "args": [
+                    "state"
+                ]
+            },
+            {
                 "name": "debug",
                 "args": []
             }
@@ -27806,6 +29267,10 @@
     },
     "PLAYER_NAME_07": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:21:44+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27837,6 +29302,10 @@
     },
     "PLAYER_NAME_08": {
         "file": "PLAYER_NAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:24:44+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27868,6 +29337,10 @@
     },
     "PLAYER_NAME_09": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:24:34+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27899,6 +29372,10 @@
     },
     "PLAYER_NAME_10": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:24:25+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27930,6 +29407,10 @@
     },
     "PLAYER_NAME_11": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:24:14+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27957,10 +29438,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "PLAYER_NAME_12": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:24:01+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -27988,10 +29477,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "PLAYER_NAME_13": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:23:52+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -28019,10 +29516,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "PLAYER_NAME_14": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:23:41+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -28050,10 +29555,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "PLAYER_NAME_15": {
         "file": "PLAYER_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T11:23:32+01:00",
         "functions": [
             {
                 "name": "PLAYER_NAME",
@@ -28081,10 +29594,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "PLAYER_SWITCH": {
         "file": "PLAYER_SWITCH",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PLAYER_SWITCH",
@@ -28213,6 +29734,10 @@
     },
     "PLAYER_SWITCH_PROLOGUE": {
         "file": "PLAYER_SWITCH",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PLAYER_SWITCH",
@@ -28340,6 +29865,10 @@
     },
     "PLAYER_SWITCH_STATS_PANEL": {
         "file": "PLAYER_SWITCH_STATS_PANEL",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "PLAYER_SWITCH_STATS_PANEL",
@@ -28369,6 +29898,10 @@
     },
     "POPUP_WARNING": {
         "file": "POPUP_WARNING",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "POPUP_WARNING",
@@ -28467,6 +30000,10 @@
     },
     "POWER_PLAY": {
         "file": "POWER_PLAY",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-05-25T16:14:36+01:00",
         "functions": [
             {
                 "name": "POWER_PLAY",
@@ -28573,6 +30110,10 @@
     },
     "POWER_PLAY_BIKER": {
         "file": "POWER_PLAY_BIKER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-09-22T18:12:45+01:00",
         "functions": [
             {
                 "name": "POWER_PLAY_BIKER",
@@ -28651,6 +30192,10 @@
     },
     "POWER_PLAY_DAY_NIGHT": {
         "file": "POWER_PLAY_DAY_NIGHT",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-08-08T14:05:45+01:00",
         "functions": [
             {
                 "name": "POWER_PLAY_DAY_NIGHT",
@@ -28717,6 +30262,10 @@
     },
     "POWER_PLAY_GENERIC": {
         "file": "POWER_PLAY_GENERIC",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2023-05-19T09:51:51-07:00",
         "functions": [
             {
                 "name": "POWER_PLAY_GENERIC",
@@ -28822,10 +30371,18 @@
                     "iconList"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpairraces",
+            "mpsmuggler"
         ]
     },
     "POWER_PLAY_SPECIAL_RACES": {
         "file": "POWER_PLAY_SPECIAL_RACES",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-03-01T12:03:28Z",
         "functions": [
             {
                 "name": "POWER_PLAY_SPECIAL_RACES",
@@ -28917,10 +30474,18 @@
                     "teamFourColourHex"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpspecialraces",
+            "mpgunrunning"
         ]
     },
     "POWER_PLAY_TURF": {
         "file": "POWER_PLAY_TURF",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-11-14T09:29:02Z",
         "functions": [
             {
                 "name": "POWER_PLAY_TURF",
@@ -29019,6 +30584,10 @@
     },
     "POWER_PLAY_VEHICLE": {
         "file": "POWER_PLAY_VEHICLE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-02-24T13:48:32Z",
         "functions": [
             {
                 "name": "POWER_PLAY_VEHICLE",
@@ -29113,282 +30682,12 @@
             }
         ]
     },
-    "PROGRESS_HUB": {
-        "file": "PROGRESS_HUB",
-        "functions": [
-            {
-                "name": "PROGRESS_HUB",
-                "args": []
-            },
-            {
-                "name": "initialise",
-                "args": [
-                    "mc"
-                ]
-            },
-            {
-                "name": "getIsPC",
-                "args": []
-            },
-            {
-                "name": "SHOW_CATEGORY_SCREEN",
-                "args": [
-                    "screenTitle",
-                    "startingIndex"
-                ]
-            },
-            {
-                "name": "ADD_CATEGORY_ITEM",
-                "args": [
-                    "title",
-                    "description",
-                    "backgroundImage",
-                    "itemImage",
-                    "backgroundTXD",
-                    "itemTXD",
-                    "meterValue"
-                ]
-            },
-            {
-                "name": "SHOW_CONTENT_TYPE_SCREEN",
-                "args": [
-                    "screenTitle",
-                    "message",
-                    "startingIndex"
-                ]
-            },
-            {
-                "name": "ADD_CONTENT_TYPE_ITEM",
-                "args": [
-                    "title",
-                    "description",
-                    "backgroundImage",
-                    "itemImage",
-                    "backgroundTXD",
-                    "itemTXD",
-                    "meterValue"
-                ]
-            },
-            {
-                "name": "SHOW_TIER_PROGRESS_SCREEN",
-                "args": [
-                    "screenTitle",
-                    "message",
-                    "startingIndex"
-                ]
-            },
-            {
-                "name": "ADD_TIER_PROGRESS_ITEM",
-                "args": [
-                    "title",
-                    "backgroundImage",
-                    "itemImage",
-                    "status",
-                    "reward",
-                    "backgroundTXD",
-                    "itemTXD",
-                    "meterValue"
-                ]
-            },
-            {
-                "name": "ADD_TIER_PROGRESS_INFORMATION_ITEM",
-                "args": [
-                    "index",
-                    "informationText",
-                    "status",
-                    "isSubItem"
-                ]
-            },
-            {
-                "name": "CLEAR_INFORMATION",
-                "args": [
-                    "index"
-                ]
-            },
-            {
-                "name": "SHOW_REWARDS_SCREEN",
-                "args": [
-                    "screenTitle",
-                    "showTabs",
-                    "startingIndex"
-                ]
-            },
-            {
-                "name": "ADD_REWARDS_ITEM",
-                "args": [
-                    "title",
-                    "description",
-                    "backgroundImage",
-                    "itemImage",
-                    "status",
-                    "message",
-                    "speed",
-                    "acceleration",
-                    "braking",
-                    "traction",
-                    "backgroundTXD",
-                    "itemTXD",
-                    "statLabel1",
-                    "statLabel2",
-                    "statLabel3",
-                    "statLabel4",
-                    "meterValue"
-                ]
-            },
-            {
-                "name": "ADD_REWARDS_TAG",
-                "args": [
-                    "index",
-                    "tagText",
-                    "icon"
-                ]
-            },
-            {
-                "name": "UPDATE_SCREEN",
-                "args": []
-            },
-            {
-                "name": "GET_CURRENT_SELECTION",
-                "args": [
-                    "isMouseClick"
-                ]
-            },
-            {
-                "name": "GET_CURRENT_SCREEN_ID",
-                "args": []
-            },
-            {
-                "name": "SCROLLBAR_IS_SHOWING",
-                "args": []
-            },
-            {
-                "name": "SET_INPUT_EVENT",
-                "args": [
-                    "inputID"
-                ]
-            },
-            {
-                "name": "SET_ANALOG_STICK_INPUT",
-                "args": [
-                    "isLeftStick",
-                    "x",
-                    "y",
-                    "isMouseWheel"
-                ]
-            },
-            {
-                "name": "SET_MOUSE_INPUT",
-                "args": [
-                    "x",
-                    "y"
-                ]
-            },
-            {
-                "name": "SET_IS_PC",
-                "args": [
-                    "isPC"
-                ]
-            },
-            {
-                "name": "validateTXD",
-                "args": [
-                    "TXD"
-                ]
-            },
-            {
-                "name": "updateButtons",
-                "args": []
-            },
-            {
-                "name": "showScreen",
-                "args": [
-                    "screenID",
-                    "dataObject"
-                ]
-            },
-            {
-                "name": "TXD_HAS_LOADED",
-                "args": [
-                    "txd",
-                    "success",
-                    "id"
-                ]
-            },
-            {
-                "name": "UNHIGHLIGHT_ALL_CAROUSEL_ITEMS",
-                "args": []
-            },
-            {
-                "name": "SET_CAROUSEL_ITEM_STATE",
-                "args": [
-                    "whichItem",
-                    "state",
-                    "enabled"
-                ]
-            },
-            {
-                "name": "NAV_RIGHT",
-                "args": []
-            },
-            {
-                "name": "NAV_LEFT",
-                "args": []
-            },
-            {
-                "name": "CLEAR_ALL_ITEMS",
-                "args": []
-            },
-            {
-                "name": "setLocalisedText",
-                "args": [
-                    "tf",
-                    "label"
-                ]
-            },
-            {
-                "name": "formatPercentage",
-                "args": [
-                    "value"
-                ]
-            },
-            {
-                "name": "formatNumber",
-                "args": [
-                    "value"
-                ]
-            },
-            {
-                "name": "formatTime",
-                "args": [
-                    "seconds"
-                ]
-            },
-            {
-                "name": "truncate",
-                "args": [
-                    "tf",
-                    "txt",
-                    "autoSize",
-                    "letterSpacing"
-                ]
-            },
-            {
-                "name": "delegate",
-                "args": [
-                    "scope",
-                    "method"
-                ]
-            },
-            {
-                "name": "resizeAsianText",
-                "args": [
-                    "tf"
-                ]
-            }
-        ]
-    },
     "PSYCHOLOGY_REPORT": {
         "file": "PSYCHOLOGY_REPORT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-09T11:45:16+01:00",
         "functions": [
             {
                 "name": "PSYCHOLOGY_REPORT",
@@ -29412,6 +30711,10 @@
     },
     "RACE_MESSAGE": {
         "file": "RACE_MESSAGE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2016-06-03T15:10:38+01:00",
         "functions": [
             {
                 "name": "RACE_MESSAGE",
@@ -29477,10 +30780,18 @@
                     "str"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpstunt",
+            "mpbiker"
         ]
     },
     "RACE_POSITION": {
         "file": "RACE_POSITION",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:56+01:00",
         "functions": [
             {
                 "name": "RACE_POSITION",
@@ -29578,6 +30889,10 @@
     },
     "RADAR_CONTROL_PANEL": {
         "file": "RADAR_CONTROL_PANEL",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2023-11-06T17:03:29Z",
         "functions": [
             {
                 "name": "RADAR_CONTROL_PANEL",
@@ -29628,6 +30943,10 @@
     },
     "RAMPAGE": {
         "file": "RAMPAGE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:54+01:00",
         "functions": [
             {
                 "name": "RAMPAGE",
@@ -29690,6 +31009,10 @@
     },
     "RCMAUDE_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-15T14:18:31+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29711,6 +31034,10 @@
     },
     "REMOTE_SNIPER_HUD": {
         "file": "REMOTE_SNIPER_HUD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "REMOTE_SNIPER_HUD",
@@ -29769,6 +31096,10 @@
     },
     "REMOTE_SNIPER_LOADING": {
         "file": "REMOTE_SNIPER_LOADING",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:52+01:00",
         "functions": [
             {
                 "name": "REMOTE_SNIPER_LOADING",
@@ -29788,6 +31119,10 @@
     },
     "RH2A_01_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:03+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29809,6 +31144,10 @@
     },
     "RH2A_02_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:51+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29830,6 +31169,10 @@
     },
     "RH2A_03_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:47+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29851,6 +31194,10 @@
     },
     "RH2A_04_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:42+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29872,6 +31219,10 @@
     },
     "RH2A_05_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:38+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29893,6 +31244,10 @@
     },
     "RH2A_06_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:33+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29914,6 +31269,10 @@
     },
     "RH2A_07_LAPTOP": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T20:07:11+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -29935,6 +31294,10 @@
     },
     "ROBBERY_COMPUTER": {
         "file": "ROBBERY_COMPUTER",
+        "origin": "dlc",
+        "dlc": "mp2024_02",
+        "dlcDate": "2024-06-26",
+        "lastModified": "2024-11-13T10:58:06Z",
         "functions": [
             {
                 "name": "ROBBERY_COMPUTER",
@@ -30138,6 +31501,10 @@
     },
     "SALVAGE_PLANNING": {
         "file": "SALVAGE_PLANNING",
+        "origin": "dlc",
+        "dlc": "mp2023_02",
+        "dlcDate": "2023-12-07",
+        "lastModified": "2023-11-16T15:38:19Z",
         "functions": [
             {
                 "name": "SALVAGE_PLANNING",
@@ -30316,6 +31683,10 @@
     },
     "SALVAGE_VEHICLE_TARGETS": {
         "file": "SALVAGE_VEHICLE_TARGETS",
+        "origin": "dlc",
+        "dlc": "mp2023_02",
+        "dlcDate": "2023-12-07",
+        "lastModified": "2023-12-05T11:27:42Z",
         "functions": [
             {
                 "name": "SALVAGE_VEHICLE_TARGETS",
@@ -30452,6 +31823,10 @@
     },
     "SAVING_FOOTER": {
         "file": "SAVING_FOOTER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:23:27+01:00",
         "functions": [
             {
                 "name": "SAVING_FOOTER",
@@ -30485,6 +31860,10 @@
     },
     "SC_LEADERBOARD": {
         "file": "SC_LEADERBOARD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "SC_LEADERBOARD",
@@ -30590,8 +31969,20 @@
             }
         ]
     },
+    "SCOPE": {
+        "file": "DoAction",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-12-03T11:05Z",
+        "functions": []
+    },
     "SECURITY_CAM": {
         "file": "SECURITY_CAM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "SECURITY_CAM",
@@ -30652,6 +32043,10 @@
     },
     "SECURITY_CAMERA": {
         "file": "SECURITY_CAMERA",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:26:22+01:00",
         "functions": [
             {
                 "name": "SECURITY_CAMERA",
@@ -30675,6 +32070,10 @@
     },
     "SECUROSERV": {
         "file": "SECUROSERV",
+        "origin": "dlc",
+        "dlc": "mpexecutive",
+        "dlcDate": "2016-06-07",
+        "lastModified": "2022-03-02T15:58:12Z",
         "functions": [
             {
                 "name": "SECUROSERV",
@@ -30956,6 +32355,10 @@
     },
     "SHOP_MENU": {
         "file": "SHOP_MENU",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:49+01:00",
         "functions": [
             {
                 "name": "SHOP_MENU",
@@ -31030,6 +32433,10 @@
     },
     "SHOP_MENU_DLC": {
         "file": "SHOP_MENU_DLC",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:48+01:00",
         "functions": [
             {
                 "name": "SHOP_MENU_DLC",
@@ -31112,6 +32519,10 @@
     },
     "SLOT_MACHINE": {
         "file": "SLOT_MACHINE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2019-05-30T11:34:22+01:00",
         "functions": [
             {
                 "name": "SLOT_MACHINE",
@@ -31214,6 +32625,10 @@
     },
     "SOCIAL_CLUB2": {
         "file": "SOCIAL_CLUB2",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "SOCIAL_CLUB2",
@@ -32031,6 +33446,10 @@
     },
     "SOCIAL_CLUB_TV": {
         "file": "SOCIAL_CLUB_TV",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "SOCIAL_CLUB_TV",
@@ -32119,6 +33538,10 @@
     },
     "SPIN_THE_WHEEL": {
         "file": "SPIN_THE_WHEEL",
+        "origin": "dlc",
+        "dlc": "mpchristmas2018",
+        "dlcDate": "2018-12-11",
+        "lastModified": "2018-11-05T09:37:05Z",
         "functions": [
             {
                 "name": "SPIN_THE_WHEEL",
@@ -32181,6 +33604,10 @@
     },
     "SPLASH_TEXT": {
         "file": "SPLASH_TEXT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "SPLASH_TEXT",
@@ -32252,6 +33679,10 @@
     },
     "STARTER_PACK_BROWSER": {
         "file": "STARTER_PACK_BROWSER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-02-07T14:41:29Z",
         "functions": [
             {
                 "name": "STARTER_PACK_BROWSER",
@@ -32389,10 +33820,18 @@
                     "soundName"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpassault",
+            "mpchristmas2018"
         ]
     },
     "STORE_BACKGROUND": {
         "file": "STORE_BACKGROUND",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-03-01T19:18:28Z",
         "functions": [
             {
                 "name": "STORE_BACKGROUND",
@@ -32432,6 +33871,10 @@
     },
     "STORE_BLACKOUT": {
         "file": "STORE_BLACKOUT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-05-14T15:57:33+01:00",
         "functions": [
             {
                 "name": "STORE_BLACKOUT",
@@ -32467,6 +33910,10 @@
     },
     "STORE_INSTRUCTIONAL_BUTTONS": {
         "file": "INSTRUCTIONAL_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-11-13T10:07:23Z",
         "functions": [
             {
                 "name": "INSTRUCTIONAL_BUTTONS",
@@ -32750,6 +34197,10 @@
     },
     "STRENGTH_TEST_SCORE": {
         "file": "STRENGTH_TEST_SCORE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-06-23T09:00:54+01:00",
         "functions": [
             {
                 "name": "STRENGTH_TEST_SCORE",
@@ -32795,6 +34246,10 @@
     },
     "STUDIO_3_ARY": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-16T19:20:36Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -32816,6 +34271,10 @@
     },
     "STUNT_JUMPS": {
         "file": "STUNT_JUMPS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-30T14:42:05Z",
         "functions": [
             {
                 "name": "STUNT_JUMPS",
@@ -32882,6 +34341,10 @@
     },
     "SUB_CAM": {
         "file": "SUB_CAM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:41+01:00",
         "functions": [
             {
                 "name": "SUB_CAM",
@@ -32942,6 +34405,10 @@
     },
     "SUB_PC": {
         "file": "SUB_PC",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:22:04+01:00",
         "functions": [
             {
                 "name": "SUB_PC",
@@ -33143,6 +34610,10 @@
     },
     "SUBMARINE_MISSILES": {
         "file": "SUBMARINE_MISSILES",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2020-11-11T11:25:05Z",
         "functions": [
             {
                 "name": "SUBMARINE_MISSILES",
@@ -33196,6 +34667,10 @@
     },
     "SUM24_HV3_AMBUSH": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-05-27T08:57:49+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -33217,6 +34692,10 @@
     },
     "TATTOO_BUTTONS": {
         "file": "TATTOO_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-04-11T11:57:48+01:00",
         "functions": [
             {
                 "name": "TATTOO_BUTTONS",
@@ -33265,6 +34744,10 @@
     },
     "TATTOO_KEYS": {
         "file": "TATTOO_KEYS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-03T18:08:24+01:00",
         "functions": [
             {
                 "name": "TATTOO_KEYS",
@@ -33313,6 +34796,10 @@
     },
     "TAXI_DISPLAY": {
         "file": "TAXI_DISPLAY",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TAXI_DISPLAY",
@@ -33379,6 +34866,10 @@
     },
     "TEETH_PULLING": {
         "file": "TEETH_PULLING",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2012-11-15T17:08:01Z",
         "functions": [
             {
                 "name": "TEETH_PULLING",
@@ -33428,6 +34919,10 @@
     },
     "TENNIS": {
         "file": "TENNIS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TENNIS",
@@ -33596,6 +35091,10 @@
     },
     "TEXT_INPUT_BOX": {
         "file": "TEXT_INPUT_BOX",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TEXT_INPUT_BOX",
@@ -33668,6 +35167,10 @@
     },
     "TEXTCANVAS": {
         "file": "TEXT_CANVAS",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TEXT_CANVAS",
@@ -33718,10 +35221,18 @@
                     "templateTypeId"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "TEXTFIELD": {
         "file": "TEXTFIELD",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TEXTFIELD",
@@ -33780,6 +35291,10 @@
     },
     "TRAFFIC_CAM": {
         "file": "TRAFFIC_CAM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TRAFFIC_CAM",
@@ -33841,6 +35356,10 @@
     },
     "TRIP3_PHONE2_1": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-17T16:00:36Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -33862,6 +35381,10 @@
     },
     "TRIP3_PHONE4_1": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-11-17T16:00:40Z",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -33883,6 +35406,10 @@
     },
     "TRUST_AND_SAFETY": {
         "file": "TRUST_AND_SAFETY",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-04-28T14:53:27+01:00",
         "functions": [
             {
                 "name": "TRUST_AND_SAFETY",
@@ -33977,10 +35504,18 @@
                     "method"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mp2024_02_g9ec",
+            "mp2025_02"
         ]
     },
     "TUN_DJ4_BLANK": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-07-05T12:46:21+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -34002,6 +35537,10 @@
     },
     "TUN_DJ4_SPEAKER": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-07-05T12:46:26+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -34023,6 +35562,10 @@
     },
     "TUN_FRUITLAPTOP_DJ4": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-07-05T12:39:17+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -34044,6 +35587,10 @@
     },
     "TUN_FRUITLAPTOP_SSAS": {
         "file": "CELLPHONE_CUTSCENE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2021-06-02T19:20:10+01:00",
         "functions": [
             {
                 "name": "CELLPHONE_CUTSCENE",
@@ -34065,6 +35612,10 @@
     },
     "TURRET_CAM": {
         "file": "TURRET_CAM",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2017-05-09T14:32:23+01:00",
         "functions": [
             {
                 "name": "TURRET_CAM",
@@ -34120,10 +35671,18 @@
                     "value"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpairraces",
+            "mpsmuggler"
         ]
     },
     "TV_FRAME": {
         "file": "TV_FRAME",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "TV_FRAME",
@@ -34157,6 +35716,10 @@
     },
     "VAULT_DRILL": {
         "file": "VAULT_DRILL",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2019-11-06T12:11:48Z",
         "functions": [
             {
                 "name": "VAULT_DRILL",
@@ -34273,6 +35836,10 @@
     },
     "VAULT_LASER": {
         "file": "VAULT_LASER",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2019-11-06T12:11:34Z",
         "functions": [
             {
                 "name": "VAULT_LASER",
@@ -34391,6 +35958,10 @@
     },
     "WAREHOUSE": {
         "file": "WAREHOUSE",
+        "origin": "dlc",
+        "dlc": "mpexecutive",
+        "dlcDate": "2016-06-07",
+        "lastModified": "2017-05-01T11:31:16+01:00",
         "functions": [
             {
                 "name": "WAREHOUSE",
@@ -34551,6 +36122,10 @@
     },
     "WATERMARK": {
         "file": "WATERMARK",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-02-24T14:07:36Z",
         "functions": [
             {
                 "name": "WATERMARK",
@@ -34629,10 +36204,18 @@
                     "valueB"
                 ]
             }
+        ],
+        "dlcRange": [
+            "mpchristmas2",
+            "mplowrider"
         ]
     },
     "WEB_BROWSER": {
         "file": "WEB_BROWSER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-09-22T11:04:13+01:00",
         "functions": [
             {
                 "name": "WEB_BROWSER",
@@ -35339,6 +36922,10 @@
     },
     "WIND_METER": {
         "file": "WIND_METER",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-26T22:24:33+01:00",
         "functions": [
             {
                 "name": "WIND_METER",
@@ -35394,6 +36981,10 @@
     },
     "WWW_ABSTINENTAMERICA_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:25:04+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -35413,6 +37004,10 @@
     },
     "WWW_ACCEPT_D_THE_D_CHAOS_COM": {
         "file": "WWW_ACCEPT_D_THE_D_CHAOS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-22T16:38:01+01:00",
         "functions": [
             {
                 "name": "WWW_ACCEPT_D_THE_D_CHAOS_COM",
@@ -35438,6 +37033,10 @@
     },
     "WWW_ALTRUISTSUNITE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:29:30+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -35457,6 +37056,10 @@
     },
     "WWW_AMMUNATION_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-13T09:48:23+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -35476,6 +37079,10 @@
     },
     "WWW_APPROPRIATEASSOCIATES_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T12:20+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -35495,6 +37102,10 @@
     },
     "WWW_ARENAWAR_TV": {
         "file": "WWW_ARENAWAR_TV",
+        "origin": "dlc",
+        "dlc": "mpchristmas2018",
+        "dlcDate": "2018-12-11",
+        "lastModified": "2023-07-20T17:14:26+01:00",
         "functions": [
             {
                 "name": "WWW_ARENAWAR_TV",
@@ -35711,6 +37322,10 @@
     },
     "WWW_BAWSAQ_COM": {
         "file": "WWW_BAWSAQ_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2024-10-15T16:56:10+01:00",
         "functions": [
             {
                 "name": "WWW_BAWSAQ_COM",
@@ -35854,6 +37469,10 @@
     },
     "WWW_BEDEVINWESTON_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:36:19+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -35873,6 +37492,10 @@
     },
     "WWW_BENNYSORIGINALMOTORWORKS_COM": {
         "file": "WWW_BENNYSORIGINALMOTORWORKS_COM",
+        "origin": "dlc",
+        "dlc": "mplowrider",
+        "dlcDate": "2013-11-21",
+        "lastModified": "2025-05-13T13:34:33+01:00",
         "functions": [
             {
                 "name": "WWW_BENNYSORIGINALMOTORWORKS_COM",
@@ -36095,6 +37718,10 @@
     },
     "WWW_BESEECHER_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:40:19+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -36114,6 +37741,10 @@
     },
     "WWW_BLEETER_BIZ": {
         "file": "WWW_BLEETER_BIZ",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-02T14:19:48+01:00",
         "functions": [
             {
                 "name": "WWW_BLEETER_BIZ",
@@ -36171,6 +37802,10 @@
     },
     "WWW_BULLSHARKTESTOSTERONE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:41:12+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -36190,6 +37825,10 @@
     },
     "WWW_CASHFORDEADDREAMS_COM": {
         "file": "WWW_CASHFORDEADDREAMS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:42:12+01:00",
         "functions": [
             {
                 "name": "WWW_CASHFORDEADDREAMS_COM",
@@ -36215,6 +37854,10 @@
     },
     "WWW_CHAINSOFINTIMACY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:43:20+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -36234,6 +37877,10 @@
     },
     "WWW_CLASSICVINEWOOD_COM": {
         "file": "WWW_CLASSICVINEWOOD_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-01T19:42:56+01:00",
         "functions": [
             {
                 "name": "WWW_CLASSICVINEWOOD_COM",
@@ -36253,6 +37900,10 @@
     },
     "WWW_CREDITCARDCONSOLIDATIONKINGS_COM": {
         "file": "WWW_CREDITCARDCONSOLIDATIONKINGS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_CREDITCARDCONSOLIDATIONKINGS_COM",
@@ -36294,6 +37945,10 @@
     },
     "WWW_CULTSTOPPERS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:46:04+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -36313,6 +37968,10 @@
     },
     "WWW_DOCKTEASE_COM": {
         "file": "WWW_DOCKTEASE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-05-07T09:38:33+01:00",
         "functions": [
             {
                 "name": "WWW_DOCKTEASE_COM",
@@ -36816,6 +38475,10 @@
     },
     "WWW_DR_D_FRIEDLANDER_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-22T16:40:53+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -36835,6 +38498,10 @@
     },
     "WWW_DYNASTY8EXECUTIVEREALTY_COM": {
         "file": "WWW_DYNASTY8EXECUTIVEREALTY_COM",
+        "origin": "dlc",
+        "dlc": "mpexecutive",
+        "dlcDate": "2016-06-07",
+        "lastModified": "2022-06-30T14:07:13+01:00",
         "functions": [
             {
                 "name": "WWW_DYNASTY8EXECUTIVEREALTY_COM",
@@ -37028,6 +38695,10 @@
     },
     "WWW_DYNASTY8REALESTATE_COM": {
         "file": "WWW_DYNASTY8REALESTATE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2022-11-30T09:55:54-08:00",
         "functions": [
             {
                 "name": "WWW_DYNASTY8REALESTATE_COM",
@@ -37119,6 +38790,10 @@
     },
     "WWW_EGOCHASERENERGYBAR_COM": {
         "file": "WWW_EGOCHASERENERGYBAR_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_EGOCHASERENERGYBAR_COM",
@@ -37150,6 +38825,10 @@
     },
     "WWW_ELECTROTOKESYSTEM_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:48:43+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37169,6 +38848,10 @@
     },
     "WWW_ELITASTRAVEL_COM": {
         "file": "WWW_ELITASTRAVEL_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-05-07T09:38:46+01:00",
         "functions": [
             {
                 "name": "WWW_ELITASTRAVEL_COM",
@@ -37251,6 +38934,10 @@
     },
     "WWW_EPSILONPROGRAM_COM": {
         "file": "WWW_EPSILONPROGRAM_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-22T16:41:22+01:00",
         "functions": [
             {
                 "name": "WWW_EPSILONPROGRAM_COM",
@@ -37316,6 +39003,10 @@
     },
     "WWW_EYEFIND_INFO": {
         "file": "WWW_EYEFIND_INFO",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-09-29T13:26:20+01:00",
         "functions": [
             {
                 "name": "WWW_EYEFIND_INFO",
@@ -37461,6 +39152,10 @@
     },
     "WWW_FABIENLAROUCHEYOGA_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-23T16:35:22+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37480,6 +39175,10 @@
     },
     "WWW_FAMEORSHAME_NET": {
         "file": "WWW_FAMEORSHAME_NET",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:53:46+01:00",
         "functions": [
             {
                 "name": "WWW_FAMEORSHAME_NET",
@@ -37501,6 +39200,10 @@
     },
     "WWW_FLEECA_COM": {
         "file": "WWW_FLEECA_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-19T20:52:37+01:00",
         "functions": [
             {
                 "name": "WWW_FLEECA_COM",
@@ -37510,6 +39213,10 @@
     },
     "WWW_FRUITCOMPUTERS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:54:39+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37529,6 +39236,10 @@
     },
     "WWW_GRAINOFTRUTH_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:55:13+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37548,6 +39259,10 @@
     },
     "WWW_HAMMERSTEINFAUST_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T16:56:21+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37567,6 +39282,10 @@
     },
     "WWW_HIMPLANTSENHANCEMENTSURGERY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-25T00:08:41+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37586,6 +39305,10 @@
     },
     "WWW_HUSHSMUSH_COM": {
         "file": "WWW_HUSHSMUSH_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_HUSHSMUSH_COM",
@@ -37635,6 +39358,10 @@
     },
     "WWW_IWILLSURVIVEITALL_COM": {
         "file": "WWW_IWILLSURVIVEITALL_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_IWILLSURVIVEITALL_COM",
@@ -37674,6 +39401,10 @@
     },
     "WWW_JACKHOWITZER_COM": {
         "file": "WWW_JACKHOWITZER_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:05:36+01:00",
         "functions": [
             {
                 "name": "WWW_JACKHOWITZER_COM",
@@ -37695,6 +39426,10 @@
     },
     "WWW_JOCKCRANLEY_COM": {
         "file": "WWW_JOCKCRANLEY_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-03-14T15:16:26Z",
         "functions": [
             {
                 "name": "WWW_JOCKCRANLEY_COM",
@@ -37726,6 +39461,10 @@
     },
     "WWW_JUNKENERGYDRINK_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-08-26T18:19:45+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -37745,6 +39484,10 @@
     },
     "WWW_KUNGFURAINBOWLAZERFORCE_COM": {
         "file": "WWW_KUNGFURAINBOWLAZERFORCE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-21T12:10:58+01:00",
         "functions": [
             {
                 "name": "WWW_KUNGFURAINBOWLAZERFORCE_COM",
@@ -37766,6 +39509,10 @@
     },
     "WWW_LARSSANDELBO_COM": {
         "file": "WWW_LARSSANDELBO_COM",
+        "origin": "dlc",
+        "dlc": "mpapartment",
+        "dlcDate": "2015-09-22",
+        "lastModified": "2014-03-05T18:12:21Z",
         "functions": [
             {
                 "name": "WWW_LARSSANDELBO_COM",
@@ -37779,6 +39526,10 @@
     },
     "WWW_LCN_D_EXCHANGE_COM": {
         "file": "WWW_LCN_D_EXCHANGE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-06-10T11:56:42+01:00",
         "functions": [
             {
                 "name": "WWW_LCN_D_EXCHANGE_COM",
@@ -37929,6 +39680,10 @@
     },
     "WWW_LEGENDARYMOTORSPORT_NET": {
         "file": "WWW_LEGENDARYMOTORSPORT_NET",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_LEGENDARYMOTORSPORT_NET",
@@ -38046,6 +39801,10 @@
     },
     "WWW_LENNYAVERY_D_REALTY_COM": {
         "file": "WWW_LENNYAVERY_D_REALTY_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-05T22:07:07+01:00",
         "functions": [
             {
                 "name": "WWW_LENNYAVERY_D_REALTY_COM",
@@ -38093,6 +39852,10 @@
     },
     "WWW_LIFEINVADER_COM": {
         "file": "WWW_LIFEINVADER_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-10-01T12:12:29+01:00",
         "functions": [
             {
                 "name": "WWW_LIFEINVADER_COM",
@@ -38143,6 +39906,10 @@
     },
     "WWW_LOSSANTOSCUSTOMS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:15:29+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38162,6 +39929,10 @@
     },
     "WWW_LOSSANTOSFREEGANS_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-25T00:20:10+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38181,6 +39952,10 @@
     },
     "WWW_MANOPAUSEADVENTURES_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:31:01+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38200,6 +39975,10 @@
     },
     "WWW_MAZE_D_BANK_COM": {
         "file": "WWW_MAZE_D_BANK_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2018-02-01T13:47:18Z",
         "functions": [
             {
                 "name": "WWW_MAZE_D_BANK_COM",
@@ -38209,6 +39988,10 @@
     },
     "WWW_MERRYWEATHERSECURITY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:31:42+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38228,6 +40011,10 @@
     },
     "WWW_MINISTERINMINUTES_COM": {
         "file": "WWW_MINISTERINMINUTES_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_MINISTERINMINUTES_COM",
@@ -38253,6 +40040,10 @@
     },
     "WWW_MINOTAURFINANCE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:33:35+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38272,6 +40063,10 @@
     },
     "WWW_MONETARYSCIENCE_US": {
         "file": "WWW_MONETARYSCIENCE_US",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-03-14T14:28:05Z",
         "functions": [
             {
                 "name": "WWW_MONETARYSCIENCE_US",
@@ -38312,6 +40107,10 @@
     },
     "WWW_MYDIVINEWITHIN_COM": {
         "file": "WWW_MYDIVINEWITHIN_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_MYDIVINEWITHIN_COM",
@@ -38347,6 +40146,10 @@
     },
     "WWW_MYROOMONLINE_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:38:56+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38366,6 +40169,10 @@
     },
     "WWW_PANDMCYCLES_COM": {
         "file": "WWW_PANDMCYCLES_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2025-05-07T09:39:12+01:00",
         "functions": [
             {
                 "name": "WWW_PANDMCYCLES_COM",
@@ -38390,6 +40197,10 @@
     },
     "WWW_PRESERVEXSKINCREAM_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:39:31+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38409,6 +40220,10 @@
     },
     "WWW_PRINCESSROBOTBUBBLEGUM_COM": {
         "file": "WWW_PRINCESSROBOTBUBBLEGUM_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:42:27+01:00",
         "functions": [
             {
                 "name": "WWW_PRINCESSROBOTBUBBLEGUM_COM",
@@ -38428,8 +40243,170 @@
             }
         ]
     },
+    "WWW_PRIXLUXURYREALESTATE_COM": {
+        "file": "WWW_PRIXLUXURYREALESTATE_COM",
+        "origin": "dlc",
+        "dlc": "mp2025_02",
+        "dlcDate": "2024-09-23",
+        "lastModified": "2026-07-03T11:49:36+01:00",
+        "functions": [
+            {
+                "name": "WWW_PRIXLUXURYREALESTATE_COM",
+                "args": []
+            },
+            {
+                "name": "INITIALISE",
+                "args": [
+                    "mc"
+                ]
+            },
+            {
+                "name": "initPages",
+                "args": []
+            },
+            {
+                "name": "setPage",
+                "args": [
+                    "pageName",
+                    "PageClass"
+                ]
+            },
+            {
+                "name": "POPULATE_TEXT",
+                "args": [
+                    "pageName",
+                    "searchArgs",
+                    "newPage"
+                ]
+            },
+            {
+                "name": "displayPage",
+                "args": [
+                    "pageName"
+                ]
+            },
+            {
+                "name": "TXD_HAS_LOADED",
+                "args": [
+                    "txd",
+                    "success",
+                    "id"
+                ]
+            },
+            {
+                "name": "DISABLE_VIDEO",
+                "args": [
+                    "isDisabled"
+                ]
+            },
+            {
+                "name": "CLEANUP",
+                "args": []
+            },
+            {
+                "name": "goToAnchor",
+                "args": [
+                    "link"
+                ]
+            },
+            {
+                "name": "handleLB",
+                "args": []
+            },
+            {
+                "name": "handleRB",
+                "args": []
+            },
+            {
+                "name": "handleLT",
+                "args": []
+            },
+            {
+                "name": "handleRT",
+                "args": []
+            },
+            {
+                "name": "handleLTRelease",
+                "args": []
+            },
+            {
+                "name": "handleRTRelease",
+                "args": []
+            },
+            {
+                "name": "handleAnalogStickInput",
+                "args": [
+                    "isLeftStick",
+                    "x",
+                    "y",
+                    "isScrollWheel"
+                ]
+            },
+            {
+                "name": "handleMouseClick",
+                "args": [
+                    "inputIsMouseClick"
+                ]
+            },
+            {
+                "name": "handleMouseRelease",
+                "args": []
+            },
+            {
+                "name": "setPageHeight",
+                "args": [
+                    "height"
+                ]
+            },
+            {
+                "name": "dispatchPlayerMansionSelections",
+                "args": []
+            },
+            {
+                "name": "setLocalisedText",
+                "args": [
+                    "tf",
+                    "label"
+                ]
+            },
+            {
+                "name": "setSpacedTextField",
+                "args": [
+                    "tf",
+                    "label",
+                    "letterSpacing",
+                    "forceUpperCase",
+                    "isLiteralLabel"
+                ]
+            },
+            {
+                "name": "delegate",
+                "args": [
+                    "scope",
+                    "method"
+                ]
+            },
+            {
+                "name": "resizeAsianText",
+                "args": [
+                    "tf"
+                ]
+            },
+            {
+                "name": "formatDollarValue",
+                "args": [
+                    "value",
+                    "tf"
+                ]
+            }
+        ]
+    },
     "WWW_PROPOSITION208_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:43:05+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38449,6 +40426,10 @@
     },
     "WWW_PROPOSITION43_ORG": {
         "file": "WWW_PROPOSITION43_ORG",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T21:57:04+01:00",
         "functions": [
             {
                 "name": "WWW_PROPOSITION43_ORG",
@@ -38496,6 +40477,10 @@
     },
     "WWW_PSYCHICSHOUTOUT_COM": {
         "file": "WWW_PSYCHICSHOUTOUT_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:45:54+01:00",
         "functions": [
             {
                 "name": "WWW_PSYCHICSHOUTOUT_COM",
@@ -38556,6 +40541,10 @@
     },
     "WWW_REPUBLICANSPACERANGERS_COM": {
         "file": "WWW_REPUBLICANSPACERANGERS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:46:42+01:00",
         "functions": [
             {
                 "name": "WWW_REPUBLICANSPACERANGERS_COM",
@@ -38577,6 +40566,10 @@
     },
     "WWW_RIGHTEOUSSLAUGHTER7_COM": {
         "file": "WWW_RIGHTEOUSSLAUGHTER7_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:47:30+01:00",
         "functions": [
             {
                 "name": "WWW_RIGHTEOUSSLAUGHTER7_COM",
@@ -38598,6 +40591,10 @@
     },
     "WWW_SANANDREASDMV_COM": {
         "file": "WWW_SANANDREASDMV_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:49:08+01:00",
         "functions": [
             {
                 "name": "WWW_SANANDREASDMV_COM",
@@ -38667,6 +40664,10 @@
     },
     "WWW_SAWATERANDPOWER_COM": {
         "file": "WWW_SAWATERANDPOWER_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T17:50:04+01:00",
         "functions": [
             {
                 "name": "WWW_SAWATERANDPOWER_COM",
@@ -38688,6 +40689,10 @@
     },
     "WWW_SIXFIGURETEMPS_COM": {
         "file": "WWW_SIXFIGURETEMPS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-19T18:33:15+01:00",
         "functions": [
             {
                 "name": "WWW_SIXFIGURETEMPS_COM",
@@ -38746,6 +40751,10 @@
     },
     "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM": {
         "file": "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2026-07-03T10:06:13+01:00",
         "functions": [
             {
                 "name": "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM",
@@ -38867,6 +40876,10 @@
     },
     "WWW_STOPPAYINGYOURMORTGAGE_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-06-27T18:31:56+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38886,6 +40899,10 @@
     },
     "WWW_SUEMURRY_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-01-26T14:52:27Z",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38905,6 +40922,10 @@
     },
     "WWW_SWALLOWCO_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-19T11:48:29+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -38924,6 +40945,10 @@
     },
     "WWW_TACO_D_BOMB_COM": {
         "file": "WWW_TACO_D_BOMB_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:00:16+01:00",
         "functions": [
             {
                 "name": "WWW_TACO_D_BOMB_COM",
@@ -38993,6 +41018,10 @@
     },
     "WWW_THEBANKOFLIBERTY_COM": {
         "file": "WWW_THEBANKOFLIBERTY_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-19T20:52:39+01:00",
         "functions": [
             {
                 "name": "WWW_THEBANKOFLIBERTY_COM",
@@ -39002,6 +41031,10 @@
     },
     "WWW_THECHILDRENOFTHEMOUNTAIN_COM": {
         "file": "WWW_THECHILDRENOFTHEMOUNTAIN_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-01T12:21:40+01:00",
         "functions": [
             {
                 "name": "WWW_THECHILDRENOFTHEMOUNTAIN_COM",
@@ -39167,6 +41200,10 @@
     },
     "WWW_THEDIAMONDCASINOANDRESORT_COM": {
         "file": "WWW_THEDIAMONDCASINOANDRESORT_COM",
+        "origin": "dlc",
+        "dlc": "mpvinewood",
+        "dlcDate": "2019-07-23",
+        "lastModified": "2021-09-09T10:29:39-07:00",
         "functions": [
             {
                 "name": "WWW_THEDIAMONDCASINOANDRESORT_COM",
@@ -39438,6 +41475,10 @@
     },
     "WWW_THEINTERNETISAHELLHOLE_COM": {
         "file": "WWW_THEINTERNETISAHELLHOLE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_THEINTERNETISAHELLHOLE_COM",
@@ -39457,6 +41498,10 @@
     },
     "WWW_THEPOWCLEANSE_COM": {
         "file": "WWW_THEPOWCLEANSE_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:04:50+01:00",
         "functions": [
             {
                 "name": "WWW_THEPOWCLEANSE_COM",
@@ -39482,6 +41527,10 @@
     },
     "WWW_THEREALITYMILL_COM": {
         "file": "WWW_THEREALITYMILL_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_THEREALITYMILL_COM",
@@ -39511,6 +41560,10 @@
     },
     "WWW_TOESHOESUSA_COM": {
         "file": "WWW_TOESHOESUSA_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:06:32+01:00",
         "functions": [
             {
                 "name": "WWW_TOESHOESUSA_COM",
@@ -39540,6 +41593,10 @@
     },
     "WWW_TOILETCLEANERONLINE_COM": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:17:58+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -39559,6 +41616,10 @@
     },
     "WWW_UNIVERSALUNIFORM_NET": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:18:14+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -39578,6 +41639,10 @@
     },
     "WWW_VANILLAUNICORN_XXX": {
         "file": "GENERIC_WEBSITE_SCRIPT",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T18:18:51+01:00",
         "functions": [
             {
                 "name": "GENERIC_WEBSITE_SCRIPT",
@@ -39597,6 +41662,10 @@
     },
     "WWW_VINEWOODLOGLINEGENERATOR_COM": {
         "file": "WWW_VINEWOODLOGLINEGENERATOR_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-01T20:51+01:00",
         "functions": [
             {
                 "name": "WWW_VINEWOODLOGLINEGENERATOR_COM",
@@ -39686,6 +41755,10 @@
     },
     "WWW_VISITTHEALAMOSEA_COM": {
         "file": "WWW_VISITTHEALAMOSEA_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-05-01T20:09:57+01:00",
         "functions": [
             {
                 "name": "WWW_VISITTHEALAMOSEA_COM",
@@ -39705,6 +41778,10 @@
     },
     "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM": {
         "file": "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2026-05-04T19:45:26+01:00",
         "functions": [
             {
                 "name": "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM",
@@ -40275,6 +42352,10 @@
     },
     "WWW_WHOKILLEDLEONORAJOHNSON_COM": {
         "file": "WWW_WHOKILLEDLEONORAJOHNSON_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2013-07-18T19:05:47+01:00",
         "functions": [
             {
                 "name": "WWW_WHOKILLEDLEONORAJOHNSON_COM",
@@ -40300,6 +42381,10 @@
     },
     "WWW_YOURDEADFAMILY_COM": {
         "file": "WWW_YOURDEADFAMILY_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_YOURDEADFAMILY_COM",
@@ -40325,6 +42410,10 @@
     },
     "WWW_YOURNEWBABYSNAME_COM": {
         "file": "WWW_YOURNEWBABYSNAME_COM",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "WWW_YOURNEWBABYSNAME_COM",
@@ -40350,6 +42439,10 @@
     },
     "YACHT_GAMERNAME": {
         "file": "MP_MISSION_NAME_FREEMODE",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2015-11-17T11:37:55Z",
         "functions": [
             {
                 "name": "MP_MISSION_NAME_FREEMODE",
@@ -40400,10 +42493,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mphalloween",
+            "mpexecutive"
         ]
     },
     "YACHT_NAME": {
         "file": "YACHT_NAME",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "YACHT_NAME",
@@ -40427,10 +42528,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mphalloween",
+            "mpexecutive"
         ]
     },
     "YACHT_NAME_STERN": {
         "file": "YACHT_NAME_STERN",
+        "origin": "post-launch",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": null,
         "functions": [
             {
                 "name": "YACHT_NAME_STERN",
@@ -40454,10 +42563,18 @@
                 "name": "debug",
                 "args": []
             }
+        ],
+        "dlcRange": [
+            "mphalloween",
+            "mpexecutive"
         ]
     },
     "YOGA_BUTTONS": {
         "file": "YOGA_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-03-26T14:41:35Z",
         "functions": [
             {
                 "name": "YOGA_BUTTONS",
@@ -40608,6 +42725,10 @@
     },
     "YOGA_KEYS": {
         "file": "YOGA_BUTTONS",
+        "origin": "vanilla",
+        "dlc": null,
+        "dlcDate": null,
+        "lastModified": "2014-09-02T15:37:50+01:00",
         "functions": [
             {
                 "name": "YOGA_BUTTONS",
