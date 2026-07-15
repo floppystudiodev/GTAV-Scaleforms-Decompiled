@@ -2,12 +2,10 @@ class com.rockstargames.gtav.levelDesign.TURRET_CAM extends com.rockstargames.ui
 {
    var CONTENT;
    var DispConf;
-   var FILE_WIDTH;
    var bMC;
    var cWords;
    var compassMC;
    var fovMC;
-   var getDisplayConfig;
    var tMC;
    static var MAX_ARROW_DX = 169;
    var afactor = 57.2957795130823;

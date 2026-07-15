@@ -1,11 +1,19 @@
 class com.rockstargames.gtav.Multiplayer.MP_SPECTATOR_OVERLAY extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
+   var FILE_WIDTH;
+   var FOUR_THREE_PADDING;
    var feedTicker;
+   var isHiDef;
+   var isWideScreen;
    var jobTicker;
    var lowerThirdMC;
    var playerPostionMC;
    var ref;
+   var safeBottom;
+   var safeLeft;
+   var safeRight;
+   var safeTop;
    var titleIndex = 0;
    var titleAr = new Array();
    function MP_SPECTATOR_OVERLAY()

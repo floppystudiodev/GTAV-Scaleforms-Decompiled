@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.web.warstock.ChopperPurchasePendingPage extends com.rockstargames.gtav.web.warstock.ChopperPage
 {
    var buttons;
-   var setLocalisedText;
    var view;
    function ChopperPurchasePendingPage(view, website, progressPanel)
    {

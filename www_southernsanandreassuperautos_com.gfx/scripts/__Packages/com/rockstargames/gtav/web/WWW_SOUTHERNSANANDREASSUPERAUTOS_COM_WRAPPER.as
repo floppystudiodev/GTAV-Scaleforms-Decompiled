@@ -28,7 +28,6 @@ class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER ex
    var BRAND_PFISTER;
    var BRAND_PRINCIPL;
    var BRAND_PRINCIPLE;
-   var BRAND_RUNE;
    var BRAND_SCHYSTER;
    var BRAND_SHITZU;
    var BRAND_UBERMACH;
@@ -38,7 +37,6 @@ class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER ex
    var BRAND_WEENY;
    var BRAND_WESTERN;
    var BRAND_ZIRCONIU;
-   var DLC_ASSAULT;
    var DLC_BEACH_BUM;
    var DLC_BIKER;
    var DLC_BUSINESS;
@@ -51,11 +49,8 @@ class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER ex
    var DLC_HIPSTER;
    var DLC_INDEPENDENCE;
    var DLC_LTS_CREATOR;
-   var DLC_SMUGGLER;
    var DLC_STUNT;
    var DLC_VALENTINES;
-   var DLC_XMAS_2017;
-   var TXD_ASSAULT;
    var TXD_BIKER;
    var TXD_BUSINESS;
    var TXD_BUSINESS2;
@@ -69,10 +64,8 @@ class com.rockstargames.gtav.web.WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER ex
    var TXD_INDEPENDENCE;
    var TXD_LTS_CREATOR;
    var TXD_MP_TO_SP;
-   var TXD_SMUGGLER;
    var TXD_STUNT;
    var TXD_VALENTINES;
-   var TXD_XMAS_2017;
    var vehicles;
    function WWW_SOUTHERNSANANDREASSUPERAUTOS_COM_WRAPPER()
    {

@@ -1,14 +1,7 @@
 class com.rockstargames.gtav.pc.applications.App_Popups extends com.rockstargames.gtav.pc.applications.App_Base
 {
-   var __get__desktopRef;
    var attachMovie;
    var getNextHighestDepth;
-   var safeBottom;
-   var safeLeft;
-   var safeRight;
-   var safeTop;
-   var screenHeightPixels;
-   var screenWidthPixels;
    var max = 12;
    var items = new Array();
    var _data = new Array();

@@ -12,6 +12,12 @@ class com.rockstargames.gtav.Multiplayer.MP_GAMER_INFO extends MovieClip
       this.GAMER_NAME_NEARBY = this.TIMELINE.GAMERTAG_CENTER.GAMER_NAME_NEARBY;
       this.CREW_TAG = com.rockstargames.gtav.Multiplayer.CREW_TAG_MOVIECLIP(this.attachMovie("CREW_TAG_MOVIECLIP","CREW_TAG_MOVIECLIP",this.getNextHighestDepth(),{_x:0,_y:-60,_xscale:70,_yscale:70}));
       this.TIMELINE.healthArmour._visible = false;
+      this.TIMELINE.MP_BAG_LARGE._visible = false;
+      this.TIMELINE.MP_TAG_ARROW._visible = false;
+      this.TIMELINE.GAMERTAG_CENTER.MP_PHONE._visible = false;
+      this.TIMELINE.BIKER_ARROW._visible = false;
+      this.TIMELINE.MP_TRANSMITTER._visible = false;
+      this.TIMELINE.MP_BOMB._visible = false;
    }
    function SET_GAMERNAME_AND_PACKED_CREW_TAG(gamerName, crewTag)
    {

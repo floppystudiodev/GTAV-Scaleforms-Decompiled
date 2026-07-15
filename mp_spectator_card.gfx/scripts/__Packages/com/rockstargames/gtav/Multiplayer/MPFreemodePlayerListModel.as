@@ -1,6 +1,5 @@
 class com.rockstargames.gtav.Multiplayer.MPFreemodePlayerListModel extends com.rockstargames.ui.components.GUIModel
 {
-   var viewIndex;
    var viewList;
    function MPFreemodePlayerListModel()
    {

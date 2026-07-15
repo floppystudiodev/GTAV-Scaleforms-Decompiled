@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_BASIC_PAGE extends com.rockstargames.gtav.ng.Replay.ReplayBaseItem
 {
    var APP_DATA;
-   var BLACK_ALPHA;
    var bgMC;
    var blipLayer;
    var hudColourBlack;

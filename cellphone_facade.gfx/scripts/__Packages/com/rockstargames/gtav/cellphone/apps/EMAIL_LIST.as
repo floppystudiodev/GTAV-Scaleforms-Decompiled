@@ -4,17 +4,25 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_LIST extends com.rockstargames
    var TextBlackHex;
    var TextWhiteHex;
    var additionalIcon;
+   var arrayStartPoint;
    var container;
    var currentStyle;
    var dataProviderUI;
+   var defaultRowHeight;
+   var getRowAsPercentage;
    var gfxFileName;
+   var gutterHeight;
    var isLandscape;
    var linkageID;
+   var numberOfVisibleRows;
    var offWhiteRGB;
+   var offsetX;
+   var offsetY;
    var readIcon;
    var replyIcon;
    var row;
    var scrollBar;
+   var scrollerX;
    var unreadIcon;
    var whiteRGB;
    function EMAIL_LIST()

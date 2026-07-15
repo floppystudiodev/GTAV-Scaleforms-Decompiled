@@ -2,7 +2,6 @@ class com.rockstargames.gtav.levelDesign.robberyComputer.navigation.MissionButto
 {
    var _enabled;
    var available;
-   var init;
    var view;
    function MissionButton(id, view)
    {

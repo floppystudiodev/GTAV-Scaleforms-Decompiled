@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
    var __get__data;
+   var __get__uniqueID;
    var _highlighted;
    var attachMovie;
    var avatarBGMC;
@@ -14,6 +15,8 @@ class com.rockstargames.gtav.Multiplayer.items.MPFreemodePlayerListItem extends 
    var highlightBGMC;
    var icon1MC;
    var icon2MC;
+   var index;
+   var initialIndex;
    var jobPointsTF;
    var jpIconMC;
    var labelMC;

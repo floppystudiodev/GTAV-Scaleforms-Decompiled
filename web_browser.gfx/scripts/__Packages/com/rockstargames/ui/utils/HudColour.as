@@ -238,6 +238,7 @@ class com.rockstargames.ui.utils.HudColour extends com.rockstargames.ui.utils.Hu
    static var HUD_COLOUR_PLACEHOLDER_08 = 231;
    static var HUD_COLOUR_PLACEHOLDER_09 = 232;
    static var HUD_COLOUR_PLACEHOLDER_10 = 233;
+   static var HUD_COLOUR_JUNK_ENERGY = 234;
    function HudColour()
    {
       super();

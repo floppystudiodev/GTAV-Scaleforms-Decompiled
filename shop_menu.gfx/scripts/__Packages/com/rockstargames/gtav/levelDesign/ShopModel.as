@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.levelDesign.ShopModel extends com.rockstargames.ui.components.GUIModel
 {
+   var __get__scrollBar;
    var _arrows;
+   var getCurrentView;
    var viewIndex;
    var viewList;
    function ShopModel()

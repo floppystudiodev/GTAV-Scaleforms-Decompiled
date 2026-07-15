@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.FrontendGen9.components.StickersForMembership extends com.rockstargames.gtav.FrontendGen9.components.Sticker
 {
+   var padding;
    var stickerBG;
    var stickerBGCircle;
    var stickerIcon;

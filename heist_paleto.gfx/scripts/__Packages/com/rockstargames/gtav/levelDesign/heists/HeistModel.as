@@ -1,11 +1,5 @@
 class com.rockstargames.gtav.levelDesign.heists.HeistModel extends com.rockstargames.ui.components.GUIModel
 {
-   var addDataToView;
-   var dataList;
-   var getCurrentView;
-   var setItem;
-   var viewIndex;
-   var viewList;
    static var viewCrewMember = 0;
    static var viewGameplay = 1;
    static var viewTodo = 2;

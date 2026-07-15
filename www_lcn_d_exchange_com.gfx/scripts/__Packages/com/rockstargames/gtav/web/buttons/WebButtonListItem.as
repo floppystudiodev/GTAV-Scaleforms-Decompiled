@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.web.buttons.WebButtonListItem extends com.rockstargames.gtav.web.buttons.WebButton
 {
    var browser;
-   var buttonType;
    function WebButtonListItem()
    {
       super();

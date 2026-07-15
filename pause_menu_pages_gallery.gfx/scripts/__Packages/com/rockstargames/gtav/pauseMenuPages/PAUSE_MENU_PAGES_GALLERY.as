@@ -1,6 +1,12 @@
 class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_GALLERY extends com.rockstargames.gtav.pauseMenuPages.PauseMenuBasePage
 {
+   var addColumn;
    var column1;
+   var columnList;
+   var footerScrollOverride;
+   var setupColFooterScroll;
+   var setupColumns;
+   var showColumns;
    var timelineMC;
    function PAUSE_MENU_PAGES_GALLERY()
    {
@@ -18,6 +24,7 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_GALLERY extends com
       super.setupPage();
       this.column1 = this.addColumn("spGallery",1,0);
       this.setupColumns(this.column1);
+      this.setupColFooterScroll([this.column1],[this.footerScrollOverride]);
    }
    function stateChanged(id)
    {

@@ -1,0 +1,1 @@
+bg._width = w;

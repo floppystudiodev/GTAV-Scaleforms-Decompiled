@@ -185,6 +185,12 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase ex
          this.scrollBase.updateScroll();
       }
    }
+   function SET_CHANGED(menuIndex, isChanged)
+   {
+   }
+   function REFRESH_CHANGED()
+   {
+   }
    function ON_DESTROY()
    {
    }

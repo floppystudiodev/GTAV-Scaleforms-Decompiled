@@ -1,6 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFriendsListItem extends com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem
 {
+   var __get__columnID;
    var __get__data;
+   var __get__highlighted;
+   var __get__uniqueID;
    var _data;
    var _highlighted;
    var _view;
@@ -9,11 +12,14 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.multiplayer.PauseMPMenuFri
    var colourBGMC;
    var crewTagMC;
    var getNextHighestDepth;
+   var index;
+   var initialIndex;
    var itemColour;
    var itemTextLeft;
    var labelMC;
    var storedStatusColID;
    var tabMC;
+   var type;
    static var AS_OFFLINE = 0;
    static var AS_ONLINE_DIFFERENT_SESSION = 1;
    static var AS_ONLINE_IN_SESSION = 2;

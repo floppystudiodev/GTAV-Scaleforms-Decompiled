@@ -104,17 +104,10 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
    {
       var _loc9_ = 1.7777777777777777;
       var _loc8_ = 1.3333333333333333;
-      var _loc4_ = 1280;
+      var _loc6_ = 1280;
       var _loc7_ = 720;
       var _loc2_ = 0;
       var _loc3_ = 0;
-      if(!_isWideScreen)
-      {
-         _loc2_ = (_loc4_ - Math.round(_loc4_ / _loc9_ * _loc8_)) / 2;
-         _loc3_ = 0;
-         _screenWidthPixels = _loc4_ - _loc2_ * 2;
-         _screenHeightPixels = _loc7_ - _loc3_ * 2;
-      }
       this.ratioGutter = _loc2_;
       this.safeLeft = _loc2_ + _safeLeftPercent * _screenWidthPixels;
       this.safeRight = _loc2_ + _safeRightPercent * _screenWidthPixels;
@@ -278,9 +271,9 @@ class com.rockstargames.gtav.pc.DESKTOP_PC extends com.rockstargames.ui.core.Bas
       var _loc2_;
       if(!this.isCentering)
       {
-         _loc3_ = this.ratioGutter + this.screenWidthPixels * vx;
+         _loc3_ = this.screenWidthPixels * vx;
          _loc2_ = 720 * vy;
-         this.mx = Math.max(this.ratioGutter,Math.min(_loc3_,this.ratioGutter + this.screenWidthPixels));
+         this.mx = Math.max(0,Math.min(_loc3_,this.screenWidthPixels));
          this.my = Math.max(0,Math.min(_loc2_,720));
          this.mouse.moveCursor(this.mx,this.my);
          this.checkUnderCursor();

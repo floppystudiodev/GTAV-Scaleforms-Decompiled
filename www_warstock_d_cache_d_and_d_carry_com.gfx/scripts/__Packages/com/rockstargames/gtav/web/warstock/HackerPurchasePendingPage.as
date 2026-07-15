@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.web.warstock.HackerPurchasePendingPage extends com.rockstargames.gtav.web.warstock.HackerPage
 {
    var buttons;
-   var setLocalisedText;
    var view;
    function HackerPurchasePendingPage(view, website, progressPanel)
    {

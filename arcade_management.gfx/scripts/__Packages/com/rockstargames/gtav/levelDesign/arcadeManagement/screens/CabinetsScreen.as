@@ -4,7 +4,6 @@ class com.rockstargames.gtav.levelDesign.arcadeManagement.screens.CabinetsScreen
    var app;
    var cabinetViews;
    var cursor;
-   var delegate;
    var numCabinets;
    var persistentContent;
    var scrollContent;

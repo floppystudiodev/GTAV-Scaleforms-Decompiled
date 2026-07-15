@@ -3,6 +3,8 @@ class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.Smugg
    var buttons;
    var cursor;
    var operationDataObject;
+   var setUpLabel;
+   var setUpText;
    var view;
    var numButtons = 3;
    function SmugglingOperationsScreen(app, viewContainer, cursor, dataObject)

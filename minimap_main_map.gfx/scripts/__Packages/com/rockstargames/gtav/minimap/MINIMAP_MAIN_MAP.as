@@ -25,6 +25,13 @@ class com.rockstargames.gtav.minimap.MINIMAP_MAIN_MAP extends MovieClip
       this.mapComponents.push("component_12");
       this.mapComponents.push("component_13");
       this.mapComponents.push("component_14");
+      this.mapComponents.push(undefined);
+      this.mapComponents.push(undefined);
+      this.mapComponents.push(undefined);
+      this.mapComponents.push(undefined);
+      this.mapComponents.push("component_15");
+      this.mapComponents.push("component_16");
+      this.mapComponents.push("component_17");
    }
    function REGISTER_MAP_LAYER(_MAP)
    {

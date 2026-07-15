@@ -9,6 +9,9 @@ class com.rockstargames.gtav.FrontendGen9.progressHub.screens.RewardsScreen exte
    var dataObject;
    var screenDataArray;
    var screenDataObject;
+   var setUpLabel;
+   var setUpText;
+   var setupCarousel;
    var showTabs;
    var view;
    var tagArray = new Array();

@@ -2,6 +2,7 @@ class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.screens.HomeS
 {
    var buttons;
    var cursor;
+   var setUpLabel;
    var view;
    var buttonWidth = 398;
    function HomeScreen(app, viewContainer, cursor, dataObject)

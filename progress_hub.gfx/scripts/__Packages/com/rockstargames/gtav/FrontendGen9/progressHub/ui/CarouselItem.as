@@ -5,15 +5,10 @@ class com.rockstargames.gtav.FrontendGen9.progressHub.ui.CarouselItem extends co
    var _highlight;
    var _image;
    var _initialTitlePosition;
-   var _isLit;
    var _sticker;
-   var _textScale;
    var attachMovie;
    var buttonImage;
    var getNextHighestDepth;
-   var itemHeight;
-   var itemWidth;
-   var rearrangeContent;
    var titleText;
    var myBtnType = 1;
    var SF_BASE_CLASS_MOUSE = 10;

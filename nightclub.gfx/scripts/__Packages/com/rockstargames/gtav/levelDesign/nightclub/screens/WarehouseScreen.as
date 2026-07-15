@@ -3,6 +3,7 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.WarehouseScreen exten
    var _buttons;
    var app;
    var assignmentButtons;
+   var checkNavigationButtons;
    var cursor;
    var overlay;
    var persistentContent;

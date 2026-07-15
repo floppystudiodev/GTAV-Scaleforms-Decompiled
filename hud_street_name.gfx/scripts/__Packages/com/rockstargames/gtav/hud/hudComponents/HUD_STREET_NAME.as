@@ -1,6 +1,8 @@
 class com.rockstargames.gtav.hud.hudComponents.HUD_STREET_NAME extends com.rockstargames.ui.hud.HUD_COMPONENT
 {
    var CONTENT;
+   var FADE_DURATION;
+   var ON_SCREEN_DURATION;
    var _HUD;
    var _enumID;
    var forceShow = false;

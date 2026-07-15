@@ -21,5 +21,6 @@
 40;"__Packages.com.rockstargames.ui.tweenStar.Ease"
 41;"__Packages.com.rockstargames.ui.tweenStar.TweenStarLiteRef"
 42;"__Packages.com.rockstargames.ui.utils.Localisation"
-43;"__Packages.com.rockstargames.ui.utils.HudColour"
-44;"__Packages.com.rockstargames.ui.utils.Colour"
+43;"__Packages.com.rockstargames.ui.utils.HudColourLite"
+44;"__Packages.com.rockstargames.ui.utils.HudColour"
+45;"__Packages.com.rockstargames.ui.utils.Colour"

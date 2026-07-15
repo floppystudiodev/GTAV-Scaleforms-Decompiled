@@ -129,5 +129,6 @@ class com.rockstargames.gtav.web.allWebsites
       com.rockstargames.gtav.web.allWebsites.websitesArray.push(new Array("FORECLOSURES_MAZE_D_BANK_COM","bike, property, clubhouse, buy, sell, realty, foreclosure, sale"));
       com.rockstargames.gtav.web.allWebsites.websitesArray.push(new Array("ARENAWAR_TV","property, garage, buy, sell, realty, sale, show, tv, arena"));
       com.rockstargames.gtav.web.allWebsites.websitesArray.push(new Array("THEDIAMONDCASINOANDRESORT_COM","property, garage, buy, sell, realty, sale, casino, gamble, gambling"));
+      com.rockstargames.gtav.web.allWebsites.websitesArray.push(new Array("PRIXLUXURYREALESTATE_COM","property, buy, realty, mansion, properties"));
    }
 }

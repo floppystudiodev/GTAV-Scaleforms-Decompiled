@@ -252,42 +252,42 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
       {
          return undefined;
       }
-      var _loc6_;
-      var _loc4_;
-      var _loc8_;
-      var _loc10_;
-      var _loc5_;
       var _loc7_;
+      var _loc5_;
+      var _loc9_;
+      var _loc10_;
+      var _loc6_;
+      var _loc8_;
       if(!this.inTopMenu)
       {
-         _loc6_ = this.menuLevel - 1;
-         _loc4_ = this.GET_COLUMN(_loc6_);
+         _loc7_ = this.menuLevel - 1;
+         _loc5_ = this.GET_COLUMN(_loc7_);
          if(this.canHighlightAll)
          {
-            _loc4_ = this.GET_COLUMN(colID);
+            _loc5_ = this.GET_COLUMN(colID);
          }
          if(this.inContext)
          {
-            _loc4_ = this.context;
+            _loc5_ = this.context;
          }
-         if(!_loc4_)
+         if(!_loc5_)
          {
             return undefined;
          }
-         _loc8_ = _loc4_.columnIsFocused;
-         _loc10_ = _loc4_.canMouseNav;
+         _loc9_ = _loc5_.columnIsFocused;
+         _loc10_ = _loc5_.canMouseNav;
          this.dbg("---->FILTER_M_EVENT <---- action: " + action);
-         this.dbg("Column ID: " + colID + " == Menu Level: " + _loc6_);
+         this.dbg("Column ID: " + colID + " == Menu Level: " + _loc7_);
          this.dbg(" ");
          if(this.secondClickCancel)
          {
             if(_loc10_ && action == 1)
             {
-               _loc5_ = colID - _loc6_;
-               this.dbg("diff : " + _loc5_);
+               _loc6_ = colID - _loc7_;
+               this.dbg("diff : " + _loc6_);
                this.dbg("************************ MENU STATE " + this.menuState);
                this.dbg("sendClickEventOnly " + this.sendClickEventOnly);
-               if(_loc5_ == -1)
+               if(_loc6_ == -1)
                {
                   if(!this.sendClickEventOnly)
                   {
@@ -300,7 +300,7 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
                   com.rockstargames.ui.game.GameInterface.call("PLAY_SOUND",com.rockstargames.ui.game.GameInterface.GENERIC_TYPE,"BACK","HUD_FRONTEND_DEFAULT_SOUNDSET");
                   return undefined;
                }
-               if(_loc5_ == 1)
+               if(_loc6_ == 1)
                {
                   if(!this.sendClickEventOnly)
                   {
@@ -312,7 +312,7 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
                   this.CLICK_PAUSE_MENU_ITEM(index,colID);
                   return undefined;
                }
-               if(_loc5_ != 0 && Math.abs(_loc5_) > 1)
+               if(_loc6_ != 0 && Math.abs(_loc6_) > 1)
                {
                   if(this.menuState == com.rockstargames.gtav.constants.PauseMenuLUT.MISSION_CREATOR_CATEGORY || this.menuState == com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_LIST)
                   {
@@ -333,16 +333,16 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
                }
             }
          }
-         _loc7_ = _loc8_ && colID == _loc6_ && !this.inContext || this.inContext && colID == 99;
+         _loc8_ = _loc9_ && colID == _loc7_ && !this.inContext || this.inContext && colID == 99;
          if(this.canHighlightAll)
          {
-            _loc7_ = !this.inContext || this.inContext && colID == 99;
+            _loc8_ = !this.inContext || this.inContext && colID == 99;
          }
          this.dbg("menuLevel? : " + this.menuLevel);
          this.dbg("colID? : " + colID);
-         this.dbg("colFocused? : " + _loc8_);
-         this.dbg("progress? : " + _loc7_);
-         if(_loc7_)
+         this.dbg("colFocused? : " + _loc9_);
+         this.dbg("progress? : " + _loc8_);
+         if(_loc8_)
          {
             switch(action)
             {
@@ -351,7 +351,7 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
                   {
                      return undefined;
                   }
-                  this.MENU_ROLLOVER_HIGHLIGHT(_loc4_,false,index);
+                  this.MENU_ROLLOVER_HIGHLIGHT(_loc5_,false,index);
                   com.rockstargames.ui.game.GameInterface.call("HOVER_PAUSE_MENU_ITEM",com.rockstargames.ui.game.GameInterface.PAUSE_TYPE,-1,-1,-1);
                   break;
                case 0:
@@ -359,9 +359,15 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
                   {
                      return undefined;
                   }
-                  this.MENU_ROLLOVER_HIGHLIGHT(_loc4_,false,index);
-                  pmb.mouseOver(true);
-                  com.rockstargames.ui.game.GameInterface.call("HOVER_PAUSE_MENU_ITEM",com.rockstargames.ui.game.GameInterface.PAUSE_TYPE,pmb.index,pmb.menuID,pmb.uniqueID);
+                  if(pmb != null && pmb != undefined)
+                  {
+                     this.MENU_ROLLOVER_HIGHLIGHT(_loc5_,false,index);
+                     pmb.mouseOver(true);
+                     if(pmb.index != undefined && pmb.menuID != undefined && pmb.uniqueID != undefined)
+                     {
+                        com.rockstargames.ui.game.GameInterface.call("HOVER_PAUSE_MENU_ITEM",com.rockstargames.ui.game.GameInterface.PAUSE_TYPE,pmb.index,pmb.menuID,pmb.uniqueID);
+                     }
+                  }
                   break;
                case 1:
                   if(!this.mClickOn)
@@ -535,6 +541,36 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
             default:
                return;
          }
+      }
+   }
+   function SET_INDEX_CHANGED()
+   {
+      var _loc5_ = arguments[0];
+      var _loc4_ = arguments[1];
+      var _loc6_ = 1;
+      var _loc3_ = this.GET_COLUMN(_loc6_);
+      if(_loc3_ != undefined)
+      {
+         _loc3_.SET_CHANGED(_loc5_,_loc4_);
+      }
+   }
+   function REFRESH_CHANGED()
+   {
+      var _loc3_ = 1;
+      var _loc2_ = this.GET_COLUMN(_loc3_);
+      if(_loc2_ != undefined)
+      {
+         _loc2_.REFRESH_CHANGED();
+      }
+   }
+   function SET_HIGHLIGHTED_CHANGED()
+   {
+      var _loc4_ = arguments[0];
+      var _loc5_ = this.menuLevel - 1;
+      var _loc3_ = this.GET_COLUMN(_loc5_);
+      if(_loc3_ != undefined)
+      {
+         _loc3_.SET_CHANGED(-1,_loc4_);
       }
    }
    function SET_COLUMN_INPUT_EVENT()
@@ -1174,6 +1210,22 @@ class com.rockstargames.gtav.pauseMenu.PAUSE_MENU_SP_CONTENT extends com.rocksta
       if(_loc3_ != undefined)
       {
          _loc3_.SET_VIDEO_MEMORY_BAR.apply(_loc3_,arguments);
+      }
+   }
+   function SET_VIDEO_MEMORY_BAR_2()
+   {
+      var _loc3_ = this.GET_COLUMN(1);
+      if(_loc3_ != undefined)
+      {
+         _loc3_.SET_VIDEO_MEMORY_BAR_2.apply(_loc3_,arguments);
+      }
+   }
+   function SET_TIP_TEXT()
+   {
+      var _loc3_ = this.GET_COLUMN(1);
+      if(_loc3_ != undefined)
+      {
+         _loc3_.SET_TIP_TEXT.apply(_loc3_,arguments);
       }
    }
    function SET_DISPLAY_MICS()

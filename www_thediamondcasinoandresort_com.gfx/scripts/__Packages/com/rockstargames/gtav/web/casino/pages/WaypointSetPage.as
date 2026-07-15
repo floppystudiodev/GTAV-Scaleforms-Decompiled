@@ -1,6 +1,5 @@
 class com.rockstargames.gtav.web.casino.pages.WaypointSetPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var initLabelButton;
    var view;
    var website;
    function WaypointSetPage(website, viewContainer, pageName, isFirstPage)

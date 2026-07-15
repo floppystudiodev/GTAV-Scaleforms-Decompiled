@@ -14,7 +14,6 @@ class com.rockstargames.gtav.levelDesign.FEED_REPLAY extends com.rockstargames.g
    var progressMC;
    var recordingIconBGMC;
    var recordingSpinnerMC;
-   var shouldStayOnFeedBottom;
    var spinnerMC;
    var startStopRecordingIconMC;
    var subtitleTF;

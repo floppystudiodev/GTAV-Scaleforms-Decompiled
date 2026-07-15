@@ -1,6 +1,7 @@
 class com.rockstargames.gtav.Multiplayer.MP_FREEMODE_PLAYER_LIST extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
    var CONTENT;
+   var dbgID;
    var model;
    var scrollBase;
    var title;

@@ -2,6 +2,7 @@ class com.rockstargames.gtav.web.buttons.WebBrowserListItem extends com.rockstar
 {
    var browser;
    var btnTxt;
+   var buttonType;
    var browserListIndex = 0;
    function WebBrowserListItem()
    {

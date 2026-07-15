@@ -6,7 +6,6 @@ class com.rockstargames.gtav.levelDesign.starterPackBrowser.HomeScreen extends c
    var cursor;
    var handleMin;
    var handleRange;
-   var initSafeZone;
    var navElements;
    var safeZoneRight;
    var scrollTimeDelta;

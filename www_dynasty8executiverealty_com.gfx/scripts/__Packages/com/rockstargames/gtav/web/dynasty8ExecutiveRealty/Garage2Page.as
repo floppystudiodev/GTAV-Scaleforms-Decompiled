@@ -4,14 +4,8 @@ class com.rockstargames.gtav.web.dynasty8ExecutiveRealty.Garage2Page extends com
    var nextPageName;
    var prevPageName;
    var progressPanel;
-   var selectTab;
    var slideshow;
    var summaryPageName;
-   var updateEquipped;
-   var updateSelectedLighting;
-   var updateSelectedNumber;
-   var updateSelectedStyle;
-   var updateTab;
    var view;
    var website;
    function Garage2Page(website, viewContainer, pageName, isFirstPage, progressPanel, header)

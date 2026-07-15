@@ -3,14 +3,19 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    var __get__columnID;
    var __get__data;
    var __get__highlighted;
+   var __get__uniqueID;
    var _data;
    var _highlighted;
    var _xmouse;
    var _ymouse;
    var attachMovie;
+   var bMC;
    var bar;
    var barMC;
    var bgMC;
+   var blipLayer;
+   var blipLayerBG;
+   var createEmptyMovieClip;
    var defaultLabelColourEnum;
    var fbMC;
    var getNextHighestDepth;
@@ -31,12 +36,22 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    var storeFunc;
    var storeScope;
    var type;
-   var uniqueID;
    var multiListIndex = 0;
    var multiListItems = new Array();
    var barIndex = 0;
    var barValsList = new Array();
    var _lastInList = false;
+   var _isChanged = false;
+   static var noneType = 0;
+   static var textType = 1;
+   static var sliderType = 2;
+   static var facebookType = 3;
+   static var voiceBarType = 4;
+   static var strBlipType = 5;
+   static var ruledType = 6;
+   static var emptyType = 7;
+   static var textType_tabbed = 10;
+   static var sliderType_tabbed = 20;
    function PauseMenuSettingsTextItem()
    {
       super();
@@ -48,32 +63,95 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    }
    function set data(_d)
    {
+      this._isChanged = _d[5] == 2;
+      if(this._isChanged)
+      {
+         _d[5] = 1;
+      }
       super.data = _d;
+      if(this._isChanged)
+      {
+         _d[5] = 2;
+      }
+      this.itemTextLeft._x = 5;
+      if(this.blipLayer)
+      {
+         this.blipLayer.removeMovieClip();
+      }
+      if(this.blipLayerBG)
+      {
+         this.blipLayerBG.removeMovieClip();
+      }
       if(this._data[0] != undefined)
       {
-         this.itemTextLeft.autoSize = "none";
-         this.itemTextLeft._width = 390;
-         com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextLeft,this._data[0],true);
+         if(this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.strBlipType)
+         {
+            this.blipLayerBG = this.createEmptyMovieClip("blipLayerBG",1000);
+            this.blipLayer = this.createEmptyMovieClip("blipLayer",1002);
+            var TextWithBlips = new com.rockstargames.ui.utils.Text();
+            TextWithBlips.setTextWithIcons(this._data[0],this.blipLayer,this.itemTextLeft,0,com.rockstargames.ui.utils.UIText.SIZE,2,false);
+            TextWithBlips.setTextWithIcons(this._data[0],this.blipLayerBG,this.itemTextLeft,0,com.rockstargames.ui.utils.UIText.SIZE,2,false);
+            for(var eltName in this.blipLayerBG)
+            {
+               with(this.blipLayerBG[eltName])
+               {
+                  _width += 2;
+                  _height += 2.5;
+                  _x += 0.25;
+                  _y += 0.5;
+               }
+            }
+            com.rockstargames.ui.utils.Colour.ApplyHudColour(this.blipLayerBG,com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK);
+         }
+         else
+         {
+            this.itemTextLeft.autoSize = "none";
+            this.itemTextLeft._width = 390;
+            com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextLeft,this._data[0],true);
+         }
       }
       if(this.fbMC != undefined)
       {
          this.fbMC.removeMovieClip();
       }
-      this.itemTextLeft._x = 5;
-      var _loc8_ = -1155176764;
-      if(this.menuID == _loc8_ + this.menuPrefOffset)
+      var FacebookLinkage = -1155176764;
+      if(this.menuID == FacebookLinkage + this.menuPrefOffset)
       {
-         this.type = 3;
+         this.type = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.facebookType;
       }
       this.maskMC._visible = false;
       this.barMC.setMask(null);
+      var indentTabs = 0;
+      if(this.type >= com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.sliderType_tabbed)
+      {
+         indentTabs = this.type - com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.sliderType_tabbed;
+         this.type = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.sliderType_tabbed;
+      }
+      else if(this.type >= com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.textType_tabbed)
+      {
+         indentTabs = this.type - com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.textType_tabbed;
+         this.type = com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.textType;
+      }
+      var i = 0;
+      while(i < indentTabs)
+      {
+         this.itemTextLeft._x += 5;
+         i++;
+      }
       var _loc0_;
-      var _loc4_;
-      var _loc3_;
-      var _loc7_;
       switch(this.type)
       {
-         case 0:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.ruledType:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType:
+            var xp = 289 - this.itemTextLeft.textWidth * 0.5;
+            this.itemTextLeft._x = Math.ceil(xp);
+            this.barMC._visible = false;
+            this.labelMC.lMC._visible = _loc0_ = false;
+            this.labelMC.rMC._visible = _loc0_;
+            com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextRight,"");
+            this.isSelectable = 0;
+            break;
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.noneType:
             this.barMC._visible = false;
             if(this.data[1] != undefined && this.data[1] != "")
             {
@@ -86,55 +164,58 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
             this.labelMC.lMC._visible = _loc0_ = false;
             this.labelMC.rMC._visible = _loc0_;
             break;
-         case 1:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.strBlipType:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.textType:
             this.multiListItems = this.data.slice(1);
             this.barMC._visible = false;
             this.labelMC.lMC._visible = _loc0_ = false;
             this.labelMC.rMC._visible = _loc0_;
             this.textIndex = this.initialIndex;
             break;
-         case 4:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.voiceBarType:
             this.maskMC._visible = true;
             this.barMC.setMask(this.maskMC);
-         case 2:
-            _loc4_ = this.data[1];
-            if(_loc4_ == "" || _loc4_ == undefined)
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.sliderType_tabbed:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.sliderType:
+            var steps = this.data[1];
+            if(steps == "" || steps == undefined)
             {
-               _loc4_ = 1;
+               steps = 1;
             }
             this.barValsList = [];
-            _loc3_ = 0;
-            while(_loc3_ < _loc4_ + 1)
+            var i = 0;
+            while(i < steps + 1)
             {
-               this.barValsList.push(100 / _loc4_ * _loc3_);
-               _loc3_ = _loc3_ + 1;
+               this.barValsList.push(100 / steps * i);
+               i++;
             }
-            _loc7_ = this.data[2];
-            if(_loc7_ == undefined)
+            var colourIndex = this.data[2];
+            if(colourIndex == undefined)
             {
-               _loc7_ = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREEN;
+               colourIndex = com.rockstargames.ui.utils.HudColour.HUD_COLOUR_GREEN;
             }
             this.bar = new com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuColourBar(this.barMC);
-            this.bar.init(_loc7_);
+            this.bar.init(colourIndex);
             this.barMC._visible = true;
+            this.barMC._alpha = !this.isSelectable ? 30 : 100;
             this.labelMC.lMC._visible = _loc0_ = false;
             this.labelMC.rMC._visible = _loc0_;
             com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextRight,"");
             this.barscale = this.initialIndex;
             break;
-         case 3:
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.facebookType:
             this.fbMC = this.attachMovie("itemfblogo","fblogoMC",this.getNextHighestDepth(),{_x:7,_y:4});
             this.itemTextLeft._x = this.fbMC._x + this.fbMC._width + 4;
          default:
             this.barMC._visible = false;
             com.rockstargames.ui.utils.UIText.setSizedText(this.itemTextRight,"");
       }
-      var _loc6_ = new com.rockstargames.ui.utils.HudColour();
-      com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG,_loc6_);
-      com.rockstargames.ui.utils.Colour.Colourise(this.bgMC,_loc6_.r,_loc6_.g,_loc6_.b,_loc6_.a);
-      var _loc5_ = new com.rockstargames.ui.utils.HudColour();
-      com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,_loc5_);
-      com.rockstargames.ui.utils.Colour.Colourise(this.highlightMC,_loc5_.r,_loc5_.g,_loc5_.b,_loc5_.a);
+      var bgColour = new com.rockstargames.ui.utils.HudColour();
+      com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG,bgColour);
+      com.rockstargames.ui.utils.Colour.Colourise(this.bgMC,bgColour.r,bgColour.g,bgColour.b,bgColour.a);
+      var highlightColour = new com.rockstargames.ui.utils.HudColour();
+      com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,highlightColour);
+      com.rockstargames.ui.utils.Colour.Colourise(this.highlightMC,highlightColour.r,highlightColour.g,highlightColour.b,highlightColour.a);
       if(this.isLastItem)
       {
          this.bgMC._height = _loc0_ = 25;
@@ -147,6 +228,11 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       }
       this.bgMC._visible = false;
       this.highlighted = this._highlighted;
+      this.displayAsChanged();
+   }
+   function get isEmptySpace()
+   {
+      return this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType;
    }
    function set isLastItem(l)
    {
@@ -183,6 +269,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
    {
       switch(this.type)
       {
+         case com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.strBlipType:
          case 1:
             this.multiListIndex += dir;
             if(this.multiListIndex < 0)
@@ -214,6 +301,26 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       }
       this.highlighted = this._highlighted;
    }
+   function set isChanged(changed)
+   {
+      this._isChanged = changed;
+      this.displayAsChanged();
+   }
+   function get isChanged()
+   {
+      return this._isChanged;
+   }
+   function displayAsChanged()
+   {
+      var _loc2_ = this.itemTextLeft.getTextFormat();
+      _loc2_.bold = this._isChanged;
+      _loc2_.italic = this._isChanged;
+      this.itemTextLeft.setTextFormat(_loc2_);
+      _loc2_ = this.itemTextRight.getTextFormat();
+      _loc2_.bold = this._isChanged;
+      _loc2_.italic = this._isChanged;
+      this.itemTextRight.setTextFormat(_loc2_);
+   }
    function setPrefMouse(val)
    {
       if(this.uniqueID >= 0 && this.uniqueID < this.menuPrefOffset)
@@ -230,14 +337,17 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       var _loc5_ = false;
       if(this.isSelectable <= 0 || this.isSelectable == 2)
       {
-         _loc5_ = true;
-         _loc4_ = !_h ? 30 : 60;
+         if(this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.ruledType && this.type != com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.emptyType)
+         {
+            _loc5_ = true;
+            _loc4_ = !_h ? 30 : 60;
+         }
       }
       if(_h)
       {
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_PAUSE_BG,_loc3_);
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_BLACK,_loc2_);
-         if(this.type == 1 && _loc5_ == false)
+         if((this.type == 1 || this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.strBlipType) && _loc5_ == false)
          {
             this.labelMC.rMC._visible = this.labelMC.lMC._visible = true;
             this.itemTextRight._x = this.labelMC.rMC._x - this.itemTextRight._width - 2;
@@ -248,7 +358,7 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       {
          com.rockstargames.ui.utils.Colour.setHudColour(com.rockstargames.ui.utils.HudColour.HUD_COLOUR_WHITE,_loc3_);
          com.rockstargames.ui.utils.Colour.setHudColour(this.defaultLabelColourEnum,_loc2_);
-         if(this.type == 1)
+         if(this.type == 1 || this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.strBlipType)
          {
             this.labelMC.rMC._visible = this.labelMC.lMC._visible = false;
          }
@@ -260,38 +370,77 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem 
       }
       this._highlighted = _h;
    }
+   function mInit()
+   {
+      super.mInit();
+      delete this.bMC.onRelease;
+      delete this.bMC.onPress;
+      this.bMC.onPress = gfx.utils.Delegate.create(this,this.mPress);
+   }
+   function mOver()
+   {
+      if(this.isSelectable)
+      {
+         _level0.TIMELINE.M_OVER_EVENT(this.index,this.columnID,this);
+      }
+   }
+   function mOut()
+   {
+      if(this.isSelectable)
+      {
+         _level0.TIMELINE.M_OUT_EVENT(this.index,this.columnID);
+      }
+   }
    function mPress()
    {
-      var _loc3_ = this._xmouse;
-      var _loc8_ = this._ymouse;
-      var _loc5_ = false;
-      var _loc4_ = false;
-      var _loc2_ = 40;
-      if(this.type == 2 || this.type == 4)
+      var _loc2_;
+      var _loc9_;
+      var _loc5_;
+      var _loc4_;
+      var _loc6_;
+      var _loc3_;
+      var _loc7_;
+      var _loc8_;
+      if(this.isSelectable)
       {
-         _loc2_ = 71;
-      }
-      var _loc6_ = this.bgMC._width - _loc2_;
-      var _loc7_ = this.bgMC._width - _loc2_;
-      if(_loc3_ > _loc7_)
-      {
-         _loc4_ = true;
-      }
-      if(_loc3_ < _loc6_)
-      {
-         _loc5_ = true;
-      }
-      if(!this.highlighted)
-      {
-         _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,false);
-      }
-      else if(_loc4_)
-      {
-         this.setPrefMouse(1);
-      }
-      else if(_loc5_)
-      {
-         this.setPrefMouse(-1);
+         _loc2_ = this._xmouse;
+         _loc9_ = this._ymouse;
+         _loc5_ = false;
+         _loc4_ = false;
+         _loc6_ = 289;
+         _loc3_ = 40;
+         if(this.type == 2 || this.type == 4)
+         {
+            _loc3_ = 71;
+         }
+         _loc7_ = this.bgMC._width - _loc3_;
+         _loc8_ = this.bgMC._width - _loc3_;
+         if(_loc2_ > _loc8_)
+         {
+            _loc4_ = true;
+         }
+         if(_loc2_ > _loc6_ && _loc2_ < _loc7_)
+         {
+            _loc5_ = true;
+         }
+         if(!this.highlighted)
+         {
+            _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,false);
+         }
+         else if(this.type == 0 || this.type == com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuSettingsTextItem.facebookType)
+         {
+            _level0.TIMELINE.M_PRESS_EVENT(this.index,this.columnID,true);
+         }
+         else if(_loc4_)
+         {
+            _level0.TIMELINE.clickRepeat.repeatStart(this,this.setPrefMouse,[1]);
+            this.setPrefMouse(1);
+         }
+         else if(_loc5_)
+         {
+            _level0.TIMELINE.clickRepeat.repeatStart(this,this.setPrefMouse,[-1]);
+            this.setPrefMouse(-1);
+         }
       }
    }
 }

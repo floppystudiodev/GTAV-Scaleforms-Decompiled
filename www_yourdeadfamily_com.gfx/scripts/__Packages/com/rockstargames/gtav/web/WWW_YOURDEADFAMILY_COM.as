@@ -2,7 +2,6 @@ class com.rockstargames.gtav.web.WWW_YOURDEADFAMILY_COM extends com.rockstargame
 {
    var CAN_STORE_PAGE;
    var CONTENT;
-   var IS_SITE_DYNAMIC;
    var OnColour;
    var PAGE_NAMES;
    var browser;

@@ -4,7 +4,6 @@ class com.rockstargames.gtav.web.warstock.SubColourPage extends com.rockstargame
    var nextPageName;
    var prevPageName;
    var progressPanel;
-   var setLocalisedText;
    var view;
    var website;
    static var NUM_COLOUR_BUTTONS = 16;

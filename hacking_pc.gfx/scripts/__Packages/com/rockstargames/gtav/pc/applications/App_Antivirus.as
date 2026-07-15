@@ -1,6 +1,5 @@
 class com.rockstargames.gtav.pc.applications.App_Antivirus extends com.rockstargames.gtav.pc.applications.App_Base
 {
-   var __get__desktopRef;
    var _visible;
    var actionBtn;
    var bgMC;

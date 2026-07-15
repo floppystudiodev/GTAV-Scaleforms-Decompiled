@@ -27,11 +27,6 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       this.CONTENT = mc;
       this.dispConf = new com.rockstargames.ui.utils.DisplayConfig();
       this.dispConf = this.getDisplayConfig(true);
-      if(!this.dispConf.isWideScreen)
-      {
-         Stage.scaleMode = "noBorder";
-         this.dispConf.screenWidth = 960;
-      }
    }
    function TEST_LOGO(fadeInDuration, fadeOutDuration, logoFadeInDuration, logoFadeOutDuration, logoFadeInDelay, logoFadeOutDelay, logoScaleDuration)
    {
@@ -151,6 +146,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       _loc6_._x = this.currentX;
       _loc2_.textColor = this.getColour(colour);
       _loc2_.autoSize = "left";
+      _loc2_.antiAliasType = "normal";
       _loc2_.wordWrap = false;
       _loc2_.embedFonts = true;
       this.currentX += _loc6_._width + 6;
@@ -184,10 +180,6 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
             break;
          default:
             _loc2_._x = this.dispConf.screenWidth / 2 - _loc2_._width / 2;
-      }
-      if(!this.dispConf.isWideScreen)
-      {
-         _loc2_._x += 160;
       }
       _loc2_._y = this.dispConf.screenHeight / 2 - _loc2_._height / 2 - 12;
       _loc2_._y += _loc3_.yOffset;
@@ -250,6 +242,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
       var _loc3_ = _loc6_.roleTxt;
       _loc3_.textColor = this.getColour(colour);
       _loc3_.autoSize = "left";
+      _loc3_.antiAliasType = "normal";
       _loc3_.embedFonts = true;
       if(isRawText)
       {
@@ -329,6 +322,7 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
          _loc9_.push(_loc3_);
          _loc2_.textColor = this.getColour("HUD_COLOUR_WHITE");
          _loc2_.autoSize = "left";
+         _loc2_.antiAliasType = "normal";
          _loc2_.wordWrap = false;
          _loc2_.multiline = false;
          _loc2_.html = true;
@@ -358,10 +352,6 @@ class com.rockstargames.gtav.loadingScreens.OPENING_CREDITS extends com.rockstar
          {
             _loc2_._x = this.dispConf.safeLeft * this.dispConf.screenWidth;
          }
-      }
-      if(!this.dispConf.isWideScreen)
-      {
-         _loc2_._x += 160;
       }
       if(_loc2_._y + _loc2_._height > this.dispConf.safeBottom * this.dispConf.screenHeight)
       {

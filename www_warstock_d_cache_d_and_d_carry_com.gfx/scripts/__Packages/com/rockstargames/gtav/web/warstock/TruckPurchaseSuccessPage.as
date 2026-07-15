@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.web.warstock.TruckPurchaseSuccessPage extends com.rockstargames.gtav.web.warstock.TruckPage
 {
    var buttons;
-   var setLocalisedText;
    var view;
    var website;
    function TruckPurchaseSuccessPage(view, website, progressPanel)

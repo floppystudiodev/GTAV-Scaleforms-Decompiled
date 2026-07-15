@@ -1,5 +1,9 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFreemodeModel extends com.rockstargames.ui.components.GUIModel
 {
+   var getCurrentView;
+   var setItem;
+   var viewIndex;
+   var viewList;
    var menuItemStateIndex = 5;
    function PauseMenuFreemodeModel()
    {

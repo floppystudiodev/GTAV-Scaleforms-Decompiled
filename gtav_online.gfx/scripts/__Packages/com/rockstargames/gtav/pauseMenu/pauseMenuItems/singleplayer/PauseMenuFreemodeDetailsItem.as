@@ -9,11 +9,13 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuFree
    var crewTagMC;
    var getNextHighestDepth;
    var iconMC;
+   var index;
    var itemTextLeft;
    var itemTextRight;
    var labelMC;
    var leftlabelMC;
    var outlineMC;
+   var type;
    var basetextW = 266;
    function PauseMenuFreemodeDetailsItem()
    {

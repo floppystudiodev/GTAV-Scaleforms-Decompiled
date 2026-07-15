@@ -3,7 +3,6 @@ class com.rockstargames.gtav.web.warstock.SubSummaryPage extends com.rockstargam
    var buttons;
    var prevPageName;
    var progressPanel;
-   var setLocalisedText;
    var view;
    var website;
    function SubSummaryPage(view, website, progressPanel)

@@ -3,15 +3,24 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_RESPONSE extends com.rockstarg
    var CONTENT;
    var TextBlackHex;
    var TextWhiteHex;
+   var arrayStartPoint;
    var container;
+   var currentSelection;
    var currentStyle;
    var dataProviderUI;
+   var defaultRowHeight;
+   var getRowAsPercentage;
    var gfxFileName;
+   var gutterHeight;
    var isLandscape;
    var linkageID;
+   var numberOfVisibleRows;
    var offWhiteRGB;
+   var offsetX;
+   var offsetY;
    var row;
    var scrollBar;
+   var scrollerX;
    var scrollerY;
    function EMAIL_RESPONSE()
    {

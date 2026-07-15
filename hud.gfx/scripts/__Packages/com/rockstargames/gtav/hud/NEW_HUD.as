@@ -3,13 +3,16 @@ class com.rockstargames.gtav.hud.NEW_HUD extends com.rockstargames.ui.core.BaseC
    var COMPONENT_ARRAY;
    var IS_HUD_VISIBLE;
    var MAX_HUD_COMPONENTS;
+   var NEEDS_BIGGER_HELP_AND_SUBTITLES;
    var TIMELINE;
    var charColourEnum;
+   var isWideScreen;
    var listArray;
    var listManager;
    var loadedCompPrefix;
    var loadedHudComps;
    var mcPrefix;
+   var safeTop;
    var weaponWheelActive = false;
    var weaponTypeHash = 0;
    var _isWeaponSelectable = true;

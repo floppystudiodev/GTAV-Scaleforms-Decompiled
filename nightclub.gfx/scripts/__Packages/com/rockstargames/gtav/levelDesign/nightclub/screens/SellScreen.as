@@ -3,6 +3,7 @@ class com.rockstargames.gtav.levelDesign.nightclub.screens.SellScreen extends co
    var _buttons;
    var app;
    var buyerButtons;
+   var checkNavigationButtons;
    var cursor;
    var overlay;
    var persistentContent;

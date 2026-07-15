@@ -1,5 +1,8 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.HeistBoardGamplaySelect extends com.rockstargames.ui.components.GUIMenuItem
 {
+   var __get__data;
+   var _data;
+   var _highlighted;
    var gameplayMC;
    var isAnimating = false;
    function HeistBoardGamplaySelect()

@@ -948,6 +948,30 @@ class com.rockstargames.gtav.constants.Blips
       _loc1_.push("radar_real_estate");
       _loc1_.push("radar_medical_courier");
       _loc1_.push("radar_gruppe_sechs");
+      _loc1_.push("radar_fire_station");
+      _loc1_.push("radar_fire_truck");
+      _loc1_.push("radar_alpha_mail");
+      _loc1_.push("radar_ls_meteor");
+      _loc1_.push("radar_four20_survival");
+      _loc1_.push("radar_community_mission_series");
+      _loc1_.push("radar_property_mansion");
+      _loc1_.push("radar_ai_keypad");
+      _loc1_.push("radar_taxi_self_drive");
+      _loc1_.push("radar_train_subway");
+      _loc1_.push("radar_trashbag");
+      _loc1_.push("radar_mission_creator");
+      _loc1_.push("radar_cat");
+      _loc1_.push("radar_mansion_ai_m");
+      _loc1_.push("radar_mansion_ai_f");
+      _loc1_.push("radar_mansion_ai_gang");
+      _loc1_.push("radar_heist_art_unavailable");
+      _loc1_.push("radar_heist_art");
+      _loc1_.push("radar_property_mansion_art_heist");
+      _loc1_.push("radar_art_heist_prep");
+      _loc1_.push("radar_manhole_key");
+      _loc1_.push("radar_buyers_request");
+      _loc1_.push("radar_armored_caracara");
+      _loc1_.push("radar_witness");
       return _loc1_;
    }
 }

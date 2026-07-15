@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.securoserv.StretchButton extends com.rockstargames.gtav.levelDesign.securoserv.Button
 {
+   var updateBounds;
    var view;
    function StretchButton(id, view, label, padding, minSize, isStringLiteral)
    {

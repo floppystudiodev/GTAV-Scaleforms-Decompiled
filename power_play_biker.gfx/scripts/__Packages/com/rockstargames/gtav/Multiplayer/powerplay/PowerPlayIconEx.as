@@ -3,7 +3,10 @@ class com.rockstargames.gtav.Multiplayer.powerplay.PowerPlayIconEx extends com.r
    var CONTAINER;
    var background;
    var currentState;
+   var drawIcon;
    var pickup;
+   var roundVal;
+   var setPickupActiveState;
    var teamFour;
    var teamFourActive;
    var teamOne;

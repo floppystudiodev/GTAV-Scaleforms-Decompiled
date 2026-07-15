@@ -3,6 +3,7 @@ class com.rockstargames.gtav.Multiplayer.POWER_PLAY extends com.rockstargames.ui
    var CONTENT;
    var DispConf;
    var TIMELINE;
+   var getDisplayConfig;
    var icCurVals;
    var iconList;
    var iconTypeList;

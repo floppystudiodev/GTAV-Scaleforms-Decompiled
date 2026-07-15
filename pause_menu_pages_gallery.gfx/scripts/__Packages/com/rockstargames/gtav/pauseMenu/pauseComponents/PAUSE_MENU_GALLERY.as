@@ -1,9 +1,12 @@
 class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_GALLERY extends com.rockstargames.gtav.pauseMenu.pauseComponents.PauseMenuComponentBase
 {
+   var CLEAR_HIGHLIGHT;
    var CONTENT;
+   var dbgID;
    var maxILMC;
    var maxImgMC;
    var model;
+   var preloadTxds;
    function PAUSE_MENU_GALLERY()
    {
       super();

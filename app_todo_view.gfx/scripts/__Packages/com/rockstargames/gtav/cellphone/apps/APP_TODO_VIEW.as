@@ -4,15 +4,12 @@ class com.rockstargames.gtav.cellphone.apps.APP_TODO_VIEW extends com.rockstarga
    var TIMELINE;
    var container;
    var content;
-   var contentOriginX;
    var currentStyle;
    var dataProviderUI;
    var gfxFileName;
    var greyRGB;
    var gutterHeight;
-   var isLandscape;
    var linkageID;
-   var needsScrollbars;
    var scrollBar;
    var scrollBarTimeout;
    var scrollerX;

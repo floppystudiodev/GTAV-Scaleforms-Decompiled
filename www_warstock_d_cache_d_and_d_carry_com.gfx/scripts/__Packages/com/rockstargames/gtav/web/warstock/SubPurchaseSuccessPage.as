@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.web.warstock.SubPurchaseSuccessPage extends com.rockstargames.gtav.web.warstock.SubPage
 {
    var buttons;
-   var setLocalisedText;
    var view;
    var website;
    function SubPurchaseSuccessPage(view, website, progressPanel)

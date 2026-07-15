@@ -2,7 +2,6 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_CHIPS extends com.rockstargam
 {
    var BOUNDING_BOX;
    var CONTENT;
-   var FADE_DURATION;
    var TIMELINE;
    var _HUD;
    var _enumID;

@@ -3,8 +3,8 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SETTINGS extends co
    var addColumn;
    var column1;
    var column2;
-   var column3;
    var columnList;
+   var setupColMouseNav;
    var setupColScroll;
    var setupColumns;
    var showColumns;
@@ -17,14 +17,14 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SETTINGS extends co
       super.setupPage();
       this.column1 = this.addColumn("freemodeList",1,0);
       this.column2 = this.addColumn("settingsList",2,290);
-      this.column3 = this.addColumn("configurationList",3,290);
-      this.setupColumns(this.column1,this.column2,this.column3);
-      this.setupColScroll([this.column1,this.column2,this.column3],[true,true,true]);
+      this.setupColumns(this.column1,this.column2);
+      this.setupColScroll([this.column1,this.column2],[true,true]);
+      this.setupColMouseNav([this.column1,this.column2],[true,true]);
    }
    function stateChanged(id)
    {
       super.stateChanged(id);
-      this.columnList = [this.column1,this.column2,this.column3];
+      this.columnList = [this.column1,this.column2];
       switch(id)
       {
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS:
@@ -38,7 +38,6 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SETTINGS extends co
             this.column2.SET_STATE(com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_SETTINGS.CUSTOM_ITEM_AUDIO);
             break;
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_MISC_CONTROLS:
-         case com.rockstargames.gtav.constants.PauseMenuLUT.MENU_UNIQUE_ID_SETTINGS_FPS:
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_DISPLAY:
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_CAMERA:
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_VIDEO:
@@ -48,6 +47,8 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_SETTINGS extends co
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_REPLAY:
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_SAVEGAME:
          case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_SIXAXIS:
+         case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_FIRST_PERSON:
+         case com.rockstargames.gtav.constants.PauseMenuLUT.SETTINGS_AGE_ASSURANCE:
             this.column2.SET_STATE(0);
       }
       this.showColumns();

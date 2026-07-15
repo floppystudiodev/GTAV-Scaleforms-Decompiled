@@ -1,7 +1,5 @@
 class com.rockstargames.gtav.levelDesign.ShopMenuItem extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var __get__data;
-   var _data;
    var backgroundMC;
    var boughtMC;
    var itemTextLeft;

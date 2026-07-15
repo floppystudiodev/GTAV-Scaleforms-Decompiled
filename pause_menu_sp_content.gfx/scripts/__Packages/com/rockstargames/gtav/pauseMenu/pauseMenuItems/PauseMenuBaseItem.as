@@ -1,5 +1,7 @@
 class com.rockstargames.gtav.pauseMenu.pauseMenuItems.PauseMenuBaseItem extends com.rockstargames.ui.components.GUIMenuItem
 {
+   var _data;
+   var _highlighted;
    var bMC;
    var bgMC;
    var createEmptyMovieClip;

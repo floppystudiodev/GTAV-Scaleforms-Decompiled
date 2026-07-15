@@ -1,7 +1,5 @@
 class com.rockstargames.gtav.levelDesign.heists.selectors.HeistBoardCrewMember extends com.rockstargames.ui.components.GUIMenuItem
 {
-   var __get__data;
-   var _data;
    var attachMovie;
    var bgMC;
    var getNextHighestDepth;

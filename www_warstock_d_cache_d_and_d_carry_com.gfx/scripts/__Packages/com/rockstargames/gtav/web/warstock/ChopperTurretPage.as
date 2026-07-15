@@ -4,7 +4,6 @@ class com.rockstargames.gtav.web.warstock.ChopperTurretPage extends com.rockstar
    var nextPageName;
    var prevPageName;
    var progressPanel;
-   var setLocalisedText;
    var view;
    var website;
    function ChopperTurretPage(view, website, progressPanel)

@@ -1,15 +1,9 @@
 class com.rockstargames.gtav.levelDesign.FEED_MESSAGE_TEXT extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
-   var baseClassStrID;
    var contactImage;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
-   var important;
-   var parseForFonts;
-   var parseForGamerTagTitleFonts;
-   var returnPath1;
-   var returnPathLvl;
    function FEED_MESSAGE_TEXT()
    {
       super();

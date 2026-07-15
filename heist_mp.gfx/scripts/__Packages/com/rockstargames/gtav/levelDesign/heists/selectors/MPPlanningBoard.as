@@ -423,10 +423,10 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
    }
    function updatePlanningSlotRight(stringArray)
    {
-      var _loc21_ = String(stringArray.shift());
-      var _loc20_ = _loc21_ == "reposition";
+      var _loc23_ = String(stringArray.shift());
+      var _loc22_ = _loc23_ == "reposition";
       this.dataRightMC.removeMovieClip();
-      if(_loc20_)
+      if(_loc22_)
       {
          stringArray = this.planningSlotRightData;
       }
@@ -434,78 +434,86 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.MPPlanningBoard extend
       {
          this.planningSlotRightData = stringArray.concat();
       }
-      var _loc12_ = new Array([166,221,190],[214,181,99],[150,153,161],[180,130,97]);
-      var _loc9_ = this.numPlanningSlots <= 3 ? 6 : 0;
-      var _loc18_ = this.item0._x + this.item0._width / 2;
-      var _loc5_ = this.createEmptyMovieClip("dataRightMC",this.getNextHighestDepth());
-      _loc5_._x = _loc18_;
-      _loc5_._y = this.planningItemTitle._height;
-      _loc5_._visible = false;
-      var _loc7_ = 2;
-      var _loc4_ = 0;
-      var _loc13_;
+      var _loc10_ = new Array([166,221,190],[214,181,99],[150,153,161],[180,130,97]);
+      var _loc15_ = stringArray.slice(0,_loc10_.length);
+      var _loc12_ = this.numPlanningSlots <= 3 ? 6 : 0;
+      var _loc20_ = this.item0._x + this.item0._width / 2;
+      var _loc6_ = this.createEmptyMovieClip("dataRightMC",this.getNextHighestDepth());
+      _loc6_._x = _loc20_;
+      _loc6_._y = this.planningItemTitle._height;
+      _loc6_._visible = false;
+      var _loc9_ = 2;
+      var _loc5_ = 0;
+      var _loc11_;
       var _loc8_;
       var _loc2_;
-      var _loc10_;
-      while(_loc4_ < stringArray.length)
+      var _loc3_;
+      var _loc13_;
+      while(_loc5_ < stringArray.length)
       {
-         _loc13_ = stringArray[_loc4_];
-         if(_loc13_)
+         _loc11_ = stringArray[_loc5_];
+         if(_loc11_)
          {
-            _loc8_ = _loc5_.attachMovie("planningData_right_player","dataRight" + _loc4_,_loc5_.getNextHighestDepth(),{_x:22,_y:_loc7_});
+            _loc8_ = _loc6_.attachMovie("planningData_right_player","dataRight" + _loc5_,_loc6_.getNextHighestDepth(),{_x:22,_y:_loc9_});
             _loc2_ = _loc8_.textTF;
-            _loc2_._width = 750 - _loc18_;
+            _loc2_._width = 750 - _loc20_;
             _loc2_.autoSize = "left";
             _loc2_.html = true;
-            _loc2_.htmlText = _loc13_;
+            _loc2_.htmlText = _loc11_;
             if(_loc2_._width > 146)
             {
                _loc8_._width = 146;
             }
             com.rockstargames.ui.utils.Colour.ApplyHudColourToTF(_loc2_,com.rockstargames.gtav.levelDesign.heists.HeistColours.BLUE);
-            _loc7_ += _loc2_.textHeight + 2;
-            if(_loc4_ < _loc12_.length)
+            _loc9_ += _loc2_.textHeight + 2;
+            _loc3_ = 0;
+            while(_loc3_ < _loc15_.length)
             {
-               _loc10_ = _loc5_.attachMovie("medalMC","medal" + _loc4_,_loc5_.getNextHighestDepth(),{_x:8,_y:_loc8_._y + _loc8_._height / 2});
-               com.rockstargames.ui.utils.Colour.Colourise(_loc10_,_loc12_[_loc4_][0],_loc12_[_loc4_][1],_loc12_[_loc4_][2],100);
+               if(_loc11_ == _loc15_[_loc3_])
+               {
+                  _loc13_ = _loc6_.attachMovie("medalMC","medal" + _loc5_,_loc6_.getNextHighestDepth(),{_x:8,_y:_loc8_._y + _loc8_._height / 2});
+                  com.rockstargames.ui.utils.Colour.Colourise(_loc13_,_loc10_[_loc3_][0],_loc10_[_loc3_][1],_loc10_[_loc3_][2],100);
+                  break;
+               }
+               _loc3_ = _loc3_ + 1;
             }
          }
-         _loc4_ = _loc4_ + 1;
+         _loc5_ = _loc5_ + 1;
       }
-      var _loc15_ = _loc7_;
-      var _loc19_ = Math.floor(this.item0._height);
-      var _loc14_ = 1;
-      var _loc3_;
-      var _loc6_;
-      while(_loc15_ > _loc19_)
+      var _loc19_ = _loc9_;
+      var _loc21_ = Math.floor(this.item0._height);
+      var _loc18_ = 1;
+      var _loc4_;
+      var _loc7_;
+      while(_loc19_ > _loc21_)
       {
-         _loc7_ = -4;
-         _loc4_ = 0;
-         while(_loc4_ < stringArray.length)
+         _loc9_ = -4;
+         _loc5_ = 0;
+         while(_loc5_ < stringArray.length)
          {
-            _loc3_ = _loc5_["dataRight" + _loc4_];
-            _loc3_._y = _loc7_;
-            _loc2_ = _loc3_.textTF;
-            _loc6_ = _loc2_.getNewTextFormat();
-            _loc6_.size -= _loc14_;
-            _loc2_.setTextFormat(_loc6_);
-            _loc10_ = _loc5_["medal" + _loc4_];
-            _loc10_._y = _loc3_._y + _loc3_._height / 2;
-            _loc7_ += _loc2_.textHeight + _loc9_;
-            _loc4_ = _loc4_ + 1;
+            _loc4_ = _loc6_["dataRight" + _loc5_];
+            _loc4_._y = _loc9_;
+            _loc2_ = _loc4_.textTF;
+            _loc7_ = _loc2_.getNewTextFormat();
+            _loc7_.size -= _loc18_;
+            _loc2_.setTextFormat(_loc7_);
+            _loc13_ = _loc6_["medal" + _loc5_];
+            _loc13_._y = _loc4_._y + _loc4_._height / 2;
+            _loc9_ += _loc2_.textHeight + _loc12_;
+            _loc5_ = _loc5_ + 1;
          }
-         _loc15_ = _loc3_._y + _loc3_._height + _loc9_;
-         if(_loc9_ > 0)
+         _loc19_ = _loc4_._y + _loc4_._height + _loc12_;
+         if(_loc12_ > 0)
          {
-            _loc9_ = _loc9_ - 1;
+            _loc12_ = _loc12_ - 1;
          }
-         if(_loc6_.size < 5)
+         if(_loc7_.size < 5)
          {
             break;
          }
-         _loc14_ = _loc14_ + 1;
+         _loc18_ = _loc18_ + 1;
       }
-      _loc5_._visible = true;
+      _loc6_._visible = true;
       this.setHighlightHeight();
    }
    function showImages(bool)

@@ -10,6 +10,7 @@ class com.rockstargames.gtav.levelDesign.trustAndSafety.navigation.Button extend
    var _ul;
    var _ur;
    var _ut;
+   var init;
    var view;
    function Button(id, view)
    {

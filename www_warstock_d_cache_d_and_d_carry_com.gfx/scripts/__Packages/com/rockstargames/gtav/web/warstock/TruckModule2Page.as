@@ -9,7 +9,6 @@ class com.rockstargames.gtav.web.warstock.TruckModule2Page extends com.rockstarg
    var prevPageName;
    var progressPanel;
    var selectionDropDown;
-   var setLocalisedText;
    var view;
    var website;
    function TruckModule2Page(view, website, progressPanel)

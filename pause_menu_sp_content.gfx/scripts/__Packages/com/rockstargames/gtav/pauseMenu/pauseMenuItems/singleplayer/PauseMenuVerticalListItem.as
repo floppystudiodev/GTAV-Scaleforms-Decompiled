@@ -7,12 +7,17 @@ class com.rockstargames.gtav.pauseMenu.pauseMenuItems.singleplayer.PauseMenuVert
    var bgMC;
    var crewTagMC;
    var getNextHighestDepth;
+   var index;
+   var initialIndex;
+   var isSelectable;
    var itemTextLeft;
    var itemTextRight;
    var labelMC;
+   var selectedIndex;
    var selectedValue;
    var storeFunc;
    var storeScope;
+   var type;
    var multiListIndex = 0;
    var multiListItems = new Array();
    function PauseMenuVerticalListItem()

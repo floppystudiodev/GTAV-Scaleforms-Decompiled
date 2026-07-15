@@ -1,9 +1,17 @@
 class com.rockstargames.gtav.levelDesign.COLOUR_SWITCHER extends com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LIST
 {
+   var SET_DATA_SLOT;
+   var SET_DATA_SLOT_EMPTY;
+   var SET_HIGHLIGHT;
+   var SHOW_OPACITY;
    var barMC;
+   var colourData;
+   var colourMCs;
    var dbgID;
    var paletteMC;
+   var repositionPallattes;
    var titleMC;
+   var visibleItems;
    var pcActiveOn = false;
    function COLOUR_SWITCHER()
    {

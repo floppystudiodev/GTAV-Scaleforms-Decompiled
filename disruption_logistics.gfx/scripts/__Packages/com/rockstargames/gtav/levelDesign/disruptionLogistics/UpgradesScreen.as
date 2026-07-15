@@ -3,7 +3,6 @@ class com.rockstargames.gtav.levelDesign.disruptionLogistics.UpgradesScreen exte
    var _buttons;
    var app;
    var cursor;
-   var delegate;
    var tooltips;
    var upgrade1Button;
    var upgrade2Button;

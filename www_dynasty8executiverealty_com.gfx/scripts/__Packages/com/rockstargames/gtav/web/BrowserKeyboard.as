@@ -1,16 +1,5 @@
 class com.rockstargames.gtav.web.BrowserKeyboard extends com.rockstargames.ui.core.BrowserUIComponent
 {
-   var HIDE;
-   var __get__numberOfColumns;
-   var __get__offsetX;
-   var __get__offsetY;
-   var __get__primaryColour;
-   var __get__rowSpace;
-   var __get__secondaryColour;
-   var __set__currentSelection;
-   var __set__numberOfColumns;
-   var __set__offsetX;
-   var _columnSpace;
    var _inputButton;
    var charsArray;
    var col;
@@ -20,7 +9,6 @@ class com.rockstargames.gtav.web.BrowserKeyboard extends com.rockstargames.ui.co
    var key;
    var keySpacing;
    var keysArray;
-   var offsetX;
    var previousKey;
    var row;
    var standardWidth = 48;

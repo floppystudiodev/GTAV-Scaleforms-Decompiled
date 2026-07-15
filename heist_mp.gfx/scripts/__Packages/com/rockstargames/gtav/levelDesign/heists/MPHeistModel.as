@@ -1,5 +1,7 @@
 class com.rockstargames.gtav.levelDesign.heists.MPHeistModel extends com.rockstargames.ui.components.GUIModel
 {
+   var dataList;
+   var viewList;
    function MPHeistModel()
    {
       super();

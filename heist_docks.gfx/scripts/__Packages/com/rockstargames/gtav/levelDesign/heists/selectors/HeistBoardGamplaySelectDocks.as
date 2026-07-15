@@ -4,7 +4,6 @@ class com.rockstargames.gtav.levelDesign.heists.selectors.HeistBoardGamplaySelec
    var _data;
    var _highlighted;
    var gameplayMC;
-   var isAnimating;
    function HeistBoardGamplaySelectDocks()
    {
       super();

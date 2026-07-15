@@ -3,7 +3,6 @@ class com.rockstargames.gtav.pc.applications.App_Sub extends com.rockstargames.g
    var _subRef;
    var accessSwitchesMC;
    var onEnterFrame;
-   var safeRight;
    var securityLayoutMC;
    var sluiceGateMC;
    var warningMC;

@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.web.casino.pages.PurchaseFailedPage extends com.rockstargames.gtav.web.casino.Page
 {
+   var initLabelButton;
    var view;
    var website;
    function PurchaseFailedPage(website, viewContainer, pageName, isFirstPage)

@@ -3,7 +3,6 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
    var CONTENT;
    var TextBlackHex;
    var TextWhiteHex;
-   var arrayStartPoint;
    var container;
    var currentStyle;
    var darkGreyRGB;
@@ -12,7 +11,6 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_LIST extends com.rockstargam
    var gfxFileName;
    var headerTextFormat;
    var linkageID;
-   var numberOfVisibleRows;
    var offWhiteRGB;
    var row;
    var scrollBar;

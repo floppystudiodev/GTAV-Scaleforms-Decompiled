@@ -3,7 +3,6 @@ class com.rockstargames.gtav.web.warstock.ChopperSummaryPage extends com.rocksta
    var buttons;
    var prevPageName;
    var progressPanel;
-   var setLocalisedText;
    var view;
    var website;
    function ChopperSummaryPage(view, website, progressPanel)

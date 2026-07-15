@@ -2,6 +2,7 @@ class com.rockstargames.gtav.pauseMenu.pauseComponents.PAUSE_MENU_HAIR_COLOUR_LI
 {
    var CONTENT;
    var barMC;
+   var dbgID;
    var paletteMC;
    var titleMC;
    var colourData = new Array();

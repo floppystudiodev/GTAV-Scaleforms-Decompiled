@@ -4,7 +4,6 @@ class com.rockstargames.gtav.levelDesign.bountyComputer.screens.LoginScreen exte
    var app;
    var cursor;
    var loginButton;
-   var onTargetChange;
    var password;
    var view;
    function LoginScreen(app, viewContainer, cursor, overlay)

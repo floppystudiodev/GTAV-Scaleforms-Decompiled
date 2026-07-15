@@ -1,7 +1,6 @@
 class com.rockstargames.gtav.Multiplayer.POWER_PLAY_VEHICLE extends com.rockstargames.gtav.Multiplayer.POWER_PLAY
 {
    var CONTENT;
-   var descenders;
    var displayConfig;
    var icCurVals;
    var iconList;

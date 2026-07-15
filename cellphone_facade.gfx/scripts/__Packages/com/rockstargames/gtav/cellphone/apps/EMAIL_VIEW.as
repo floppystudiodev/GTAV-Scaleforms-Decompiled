@@ -11,8 +11,10 @@ class com.rockstargames.gtav.cellphone.apps.EMAIL_VIEW extends com.rockstargames
    var dataProviderUI;
    var gfxFileName;
    var gutterHeight;
+   var isLandscape;
    var linkageID;
    var messageBody;
+   var needsScrollbars;
    var offsetX;
    var offsetY;
    var scrollBar;

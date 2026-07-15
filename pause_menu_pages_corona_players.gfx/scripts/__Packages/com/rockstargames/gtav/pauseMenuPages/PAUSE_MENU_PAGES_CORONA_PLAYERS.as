@@ -6,6 +6,11 @@ class com.rockstargames.gtav.pauseMenuPages.PAUSE_MENU_PAGES_CORONA_PLAYERS exte
    var column3;
    var column4;
    var column5;
+   var columnList;
+   var setupColMouseNav;
+   var setupColScroll;
+   var setupColumns;
+   var showColumns;
    function PAUSE_MENU_PAGES_CORONA_PLAYERS()
    {
       super();

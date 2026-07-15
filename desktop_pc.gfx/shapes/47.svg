@@ -25,7 +25,7 @@
     <pattern height="64" id="PatternID_47_6" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 64.9, -32.5)" patternUnits="userSpaceOnUse" viewBox="0 0 128 64" width="128">
       <image height="64" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="128" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAAhUlEQVR42u3SMQ0AAAjAsPk3DSb46FEDy5oa/koEAwhhAAyAATAABsAAGAADYAAMgAEwAAbAABgAA2AADIABMAAGwAAYAANgAAyAATAABsAAGAADYAAMgAEwAAbAABgAA2AADIABMAAGwAAYAANgAAyAATAABsAAGAADYAAMgAEwAAbgwgIV2MOy8mmXxQAAAABJRU5ErkJggg=="/>
     </pattern>
-    <path d="M90.0 18.5 L90.0 3.5 114.05 3.5 114.05 18.5 90.0 18.5" ffdec:fill-bitmapId="24" style="fill:url(#PatternID_47_6)"/>
+    <path d="M114.05 3.5 L114.05 18.5 90.0 18.5 90.0 3.5 114.05 3.5" ffdec:fill-bitmapId="24" style="fill:url(#PatternID_47_6)"/>
     <pattern height="64" id="PatternID_47_7" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 139.15, -45.75)" patternUnits="userSpaceOnUse" viewBox="0 0 128 64" width="128">
       <image height="64" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="128" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAAhUlEQVR42u3SMQ0AAAjAsPk3DSb46FEDy5oa/koEAwhhAAyAATAABsAAGAADYAAMgAEwAAbAABgAA2AADIABMAAGwAAYAANgAAyAATAABsAAGAADYAAMgAEwAAbAABgAA2AADIABMAAGwAAYAANgAAyAATAABsAAGAADYAAMgAEwAAbgwgIV2MOy8mmXxQAAAABJRU5ErkJggg=="/>
     </pattern>

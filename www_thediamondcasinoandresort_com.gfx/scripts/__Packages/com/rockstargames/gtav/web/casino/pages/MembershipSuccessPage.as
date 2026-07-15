@@ -1,6 +1,5 @@
 class com.rockstargames.gtav.web.casino.pages.MembershipSuccessPage extends com.rockstargames.gtav.web.casino.Page
 {
-   var initSubHeading;
    var view;
    var website;
    function MembershipSuccessPage(website, viewContainer, pageName, isFirstPage)

@@ -1,21 +1,9 @@
 class com.rockstargames.gtav.minigames.tennis.TENNIS extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
-   var FILE_WIDTH;
-   var FOUR_THREE_PADDING;
    var TIMELINE;
    var _playerCard;
    var _scoreboard;
-   var getDisplayConfig;
-   var isHiDef;
-   var isWideScreen;
-   var positionToScreenLayout;
-   var safeBottom;
-   var safeLeft;
-   var safeRight;
-   var safeTop;
-   var screenHeightPixels;
-   var screenWidthPixels;
    var swingMeter;
    var _playerCardVisible = false;
    var _mugShotsLoaded = false;

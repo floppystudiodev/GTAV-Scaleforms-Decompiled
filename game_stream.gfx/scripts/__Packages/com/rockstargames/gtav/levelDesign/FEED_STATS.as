@@ -1,15 +1,10 @@
 class com.rockstargames.gtav.levelDesign.FEED_STATS extends com.rockstargames.gtav.levelDesign.BaseGameStreamComponent
 {
    var CONTENT;
-   var baseClassStrID;
    var colourRed;
    var contactImage;
    var imgLoadedCallback;
    var imgLoadedCallbackScope;
-   var important;
-   var parseForFonts;
-   var returnPath1;
-   var returnPathLvl;
    var stepVal = 0;
    function FEED_STATS()
    {

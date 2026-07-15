@@ -2,8 +2,6 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_AREA_VEHICLE_STREET_NAME exte
 {
    var BOUNDING_BOX;
    var CONTENT;
-   var FADE_DURATION;
-   var ON_SCREEN_DURATION;
    var TIMELINE;
    var _HUD;
    var _enumID;

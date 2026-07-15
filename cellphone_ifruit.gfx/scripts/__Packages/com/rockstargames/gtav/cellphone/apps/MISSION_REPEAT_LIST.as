@@ -3,13 +3,11 @@ class com.rockstargames.gtav.cellphone.apps.MISSION_REPEAT_LIST extends com.rock
    var CONTENT;
    var TextBlackHex;
    var TextWhiteHex;
-   var arrayStartPoint;
    var container;
    var currentStyle;
    var dataProviderUI;
    var gfxFileName;
    var linkageID;
-   var numberOfVisibleRows;
    var offWhiteRGB;
    var row;
    function MISSION_REPEAT_LIST()

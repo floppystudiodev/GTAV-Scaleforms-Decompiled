@@ -2,6 +2,7 @@ class com.rockstargames.gtav.hud.hudComponents.HUD_SUBTITLE_TEXT extends com.roc
 {
    var BOUNDING_BOX;
    var CONTENT;
+   var ON_SCREEN_DURATION;
    var ON_SCREEN_DURATION_ONE_FRAME;
    var ON_SCREEN_DURATION_PER_WORD;
    var ON_SCREEN_DURATION_TOTAL;

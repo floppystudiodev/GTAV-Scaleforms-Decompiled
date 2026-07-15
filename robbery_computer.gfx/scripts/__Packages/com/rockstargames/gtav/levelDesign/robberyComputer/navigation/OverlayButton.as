@@ -1,9 +1,6 @@
 class com.rockstargames.gtav.levelDesign.robberyComputer.navigation.OverlayButton extends com.rockstargames.gtav.levelDesign.robberyComputer.navigation.Target
 {
-   var __get__id;
-   var __set__enabled;
    var _id;
-   var init;
    var view;
    function OverlayButton(id, view)
    {

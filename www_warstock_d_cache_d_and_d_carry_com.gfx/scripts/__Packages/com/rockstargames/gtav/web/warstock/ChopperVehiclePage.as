@@ -4,7 +4,6 @@ class com.rockstargames.gtav.web.warstock.ChopperVehiclePage extends com.rocksta
    var nextPageName;
    var prevPageName;
    var progressPanel;
-   var setLocalisedText;
    var view;
    var website;
    function ChopperVehiclePage(view, website, progressPanel)

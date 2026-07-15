@@ -1,6 +1,5 @@
 class com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.ui.Button extends com.rockstargames.gtav.levelDesign.avengerOperationsTerminal.ui.Target
 {
-   var init;
    var view;
    function Button(id, view)
    {

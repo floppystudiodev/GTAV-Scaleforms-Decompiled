@@ -1,7 +1,19 @@
 class com.rockstargames.gtav.levelDesign.heists.HeistView extends com.rockstargames.ui.components.GUIView
 {
+   var __get__maxitems;
+   var __get__params;
+   var __set__index;
+   var _highlighted;
+   var columnSpacing;
+   var dataList;
+   var highlightedItem;
+   var itemList;
    var paperMC;
+   var rowSpacing;
    var viewContainer;
+   var viewID;
+   var viewIndex;
+   var viewLinkageList;
    function HeistView()
    {
       super();

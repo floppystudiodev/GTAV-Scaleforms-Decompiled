@@ -4,6 +4,7 @@ class com.rockstargames.gtav.minigames.horseracingconsole.screens.RulesScreen ex
    var buttons;
    var currActiveElementID;
    var cursor;
+   var delegate;
    var view;
    function RulesScreen(app, viewContainer, cursor)
    {

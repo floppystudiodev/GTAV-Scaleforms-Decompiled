@@ -1,5 +1,8 @@
 class com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST_LONG_AUDIO extends com.rockstargames.gtav.ng.Replay.COL_TYPE_LIST
 {
+   var HUD_COLOUR_BLACK;
+   var HUD_COLOUR_WHITE;
+   var MAX_CHARS_ITEM_WITH_OPTION;
    var _isSelected;
    var animatedAudioIcon;
    var labelMC;

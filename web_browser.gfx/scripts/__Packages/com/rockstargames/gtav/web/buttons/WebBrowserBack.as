@@ -1,8 +1,6 @@
 class com.rockstargames.gtav.web.buttons.WebBrowserBack extends com.rockstargames.gtav.web.buttons.WebButton
 {
    var browser;
-   var buttonType;
-   var isBrowserButton;
    function WebBrowserBack()
    {
       super();

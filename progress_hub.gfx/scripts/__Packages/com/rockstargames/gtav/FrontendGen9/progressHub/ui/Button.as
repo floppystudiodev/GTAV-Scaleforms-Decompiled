@@ -10,7 +10,6 @@ class com.rockstargames.gtav.FrontendGen9.progressHub.ui.Button extends com.rock
    var _ul;
    var _ur;
    var _ut;
-   var init;
    var view;
    function Button(id, view)
    {

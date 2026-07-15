@@ -1,5 +1,9 @@
 class com.rockstargames.gtav.web.casino.pages.RenovatePage extends com.rockstargames.gtav.web.casino.Page
 {
+   var initBottomNav;
+   var initLabelButton;
+   var initSubHeading;
+   var initTopNav;
    var nextPageName;
    var prevPageName;
    var view;

@@ -1,14 +1,7 @@
 class com.rockstargames.gtav.levelDesign.REMOTE_SNIPER_HUD extends com.rockstargames.ui.core.BaseScreenLayout
 {
    var CONTENT;
-   var SET_DISPLAY_CONFIG;
    var ref;
-   var safeBottom;
-   var safeLeft;
-   var safeRight;
-   var safeTop;
-   var screenHeightPixels;
-   var screenWidthPixels;
    var windGaugeMC;
    var zoomLevelTF;
    var zoom = 0;

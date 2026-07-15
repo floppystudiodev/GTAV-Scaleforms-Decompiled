@@ -2,6 +2,7 @@ class com.rockstargames.gtav.Multiplayer.celebration.HEIST2_CELEBRATION extends 
 {
    var CONTENT;
    var dispConf;
+   var getDisplayConfig;
    var localisationTF;
    var sequences;
    var type;

@@ -1,5 +1,6 @@
 class com.rockstargames.gtav.levelDesign.covertOps.StretchButton extends com.rockstargames.gtav.levelDesign.covertOps.Button
 {
+   var updateBounds;
    var view;
    function StretchButton(id, view, label, padding, minSize, isStringLiteral)
    {

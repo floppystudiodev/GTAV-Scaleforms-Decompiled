@@ -3,12 +3,14 @@ class com.rockstargames.gtav.cellphone.apps.SETTINGS extends com.rockstargames.g
    var CONTENT;
    var TextBlackHex;
    var TextWhiteHex;
+   var arrayStartPoint;
    var container;
    var currentStyle;
    var dataProviderUI;
    var gfxFileName;
    var iconOFF;
    var linkageID;
+   var numberOfVisibleRows;
    var offWhiteRGB;
    var row;
    var whiteRGB;

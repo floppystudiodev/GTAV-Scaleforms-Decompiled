@@ -2,7 +2,6 @@ class com.rockstargames.gtav.levelDesign.islandHeistBoard.ui.FinaleListItem exte
 {
    var checkBoxComplete;
    var colourScheme;
-   var setLabel;
    var view;
    static var LABEL_X_POSITIONS = [22,44];
    function FinaleListItem(id, view, colourScheme)

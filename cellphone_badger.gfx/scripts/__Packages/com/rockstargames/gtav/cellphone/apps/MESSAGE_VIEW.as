@@ -9,7 +9,6 @@ class com.rockstargames.gtav.cellphone.apps.MESSAGE_VIEW extends com.rockstargam
    var dataProviderUI;
    var gfxFileName;
    var gutterHeight;
-   var isLandscape;
    var linkageID;
    var messageBody;
    var offsetX;
