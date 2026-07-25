@@ -1,0 +1,4970 @@
+{
+  "AIRCRAFT_DIALS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_JOB_LIST": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_MISSION_STATS_VIEW": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_NUMBERPAD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_SECUROSERV_HACKING": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_TODO_LIST": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_TODO_VIEW": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "APP_TRACKIFY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ARCADE_BUSINESS_HUB": {
+    "direct": [
+      "apparcadebusinesshub.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ARCADE_MANAGEMENT": {
+    "direct": [
+      "apparcadebusiness.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ARENA_CAREER_WALL": {
+    "direct": [
+      "am_mp_arena_garage.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ARENA_GUN_CAM_APOCALYPSE": {
+    "direct": [],
+    "indirect": [
+      "am_mp_drone.c",
+      "turret_cam_script.c"
+    ],
+    "via_helper": []
+  },
+  "ARENA_GUN_CAM_CONSUMER": {
+    "direct": [],
+    "indirect": [
+      "am_mp_drone.c",
+      "turret_cam_script.c"
+    ],
+    "via_helper": []
+  },
+  "ARENA_GUN_CAM_SCIFI": {
+    "direct": [],
+    "indirect": [
+      "am_mp_drone.c",
+      "turret_cam_script.c"
+    ],
+    "via_helper": []
+  },
+  "ARM1_CONNECTED_BABY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ARM3_CONNECTED_LARA": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ATM": {
+    "direct": [
+      "atm_trigger.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "AUTO_SHOP_BOARD": {
+    "direct": [],
+    "indirect": [
+      "tuner_planning.c"
+    ],
+    "via_helper": []
+  },
+  "AUTO_SHOP_CREW_NAME": {
+    "direct": [
+      "am_mp_auto_shop.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "AVENGER_OPERATIONS_TERMINAL": {
+    "direct": [
+      "appavengeroperations.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "AXE_OF_FURY": {
+    "direct": [
+      "am_mp_arcade_strength_test.c"
+    ],
+    "indirect": [
+      "am_mp_arc_cab_manager.c",
+      "puzzle.c"
+    ],
+    "via_helper": []
+  },
+  "BADGER_BLANK_HOME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BADGER_BLANK_INPROGRESS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BADGER_BLANK_LAMAR": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BADGER_BLANK_LESTER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BADGER_BLANK_MICHAEL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BADGER_DIALING_MICHAEL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BANK_JOB_LOGIN": {
+    "direct": [
+      "gb_bank_job.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BIKER_BUSINESSES": {
+    "direct": [
+      "appbikerbusiness.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BIKER_MISSION_WALL": {
+    "direct": [
+      "am_mp_property_int.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BINOCULARS": {
+    "direct": [
+      "fbi4.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BLIMP_TEXT": {
+    "direct": [
+      "fm_capture_creator.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_lts_creator.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "public_mission_controller.c",
+      "public_mission_creator.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BOMB_COUNTDOWN": {
+    "direct": [],
+    "indirect": [
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  },
+  "BOUNTY_COMPUTER": {
+    "direct": [
+      "appbailoffice.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "BREAKING_NEWS": {
+    "direct": [
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles_defend.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_survival.c",
+      "fm_content_vehrob_prep.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_collect_money.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_velocity.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "solomon3.c",
+      "triathlonsp.c"
+    ],
+    "indirect": [
+      "fameorshame_eps.c",
+      "fameorshame_eps_1.c",
+      "lester1.c",
+      "selling_short_1.c",
+      "selling_short_2.c"
+    ],
+    "via_helper": []
+  },
+  "BUSY_SPINNER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CAMERA_GALLERY": {
+    "direct": [
+      "appcamera.c",
+      "fm_capture_creator.c",
+      "fm_content_tuner_robbery.c",
+      "fm_deathmatch_creator.c",
+      "fm_lts_creator.c",
+      "fm_race_creator.c",
+      "fm_survival_creator.c",
+      "jewelry_setup1.c",
+      "public_mission_creator.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CAMERA_SHUTTER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CASINO_HEIST_BOARD_FINALE": {
+    "direct": [
+      "gb_casino_heist_planning.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CASINO_HEIST_BOARD_PREP": {
+    "direct": [
+      "gb_casino_heist_planning.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CASINO_HEIST_BOARD_SETUP": {
+    "direct": [
+      "gb_casino_heist_planning.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CELLPHONE_ALERT_POPUP": {
+    "direct": [
+      "cellphone_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CELLPHONE_BADGER": {
+    "direct": [
+      "cellphone_flashhand.c",
+      "freemode.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CELLPHONE_CUTSCENE": {
+    "direct": [],
+    "indirect": [
+      "agency_heist1.c",
+      "exile1.c",
+      "family_scene_m.c",
+      "franklin0.c",
+      "launcher_rampage.c",
+      "player_timetable_scene.c",
+      "yoga.c"
+    ],
+    "via_helper": []
+  },
+  "CELLPHONE_FACADE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CELLPHONE_IFRUIT": {
+    "direct": [
+      "cellphone_flashhand.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CELLPHONE_PROLOGUE": {
+    "direct": [
+      "cellphone_flashhand.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CLUBHOUSE_NAME": {
+    "direct": [
+      "am_mp_property_int.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "COLOUR_SWITCHER_01": {
+    "direct": [],
+    "indirect": [
+      "hairdo_shop_mp.c",
+      "hairdo_shop_sp.c"
+    ],
+    "via_helper": []
+  },
+  "COLOUR_SWITCHER_02": {
+    "direct": [],
+    "indirect": [
+      "hairdo_shop_mp.c",
+      "hairdo_shop_sp.c"
+    ],
+    "via_helper": []
+  },
+  "CONTROLLER_TEST": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "COUNTDOWN": {
+    "direct": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_mp_shooting_range.c",
+      "am_penned_in.c",
+      "country_race.c",
+      "fm_bj_race_controler.c",
+      "fm_content_bicycle_time_trial.c",
+      "fm_content_skydive.c",
+      "fm_deathmatch_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "freemode.c",
+      "gb_biker_joust.c",
+      "gb_biker_race_p2p.c",
+      "gb_deathmatch.c",
+      "gb_point_to_point.c",
+      "gb_vehicle_export.c",
+      "hao1.c",
+      "mg_race_to_point.c",
+      "mission_race.c",
+      "offroad_races.c",
+      "pilot_school.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern.c",
+      "range_modern_mp.c",
+      "stunt_plane_races.c",
+      "triathlonsp.c",
+      "tuner_sandbox_activity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "COVERT_OPS": {
+    "direct": [
+      "appcovertops.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "CUSTOM_WARNING_SCREEN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DAILY_VEHICLE_CHECKLIST": {
+    "direct": [],
+    "indirect": [
+      "am_mp_auto_shop.c"
+    ],
+    "via_helper": []
+  },
+  "DANCER": {
+    "direct": [
+      "am_mp_casino_nightclub.c",
+      "am_mp_island.c",
+      "am_mp_nightclub.c",
+      "si_dancing_activity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DARNELL_INC_1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DARTS_SCOREBOARD": {
+    "direct": [
+      "am_darts.c",
+      "darts.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DARTS_SCOREBOARD_BIKER": {
+    "direct": [
+      "am_darts_apartment.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DASHBOARD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DESKTOP_PC": {
+    "direct": [],
+    "indirect": [
+      "lester1.c"
+    ],
+    "via_helper": []
+  },
+  "DIALS_LAZER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DIALS_LAZER_VINTAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DIGISCANNER": {
+    "direct": [
+      "epsilon4.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "launcher_epsilon.c",
+      "launcher_omega.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [
+      "fm_content_island_heist.c",
+      "freemode.c"
+    ],
+    "via_helper": []
+  },
+  "DIGITAL_CAMERA": {
+    "direct": [
+      "maintransition.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DIGITAL_SAFE_DISPLAY": {
+    "direct": [
+      "fm_content_kortz_task.c",
+      "fm_content_stash_house.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [
+      "fm_content_kortz_scoping.c"
+    ],
+    "via_helper": []
+  },
+  "DISRUPTION_LOGISTICS": {
+    "direct": [
+      "appbunkerbusiness.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DLC_ARENA_INT2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DLC_SOL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DOCUMENT_TABLET43": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DONT_CROSS_THE_LINE": {
+    "direct": [
+      "dont_cross_the_line.c"
+    ],
+    "indirect": [
+      "am_agency_suv.c",
+      "am_casino_limo.c",
+      "am_contact_requests.c",
+      "am_mansion_limo.c",
+      "am_mp_acid_lab.c",
+      "am_mp_arc_cab_manager.c",
+      "am_mp_arcade.c",
+      "am_mp_arcade_claw_crane.c",
+      "am_mp_arcade_love_meter.c",
+      "am_mp_arcade_strength_test.c",
+      "am_mp_arena_box.c",
+      "am_mp_arena_garage.c",
+      "am_mp_armory_aircraft.c",
+      "am_mp_armory_truck.c",
+      "am_mp_auto_shop.c",
+      "am_mp_bail_office.c",
+      "am_mp_biker_warehouse.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_bunker.c",
+      "am_mp_business_hub.c",
+      "am_mp_car_meet_property.c",
+      "am_mp_car_meet_sandbox.c",
+      "am_mp_casino.c",
+      "am_mp_casino_apartment.c",
+      "am_mp_casino_nightclub.c",
+      "am_mp_creator_trailer.c",
+      "am_mp_defunct_base.c",
+      "am_mp_field_hangar.c",
+      "am_mp_fixer_hq.c",
+      "am_mp_hacker_den.c",
+      "am_mp_hacker_truck.c",
+      "am_mp_hangar.c",
+      "am_mp_ie_warehouse.c",
+      "am_mp_juggalo_hideout.c",
+      "am_mp_mansion.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_mansion_driveway.c",
+      "am_mp_mansion_garage.c",
+      "am_mp_multistorey_garage.c",
+      "am_mp_music_studio.c",
+      "am_mp_nightclub.c",
+      "am_mp_property_ext.c",
+      "am_mp_property_int.c",
+      "am_mp_rc_vehicle.c",
+      "am_mp_rpa_menu.c",
+      "am_mp_salvage_yard.c",
+      "am_mp_sb_car_wash.c",
+      "am_mp_sb_heli_tours.c",
+      "am_mp_sb_weed_shop.c",
+      "am_mp_shooting_range.c",
+      "am_mp_simeon_showroom.c",
+      "am_mp_smpl_interior_ext.c",
+      "am_mp_smpl_interior_int.c",
+      "am_mp_submarine.c",
+      "am_mp_warehouse.c",
+      "am_mp_yacht.c",
+      "am_pi_menu.c",
+      "am_vehicle_spawn.c",
+      "apparcadebusiness.c",
+      "appbusinesshub.c",
+      "appinternet.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles_defend.c",
+      "business_battles_sell.c",
+      "camhedz_arcade.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "casinoroulette.c",
+      "celebrations.c",
+      "degenatron_games.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_acid_lab_sell.c",
+      "fm_content_acid_lab_setup.c",
+      "fm_content_acid_lab_source.c",
+      "fm_content_ammunation.c",
+      "fm_content_armoured_truck.c",
+      "fm_content_arms_trafficking.c",
+      "fm_content_auto_shop_delivery.c",
+      "fm_content_bank_shootout.c",
+      "fm_content_bar_resupply.c",
+      "fm_content_bicycle_time_trial.c",
+      "fm_content_bike_shop_delivery.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_car_wash_detailing.c",
+      "fm_content_car_wash_work.c",
+      "fm_content_cargo.c",
+      "fm_content_cerberus.c",
+      "fm_content_chop_shop_delivery.c",
+      "fm_content_club_management.c",
+      "fm_content_club_odd_jobs.c",
+      "fm_content_club_source.c",
+      "fm_content_clubhouse_contracts.c",
+      "fm_content_community_outreach.c",
+      "fm_content_convoy.c",
+      "fm_content_crime_scene.c",
+      "fm_content_cutscene.c",
+      "fm_content_daily_bounty.c",
+      "fm_content_dispatch_work.c",
+      "fm_content_drug_lab_work.c",
+      "fm_content_drug_vehicle.c",
+      "fm_content_export_cargo.c",
+      "fm_content_firefighter.c",
+      "fm_content_forklift_operator.c",
+      "fm_content_getaway_driver.c",
+      "fm_content_ghosthunt.c",
+      "fm_content_golden_gun.c",
+      "fm_content_gunrunning.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_cargo_prep.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_hacker_house_prep.c",
+      "fm_content_hacker_whistle_fin.c",
+      "fm_content_hacker_whistle_prep.c",
+      "fm_content_hacker_zancudo_fin.c",
+      "fm_content_hacker_zancudo_prep.c",
+      "fm_content_helitours_tour.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_dj.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_disruption.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_kortz_task.c",
+      "fm_content_metal_detector.c",
+      "fm_content_movie_props.c",
+      "fm_content_parachuter.c",
+      "fm_content_payphone_hit.c",
+      "fm_content_phantom_car.c",
+      "fm_content_pizza_delivery.c",
+      "fm_content_possessed_animals.c",
+      "fm_content_postal_worker.c",
+      "fm_content_robbery.c",
+      "fm_content_security_contract.c",
+      "fm_content_sightseeing.c",
+      "fm_content_skydive.c",
+      "fm_content_slasher.c",
+      "fm_content_smuggler_ops.c",
+      "fm_content_smuggler_plane.c",
+      "fm_content_smuggler_resupply.c",
+      "fm_content_smuggler_sell.c",
+      "fm_content_smuggler_trail.c",
+      "fm_content_source_research.c",
+      "fm_content_stash_house.c",
+      "fm_content_survival.c",
+      "fm_content_survival_grouping.c",
+      "fm_content_taxi_driver.c",
+      "fm_content_tow_truck_work.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_tycoon_odd_jobs.c",
+      "fm_content_ufo_abduction.c",
+      "fm_content_valentine_cheater.c",
+      "fm_content_vehicle_list.c",
+      "fm_content_vehrob_arena.c",
+      "fm_content_vehrob_cargo_ship.c",
+      "fm_content_vehrob_casino_prize.c",
+      "fm_content_vehrob_disrupt.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vehrob_scoping.c",
+      "fm_content_vehrob_submarine.c",
+      "fm_content_vehrob_task.c",
+      "fm_content_vip_contract_1.c",
+      "fm_content_weed_shop_delivery.c",
+      "fm_content_weed_shop_work.c",
+      "fm_content_xmas_mugger.c",
+      "fm_content_xmas_truck.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fmmc_launcher.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino.c",
+      "gb_casino_heist.c",
+      "gb_collect_money.c",
+      "gb_contraband_buy.c",
+      "gb_contraband_defend.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gunrunning.c",
+      "gb_illicit_goods_resupply.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_vehicle_export.c",
+      "gb_velocity.c",
+      "ggsm_arcade.c",
+      "gunslinger_arcade.c",
+      "juggalo_hideout_seating.c",
+      "maintransition.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "puzzle.c",
+      "road_arcade.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "tuner_sandbox_activity.c",
+      "wardrobe_mp.c",
+      "wardrobe_sp.c",
+      "wizard_arcade.c"
+    ],
+    "via_helper": []
+  },
+  "DRAG_RACE": {
+    "direct": [
+      "fm_bj_race_controler.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DRE1_BADGER_LJ": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DRILLING": {
+    "direct": [
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "DRONE_CAM": {
+    "direct": [
+      "am_mp_drone.c",
+      "am_mp_rc_vehicle.c",
+      "am_vehicle_spawn.c",
+      "fm_content_drone.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [
+      "am_mp_vehicle_weapon.c",
+      "carsteal2.c",
+      "heli_gun.c"
+    ],
+    "via_helper": []
+  },
+  "ECG_MONITOR": {
+    "direct": [],
+    "indirect": [
+      "fbi3.c"
+    ],
+    "via_helper": []
+  },
+  "EPSILON_TRACT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "EXL2_BLANK_JIMMY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "EXL2_CONNECTED_JIMMY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FACADE_BLANK_HOME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FACADE_BLANK_INPROGRESS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FACADE_BLANK_MICHAEL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FACADE_COMPUTER_DESKTOPWIDE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM2_PLAYMUSIC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_01_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_02_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_03_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_04_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_05_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FAM3_ALL_NCALLINGMARTIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIB3_DAVEN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIB3_STEVEH": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIB4_EYEFINDMAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIB5_LESTERTEXT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIB_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FINB_CONNECTED_AMANDA": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FINC1_EYEFIND": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FINC1_MERRYSITE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FINMCS2DREPHONE": {
+    "direct": [],
+    "indirect": [
+      "am_mp_fixer_hq.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_music_studio.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "FIX_AGYINT3_SNAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FIX_WRMS_FOOD": {
+    "direct": [],
+    "indirect": [
+      "am_mp_fixer_hq.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_music_studio.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "FIXER_APP": {
+    "direct": [
+      "appfixersecurity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FONT_LIB_CHINESE_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FONT_LIB_CHINESESIMP_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FONT_LIB_EFIGS_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FONT_LIB_JAPANESE_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FONT_LIB_KOREAN_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "FORECLOSURES_MAZE_D_BANK_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GAME_STREAM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GAMEPAD_CALIBRATION": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GENERIC_INSTRUCTIONAL_BUTTONS": {
+    "direct": [
+      "am_agency_suv.c",
+      "am_boat_taxi.c",
+      "am_casino_limo.c",
+      "am_ferriswheel.c",
+      "am_heli_taxi.c",
+      "am_luxury_showroom.c",
+      "am_mansion_limo.c",
+      "am_mp_arc_cab_manager.c",
+      "am_mp_arena_box.c",
+      "am_mp_arena_garage.c",
+      "am_mp_armory_aircraft.c",
+      "am_mp_auto_shop.c",
+      "am_mp_bail_office.c",
+      "am_mp_biker_warehouse.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_bunker.c",
+      "am_mp_business_hub.c",
+      "am_mp_car_meet_property.c",
+      "am_mp_casino.c",
+      "am_mp_casino_apartment.c",
+      "am_mp_defunct_base.c",
+      "am_mp_field_hangar.c",
+      "am_mp_fixer_hq.c",
+      "am_mp_hacker_den.c",
+      "am_mp_hangar.c",
+      "am_mp_ie_warehouse.c",
+      "am_mp_juggalo_hideout.c",
+      "am_mp_mansion.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_mansion_garage.c",
+      "am_mp_multistorey_garage.c",
+      "am_mp_music_studio.c",
+      "am_mp_nightclub.c",
+      "am_mp_orbital_cannon.c",
+      "am_mp_property_int.c",
+      "am_mp_salvage_yard.c",
+      "am_mp_sb_car_wash.c",
+      "am_mp_sb_heli_tours.c",
+      "am_mp_sb_weed_shop.c",
+      "am_mp_simeon_showroom.c",
+      "am_mp_submarine.c",
+      "am_mp_warehouse.c",
+      "am_mp_yacht.c",
+      "am_penned_in.c",
+      "am_pi_menu.c",
+      "am_rollercoaster.c",
+      "am_taxi.c",
+      "appsmuggler.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "blackjack.c",
+      "business_battles_defend.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "casinoroulette.c",
+      "circuitblockhack.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_dispatch_work.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_survival.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vip_contract_1.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "fmmc_launcher.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_bank_job.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino_heist.c",
+      "gb_casino_heist_planning.c",
+      "gb_collect_money.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gang_ops_planning.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_velocity.c",
+      "golf_mp.c",
+      "heist_island_planning.c",
+      "juggalo_hideout_seating.c",
+      "kortz_planning.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "mp_gameplay_menu.c",
+      "multistorey_garage_seating.c",
+      "net_mansion_yoga.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "road_arcade.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "taxiservice.c",
+      "three_card_poker.c",
+      "tuner_planning.c",
+      "vehrob_planning.c",
+      "word_hack.c",
+      "yoga.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GOLF": {
+    "direct": [
+      "golf.c",
+      "golf_mp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GOLF_COURSES": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GOLF_FLOATING_UI": {
+    "direct": [
+      "golf.c",
+      "golf_mp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GRID_LAYOUT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "GTAV_ONLINE": {
+    "direct": [
+      "fm_intro.c",
+      "fm_intro_cut_dev.c",
+      "ingamehud.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HACKER_TRUCK_DESKTOP": {
+    "direct": [
+      "apphackertruck.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HACKING_MESSAGE": {
+    "direct": [
+      "am_mp_hotwire.c",
+      "fm_content_business_battles.c",
+      "fm_content_island_heist.c",
+      "fm_content_vehrob_prep.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HACKING_PC": {
+    "direct": [
+      "agency_heist3b.c",
+      "business_battles.c",
+      "business_battles_sell.c",
+      "fm_content_business_battles.c",
+      "fm_content_hacker_whistle_prep.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_vehrob_casino_prize.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vip_contract_1.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "gb_cashing_out.c",
+      "gb_casino.c",
+      "gb_casino_heist.c",
+      "gb_gangops.c",
+      "gb_gunrunning.c",
+      "gb_gunrunning_defend.c",
+      "gb_infiltration.c",
+      "gb_sightseer.c",
+      "gb_smuggler.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HACKING_TERMINAL": {
+    "direct": [],
+    "indirect": [
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  },
+  "HAIR_COLOUR_CARD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HANGAR_CARGO": {
+    "direct": [
+      "appsmuggler.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HEIST2_CELEBRATION": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST2_CELEBRATION_BG": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST2_CELEBRATION_FG": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_AGENCY": {
+    "direct": [],
+    "indirect": [
+      "heist_ctrl_agency.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_CELEBRATION": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_CELEBRATION_BG": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_CELEBRATION_FG": {
+    "direct": [],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_hideout_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_DOCKS": {
+    "direct": [],
+    "indirect": [
+      "heist_ctrl_docks.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_ENDSCREEN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HEIST_FINALE": {
+    "direct": [],
+    "indirect": [
+      "heist_ctrl_finale.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_JEWELLERY": {
+    "direct": [],
+    "indirect": [
+      "heist_ctrl_jewel.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_MP": {
+    "direct": [],
+    "indirect": [
+      "am_mp_property_int.c",
+      "fmmc_launcher.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_PALETO": {
+    "direct": [],
+    "indirect": [
+      "heist_ctrl_rural.c"
+    ],
+    "via_helper": []
+  },
+  "HEIST_PRE": {
+    "direct": [],
+    "indirect": [
+      "am_mp_property_int.c",
+      "fmmc_launcher.c"
+    ],
+    "via_helper": []
+  },
+  "HEISTMAP_MP": {
+    "direct": [],
+    "indirect": [
+      "am_mp_property_int.c",
+      "fmmc_launcher.c"
+    ],
+    "via_helper": []
+  },
+  "HELI_CAM": {
+    "direct": [
+      "carsteal2.c"
+    ],
+    "indirect": [
+      "am_mp_vehicle_weapon.c",
+      "heli_gun.c"
+    ],
+    "via_helper": []
+  },
+  "HORSE_RACING_CONSOLE": {
+    "direct": [],
+    "indirect": [
+      "am_mp_casino.c"
+    ],
+    "via_helper": []
+  },
+  "HORSE_RACING_WALL": {
+    "direct": [],
+    "indirect": [
+      "am_mp_casino.c"
+    ],
+    "via_helper": []
+  },
+  "HS3F_DIR_COUPLE1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HS3F_DIR_COUPLE2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HS4_CASINT_ELRUBIO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HS4_CASINT_GIRL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_AREA_NAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_CASH": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_CASH_CHANGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_DISTRICT_NAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_DRUGS_PURSE_01": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_DRUGS_PURSE_02": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_DRUGS_PURSE_03": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_DRUGS_PURSE_04": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_MISSION_PASSED_MESSAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_MP_CASH": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_MP_MESSAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_MULTIPLAYER_CHAT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_PLAYER_SWITCH_ALERT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_RETICLE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_SAVING": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_STREET_NAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUD_VEHICLE_NAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUM_MCS1_DESKTOPCOPY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUM_MCS1_DESKTOPCOPYHOLD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "HUM_PAC_DESKTOPBANK": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IAA_HACK": {
+    "direct": [],
+    "indirect": [
+      "fm_content_kortz_equipment.c",
+      "fm_content_smuggler_ops.c"
+    ],
+    "via_helper": []
+  },
+  "IAA_HEIST_BOARD": {
+    "direct": [
+      "gb_gang_ops_planning.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_EMAIL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_FRANKLIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_HAO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_HOME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_HOMEHI": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_INPROGRESS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_BLANK_JGUNS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_COMPUTER_DESKTOPWIDE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_CONNECTED_FRANKLIN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IFRUIT_DIAL_AMANDA25": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "IMPORT_EXPORT_WAREHOUSE": {
+    "direct": [
+      "appimportexport.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "INSTRUCTIONAL_BUTTONS": {
+    "direct": [
+      "altruist_cult.c",
+      "am_agency_suv.c",
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_boat_taxi.c",
+      "am_casino_limo.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_ferriswheel.c",
+      "am_heli_taxi.c",
+      "am_luxury_showroom.c",
+      "am_mansion_limo.c",
+      "am_mp_arc_cab_manager.c",
+      "am_mp_arena_box.c",
+      "am_mp_arena_garage.c",
+      "am_mp_armory_aircraft.c",
+      "am_mp_auto_shop.c",
+      "am_mp_bail_office.c",
+      "am_mp_biker_warehouse.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_bunker.c",
+      "am_mp_business_hub.c",
+      "am_mp_car_meet_property.c",
+      "am_mp_casino.c",
+      "am_mp_casino_apartment.c",
+      "am_mp_defunct_base.c",
+      "am_mp_field_hangar.c",
+      "am_mp_fixer_hq.c",
+      "am_mp_hacker_den.c",
+      "am_mp_hangar.c",
+      "am_mp_ie_warehouse.c",
+      "am_mp_juggalo_hideout.c",
+      "am_mp_mansion.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_mansion_garage.c",
+      "am_mp_multistorey_garage.c",
+      "am_mp_music_studio.c",
+      "am_mp_nightclub.c",
+      "am_mp_orbital_cannon.c",
+      "am_mp_property_int.c",
+      "am_mp_salvage_yard.c",
+      "am_mp_sb_car_wash.c",
+      "am_mp_sb_heli_tours.c",
+      "am_mp_sb_weed_shop.c",
+      "am_mp_shooting_range.c",
+      "am_mp_simeon_showroom.c",
+      "am_mp_submarine.c",
+      "am_mp_warehouse.c",
+      "am_mp_yacht.c",
+      "am_penned_in.c",
+      "am_pi_menu.c",
+      "am_rollercoaster.c",
+      "am_taxi.c",
+      "appcamera.c",
+      "appinternet.c",
+      "appsmuggler.c",
+      "arcade_seating.c",
+      "assassin_bus.c",
+      "assassin_construction.c",
+      "assassin_hooker.c",
+      "assassin_multi.c",
+      "assassin_valet.c",
+      "atm_trigger.c",
+      "base_lounge_seats.c",
+      "bj.c",
+      "blackjack.c",
+      "business_battles_defend.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "casinoroulette.c",
+      "celebrations.c",
+      "country_race.c",
+      "darts.c",
+      "drf1.c",
+      "drf2.c",
+      "drf5.c",
+      "finale_endgame.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "flowstartaccept.c",
+      "fm_bj_race_controler.c",
+      "fm_capture_creator.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_survival.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vip_contract_1.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_lts_creator.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "fmmc_launcher.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_bank_job.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino_heist.c",
+      "gb_casino_heist_planning.c",
+      "gb_collect_money.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gang_ops_planning.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_velocity.c",
+      "golf.c",
+      "golf_mp.c",
+      "heist_ctrl_agency.c",
+      "heist_ctrl_docks.c",
+      "heist_ctrl_finale.c",
+      "heist_ctrl_jewel.c",
+      "heist_ctrl_rural.c",
+      "heist_island_planning.c",
+      "hunting_ambient.c",
+      "juggalo_hideout_seating.c",
+      "kortz_planning.c",
+      "maintransition.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "mission_race.c",
+      "mission_stat_watcher.c",
+      "multistorey_garage_seating.c",
+      "net_mansion_yoga.c",
+      "offroad_races.c",
+      "pilot_school.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "public_mission_creator.c",
+      "rampage1.c",
+      "rampage2.c",
+      "rampage3.c",
+      "rampage4.c",
+      "rampage5.c",
+      "range_modern.c",
+      "replay_controller.c",
+      "road_arcade.c",
+      "salvage_yard_seating.c",
+      "scaleformtest.c",
+      "sctv.c",
+      "shrinkletter.c",
+      "stunt_plane_races.c",
+      "taxiservice.c",
+      "tennis.c",
+      "tennis_network_mp.c",
+      "three_card_poker.c",
+      "traffick_air.c",
+      "traffick_ground.c",
+      "triathlonsp.c",
+      "tuner_planning.c",
+      "vehrob_planning.c",
+      "word_hack.c",
+      "yoga.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ISLAND_HEIST_BOARD": {
+    "direct": [],
+    "indirect": [
+      "heist_island_planning.c"
+    ],
+    "via_helper": []
+  },
+  "JHPB_01_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "JHPB_02_LAPTOP": {
+    "direct": [
+      "lesterhandler.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "JHPB_03_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "JOS2_01_PHOTOGALLERY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "JOS2_02_PHOTOGALLERY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "JOS2_ALL_PHOTOGALLERY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "KORTZ_HEIST_BOARD": {
+    "direct": [],
+    "indirect": [
+      "kortz_planning.c"
+    ],
+    "via_helper": []
+  },
+  "LANDING_PAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LANGUAGE_SELECT_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LCN_CHART_DOWN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LESTER_HACK_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LETTER_SCRAPS": {
+    "direct": [
+      "letterscraps.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LIFEINVADER_TABLET43": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LOADINGSCREEN_NEWGAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LOADINGSCREEN_STARTUP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LS1_LESTER_EYEFIND": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LS1_LESTER_PREEYEFIND": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LS1_LIFEINVADER_CALL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LS1_LIFEINVADER_HOME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "LS1_LIFEINVADER_UPDATES": {
+    "direct": [],
+    "indirect": [
+      "am_mp_fixer_hq.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_music_studio.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "MAR1_TABLET_HAVIER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MAR1_TABLET_HAVIERHORI": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MIC3_LESTER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MIC4_BREAKINGNEWS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MIDSIZED_MESSAGE": {
+    "direct": [
+      "altruist_cult.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "ambient_diving.c",
+      "ambient_sonar.c",
+      "animal_controller.c",
+      "bailbond_launcher.c",
+      "country_race.c",
+      "darts.c",
+      "epscars.c",
+      "epsilontract.c",
+      "flyunderbridges.c",
+      "fm_deathmatch_creator.c",
+      "forsalesigns.c",
+      "golf.c",
+      "golf_mp.c",
+      "hao1.c",
+      "hunting_ambient.c",
+      "letterscraps.c",
+      "main.c",
+      "mission_race.c",
+      "photographymonkey.c",
+      "photographywildlife.c",
+      "spaceshipparts.c",
+      "taxi_clowncar.c",
+      "taxi_cutyouin.c",
+      "taxi_deadline.c",
+      "taxi_followcar.c",
+      "taxi_gotyounow.c",
+      "taxi_gotyourback.c",
+      "taxi_needexcitement.c",
+      "taxi_procedural.c",
+      "taxi_takeiteasy.c",
+      "taxi_taketobest.c",
+      "tennis.c",
+      "tennis_network_mp.c",
+      "towing.c",
+      "vehicle_gen_controller.c"
+    ],
+    "indirect": [
+      "fm_capture_creator.c",
+      "fm_lts_creator.c",
+      "fm_race_creator.c",
+      "fm_survival_creator.c",
+      "freemode.c",
+      "public_mission_creator.c"
+    ],
+    "via_helper": []
+  },
+  "MINIMAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MINIMAP_MAIN_MAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MISSION_COMPLETE": {
+    "direct": [
+      "minigame_stats_tracker.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MISSION_QUIT": {
+    "direct": [
+      "pilot_school.c",
+      "pilot_school_mp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MISSION_TARGET_COMPLETE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MORGUE_LAPTOP": {
+    "direct": [
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MOUSE_POINTER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_AWARD_FREEMODE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_BIG_MESSAGE_FREEMODE": {
+    "direct": [
+      "agency_prep2amb.c",
+      "altruist_cult.c",
+      "am_armwrestling.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_mansion.c",
+      "am_mp_shooting_range.c",
+      "assassin_bus.c",
+      "assassin_construction.c",
+      "assassin_hooker.c",
+      "assassin_multi.c",
+      "assassin_valet.c",
+      "bj.c",
+      "celebrations.c",
+      "country_race.c",
+      "darts.c",
+      "fbi4_prep3amb.c",
+      "finale_heist_prepeamb.c",
+      "flowstartaccept.c",
+      "fm_capture_creator.c",
+      "fm_deathmatch_creator.c",
+      "fm_lts_creator.c",
+      "fm_race_creator.c",
+      "fm_survival_creator.c",
+      "freemode.c",
+      "golf.c",
+      "golf_mp.c",
+      "gunclub_shop.c",
+      "hunting_ambient.c",
+      "mission_race.c",
+      "mission_stat_watcher.c",
+      "offroad_races.c",
+      "pilot_school.c",
+      "pilot_school_mp.c",
+      "public_mission_creator.c",
+      "rampage1.c",
+      "rampage2.c",
+      "rampage3.c",
+      "rampage4.c",
+      "rampage5.c",
+      "range_modern.c",
+      "range_modern_mp.c",
+      "replay_controller.c",
+      "respawn_controller.c",
+      "stunt_plane_races.c",
+      "tennis.c",
+      "tennis_network_mp.c",
+      "traffick_air.c",
+      "traffick_ground.c",
+      "triathlonsp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_BOUNTY_BOARD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_01": {
+    "direct": [],
+    "indirect": [
+      "am_mp_car_meet_property.c"
+    ],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_02": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_03": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_04": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_05": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_06": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_07": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_08": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_09": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_10": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_11": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_12": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_13": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_14": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_15": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_16": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_17": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_18": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_19": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CAR_STATS_20": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_CELEBRATION": {
+    "direct": [
+      "am_hunt_the_beast.c",
+      "fm_bj_race_controler.c",
+      "fm_capture_creator.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_lts_creator.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_deathmatch.c",
+      "public_mission_controller.c",
+      "public_mission_creator.c"
+    ],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_hideout_controler.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "MP_CELEBRATION_BG": {
+    "direct": [
+      "am_hunt_the_beast.c",
+      "fm_bj_race_controler.c",
+      "fm_capture_creator.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_lts_creator.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_deathmatch.c",
+      "public_mission_controller.c",
+      "public_mission_creator.c"
+    ],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_hideout_controler.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "MP_CELEBRATION_FG": {
+    "direct": [
+      "am_hunt_the_beast.c",
+      "fm_bj_race_controler.c",
+      "fm_capture_creator.c",
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_lts_creator.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c",
+      "fm_survival_controller.c",
+      "fm_survival_creator.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_deathmatch.c",
+      "public_mission_controller.c",
+      "public_mission_creator.c"
+    ],
+    "indirect": [
+      "am_armwrestling.c",
+      "am_armwrestling_apartment.c",
+      "am_darts.c",
+      "am_darts_apartment.c",
+      "am_mp_shooting_range.c",
+      "celebrations.c",
+      "fm_hideout_controler.c",
+      "golf_mp.c",
+      "pilot_school_mp.c",
+      "range_modern_mp.c",
+      "tennis_network_mp.c"
+    ],
+    "via_helper": []
+  },
+  "MP_CREW_TAG": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_10": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_3": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_4": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_5": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_6": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_7": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_8": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_FREEMODE_CHECKPOINT_9": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_GAMER_INFO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MATCHMAKING_CARD": {
+    "direct": [
+      "am_challenges.c",
+      "am_contact_requests.c",
+      "am_cp_collection.c",
+      "am_criminal_damage.c",
+      "am_dead_drop.c",
+      "am_hot_property.c",
+      "am_hot_target.c",
+      "am_hunt_the_beast.c",
+      "am_kill_list.c",
+      "am_king_of_the_castle.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "am_pass_the_parcel.c",
+      "am_penned_in.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles.c",
+      "business_battles_defend.c",
+      "business_battles_sell.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_acid_lab_sell.c",
+      "fm_content_acid_lab_setup.c",
+      "fm_content_acid_lab_source.c",
+      "fm_content_ammunation.c",
+      "fm_content_armoured_truck.c",
+      "fm_content_arms_trafficking.c",
+      "fm_content_auto_shop_delivery.c",
+      "fm_content_bank_shootout.c",
+      "fm_content_bar_resupply.c",
+      "fm_content_bicycle_time_trial.c",
+      "fm_content_bike_shop_delivery.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_car_wash_detailing.c",
+      "fm_content_car_wash_work.c",
+      "fm_content_cargo.c",
+      "fm_content_cerberus.c",
+      "fm_content_chop_shop_delivery.c",
+      "fm_content_club_management.c",
+      "fm_content_club_odd_jobs.c",
+      "fm_content_club_source.c",
+      "fm_content_clubhouse_contracts.c",
+      "fm_content_community_outreach.c",
+      "fm_content_convoy.c",
+      "fm_content_crime_scene.c",
+      "fm_content_cutscene.c",
+      "fm_content_daily_bounty.c",
+      "fm_content_dispatch_work.c",
+      "fm_content_drug_lab_work.c",
+      "fm_content_drug_vehicle.c",
+      "fm_content_export_cargo.c",
+      "fm_content_firefighter.c",
+      "fm_content_forklift_operator.c",
+      "fm_content_getaway_driver.c",
+      "fm_content_ghosthunt.c",
+      "fm_content_golden_gun.c",
+      "fm_content_gunrunning.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_cargo_prep.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_hacker_house_prep.c",
+      "fm_content_hacker_whistle_fin.c",
+      "fm_content_hacker_whistle_prep.c",
+      "fm_content_hacker_zancudo_fin.c",
+      "fm_content_hacker_zancudo_prep.c",
+      "fm_content_helitours_tour.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_dj.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_disruption.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_kortz_task.c",
+      "fm_content_metal_detector.c",
+      "fm_content_movie_props.c",
+      "fm_content_parachuter.c",
+      "fm_content_payphone_hit.c",
+      "fm_content_phantom_car.c",
+      "fm_content_pizza_delivery.c",
+      "fm_content_possessed_animals.c",
+      "fm_content_postal_worker.c",
+      "fm_content_robbery.c",
+      "fm_content_security_contract.c",
+      "fm_content_sightseeing.c",
+      "fm_content_skydive.c",
+      "fm_content_slasher.c",
+      "fm_content_smuggler_ops.c",
+      "fm_content_smuggler_plane.c",
+      "fm_content_smuggler_resupply.c",
+      "fm_content_smuggler_sell.c",
+      "fm_content_smuggler_trail.c",
+      "fm_content_source_research.c",
+      "fm_content_stash_house.c",
+      "fm_content_survival.c",
+      "fm_content_survival_grouping.c",
+      "fm_content_taxi_driver.c",
+      "fm_content_tow_truck_work.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_tycoon_odd_jobs.c",
+      "fm_content_ufo_abduction.c",
+      "fm_content_valentine_cheater.c",
+      "fm_content_vehicle_list.c",
+      "fm_content_vehrob_arena.c",
+      "fm_content_vehrob_cargo_ship.c",
+      "fm_content_vehrob_casino_prize.c",
+      "fm_content_vehrob_disrupt.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vehrob_scoping.c",
+      "fm_content_vehrob_submarine.c",
+      "fm_content_vehrob_task.c",
+      "fm_content_vip_contract_1.c",
+      "fm_content_weed_shop_delivery.c",
+      "fm_content_weed_shop_work.c",
+      "fm_content_xmas_mugger.c",
+      "fm_content_xmas_truck.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_assault.c",
+      "gb_bellybeast.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contraband_sell.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_joust.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino.c",
+      "gb_casino_heist.c",
+      "gb_collect_money.c",
+      "gb_contraband_buy.c",
+      "gb_contraband_defend.c",
+      "gb_contraband_sell.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gangops.c",
+      "gb_gunrunning.c",
+      "gb_gunrunning_defend.c",
+      "gb_headhunter.c",
+      "gb_hunt_the_boss.c",
+      "gb_illicit_goods_resupply.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_sightseer.c",
+      "gb_smuggler.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_terminate.c",
+      "gb_transporter.c",
+      "gb_vehicle_export.c",
+      "gb_velocity.c",
+      "gb_yacht_rob.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "tuner_sandbox_activity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MATCHMAKING_SELECTOR": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MATCHMAKING_VEHICLE_INFO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MEDAL_FREEMODE": {
+    "direct": [
+      "pilot_school.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MENU_GLARE": {
+    "direct": [
+      "am_pi_menu.c",
+      "mg_race_to_point.c",
+      "wardrobe_mp.c",
+      "wardrobe_sp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MISSION_DETAILS_CARD": {
+    "direct": [
+      "creator.c",
+      "fm_deathmatch_creator.c",
+      "fm_survival_creator.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MISSION_NAME_FREEMODE": {
+    "direct": [],
+    "indirect": [
+      "fm_content_kortz_scoping.c"
+    ],
+    "via_helper": []
+  },
+  "MP_MISSION_NAME_FREEMODE_1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MISSION_NAME_FREEMODE_2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_MM_CARD_FREEMODE": {
+    "direct": [
+      "am_challenges.c",
+      "am_contact_requests.c",
+      "am_cp_collection.c",
+      "am_criminal_damage.c",
+      "am_dead_drop.c",
+      "am_hot_property.c",
+      "am_hot_target.c",
+      "am_hunt_the_beast.c",
+      "am_kill_list.c",
+      "am_king_of_the_castle.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "am_pass_the_parcel.c",
+      "am_penned_in.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles.c",
+      "business_battles_defend.c",
+      "business_battles_sell.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_acid_lab_sell.c",
+      "fm_content_acid_lab_setup.c",
+      "fm_content_acid_lab_source.c",
+      "fm_content_ammunation.c",
+      "fm_content_armoured_truck.c",
+      "fm_content_arms_trafficking.c",
+      "fm_content_auto_shop_delivery.c",
+      "fm_content_bank_shootout.c",
+      "fm_content_bar_resupply.c",
+      "fm_content_bicycle_time_trial.c",
+      "fm_content_bike_shop_delivery.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_car_wash_detailing.c",
+      "fm_content_car_wash_work.c",
+      "fm_content_cargo.c",
+      "fm_content_cerberus.c",
+      "fm_content_chop_shop_delivery.c",
+      "fm_content_club_management.c",
+      "fm_content_club_odd_jobs.c",
+      "fm_content_club_source.c",
+      "fm_content_clubhouse_contracts.c",
+      "fm_content_community_outreach.c",
+      "fm_content_convoy.c",
+      "fm_content_crime_scene.c",
+      "fm_content_cutscene.c",
+      "fm_content_daily_bounty.c",
+      "fm_content_dispatch_work.c",
+      "fm_content_drug_lab_work.c",
+      "fm_content_drug_vehicle.c",
+      "fm_content_export_cargo.c",
+      "fm_content_firefighter.c",
+      "fm_content_forklift_operator.c",
+      "fm_content_getaway_driver.c",
+      "fm_content_ghosthunt.c",
+      "fm_content_golden_gun.c",
+      "fm_content_gunrunning.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_cargo_prep.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_hacker_house_prep.c",
+      "fm_content_hacker_whistle_fin.c",
+      "fm_content_hacker_whistle_prep.c",
+      "fm_content_hacker_zancudo_fin.c",
+      "fm_content_hacker_zancudo_prep.c",
+      "fm_content_helitours_tour.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_dj.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_disruption.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_kortz_task.c",
+      "fm_content_metal_detector.c",
+      "fm_content_movie_props.c",
+      "fm_content_parachuter.c",
+      "fm_content_payphone_hit.c",
+      "fm_content_phantom_car.c",
+      "fm_content_pizza_delivery.c",
+      "fm_content_possessed_animals.c",
+      "fm_content_postal_worker.c",
+      "fm_content_robbery.c",
+      "fm_content_security_contract.c",
+      "fm_content_sightseeing.c",
+      "fm_content_skydive.c",
+      "fm_content_slasher.c",
+      "fm_content_smuggler_ops.c",
+      "fm_content_smuggler_plane.c",
+      "fm_content_smuggler_resupply.c",
+      "fm_content_smuggler_sell.c",
+      "fm_content_smuggler_trail.c",
+      "fm_content_source_research.c",
+      "fm_content_stash_house.c",
+      "fm_content_survival.c",
+      "fm_content_survival_grouping.c",
+      "fm_content_taxi_driver.c",
+      "fm_content_tow_truck_work.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_tycoon_odd_jobs.c",
+      "fm_content_ufo_abduction.c",
+      "fm_content_valentine_cheater.c",
+      "fm_content_vehicle_list.c",
+      "fm_content_vehrob_arena.c",
+      "fm_content_vehrob_cargo_ship.c",
+      "fm_content_vehrob_casino_prize.c",
+      "fm_content_vehrob_disrupt.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vehrob_scoping.c",
+      "fm_content_vehrob_submarine.c",
+      "fm_content_vehrob_task.c",
+      "fm_content_vip_contract_1.c",
+      "fm_content_weed_shop_delivery.c",
+      "fm_content_weed_shop_work.c",
+      "fm_content_xmas_mugger.c",
+      "fm_content_xmas_truck.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_assault.c",
+      "gb_bellybeast.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contraband_sell.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_joust.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino.c",
+      "gb_casino_heist.c",
+      "gb_collect_money.c",
+      "gb_contraband_buy.c",
+      "gb_contraband_defend.c",
+      "gb_contraband_sell.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gangops.c",
+      "gb_gunrunning.c",
+      "gb_gunrunning_defend.c",
+      "gb_headhunter.c",
+      "gb_hunt_the_boss.c",
+      "gb_illicit_goods_resupply.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_sightseer.c",
+      "gb_smuggler.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_terminate.c",
+      "gb_transporter.c",
+      "gb_vehicle_export.c",
+      "gb_velocity.c",
+      "gb_yacht_rob.c",
+      "golf_mp.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "tuner_sandbox_activity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_NEXT_JOB_SELECTION": {
+    "direct": [
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "gb_deathmatch.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_ONLINE_LIST_CARD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_PLAYER_CARD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_RESULTS_PANEL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_SPECTATOR_CARD": {
+    "direct": [
+      "am_challenges.c",
+      "am_contact_requests.c",
+      "am_cp_collection.c",
+      "am_criminal_damage.c",
+      "am_dead_drop.c",
+      "am_hot_property.c",
+      "am_hot_target.c",
+      "am_hunt_the_beast.c",
+      "am_kill_list.c",
+      "am_king_of_the_castle.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "am_pass_the_parcel.c",
+      "am_penned_in.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles.c",
+      "business_battles_defend.c",
+      "business_battles_sell.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_acid_lab_sell.c",
+      "fm_content_acid_lab_setup.c",
+      "fm_content_acid_lab_source.c",
+      "fm_content_ammunation.c",
+      "fm_content_armoured_truck.c",
+      "fm_content_arms_trafficking.c",
+      "fm_content_auto_shop_delivery.c",
+      "fm_content_bank_shootout.c",
+      "fm_content_bar_resupply.c",
+      "fm_content_bicycle_time_trial.c",
+      "fm_content_bike_shop_delivery.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_business_battles.c",
+      "fm_content_car_wash_detailing.c",
+      "fm_content_car_wash_work.c",
+      "fm_content_cargo.c",
+      "fm_content_cerberus.c",
+      "fm_content_chop_shop_delivery.c",
+      "fm_content_club_management.c",
+      "fm_content_club_odd_jobs.c",
+      "fm_content_club_source.c",
+      "fm_content_clubhouse_contracts.c",
+      "fm_content_community_outreach.c",
+      "fm_content_convoy.c",
+      "fm_content_crime_scene.c",
+      "fm_content_cutscene.c",
+      "fm_content_daily_bounty.c",
+      "fm_content_dispatch_work.c",
+      "fm_content_drug_lab_work.c",
+      "fm_content_drug_vehicle.c",
+      "fm_content_export_cargo.c",
+      "fm_content_firefighter.c",
+      "fm_content_forklift_operator.c",
+      "fm_content_getaway_driver.c",
+      "fm_content_ghosthunt.c",
+      "fm_content_golden_gun.c",
+      "fm_content_gunrunning.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_hacker_cargo_prep.c",
+      "fm_content_hacker_house_finale.c",
+      "fm_content_hacker_house_prep.c",
+      "fm_content_hacker_whistle_fin.c",
+      "fm_content_hacker_whistle_prep.c",
+      "fm_content_hacker_zancudo_fin.c",
+      "fm_content_hacker_zancudo_prep.c",
+      "fm_content_helitours_tour.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_dj.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_disruption.c",
+      "fm_content_kortz_entry.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_content_kortz_task.c",
+      "fm_content_metal_detector.c",
+      "fm_content_movie_props.c",
+      "fm_content_parachuter.c",
+      "fm_content_payphone_hit.c",
+      "fm_content_phantom_car.c",
+      "fm_content_pizza_delivery.c",
+      "fm_content_possessed_animals.c",
+      "fm_content_postal_worker.c",
+      "fm_content_robbery.c",
+      "fm_content_security_contract.c",
+      "fm_content_sightseeing.c",
+      "fm_content_skydive.c",
+      "fm_content_slasher.c",
+      "fm_content_smuggler_ops.c",
+      "fm_content_smuggler_plane.c",
+      "fm_content_smuggler_resupply.c",
+      "fm_content_smuggler_sell.c",
+      "fm_content_smuggler_trail.c",
+      "fm_content_source_research.c",
+      "fm_content_stash_house.c",
+      "fm_content_survival.c",
+      "fm_content_survival_grouping.c",
+      "fm_content_taxi_driver.c",
+      "fm_content_tow_truck_work.c",
+      "fm_content_tuner_robbery.c",
+      "fm_content_tycoon_odd_jobs.c",
+      "fm_content_ufo_abduction.c",
+      "fm_content_valentine_cheater.c",
+      "fm_content_vehicle_list.c",
+      "fm_content_vehrob_arena.c",
+      "fm_content_vehrob_cargo_ship.c",
+      "fm_content_vehrob_casino_prize.c",
+      "fm_content_vehrob_disrupt.c",
+      "fm_content_vehrob_police.c",
+      "fm_content_vehrob_prep.c",
+      "fm_content_vehrob_scoping.c",
+      "fm_content_vehrob_submarine.c",
+      "fm_content_vehrob_task.c",
+      "fm_content_vip_contract_1.c",
+      "fm_content_weed_shop_delivery.c",
+      "fm_content_weed_shop_work.c",
+      "fm_content_xmas_mugger.c",
+      "fm_content_xmas_truck.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_assault.c",
+      "gb_bellybeast.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contraband_sell.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_joust.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_casino.c",
+      "gb_casino_heist.c",
+      "gb_collect_money.c",
+      "gb_contraband_buy.c",
+      "gb_contraband_defend.c",
+      "gb_contraband_sell.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_gangops.c",
+      "gb_gunrunning.c",
+      "gb_gunrunning_defend.c",
+      "gb_headhunter.c",
+      "gb_hunt_the_boss.c",
+      "gb_illicit_goods_resupply.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_sightseer.c",
+      "gb_smuggler.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_terminate.c",
+      "gb_transporter.c",
+      "gb_vehicle_export.c",
+      "gb_velocity.c",
+      "gb_yacht_rob.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c",
+      "tuner_sandbox_activity.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_SPECTATOR_OVERLAY": {
+    "direct": [
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles_defend.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_survival.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_collect_money.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_velocity.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_UNLOCK_FREEMODE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MP_VEHICLE_INFO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MPH_BRUTEFORCE_LAPTOP": {
+    "direct": [
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MUGSHOT_BOARD_01": {
+    "direct": [],
+    "indirect": [
+      "maintransition.c"
+    ],
+    "via_helper": []
+  },
+  "MUGSHOT_BOARD_02": {
+    "direct": [],
+    "indirect": [
+      "maintransition.c"
+    ],
+    "via_helper": []
+  },
+  "MULTIPLAYER_CHAT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MUSIC_STUDIO_MONITOR": {
+    "direct": [],
+    "indirect": [
+      "am_mp_fixer_hq.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_music_studio.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "MUSIC_STUDIO_MONITOR_CS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "MUSIC_STUDIO_MONITOR_CS2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "NAS_UPLOAD": {
+    "direct": [],
+    "indirect": [
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  },
+  "NEW_EDITOR": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "NIGHTCLUB": {
+    "direct": [
+      "appbusinesshub.c"
+    ],
+    "indirect": [
+      "apparcadebusinesshub.c"
+    ],
+    "via_helper": []
+  },
+  "OBSERVATORY_SCOPE": {
+    "direct": [
+      "ob_telescope.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "OME1_POWERCELL": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ONLINE_POLICIES": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "OPEN_WHEEL_HEALTH_INDICATOR": {
+    "direct": [
+      "fm_bj_race_controler.c",
+      "fm_race_controler.c",
+      "fm_race_creator.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "OPENING_CREDITS": {
+    "direct": [
+      "armenian1.c",
+      "flowintrotitle.c",
+      "fm_intro_cut_dev.c",
+      "freemode.c",
+      "prologue1.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ORBITAL_CANNON_CAM": {
+    "direct": [
+      "am_mp_defunct_base.c",
+      "am_mp_orbital_cannon.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ORBITAL_CANNON_MAP": {
+    "direct": [
+      "am_mp_defunct_base.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ORGANISATION_NAME": {
+    "direct": [
+      "am_mp_property_int.c",
+      "fm_content_island_heist.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PARTY_BUS": {
+    "direct": [
+      "am_vehicle_spawn.c",
+      "business_battles_sell.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_CALIBRATION": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_HEADER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_INSTRUCTIONAL_BUTTONS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_AWARDS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CHAR_MOM_DAD": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CHAR_SELECT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CORONA": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CORONA_LOBBY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CORONA_PLAYERS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CORONA_RACE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_CREWS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_FRIENDS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_FRIENDS_MP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_GALLERY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_GAME": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_INFO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_KEYMAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_MAP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_MISSIONCREATOR": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_SAVE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_SETTINGS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_STATS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_STORE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_PAGES_WEAPONS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SHARED_COMPONENTS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SHARED_COMPONENTS_02": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SHARED_COMPONENTS_03": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SHARED_COMPONENTS_MP_01": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SP_CONTENT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_SPCHAR_OVERLAYS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PAUSE_MENU_STORE_CONTENT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PHI_MAXIM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PHONE_BLANK_SCREEN": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_01": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_02": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_03": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_04": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_05": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_06": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_07": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_08": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_09": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_10": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_11": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_12": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_13": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_14": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_NAME_15": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_SWITCH": {
+    "direct": [
+      "selector.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_SWITCH_PROLOGUE": {
+    "direct": [
+      "selector.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PLAYER_SWITCH_STATS_PANEL": {
+    "direct": [
+      "selector.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POPUP_WARNING": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_BIKER": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_DAY_NIGHT": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_GENERIC": {
+    "direct": [
+      "fm_deathmatch_controler.c",
+      "fm_deathmatch_creator.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "gb_deathmatch.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_SPECIAL_RACES": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_TURF": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "POWER_PLAY_VEHICLE": {
+    "direct": [
+      "fm_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "PSYCHOLOGY_REPORT": {
+    "direct": [
+      "finale_endgame.c",
+      "shrinkletter.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RACE_MESSAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RACE_POSITION": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RADAR_CONTROL_PANEL": {
+    "direct": [],
+    "indirect": [
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  },
+  "RAMPAGE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RCMAUDE_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "REMOTE_SNIPER_HUD": {
+    "direct": [
+      "martin1.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "REMOTE_SNIPER_LOADING": {
+    "direct": [
+      "martin1.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_01_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_02_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_03_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_04_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_05_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_06_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "RH2A_07_LAPTOP": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "ROBBERY_COMPUTER": {
+    "direct": [
+      "apphackerden.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SALVAGE_PLANNING": {
+    "direct": [
+      "am_mp_salvage_yard.c"
+    ],
+    "indirect": [
+      "vehrob_planning.c"
+    ],
+    "via_helper": []
+  },
+  "SALVAGE_VEHICLE_TARGETS": {
+    "direct": [
+      "am_mp_salvage_yard.c"
+    ],
+    "indirect": [
+      "vehrob_planning.c"
+    ],
+    "via_helper": []
+  },
+  "SAVING_FOOTER": {
+    "direct": [
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "fmmc_playlist_controller.c",
+      "gb_deathmatch.c",
+      "maintransition.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SC_LEADERBOARD": {
+    "direct": [
+      "am_mp_arena_garage.c",
+      "am_mp_car_meet_property.c",
+      "am_pi_menu.c",
+      "bj.c",
+      "darts.c",
+      "fm_bj_race_controler.c",
+      "fm_deathmatch_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fmmc_launcher.c",
+      "gb_deathmatch.c",
+      "golf.c",
+      "golf_mp.c",
+      "hunting_ambient.c",
+      "mission_race.c",
+      "offroad_races.c",
+      "pilot_school.c",
+      "pilot_school_mp.c",
+      "public_mission_controller.c",
+      "range_modern.c",
+      "range_modern_mp.c",
+      "stunt_plane_races.c",
+      "tennis.c",
+      "triathlonsp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SCOPE": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SECURITY_CAM": {
+    "direct": [
+      "am_lester_cut.c",
+      "am_mp_arena_box.c",
+      "am_mp_arena_garage.c",
+      "am_mp_armory_aircraft.c",
+      "am_mp_auto_shop.c",
+      "am_mp_bail_office.c",
+      "am_mp_biker_warehouse.c",
+      "am_mp_boardroom_seating.c",
+      "am_mp_bunker.c",
+      "am_mp_business_hub.c",
+      "am_mp_defunct_base.c",
+      "am_mp_fixer_hq.c",
+      "am_mp_hacker_den.c",
+      "am_mp_hangar.c",
+      "am_mp_juggalo_hideout.c",
+      "am_mp_mansion.c",
+      "am_mp_multistorey_garage.c",
+      "am_mp_music_studio.c",
+      "am_mp_nightclub.c",
+      "am_mp_property_int.c",
+      "am_mp_salvage_yard.c",
+      "am_mp_submarine.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "finale_heist1.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_content_bounty_targets.c",
+      "fm_content_hacker_cargo_finale.c",
+      "fm_content_island_heist.c",
+      "fm_content_kortz_equipment.c",
+      "fm_content_kortz_scoping.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "gb_bank_job.c",
+      "gb_casino_heist.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "mission_triggerer_a.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SECURITY_CAMERA": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SECUROSERV": {
+    "direct": [
+      "appsecuroserv.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SHOP_MENU": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SHOP_MENU_DLC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SLOT_MACHINE": {
+    "direct": [
+      "casino_slots.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SOCIAL_CLUB2": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SOCIAL_CLUB_TV": {
+    "direct": [
+      "am_mp_boardroom_seating.c",
+      "am_mp_defunct_base.c",
+      "am_mp_hangar.c",
+      "am_mp_property_int.c",
+      "arcade_seating.c",
+      "base_lounge_seats.c",
+      "business_battles_defend.c",
+      "casino_interior_seating.c",
+      "casino_main_lounge_seating.c",
+      "fixer_hq_seating_op_floor.c",
+      "fixer_hq_seating_pq.c",
+      "fm_bj_race_controler.c",
+      "fm_content_survival.c",
+      "fm_deathmatch_controler.c",
+      "fm_horde_controler.c",
+      "fm_impromptu_dm_controler.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "fm_race_controler.c",
+      "fm_survival_controller.c",
+      "freemode.c",
+      "gb_amphibious_assault.c",
+      "gb_biker_bad_deal.c",
+      "gb_biker_burn_assets.c",
+      "gb_biker_contraband_defend.c",
+      "gb_biker_contract_killing.c",
+      "gb_biker_criminal_mischief.c",
+      "gb_biker_destroy_vans.c",
+      "gb_biker_driveby_assassin.c",
+      "gb_biker_free_prisoner.c",
+      "gb_biker_last_respects.c",
+      "gb_biker_race_p2p.c",
+      "gb_biker_rescue_contact.c",
+      "gb_biker_rippin_it_up.c",
+      "gb_biker_safecracker.c",
+      "gb_biker_search_and_destroy.c",
+      "gb_biker_shuttle.c",
+      "gb_biker_stand_your_ground.c",
+      "gb_biker_steal_bikes.c",
+      "gb_biker_unload_weapons.c",
+      "gb_biker_wheelie_rider.c",
+      "gb_carjacking.c",
+      "gb_cashing_out.c",
+      "gb_collect_money.c",
+      "gb_data_hack.c",
+      "gb_deathmatch.c",
+      "gb_finderskeepers.c",
+      "gb_fivestar.c",
+      "gb_fortified.c",
+      "gb_fragile_goods.c",
+      "gb_fully_loaded.c",
+      "gb_infiltration.c",
+      "gb_jewel_store_grab.c",
+      "gb_ploughed.c",
+      "gb_point_to_point.c",
+      "gb_ramped_up.c",
+      "gb_rob_shop.c",
+      "gb_salvage.c",
+      "gb_security_van.c",
+      "gb_stockpiling.c",
+      "gb_target_pursuit.c",
+      "gb_transporter.c",
+      "gb_velocity.c",
+      "juggalo_hideout_seating.c",
+      "mansion_lobby_seating.c",
+      "mansion_seating.c",
+      "multistorey_garage_seating.c",
+      "public_mission_controller.c",
+      "salvage_yard_seating.c",
+      "sctv.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SPIN_THE_WHEEL": {
+    "direct": [
+      "am_mp_arena_box.c",
+      "freemode.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SPLASH_TEXT": {
+    "direct": [
+      "placementtest.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STARTER_PACK_BROWSER": {
+    "direct": [
+      "am_pi_menu.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STORE_BACKGROUND": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STORE_BLACKOUT": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STORE_INSTRUCTIONAL_BUTTONS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STRENGTH_TEST_SCORE": {
+    "direct": [],
+    "indirect": [
+      "am_mp_arcade_strength_test.c"
+    ],
+    "via_helper": []
+  },
+  "STUDIO_3_ARY": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "STUNT_JUMPS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SUB_CAM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SUB_PC": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "SUBMARINE_MISSILES": {
+    "direct": [],
+    "indirect": [
+      "am_mp_drone.c"
+    ],
+    "via_helper": []
+  },
+  "SUM24_HV3_AMBUSH": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TATTOO_BUTTONS": {
+    "direct": [
+      "family6.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TATTOO_KEYS": {
+    "direct": [
+      "family6.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TAXI_DISPLAY": {
+    "direct": [
+      "taxiservice.c"
+    ],
+    "indirect": [
+      "am_taxi.c"
+    ],
+    "via_helper": []
+  },
+  "TEETH_PULLING": {
+    "direct": [],
+    "indirect": [
+      "fbi3.c"
+    ],
+    "via_helper": []
+  },
+  "TENNIS": {
+    "direct": [
+      "tennis.c",
+      "tennis_network_mp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TEXT_INPUT_BOX": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TEXTCANVAS": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TEXTFIELD": {
+    "direct": [
+      "am_contact_requests.c",
+      "director_mode.c",
+      "pi_menu.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TRAFFIC_CAM": {
+    "direct": [
+      "finale_heist2a.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TRIP3_PHONE2_1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TRIP3_PHONE4_1": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TRUST_AND_SAFETY": {
+    "direct": [],
+    "indirect": [
+      "am_pi_menu.c"
+    ],
+    "via_helper": []
+  },
+  "TUN_DJ4_BLANK": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TUN_DJ4_SPEAKER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TUN_FRUITLAPTOP_DJ4": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "TUN_FRUITLAPTOP_SSAS": {
+    "direct": [],
+    "indirect": [
+      "am_mp_fixer_hq.c",
+      "am_mp_mansion_art_workshop.c",
+      "am_mp_music_studio.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "TURRET_CAM": {
+    "direct": [],
+    "indirect": [
+      "carsteal2.c",
+      "heli_gun.c",
+      "turret_cam_script.c"
+    ],
+    "via_helper": []
+  },
+  "TV_FRAME": {
+    "direct": [
+      "pilot_school.c",
+      "pilot_school_mp.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "VAULT_DRILL": {
+    "direct": [
+      "am_mp_arc_cab_manager.c",
+      "am_mp_arcade_claw_crane.c",
+      "am_mp_arcade_love_meter.c",
+      "am_mp_arcade_strength_test.c",
+      "camhedz_arcade.c",
+      "degenatron_games.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "ggsm_arcade.c",
+      "gunslinger_arcade.c",
+      "public_mission_controller.c",
+      "puzzle.c",
+      "road_arcade.c",
+      "wizard_arcade.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "VAULT_LASER": {
+    "direct": [
+      "am_mp_arc_cab_manager.c",
+      "am_mp_arcade_claw_crane.c",
+      "am_mp_arcade_love_meter.c",
+      "am_mp_arcade_strength_test.c",
+      "camhedz_arcade.c",
+      "degenatron_games.c",
+      "fm_mission_controller.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "ggsm_arcade.c",
+      "gunslinger_arcade.c",
+      "public_mission_controller.c",
+      "puzzle.c",
+      "road_arcade.c",
+      "wizard_arcade.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WAREHOUSE": {
+    "direct": [
+      "appsecuroserv.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WATERMARK": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WEB_BROWSER": {
+    "direct": [
+      "appinternet.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WIND_METER": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ABSTINENTAMERICA_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ACCEPT_D_THE_D_CHAOS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ALTRUISTSUNITE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_AMMUNATION_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_APPROPRIATEASSOCIATES_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ARENAWAR_TV": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_BAWSAQ_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_BEDEVINWESTON_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_BENNYSORIGINALMOTORWORKS_COM": {
+    "direct": [],
+    "indirect": [
+      "am_mp_car_meet_property.c"
+    ],
+    "via_helper": []
+  },
+  "WWW_BESEECHER_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_BLEETER_BIZ": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_BULLSHARKTESTOSTERONE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_CASHFORDEADDREAMS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_CHAINSOFINTIMACY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_CLASSICVINEWOOD_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_CREDITCARDCONSOLIDATIONKINGS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_CULTSTOPPERS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_DOCKTEASE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_DR_D_FRIEDLANDER_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_DYNASTY8EXECUTIVEREALTY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_DYNASTY8REALESTATE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_EGOCHASERENERGYBAR_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ELECTROTOKESYSTEM_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_ELITASTRAVEL_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_EPSILONPROGRAM_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_EYEFIND_INFO": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_FABIENLAROUCHEYOGA_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_FAMEORSHAME_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_FLEECA_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_FRUITCOMPUTERS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_GRAINOFTRUTH_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_HAMMERSTEINFAUST_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_HIMPLANTSENHANCEMENTSURGERY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_HUSHSMUSH_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_IWILLSURVIVEITALL_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_JACKHOWITZER_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_JOCKCRANLEY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_JUNKENERGYDRINK_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_KUNGFURAINBOWLAZERFORCE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LARSSANDELBO_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LCN_D_EXCHANGE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LEGENDARYMOTORSPORT_NET": {
+    "direct": [],
+    "indirect": [
+      "am_mp_car_meet_property.c",
+      "am_mp_fixer_hq.c"
+    ],
+    "via_helper": []
+  },
+  "WWW_LENNYAVERY_D_REALTY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LIFEINVADER_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LOSSANTOSCUSTOMS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_LOSSANTOSFREEGANS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MANOPAUSEADVENTURES_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MAZE_D_BANK_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MERRYWEATHERSECURITY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MINISTERINMINUTES_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MINOTAURFINANCE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MONETARYSCIENCE_US": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MYDIVINEWITHIN_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_MYROOMONLINE_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PANDMCYCLES_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PRESERVEXSKINCREAM_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PRINCESSROBOTBUBBLEGUM_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PRIXLUXURYREALESTATE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PROPOSITION208_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PROPOSITION43_ORG": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_PSYCHICSHOUTOUT_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_REPUBLICANSPACERANGERS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_RIGHTEOUSSLAUGHTER7_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SANANDREASDMV_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SAWATERANDPOWER_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SIXFIGURETEMPS_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SOUTHERNSANANDREASSUPERAUTOS_COM": {
+    "direct": [],
+    "indirect": [
+      "am_mp_car_meet_property.c",
+      "am_mp_fixer_hq.c",
+      "am_mp_simeon_showroom.c"
+    ],
+    "via_helper": []
+  },
+  "WWW_STOPPAYINGYOURMORTGAGE_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SUEMURRY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_SWALLOWCO_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_TACO_D_BOMB_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THEBANKOFLIBERTY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THECHILDRENOFTHEMOUNTAIN_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THEDIAMONDCASINOANDRESORT_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THEINTERNETISAHELLHOLE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THEPOWCLEANSE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_THEREALITYMILL_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_TOESHOESUSA_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_TOILETCLEANERONLINE_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_UNIVERSALUNIFORM_NET": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_VANILLAUNICORN_XXX": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_VINEWOODLOGLINEGENERATOR_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_VISITTHEALAMOSEA_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_WARSTOCK_D_CACHE_D_AND_D_CARRY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_WHOKILLEDLEONORAJOHNSON_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_YOURDEADFAMILY_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "WWW_YOURNEWBABYSNAME_COM": {
+    "direct": [],
+    "indirect": [],
+    "via_helper": []
+  },
+  "YACHT_GAMERNAME": {
+    "direct": [
+      "am_mp_yacht.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "YACHT_NAME": {
+    "direct": [
+      "am_mp_yacht.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_heist.c",
+      "fm_content_vip_contract_1.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "YACHT_NAME_STERN": {
+    "direct": [
+      "am_mp_yacht.c",
+      "fm_content_helitours_work.c",
+      "fm_content_island_heist.c",
+      "fm_content_vip_contract_1.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "indirect": [],
+    "via_helper": []
+  },
+  "YOGA_BUTTONS": {
+    "direct": [
+      "family5.c",
+      "net_mansion_yoga.c",
+      "yoga.c"
+    ],
+    "indirect": [
+      "fm_content_kortz_entry.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  },
+  "YOGA_KEYS": {
+    "direct": [
+      "family5.c",
+      "net_mansion_yoga.c",
+      "yoga.c"
+    ],
+    "indirect": [
+      "fm_content_kortz_entry.c",
+      "fm_mission_controller_2020.c",
+      "fm_mission_controller_v3.c",
+      "public_mission_controller.c"
+    ],
+    "via_helper": []
+  }
+}

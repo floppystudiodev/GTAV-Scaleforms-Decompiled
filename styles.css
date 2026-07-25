@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+/* La wiki se diseno a una escala pequena; subimos la base tipografica un 25% (16->20px)
+   para que se lea comoda sin tener que tocar el zoom del navegador a mano. Todo el CSS
+   usa rem/em, asi que escala en bloque; el layout (100vh, anchos) se queda intacto. */
+html {
+  font-size: 125%;
+}
+
 /* Todo es monoespaciado a proposito: el contenido son 506 identificadores en
    MAYUSCULAS y 6192 firmas de funciones. La prosa (solo en HOME) tambien, para
    no meter una segunda familia por un puñado de parrafos. */
@@ -572,5 +579,214 @@ h2 {
 
   .content-section p {
     font-size: 0.8125rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   "Loaded in .c scripts" block. Vive en el panel de detalle (fondo claro),
+   asi que hereda el lenguaje de .function-list / .fn-filter / .origin-tag,
+   no el del buscador oscuro del sidebar.
+--------------------------------------------------------------------------- */
+.sf-scripts {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.sf-scripts__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.sf-scripts__title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+/* El numero es el dato; que salte en ambar-sobre-claro (no #ffb000 puro,
+   que no contrasta en papel) */
+.sf-scripts__count {
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+/* Mismo input que el filtro de funciones: papel, foco ambar */
+.sf-scripts__filter {
+  flex: 0 1 13rem;
+  min-width: 9rem;
+  padding: 0.3rem 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink);
+  background-color: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+.sf-scripts__filter::placeholder {
+  color: var(--ink-3);
+}
+
+.sf-scripts__filter:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-wash);
+}
+
+/* Contenedor tipo function-list: filas densas divididas por hairline.
+   Si la lista es larga, scroll contenido en vez de estirar la pagina. */
+.sf-scripts__list {
+  list-style: none;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background-color: var(--panel);
+  overflow-y: auto;
+  max-height: 22rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-3) var(--rule-soft);
+}
+
+.sf-scripts__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  padding: 0.3rem 0.6rem 0.3rem 0.75rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.sf-scripts__item:last-child {
+  border-bottom: none;
+}
+
+.sf-scripts__item:hover {
+  background-color: #fff9e9;
+}
+
+/* misma convencion de ocultado que .function-item.hidden / .scaleform-item.hidden */
+.sf-scripts__item.hidden {
+  display: none;
+}
+
+.sf-scripts__name {
+  min-width: 0;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* Tag: reutiliza la geometria de .origin-tag para compartir lenguaje.
+   direct   = ambar solido (el mas fuerte: un script lo pide directamente)
+   indirect = ambar hueco   (misma familia, atenuado: una salto de por medio)
+   helper   = teal hueco     (otro matiz: script de tipo helper) */
+.sf-scripts__tag {
+  flex: none;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.sf-scripts__tag--direct {
+  color: var(--sb);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.sf-scripts__tag--indirect {
+  color: var(--accent-ink);
+  background-color: transparent;
+  border-color: var(--accent);
+}
+
+.sf-scripts__tag--helper {
+  color: var(--arg);
+  background-color: rgba(13, 109, 118, 0.08);
+  border-color: var(--arg);
+}
+
+/* Sin resultados de filtro: linea discreta dentro de la lista */
+.sf-scripts__empty {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+/* Toggle show all / show less: boton de texto sobrio, como .fn-copy */
+.sf-scripts__toggle {
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background-color 0.12s;
+}
+
+.sf-scripts__toggle:hover {
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  background-color: var(--accent-wash);
+}
+
+.sf-scripts__toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* el JS marca el toggle con .hidden al filtrar; aqui no hay .hidden generico */
+.sf-scripts__toggle.hidden {
+  display: none;
+}
+
+/* Estado motor: no es un vacio triste. Borde discontinuo = "limite del juego,
+   no lo pide ningun script" (mismo semantico que .origin-post-launch /
+   .empty-functions), y prefijo // para que se lea como una anotacion de codigo. */
+.sf-scripts--engine {
+  border-top: 1px solid var(--rule);
+}
+
+.sf-scripts__engine {
+  margin-top: 0;
+  padding: 0.7rem 0.85rem;
+  border: 1px dashed var(--rule);
+  border-radius: 3px;
+  background-color: var(--panel);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.sf-scripts__engine::before {
+  content: "// ";
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .sf-scripts__filter {
+    flex-basis: 100%;
+  }
+
+  .sf-scripts__list {
+    max-height: 18rem;
   }
 }

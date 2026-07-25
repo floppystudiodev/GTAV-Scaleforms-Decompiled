@@ -54,9 +54,27 @@ async function loadScaleforms() {
     }
 }
 
+// Mapa scaleform -> scripts .c que lo cargan. Si el fetch falla devolvemos {} y la
+// wiki sigue: la seccion "Loaded in N scripts" simplemente no se pinta.
+async function loadScaleformScripts() {
+    try {
+        const response = await fetch("scaleform_scripts.json")
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        return await response.json()
+    } catch (error) {
+        console.error("Error al cargar el mapa de scripts:", error)
+        return {}
+    }
+}
+
 // Indice de busqueda: se construye una vez al arrancar. Cada entrada guarda el
 // nombre y todas sus funciones ya en minusculas para no recalcularlo en cada tecla.
 const searchIndex = []
+
+// Relleno en el arranque desde scaleform_scripts.json. Vacio si ese fetch falla.
+let scaleformScripts = {}
 
 // Function to render scaleforms list in sidebar
 function renderScaleformList(scaleforms) {
@@ -163,6 +181,11 @@ function renderScaleformDetails(scaleform, key) {
 
         const meta = renderOriginMeta(scaleform, key)
         if (meta) scaleformDetails.appendChild(meta)
+
+        // Va aqui, antes del return de "0 funciones", para que tambien se vea en los
+        // scaleforms que son puro arte (fonts/texturas) y no tienen ActionScript.
+        const scripts = renderScriptUsage(key)
+        if (scripts) scaleformDetails.appendChild(scripts)
 
         const functions = scaleform.functions || []
 
@@ -283,6 +306,130 @@ function filterFunctions(query) {
             ? `${visible} of ${items.length} functions`
             : `${items.length} functions`
     }
+}
+
+// En que scripts .c se pide este scaleform. 339 de 506 los carga el motor y no aparece
+// ninguno; otros llegan a 249, asi que los largos se pintan en diferido: solo 8 nodos
+// en el DOM hasta que se expande o se filtra. Devuelve null si el mapa no cargo.
+function renderScriptUsage(key) {
+    const usage = scaleformScripts[key]
+    if (!usage) return null
+
+    const sortNames = (arr) =>
+        (arr || []).slice().sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }))
+
+    // Orden fijo: primero direct, luego indirect, luego via_helper; alfabetico dentro.
+    const items = [
+        ...sortNames(usage.direct).map((name) => ({ name, kind: "direct" })),
+        ...sortNames(usage.indirect).map((name) => ({ name, kind: "indirect" })),
+        ...sortNames(usage.via_helper).map((name) => ({ name, kind: "helper" })),
+    ]
+    const total = items.length
+
+    // Motor: nadie lo pide desde un script.
+    if (total === 0) {
+        const section = document.createElement("section")
+        section.className = "sf-scripts sf-scripts--engine"
+        section.setAttribute("aria-label", "Load source")
+        const p = document.createElement("p")
+        p.className = "sf-scripts__engine"
+        p.textContent = "Loaded by the engine (no script requests it)"
+        section.appendChild(p)
+        return section
+    }
+
+    const section = document.createElement("section")
+    section.className = "sf-scripts"
+    section.setAttribute("aria-label", "Scripts that load this scaleform")
+
+    const head = document.createElement("div")
+    head.className = "sf-scripts__head"
+
+    const title = document.createElement("h3")
+    title.className = "sf-scripts__title"
+    title.appendChild(document.createTextNode("Loaded in "))
+    const count = document.createElement("span")
+    count.className = "sf-scripts__count"
+    count.textContent = total
+    title.appendChild(count)
+    title.appendChild(document.createTextNode(total === 1 ? " script" : " scripts"))
+    head.appendChild(title)
+
+    const list = document.createElement("ul")
+    list.className = "sf-scripts__list"
+
+    // Colapso y filtro solo tienen sentido pasados los 8; por debajo se ve todo.
+    const collapsible = total > 8
+    let toggle = null
+    let filter = null
+    let expanded = false
+
+    function itemEl(item) {
+        const li = document.createElement("li")
+        li.className = "sf-scripts__item"
+        const name = document.createElement("span")
+        name.className = "sf-scripts__name"
+        name.textContent = item.name
+        const tag = document.createElement("span")
+        tag.className = `sf-scripts__tag sf-scripts__tag--${item.kind}`
+        tag.textContent = item.kind
+        li.appendChild(name)
+        li.appendChild(tag)
+        return li
+    }
+
+    // Repinta la lista segun el estado. Con filtro se ven TODOS los matches (ignora el
+    // colapso) y el boton sobra; sin filtro, o los 8 primeros o todos si esta expandido.
+    function renderList() {
+        const q = filter ? filter.value.trim().toLowerCase() : ""
+        const shown = q
+            ? items.filter((it) => it.name.toLowerCase().includes(q))
+            : (collapsible && !expanded ? items.slice(0, 8) : items)
+
+        list.innerHTML = ""
+        if (q && shown.length === 0) {
+            const empty = document.createElement("li")
+            empty.className = "sf-scripts__empty"
+            empty.textContent = "no matches"
+            list.appendChild(empty)
+        } else {
+            const fragment = document.createDocumentFragment()
+            shown.forEach((it) => fragment.appendChild(itemEl(it)))
+            list.appendChild(fragment)
+        }
+        if (toggle) toggle.classList.toggle("hidden", !!q)
+    }
+
+    if (collapsible) {
+        filter = document.createElement("input")
+        filter.type = "text"
+        filter.className = "sf-scripts__filter"
+        filter.placeholder = "filter scripts…"
+        filter.setAttribute("aria-label", "Filter scripts")
+        filter.autocomplete = "off"
+        filter.spellcheck = false
+        filter.addEventListener("input", renderList)
+        head.appendChild(filter)
+
+        toggle = document.createElement("button")
+        toggle.type = "button"
+        toggle.className = "sf-scripts__toggle"
+        toggle.setAttribute("aria-expanded", "false")
+        toggle.textContent = `Show all ${total}`
+        toggle.addEventListener("click", () => {
+            expanded = !expanded
+            toggle.setAttribute("aria-expanded", String(expanded))
+            toggle.textContent = expanded ? "Show less" : `Show all ${total}`
+            renderList()
+        })
+    }
+
+    section.appendChild(head)
+    section.appendChild(list)
+    if (toggle) section.appendChild(toggle)
+
+    renderList()
+    return section
 }
 
 // Procedencia: "vanilla" = venia en el disco base, "dlc" = lo trajo el pack que dice `dlc`,
@@ -480,7 +627,9 @@ let copyResetTimer = null
 
 // Initialize app when DOM is loaded
 document.addEventListener("DOMContentLoaded", async () => {
-    const scaleforms = await loadScaleforms();
+    // Los dos fetch son independientes: en paralelo para no encadenar latencias.
+    const [scaleforms, scripts] = await Promise.all([loadScaleforms(), loadScaleformScripts()]);
+    scaleformScripts = scripts;
     renderScaleformList(scaleforms);
 
     const searchInput = document.getElementById("search-input");
